@@ -6,19 +6,42 @@
 <header>
 
 	<nav>
+		<div class='name'>Peter Organisciak</div>
 		<ul>
 			<li class:active={$page.url.pathname === '{base}/'}>
 				<a sveltekit:prefetch href="{base}/">Home</a>
 			</li>
+			<!--
 			<li class:active={$page.url.pathname === '{base}/about'}>
 				<a sveltekit:prefetch href="{base}/about">About</a>
 			</li>
+
+			<li>
+				<a>Faculty Info</a>
+			</li>
+
+			<li>
+			<a>CV</a>
+			</li>
+
+			<li>
+			<a>Writing</a>
+			</li>-->
 		</ul>
 	</nav>
 
 </header>
 
 <style>
+	.name {
+		rotate: 270deg;
+    display: none; /* hidden for now */
+    background: yellow;
+    border-radius: 1rem;
+    margin-top: 100px;
+    padding: 10px;
+    float: left;
+	}
 	header {
 		display: flex;
 		justify-content: space-between;
@@ -58,6 +81,17 @@
 		transform: rotateY(0deg) rotate(-2deg);
 	}
 
+	li:nth-child(3) { 
+		transform: rotateY(0deg) rotate(-5deg);
+	}
+
+	li:nth-child(4) { 
+		transform: rotateY(0deg) rotate(2deg);
+	}
+
+	li:nth-child(5) { 
+		transform: rotateY(0deg) rotate(-2deg);
+	}
 	li.active::before {
 		--size: 6px;
 		content: '';

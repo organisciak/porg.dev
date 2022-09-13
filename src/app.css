@@ -15,6 +15,7 @@
 	--column-margin-top: 4rem;
 }
 
+
 body {
 	min-height: 100vh;
 	margin: 0;
@@ -36,6 +37,12 @@ body::before {
 		rgba(255, 255, 255, 0) 100%
 	);
 	opacity: 0.05;
+}
+
+.content {
+	width: 100%;
+	max-width: var(--column-width);
+	margin: var(--column-margin-top) auto 0 auto;
 }
 
 #svelte {
@@ -64,13 +71,10 @@ a:hover {
 	text-decoration: underline;
 }
 
-h1 {
-	font-size: 2rem;
+h1, h2 {
 	text-align: center;
-}
-
-h2 {
-	font-size: 1rem;
+	text-transform: lowercase;
+    font-weight: 700;
 }
 
 pre {
@@ -96,6 +100,5 @@ button:focus:not(:focus-visible) {
 
 @media (min-width: 720px) {
 	h1 {
-		font-size: 2.4rem;
 	}
 }

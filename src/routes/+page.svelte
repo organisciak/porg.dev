@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Card from '$lib/Card.svelte';
 	import SvelteMarkdown from 'svelte-markdown';
 
 	const source = `
@@ -18,8 +17,8 @@ those methods to track cultural and and historic trends across centuries.
 
 See more professional information at my [faculty page](http://portfolio.du.edu/organisciak).
 `
-
 </script>
+
 
 <svelte:head>
 	<title>Peter Organisciak</title>
@@ -64,8 +63,4 @@ section:nth-of-type(even) {
     background: #00d1b2;
     color: #fff;
 }
-
-	h1 {
-		width: 100%;
-	}
 </style>

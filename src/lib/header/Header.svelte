@@ -11,11 +11,15 @@
 			<li class:active={$page.url.pathname === '{base}/'}>
 				<a sveltekit:prefetch href="{base}/">Home</a>
 			</li>
-			<!--
-			<li class:active={$page.url.pathname === '{base}/about'}>
+
+			<li class:active={$page.url.pathname === '{base}/cv'}>
+				<a sveltekit:prefetch href="{base}/cv">CV</a>
+			</li>
+			
+			<!--<li class:active={$page.url.pathname === '{base}/about'}>
 				<a sveltekit:prefetch href="{base}/about">About</a>
 			</li>
-
+			
 			<li>
 				<a>Faculty Info</a>
 			</li>

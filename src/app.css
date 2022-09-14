@@ -12,6 +12,7 @@
 	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
+	--double-width: 84rem;
 	--column-margin-top: 4rem;
 }
 
@@ -51,20 +52,19 @@ body::before {
 	flex-direction: column;
 }
 
-h1,
-h2,
 p {
 	font-weight: 400;
 	color: var(--heading-color);
-}
-
-p {
 	line-height: 1.5;
 }
 
 a {
 	color: var(--accent-color);
 	text-decoration: none;
+}
+
+li p {
+	display: inline;
 }
 
 a:hover {
@@ -75,6 +75,16 @@ h1, h2 {
 	text-align: center;
 	text-transform: lowercase;
     font-weight: 700;
+}
+
+h2 {
+	font-weight: 600;
+	font-size: 3.5rem;
+}
+
+h3 {
+    font-size: 2.7rem;
+    font-weight: 400;
 }
 
 pre {

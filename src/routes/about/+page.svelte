@@ -1,3 +1,7 @@
+<script>
+	import { base, assets } from '$app/paths';
+  </script>
+
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About New Perspectives" />

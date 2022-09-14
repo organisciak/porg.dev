@@ -16,6 +16,7 @@ const config = {
 		}),
 		paths: {
 			base: '',
+			assets: dev ? '/Users/peter.organisciak/Documents/projects/organisciak.github.io/static' : '',
 		},
 		appDir: 'internal',
 	  }

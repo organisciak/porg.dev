@@ -10,7 +10,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
 		"test": "playwright test",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"postbuild": "npx svelte-sitemap --out-dir docs --domain https://www.porganized.com && touch docs/.nojekyll && echo www.porganized.com >> docs/CNAME"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.25.0",
@@ -32,8 +33,6 @@
 	"type": "module",
 	"dependencies": {
 		"svelte-markdown": "^0.2.3"
-	},
-	"scripts": {
-		"postbuild": "npx svelte-sitemap --out-dir docs --domain https://www.porganized.com"
-	  }
+	}
+
 }

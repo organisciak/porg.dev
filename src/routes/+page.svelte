@@ -1,21 +1,24 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
+	import Card from '$lib/Card.svelte';
 
 	const source = `
   # Peter Organisciak
 
-  <div class="four columns">
+  <div class="two columns">
 		<img class="img-responsive img-circle hidden-md hidden-lg" src="https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=100" alt="Peter Organisciak">
 	</div>
 
-I'm an information scientist with expertise in crowd systems, text and data mining, 
+I'm an information scientist with expertise in text and data mining, machine learning, crowd systems,
 and information retrieval.
 
 As faculty in Library and Information Science at the University of Denver, 
 I work on massive-scale text analysis, teaching computers to read and using
-those methods to track cultural and and historic trends across centuries.
+those methods to track cultural and and historic trends across centuries. I also work with educational psychologists on improving automated measurement in education, particularly in the study of creativity.
 
-See more professional information at my [faculty page](http://portfolio.du.edu/organisciak).
+See my [CV](/cv), or find [me](https://github.com/organisciak) and the [Massive Texts Lab](https://github.com/massivetexts) on Github.
+
+Check out online tools: [Open Creativity Scoring](https://openscoring.du.edu/) for scoring tests of creativity, [SaDDL](https://saddl.du.edu) for digital library book relationships, and [HT+Bookworm](https://bookworm.htrc.illinois.edu/develop/) for exploring historic language trends.
 `
 </script>
 
@@ -25,9 +28,14 @@ See more professional information at my [faculty page](http://portfolio.du.edu/o
 	<meta name="description" content="Peter Organisciak Personal Site" />
 </svelte:head>
 
-<section class='intro'><div class="content">
+<section class='intro'><div class="content doublewidth">
 	<SvelteMarkdown {source} />
 </section>
+
+<section id="research-section"><div class="content">
+	<h2>Recent Research</h2>
+	<Card shuffle=false></Card>
+</div></section>
 
 <section id="writing-section"><div class="content">
 	<h2>Writing</h2>
@@ -50,6 +58,9 @@ See more professional information at my [faculty page](http://portfolio.du.edu/o
 
 <style>
 
+	.doublewidth {
+		max-width: var(--double-width);
+	}
 	section {
 		display: flex;
 		flex-direction: column;

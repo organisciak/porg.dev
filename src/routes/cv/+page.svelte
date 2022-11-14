@@ -121,39 +121,14 @@ in-copyright texts in the humanities. In K. Golub & Y. Liu (Eds.),
 
 ## Journal Articles (refereed)
 
-De Chantel, PL., **Organisciak, P.** (under review). Automated Feedback
-and Creativity: Evidence for Metacognitive Monitoring in Divergent
-Thinking. Submitted for publication.
-
-**Organisciak, P.**, Acar, S., Dumas, D., Berthiaume, K., (under
-review). Beyond Semantic Distance: Automated Scoring of Divergent
-Thinking Greatly Improves with Large Language Models. Submitted for
-publication.
-
-Dumas, D., Acar, S., Berthiaume, K., **Organisciak, P.**, Eby, D.,
-Grajzel, K., Flemister, C. T., Newman, M., & Carrera, M. (under review).
-What makes children's responses to creativity assessments difficult to
-judge reliably? Submitted for publication.
-
-**Organisciak, P.,** Durward, M., & Schmidt, B. M. (under review).
-Approximate Nearest Neighbor for long document relationship labeling in
-digital libraries. Submitted for publication.
-
-Grajzel, K., Dumas, D. G., Berthiaume, K., Acar, S., & **Organisciak,
-P.** (under review). Measuring flexibility: A text-mining approach.
-Revision submitted for publication.
-
-**Organisciak, P.,** Acar, S., Newman, M., Dumas, D., & Eby, D. (under
-review). How do the kids speak? Modeling child-directed language for
-educational use. Submitted for publication.
-
 Pares, N., & **Organisciak, P.** (In press). The effects of research
 data management services: Associating the data curation life cycle with
 open research output. *College & Research Libraries*.
 
-Talley, J., Talapatra, D., Miller, G.E. & **Organisciak, P.** (accepted). 
-Defensive driving: CAR:POOL as a model for proactive postsecondary planning
-and connection. *Contemporary School Psychology*. 
+Talley, J., Talapatra, D., Miller, G., & **Organisciak, P.** (2022).
+Defensive Driving: CAR:POOL as a Model for Proactive Postsecondary Planning
+and Connection. *Contemporary School Psychology.*
+https://doi.org/10.1007/s40688-022-00438-0.
 
 Bishop, B. W., Cowan, M., Collier, H., **Organisciak, P.,** & Mayernik,
 M. (2022). Job analyses of Earth science data managers: A survey
@@ -225,6 +200,34 @@ Award** from the Canadian Society for Digital Humanities.
 
 Rockwell, G., Sinclair, S., Ruecker, S., & **Organisciak, P.** (2010).
 Ubiquitous Text Analysis. *Poetess Archive Journal 2.1.*
+
+## Journal Articles (Pre-prints and Under Review)
+
+De Chantel, PL., **Organisciak, P.** (under review). Automated Feedback
+and Creativity: Evidence for Metacognitive Monitoring in Divergent
+Thinking. Submitted for publication.
+
+**Organisciak, P.**, Acar, S., Dumas, D., Berthiaume, K., (under
+review). Beyond Semantic Distance: Automated Scoring of Divergent
+Thinking Greatly Improves with Large Language Models. Submitted for
+publication. http://dx.doi.org/10.13140/RG.2.2.32393.31840
+
+Dumas, D., Acar, S., Berthiaume, K., **Organisciak, P.**, Eby, D.,
+Grajzel, K., Flemister, C. T., Newman, M., & Carrera, M. (under review).
+What makes children's responses to creativity assessments difficult to
+judge reliably? Submitted for publication.
+
+**Organisciak, P.,** Durward, M., & Schmidt, B. M. (under review).
+Approximate Nearest Neighbor for long document relationship labeling in
+digital libraries. Submitted for publication.
+
+Grajzel, K., Dumas, D. G., Berthiaume, K., Acar, S., & **Organisciak,
+P.** (under review). Measuring flexibility: A text-mining approach.
+Revision submitted for publication.
+
+**Organisciak, P.,** Acar, S., Newman, M., Dumas, D., & Eby, D. (under
+review). How do the kids speak? Modeling child-directed language for
+educational use. Submitted for publication.
 
 ## Proceedings Articles (refereed)
 

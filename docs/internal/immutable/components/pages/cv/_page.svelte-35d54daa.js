@@ -1,4 +1,4 @@
-import{S as J,i as E,s as H,k as h,a as A,v as b,O as x,l as m,h as o,c as k,m as C,w as M,n as g,C as f,b as w,x as T,A as B,f as O,t as I,y as L}from"../../../chunks/index-cff90d79.js";import{S as R}from"../../../chunks/SvelteMarkdown-de3cfaa7.js";function G(t){let i,r,a,n,l,s,S,u,c,p;return s=new R({props:{source:t[1]}}),c=new R({props:{source:t[0]}}),{c(){i=h("meta"),r=A(),a=h("div"),n=h("div"),l=h("div"),b(s.$$.fragment),S=A(),u=h("div"),b(c.$$.fragment),this.h()},l(e){const d=x('[data-svelte="svelte-4d26b4"]',document.head);i=m(d,"META",{name:!0,content:!0}),d.forEach(o),r=k(e),a=m(e,"DIV",{class:!0});var D=C(a);n=m(D,"DIV",{class:!0});var y=C(n);l=m(y,"DIV",{class:!0});var v=C(l);M(s.$$.fragment,v),v.forEach(o),S=k(y),u=m(y,"DIV",{class:!0});var P=C(u);M(c.$$.fragment,P),P.forEach(o),y.forEach(o),D.forEach(o),this.h()},h(){document.title="Curriculum Vitae",g(i,"name","description"),g(i,"content","Peter Organisciak's Curriculum Vitae"),g(l,"class","three columns"),g(u,"class","nine columns"),g(n,"class","row"),g(a,"class","container")},m(e,d){f(document.head,i),w(e,r,d),w(e,a,d),f(a,n),f(n,l),T(s,l,null),f(n,S),f(n,u),T(c,u,null),p=!0},p:B,i(e){p||(O(s.$$.fragment,e),O(c.$$.fragment,e),p=!0)},o(e){I(s.$$.fragment,e),I(c.$$.fragment,e),p=!1},d(e){o(i),e&&o(r),e&&o(a),L(s),L(c)}}}function U(t){const i=t.split(" ")[0].replaceAll("#","  ")+"- ",r=t.replaceAll("#"," ").trim(),a="#"+t.replaceAll("#"," ").trim().toLowerCase().replaceAll(" ","-");return`${i}[${r}](${a})`}function W(t){const i=`
+import{S as E,i as J,s as H,k as h,a as A,v as k,O as x,l as m,h as o,c as b,m as C,w as M,n as u,C as f,b as w,x as T,A as B,f as O,t as I,y as L}from"../../../chunks/index-cff90d79.js";import{S as R}from"../../../chunks/SvelteMarkdown-de3cfaa7.js";function G(t){let i,r,a,n,l,s,S,g,c,p;return s=new R({props:{source:t[1]}}),c=new R({props:{source:t[0]}}),{c(){i=h("meta"),r=A(),a=h("div"),n=h("div"),l=h("div"),k(s.$$.fragment),S=A(),g=h("div"),k(c.$$.fragment),this.h()},l(e){const d=x('[data-svelte="svelte-4d26b4"]',document.head);i=m(d,"META",{name:!0,content:!0}),d.forEach(o),r=b(e),a=m(e,"DIV",{class:!0});var D=C(a);n=m(D,"DIV",{class:!0});var y=C(n);l=m(y,"DIV",{class:!0});var v=C(l);M(s.$$.fragment,v),v.forEach(o),S=b(y),g=m(y,"DIV",{class:!0});var P=C(g);M(c.$$.fragment,P),P.forEach(o),y.forEach(o),D.forEach(o),this.h()},h(){document.title="Curriculum Vitae",u(i,"name","description"),u(i,"content","Peter Organisciak's Curriculum Vitae"),u(l,"class","three columns"),u(g,"class","nine columns"),u(n,"class","row"),u(a,"class","container")},m(e,d){f(document.head,i),w(e,r,d),w(e,a,d),f(a,n),f(n,l),T(s,l,null),f(n,S),f(n,g),T(c,g,null),p=!0},p:B,i(e){p||(O(s.$$.fragment,e),O(c.$$.fragment,e),p=!0)},o(e){I(s.$$.fragment,e),I(c.$$.fragment,e),p=!1},d(e){o(i),e&&o(r),e&&o(a),L(s),L(c)}}}function U(t){const i=t.split(" ")[0].replaceAll("#","  ")+"- ",r=t.replaceAll("#"," ").trim(),a="#"+t.replaceAll("#"," ").trim().toLowerCase().replaceAll(" ","-");return`${i}[${r}](${a})`}function W(t){const i=`
 # Dr. Peter Organisciak
 
 **Assistant Professor, University of Denver, Research Methods and Information Science**
@@ -20,9 +20,9 @@ Research Intern, Microsoft Research. (April 2013 - August 2013).
 ## Education
 
 Ph.D., University of Illinois at Urbana-Champaign, 2015.
-Major: Library and Information Science
-Dissertation Title: Design Problems in Crowdsourcing: Improving the Quality of Crowd-Based Data Collection
-Committee: Michael Twidale, J. Stephen Downie, Miles Efron, Jaime Teevan
+    Major: Library and Information Science
+    Dissertation Title: Design Problems in Crowdsourcing: Improving the Quality of Crowd-Based Data Collection
+    Committee: Michael Twidale, J. Stephen Downie, Miles Efron, Jaime Teevan
 
 
 MA, University of Alberta, 2010.Major: Humanities Computing - Library and Information Studies
@@ -64,21 +64,22 @@ Major: Communication Studies and Multimedia
 ### Awarded
 
 "Measuring Original Thinking in Elementary School: A Computational
-Psychometric Approach" (2020-2023)$964,081Institute of Education Sciences
-[#R305A200519](https://ies.ed.gov/funding/grantsearch/details.asp?ID=4477)Selcuk Acar (University of North Texas, Principal), Dumas, D. G.
-(Co-Principal), **Organisciak, P.** (Co-Principal)DU sub-grant: $451,988
+Psychometric Approach" (2020-2023) $964,081 Institute of Education Sciences
+[#R305A200519](https://ies.ed.gov/funding/grantsearch/details.asp?ID=4477) Selcuk Acar (University of North Texas, Principal), Dumas, D. G.
+(Co-Principal), **Organisciak, P.** (Co-Principal) DU sub-grant: $451,988.
 
-"Collaborative Analysis Liaison Librarians (CALL)" (2019-2022)$883,034Institution of Library and Museum Services
-[#RE-13-19-0027-19](https://www.imls.gov/grants/awarded/re-13-19-0027-19)Wade Bishop (Principal, University of Tennessee Knoxville), Carole
+"Collaborative Analysis Liaison Librarians (CALL)" (2019-2022)$883,034 Institution of Library and Museum Services.
+[#RE-13-19-0027-19](https://www.imls.gov/grants/awarded/re-13-19-0027-19)  
+Wade Bishop (Principal, University of Tennessee Knoxville), Carole
 Tenopir (UTK, Co-Principal), Suzie Allard (UTK, Co-Principal),
-**Organisciak, P.** (Director)DU total: $129,746.00.
+**Organisciak, P.** (Director). DU total: $129,746.00.
 
 "Text Duplication and Similarity in Massive Digital Collections"
-(2018-2021)$276,943 (Total value: $351,031)Institute of Museum and Library Services
-[#LG-86-18-0061-18](https://www.imls.gov/grants/awarded/lg-86-18-0061-18)**Organisciak, P.** (Principal)
+(2018-2021) $276,943 (Total value: $351,031) Institute of Museum and Library Services.
+[#LG-86-18-0061-18](https://www.imls.gov/grants/awarded/lg-86-18-0061-18) **Organisciak, P.** (Principal)
 
 "Exploring the Billions of Words in the HathiTrust Corpus with Bookworm:
-HathiTrust + Bookworm" (2014-2017)$324,841 (Total value: $504,373)National Endowment for the HumanitiesDownie, J. S. (Illinois, Principal), Aiden, E. L. (Rice University).
+HathiTrust + Bookworm" (2014-2017) $324,841 (Total value: $504,373). National Endowment for the Humanities. Downie, J. S. (Illinois, Principal), Aiden, E. L. (Rice University).
 $324,841. NEH implementation grant. Sept 2014-Aug 2017.
 
 **DU Sponsored - Awarded**
@@ -103,9 +104,11 @@ in-copyright texts in the humanities. In K. Golub & Y. Liu (Eds.),
 
 ## Journal Articles (refereed)
 
-Pares, N., & **Organisciak, P.** (In press). The effects of research
-data management services: Associating the data curation life cycle with
-open research output. *College & Research Libraries*.
+Organisciak, P., Acar, S., Newman, M., Dumas, D., & Eby, D. (In Press, 2023). How do the kids speak? Modeling child-directed language for educational use. *Information and Learning Science*. <https://doi.org/10.1108/ILS-06-2022-0082> 
+
+Pares, N., & Organisciak, P. (In press, 2023). The effects of research data management services: Associating the data curation life cycle with open research output. *College & Research Libraries*.
+
+Grajzel, K., Dumas, D. G., Berthiaume, K., Acar, S., & **Organisciak, P.** (Accepted, 2023). Measuring Flexibility of Thinking Using Text-Mining. *Frontiers in Psychology*.
 
 Talley, J., Talapatra, D., Miller, G., & **Organisciak, P.** (2022).
 Defensive Driving: CAR:POOL as a Model for Proactive Postsecondary Planning
@@ -183,35 +186,12 @@ Award** from the Canadian Society for Digital Humanities.
 Rockwell, G., Sinclair, S., Ruecker, S., & **Organisciak, P.** (2010).
 Ubiquitous Text Analysis. *Poetess Archive Journal 2.1.*
 
-## Journal Articles (Pre-prints and Under Review)
-
-De Chantel, PL., **Organisciak, P.** (under review). Automated Feedback
-and Creativity: Evidence for Metacognitive Monitoring in Divergent
-Thinking. Submitted for publication.
+## Journal Articles (Available Pre-prints)
 
 **Organisciak, P.**, Acar, S., Dumas, D., Berthiaume, K., (under
 review). Beyond Semantic Distance: Automated Scoring of Divergent
 Thinking Greatly Improves with Large Language Models. Submitted for
 publication. http://dx.doi.org/10.13140/RG.2.2.32393.31840
-
-Dumas, D., Acar, S., Berthiaume, K., **Organisciak, P.**, Eby, D.,
-Grajzel, K., Flemister, C. T., Newman, M., & Carrera, M. (under review).
-What makes children's responses to creativity assessments difficult to
-judge reliably? Submitted for publication.
-
-**Organisciak, P.,** Durward, M., & Schmidt, B. M. (under review).
-Approximate Nearest Neighbor for long document relationship labeling in
-digital libraries. Submitted for publication.
-
-Grajzel, K., Dumas, D. G., Berthiaume, K., Acar, S., & **Organisciak,
-P.** (under review). Measuring flexibility: A text-mining approach.
-Revision submitted for publication.
-
-**Organisciak, P.,** Acar, S., Newman, M., Dumas, D., & Eby, D. (under
-review). How do the kids speak? Modeling child-directed language for
-educational use. Submitted for publication.
-
-## Proceedings Articles (refereed)
 
 \u{1F15F} Proceedings Long Article \u24DF Proceedings Short Article
 
@@ -1049,46 +1029,31 @@ Panelist, National Endowment for the Humanities, Washington, D.C.
 
 *Since 2017.*
 
-Association for Information Science and Technology. (2010 - 2019).
-
-Digital Humanities. (2009 - 2021).
-
-WebConf. (November 2018).
-
-iConference. (September 2017 - October 2017).
-
-Human-Centered Data Science and Social Computing. (October 2, 2017).
+Association for Information Science and Technology. (2010 - 2019),
+Digital Humanities (2009 - 2021),
+WebConf (2018-23),
+iConference (2017),
+Human-Centered Data Science and Social Computing (2017).
 
 ## Reviewer, Journal Article
 
 *Since 2017*.
 
-Journal of the Association for Information Science & Technology (2022).
-
-Advances in Cognitive Psychology (2022).
-
-Digital Humanities Quarterly. (April 2022).
-
-International Journal for Digital Libraries. (March 2022 -- August
-2022).
-
-Data in Brief. (January 2022 - March 2022).
-
-Journal of Open Humanities Data. (January 2022).
-
-Symmetry. (January 2022).
-
-Electronics (June 2022).
-
-Mathematics. (December 2021).
-
-Applied Sciences. (August 2021 - November 2021).
-
-Entropy. (October 2021).
-
-Telematics and Informatics. (June 2019).
-
-Transactions on Information Systems. (October 2017).
+Behavior Research Methods (2023),
+Social Network Analysis and Mining (2022-23),
+Journal of the Association for Information Science & Technology (2022),
+Advances in Cognitive Psychology (2022), 
+Digital Humanities Quarterly (2022),
+International Journal for Digital Libraries. (2022),
+Data in Brief (2022),
+Journal of Open Humanities Data (2022),
+Symmetry, (2022),
+Electronics, (2022),
+Mathematics, (2021, 2022),
+Applied Sciences (2021, 2022),
+Entropy (2021),
+Telematics and Informatics (2019),
+Transactions on Information Systems.(2017).
 
 # Consulting
 
@@ -1109,4 +1074,4 @@ use in other tools and websites, such as Qualtrics.
 `).filter(n=>n[0]==="#").map(U).join(`
 `).trim().replaceAll(`
   `,`
-`);return[i,a]}class K extends J{constructor(i){super(),E(this,i,W,G,H,{})}}export{K as default};
+`);return[i,a]}class K extends E{constructor(i){super(),J(this,i,W,G,H,{})}}export{K as default};

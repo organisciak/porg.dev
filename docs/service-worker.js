@@ -1,29 +1,29 @@
 const u = [
-  "/internal/immutable/start-fd751b4b.js",
-  "/internal/immutable/components/pages/_layout.svelte-e2e9abd2.js",
+  "/internal/immutable/start-6b7dca1b.js",
+  "/internal/immutable/components/pages/_layout.svelte-f17c4853.js",
   "/internal/immutable/assets/_layout-e1710667.css",
-  "/internal/immutable/components/error.svelte-ed245388.js",
+  "/internal/immutable/components/error.svelte-fd10b2c0.js",
   "/internal/immutable/components/pages/_page.svelte-4e631849.js",
   "/internal/immutable/assets/_page-848e7bf4.css",
   "/internal/immutable/components/pages/about/_page.svelte-eeafa934.js",
   "/internal/immutable/assets/_page-9682aba9.css",
-  "/internal/immutable/components/pages/cv/_page.svelte-3fa240b0.js",
+  "/internal/immutable/components/pages/cv/_page.svelte-35d54daa.js",
   "/internal/immutable/modules/pages/_page.js-b22103a5.js",
   "/internal/immutable/modules/pages/about/_page.js-591cac76.js",
   "/internal/immutable/modules/pages/cv/_page.js-a5bfeea2.js",
-  "/internal/immutable/chunks/singletons-f13e84dc.js",
+  "/internal/immutable/chunks/singletons-fa6cbe78.js",
   "/internal/immutable/chunks/index-cff90d79.js",
   "/internal/immutable/chunks/index-2c834eee.js",
-  "/internal/immutable/chunks/stores-71bb736c.js",
+  "/internal/immutable/chunks/stores-940a7bac.js",
   "/internal/immutable/chunks/SvelteMarkdown-de3cfaa7.js",
   "/internal/immutable/chunks/_page-6af8351b.js",
   "/internal/immutable/chunks/_page-69b5f5c7.js",
   "/internal/immutable/chunks/_page-dc3ca71a.js",
-  "/internal/immutable/chunks/0-799b910c.js",
-  "/internal/immutable/chunks/1-84ec91f8.js",
+  "/internal/immutable/chunks/0-93d8832f.js",
+  "/internal/immutable/chunks/1-8332d9af.js",
   "/internal/immutable/chunks/2-7f91a606.js",
   "/internal/immutable/chunks/3-60c5321e.js",
-  "/internal/immutable/chunks/4-513ba375.js"
+  "/internal/immutable/chunks/4-9716e5ee.js"
 ], h = [
   "/android-chrome-192x192.png",
   "/android-chrome-512x512.png",
@@ -37,7 +37,7 @@ const u = [
   "/mstile-150x150.png",
   "/robots.txt",
   "/safari-pinned-tab.svg"
-], i = "1669398670944", a = self, o = `cache${i}`, l = `offline${i}`, p = ["/"], b = [
+], i = "1672956138579", a = self, o = `cache${i}`, l = `offline${i}`, p = ["/"], b = [
   "https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css",
   "https://fonts.cdnfonts.com/css/hk-groteks"
 ], d = (e) => e.map((s) => self.location.origin + s), f = d([

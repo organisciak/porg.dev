@@ -121,11 +121,11 @@ in-copyright texts in the humanities. In K. Golub & Y. Liu (Eds.),
 
 ## Journal Articles (refereed)
 
-Organisciak, P., Acar, S., Newman, M., Dumas, D., & Eby, D. (In Press, 2023). How do the kids speak? Modeling child-directed language for educational use. *Information and Learning Science*. <https://doi.org/10.1108/ILS-06-2022-0082> 
+Organisciak, P., Acar, S., Newman, M., Dumas, D., & Eby, D. (2023). How do the kids speak? Modeling child-directed language for educational use. *Information and Learning Science*. <https://doi.org/10.1108/ILS-06-2022-0082>. (Available at SSRN: <https://ssrn.com/abstract=4329061>).
 
 Pares, N., & Organisciak, P. (In press, 2023). The effects of research data management services: Associating the data curation life cycle with open research output. *College & Research Libraries*.
 
-Grajzel, K., Dumas, D. G., Berthiaume, K., Acar, S., & **Organisciak, P.** (Accepted, 2023). Measuring Flexibility of Thinking Using Text-Mining. *Frontiers in Psychology*.
+Grajzel, K., Dumas, D. G., Berthiaume, K., Acar, S., & **Organisciak, P.** (2023). Measuring Flexibility of Thinking Using Text-Mining. *Frontiers in Psychology*. <https://www.frontiersin.org/articles/10.3389/fpsyg.2022.1093343>.
 
 Talley, J., Talapatra, D., Miller, G., & **Organisciak, P.** (2022).
 Defensive Driving: CAR:POOL as a Model for Proactive Postsecondary Planning

@@ -1,4 +1,4 @@
-import{S as E,i as J,s as H,k as h,a as A,v as k,O as x,l as m,h as o,c as b,m as C,w,n as u,C as f,b as M,x as T,A as B,f as O,t as I,y as L}from"../../../chunks/index-cff90d79.js";import{S as R}from"../../../chunks/SvelteMarkdown-de3cfaa7.js";function G(t){let i,r,a,n,l,s,S,g,c,p;return s=new R({props:{source:t[1]}}),c=new R({props:{source:t[0]}}),{c(){i=h("meta"),r=A(),a=h("div"),n=h("div"),l=h("div"),k(s.$$.fragment),S=A(),g=h("div"),k(c.$$.fragment),this.h()},l(e){const d=x('[data-svelte="svelte-4d26b4"]',document.head);i=m(d,"META",{name:!0,content:!0}),d.forEach(o),r=b(e),a=m(e,"DIV",{class:!0});var D=C(a);n=m(D,"DIV",{class:!0});var y=C(n);l=m(y,"DIV",{class:!0});var v=C(l);w(s.$$.fragment,v),v.forEach(o),S=b(y),g=m(y,"DIV",{class:!0});var P=C(g);w(c.$$.fragment,P),P.forEach(o),y.forEach(o),D.forEach(o),this.h()},h(){document.title="Curriculum Vitae",u(i,"name","description"),u(i,"content","Peter Organisciak's Curriculum Vitae"),u(l,"class","three columns"),u(g,"class","nine columns"),u(n,"class","row"),u(a,"class","container")},m(e,d){f(document.head,i),M(e,r,d),M(e,a,d),f(a,n),f(n,l),T(s,l,null),f(n,S),f(n,g),T(c,g,null),p=!0},p:B,i(e){p||(O(s.$$.fragment,e),O(c.$$.fragment,e),p=!0)},o(e){I(s.$$.fragment,e),I(c.$$.fragment,e),p=!1},d(e){o(i),e&&o(r),e&&o(a),L(s),L(c)}}}function U(t){const i=t.split(" ")[0].replaceAll("#","  ")+"- ",r=t.replaceAll("#"," ").trim(),a="#"+t.replaceAll("#"," ").trim().toLowerCase().replaceAll(" ","-");return`${i}[${r}](${a})`}function W(t){const i=`
+import{S as E,i as J,s as H,k as h,a as A,v as b,O as B,l as m,h as o,c as k,m as C,w as M,n as u,C as f,b as w,x as T,A as x,f as O,t as I,y as L}from"../../../chunks/index-cff90d79.js";import{S as R}from"../../../chunks/SvelteMarkdown-de3cfaa7.js";function G(t){let i,r,a,n,l,s,S,g,c,p;return s=new R({props:{source:t[1]}}),c=new R({props:{source:t[0]}}),{c(){i=h("meta"),r=A(),a=h("div"),n=h("div"),l=h("div"),b(s.$$.fragment),S=A(),g=h("div"),b(c.$$.fragment),this.h()},l(e){const d=B('[data-svelte="svelte-4d26b4"]',document.head);i=m(d,"META",{name:!0,content:!0}),d.forEach(o),r=k(e),a=m(e,"DIV",{class:!0});var D=C(a);n=m(D,"DIV",{class:!0});var y=C(n);l=m(y,"DIV",{class:!0});var v=C(l);M(s.$$.fragment,v),v.forEach(o),S=k(y),g=m(y,"DIV",{class:!0});var P=C(g);M(c.$$.fragment,P),P.forEach(o),y.forEach(o),D.forEach(o),this.h()},h(){document.title="Curriculum Vitae",u(i,"name","description"),u(i,"content","Peter Organisciak's Curriculum Vitae"),u(l,"class","three columns"),u(g,"class","nine columns"),u(n,"class","row"),u(a,"class","container")},m(e,d){f(document.head,i),w(e,r,d),w(e,a,d),f(a,n),f(n,l),T(s,l,null),f(n,S),f(n,g),T(c,g,null),p=!0},p:x,i(e){p||(O(s.$$.fragment,e),O(c.$$.fragment,e),p=!0)},o(e){I(s.$$.fragment,e),I(c.$$.fragment,e),p=!1},d(e){o(i),e&&o(r),e&&o(a),L(s),L(c)}}}function U(t){const i=t.split(" ")[0].replaceAll("#","  ")+"- ",r=t.replaceAll("#"," ").trim(),a="#"+t.replaceAll("#"," ").trim().toLowerCase().replaceAll(" ","-");return`${i}[${r}](${a})`}function W(t){const i=`
 # Dr. Peter Organisciak
 
 **Assistant Professor, University of Denver, Research Methods and Information Science**
@@ -104,16 +104,32 @@ in-copyright texts in the humanities. In K. Golub & Y. Liu (Eds.),
 
 ## Journal Articles (refereed)
 
-Organisciak, P., Acar, S., Newman, M., Dumas, D., & Eby, D. (2023). How do the kids speak? Modeling child-directed language for educational use. *Information and Learning Science*. <https://doi.org/10.1108/ILS-06-2022-0082>. (Available at SSRN: <https://ssrn.com/abstract=4329061>).
+Organisciak, P., Acar, S., Newman, M., Dumas, D., & Eby, D. (2023).
+How do the kids speak? Modeling child-directed language for educational use.
+*Information and Learning Science*. <https://doi.org/10.1108/ILS-06-2022-0082>.
+(Available at SSRN: <https://ssrn.com/abstract=4329061>).
 
-Pares, N., & Organisciak, P. (In press, 2023). The effects of research data management services: Associating the data curation life cycle with open research output. *College & Research Libraries*.
+Dumas, D., Acar, S., Berthiaume, K., Organisciak, P., Eby, D., Grajzel, K., Flemister, T., Newman, M., & Carrera, M.
+(In press, 2023).
+What makes children\u2019s responses to creativity assessments difficult to judge reliably?
+*Journal of Creative Behavior*.
 
-Grajzel, K., Dumas, D. G., Berthiaume, K., Acar, S., & **Organisciak, P.** (2023). Measuring Flexibility of Thinking Using Text-Mining. *Frontiers in Psychology*. <https://www.frontiersin.org/articles/10.3389/fpsyg.2022.1093343>.
+Pares, N., & Organisciak, P. (In press, 2023).
+The effects of research data management services: Associating the data 
+curation life cycle with open research output. *College & Research Libraries*.
+
+Organisciak, P., Durward, M., & Schmidt, B. M. (In press, 2023).
+Approximate Nearest Neighbor for long document relationship labeling in digital libraries.
+*International Journal of Digital Libraries*.
+
+Grajzel, K., Dumas, D. G., Berthiaume, K., Acar, S., & **Organisciak, P.** (2023).
+Measuring Flexibility of Thinking Using Text-Mining. *Frontiers in Psychology*.
+<https://www.frontiersin.org/articles/10.3389/fpsyg.2022.1093343>.
 
 Talley, J., Talapatra, D., Miller, G., & **Organisciak, P.** (2022).
 Defensive Driving: CAR:POOL as a Model for Proactive Postsecondary Planning
 and Connection. *Contemporary School Psychology.*
-https://doi.org/10.1007/s40688-022-00438-0.
+<https://doi.org/10.1007/s40688-022-00438-0>.
 
 Bishop, B. W., Cowan, M., Collier, H., **Organisciak, P.,** & Mayernik,
 M. (2022). Job analyses of Earth science data managers: A survey
@@ -192,6 +208,8 @@ Ubiquitous Text Analysis. *Poetess Archive Journal 2.1.*
 review). Beyond Semantic Distance: Automated Scoring of Divergent
 Thinking Greatly Improves with Large Language Models. Submitted for
 publication. http://dx.doi.org/10.13140/RG.2.2.32393.31840
+
+## Proceedings Articles
 
 \u{1F15F} Proceedings Long Article \u24DF Proceedings Short Article
 
@@ -508,6 +526,19 @@ Vaish, R., Krause, M., Organisciak, P., Agapie, E. (2017). CrowdCamp
 2017. *AAAI Conference on Human Computation and Crowdsourcing*.
 
 ## Panels
+
+Acar, S., Lee, L. E., Rinn-McCann, A., Mun, R., Rambo-Hernandez, K., Berthiaume, K., Dumas, D.,
+**Organisciak, P.**, Flemister, T., Grajzel, K., Newman, M., Eby, D., Deshayes, C., Puryear, J. (2023).
+"Classic and Novel Approaches in Creativity Assessment and Programming: Implications for Gifted Education,"
+Annual Meeting, AERA, Chicago, IL.
+
+Boughida, K., Zhang, B., **Organisciak, P.**, D\u2019Agostino, S., (2023)
+"ChatGPT: The Future of Higher Ed and Libraries, Brought to You by AI,"
+CNI Spring 2023 Membership Meeting,  Coalition for Networked Information, Denver, CO, USA.
+
+Booth, K., Sanchez, J., Bishop, B. W., **Organisciak, P.** (2023).
+"Resilience in iSchools cohort education during a turbulent time: Improved normalcy through systemic inclusivity and other lessons learned to optimize virtual and physical spaces,"
+iConference 2023, iSchools Consortium, Barcelona, Spain.
 
 Bishop, B. W., **Organisciak, P.**, Mayernik M., Cowan, M. (2021).
 "Assessing the Research Data Management Landscape Through Practice and

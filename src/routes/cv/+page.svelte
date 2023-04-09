@@ -121,16 +121,32 @@ in-copyright texts in the humanities. In K. Golub & Y. Liu (Eds.),
 
 ## Journal Articles (refereed)
 
-Organisciak, P., Acar, S., Newman, M., Dumas, D., & Eby, D. (2023). How do the kids speak? Modeling child-directed language for educational use. *Information and Learning Science*. <https://doi.org/10.1108/ILS-06-2022-0082>. (Available at SSRN: <https://ssrn.com/abstract=4329061>).
+Organisciak, P., Acar, S., Newman, M., Dumas, D., & Eby, D. (2023).
+How do the kids speak? Modeling child-directed language for educational use.
+*Information and Learning Science*. <https://doi.org/10.1108/ILS-06-2022-0082>.
+(Available at SSRN: <https://ssrn.com/abstract=4329061>).
 
-Pares, N., & Organisciak, P. (In press, 2023). The effects of research data management services: Associating the data curation life cycle with open research output. *College & Research Libraries*.
+Dumas, D., Acar, S., Berthiaume, K., Organisciak, P., Eby, D., Grajzel, K., Flemister, T., Newman, M., & Carrera, M.
+(In press, 2023).
+What makes children’s responses to creativity assessments difficult to judge reliably?
+*Journal of Creative Behavior*.
 
-Grajzel, K., Dumas, D. G., Berthiaume, K., Acar, S., & **Organisciak, P.** (2023). Measuring Flexibility of Thinking Using Text-Mining. *Frontiers in Psychology*. <https://www.frontiersin.org/articles/10.3389/fpsyg.2022.1093343>.
+Pares, N., & Organisciak, P. (In press, 2023).
+The effects of research data management services: Associating the data 
+curation life cycle with open research output. *College & Research Libraries*.
+
+Organisciak, P., Durward, M., & Schmidt, B. M. (In press, 2023).
+Approximate Nearest Neighbor for long document relationship labeling in digital libraries.
+*International Journal of Digital Libraries*.
+
+Grajzel, K., Dumas, D. G., Berthiaume, K., Acar, S., & **Organisciak, P.** (2023).
+Measuring Flexibility of Thinking Using Text-Mining. *Frontiers in Psychology*.
+<https://www.frontiersin.org/articles/10.3389/fpsyg.2022.1093343>.
 
 Talley, J., Talapatra, D., Miller, G., & **Organisciak, P.** (2022).
 Defensive Driving: CAR:POOL as a Model for Proactive Postsecondary Planning
 and Connection. *Contemporary School Psychology.*
-https://doi.org/10.1007/s40688-022-00438-0.
+<https://doi.org/10.1007/s40688-022-00438-0>.
 
 Bishop, B. W., Cowan, M., Collier, H., **Organisciak, P.,** & Mayernik,
 M. (2022). Job analyses of Earth science data managers: A survey
@@ -209,6 +225,8 @@ Ubiquitous Text Analysis. *Poetess Archive Journal 2.1.*
 review). Beyond Semantic Distance: Automated Scoring of Divergent
 Thinking Greatly Improves with Large Language Models. Submitted for
 publication. http://dx.doi.org/10.13140/RG.2.2.32393.31840
+
+## Proceedings Articles
 
 🅟 Proceedings Long Article ⓟ Proceedings Short Article
 
@@ -525,6 +543,19 @@ Vaish, R., Krause, M., Organisciak, P., Agapie, E. (2017). CrowdCamp
 2017. *AAAI Conference on Human Computation and Crowdsourcing*.
 
 ## Panels
+
+Acar, S., Lee, L. E., Rinn-McCann, A., Mun, R., Rambo-Hernandez, K., Berthiaume, K., Dumas, D.,
+**Organisciak, P.**, Flemister, T., Grajzel, K., Newman, M., Eby, D., Deshayes, C., Puryear, J. (2023).
+"Classic and Novel Approaches in Creativity Assessment and Programming: Implications for Gifted Education,"
+Annual Meeting, AERA, Chicago, IL.
+
+Boughida, K., Zhang, B., **Organisciak, P.**, D’Agostino, S., (2023)
+"ChatGPT: The Future of Higher Ed and Libraries, Brought to You by AI,"
+CNI Spring 2023 Membership Meeting,  Coalition for Networked Information, Denver, CO, USA.
+
+Booth, K., Sanchez, J., Bishop, B. W., **Organisciak, P.** (2023).
+"Resilience in iSchools cohort education during a turbulent time: Improved normalcy through systemic inclusivity and other lessons learned to optimize virtual and physical spaces,"
+iConference 2023, iSchools Consortium, Barcelona, Spain.
 
 Bishop, B. W., **Organisciak, P.**, Mayernik M., Cowan, M. (2021).
 \"Assessing the Research Data Management Landscape Through Practice and

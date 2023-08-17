@@ -6,10 +6,9 @@
 <header>
 
 	<nav>
-		<div class='name'>Peter Organisciak</div>
 		<ul>
-			<li class:active={$page.url.pathname === '{base}/'}>
-				<a sveltekit:prefetch href="{base}/">Home</a>
+			<li class:active={$page.url.pathname === '{base}/'} class='name'>
+				<a sveltekit:prefetch href="{base}/">Peter Organisciak</a>
 			</li>
 
 			<li class:active={$page.url.pathname === '{base}/cv'}>
@@ -38,13 +37,7 @@
 
 <style>
 	.name {
-		rotate: 270deg;
-    display: none; /* hidden for now */
-    background: yellow;
-    border-radius: 1rem;
-    margin-top: 100px;
-    padding: 10px;
-    float: left;
+		background: var(--secondary-color);
 	}
 	header {
 		display: flex;
@@ -54,7 +47,7 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		--background: var(--heading-color);
 	}
 
 	ul {
@@ -72,13 +65,12 @@
 	li {
 		position: relative;
 		height: 100%;
-		
 		margin: 10px;
 		background: var(--background);
 	}
 
 	li:nth-child(1) { 
-		transform: rotateY(0deg) rotate(5deg);
+		transform: rotateY(0deg) rotate(3deg);
 	}
 
 	li:nth-child(2) { 
@@ -113,9 +105,9 @@
 		height: 100%;
 		align-items: center;
 		padding: 0 1em;
-		color: var(--heading-color);
+		color: var(--pure-white);
 		font-weight: 700;
-		font-size: 0.8rem;
+		//font-size: 0.9rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		text-decoration: none;

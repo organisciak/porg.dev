@@ -4,7 +4,7 @@
 	const source = `
 # Dr. Peter Organisciak
 
-**Assistant Professor, University of Denver, Research Methods and Information Science**
+**Associate Professor, University of Denver, Research Methods and Information Science**
 
 Massive Texts Lab:
 [http://portfolio.du.edu/massivetexts](http://portfolio.du.edu/massivetexts)
@@ -121,23 +121,31 @@ in-copyright texts in the humanities. In K. Golub & Y. Liu (Eds.),
 
 ## Journal Articles (refereed)
 
+De Chantel, PL., Organisciak, P. (2023).
+Automated feedback and creativity: On the role of metacognitive monitoring in divergent thinking.
+*Psychology of Aesthetics, Creativity, and the Arts*. <https://doi.org/10.1037/aca0000592>
+
+Organisciak, P., Acar, S., Dumas, D., & Berthiaume, K. (2023).
+Beyond semantic distance: Automated scoring of divergent thinking greatly improves with large language models.
+*Thinking Skills and Creativity*, 49. <https://doi.org/10.1016/j.tsc.2023.101356> (Available preprint: <http://dx.doi.org/10.13140/RG.2.2.32393.31840>) 
+
 Organisciak, P., Acar, S., Newman, M., Dumas, D., & Eby, D. (2023).
 How do the kids speak? Modeling child-directed language for educational use.
 *Information and Learning Science*. <https://doi.org/10.1108/ILS-06-2022-0082>.
 (Available at SSRN: <https://ssrn.com/abstract=4329061>).
 
 Dumas, D., Acar, S., Berthiaume, K., Organisciak, P., Eby, D., Grajzel, K., Flemister, T., Newman, M., & Carrera, M.
-(In press, 2023).
+(2023).
 What makes children’s responses to creativity assessments difficult to judge reliably?
-*Journal of Creative Behavior*.
+*Journal of Creative Behavior*. <https://doi.org/10.1002/jocb.588>
 
 Pares, N., & Organisciak, P. (In press, 2023).
 The effects of research data management services: Associating the data 
 curation life cycle with open research output. *College & Research Libraries*.
 
-Organisciak, P., Durward, M., & Schmidt, B. M. (In press, 2023).
+Organisciak, P., Durward, M., & Schmidt, B. M. (2023).
 Approximate Nearest Neighbor for long document relationship labeling in digital libraries.
-*International Journal of Digital Libraries*.
+*International Journal of Digital Libraries*. <https://doi.org/10.1007/s00799-023-00354-5>.
 
 Grajzel, K., Dumas, D. G., Berthiaume, K., Acar, S., & **Organisciak, P.** (2023).
 Measuring Flexibility of Thinking Using Text-Mining. *Frontiers in Psychology*.
@@ -218,13 +226,6 @@ Award** from the Canadian Society for Digital Humanities.
 
 Rockwell, G., Sinclair, S., Ruecker, S., & **Organisciak, P.** (2010).
 Ubiquitous Text Analysis. *Poetess Archive Journal 2.1.*
-
-## Journal Articles (Available Pre-prints)
-
-**Organisciak, P.**, Acar, S., Dumas, D., Berthiaume, K., (under
-review). Beyond Semantic Distance: Automated Scoring of Divergent
-Thinking Greatly Improves with Large Language Models. Submitted for
-publication. http://dx.doi.org/10.13140/RG.2.2.32393.31840
 
 ## Proceedings Articles
 

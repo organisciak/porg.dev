@@ -1,19 +1,22 @@
 @import url('https://fonts.cdnfonts.com/css/hk-groteks');
 
 :root {
-	--font-family: 'HK Grotesk', Arial, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--pure-white: #ffffff;
-	--primary-color: #FFFF00;
-	--color-bg: #69F7BE;
-	--secondary-color: #00FFFF;
-	--tertiary-color: #edf0f8;
-	--accent-color: #ff3e00;
-	--heading-color: rgba(0, 0, 0, 0.7);
-	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
 	--double-width: 84rem;
 	--column-margin-top: 4rem;
+
+	--font-family: 'HK Grotesk', Arial, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--primary-color: #FFFF00;
+	--color-bg: var(--pure-white);
+	--color-bg-two: #dbeedb;
+	--secondary-color: #00d1b2;
+	--tertiary-color: #edf0f8;
+	--accent-color: #FF8F00;
+	--heading-color: rgba(0, 0, 0, 0.7);
+	--text-color: #444444;
+	  
 }
 
 

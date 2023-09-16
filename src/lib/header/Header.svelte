@@ -37,7 +37,9 @@
 
 <style>
 	.name {
-		background: var(--secondary-color);
+		background: transparent;
+		/*make font weight thicker than parent*/
+		font-weight: 1200;
 	}
 	header {
 		display: flex;
@@ -66,28 +68,18 @@
 		position: relative;
 		height: 100%;
 		margin: 10px;
-		background: var(--background);
+		background: transparent;
+		
+		/* Define the border width */
+		border-bottom: 2px solid; /* Adjust the border thickness as needed */
+		/* Use the gradient as the border image */
+		border-image: linear-gradient(to right, #4c2b69, #d073ff);
+		border-image-slice: 1; /* This ensures the gradient spans the entire border width */
+	}
+	li.active {
+		border-bottom: 4px solid;
 	}
 
-	li:nth-child(1) { 
-		transform: rotateY(0deg) rotate(3deg);
-	}
-
-	li:nth-child(2) { 
-		transform: rotateY(0deg) rotate(-2deg);
-	}
-
-	li:nth-child(3) { 
-		transform: rotateY(0deg) rotate(-5deg);
-	}
-
-	li:nth-child(4) { 
-		transform: rotateY(0deg) rotate(2deg);
-	}
-
-	li:nth-child(5) { 
-		transform: rotateY(0deg) rotate(-2deg);
-	}
 	li.active::before {
 		--size: 6px;
 		content: '';
@@ -105,7 +97,7 @@
 		height: 100%;
 		align-items: center;
 		padding: 0 1em;
-		color: var(--pure-white);
+		color: black;
 		font-weight: 700;
 		//font-size: 0.9rem;
 		text-transform: uppercase;

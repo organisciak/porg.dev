@@ -2,34 +2,26 @@
 	import { tweened } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
 
-	export let shuffle = true;
+	export const shuffle: boolean = true;
 
-	let msgs = [
-		{"main": "Scoring creativity with Large-Language models greatly improves on state of the art models.",
-		"details":"Studying creativity is challenged by the difficulty of measuring and scoring tests of originality. We improved on automated scoring of one common test, the Alternate Uses Task, to a large degree.<br /><a target='_blank' href='http://dx.doi.org/10.13140/RG.2.2.32393.31840'>Read the preprint</a> or try the system at <a target='blank_' href='https://openscoring.du.edu/scoringllm'>Open Creativity Scoring</a>",
-		},
-		{"main": "Artificial data can address class imbalance in digital library classifiers.",
-		"details":"We seek to identify whole-part relationships between books, such as when one story is published in another anthology. This type of relationship is hard to infer from cataloguing metadata, but we find that constructing artificial books can teach a deep neural network classifier what the relationship looks like.<br /><a target='_blank' href='https://doi.org/10.1177/01655515221093031'>Read the paper in Journal of Informaion Sciences</a>.",
-		},
-		{
-			"main": "Research access over sensitive or restricted texts can be encouraged through non-expressive distribution strategies.",
-			"details": "Text analysis in the digital humanities is challenged by legal hurdles, which make it difficult to access and especially to redistribute datasets of modern texts. We explore principles of non-expressive and non-consumptive access as one solution to enabling research access to sensitive texts. <a target='blank_' href='https://www.taylorfrancis.com/chapters/oa-edit/10.4324/9781003131816-8/research-access-copyright-texts-humanities-peter-organisciak-stephen-downie'>Read the chapter</a>"
-		}
-		
-		,
-				]
+	interface Msg {
+	 	main: string;
+	 	details: string;
+	};
+
+	export let msgs:Msg[] = [];
 	
-	let msg_shuffle = msgs;
-	if (shuffle === true) {
+	let msg_shuffle: Msg[] = msgs;
+	if (shuffle === true && msgs.length > 0) {
 		 msg_shuffle = msgs.map(value => ({ value, sort: Math.random() }))
 						  .sort((a, b) => a.sort - b.sort)
 						  .map(({ value }) => value)
 	}
-	let flipcnt = 0;
-	let flipped = true;
+	let flipcnt:number = 0;
+	let flipped:boolean = true;
 
-	let msgA = msg_shuffle[0];
-	let msgB = '';
+	let msgA:Msg = msg_shuffle.length > 0 ? msg_shuffle[0] : {main: "", details: ""};
+	let msgB:Msg = msg_shuffle.length > 1 ? msg_shuffle[1] : msgA;
 
 	let rotateAngle = 2;
 	const flip = tweened(flipcnt * 180, {
@@ -70,9 +62,14 @@
 	</div>
   </div>
 
-  <button on:click="{() => newcard() }">More</button>
+  <button class="button-primary" on:click="{() => newcard() }">More</button>
 
 <style>
+/* Center align button */
+button.button-primary {
+  margin: 0 auto;
+  display: block;
+}
 
 .flip-card {
   background-color: transparent;
@@ -118,7 +115,6 @@
 
 .flip-card-back {
   background-color: var(--tertiary-color);
-  //color: white;
   transform: rotateY(180deg);
 }
 

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
 	import Card from '$lib/Card.svelte';
-    import FlowerNav from '$lib/FlowerNav.svelte';
 
 	const source = `
 See my [CV](/cv), or find [me](https://github.com/organisciak) and the [Massive Texts Lab](https://github.com/massivetexts) on Github.

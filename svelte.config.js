@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import vercel from '@sveltejs/adapter-vercel';
 import preprocess from 'svelte-preprocess';
 
 const dev = process.env.NODE_ENV === 'development';
@@ -8,15 +8,13 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter({
-		  pages: 'docs',
-		  assets: 'docs',
-		  fallback: null,
-		  precompress: false,
+		
+		adapter: vercel({
+
 		}),
 		paths: {
 			base: '',
-			assets: dev ? '/Users/peter.organisciak/Documents/projects/organisciak.github.io/static' : '',
+			assets: '', // dev ? '/Users/peter.organisciak/Documents/projects/organisciak.github.io/static' : '',
 		},
 		appDir: 'internal',
 	  }

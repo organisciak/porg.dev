@@ -1,6 +1,9 @@
 import { build, files, version } from "$service-worker";
 
-const worker = self as unknown as ServiceWorkerGlobalScope;
+export default null;
+declare var self: ServiceWorkerGlobalScope;
+const worker = self as ServiceWorkerGlobalScope;
+
 const STATIC_CACHE_NAME = `cache${version}`;
 const APP_CACHE_NAME = `offline${version}`;
 

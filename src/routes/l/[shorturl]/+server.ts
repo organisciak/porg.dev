@@ -7,8 +7,7 @@ type RequestParams = {
 
 export async function GET({ params }: { params: RequestParams }) {
     const shorturl = params.shorturl;
-
-    const mapping = urlMappings.find((entry: UrlMapping) => entry.shorturl === `/${shorturl}`);
+    const mapping = urlMappings.find((entry: UrlMapping) => entry.shorturl === `${shorturl}`);
 
     if (mapping) {
         return new Response(null,{

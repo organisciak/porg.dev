@@ -5,16 +5,18 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const cookies = cookie.parse(event.request.headers.get('cookie') || '');
 	event.locals.userid = cookies['userid'] || crypto.randomUUID();
 
+	console.log(event);
 	let modifiedEvent = event;
 
-	if (event.url.host === 'links.porg.dev') {
+	if (event.url.host.startsWith('links.')) {
+		console.log('links redirect');
         // Rewrite the URL to have the `/l/` prefix
 		modifiedEvent.url.pathname = `/l${event.url.pathname}`;
-		modifiedEvent.url.host = 'porg.dev';
-		modifiedEvent.url.href = `https://porg.dev${modifiedEvent.url.pathname}`;
+		modifiedEvent.url.host = event.url.host.replace('links.', '');
+		modifiedEvent.url.href = `https://${modifiedEvent.url.host}${modifiedEvent.url.pathname}`;
 		modifiedEvent.routeId = 'l/[shorturl]';
     }
-
+	console.log(modifiedEvent);
 	const response = await resolve(modifiedEvent);
 
 	if (!cookies['userid']) {

@@ -11,12 +11,11 @@
 		"test": "playwright test",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
-		"postbuild": "npx svelte-sitemap --out-dir docs --domain https://www.porg.dev && touch docs/.nojekyll && echo www.porg.dev >> docs/CNAME"
+		"postbuild": "npx svelte-sitemap --out-dir .vercel/output/static --domain https://porg.dev"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.25.0",
 		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-static": "^1.0.0-next.43",
 		"@sveltejs/kit": "next",
 		"@types/cookie": "^0.5.2",
 		"@types/node": "^20.6.1",

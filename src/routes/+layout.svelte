@@ -12,5 +12,4 @@
 
 <footer>
 	<!-- TODO Footer-->
-	<p></p>
 </footer>

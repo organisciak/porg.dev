@@ -120,7 +120,7 @@ section:nth-of-type(even) {
     background: var(--color-bg-two);
 	background-image: 
         radial-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)),
-        url('styleimages/galaxy.jpg');
+        url('/styleimages/galaxy.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;

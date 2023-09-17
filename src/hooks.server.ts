@@ -1,4 +1,4 @@
-import type { Handle, redirect } from '@sveltejs/kit';
+import type { Handle } from '@sveltejs/kit';
 import * as cookie from 'cookie';
 
 export const handle: Handle = async ({ event, resolve }) => {
@@ -7,7 +7,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	let modifiedEvent = event;
 
-	if (event.url.host.startsWith('links.')) {
+	if (event.url.host.startsWith('links.') && !event.url.pathname.startsWith('/l')) {
 		return new Response('Redirect',
 		{status: 307, headers: { Location: `/l${event.url.pathname}` }}
 		);

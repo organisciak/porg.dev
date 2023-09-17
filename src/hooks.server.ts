@@ -7,9 +7,9 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	let modifiedEvent = event;
 
-	if (event.url.host.startsWith('links.') && !event.url.pathname.startsWith('/l')) {
+	if (event.url.host.startsWith('links.') && !event.url.pathname.startsWith('/l/')) {
 		return new Response('Redirect',
-		{status: 307, headers: { Location: `/l${event.url.pathname}` }}
+		{status: 308, headers: { Location: `/l${event.url.pathname}` }}
 		);
 	}
 

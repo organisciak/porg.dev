@@ -1146,12 +1146,13 @@ use in other tools and websites, such as Qualtrics.
 	<meta name="description" content="Peter Organisciak's Curriculum Vitae" />
 </svelte:head>
 
-<div class="container">
-
-  
+<section id="cv">
+<div class="container" style="margin-top:20px">
 	<div class="row">
-	  <div class="three columns"><SvelteMarkdown source={test} /></div>
-	  <div class="nine columns"><SvelteMarkdown source={source} /></div>
+	  <div class="two columns"><SvelteMarkdown source={test} /></div>
+	  <div class="ten columns"><SvelteMarkdown source={source} /></div>
 	</div>
   
   </div>
+
+</section>

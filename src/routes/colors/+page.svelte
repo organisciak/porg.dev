@@ -16,29 +16,35 @@
     }
     const keysArray: string[] = Object.keys(colors);
     const shuffledkeysArray: string[] = shuffleArray(keysArray);
-    let displayedColors: string[] = shuffledkeysArray; //.slice(0, 50); 
+    let displayedColors: string[] = shuffledkeysArray.slice(0, 100); 
 
-    // TODO doesn't work yet - probably needs to be reactive
     function handleScroll(event: Event): void {
         const target = event.target as HTMLElement;
-
         if (target.scrollHeight - target.scrollTop === target.clientHeight) {
             // When scrolled to the bottom, load more colors
-            const nextColors: string[] = shuffledkeysArray.slice(displayedColors.length, displayedColors.length + 10);
+            const nextColors: string[] = shuffledkeysArray.slice(displayedColors.length, displayedColors.length + 30);
             displayedColors = [...displayedColors, ...nextColors];
         }
     }
 </script>
 
-<div class='colorcontainer' on:scroll={handleScroll}>
-    {#each displayedColors as colorname (colorname)}
-        <ColorBox colorname={colorname} csshex={typedColors[colorname]} />
+<div class='colorcontainer'>
+<div class='colors' on:scroll={handleScroll}>
+    {#each displayedColors as colorname, index (colorname)}
+        <ColorBox colorname={colorname}
+        csshex={typedColors[colorname]}
+        fadeInDelay={500}
+        fadeInDuration={500}
+         />
     {/each}
+</div>
 </div>
 
 <style>
-    div.colorcontainer {
+    div.colors {
+        height: 100vb;
         display: flex;
+        flex: 1;
         flex-wrap: wrap;
         overflow-y: scroll;
         justify-content: center;

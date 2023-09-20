@@ -1,43 +1,30 @@
 <script lang="ts">
     import { fade } from 'svelte/transition';
+    import tinycolor from "tinycolor2";
 
     export let colorname: string;
     export let csshex: string;
+    export let fadeInDuration: number = 0;
+    export let fadeInDelay: number = 0;
     let hexvis: boolean = false;
 
-    function linearize_rgb_value(value: number): number {
-        value = value / 255.0;
-        if (value <= 0.04045) {
-            return value / 12.92;
-        } else {
-            return ((value + 0.055) / 1.055) ** 2.4;
+    const color = tinycolor(csshex);
+    
+    let textColor = color.clone();
+    if (color.isDark()) {
+            textColor.brighten(60);
+        } else if (color.isLight()) {
+            textColor.darken(60);
         }
+        
+    const bgColor = color.clone().brighten(9).toHexString();
+    let borderColor: string;
+    if (color.getLuminance() > .80) {
+        borderColor = color.clone().darken(5).toHexString();
+    } else {
+        borderColor = color.clone().brighten(7).toHexString();
     }
-
-    function css_to_rgb(css: string): [number, number, number] {
-        let bigint = parseInt(css.substring(1), 16);
-        let r = (bigint >> 16) & 255;
-        let g = (bigint >> 8) & 255;
-        let b = bigint & 255;
-        return [r, g, b];
-    }
-
-    function relative_luminance(rgb: [number, number, number]): number {
-        let r, g, b;
-        [r, g, b] = rgb;
-        r = linearize_rgb_value(r);
-        g = linearize_rgb_value(g);
-        b = linearize_rgb_value(b);
-        return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    }
-
-    function text_color_for_background(css: string, threshold = .35): string {
-        let rgb = css_to_rgb(css);
-        let L = relative_luminance(rgb);
-        return L > threshold ? "black" : "white";
-    }
-
-    const textColor: string = text_color_for_background(csshex);
+        
 </script>
 
 <style>
@@ -49,13 +36,27 @@
         margin: 7px;
         display: inline-block;
     }
+
+    .color-box-container {
+        display: inline-block;
+        margin: 3px;
+        padding:2px 2px 17px 2px;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 3px;
+    }
 </style>
 
-<div class="color-box" style='background-color: {csshex}; color: {textColor}' 
+<div class='color-box-container'
+style='background:{bgColor}; border-color: {borderColor};'  in:fade={{ duration: 300 }}>
+<div class="color-box"
+  in:fade={{ delay: fadeInDelay, duration: fadeInDuration }}
+  style='background-color:{csshex}; color:{textColor.toString()}' 
     on:click={() => hexvis = true} > <!-- Don't toggle off again. Why? Someone may want to copy the hex code -->
     {colorname}<br/>
     {#if hexvis}
-        <span style="font-size:smaller" in:fade={{ y: 1, duration: 300 }}>{csshex}</span>
+        <span style="font-size:smaller" in:fade={{ duration: 1000 }}>{csshex}</span>
     {/if}
     
+</div>
 </div>

@@ -1,6 +1,27 @@
 /* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 
+@layer base {
+  a {
+    @apply text-blue-600;
+    @apply hover:text-blue-800;
+    @apply dark:text-blue-500;
+    @apply hover:dark:text-blue-200;
+    @apply font-semibold;
+  }
+
+  h2 {
+    @apply text-3xl;
+    @apply font-semibold;
+  }
+
+  h1 {
+    @apply text-4xl;
+    @apply font-semibold;
+  }
+}
+
+/*
 :root {
   --pure-white: #ffffff;
   --background-without-opacity: rgba(255, 255, 255, 0.7);
@@ -114,6 +135,7 @@ button:focus:not(:focus-visible) {
   h1 {
   }
 }
+*/
 
 @tailwind components;
 @tailwind utilities;

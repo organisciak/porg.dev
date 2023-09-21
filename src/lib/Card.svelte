@@ -49,72 +49,56 @@
 
 </script>
 
-<div class="flip-card" style="transform: rotateY(0deg) rotate({$rotate}deg)" on:click="{() => newcard() }">
-	<div class="flip-card-inner" style="transform: rotateY({$flip}deg)">
-	  <div class="flip-card-front">
-		<h1>{msgA.main}</h1>
-		<p><em>{@html msgA.details}</em></p>
+<!--
+
+	<div class="p-12 w-[300px] h-[400px] perspective-massive transform rotate-[0deg] rotate-[$rotate]deg" on:click="{() => newcard() }">
+	<div class="relative text-center transform-style" style="transform: rotateY({$flip}deg)">
+	  <div class="backface-hidden">
+		<h1 class="flex justify-center items-center text-xl">{msgA.main}</h1>
+		<p class="italic"><em>{@html msgA.details}</em></p>
 	  </div>
-	  <div class="flip-card-back">
-		<h1>{msgB.main}</h1>
-		<p><em>{@html msgB.details}</em></p>
+	  <div class=" backface-hidden">
+		<h1 class="flex justify-center items-center text-xl">{msgB.main}</h1>
+		<p class="italic"><em>{@html msgB.details}</em></p>
+	  </div>
+	</div>
+  </div>
+-->
+
+<div class="flex flex-col m-5 bg-transparent flip-card w-[350px] md:w-[400px] h-[350px] md:h-[300px]" style="transform: rotateY(0deg) rotate({$rotate}deg)" on:click="{() => newcard() }">
+	<div class="select-none text-sm text-cyan-600 italic m-0 p-0">Click for More</div>
+	<div class="flex-1 flip-card-inner justify-center" style="transform: rotateY({$flip}deg)">
+	  <div class="grow absolute p-4 backface-hidden rounded-xl w-full bg-yellow-400">
+		<h1 class="mt-5 text-2xl">{msgA.main}</h1>
+		<p class="text-sm italic"><em>{@html msgA.details}</em></p>
+	  </div>
+	  <div class="grow absolute p-4 flip-card-back rounded-xl w-full backface-hidden bg-orange-500">
+		<h1 class='mt-5 text-2xl'>{msgB.main}</h1>
+		<p class="text-sm italic"><em>{@html msgB.details}</em></p>
 	  </div>
 	</div>
   </div>
 
-  <button class="button-primary" on:click="{() => newcard() }">More</button>
+  
 
 <style>
-/* Center align button */
-button.button-primary {
-  margin: 0 auto;
-  display: block;
-}
-
 .flip-card {
-  background-color: transparent;
-  padding: 3rem;
-  width: 300px;
-  height:400px;
   perspective: 1000px;
   transform: rotateY(0deg) rotate(5deg);
 }
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
   /*transition: transform 0.8s;*/
   transform-style: preserve-3d;
 }
 
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  border-radius: 1rem;
-  width: 100%;
-  height: 100%;
-  padding: 1rem;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
-
-.flip-card-front {
-  background-color: var(--secondary-color);
-  color: white;
-}
-
-.flip-card-front h1, .flip-card-back h1 {
-	margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-	font-size: x-large;
-}
+.backface-hidden {
+		-webkit-backface-visibility: hidden; /* Safari */
+		backface-visibility: hidden;
+	}
 
 .flip-card-back {
-  background-color: var(--tertiary-color);
   transform: rotateY(180deg);
 }
 

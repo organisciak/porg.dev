@@ -8,17 +8,18 @@
 	<nav>
 		<ul>
 			<li class:active={$page.url.pathname === '{base}/'} class='name'>
-				<a sveltekit:prefetch href="{base}/">Peter Organisciak</a>
+				<a data-sveltekit-prefetch href="{base}/">Peter Organisciak</a>
 			</li>
 
 			<li class:active={$page.url.pathname === '{base}/cv'}>
-				<a sveltekit:prefetch href="{base}/cv">CV</a>
+				<a data-sveltekit-prefetch href="{base}/cv">CV</a>
 			</li>
-			
-			<!--<li class:active={$page.url.pathname === '{base}/about'}>
-				<a sveltekit:prefetch href="{base}/about">About</a>
+		</ul>
+		<ul>
+			<li class:active={$page.url.pathname === '{base}/colors'}>
+				<a data-sveltekit-prefetch href="{base}/colors">Colors</a>
 			</li>
-			
+			<!--
 			<li>
 				<a>Faculty Info</a>
 			</li>

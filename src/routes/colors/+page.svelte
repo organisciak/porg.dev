@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ColorBox from '$lib/ColorBox.svelte';
+    import ColorBox from '$lib/colorbox/ColorBoxBase.svelte';
     import colors from './colors.json';
     
     // shuffle colors and type them
@@ -41,12 +41,16 @@
 </div>
 
 <style>
+    div.colorcontainer {
+       overflow:hidden;
+    }
     div.colors {
         height: 100vb;
         display: flex;
         flex: 1;
         flex-wrap: wrap;
         overflow-y: scroll;
+        /* hide scroll bar */
         justify-content: center;
     }
 </style>

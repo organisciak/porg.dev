@@ -2,10 +2,13 @@
     import { fade } from 'svelte/transition';
     import tinycolor from "tinycolor2";
 
-    export let colorname: string;
+    export let colorname: string | null = null;
     export let csshex: string;
     export let fadeInDuration: number = 0;
     export let fadeInDelay: number = 0;
+    export let showHex: boolean = true;
+
+    
     let hexvis: boolean = false;
 
     const color = tinycolor(csshex);
@@ -16,7 +19,7 @@
         } else if (color.isLight()) {
             textColor.darken(60);
         }
-        
+
     const bgColor = color.clone().brighten(9).toHexString();
     let borderColor: string;
     if (color.getLuminance() > .80) {
@@ -32,7 +35,7 @@
         padding: 7px 30px 7px 7px;
         font-weight: 700;
         width: 77px;
-        height: 100px;
+        min-height: 100px;
         margin: 7px;
         display: inline-block;
     }
@@ -53,8 +56,8 @@ style='background:{bgColor}; border-color: {borderColor};'  in:fade={{ duration:
   in:fade={{ delay: fadeInDelay, duration: fadeInDuration }}
   style='background-color:{csshex}; color:{textColor.toString()}' 
     on:click={() => hexvis = true} > <!-- Don't toggle off again. Why? Someone may want to copy the hex code -->
-    {colorname}<br/>
-    {#if hexvis}
+    {#if colorname !== null}{colorname}{/if}<br/>
+    {#if hexvis && showHex}
         <span style="font-size:smaller" in:fade={{ duration: 1000 }}>{csshex}</span>
     {/if}
     

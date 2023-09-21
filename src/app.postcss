@@ -1,7 +1,6 @@
+/* Write your global styles here, in PostCSS syntax */
 @import url('https://fonts.cdnfonts.com/css/hk-groteks');
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
 	--pure-white: #ffffff;
@@ -11,7 +10,7 @@
 	--column-margin-top: 4rem;
 
 	--font-family: 'HK Grotesk', Arial, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--primary-color: #FFFF00;
+	--primary-color: #ffff00;
 	--color-bg: var(--pure-white);
 	--color-bg-two: #dbeedb;
 	--secondary-color: #00d1b2;
@@ -19,9 +18,7 @@
 	--accent-color: #2b5369;
 	--heading-color: rgba(0, 0, 0, 0.7);
 	--text-color: #444444;
-	  
 }
-
 
 body {
 	min-height: 100vh;
@@ -78,10 +75,11 @@ a:hover {
 	text-decoration: underline;
 }
 
-h1, h2 {
+h1,
+h2 {
 	text-align: center;
 	text-transform: lowercase;
-    font-weight: 700;
+	font-weight: 700;
 }
 
 h2 {
@@ -90,8 +88,8 @@ h2 {
 }
 
 h3 {
-    font-size: 2.7rem;
-    font-weight: 400;
+	font-size: 2.7rem;
+	font-weight: 400;
 }
 
 pre {
@@ -119,3 +117,6 @@ button:focus:not(:focus-visible) {
 	h1 {
 	}
 }
+
+@tailwind components;
+@tailwind utilities;

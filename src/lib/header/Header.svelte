@@ -100,7 +100,6 @@
 		padding: 0 1em;
 		color: black;
 		font-weight: 700;
-		//font-size: 0.9rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		text-decoration: none;

@@ -1,13 +1,12 @@
 <script lang="ts">
-	export const prerender = true;
-	import Header from '$lib/header/Header.svelte';
-	import '../app.css';
+	import "../app.postcss";
+    import Header from '$lib/header/Header.svelte';
 </script>
 
-<Header />
+<Header></Header>
 
 <main>
-	<slot />
+	<slot></slot>
 </main>
 
 <footer>

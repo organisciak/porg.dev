@@ -8,7 +8,6 @@
     export let fadeInDelay: number = 0;
     export let showHex: boolean = true;
 
-    
     let hexvis: boolean = false;
 
     const color = tinycolor(csshex);
@@ -30,36 +29,15 @@
         
 </script>
 
-<style>
-    .color-box {
-        padding: 7px 30px 7px 7px;
-        font-weight: 700;
-        width: 77px;
-        min-height: 100px;
-        margin: 7px;
-        display: inline-block;
-    }
-
-    .color-box-container {
-        display: inline-block;
-        margin: 3px;
-        padding:2px 2px 17px 2px;
-        border-style: solid;
-        border-width: 1px;
-        border-radius: 3px;
-    }
-</style>
-
-<div class='color-box-container'
+<div class="flex m-1 p-1 mb-6 border rounded-sm items-start justify-start"
 style='background:{bgColor}; border-color: {borderColor};'  in:fade={{ duration: 300 }}>
-<div class="color-box"
-  in:fade={{ delay: fadeInDelay, duration: fadeInDuration }}
-  style='background-color:{csshex}; color:{textColor.toString()}' 
-    on:click={() => hexvis = true} > <!-- Don't toggle off again. Why? Someone may want to copy the hex code -->
-    {#if colorname !== null}{colorname}{/if}<br/>
-    {#if hexvis && showHex}
-        <span style="font-size:smaller" in:fade={{ duration: 1000 }}>{csshex}</span>
-    {/if}
-    
-</div>
+  <div class="flex flex-col w-32 h-28 mb-4 text-sm p-1 items-start justify-start"
+    in:fade={{ delay: fadeInDelay, duration: fadeInDuration }}
+    style='background-color:{csshex}; color:{textColor.toString()}' 
+    on:click={() => hexvis = true}>
+    <div class="flex text-sm">{#if colorname !== null}{colorname}{/if}</div>
+      {#if hexvis && showHex}
+          <div class="flex text-xs" in:fade={{ duration: 1000 }}>{csshex}</div>
+      {/if}
+  </div>
 </div>

@@ -75,10 +75,13 @@ Check out online tools: [Open Creativity Scoring](https://openscoring.du.edu/) f
 	}
 
 	section:nth-of-type(even) {
-    @apply bg-green-200;
+	@apply bg-gradient-to-b;
+	@apply from-slate-100 to-slate-200;
+	@apply dark:from-slate-800 dark:to-slate-700;
+	/*@apply bg-[url('/styleimages/galaxy.webp')];
 	background-image: 
-        radial-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)),
-        url('/styleimages/galaxy.jpg');
+        radial-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.6)),
+        url('/styleimages/galaxy.webp');*/
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;

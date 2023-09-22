@@ -2,67 +2,6 @@
 	import SvelteMarkdown from 'svelte-markdown';
 
 	const source = `
-# Dr. Peter Organisciak
-
-**Associate Professor, University of Denver, Research Methods and Information Science**
-
-Massive Texts Lab:
-[http://portfolio.du.edu/massivetexts](http://portfolio.du.edu/massivetexts)
-
-*ORCID: <https://orcid.org/0000-0002-9058-2280>*
-
-## Professional Positions
-
-Assistant Professor, University of Denver. (September 1, 2017-present).
-
-Postdoctoral Research Associate, HathiTrust Research Center. (2015 -
-2017).
-
-Research Intern, Microsoft Research. (April 2013 - August 2013).
-
-## Education
-
-Ph.D., University of Illinois at Urbana-Champaign, 2015.
-    Major: Library and Information Science
-    Dissertation Title: Design Problems in Crowdsourcing: Improving the Quality of Crowd-Based Data Collection
-    Committee: Michael Twidale, J. Stephen Downie, Miles Efron, Jaime Teevan
-
-
-MA, University of Alberta, 2010.\
-Major: Humanities Computing - Library and Information Studies
-Thesis Title: Why Bother? Examining the motivations of users in
-large-scale crowd-powered online initiatives
-Committee: Lisa Given, Geoffrey Rockwell, Stan Ruecker.
-
-BA, McMaster University, 2008.
-Major: Communication Studies and Multimedia
-
-
-## Awards and Honors
-
-- Teaching Appreciation Dinner, University of Denver. (March 2020).
-
-- Best Short Research Paper Winner, iSchools Conference. (June 2019).
-
-- Notable Paper, Conference on Human Computation and Crowdsourcing (2014).
-
-- Outstanding Contribution Award, Canadian Society for Digital Humanities (2014).
-
-- Best Paper, Association for Information Science and Technology. (2011).
-
-- Best Student Paper, Canadian Society for Digital Humanities. (2011).
-
-## Media
-
--   \"It\'s Out of Africa meets Pretty Woman! The Art and Science of
-    Mixture Descriptions\", Katy Waldman, *Slate* (Lexicon Valley: A
-    Blog about Language). (November 23, 2015).
-
--   \"Online crowds can guess what you want to watch or buy.\", Hal
-    Hodson, *New Scientist*, 2989. Appeared in print as "The strangers
-    who do your choosing for you". (October 2, 2014).
-
-
 ## Funding
 
 ### Awarded
@@ -1128,6 +1067,117 @@ Working with Dr. Pier-Luc de Chantel to develop an API to Open
 Creativity Scoring, making that system's scoring methods available to
 use in other tools and websites, such as Qualtrics.
 	`
+    const bio = {
+        name: "Dr. Peter Organisciak",
+        title: "Associate Professor, University of Denver, Research Methods and Information Science",
+        lab: "Massive Texts Lab",
+        labUrl: "http://portfolio.du.edu/massivetexts",
+        orcid: "https://orcid.org/0000-0002-9058-2280"
+    };
+
+    type positions = {
+        position: string,
+        organization: string,
+        timeframe: string
+    }
+
+    const professionalPositions: positions[] = [
+        {
+      "position": "Associate Professor",
+      "organization": "University of Denver",
+      "timeframe": "September 2023-present"
+    },
+    {
+      "position": "Assistant Professor",
+      "organization": "University of Denver",
+      "timeframe": "September 2017-August 2023"
+    },
+    {
+      "position": "Postdoctoral Research Associate",
+      "organization": "HathiTrust Research Center",
+      "timeframe": "2015-2017"
+    },
+    {
+      "position": "Research Intern",
+      "organization": "Microsoft Research",
+      "timeframe": "April 2013 - August 2013"
+    }
+  ]
+
+  type education = {
+        degree: string,
+        university: string,
+        year: string,
+        additionalDetails: {
+            major?: string,
+            dissertationTitle?: string,
+            thesisTitle?: string,
+            committee?: string[]
+        }
+  }
+
+const degrees: education[]= [
+    {
+      "degree": "Ph.D.",
+      "university": "University of Illinois at Urbana-Champaign",
+      "year": "2015",
+      "additionalDetails": {
+        "major": "Library and Information Science",
+        "dissertationTitle": "Design Problems in Crowdsourcing: Improving the Quality of Crowd-Based Data Collection",
+        "committee": ["Michael Twidale", "J. Stephen Downie", "Miles Efron", "Jaime Teevan"]
+      }
+    },
+    {
+      "degree": "MA",
+      "university": "University of Alberta",
+      "year": "2010",
+      "additionalDetails": {
+        "major": "Humanities Computing - Library and Information Studies",
+        "thesisTitle": "Why Bother? Examining the motivations of users in large-scale crowd-powered online initiatives",
+        "committee": ["Lisa Given", "Geoffrey Rockwell", "Stan Ruecker"]
+      }
+    },
+    {
+      "degree": "BA",
+      "university": "McMaster University",
+      "year": "2008",
+      "additionalDetails": {
+        "major": "Communication Studies and Multimedia"
+      }
+    }
+  ]
+
+
+
+    const bioData = {
+  "awards": [
+    {
+      "name": "Teaching Appreciation Dinner, University of Denver",
+      "date": "March 2020"
+    },
+    {
+      "name": "Best Short Research Paper Winner, iSchools Conference",
+      "date": "June 2019"
+    },
+    {
+      "name": "Notable Paper, Conference on Human Computation and Crowdsourcing",
+      "date": "2014"
+    }
+  ],
+  "media": [
+    {
+      "title": "It's Out of Africa meets Pretty Woman! The Art and Science of Mixture Descriptions",
+      "source": "Katy Waldman, Slate (Lexicon Valley: A Blog about Language)",
+      "date": "November 23, 2015"
+    },
+    {
+      "title": "Online crowds can guess what you want to watch or buy.",
+      "source": "Hal Hodson, New Scientist, 2989",
+      "date": "October 2, 2014"
+    }
+  ]
+}
+
 
 	const headings = source.split('\n').filter((x)=> (x[0] === '#'));
 
@@ -1146,13 +1196,84 @@ use in other tools and websites, such as Qualtrics.
 	<meta name="description" content="Peter Organisciak's Curriculum Vitae" />
 </svelte:head>
 
-<section id="cv">
-<div class="container" style="margin-top:20px">
-	<div class="row">
-	  <div class="two columns"><SvelteMarkdown source={test} /></div>
-	  <div class="ten columns"><SvelteMarkdown source={source} /></div>
-	</div>
-  
-  </div>
-
+<section>
+    <h1>{bio.name}</h1>
+    <p><strong>{bio.title}</strong></p>
+    <p>{bio.lab}: <a href={bio.labUrl} target="_blank">{bio.labUrl}</a></p>
+    <p>ORCID: <a href={bio.orcid} target="_blank">{bio.orcid}</a></p>
 </section>
+
+<section>
+    <h2>Professional Positions</h2>
+    <div class="flex flex-wrap">
+      {#each professionalPositions as position}
+        <div class="flex-none w-48 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5"> 
+            <span class="dark:text-slate-300">{position.position}</span><br/> {position.organization}. ({position.timeframe})
+        </div>
+      {/each}
+    </div>
+</section>
+
+<section>
+    <h2>Education</h2>
+    <div class="flex flex-wrap">
+      {#each degrees as edu}
+      <div class="flex-none w-48 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5">
+          <span class="dark:text-slate-300"><span class="font-bold">{edu.degree}</span>, {edu.university}, {edu.year}</span>
+          <div class="text-sm p-0 m-0">
+          {#if edu.additionalDetails.major}
+            <p class='my-2 italic ml-4'>Major: {edu.additionalDetails.major}</p>
+          {/if}
+          {#if edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}
+            <p class='my-2 italic ml-4'>{edu.additionalDetails.dissertationTitle ? 'Dissertation' : 'Thesis'}: {edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}</p>
+          {/if}
+          {#if edu.additionalDetails.committee}
+            <p class='my-2 italic ml-4'>Committee: {edu.additionalDetails.committee.join(', ')}</p>
+          {/if}
+          </div></div> 
+        
+      {/each}
+
+</div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="flex flex-wrap">
+      {#each degrees as edu}
+      <div class="flex-none w-48 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5">
+          <span class="dark:text-slate-300"><span class="font-bold">{edu.degree}</span>, {edu.university}, {edu.year}</span>
+          <div class="text-sm p-0 m-0">
+          {#if edu.additionalDetails.major}
+            <p class='my-2 italic ml-4'>Major: {edu.additionalDetails.major}</p>
+          {/if}
+          {#if edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}
+            <p class='my-2 italic ml-4'>{edu.additionalDetails.dissertationTitle ? 'Dissertation' : 'Thesis'}: {edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}</p>
+          {/if}
+          {#if edu.additionalDetails.committee}
+            <p class='my-2 italic ml-4'>Committee: {edu.additionalDetails.committee.join(', ')}</p>
+          {/if}
+          </div></div> 
+        
+      {/each}
+
+</div>
+  </section>
+
+<section id="cv">
+    <div class="container mx-auto mt-5">
+      <div class="flex flex-row">
+        <div class="w-1/12 hidden md:flex"><SvelteMarkdown source={test} /></div>
+        <div class="w-full md:w-11/12">
+            <SvelteMarkdown source={source} />
+        </div>
+      </div><p></p>
+    </div>
+  </section>
+
+<style lang="postcss">
+    p {
+        @apply mx-auto my-3;
+    }
+
+</style>

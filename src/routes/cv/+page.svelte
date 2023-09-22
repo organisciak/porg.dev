@@ -1321,13 +1321,14 @@ const degrees: education[]= [
 
 	const headings = source.split('\n').filter((x)=> (x[0] === '#'));
 
+  /*
 	function head2md(x: string) { 
 		const indent = x.split(' ')[0].replaceAll('#', '  ') + '- ';
 		const text = x.replaceAll('#', ' ').trim()
 		const id = '#' + x.replaceAll('#', ' ').trim().toLowerCase().replaceAll(' ', '-')
 		return `${indent}[${text}](${id})`
 	}	
-	const test = headings.map(head2md).join('\n').trim().replaceAll('\n  ', '\n')
+	const test = headings.map(head2md).join('\n').trim().replaceAll('\n  ', '\n')*/
 
 </script>
 
@@ -1404,7 +1405,7 @@ const degrees: education[]= [
 <section id="cv">
     <div class="container mx-auto mt-5">
       <div class="flex flex-row">
-        <div class="w-1/12 hidden md:hidden"><SvelteMarkdown source={test} /></div>
+        <!--<div class="w-1/12 hidden md:hidden"><SvelteMarkdown source={test} /></div>-->
         <div class="w-full md:w-11/12">
             <SvelteMarkdown source={source} />
         </div>

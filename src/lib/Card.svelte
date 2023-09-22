@@ -68,11 +68,11 @@
 <div class="flex flex-col m-5 bg-transparent flip-card w-[350px] md:w-[400px] h-[350px] md:h-[300px]" style="transform: rotateY(0deg) rotate({$rotate}deg)" on:click="{() => newcard() }">
 	<div class="select-none text-sm text-cyan-600 italic m-0 p-0">Click for More</div>
 	<div class="flex-1 flip-card-inner justify-center" style="transform: rotateY({$flip}deg)">
-	  <div class="grow absolute p-4 backface-hidden rounded-xl w-full bg-yellow-400">
+	  <div class="grow absolute p-4 backface-hidden rounded-xl w-full bg-slate-700">
 		<h1 class="mt-5 text-2xl">{msgA.main}</h1>
 		<p class="text-sm italic"><em>{@html msgA.details}</em></p>
 	  </div>
-	  <div class="grow absolute p-4 flip-card-back rounded-xl w-full backface-hidden bg-orange-500">
+	  <div class="grow absolute p-4 flip-card-back rounded-xl w-full backface-hidden bg-slate-700">
 		<h1 class='mt-5 text-2xl'>{msgB.main}</h1>
 		<p class="text-sm italic"><em>{@html msgB.details}</em></p>
 	  </div>

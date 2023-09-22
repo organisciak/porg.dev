@@ -5,8 +5,9 @@ export type UrlMapping = {
 
 export const urlMappings: UrlMapping[] = [
   {
-    "shorturl": "lis4015",
-    "destination": "https://du.leganto.exlibrisgroup.com/leganto/public/01UODE_INST/lists/47414179690002766?auth=SAML",
+    shorturl: "lis4015",
+    destination:
+      "https://du.leganto.exlibrisgroup.com/leganto/public/01UODE_INST/lists/47414179690002766?auth=SAML",
   },
   {
     "shorturl": "chat-strategies",

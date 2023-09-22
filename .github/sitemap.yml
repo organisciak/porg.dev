@@ -2,7 +2,7 @@ name: Ping Google about updated sitemap
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   ping:
@@ -10,5 +10,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-        name: Send HTTP GET request
-        run: curl http://www.google.com/ping?sitemap=https://www.porganized.com/sitemap.xml
+      name: Send HTTP GET request
+      run: curl http://www.google.com/ping?sitemap=https://www.porganized.com/sitemap.xml

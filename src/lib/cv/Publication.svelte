@@ -15,7 +15,7 @@
 TODO allow customizing the itemtype
 -->
 <div class="text-sm publication flex-auto w-96 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5" itemscope itemtype="http://schema.org/ScholarlyArticle">
-  <h2 class="flex text-lg" itemprop="name">{data.title}</h2>
+  <h2 class="flex text-lg" itemprop="headline">{data.title}</h2>
   
   {#if data.event}
     <p class='italic text-sm text-slate-600 dark:text-slate-100' itemprop="locationCreated">{data.event}</p>

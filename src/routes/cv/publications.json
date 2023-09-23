@@ -1,0 +1,2461 @@
+[
+	{
+		"id": "Organisciak2021",
+		"type": "chapter",
+		"title": "Research access to in-copyright texts in the humanities",
+		"container-title": "Information organization in digital humanities: Global perspectives",
+		"volume": "1",
+		"edition": "1st",
+		"publisher": "Routledge",
+		"URL": "https://www.taylorfrancis.com/chapters/oa-edit/10.4324/9781003131816-8/research-access-copyright-texts-humanities-peter-organisciak-stephen-downie",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Downie",
+				"given": "J. S."
+			}
+		],
+		"editor": [
+			{
+				"family": "Golub",
+				"given": "K."
+			},
+			{
+				"family": "Liu",
+				"given": "Y."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2021
+				]
+			]
+		}
+	},
+	{
+		"id": "DeChantel2023",
+		"type": "article-journal",
+		"title": "Automated feedback and creativity: On the role of metacognitive monitoring in divergent thinking",
+		"container-title": "Psychology of Aesthetics, Creativity, and the Arts",
+		"URL": "https://doi.org/10.1037/aca0000592",
+		"author": [
+			{
+				"family": "De Chantel",
+				"given": "PL."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2023
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2023a",
+		"type": "article-journal",
+		"title": "Beyond semantic distance: Automated scoring of divergent thinking greatly improves with large language models",
+		"container-title": "Thinking Skills and Creativity",
+		"volume": "49",
+		"URL": "https://doi.org/10.1016/j.tsc.2023.101356",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Acar",
+				"given": "S."
+			},
+			{
+				"family": "Dumas",
+				"given": "D."
+			},
+			{
+				"family": "Berthiaume",
+				"given": "K."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2023
+				]
+			]
+		},
+		"custom": [
+			{
+				"key": "preprint",
+				"value": "http://dx.doi.org/10.13140/RG.2.2.32393.31840"
+			}
+		]
+	},
+	{
+		"id": "Organisciak2023b",
+		"type": "article-journal",
+		"title": "How do the kids speak? Modeling child-directed language for educational use",
+		"container-title": "Information and Learning Science",
+		"URL": "https://doi.org/10.1108/ILS-06-2022-0082",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Acar",
+				"given": "S."
+			},
+			{
+				"family": "Newman",
+				"given": "M."
+			},
+			{
+				"family": "Dumas",
+				"given": "D."
+			},
+			{
+				"family": "Eby",
+				"given": "D."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2023
+				]
+			]
+		},
+		"custom": [
+			{
+				"key": "SSRN",
+				"value": "https://ssrn.com/abstract=4329061"
+			}
+		]
+	},
+	{
+		"id": "Dumas2023",
+		"type": "article-journal",
+		"title": "What makes children’s responses to creativity assessments difficult to judge reliably?",
+		"container-title": "Journal of Creative Behavior",
+		"URL": "https://doi.org/10.1002/jocb.588",
+		"author": [
+			{
+				"family": "Dumas",
+				"given": "D."
+			},
+			{
+				"family": "Acar",
+				"given": "S."
+			},
+			{
+				"family": "Berthiaume",
+				"given": "K."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Eby",
+				"given": "D."
+			},
+			{
+				"family": "Grajzel",
+				"given": "K."
+			},
+			{
+				"family": "Flemister",
+				"given": "T."
+			},
+			{
+				"family": "Newman",
+				"given": "M."
+			},
+			{
+				"family": "Carrera",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2023
+				]
+			]
+		}
+	},
+	{
+		"id": "Pares2023",
+		"type": "article-journal",
+		"title": "The effects of research data management services: Associating the data curation life cycle with open research output",
+		"container-title": "College & Research Libraries",
+		"status": "In press",
+		"author": [
+			{
+				"family": "Pares",
+				"given": "N."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2023
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2023c",
+		"type": "article-journal",
+		"title": "Approximate Nearest Neighbor for long document relationship labeling in digital libraries",
+		"container-title": "International Journal of Digital Libraries",
+		"URL": "https://doi.org/10.1007/s00799-023-00354-5",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Durward",
+				"given": "M."
+			},
+			{
+				"family": "Schmidt",
+				"given": "B. M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2023
+				]
+			]
+		}
+	},
+	{
+		"id": "Grajzel2023",
+		"type": "article-journal",
+		"title": "Measuring Flexibility of Thinking Using Text-Mining",
+		"container-title": "Frontiers in Psychology",
+		"URL": "https://www.frontiersin.org/articles/10.3389/fpsyg.2022.1093343",
+		"author": [
+			{
+				"family": "Grajzel",
+				"given": "K."
+			},
+			{
+				"family": "Dumas",
+				"given": "D. G."
+			},
+			{
+				"family": "Berthiaume",
+				"given": "K."
+			},
+			{
+				"family": "Acar",
+				"given": "S."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2023
+				]
+			]
+		}
+	},
+	{
+		"id": "Talley2022",
+		"type": "article-journal",
+		"title": "Defensive Driving: CAR:POOL as a Model for Proactive Postsecondary Planning and Connection",
+		"container-title": "Contemporary School Psychology",
+		"URL": "https://doi.org/10.1007/s40688-022-00438-0",
+		"author": [
+			{
+				"family": "Talley",
+				"given": "J."
+			},
+			{
+				"family": "Talapatra",
+				"given": "D."
+			},
+			{
+				"family": "Miller",
+				"given": "G."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2022
+				]
+			]
+		}
+	},
+	{
+		"id": "Bishop2022",
+		"type": "article-journal",
+		"title": "Job analyses of Earth science data managers: A survey validation of competencies to inform curricula in research data management education",
+		"container-title": "Journal of Education for Library and Information Science",
+		"URL": "https://doi.org/10.3138/jelis-2021-0023",
+		"author": [
+			{
+				"family": "Bishop",
+				"given": "B. W."
+			},
+			{
+				"family": "Cowan",
+				"given": "M."
+			},
+			{
+				"family": "Collier",
+				"given": "H."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Mayernik",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2022
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2022",
+		"type": "article-journal",
+		"title": "Improving Text Relationship Modeling with Artificial Data",
+		"container-title": "Journal of Information Science",
+		"URL": "https://doi.org/10.1177/01655515221093031",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Ryan",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2022
+				]
+			]
+		}
+	},
+	{
+		"id": "Acar2021",
+		"type": "article-journal",
+		"title": "Applying automated originality scoring to the verbal form of Torrance Tests of creative thinking",
+		"container-title": "Gifted Child Quarterly",
+		"URL": "https://doi.org/10.1177/00169862211061874",
+		"author": [
+			{
+				"family": "Acar",
+				"given": "S."
+			},
+			{
+				"family": "Berthiaume",
+				"given": "K."
+			},
+			{
+				"family": "Grajzel",
+				"given": "K."
+			},
+			{
+				"family": "Dumas",
+				"given": "D. G."
+			},
+			{
+				"family": "Flemister",
+				"given": "T."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2021
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2021",
+		"type": "article-journal",
+		"title": "Giving shape to large digital libraries through exploratory data analysis",
+		"container-title": "Journal of the Association for Information Science and Technology",
+		"URL": "https://doi.org/10.1002/asi.24547",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Schmidt",
+				"given": "B. M."
+			},
+			{
+				"family": "Downie",
+				"given": "J. S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2021
+				]
+			]
+		}
+	},
+	{
+		"id": "Dumas2021",
+		"type": "article-journal",
+		"title": "Four text-mining methods for measuring elaboration",
+		"container-title": "Journal of Creative Behavior",
+		"volume": "55",
+		"issue": "2",
+		"page": "517--531",
+		"URL": "https://doi.org/10.1002/jocb.471",
+		"author": [
+			{
+				"family": "Dumas",
+				"given": "D. G."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Maio",
+				"given": "S."
+			},
+			{
+				"family": "Doherty",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2021
+				]
+			]
+		}
+	},
+	{
+		"id": "Dumas2020a",
+		"type": "article-journal",
+		"title": "The psychology of professional and student actors: Creativity, personality, and motivation",
+		"container-title": "PloS ONE",
+		"volume": "15",
+		"issue": "10",
+		"page": "e0240728",
+		"URL": "https://doi.org/10.1371/journal.pone.0240728",
+		"author": [
+			{
+				"family": "Dumas",
+				"given": "D. G."
+			},
+			{
+				"family": "Doherty",
+				"given": "M."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2020
+				]
+			]
+		}
+	},
+	{
+		"id": "Maio2020",
+		"type": "article-journal",
+		"title": "Is the reliability of objective originality scores confounded by elaboration?",
+		"container-title": "Creativity Research Journal",
+		"URL": "https://doi.org/10.1080/10400419.2020.1818492",
+		"author": [
+			{
+				"family": "Maio",
+				"given": "S."
+			},
+			{
+				"family": "Dumas",
+				"given": "D. G."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Runco",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2020
+				]
+			]
+		}
+	},
+	{
+		"id": "Dumas2020b",
+		"type": "article-journal",
+		"title": "Measuring divergent thinking originality with human raters and text-mining models: A psychometric comparison of methods",
+		"container-title": "Psychology of Aesthetics, Creativity, and the Arts",
+		"URL": "https://doi.org/10.1037/aca0000319",
+		"author": [
+			{
+				"family": "Dumas",
+				"given": "D. G."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Doherty",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2020
+				]
+			]
+		}
+	},
+	{
+		"id": "Downie2020",
+		"type": "article-journal",
+		"title": "The HathiTrust Digital Library's potential for musicology research",
+		"container-title": "International Journal on Digital Libraries",
+		"URL": "https://doi.org/10.1007/s00799-020-00283-7",
+		"author": [
+			{
+				"family": "Downie",
+				"given": "J. S."
+			},
+			{
+				"family": "Bhattacharyya",
+				"given": "S."
+			},
+			{
+				"family": "Giannetti",
+				"given": "F."
+			},
+			{
+				"family": "Dickson Koehl",
+				"given": "E."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2020
+				]
+			]
+		}
+	},
+	{
+		"id": "Hu2017",
+		"type": "article-journal",
+		"title": "The MIREX grand challenge: A framework of holistic user-experience evaluation in music information retrieval",
+		"container-title": "Journal of the Association for Information Science and Technology",
+		"volume": "68",
+		"issue": "1",
+		"page": "97-112",
+		"URL": "https://doi.org/10.1002/asi.23618",
+		"author": [
+			{
+				"family": "Hu",
+				"given": "X."
+			},
+			{
+				"family": "Lee",
+				"given": "J. H."
+			},
+			{
+				"family": "Bainbridge",
+				"given": "D."
+			},
+			{
+				"family": "Choi",
+				"given": "K."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Downie",
+				"given": "J. S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2017
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2016a",
+		"type": "article-journal",
+		"title": "Text mining in Python through the HTRC Feature Reader",
+		"container-title": "The Programming Historian",
+		"volume": "5",
+		"URL": "https://doi.org/10.46430/phen0058",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Capitanu",
+				"given": "B."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2016
+				]
+			]
+		}
+	},
+	{
+		"id": "Bhattacharyya2015",
+		"type": "article-journal",
+		"title": "A fragmentizing interface to a large corpus of digitized text: (Post)humanism and non-consumptive reading via features",
+		"container-title": "Interdisciplinary Science Reviews",
+		"volume": "40",
+		"issue": "1",
+		"page": "61-77",
+		"URL": "https://doi.org/10.1179/0308018814Z.000000000105",
+		"author": [
+			{
+				"family": "Bhattacharyya",
+				"given": "S."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Downie",
+				"given": "J. S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2015
+				]
+			]
+		}
+	},
+	{
+		"id": "Rockwell2012",
+		"type": "article-journal",
+		"title": "The design of an international social media event: A Day in the Life of the Digital Humanities",
+		"container-title": "Digital Humanities Quarterly",
+		"volume": "6",
+		"issue": "2",
+		"URL": "http://www.digitalhumanities.org/dhq/vol/6/2/000123/000123.html",
+		"author": [
+			{
+				"family": "Rockwell",
+				"given": "G."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Ruecker",
+				"given": "S."
+			},
+			{
+				"family": "Meredith-Lobay",
+				"given": "M."
+			},
+			{
+				"family": "Ranaweera",
+				"given": "K."
+			},
+			{
+				"family": "Nyhan",
+				"given": "J."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2012
+				]
+			]
+		},
+		"custom": [
+			{
+				"key": "award",
+				"value": "The project this reports was winner of Outstanding Contribution Award from the Canadian Society for Digital Humanities"
+			}
+		]
+	},
+	{
+		"id": "Rockwell2010",
+		"type": "article-journal",
+		"title": "Ubiquitous Text Analysis",
+		"container-title": "Poetess Archive Journal 2.1",
+		"volume": "2",
+		"issue": "1",
+		"author": [
+			{
+				"family": "Rockwell",
+				"given": "G."
+			},
+			{
+				"family": "Sinclair",
+				"given": "S."
+			},
+			{
+				"family": "Ruecker",
+				"given": "S."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2010
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2019",
+		"type": "paper-conference",
+		"title": "Characterizing same work relationships in large-scale digital libraries",
+		"container-title": "Information in Contemporary Society: iConference 2019",
+		"page": "419--425",
+		"genre": "Proceedings Short Article",
+		"URL": "https://doi.org/10.1007/978-3-030-15742-5_40",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Shetenhelm",
+				"given": "S."
+			},
+			{
+				"family": "Francisco Albuquerque Vasques",
+				"given": "D."
+			},
+			{
+				"family": "Matusiak",
+				"given": "K."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2019
+				]
+			]
+		},
+		"custom": [
+			{
+				"key": "award",
+				"value": "Winner, Best Short Research Paper"
+			}
+		]
+	},
+	{
+		"id": "Organisciak2017a",
+		"type": "paper-conference",
+		"title": "Access to billions of pages for large-scale text analysis",
+		"container-title": "iConference 2017 Proceedings",
+		"volume": "2",
+		"genre": "Proceedings Short Article",
+		"page": "66--76",
+		"URL": "https://doi.org/10.9776/17100",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Capitanu",
+				"given": "B."
+			},
+			{
+				"family": "Underwood",
+				"given": "T."
+			},
+			{
+				"family": "Downie",
+				"given": "J. S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2017
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2015a",
+		"type": "paper-conference",
+		"title": "Matching and grokking: Approaches to personalized crowdsourcing",
+		"container-title": "Proceedings of the twenty-fourth international joint conference on artificial intelligence",
+		"page": "4296--4302",
+		"URL": "https://www.ijcai.org/Proceedings/15/Papers/611.pdf",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Teevan",
+				"given": "J."
+			},
+			{
+				"family": "Dumais",
+				"given": "S."
+			},
+			{
+				"family": "Miller",
+				"given": "R. C."
+			},
+			{
+				"family": "Kalai",
+				"given": "A. T."
+			}
+		],
+		"editor": [
+			{
+				"family": "Yang",
+				"given": "Q."
+			},
+			{
+				"family": "Wooldridge",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2015
+				]
+			]
+		},
+		"genre": "Proceedings Long Article",
+		"custom": [
+			{
+				"key": "award",
+				"value": "Invited and peer-reviewed awards-track paper at a top artificial intelligent conference"
+			}
+		]
+	},
+	{
+		"id": "Organisciak2015b",
+		"type": "paper-conference",
+		"title": "Design facets of crowdsourcing",
+		"container-title": "iConference 2015 Proceedings",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Twidale",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2015,
+					3
+				]
+			]
+		},
+		"genre": "Proceedings Long Article"
+	},
+	{
+		"id": "Organisciak2014a",
+		"type": "paper-conference",
+		"title": "A Crowd of Your Own: Crowdsourcing for On-Demand Personalization",
+		"container-title": "Proceedings of the AAAI Conference on Human Computation and Crowdsourcing",
+		"volume": "2",
+		"issue": "1",
+		"page": "192-200",
+		"URL": "https://ojs.aaai.org/index.php/HCOMP/article/view/13161",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Teevan",
+				"given": "J."
+			},
+			{
+				"family": "Dumais",
+				"given": "S. T."
+			},
+			{
+				"family": "Miller",
+				"given": "R. C."
+			},
+			{
+				"family": "Kalai",
+				"given": "A. T."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2014,
+					11
+				]
+			]
+		},
+		"genre": "Proceedings Long Article",
+		"custom": [
+			{
+				"key": "award",
+				"value": "Winner, Notable Paper Award. Featured in New Scientist"
+			}
+		]
+	},
+	{
+		"id": "Organisciak2014b",
+		"type": "paper-conference",
+		"title": "When the elevator pitch meets the subject heading: How mixtures of other documents can describe what a document is about",
+		"container-title": "Proceedings of the American Society for Information Science and Technology",
+		"volume": "51",
+		"issue": "1",
+		"page": "1--9",
+		"URL": "https://doi.org/10.1002/meet.2014.14505101062",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Twidale",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2014
+				]
+			]
+		},
+		"genre": "Proceedings Long Article",
+		"custom": [
+			{
+				"key": "feature",
+				"value": "Featured in Slate"
+			}
+		]
+	},
+	{
+		"id": "Organisciak2012a",
+		"type": "paper-conference",
+		"title": "Evaluating rater quality and rating difficulty in online annotation activities",
+		"container-title": "Proceedings of the American Society for Information Science and Technology",
+		"volume": "49",
+		"page": "1--10",
+		"URL": "https://doi.org/10.1002/meet.14504901166",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Efron",
+				"given": "M."
+			},
+			{
+				"family": "Fenlon",
+				"given": "K."
+			},
+			{
+				"family": "Senseney",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2012
+				]
+			]
+		},
+		"genre": "Proceedings Long Article"
+	},
+	{
+		"id": "Efron2012",
+		"type": "paper-conference",
+		"title": "Improving Retrieval of Short Texts Through Document Expansion",
+		"container-title": "Proceedings of the 35th International ACM SIGIR Conference on Research and Development in Information Retrieval",
+		"page": "911--920",
+		"URL": "https://doi.org/10.1145/2348283.2348405",
+		"author": [
+			{
+				"family": "Efron",
+				"given": "M."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Fenlon",
+				"given": "K."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2012
+				]
+			]
+		},
+		"genre": "Proceedings Long Article"
+	},
+	{
+		"id": "Efron2011",
+		"type": "paper-conference",
+		"title": "Building Topic Models in a Federated Digital Library Through Selective Document Exclusion",
+		"container-title": "Proceedings of the American Society for Information Science and Technology",
+		"volume": "48",
+		"issue": "1",
+		"page": "1--10",
+		"URL": "https://doi.org/10.1002/meet.2011.14504801048",
+		"author": [
+			{
+				"family": "Efron",
+				"given": "M."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Fenlon",
+				"given": "K."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2011
+				]
+			]
+		},
+		"genre": "Proceedings Long Article",
+		"custom": [
+			{
+				"key": "award",
+				"value": "Best Paper"
+			}
+		]
+	},
+	{
+		"id": "Fenlon2011",
+		"type": "paper-conference",
+		"title": "Semi-automated Collection Evaluation for Large-scale Aggregations",
+		"container-title": "Proceedings of the American Society for Information Science and Technology",
+		"genre": "Proceedings Short Article",
+		"author": [
+			{
+				"family": "Fenlon",
+				"given": "K."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Jett",
+				"given": "J."
+			},
+			{
+				"family": "Efron",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2011,
+					10
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2021Report",
+		"type": "report",
+		"title": "Similarities and Duplicates in Digital Libraries",
+		"container-title": "Project Technical Report",
+		"URL": "https://doi.org/10.13140/RG.2.2.12650.59846",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Schmidt",
+				"given": "B.M."
+			},
+			{
+				"family": "Matusiak",
+				"given": "K."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2021
+				]
+			]
+		}
+	},
+	{
+		"id": "Weber2020Report",
+		"type": "report",
+		"title": "SIG-CM 2019: Workshop on Conceptual Modeling Report",
+		"URL": "https://doi.org/10.5281/zenodo.3878946",
+		"author": [
+			{
+				"family": "Weber",
+				"given": "N."
+			},
+			{
+				"family": "Thomer",
+				"given": "A. K."
+			},
+			{
+				"family": "Fenlon",
+				"given": "K."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2020
+				]
+			]
+		}
+	},
+	{
+		"id": "HTBW2017Report",
+		"type": "report",
+		"title": "Exploring the Billions and Billions of Words in the HathiTrust Corpus with Bookworm",
+		"container-title": "HathiTrust+Bookworm Project Technical Report",
+		"author": [
+			{
+				"family": "HT+BW Project Team",
+				"given": ""
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2017
+				]
+			]
+		}
+	},
+	{
+		"id": "VandenBosch2022",
+		"type": "speech",
+		"title": "Reducing Redundancy Bias in Digital Library Collections",
+		"event": "Digital Humanities 2022",
+		"genre": "Long Paper Talk",
+		"author": [
+			{
+				"family": "VandenBosch",
+				"given": "A."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Matusiak",
+				"given": "K."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2022
+				]
+			]
+		}
+	},
+	{
+		"id": "Ryan2020",
+		"type": "speech",
+		"title": "Challenges and Solutions of Identifying Similarities and Duplication in Digital Libraries",
+		"event": "2020 ACM/IEEE Joint Conference on Digital Libraries",
+		"genre": "Poster",
+		"author": [
+			{
+				"family": "Ryan",
+				"given": "M."
+			},
+			{
+				"family": "Zhang",
+				"given": "R."
+			},
+			{
+				"family": "Durward",
+				"given": "M."
+			},
+			{
+				"family": "Matusiak",
+				"given": "K."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2020
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2019",
+		"type": "speech",
+		"title": "Examining patterns of text reuse in digitized text collections",
+		"event": "2019 ACM/IEEE Joint Conference on Digital Libraries",
+		"genre": "Poster",
+		"URL": "https://doi.org/10.1109/JCDL.2019.00071",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Therrell",
+				"given": "G."
+			},
+			{
+				"family": "Ryan",
+				"given": "M."
+			},
+			{
+				"family": "Schmidt",
+				"given": "B. M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2019
+				]
+			]
+		}
+	},
+	{
+		"id": "Page2018",
+		"type": "speech",
+		"title": "Worksets expand the scholarly utility of digital libraries",
+		"event": "18th ACM/IEEE Joint Conference on Digital Libraries",
+		"genre": "Poster",
+		"URL": "https://doi.org/10.1145/3197026.3203886",
+		"author": [
+			{
+				"family": "Page",
+				"given": "K. R."
+			},
+			{
+				"family": "Jett",
+				"given": "J."
+			},
+			{
+				"family": "Cole",
+				"given": "T. W."
+			},
+			{
+				"family": "Kudeki",
+				"given": "D."
+			},
+			{
+				"family": "Bainbridge",
+				"given": "D."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Downie",
+				"given": "J. S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2018,
+					6
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2017b",
+		"type": "speech",
+		"title": "Modeling creativity: Tracking long-term lexical change",
+		"event": "Digital Humanities 2017",
+		"URL": "https://dh2017.adho.org/abstracts/563/563.pdf",
+		"genre": "Long Paper Talk",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Franklin",
+				"given": "S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2017
+				]
+			]
+		}
+	},
+	{
+		"id": "Weigl2017",
+		"type": "speech",
+		"title": "Information-seeking in large-scale digital libraries: Strategies for scholarly workset creation",
+		"event": "2017 ACM/IEEE Joint Conference on Digital Libraries",
+		"page": "253--256",
+		"URL": "https://doi.org/10.1109/JCDL.2017.7991583",
+		"genre": "Long Paper Talk",
+		"author": [
+			{
+				"family": "Weigl",
+				"given": "D. M."
+			},
+			{
+				"family": "Page",
+				"given": "K. R."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Downie",
+				"given": "J. S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2017
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2016b",
+		"type": "speech",
+		"title": "Accomplishing low-attention microtasks",
+		"event": "Productivity Decomposed: Getting Big Things Done with Little Microtasks",
+		"URL": "http://teevan.org/misc/microproductivity/position/organisciak-microproductivity.pdf",
+		"genre": "Poster",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Vaish",
+				"given": "R."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2016,
+					5
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2015c",
+		"type": "speech",
+		"title": "Improving consistency of crowdsourced multimedia similarity for evaluation",
+		"event": "15th ACM/IEEE-CS Joint Conference on Digital Libraries",
+		"page": "115--118",
+		"URL": "https://doi.org/10.1145/2756406.2756942",
+		"genre": "Poster",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Downie",
+				"given": "J. S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2015
+				]
+			]
+		}
+	},
+	{
+		"id": "Vaish2014",
+		"type": "speech",
+		"title": "Low Effort Crowdsourcing: Leveraging Peripheral Attention for Crowd Work",
+		"event": "Second AAAI Conference on Human Computation & Crowdsourcing",
+		"genre": "Poster",
+		"author": [
+			{
+				"family": "Vaish",
+				"given": "R."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Hara",
+				"given": "K."
+			},
+			{
+				"family": "Bigham",
+				"given": "J. P."
+			},
+			{
+				"family": "Zhang",
+				"given": "H."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2014,
+					11
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2014c",
+		"type": "speech",
+		"title": "Large-scale text analysis through the HathiTrust Research Center",
+		"event": "Digital Humanities 2014",
+		"genre": "Long Paper Talk",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Bhattacharyya",
+				"given": "S."
+			},
+			{
+				"family": "Auvil",
+				"given": "L."
+			},
+			{
+				"family": "Downie",
+				"given": "J. S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2014,
+					7
+				]
+			]
+		}
+	},
+	{
+		"id": "Green2014",
+		"type": "speech",
+		"title": "Using collections and worksets in large-scale corpora: Preliminary findings from the Workset Creation for Scholarly Analysis project",
+		"event": "IConference 2014",
+		"URL": "http://hdl.handle.net/2142/47338",
+		"genre": "Poster",
+		"author": [
+			{
+				"family": "Green",
+				"given": "H."
+			},
+			{
+				"family": "Fenlon",
+				"given": "K."
+			},
+			{
+				"family": "Senseney",
+				"given": "M."
+			},
+			{
+				"family": "Bhattacharyya",
+				"given": "S."
+			},
+			{
+				"family": "Willis",
+				"given": "C."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Downie",
+				"given": "J. S."
+			},
+			{
+				"family": "Cole",
+				"given": "T. W."
+			},
+			{
+				"family": "Plale",
+				"given": "B."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2014,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2013a",
+		"type": "paper-conference",
+		"title": "Addressing Diverse Corpora with Cluster-based Term Weighting",
+		"container-title": "Proceedings of the 13th ACM/IEEE-CS Joint Conference on Digital Libraries",
+		"page": "163--166",
+		"URL": "https://doi.org/10.1145/2467696.2467740",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2013
+				]
+			]
+		},
+		"genre": "Long Paper Talk"
+	},
+	{
+		"id": "Organisciak2013b",
+		"type": "speech",
+		"title": "Incidental Crowdsourcing: Crowdsourcing in the Periphery",
+		"event": "Digital Humanities 2013",
+		"URL": "http://dh2013.unl.edu/abstracts/ab-273.html",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2013
+				]
+			]
+		},
+		"genre": "Long Paper Talk"
+	},
+	{
+		"id": "Fenlon2012",
+		"type": "paper-conference",
+		"title": "Tooling the aggregator's workbench: Metadata visualization through statistical text analysis",
+		"container-title": "Proceedings of the American Society for Information Science and Technology",
+		"volume": "49",
+		"page": "1--10",
+		"URL": "https://doi.org/10.1002/meet.14504901161",
+		"author": [
+			{
+				"family": "Fenlon",
+				"given": "K."
+			},
+			{
+				"family": "Efron",
+				"given": "M."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2012
+				]
+			]
+		},
+		"genre": "Poster"
+	},
+	{
+		"id": "Efron2011a",
+		"type": "speech",
+		"title": "A Palette Mixing Model of Information Seeking for Complex Queries",
+		"event": "Proceedings of the SIGIR 2011 Workshop on 'entertain Me': Supporting Complex Search Tasks",
+		"URL": "http://www.cis.strath.ac.uk/cis/research/publications/papers/strath_cis_publication_2608.pdf#page=29",
+		"author": [
+			{
+				"family": "Efron",
+				"given": "M."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2011,
+					7
+				]
+			]
+		},
+		"genre": "Long Paper Talk"
+	},
+	{
+		"id": "Radzikowska2011",
+		"type": "speech",
+		"title": "Structured Surfaces for JiTR",
+		"event": "Digital Humanities 2011",
+		"author": [
+			{
+				"family": "Radzikowska",
+				"given": "M."
+			},
+			{
+				"family": "Ruecker",
+				"given": "S."
+			},
+			{
+				"family": "Brown",
+				"given": "S."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Group",
+				"given": "t. I. R."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2011,
+					6
+				]
+			]
+		},
+		"genre": "Long Paper Talk"
+	},
+	{
+		"id": "Organisciak2011a",
+		"type": "speech",
+		"title": "When to ask for help: Evaluating projects for crowdsourcing",
+		"event": "Digital Humanities 2011",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2011,
+					6
+				]
+			]
+		},
+		"genre": "Long Paper Talk"
+	},
+	{
+		"id": "Rockwell2010",
+		"type": "speech",
+		"title": "A Day in the Life of Digital Humanities",
+		"event": "Digital Humanities 2010",
+		"genre": "Long Paper Talk",
+		"author": [
+			{
+				"family": "Rockwell",
+				"given": "G."
+			},
+			{
+				"family": "Ruecker",
+				"given": "S."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Meredith-Lobay",
+				"given": "M."
+			},
+			{
+				"family": "Ranaweera",
+				"given": "K."
+			},
+			{
+				"family": "Sinclair",
+				"given": "S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2010
+				]
+			]
+		}
+	},
+	{
+		"id": "Ruecker2009",
+		"type": "speech",
+		"title": "Mashing Texts: Supporting collections level text analysis",
+		"event": "Digital Humanities 2009",
+		"genre": "Long Paper Talk",
+		"author": [
+			{
+				"family": "Ruecker",
+				"given": "S."
+			},
+			{
+				"family": "Rockwell",
+				"given": "G."
+			},
+			{
+				"family": "Brown",
+				"given": "S."
+			},
+			{
+				"family": "Sinclair",
+				"given": "S."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2009,
+					6
+				]
+			]
+		}
+	},
+	{
+		"id": "Rockwell2009",
+		"type": "speech",
+		"title": "Ubiquitous Text Analysis",
+		"event": "Digital Humanities 2009",
+		"genre": "Long Paper Talk",
+		"author": [
+			{
+				"family": "Rockwell",
+				"given": "G."
+			},
+			{
+				"family": "Ruecker",
+				"given": "S."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Sinclair",
+				"given": "S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2009,
+					6
+				]
+			]
+		}
+	},
+	{
+		"id": "Dumas2021",
+		"type": "speech",
+		"title": "A Text-Mining Approach to Measuring Creativity",
+		"event": "Annual Meeting, National Council for Measurement in Education",
+		"genre": "Conference Presentation",
+		"publisher-place": "Virtual",
+		"author": [
+			{
+				"family": "Dumas",
+				"given": "D. G."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Doherty",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2021
+				]
+			]
+		}
+	},
+	{
+		"id": "Dumas2020a",
+		"type": "speech",
+		"title": "Text Mining in Educational Research: Demonstrating Language Models for Measuring Creativity",
+		"event": "Methodology special interest group semi-annual meeting, European Association for Research on Learning and Instruction",
+		"genre": "Conference Presentation",
+		"publisher-place": "Vienna, Austria",
+		"author": [
+			{
+				"family": "Dumas",
+				"given": "D. G."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Doherty",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2020
+				]
+			]
+		}
+	},
+	{
+		"id": "Dumas2020b",
+		"type": "speech",
+		"title": "A computational psychometric approach to measuring creative thinking",
+		"event": "National Council on Measurement in Education",
+		"genre": "Conference Presentation",
+		"publisher-place": "Virtual meeting (because of Covid-19)",
+		"author": [
+			{
+				"family": "Dumas",
+				"given": "D. G."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Doherty",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2020
+				]
+			]
+		}
+	},
+	{
+		"id": "Dumas2020c",
+		"type": "speech",
+		"title": "Using text-mining models to quantify creative thinking",
+		"event": "National Council for Measurement in Education",
+		"genre": "Conference Presentation",
+		"publisher-place": "Virtual meeting (because of Covid-19)",
+		"author": [
+			{
+				"family": "Dumas",
+				"given": "D. G."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Doherty",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2020
+				]
+			]
+		}
+	},
+	{
+		"id": "Dumas2019",
+		"type": "speech",
+		"title": "Relational reasoning underlies creativity: Evidence from a text-mining investigation",
+		"event": "Annual Meeting of the American Educational Research Association",
+		"genre": "Conference Presentation",
+		"publisher-place": "Toronto, ON",
+		"author": [
+			{
+				"family": "Dumas",
+				"given": "D. G."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2019
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2012b",
+		"type": "speech",
+		"title": "A Modest Payment for a Modern Proposal",
+		"event": "Annual Meeting of the Society for Digital Humanities",
+		"genre": "Conference Presentation",
+		"publisher-place": "Waterloo, Canada",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2012
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2011b",
+		"type": "speech",
+		"title": "Pico Safari: Active Gaming in Integrated Environments",
+		"event": "Annual Meeting of the Society for Digital Humanities",
+		"genre": "Conference Presentation",
+		"publisher-place": "Fredericton, Canada",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Wong",
+				"given": "G."
+			},
+			{
+				"family": "Henry",
+				"given": "C."
+			},
+			{
+				"family": "Gutierrez",
+				"given": "L."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2011
+				]
+			]
+		},
+		"custom": [
+			{
+				"key": "award",
+				"value": "Best Student Paper"
+			}
+		]
+	},
+	{
+		"id": "Organisciak2010a",
+		"type": "speech",
+		"title": "Motivations of Users in Large-Scale Crowd-Powered Online Initiatives",
+		"event": "Chicago Colloquium on Digital Humanities and Computer Science",
+		"genre": "Conference Presentation",
+		"publisher-place": "Evanston, IL, USA",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2010
+				]
+			]
+		}
+	},
+	{
+		"id": "Rockwell2010a",
+		"type": "speech",
+		"title": "What do we say about ourselves? An analysis of the Day of DH 2009 data",
+		"event": "Annual Meeting of the Society for Digital Humanities",
+		"genre": "Conference Presentation",
+		"publisher-place": "Concordia University, Montreal, Canada",
+		"author": [
+			{
+				"family": "Rockwell",
+				"given": "G."
+			},
+			{
+				"family": "Ruecker",
+				"given": "S."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Meredith-Lobay",
+				"given": "M."
+			},
+			{
+				"family": "Ranaweera",
+				"given": "K."
+			},
+			{
+				"family": "Nyhan",
+				"given": "J."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2010
+				]
+			]
+		}
+	},
+	{
+		"id": "Organisciak2010b",
+		"type": "speech",
+		"title": "Shortcuts and Dead Ends: Control Issues With Online User-Generated Content",
+		"event": "Annual Meeting of the Canadian Association for Information Science (CAIS)",
+		"genre": "Conference Presentation",
+		"publisher-place": "Concordia University, Montreal, Canada",
+		"author": [
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Reed",
+				"given": "K."
+			},
+			{
+				"family": "Hibbert",
+				"given": "A."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2010
+				]
+			]
+		}
+	},
+	{
+		"id": "Rockwell2010b",
+		"type": "speech",
+		"title": "Exploring New Possibilities in Rapid Research Document Management",
+		"event": "Annual Meeting of the Society for Digital Humanities",
+		"genre": "Conference Presentation",
+		"publisher-place": "Carleton University, Ottawa, Canada",
+		"author": [
+			{
+				"family": "Rockwell",
+				"given": "G."
+			},
+			{
+				"family": "Ruecker",
+				"given": "S."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Brown",
+				"given": "S."
+			},
+			{
+				"family": "Sinclair",
+				"given": "S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2010
+				]
+			]
+		}
+	},
+	{
+		"id": "Varnam2009",
+		"type": "speech",
+		"title": "Invasion of the And-Ors: Applying Active Learning Principles in the Development of a Flash-based Boolean Search Tutorial and Game",
+		"event": "Annual Meeting of the Canadian Association for Information Science (CAIS)",
+		"genre": "Conference Presentation",
+		"publisher-place": "Carleton University, Ottawa, Canada",
+		"author": [
+			{
+				"family": "Varnam",
+				"given": "C."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			},
+			{
+				"family": "Reed",
+				"given": "K."
+			},
+			{
+				"family": "Hibbert",
+				"given": "A."
+			},
+			{
+				"family": "Keto",
+				"given": "D."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2009,
+					5
+				]
+			]
+		}
+	},
+	{
+		"id": "Rockwell2009",
+		"type": "speech",
+		"title": "Introducing a Day in the Life of the Digital Humanities",
+		"event": "Annual Meeting of the Society for Digital Humanities (SDH/SEMI)",
+		"genre": "Conference Presentation",
+		"publisher-place": "Carleton University, Ottawa, Canada",
+		"author": [
+			{
+				"family": "Rockwell",
+				"given": "G."
+			},
+			{
+				"family": "Ruecker",
+				"given": "S."
+			},
+			{
+				"family": "Organisciak",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					2009
+				]
+			]
+		}
+	},
+        {
+          "id": "Organisciak2020",
+          "type": "speech",
+          "title": "Identifying Related and Same-Work Relationships in Large Digital Libraries",
+          "event": "ASIS&T Webinars",
+          "genre": "Invited Talk",
+          "author": [
+            {"family": "Organisciak", "given": "P."},
+            {"family": "Ryan", "given": "M."},
+            {"family": "Gypin", "given": "L."}
+          ],
+          "custom": [
+            {"key": "location", "value": "Online"},
+            {"key": "sponsors", "value": "ASIS&T SIG-DM"}
+          ],
+          "issued": {"date-parts": [[2020]]}
+        },
+        {
+          "id": "Organisciak2019a",
+          "type": "speech",
+          "title": "Strategies for the utilisation of copyright-protected texts for third-party research",
+          "event": "Non-consumptive Access to In-copyright Digital Works - the US Perspective",
+          "sponsors": "Institute for Digital Law Trier and the Trier Center for Digital Humanities, University of Trier",
+          "author": [
+            {"family": "Organisciak", "given": "P."}
+          ],
+          "genre": "Invited Talk",
+          "issued": {"date-parts": [[2019]]},
+          "custom": [
+            {"key": "location", "value": "Trier, Germany"},
+            {"key": "sponsors", "value": "Institute for Digital Law Trier and the Trier Center for Digital Humanities, University of Trier"}
+          ]
+        },
+        {
+          "id": "Organisciak2019b",
+          "type": "speech",
+          "title": "Tooling the future of massive-scale text research data",
+          "event": "DataLab, University of Washington Information School",
+          "author": [
+            {"family": "Organisciak", "given": "P."}
+          ],
+          "issued": {"date-parts": [[2019]]},
+          "genre": "Invited Talk",
+          "custom": [
+            {"key": "location", "value": "Seattle, Washington"}
+          ]
+        },
+        {
+          "id": "Downie2018",
+          "type": "speech",
+          "title": "HathiTrust Research Center",
+          "event": "Nanjing University",
+          "author": [
+            {"family": "Downie", "given": "J.S."},
+            {"family": "Organisciak", "given": "P."}
+          ],
+          "issued": {"date-parts": [[2018]]},
+          "genre": "Invited Talk",
+          "custom": [
+            {"key": "location", "value": "Nanjing, China"}
+          ]
+        },
+        {
+          "id": "Organisciak2017c",
+          "type": "speech",
+          "title": "Data Capsule in 7 minutes",
+          "event": "Access Workshop 2017,Text Mining the Novel",
+          "author": [
+            {"family": "Organisciak", "given": "P."}
+          ],
+          "issued": {"date-parts": [[2017]]},
+          "genre": "Invited Talk",
+          "custom": [
+            {"key": "location", "value": "Montreal"}
+          ]
+        },
+        {
+          "id": "Organisciak_NonRef",
+          "type": "speech",
+          "title": "Characterizing Duplication and Similarity in Massive Digital Libraries",
+          "event": "First Digital Front Range Symposium",
+          "author": [
+            {"family": "Organisciak", "given": "P."}
+          ],
+          "issued": {"date-parts": [[2017]]},
+          "genre": "Talk (Other)",
+          "custom": [
+            {"key": "location", "value": "University of Denver"}
+          ]
+        },
+            {
+              "id": "Weber2021",
+              "type": "event",
+              "title": "Fairness and Accountability in Conceptual Models",
+              "event": "Association for Information Science and Technology",
+              "publisher-place": "Salt Lake City",
+              "author": [
+                {"family": "Weber", "given": "N."},
+                {"family": "Thomer", "given": "A."},
+                {"family": "Organisciak", "given": "P."},
+                {"family": "Fenlon", "given": "K."}
+              ],
+              "issued": {"date-parts": [[2021]]},
+              "genre": "Refereed Workshop",
+              "references": "Cancelled."
+            },
+            {
+              "id": "Weber2020",
+              "type": "event",
+              "title": "Workshop on conceptual models in digital libraries, archives, and museums",
+              "event": "2020 ACM/IEEE Joint Conference on Digital Libraries",
+              "issued": {"date-parts": [[2020, 8]]},
+              "genre": "Refereed Workshop",
+              "author": [
+                {"family": "Weber", "given": "N."},
+                {"family": "Fenlon", "given": "K."},
+                {"family": "Organisciak", "given": "P."},
+                {"family": "Thomer", "given": "A."},
+                {"family": "Wickett", "given": "K."}
+              ]
+            },
+            {
+              "id": "Weber2019",
+              "type": "event",
+              "genre": "Refereed Workshop",
+              "title": "Workshop on conceptual models in digital libraries, archives, and museums",
+              "event": "2019 ACM/IEEE Joint Conference on Digital Libraries",
+              "page": "457--458",
+              "URL": "https://doi.org/10.1109/JCDL.2019.00117",
+              "author": [
+                {"family": "Weber", "given": "N."},
+                {"family": "Fenlon", "given": "K."},
+                {"family": "Organisciak", "given": "P."},
+                {"family": "Thomer", "given": "A. K."}
+              ],
+              "issued": {"date-parts": [[2019]]}
+            },
+            {
+                "id": "Oxford2019",
+                "type": "event",
+                "genre": "Invited Teaching Workshop",
+                "title": "Data Scholarship for the Humanities with the HathiTrust Digital Library",
+                "issued": {"date-parts": [[2019, 7, 5]]},
+                "author": [
+                  {"family": "Downie", "given": "J. S."},
+                  {"family": "Organisciak", "given": "P."},
+                  {"family": "Wickes", "given": "E."}
+              ],
+                "custom": [
+                  {"key": "participants", "value": "30 participants"},
+                  {"key": "sponsors", "value": "Oxford e-Research Centre"}
+                ]
+              },
+              {
+                "id": "Beijing2018",
+                "type": "event",
+                "title": "HathiTrust Digital Library",
+                "genre": "Invited Teaching Workshop",
+                "author": [
+                  {"family": "Downie", "given": "J. S."},
+                  {"family": "Dickson Koehl", "given": "E."},
+                  {"family": "Organisciak", "given": "P."},
+                  {"family": "Weber", "given": "N."}
+              ],
+                "issued": {"date-parts": [[2018, 6, 14], [2018, 6, 16]]},
+                "custom": [
+                  {"key": "participants", "value": "40 participants"},
+                  {"key": "sponsors", "value": "Beijing Institute of Technology"}
+                ]
+              },
+            {
+              "id": "Vaish2017",
+              "type": "event",
+              "title": "CrowdCamp 2017",
+              "genre": "Invited Workshop",
+              "event": "AAAI Conference on Human Computation and Crowdsourcing",
+              "author": [
+                {"family": "Vaish", "given": "R."},
+                {"family": "Krause", "given": "M."},
+                {"family": "Organisciak", "given": "P."},
+                {"family": "Agapie", "given": "E."}
+              ],
+              "issued": {"date-parts": [[2017]]}
+            }
+          ]          

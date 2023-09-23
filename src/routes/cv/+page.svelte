@@ -1,10 +1,13 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
+  import publications from './publications.json';
+  import Publication from '$lib/cv/Publication.svelte';
+  import type { CSLPublication } from '$lib/cv/types';
 
-	const source = `
-## Funding
+  const typedPublications: CSLPublication[] = publications;
 
-### Awarded
+  const funding = `
+  ### Awarded
 
 \"Measuring Original Thinking in Elementary School: A Computational
 Psychometric Approach\" (2020-2023) \
@@ -53,547 +56,9 @@ Organisciak\", \$6,486.00. (start: April 1, 2019, end: June 30, 2020).
 Passages and Texts in the Legislative Process\", \$5,040.56, Awarded,
 peer-reviewed/refereed. (sub: April 2, 2018, start: July 2018, end: June
 2019).
+  `
 
-
-# Publications
-
-
-## Book Chapters (refereed)
-
-
-**Organisciak, P.,** & Downie, J. S. (2021). Research access to
-in-copyright texts in the humanities. In K. Golub & Y. Liu (Eds.),
-*Information organization in digital humanities: Global perspectives*
-(1st ed.). Routledge.
-<https://www.taylorfrancis.com/chapters/oa-edit/10.4324/9781003131816-8/research-access-copyright-texts-humanities-peter-organisciak-stephen-downie>
-
-
-## Journal Articles (refereed)
-
-
-De Chantel, PL., Organisciak, P. (2023).
-Automated feedback and creativity: On the role of metacognitive monitoring in divergent thinking.
-*Psychology of Aesthetics, Creativity, and the Arts*. <https://doi.org/10.1037/aca0000592>
-
-
-Organisciak, P., Acar, S., Dumas, D., & Berthiaume, K. (2023).
-Beyond semantic distance: Automated scoring of divergent thinking greatly improves with large language models.
-*Thinking Skills and Creativity*, 49. <https://doi.org/10.1016/j.tsc.2023.101356> (Available preprint: <http://dx.doi.org/10.13140/RG.2.2.32393.31840>) 
-
-
-Organisciak, P., Acar, S., Newman, M., Dumas, D., & Eby, D. (2023).
-How do the kids speak? Modeling child-directed language for educational use.
-*Information and Learning Science*. <https://doi.org/10.1108/ILS-06-2022-0082>.
-(Available at SSRN: <https://ssrn.com/abstract=4329061>).
-
-
-Dumas, D., Acar, S., Berthiaume, K., Organisciak, P., Eby, D., Grajzel, K., Flemister, T., Newman, M., & Carrera, M.
-(2023).
-What makes children’s responses to creativity assessments difficult to judge reliably?
-*Journal of Creative Behavior*. <https://doi.org/10.1002/jocb.588>
-
-
-Pares, N., & Organisciak, P. (In press, 2023).
-The effects of research data management services: Associating the data 
-curation life cycle with open research output. *College & Research Libraries*.
-
-
-Organisciak, P., Durward, M., & Schmidt, B. M. (2023).
-Approximate Nearest Neighbor for long document relationship labeling in digital libraries.
-*International Journal of Digital Libraries*. <https://doi.org/10.1007/s00799-023-00354-5>.
-
-
-Grajzel, K., Dumas, D. G., Berthiaume, K., Acar, S., & **Organisciak, P.** (2023).
-Measuring Flexibility of Thinking Using Text-Mining. *Frontiers in Psychology*.
-<https://www.frontiersin.org/articles/10.3389/fpsyg.2022.1093343>.
-
-
-Talley, J., Talapatra, D., Miller, G., & **Organisciak, P.** (2022).
-Defensive Driving: CAR:POOL as a Model for Proactive Postsecondary Planning
-and Connection. *Contemporary School Psychology.*
-<https://doi.org/10.1007/s40688-022-00438-0>.
-
-
-Bishop, B. W., Cowan, M., Collier, H., **Organisciak, P.,** & Mayernik,
-M. (2022). Job analyses of Earth science data managers: A survey
-validation of competencies to inform curricula in research data
-management education. *Journal of Education for Library and Information
-Science*. <https://doi.org/10.3138/jelis-2021-0023>
-
-
-**Organisciak, P.**, & Ryan, M. (2022). Improving Text Relationship
-Modeling with Artificial Data. *Journal of Information Science*.
-<https://doi.org/10.1177/01655515221093031>
-
-
-Acar, S., Berthiaume, K., Grajzel, K., Dumas, D. G., Flemister, T., &
-**Organisciak, P.** (2021). Applying automated originality scoring to
-the verbal form of Torrance Tests of creative thinking. *Gifted Child
-Quarterly*. <https://doi.org/https://doi.org/10.1177/00169862211061874>
-
-
-**Organisciak, P.**, Schmidt, B. M., & Downie, J. S. (2021). Giving
-shape to large digital libraries through exploratory data analysis.
-*Journal of the Association for Information Science and Technology*.
-<https://doi.org/10.1002/asi.24547>
-
-
-Dumas, D. G., **Organisciak, P.,** Maio, S., & Doherty, M. (2021). Four
-text-mining methods for measuring elaboration. *Journal of Creative
-Behavior*, *55*(2), 517--531. <https://doi.org/10.1002/jocb.471>
-
-
-Dumas, D. G., Doherty, M., & **Organisciak, P.** (2020). The psychology
-of professional and student actors: Creativity, personality, and
-motivation. *PloS ONE*, *15*(10), e0240728.
-<https://doi.org/10.1371/journal.pone.0240728>
-
-
-Maio, S., Dumas, D. G., **Organisciak, P.**, & Runco, M. (2020). Is the
-reliability of objective originality scores confounded by elaboration?
-*Creativity Research Journal*.
-<https://doi.org/10.1080/10400419.2020.1818492>
-
-
-Dumas, D. G., **Organisciak, P.,** & Doherty, M. (2020). Measuring
-divergent thinking originality with human raters and text-mining models:
-A psychometric comparison of methods. *Psychology of Aesthetics,
-Creativity, and the Arts*. <https://doi.org/10.1037/aca0000319>
-
-
-Downie, J. S., Bhattacharyya, S., Giannetti, F., Dickson Koehl, E., &
-**Organisciak, P.** (2020). The HathiTrust Digital Library\'s potential
-for musicology research. *International Journal on Digital Libraries*.
-<https://doi.org/10.1007/s00799-020-00283-7>
-
-
-Hu, X., Lee, J. H., Bainbridge, D., Choi, K., **Organisciak, P.,** &
-Downie, J. S. (2017). The MIREX grand challenge: A framework of holistic
-user-experience evaluation in music information retrieval. *Journal of
-the Association for Information Science and Technology*, *68*(1),
-97--112. <https://doi.org/10.1002/asi.23618>
-
-
-**Organisciak, P.,** & Capitanu, B. (2016). Text mining in Python
-through the HTRC Feature Reader. *The Programming Historian*, *5*.
-<https://doi.org/10.46430/phen0058>
-
-
-Bhattacharyya, S., **Organisciak, P.**, & Downie, J. S. (2015). *A
-fragmentizing interface to a large corpus of digitized text:
-(Post)humanism and non-consumptive reading via features*. *40*(1),
-61--77. <https://doi.org/10.1179/0308018814Z.000000000105>
-
-
-Rockwell, G., **Organisciak, P.**, Ruecker, S., Meredith-Lobay, M.,
-Ranaweera, K., & Nyhan, J. (2012). The design of an international social
-media event: A Day in the Life of the Digital Humanities. *Digital
-Humanities Quarterly*, *6*(2).
-<http://www.digitalhumanities.org/dhq/vol/6/2/000123/000123.html>
-
-
-> The project this reports was winner of **Outstanding Contribution
-Award** from the Canadian Society for Digital Humanities.
-
-
-Rockwell, G., Sinclair, S., Ruecker, S., & **Organisciak, P.** (2010).
-Ubiquitous Text Analysis. *Poetess Archive Journal 2.1.*
-
-
-## Proceedings Articles
-
-
-🅟 Proceedings Long Article ⓟ Proceedings Short Article
-
-
-ⓟ **Organisciak, P.**, Shetenhelm, S., Francisco Albuquerque Vasques,
-D., & Matusiak, K. (2019). Characterizing same work relationships in
-large-scale digital libraries. *Information in Contemporary Society:
-iConference 2019*, 419--425.
-<https://doi.org/10.1007/978-3-030-15742-5_40>
-
-
-> Winner, **Best Short Research Paper**.
-
-
-🅟 **Organisciak, P.,** Capitanu, B., Underwood, T., & Downie, J. S.
-(2017). Access to billions of pages for large-scale text analysis.
-*iConference 2017 Proceedings*, *2*, 66--76.
-<https://doi.org/10.9776/17100>
-
-
-🅟 **Organisciak, P.,** Teevan, J., Dumais, S., Miller, R. C., & Kalai,
-A. T. (2015). Matching and grokking: Approaches to personalized
-crowdsourcing. In Q. Yang & M. Wooldridge (Eds.), *Proceedings of the
-twenty-fourth international joint conference on artificial intelligence*
-(pp. 4296--4302). AAAI.
-<https://www.ijcai.org/Proceedings/15/Papers/611.pdf>
-
-
-> Invited and peer-reviewed awards-track paper at a top artificial
-intelligent conference.
-
-
-🅟 **Organisciak, P.,** & Twidale, M. (2015, March). Design facets of
-crowdsourcing. *iConference 2015 Proceedings*.
-
-
-🅟 **Organisciak, P.,** Teevan, J., Dumais, S. T., Miller, R. C., &
-Kalai, A. T. (2014, November). A Crowd of Your Own: Crowdsourcing for
-On-Demand Personalization. *Proceedings of the AAAI Conference on Human
-Computation and Crowdsourcing*, 2(1), 192-200.
-<https://ojs.aaai.org/index.php/HCOMP/article/view/13161>
-
-
-> Winner, **Notable Paper Award**. Featured in New Scientist.
-
-
-🅟 **Organisciak, P.**, & Twidale, M. (2014). When the elevator pitch
-meets the subject heading: How mixtures of other documents can describe
-what a document is about. *Proceedings of the American Society for
-Information Science and Technology*, 51(1), 1--9.
-<https://doi.org/10.1002/meet.2014.14505101062>
-
-
-> Featured in Slate.
-
-
-🅟 **Organisciak, P.,** Efron, M., Fenlon, K., & Senseney, M. (2012).
-Evaluating rater quality and rating difficulty in online annotation
-activities. *Proceedings of the American Society for Information Science
-and Technology*, *49*, 1--10. <https://doi.org/10.1002/meet.14504901166>
-
-
-🅟 Efron, M., **Organisciak, P.**, & Fenlon, K. (2012). Improving
-Retrieval of Short Texts Through Document Expansion. *Proceedings of the
-35th International ACM SIGIR Conference on Research and Development in
-Information Retrieval*, 911--920.
-<https://doi.org/10.1145/2348283.2348405>
-
-
-🅟 Efron, M., **Organisciak, P.,** & Fenlon, K. (2011). Building Topic
-Models in a Federated Digital Library Through Selective Document
-Exclusion. *Proceedings of the American Society for Information Science
-and Technology*, 48(1), 1--10.
-<https://doi.org/10.1002/meet.2011.14504801048>.
-
-
-> Winner, **Best Paper**.
-
-
-ⓟ Fenlon, K., **Organisciak, P.,** Jett, J., & Efron, M. (2011,
-October). Semi-automated Collection Evaluation for Large-scale
-Aggregations. *Proceedings of the American Society for Information
-Science and Technology*.
-
-
-## Reports (non-refereed)
-
-
-**Organisciak, P.**, Schmidt, B.M., Matusiak K. (2021). *Similarities
-and Duplicates in Digital Libraries*. Project Technical Report.
-<https://doi.org/10.13140/RG.2.2.12650.59846>.
-
-
-Weber, N., Thomer, A. K., Fenlon, K., & **Organisciak, P.** (2020).
-SIG-CM 2019: Workshop on Conceptual Modeling Report.
-<https://doi.org/10.5281/zenodo.3878946>
-
-
-HT+BW Project Team. (2017). Exploring the Billions and Billions of Words
-in the HathiTrust Corpus with Bookworm: HathiTrust+Bookworm Project
-Technical Report.
-
-
-## Extended Abstracts (refereed)
-
-
-_Long paper abstracts at certain Humanities and Social Science venues,
-and poster extended-abstracts in Computer and Information Science
-proceedings._
-
-
-🆃 **Long-paper talk** 🅿 **Poster**
-
-
-🆃 VandenBosch, A., **Organisciak, P.** & Matusiak, K. (2022). Reducing
-Redundancy Bias in Digital Library Collections. *Digital Humanities
-2022*.
-
-
-🅿 Ryan, M., Zhang, R., Durward, M., Matusiak, K., **Organisciak, P.**
-(2020). Joint Conference on Digital Libraries, \"Challenges and
-Solutions of Identifying Similarities and Duplication in Digital
-Libraries,\" *2020 ACM/IEEE Joint Conference on Digital Libraries*,
-Wuhan/Online.
-
-
-🅿 **Organisciak, P.**, Therrell, G., Ryan, M., & Schmidt, B. M. (2019).
-Examining patterns of text reuse in digitized text collections. *2019
-ACM/IEEE Joint Conference on Digital Libraries*, 361--362.
-<https://doi.org/10.1109/JCDL.2019.00071>
-
-
-🅿 Page, K. R., Jett, J., Cole, T. W., Kudeki, D., Bainbridge, D.,
-**Organisciak, P.**, & Downie, J. S. (2018, June). Worksets expand the
-scholarly utility of digital libraries. *JCDL \'18: Proceedings of the
-18th ACM/IEEE Joint Conference on Digital Libraries*.
-<https://doi.org/10.1145/3197026.3203886>
-
-
-🆃 **Organisciak, P.,** & Franklin, S. (2017). Modeling creativity:
-Tracking long-term lexical change. *Digital Humanities 2017*.
-<https://dh2017.adho.org/abstracts/563/563.pdf>
-
-
-🆃 Weigl, D. M., Page, K. R., **Organisciak, P.**, & Downie, J. S.
-(2017). Information-seeking in large-scale digital libraries: Strategies
-for scholarly workset creation. *2017 ACM/IEEE Joint Conference on
-Digital Libraries*, 253--256.
-<https://doi.org/10.1109/JCDL.2017.7991583>
-
-
-🅿 **Organisciak, P.**, & Vaish, R. (2016, May). Accomplishing
-low-attention microtasks. *Productivity Decomposed: Getting Big Things
-Done with Little Microtasks*.
-<http://teevan.org/misc/microproductivity/position/organisciak-microproductivity.pdf>
-
-
-🅿 **Organisciak, P.**, & Downie, J. S. (2015). Improving consistency of
-crowdsourced multimedia similarity for evaluation. *JCDL \'15:
-Proceedings of the 15th ACM/IEEE-CS Joint Conference on Digital
-Libraries*, 115--118. <https://doi.org/10.1145/2756406.2756942>
-
-
-🅿 Vaish, R., **Organisciak, P.**, Hara, K., Bigham, J. P., & Zhang, H.
-(2014, November). Low Effort Crowdsourcing: Leveraging Peripheral
-Attention for Crowd Work. *Proceedings of the Second AAAI Conference on
-Human Computation & Crowdsourcing*.
-
-
-🆃 **Organisciak, P.**, Bhattacharyya, S., Auvil, L., & Downie, J. S.
-(2014, July). Large-scale text analysis through the HathiTrust Research
-Center. *Digital Humanities 2014*.
-
-
-🅿 Green, H., Fenlon, K., Senseney, M., Bhattacharyya, S., Willis, C.,
-**Organisciak, P.**, Downie, J. S., Cole, T. W., & Plale, B. (2014,
-March). Using collections and worksets in large-scale corpora:
-Preliminary findings from the Workset Creation for Scholarly Analysis
-project. *IConference 2014 Proceedings*.
-<http://hdl.handle.net/2142/47338>
-
-
-🆃 **Organisciak, P.** (2013). Addressing Diverse Corpora with
-Cluster-based Term Weighting. *Proceedings of the 13th ACM/IEEE-CS Joint
-Conference on Digital Libraries*, 163--166.
-<https://doi.org/10.1145/2467696.2467740>
-
-
-🆃 **Organisciak, P.** (2013). Incidental Crowdsourcing: Crowdsourcing in
-the Periphery. *Digital Humanities 2013*.
-<http://dh2013.unl.edu/abstracts/ab-273.html>
-
-
-🅿 Fenlon, K., Efron, M., & **Organisciak, P.** (2012). Tooling the
-aggregator's workbench: Metadata visualization through statistical text
-analysis. *Proceedings of the American Society for Information Science
-and Technology*, *49*, 1--10. <https://doi.org/10.1002/meet.14504901161>
-
-
-🆃 Efron, M., & **Organisciak, P.** (2011, July). A Palette Mixing Model
-of Information Seeking for Complex Queries. *Proceedings of the SIGIR
-2011 Workshop on \"entertain Me\": Supporting Complex Search Tasks*.
-<http://www.cis.strath.ac.uk/cis/research/publications/papers/strath_cis_publication_2608.pdf#page=29>
-
-
-🆃 Radzikowska, M., Ruecker, S., Brown, S., **Organisciak, P.**, & Group,
-t. I. R. (2011, June). Structured Surfaces for JiTR. *Digital Humanities
-2011*.
-
-
-🆃 **Organisciak, P.** (2011, June). When to ask for help: Evaluating
-projects for crowdsourcing. *Digital Humanities 2011*.
-
-
-🆃 Rockwell, G., Ruecker, S., **Organisciak, P.**, Meredith-Lobay, M.,
-Ranaweera, K., & Sinclair, S. (2010). A Day in the Life of Digital
-Humanities. *Digital Humanities 2010*.
-
-
-🆃 Ruecker, S., Rockwell, G., Brown, S., Sinclair, S., & **Organisciak,
-P.** (2009, June). Mashing Texts: Supporting collections level text
-analysis. *Digital Humanities 2009*.
-
-
-🆃 Rockwell, G., Ruecker, S., **Organisciak, P.**, & Sinclair, S. (2009,
-June). Ubiquitous Text Analysis. *Digital Humanities 2009*.
-
-
-# Presenting
-
-
-## Presentations (refereed)
-
-
-*Conference presentations from peer-reviewed abstracts (not extended
-abstracts), as in Education conferences and some Social Science and
-Humanities conferences.*
-
-
-Dumas, D. G., **Organisciak, P.**, Doherty, M. (2021). \"A Text-Mining
-Approach to Measuring Creativity,\" Annual Meeting, National Council for
-Measurement in Education, Virtual.
-
-
-Dumas, D. G., **Organisciak, P.**, Doherty, M. (2020). \"Text Mining in
-Educational Research: Demonstrating Language Models for Measuring
-Creativity,\" Methodology special interest group semi-annual meeting.
-European Association for Research on Learning and Instruction, Vienna,
-Austria.
-
-
-Dumas, D. G. **Organisciak, P.**, Doherty, M. (2020). \"A computational
-psychometric approach to measuring creative thinking,\" National Council
-on Measurement in Education, Virtual meeting (because of Covid-19).
-
-
-Dumas, D. G., **Organisciak, P.**, Doherty, M. (2020), \"Using
-text-mining models to quantify creative thinking,\" National Council for
-Measurement in Education, Virtual meeting (because of Covid-19).
-
-
-Dumas, D. G., **Organisciak, P.** (2019). Pushing the Boundaries of
-Relational Reasoning in Research and Practice: Cross-National,
-Cross-Domain, and Cross-Age Explorations, \"Relational reasoning
-underlies creativity: Evidence from a text-mining investigation.,\"
-Annual Meeting of the American Educational Research Association,
-Toronto, ON.
-
-
-**Organisciak, P.** (2012). \"A Modest Payment for a Modern Proposal,\"
-Annual Meeting of the Society for Digital Humanities, Waterloo, Canada.
-
-
-**Organisciak, P.**, Wong, G., Henry, C., Gutierrez, L. (2011). \"Pico
-Safari: Active Gaming in Integrated Environments,\" Annual Meeting of
-the Society for Digital Humanities, Fredericton, Canada.
-
-
-Winner, **Best Student Paper.**
-
-
-**Organisciak, P.** (2010). \"Motivations of Users in Large-Scale
-Crowd-Powered Online Initiatives,\" Chicago Colloquium on Digital
-Humanities and Computer Science, Evanston, IL, USA.
-
-
-Rockwell, G., Ruecker, S., **Organisciak, P.**, Meredith-Lobay, M.,
-Ranaweera, K., Nyhan, J. (2010). Annual Meeting of the Society for
-Digital Humanities, \"What do we say about ourselves? An analysis of the
-Day of DH 2009 data,\" SDH/SEMI, Concordia University, Montreal, Canada.
-
-
-**Organisciak, P.**, Reed, K., & Hibbert, A. (2010). "Shortcuts and Dead
-Ends: Control Issues With Online User-Generated Content.. Annual Meeting
-of the Canadian Association for Information Science (CAIS). Concordia
-University, Montreal, Canada.
-
-
-Rockwell, G., Ruecker, S., **Organisciak, P.**, Brown, S., Sinclair, S.
-(2010). \"Exploring New Possibilities in Rapid Research Document
-Management,\" Annual Meeting of the Society for Digital Humanities,
-Carleton University, Ottawa, Canada.
-
-
-Varnam, C., **Organisciak, P.**, Reed, K., Hibbert, A., & Keto, D.
-(2009, May). "Invasion of the And-Ors: Applying Active Learning
-Principles in the Development of a Flash-based Boolean Search Tutorial
-and Game". Annual Meeting of the Canadian Association for Information
-Science (CAIS). Carleton University, Ottawa, Canada.
-
-
-Rockwell, G., Ruecker, S., **Organisciak, P.** (2009). \"Introducing a
-Day in the Life of the Digital Humanities,\" Annual Meeting of the
-Society for Digital Humanities (SDH/SEMI), Carleton University, Ottawa,
-Canada.
-
-
-## Presentations (invited)
-
-
-**Organisciak, P.**, Ryan, M., Gypin, L. (2020). \"Identifying Related
-and Same-Work Relationships in Large Digital Libraries,\" *ASIS&T
-Webinars*. Sponsored by ASIS&T SIG-DM.
-
-
-**Organisciak, P.**. (2019). Strategies for the utilisation of
-copyright-protected texts for third-party research, \"Non-consumptive
-Access to In-copyright Digital Works - the US Perspective,\" Institute
-for Digital Law Trier and the Trier Center for Digital Humanities,
-University of Trier, Trier, Germany.
-
-
-**Organisciak, P.** (2019). \"Tooling the future of massive-scale text
-research data,\" DataLab, University of Washington Information School,
-Seattle, Washington.
-
-
-**Downie, J.S.**, Organisciak, P. (2018). "HathiTrust Research Center".
-Nanjing University, Nanjing, China.
-
-
-**Organisciak, P.** (2017), \"Data Capsule in 7 minutes,\" Access
-Workshop 2017,Text Mining the Novel, Montreal.
-
-
-## Presentations (other)
-
-
-**Organisciak, P.**, First Digital Front Range Symposium,
-\"Characterizing Duplication and Similarity in Massive Digital
-Libraries,\" University of Denver.
-
-
-## Paper Workshop Organizer (refereed)
-
-
-Weber, N., Thomer, A., **Organisciak, P.**, Fenlon, K. (2021).
-\"Fairness and Accountability in Conceptual Models,\" Association for
-Information Science and Technology, Salt Lake City. Cancelled for low
-attendance.
-
-
-Weber, N., Fenlon, K., **Organisciak, P.**, Thomer, A., & Wickett, K.
-(2020, August). Workshop on conceptual models in digital libraries,
-archives, and museums. *2020 ACM/IEEE Joint Conference on Digital
-Libraries*.
-
-
-Weber, N., Fenlon, K., **Organisciak, P.**, & Thomer, A. K. (2019).
-Workshop on conceptual models in digital libraries, archives, and
-museums. *2019 ACM/IEEE Joint Conference on Digital Libraries*,
-457--458. <https://doi.org/10.1109/JCDL.2019.00117>
-
-
-## Teaching Workshop Organizer (invited)
-
-
-Workshop, Oxford e-Research Centre, University of Oxford, 30
-participants. (July 5, 2019).
-
-
-Workshop, Beijing Institute of Technology, 40 participants. (June 14,
-2018 - June 16, 2018).
-
-
-## Workshop Organizer (invited)
-
-
-Vaish, R., Krause, M., Organisciak, P., Agapie, E. (2017). CrowdCamp
-2017. *AAAI Conference on Human Computation and Crowdsourcing*.
-
-
+	const source = `
 ## Panels
 
 
@@ -1318,6 +783,87 @@ const degrees: education[]= [
   ]
 }
 
+type ExtendedAbstractExtension = {
+  genre: 'Long Paper Talk' | 'Poster';
+};
+
+type AbstractExtension = {
+  genre: 'Proceedings Short Article' | 'Proceedings Long Article';
+};
+
+type PresentationExtension = {
+  genre: "Conference Presentation"
+}
+
+  const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[] =
+        [
+          {
+            heading: "Book Chapters",
+            entries: typedPublications.filter(p => p.type === 'chapter')
+          },
+          {
+            heading: "Journal Articles",
+            entries: typedPublications.filter(p => p.type === 'article-journal')
+          },
+          {
+            heading: "Proceedings Paper",
+            entries: typedPublications.filter(function(p) {
+              return p.type === "paper-conference"  && (p.genre === 'Proceedings Short Article' || p.genre === 'Proceedings Long Article')
+              }) as (CSLPublication & AbstractExtension)[]
+          },
+          {
+            heading: "Reports",
+            entries: typedPublications.filter(p => p.type === "report")
+          },
+          {
+            heading: "Extended Abstracts",
+            comment: "Long paper abstracts at certain Humanities and Social Science venues, and poster extended-abstracts in Computer and Information Science proceedings.",
+            entries: typedPublications.filter(function (pub) {
+              return pub.type === 'speech' && (pub.genre === 'Long Paper Talk' || pub.genre === 'Poster')
+            }) as (CSLPublication & ExtendedAbstractExtension)[]
+          },
+          {
+            heading: "Presentations (refereed)",
+            comment: "Conference presentations refereed from peer-reviewed short abstracts, as at Education conferences and some Social Science and Humanities conferences.",
+            entries: typedPublications.filter(function (pub) {
+              return (pub.type === 'speech' && 
+                      (pub.genre === 'Conference Presentation')
+              )
+            }) as (CSLPublication & PresentationExtension)[]
+          },
+          {
+            heading: "Presentations (invited)",
+            entries: typedPublications.filter(function (pub) {
+              return (pub.type === 'speech' && 
+                      (pub.genre === 'Invited Talk')
+              )
+            }) as (CSLPublication & {"genre": "Invited Talk"})[]
+          },
+          {
+            heading: "Presentations (other)",
+            entries: typedPublications.filter(function (pub) {
+              return (pub.type === 'speech' && 
+                      (pub.genre === 'Talk (Other)')
+              )
+            }) as (CSLPublication & {"genre": "Talk (Other)"})[]
+          },
+          {
+            heading: "Workshops (refereed)",
+            entries: typedPublications.filter(function (pub) {
+              return (pub.type === 'event' && 
+                      (pub.genre === 'Refereed Workshop')
+              )
+            }) as (CSLPublication & {"genre": 'Refereed Workshop'})[]
+          },
+          {
+            heading: "Teaching Workshops",
+            entries: typedPublications.filter(function (pub) {
+              return (pub.type === 'event' && 
+                      (pub.genre === 'Invited Teaching Workshop')
+              )
+            }) as (CSLPublication & {"genre": 'Invited Teaching Workshop'})[]
+          }
+  ]
 
 	const headings = source.split('\n').filter((x)=> (x[0] === '#'));
 
@@ -1380,27 +926,31 @@ const degrees: education[]= [
   </section>
 
   <section>
-    <h2>Education</h2>
-    <div class="flex flex-wrap">
-      {#each degrees as edu}
-      <div class="flex-none w-48 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5">
-          <span class="dark:text-slate-300"><span class="font-bold">{edu.degree}</span>, {edu.university}, {edu.year}</span>
-          <div class="text-sm p-0 m-0">
-          {#if edu.additionalDetails.major}
-            <p class='my-2 italic ml-4'>Major: {edu.additionalDetails.major}</p>
-          {/if}
-          {#if edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}
-            <p class='my-2 italic ml-4'>{edu.additionalDetails.dissertationTitle ? 'Dissertation' : 'Thesis'}: {edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}</p>
-          {/if}
-          {#if edu.additionalDetails.committee}
-            <p class='my-2 italic ml-4'>Committee: {edu.additionalDetails.committee.join(', ')}</p>
-          {/if}
-          </div></div> 
-        
-      {/each}
-
-</div>
+    <h2>Funding</h2>
+    <div class="flex flex-row">
+      <div class="w-full md:w-11/12">
+          <SvelteMarkdown source={funding} />
+      </div>
   </section>
+
+  <section>
+    <h2>Publications</h2>
+  </section>
+
+  {#each pubSections as pubSection}
+    <section>
+      <h3>{pubSection.heading}</h3>
+      {#if pubSection.comment}
+        <p class="italic text-sm">{pubSection.comment}</p>
+      {/if}
+
+      <div class="flex flex-wrap">
+        {#each pubSection.entries as pub}
+          <Publication data={pub} />
+        {/each}
+      </div>
+    </section>
+  {/each}
 
 <section id="cv">
     <div class="container mx-auto mt-5">
@@ -1417,6 +967,10 @@ const degrees: education[]= [
 <style lang="postcss">
     p {
         @apply mx-auto my-3;
+    }
+
+    h2 {
+      @apply text-center my-5;
     }
 
 </style>

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { onMount } from 'svelte';
     import ColorBox from '$lib/colorbox/ColorBoxBase.svelte';
     import colors from './colors.json';
     
@@ -18,10 +19,22 @@
     const shuffledkeysArray: string[] = shuffleArray(keysArray);
     let displayedColors: string[] = shuffledkeysArray.slice(0, 100); 
 
+    onMount(() => {
+        // Attach the scroll event listener to the window for mobile compatibility
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            // Clean up the event listener
+            window.removeEventListener('scroll', handleScroll);
+        };
+    });
+
     function handleScroll(event: Event): void {
-        const target = event.target as HTMLElement;
-        if (target.scrollHeight - target.scrollTop === target.clientHeight) {
-            // When scrolled to the bottom, load more colors
+        // Use window's scroll properties for more consistent behavior across devices
+        const scrollTop = window.scrollY;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollHeight = document.documentElement.scrollHeight;
+
+        if (scrollHeight - scrollTop <= clientHeight + 5) {
             const nextColors: string[] = shuffledkeysArray.slice(displayedColors.length, displayedColors.length + 30);
             displayedColors = [...displayedColors, ...nextColors];
         }
@@ -42,16 +55,14 @@
 
 <style>
     div.colorcontainer {
-       overflow:hidden;
+       overflow: hidden;
     }
     div.colors {
-        height: 100vb;
+        height: 100vh; /* corrected typo here */
         display: flex;
         flex: 1;
         flex-wrap: wrap;
-        overflow-y: scroll;
-        /* hide scroll bar */
+        overflow-y: auto; /* changed from 'scroll' to 'auto' */
         justify-content: center;
     }
 </style>
-

@@ -7,6 +7,10 @@
 	interface Msg {
 	 	main: string;
 	 	details: string;
+		links: {
+			text: string;
+			href: string;
+		}[]
 	};
 
 	export let msgs:Msg[] = [];
@@ -20,7 +24,7 @@
 	let flipcnt:number = 0;
 	let flipped:boolean = true;
 
-	let msgA:Msg = msg_shuffle.length > 0 ? msg_shuffle[0] : {main: "", details: ""};
+	let msgA:Msg = msg_shuffle.length > 0 ? msg_shuffle[0] : {main: "", details: "", links:[]};
 	let msgB:Msg = msg_shuffle.length > 1 ? msg_shuffle[1] : msgA;
 
 	let rotateAngle = 2;
@@ -68,20 +72,28 @@
 <div class="flex flex-col m-5 bg-transparent flip-card w-[350px] md:w-[400px] h-[350px] md:h-[300px]" style="transform: rotateY(0deg) rotate({$rotate}deg)" on:click="{() => newcard() }">
 	<div class="select-none text-sm text-cyan-600 italic m-0 p-0">Click for More</div>
 	<div class="flex-1 flip-card-inner justify-center" style="transform: rotateY({$flip}deg)">
-	  <div class="grow absolute p-4 backface-hidden rounded-xl w-full bg-slate-700">
+	  <div class="grow absolute p-4 backface-hidden rounded-xl w-full bg-yellow-300 dark:bg-slate-700">
 		<h1 class="mt-5 text-2xl">{msgA.main}</h1>
-		<p class="text-sm italic"><em>{@html msgA.details}</em></p>
+		<p class="text-sm italic">
+			<em>{@html msgA.details}</em>
+			{#each msgB.links as link}
+				<a href="{link.href}" target="_blank">{link.text}</a><br/>
+			{/each}
+		</p>
 	  </div>
-	  <div class="grow absolute p-4 flip-card-back rounded-xl w-full backface-hidden bg-slate-700">
-		<h1 class='mt-5 text-2xl'>{msgB.main}</h1>
-		<p class="text-sm italic"><em>{@html msgB.details}</em></p>
+	  <div class="grow absolute p-4 flip-card-back rounded-xl w-full backface-hidden bg-fuchsia-700 dark:bg-slate-700">
+		<h1 class='mt-5 text-2xl text-fuchsia-50'>{msgB.main}</h1>
+		<p class="details text-sm italic text-fuchsia-200">
+			<em>{@html msgB.details}</em>
+			{#each msgB.links as link}
+				<a class="text-blue-300 hover:text-blue-400" href="{link.href}" target="_blank">{link.text}</a><br/>
+			{/each}
+		</p>
 	  </div>
 	</div>
   </div>
 
-  
-
-<style>
+<style lang='postcss'>
 .flip-card {
   perspective: 1000px;
   transform: rotateY(0deg) rotate(5deg);

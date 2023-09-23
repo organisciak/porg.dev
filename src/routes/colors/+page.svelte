@@ -5,7 +5,8 @@
     
     // shuffle colors and type them
     const typedColors: { [key: string]: string } = colors;
-    
+    let isLoading = false;
+
     // todo make reactive
     function shuffleArray<T>(array: T[]): T[] {
         const arr = [...array];
@@ -28,15 +29,19 @@
         };
     });
 
-    function handleScroll(event: Event): void {
-        // Use window's scroll properties for more consistent behavior across devices
+    async function handleScroll(event: Event): Promise<void> {
+        if (isLoading) return;
+
         const scrollTop = window.scrollY;
         const clientHeight = document.documentElement.clientHeight;
         const scrollHeight = document.documentElement.scrollHeight;
 
         if (scrollHeight - scrollTop <= clientHeight + 5) {
+            isLoading = true;
             const nextColors: string[] = shuffledkeysArray.slice(displayedColors.length, displayedColors.length + 30);
+            
             displayedColors = [...displayedColors, ...nextColors];
+            isLoading = false;
         }
     }
 </script>

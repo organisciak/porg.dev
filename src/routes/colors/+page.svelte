@@ -18,7 +18,7 @@
     }
     const keysArray: string[] = Object.keys(colors);
     const shuffledkeysArray: string[] = shuffleArray(keysArray);
-    let displayedColors: string[] = shuffledkeysArray.slice(0, 100); 
+    let displayedColors: string[] = shuffledkeysArray.slice(0, 200); 
 
     onMount(() => {
         // Attach the scroll event listener to the window for mobile compatibility
@@ -33,12 +33,11 @@
     async function handleScroll(event: Event): Promise<void> {
         if (isLoading) return;
         const scrollTop = window.scrollY;
-        const clientHeight = document.documentElement.clientHeight;
+        const offsetHeight = document.documentElement.offsetHeight;
         const scrollHeight = document.documentElement.scrollHeight;
-
-        if (scrollHeight - scrollTop <= clientHeight + 100) {
+        if (scrollHeight - scrollTop <= offsetHeight + 100) {
             isLoading = true;
-            const nextColors: string[] = shuffledkeysArray.slice(displayedColors.length, displayedColors.length + 50);
+            const nextColors: string[] = shuffledkeysArray.slice(displayedColors.length, displayedColors.length + 100);
 
             displayedColors = [...displayedColors, ...nextColors];
             isLoading = false;

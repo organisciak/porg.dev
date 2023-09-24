@@ -36,9 +36,9 @@
         const clientHeight = document.documentElement.clientHeight;
         const scrollHeight = document.documentElement.scrollHeight;
 
-        if (scrollHeight - scrollTop <= clientHeight + 20) {
+        if (scrollHeight - scrollTop <= clientHeight + 100) {
             isLoading = true;
-            const nextColors: string[] = shuffledkeysArray.slice(displayedColors.length, displayedColors.length + 30);
+            const nextColors: string[] = shuffledkeysArray.slice(displayedColors.length, displayedColors.length + 50);
 
             displayedColors = [...displayedColors, ...nextColors];
             isLoading = false;

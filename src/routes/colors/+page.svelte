@@ -23,6 +23,7 @@
     onMount(() => {
         // Attach the scroll event listener to the window for mobile compatibility
         window.addEventListener('scroll', handleScroll);
+        window.scrollTo(0, 0);
         return () => {
             // Clean up the event listener
             window.removeEventListener('scroll', handleScroll);
@@ -31,23 +32,24 @@
 
     async function handleScroll(event: Event): Promise<void> {
         if (isLoading) return;
-
         const scrollTop = window.scrollY;
         const clientHeight = document.documentElement.clientHeight;
         const scrollHeight = document.documentElement.scrollHeight;
 
-        if (scrollHeight - scrollTop <= clientHeight + 5) {
+        if (scrollHeight - scrollTop <= clientHeight + 20) {
             isLoading = true;
             const nextColors: string[] = shuffledkeysArray.slice(displayedColors.length, displayedColors.length + 30);
-            
+
             displayedColors = [...displayedColors, ...nextColors];
             isLoading = false;
         }
     }
 </script>
 
+<svelte:window on:scroll={handleScroll} />
+
 <div class='colorcontainer'>
-<div class='colors' on:scroll={handleScroll}>
+<div class="colors h-screen flex flex-wrap justify-center">
     {#each displayedColors as colorname, index (colorname)}
         <ColorBox colorname={colorname}
         csshex={typedColors[colorname]}
@@ -57,17 +59,3 @@
     {/each}
 </div>
 </div>
-
-<style>
-    div.colorcontainer {
-       overflow: hidden;
-    }
-    div.colors {
-        height: 100vh; /* corrected typo here */
-        display: flex;
-        flex: 1;
-        flex-wrap: wrap;
-        overflow-y: auto; /* changed from 'scroll' to 'auto' */
-        justify-content: center;
-    }
-</style>

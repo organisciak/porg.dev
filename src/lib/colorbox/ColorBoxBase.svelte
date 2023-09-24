@@ -30,7 +30,7 @@
 </script>
 
 <div class="flex m-1 p-1 mb-6 border rounded-sm items-start justify-start"
-style='background:{bgColor}; border-color: {borderColor};'  in:fade={{ duration: 300 }}>
+style='background:{bgColor}; border-color: {borderColor};'  in:fade={{ duration: fadeInDuration }}>
   <div class="flexs flex-col w-32 h-28 mb-4 text-sm p-1 items-start justify-start"
     in:fade={{ delay: fadeInDelay, duration: fadeInDuration }}
     style='background-color:{csshex}; color:{textColor.toString()}' 

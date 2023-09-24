@@ -9,7 +9,7 @@
 	 	details: string;
 		links: {
 			text: string;
-			href: string;
+			url: string;
 		}[]
 	};
 
@@ -53,22 +53,6 @@
 
 </script>
 
-<!--
-
-	<div class="p-12 w-[300px] h-[400px] perspective-massive transform rotate-[0deg] rotate-[$rotate]deg" on:click="{() => newcard() }">
-	<div class="relative text-center transform-style" style="transform: rotateY({$flip}deg)">
-	  <div class="backface-hidden">
-		<h1 class="flex justify-center items-center text-xl">{msgA.main}</h1>
-		<p class="italic"><em>{@html msgA.details}</em></p>
-	  </div>
-	  <div class=" backface-hidden">
-		<h1 class="flex justify-center items-center text-xl">{msgB.main}</h1>
-		<p class="italic"><em>{@html msgB.details}</em></p>
-	  </div>
-	</div>
-  </div>
--->
-
 <div class="flex flex-col m-5 bg-transparent flip-card w-[350px] md:w-[400px] h-[350px] md:h-[300px]" style="transform: rotateY(0deg) rotate({$rotate}deg)" on:click="{() => newcard() }">
 	<div class="select-none text-sm text-cyan-600 italic m-0 p-0">Click for More</div>
 	<div class="flex-1 flip-card-inner justify-center" style="transform: rotateY({$flip}deg)">
@@ -77,7 +61,7 @@
 		<p class="text-sm italic">
 			<em>{@html msgA.details}</em>
 			{#each msgB.links as link}
-				<a href="{link.href}" target="_blank">{link.text}</a><br/>
+				<a href="{link.url}" target="_blank">{link.text}</a><br/>
 			{/each}
 		</p>
 	  </div>
@@ -86,7 +70,7 @@
 		<p class="details text-sm italic text-fuchsia-200">
 			<em>{@html msgB.details}</em>
 			{#each msgB.links as link}
-				<a class="text-blue-300 hover:text-blue-400" href="{link.href}" target="_blank">{link.text}</a><br/>
+				<a class="text-blue-300 hover:text-blue-400" href="{link.url}" target="_blank">{link.text}</a><br/>
 			{/each}
 		</p>
 	  </div>

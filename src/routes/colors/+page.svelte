@@ -18,7 +18,8 @@
         return arr;
     }
     
-    const initSize = 100;
+    const initSize = 150;
+    const loadMoreSize = 50;
     const keysArray: string[] = Object.keys(typedColors);
     shuffledkeysArray = shuffleArray(keysArray);
     displayedColors = shuffledkeysArray.slice(0, initSize); 
@@ -40,7 +41,7 @@
         const scrollHeight = document.documentElement.scrollHeight;
         if (scrollHeight - scrollTop <= offsetHeight + 100) {
             isLoading = true;
-            const nextColors: string[] = shuffledkeysArray.slice(displayedColors.length, displayedColors.length + 10);
+            const nextColors: string[] = shuffledkeysArray.slice(displayedColors.length, displayedColors.length + loadMoreSize);
 
             displayedColors = [...displayedColors, ...nextColors];
             isLoading = false;

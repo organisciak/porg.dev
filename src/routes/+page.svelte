@@ -69,10 +69,10 @@
   	<hr />
   <section id="follow-section" class="container mx-auto px-4 my-5">
 	<div class="flex text-center items-center justify-center">
-		<a href="https://sigmoid.social/@porg" target="_blank"rel="me" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faMastodon} /></a>
-		<a href="https://github.com/organisciak" target="_blank" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faGithub} /></a>
-		<a href="https://twitter.com/POrg" target="_blank" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faTwitter} /></a>
-		<a href="https://www.linkedin.com/in/organisciak/" target="_blank" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faLinkedinIn} /></a>
+		<a href="https://sigmoid.social/@porg" aria-label="Follow me on Mastodon" target="_blank"rel="me" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faMastodon} /></a>
+		<a href="https://github.com/organisciak"  aria-label="Follow me on Github" target="_blank" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faGithub} /></a>
+		<a href="https://twitter.com/POrg" target="_blank" aria-label="Please don't follow me on X" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faTwitter} /></a>
+		<a href="https://www.linkedin.com/in/organisciak/" aria-label="I have a LinkedIn, I suppose" target="_blank" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faLinkedinIn} /></a>
 	</div>
 	</section>
 

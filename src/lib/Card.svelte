@@ -68,16 +68,16 @@
 		<p class="text-sm italic">
 			<em>{msgA.details}</em>
 			{#each msgB.links as link}
-				<a href="{link.url}" target="_blank">{link.text}</a><br/>
+				<a href="{link.url}" class="text-blue-800 dark:bg-blue-200" target="_blank">{link.text}</a><br/>
 			{/each}
 		</p>
 	  </div>
-	  <div class="grow absolute p-4 flip-card-back rounded-xl w-full backface-hidden bg-fuchsia-700 dark:bg-slate-700">
+	  <div class="grow absolute p-4 flip-card-back rounded-xl w-full backface-hidden bg-fuchsia-800 dark:bg-slate-700">
 		<h1 class='mt-5 text-2xl text-fuchsia-50'>{msgB.main}</h1>
 		<p class="details text-sm italic text-fuchsia-200">
 			<em>{msgB.details}</em>
 			{#each msgB.links as link}
-				<a class="text-blue-300 hover:text-blue-400" href="{link.url}" target="_blank">{link.text}</a><br/>
+				<a class="text-blue-200 hover:text-blue-300" href="{link.url}" target="_blank">{link.text}</a><br/>
 			{/each}
 		</p>
 	  </div>

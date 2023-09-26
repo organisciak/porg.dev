@@ -53,8 +53,15 @@
 
 </script>
 
-<div class="flex flex-col m-5 bg-transparent flip-card w-[350px] md:w-[400px] h-[350px] md:h-[300px]" style="transform: rotateY(0deg) rotate({$rotate}deg)" on:click="{() => newcard() }">
-	<div class="select-none text-sm text-cyan-600 italic m-0 p-0">Click for More</div>
+<div class="flex flex-col m-5 bg-transparent flip-card w-[350px] md:w-[400px] h-[350px] md:h-[300px]"
+	style="transform: rotateY(0deg) rotate({$rotate}deg)"
+	on:click="{() => newcard() }"
+	on:keypress="{() => newcard() }"
+	aria-expanded="{flipped}" 
+	aria-label="Select to see more" role="button" tabindex="0"
+	>
+
+	<div class="select-none text-xs text-cyan-600 italic m-0 p-0">Click for More</div>
 	<div class="flex-1 flip-card-inner justify-center" style="transform: rotateY({$flip}deg)">
 	  <div class="grow absolute p-4 backface-hidden rounded-xl w-full bg-yellow-300 dark:bg-slate-700">
 		<h1 class="mt-5 text-2xl">{msgA.main}</h1>

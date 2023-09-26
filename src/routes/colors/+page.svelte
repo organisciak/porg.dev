@@ -70,8 +70,8 @@
 		type: 'website',
 		url: 'https://www.porg.com/colors',
 		locale: 'en_US',
-		title: "{meta.title}",
-		description: '{meta.description}',
+		title: meta.title,
+		description: meta.description,
 		images: [
 		  {
 			url: '/opengraph/IMG_20230925_192846.png',
@@ -108,8 +108,8 @@
         handle: '@porg',
         site: '@porg',
         cardType: 'summary_large_image',
-        title: "{meta.title}",
-        description: "{meta.description}",
+        title: meta.title,
+        description: meta.description,
         image: '/opengraph/IMG_20230926_120405.png',
         imageAlt: 'Color: That Weird Stain On My Carpet Beige'
       }}

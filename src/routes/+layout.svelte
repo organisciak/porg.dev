@@ -7,8 +7,7 @@
 
 	 $: metaTags = {
 		title: 'Peter Organisciak',
-		titleTemplate: '%s | Porg.dev',
-		canonical: 'https://porg.dev',
+		titleTemplate: '%s | porg.dev',
 		description: 'Applied AI Researcher', // Default description.
 		...$page.data.metaTagsChild // Override with child page meta tags if they exist.
 	};

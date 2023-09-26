@@ -3,6 +3,7 @@
   import publications from './publications.json';
   import Publication from '$lib/cv/Publication.svelte';
   import type { CSLPublication } from '$lib/cv/types';
+  import { MetaTags } from 'svelte-meta-tags';
 
   const typedPublications: CSLPublication[] = publications;
 
@@ -767,6 +768,18 @@ const degrees: education[]= [
     {
       "name": "Notable Paper, Conference on Human Computation and Crowdsourcing",
       "date": "2014"
+    },
+    {
+      "name": "Outstanding Contribution Award, Canadian Society for Digital Humanities",
+      "date": "2014"
+    },
+    {
+      "name": "Best Paper, Association for Information Science and Technology",
+      "date": "2011"
+    },
+    {
+      "name": "Best Student Paper, Canadian Society for Digital Humanities",
+      "date": "2011"
     }
   ],
   "media": [
@@ -865,23 +878,44 @@ type PresentationExtension = {
           }
   ]
 
-	const headings = source.split('\n').filter((x)=> (x[0] === '#'));
-
-  /*
-	function head2md(x: string) { 
-		const indent = x.split(' ')[0].replaceAll('#', '  ') + '- ';
-		const text = x.replaceAll('#', ' ').trim()
-		const id = '#' + x.replaceAll('#', ' ').trim().toLowerCase().replaceAll(' ', '-')
-		return `${indent}[${text}](${id})`
-	}	
-	const test = headings.map(head2md).join('\n').trim().replaceAll('\n  ', '\n')*/
-
+  const meta = {
+		title: 'Curriculum Vitae',
+		description: 'CV for Dr. Peter Oragnisciak, Associate Professor and Applied AI Researcher',
+		url: 'https://www.porg.dev'
+	}
 </script>
 
-<svelte:head>
-	<title>Curriculum Vitae</title>
-	<meta name="description" content="Peter Organisciak's Curriculum Vitae" />
-</svelte:head>
+<MetaTags 
+	title="{meta.title}"
+	canonical="{meta.url}"
+	description="{meta.description}"
+	openGraph={{
+		siteName: 'porg.dev',
+		type: 'website',
+		url: meta.url,
+		locale: 'en_US',
+		title: meta.title,
+		description: meta.description,
+		images: [
+		  {
+			url: 'https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200',
+			alt: 'Photo of Dr. Peter Organisciak',
+			width: 200,
+			height: 200,
+			type: 'image/png'
+		  }
+		]
+	}}
+	twitter={{
+        handle: '@porg',
+        site: '@porg',
+        cardType: 'summary_large_image',
+        title: meta.title,
+        description: meta.description,
+        image: 'https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200',
+        imageAlt: 'Photo of Dr. Peter Organisciak'
+      }}
+	/>
 
 <div class="container mx-auto">
 <section>
@@ -923,6 +957,29 @@ type PresentationExtension = {
       {/each}
 
 </div>
+  </section>
+
+  <section>
+    <h2>Awards</h2>
+    <div class="flex flex-wrap">
+      {#each bioData.awards as award}
+      <div class="text-sm flex-initial w-48 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5 dark:text-slate-300">
+          <span class='font-semibold'>{award.name}</span>, {award.date}
+      </div>
+      {/each}
+      </div>
+  </section>
+
+
+  <section>
+    <h2>Media</h2>
+    <div class="flex flex-wrap">
+      {#each bioData.media as media}
+      <div class="text-sm flex-initial w-96 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5 dark:text-slate-300">
+        <span class="font-semibold">{media.title}</span><br /><span class='italic'>{media.source}, {media.date}</span>
+      </div>
+      {/each}
+      </div>
   </section>
 
   <section>

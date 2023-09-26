@@ -58,44 +58,46 @@
 
     const meta = {
         title: 'Endless Colors',
-        description: 'Explore a vast collection of cheeky color swatches to find the perfect shade for your design projects'
+        description: 'Explore a vast collection of cheeky color swatches to find the perfect shade for your design projects',
+        url: "https://www.porg.dev/colors"
     }
 </script>
 <svelte:head>
 
     <MetaTags 
     title="{meta.title}"
+    canonical="{meta.url}"
     description="{meta.description}"
     openGraph={{
 		type: 'website',
-		url: 'https://www.porg.com/colors',
+		url: meta.url,
 		locale: 'en_US',
 		title: meta.title,
 		description: meta.description,
 		images: [
 		  {
-			url: '/opengraph/IMG_20230925_192846.png',
+			url: 'https://www.porg.com/colors/opengraph/IMG_20230925_192846.png',
 			alt: 'Color: Unstoppable Urban Flamino Uprising',
 			width: 800,
 			height: 800,
 			type: 'image/png'
 		  },
           {
-			url: '/opengraph/IMG_20230925_193210.png',
+			url: 'https://www.porg.com/colors/opengraph/IMG_20230925_193210.png',
 			alt: 'Color: Nana\'s Old Couch',
 			width: 800,
 			height: 800,
 			type: 'image/png'
 		  },
           {
-			url: '/opengraph/IMG_20230925_194217.png',
+			url: 'https://www.porg.com/colors/opengraph/IMG_20230925_194217.png',
 			alt: 'Color: Unicorn\'s Unexpected Ube',
 			width: 800,
 			height: 800,
 			type: 'image/png'
 		  },
           {
-			url: '/opengraph/IMG_20230926_120405.png',
+			url: 'https://www.porg.com/colors/opengraph/IMG_20230926_120405.png',
 			alt: 'Color: That Weird Stain On My Carpet Beige',
 			width: 800,
 			height: 800,
@@ -110,7 +112,7 @@
         cardType: 'summary_large_image',
         title: meta.title,
         description: meta.description,
-        image: '/opengraph/IMG_20230926_120405.png',
+        image: 'https://www.porg.com/colors/opengraph/IMG_20230926_120405.png',
         imageAlt: 'Color: That Weird Stain On My Carpet Beige'
       }}
     />

@@ -62,9 +62,8 @@
         url: "https://www.porg.dev/colors"
     }
 </script>
-<svelte:head>
 
-    <MetaTags 
+<MetaTags 
     title="{meta.title}"
     canonical="{meta.url}"
     description="{meta.description}"
@@ -117,7 +116,6 @@
       }}
     />
 
-</svelte:head>
 <svelte:window on:scroll={handleScroll} />
 
 {#if isInitializing}

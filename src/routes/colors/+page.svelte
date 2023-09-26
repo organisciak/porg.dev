@@ -18,18 +18,18 @@
         return arr;
     }
     
+    let isInitializing = true;
     const initSize = 150;
     const loadMoreSize = 50;
     const keysArray: string[] = Object.keys(typedColors);
-    shuffledkeysArray = shuffleArray(keysArray);
-    displayedColors = shuffledkeysArray.slice(0, initSize); 
 
     onMount(() => {
-        // Attach the scroll event listener to the window for mobile compatibility
-        window.addEventListener('scroll', handleScroll);
+        shuffledkeysArray = shuffleArray(keysArray);
+        displayedColors = shuffledkeysArray.slice(0, initSize); 
+
         window.scrollTo(0, 0);
+        isInitializing = false;
         return () => {
-            // Clean up the event listener
             window.removeEventListener('scroll', handleScroll);
         };
     });
@@ -46,10 +46,16 @@
             displayedColors = [...displayedColors, ...nextColors];
             isLoading = false;
         }
+        
     }
 </script>
 
 <svelte:window on:scroll={handleScroll} />
+
+{#if isInitializing}
+        <!-- Show a loading message or a spinner here -->
+        <span class='font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-transparent bg-clip-text'>Loading...</span>
+    {/if}
 
 <div class='colorcontainer'>
 <div class="colors h-screen flex flex-wrap justify-center">

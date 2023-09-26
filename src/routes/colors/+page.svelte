@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
     import ColorBox from '$lib/colorbox/ColorBoxBase.svelte';
     import colors from './colors.json';
+    import { MetaTags } from 'svelte-meta-tags';
     
     // shuffle colors and type them
     const typedColors: { [key: string]: string } = colors;
@@ -54,8 +55,67 @@
         }
         
     }
-</script>
 
+    const meta = {
+        title: 'Endless Colors',
+        description: 'Explore a vast collection of cheeky color swatches to find the perfect shade for your design projects'
+    }
+</script>
+<svelte:head>
+
+    <MetaTags 
+    title="{meta.title}"
+    description="{meta.description}"
+    openGraph={{
+		type: 'website',
+		url: 'https://www.porg.com/colors',
+		locale: 'en_US',
+		title: "{meta.title}",
+		description: '{meta.description}',
+		images: [
+		  {
+			url: '/opengraph/IMG_20230925_192846.png',
+			alt: 'Color: Unstoppable Urban Flamino Uprising',
+			width: 800,
+			height: 800,
+			type: 'image/png'
+		  },
+          {
+			url: '/opengraph/IMG_20230925_193210.png',
+			alt: 'Color: Nana\'s Old Couch',
+			width: 800,
+			height: 800,
+			type: 'image/png'
+		  },
+          {
+			url: '/opengraph/IMG_20230925_194217.png',
+			alt: 'Color: Unicorn\'s Unexpected Ube',
+			width: 800,
+			height: 800,
+			type: 'image/png'
+		  },
+          {
+			url: '/opengraph/IMG_20230926_120405.png',
+			alt: 'Color: That Weird Stain On My Carpet Beige',
+			width: 800,
+			height: 800,
+			type: 'image/png'
+		  }
+		],
+		siteName: 'porg.dev'
+	  }},
+    twitter={{
+        handle: '@porg',
+        site: '@porg',
+        cardType: 'summary_large_image',
+        title: "{meta.title}",
+        description: "{meta.description}",
+        image: '/opengraph/IMG_20230926_120405.png',
+        imageAlt: 'Color: That Weird Stain On My Carpet Beige'
+      }}
+    />
+
+</svelte:head>
 <svelte:window on:scroll={handleScroll} />
 
 {#if isInitializing}

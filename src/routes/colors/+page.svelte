@@ -5,7 +5,7 @@
     
     // shuffle colors and type them
     const typedColors: { [key: string]: string } = colors;
-    let displayedColors: string[] = [];
+    let displayedColors: string[][] = [];
     let shuffledkeysArray: string[] = [];
     let isLoading = false;
 
@@ -25,7 +25,9 @@
 
     onMount(() => {
         shuffledkeysArray = shuffleArray(keysArray);
-        displayedColors = shuffledkeysArray.slice(0, initSize); 
+        // Include index, for unique keying in infinite scroll
+        displayedColors = shuffledkeysArray.slice(0, initSize)
+            .map((colorname, i) => [i.toString(), colorname]); 
 
         window.scrollTo(0, 0);
         isInitializing = false;
@@ -41,9 +43,13 @@
         const scrollHeight = document.documentElement.scrollHeight;
         if (scrollHeight - scrollTop <= offsetHeight + 100) {
             isLoading = true;
-            const nextColors: string[] = shuffledkeysArray.slice(displayedColors.length, displayedColors.length + loadMoreSize);
-
-            displayedColors = [...displayedColors, ...nextColors];
+            const startAt:number = displayedColors.length % shuffledkeysArray.length;
+            let nextColors: string[] = shuffledkeysArray.slice(startAt, startAt + loadMoreSize);
+            if (nextColors.length < loadMoreSize) {
+                nextColors = [...nextColors, ...shuffledkeysArray.slice(0, loadMoreSize - nextColors.length)]
+            };
+            const nextColorsIndexed: string[][] = nextColors.map((colorname, i) => [i.toString(), colorname]);
+            displayedColors = [...displayedColors, ...nextColorsIndexed];
             isLoading = false;
         }
         
@@ -53,13 +59,12 @@
 <svelte:window on:scroll={handleScroll} />
 
 {#if isInitializing}
-        <!-- Show a loading message or a spinner here -->
         <span class='font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-transparent bg-clip-text'>Loading...</span>
     {/if}
 
 <div class='colorcontainer'>
 <div class="colors h-screen flex flex-wrap justify-center">
-    {#each displayedColors as colorname, index (colorname)}
+    {#each displayedColors as [i, colorname] }
         <ColorBox colorname={colorname}
         csshex={typedColors[colorname]}
         fadeInDelay={500}

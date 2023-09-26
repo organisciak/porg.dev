@@ -1,51 +1,56 @@
 <script lang="ts">
 	import Card from '$lib/Card.svelte';
 	import data from './recent_findings.json';
-	import { MetaTags } from 'svelte-meta-tags';
+	import type { MetaTagsProps } from 'svelte-meta-tags';
 	import Fa from 'svelte-fa';
     import { faMastodon, faGithub, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-	const meta = {
-		title: 'Peter Organisciak',
-		description: 'Applied AI Researcher',
-		url: 'https://www.porg.dev'
-	}
+	
+
+	export const load = async ({ url }) => {
+		const meta = {
+			title: 'Peter Organisciak',
+			description: 'Applied AI Researcher',
+			url: new URL(url.pathname, url.origin).href
+		}
+
+		// Define meta tags for this specific child page.
+		const metaTags: MetaTagsProps = Object.freeze({
+			title: meta.title,
+			description: meta.description,
+			url: meta.url,
+			openGraph: {
+					siteName: 'porg.dev',
+					type: 'website',
+					url: meta.url,
+					locale: 'en_US',
+					title: meta.title,
+					description: meta.description,
+					images: [
+					{
+						url: 'https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200',
+						alt: 'Photo of Dr. Peter Organisciak',
+						width: 200,
+						height: 200,
+						type: 'image/png'
+					}
+					]
+			},
+			twitter: {
+				handle: '@porg',
+				site: '@porg',
+				title: meta.title,
+				description: meta.description,
+				image: 'https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200',
+				imageAlt: 'Photo of Dr. Peter Organisciak'
+			}
+		});
+
+		return {
+			metaTagsChild: metaTags // Return meta tags so they can be consumed by layout.svelte.
+		};
+	};
 </script>
-
-<svelte:head>
-
-<MetaTags 
-	title="{meta.title}"
-	canonical="{meta.url}"
-	description="{meta.description}"
-	openGraph={{
-		siteName: 'porg.dev',
-		type: 'website',
-		url: meta.url,
-		locale: 'en_US',
-		title: meta.title,
-		description: meta.description,
-		images: [
-		  {
-			url: 'https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200',
-			alt: 'Photo of Dr. Peter Organisciak',
-			width: 200,
-			height: 200,
-			type: 'image/png'
-		  }
-		]
-	}}
-	twitter={{
-        handle: '@porg',
-        site: '@porg',
-        cardType: 'summary_large_image',
-        title: meta.title,
-        description: meta.description,
-        image: 'https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200',
-        imageAlt: 'Photo of Dr. Peter Organisciak'
-      }}
-	/>
-</svelte:head>
 
 <section class='container mx-auto px-4 my-5'>
 

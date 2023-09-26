@@ -2,7 +2,7 @@
     import { onMount } from 'svelte';
     import ColorBox from '$lib/colorbox/ColorBoxBase.svelte';
     import colors from './colors.json';
-    import type { MetaTagsProps } from 'svelte-meta-tags';
+    import { MetaTags } from 'svelte-meta-tags';
     
     // shuffle colors and type them
     const typedColors: { [key: string]: string } = colors;
@@ -56,71 +56,65 @@
         
     }
 
-    export const load = async ({ url }) => {
-		const meta = {
+    const meta = {
         title: 'Endless Colors',
         description: 'Explore a vast collection of cheeky color swatches to find the perfect shade for your design projects',
-        url: new URL(url.pathname, url.origin).href
-		}
-
-		// Define meta tags for this specific child page.
-		const metaTags: MetaTagsProps = Object.freeze({
-			title: meta.title,
-			description: meta.description,
-			url: meta.url,
-            openGraph:{
-                siteName: 'porg.dev',
-                type: 'website',
-                url: meta.url,
-                locale: 'en_US',
-                title: meta.title,
-                description: meta.description,
-                images: [
-                    {
-                        url: 'https://www.porg.dev/opengraph/IMG_20230925_192846.png',
-                        alt: 'Color: Unstoppable Urban Flamino Uprising',
-                        width: 800,
-                        height: 800,
-                        type: 'image/png'
-                    },
-                    {
-                        url: 'https://www.porg.dev/opengraph/IMG_20230925_193210.png',
-                        alt: 'Color: Nana\'s Old Couch',
-                        width: 800,
-                        height: 800,
-                        type: 'image/png'
-                    },
-                    {
-                        url: 'https://www.porg.dev/opengraph/IMG_20230925_194217.png',
-                        alt: 'Color: Unicorn\'s Unexpected Ube',
-                        width: 800,
-                        height: 800,
-                        type: 'image/png'
-                    },
-                    {
-                        url: 'https://www.porg.dev/opengraph/IMG_20230926_120405.png',
-                        alt: 'Color: That Weird Stain On My Carpet Beige',
-                        width: 800,
-                        height: 800,
-                        type: 'image/png'
-                    }
-                ]
-			},
-			twitter: {
-				handle: '@porg',
-				site: '@porg',
-				title: meta.title,
-				description: meta.description,
-                image: 'https://www.porg.dev/opengraph/IMG_20230926_120405.png',
-                imageAlt: 'Color: That Weird Stain On My Carpet Beige'
-			}
-		});
-
-		return {
-			metaTagsChild: metaTags // Return meta tags so they can be consumed by layout.svelte.
-		};
-	};
+        url: "https://www.porg.dev/colors"
+    }
 </script>
+
+<MetaTags 
+    title="{meta.title}"
+    canonical="{meta.url}"
+    description="{meta.description}"
+    openGraph={{
+		type: 'website',
+		url: meta.url,
+		locale: 'en_US',
+		title: meta.title,
+		description: meta.description,
+		images: [
+		  {
+			url: 'https://www.porg.dev/opengraph/IMG_20230925_192846.png',
+			alt: 'Color: Unstoppable Urban Flamino Uprising',
+			width: 800,
+			height: 800,
+			type: 'image/png'
+		  },
+          {
+			url: 'https://www.porg.dev/opengraph/IMG_20230925_193210.png',
+			alt: 'Color: Nana\'s Old Couch',
+			width: 800,
+			height: 800,
+			type: 'image/png'
+		  },
+          {
+			url: 'https://www.porg.dev/opengraph/IMG_20230925_194217.png',
+			alt: 'Color: Unicorn\'s Unexpected Ube',
+			width: 800,
+			height: 800,
+			type: 'image/png'
+		  },
+          {
+			url: 'https://www.porg.dev/opengraph/IMG_20230926_120405.png',
+			alt: 'Color: That Weird Stain On My Carpet Beige',
+			width: 800,
+			height: 800,
+			type: 'image/png'
+		  }
+		],
+		siteName: 'porg.dev'
+	  }}
+    twitter={{
+        handle: '@porg',
+        site: '@porg',
+        cardType: 'summary_large_image',
+        title: meta.title,
+        description: meta.description,
+        image: 'https://www.porg.dev/opengraph/IMG_20230926_120405.png',
+        imageAlt: 'Color: That Weird Stain On My Carpet Beige'
+      }}
+    />
 
 <svelte:window on:scroll={handleScroll} />
 

@@ -3,7 +3,7 @@
   import publications from './publications.json';
   import Publication from '$lib/cv/Publication.svelte';
   import type { CSLPublication } from '$lib/cv/types';
-	import type { MetaTagsProps } from 'svelte-meta-tags';
+  import { MetaTags } from 'svelte-meta-tags';
 
   const typedPublications: CSLPublication[] = publications;
 
@@ -878,53 +878,44 @@ type PresentationExtension = {
           }
   ]
 
-
-  export const load = async ({ url }) => {
-		const meta = {
-      title: 'Curriculum Vitae',
-      description: 'CV for Dr. Peter Organisciak, Associate Professor and Applied AI Researcher',
-      url: new URL(url.pathname, url.origin).href
-      }
-
-		// Define meta tags for this specific child page.
-		const metaTags: MetaTagsProps = Object.freeze({
-			title: meta.title,
-			description: meta.description,
-			url: meta.url,
-			openGraph: {
-					siteName: 'porg.dev',
-					type: 'website',
-					url: meta.url,
-					locale: 'en_US',
-					title: meta.title,
-					description: meta.description,
-					images: [
-					{
-						url: 'https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200',
-						alt: 'Photo of Dr. Peter Organisciak',
-						width: 200,
-						height: 200,
-						type: 'image/png'
-					}
-					]
-			},
-			twitter: {
-				handle: '@porg',
-				site: '@porg',
-				title: meta.title,
-				description: meta.description,
-				image: 'https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200',
-				imageAlt: 'Photo of Dr. Peter Organisciak'
-			}
-			}
-		);
-
-		return {
-			metaTagsChild: metaTags
-		};
-	};
-
+  const meta = {
+		title: 'Curriculum Vitae',
+		description: 'CV for Dr. Peter Oragnisciak, Associate Professor and Applied AI Researcher',
+		url: 'https://www.porg.dev'
+	}
 </script>
+
+<MetaTags 
+	title="{meta.title}"
+	canonical="{meta.url}"
+	description="{meta.description}"
+	openGraph={{
+		siteName: 'porg.dev',
+		type: 'website',
+		url: meta.url,
+		locale: 'en_US',
+		title: meta.title,
+		description: meta.description,
+		images: [
+		  {
+			url: 'https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200',
+			alt: 'Photo of Dr. Peter Organisciak',
+			width: 200,
+			height: 200,
+			type: 'image/png'
+		  }
+		]
+	}}
+	twitter={{
+        handle: '@porg',
+        site: '@porg',
+        cardType: 'summary_large_image',
+        title: meta.title,
+        description: meta.description,
+        image: 'https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200',
+        imageAlt: 'Photo of Dr. Peter Organisciak'
+      }}
+	/>
 
 <div class="container mx-auto">
 <section>

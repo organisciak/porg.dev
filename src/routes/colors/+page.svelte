@@ -37,7 +37,7 @@
         };
     });
 
-    async function handleScroll(event: Event): Promise<void> {
+    async function handleScroll(): Promise<void> {
         if (isLoading) return;
         const scrollTop = window.scrollY;
         const offsetHeight = document.documentElement.offsetHeight;
@@ -103,7 +103,7 @@
 		  }
 		],
 		siteName: 'porg.dev'
-	  }},
+	  }}
     twitter={{
         handle: '@porg',
         site: '@porg',
@@ -124,7 +124,7 @@
 
 <div class='colorcontainer'>
 <div class="colors h-screen flex flex-wrap justify-center">
-    {#each displayedColors as [i, colorname] }
+    {#each displayedColors as [, colorname] }
         <ColorBox colorname={colorname}
         csshex={typedColors[colorname]}
         fadeInDelay={500}

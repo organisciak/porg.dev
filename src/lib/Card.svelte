@@ -66,7 +66,7 @@
 	  <div class="grow absolute p-4 backface-hidden rounded-xl w-full bg-yellow-300 dark:bg-slate-700">
 		<h1 class="mt-5 text-2xl">{msgA.main}</h1>
 		<p class="text-sm italic">
-			<em>{@html msgA.details}</em>
+			<em>{msgA.details}</em>
 			{#each msgB.links as link}
 				<a href="{link.url}" target="_blank">{link.text}</a><br/>
 			{/each}
@@ -75,7 +75,7 @@
 	  <div class="grow absolute p-4 flip-card-back rounded-xl w-full backface-hidden bg-fuchsia-700 dark:bg-slate-700">
 		<h1 class='mt-5 text-2xl text-fuchsia-50'>{msgB.main}</h1>
 		<p class="details text-sm italic text-fuchsia-200">
-			<em>{@html msgB.details}</em>
+			<em>{msgB.details}</em>
 			{#each msgB.links as link}
 				<a class="text-blue-300 hover:text-blue-400" href="{link.url}" target="_blank">{link.text}</a><br/>
 			{/each}

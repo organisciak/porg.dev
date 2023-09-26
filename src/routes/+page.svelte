@@ -4,12 +4,6 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import Fa from 'svelte-fa';
     import { faMastodon, faGithub, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-
-	const source: string = `
-See my [CV](/cv), or find [me](https://github.com/organisciak) and the [Massive Texts Lab](https://github.com/massivetexts) on Github.
-
-Check out online tools: [Open Creativity Scoring](https://openscoring.du.edu/) for scoring tests of creativity, [SaDDL](https://saddl.du.edu) for digital library book relationships, and [HT+Bookworm](https://bookworm.htrc.illinois.edu/develop/) for exploring historic language trends.
-`
 </script>
 
 <svelte:head>

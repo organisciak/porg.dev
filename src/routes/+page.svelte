@@ -5,6 +5,8 @@
 	import Fa from 'svelte-fa';
     import { faMastodon, faGithub, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
+	export const prerender = true;
+	
 	const meta = {
 		title: 'Peter Organisciak',
 		description: 'Applied AI Researcher',

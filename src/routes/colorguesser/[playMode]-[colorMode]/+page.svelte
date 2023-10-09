@@ -14,7 +14,6 @@
     // init vars
     let playMode: PlayMode;
     let colorMode: ColorMode;
-    let guessHistory: GuessHistory = [];
     const maxAttempts = 5;
     let attempts: number = 0;
     let dayScore: number = 0;
@@ -75,9 +74,11 @@
     }
 
     function getNextColor() {
-        target.red = getRandomInt(255);
-        target.green = getRandomInt(255);
-        target.blue = getRandomInt(255);
+        target = {
+            red: getRandomInt(255),
+            green: getRandomInt(255),
+            blue: getRandomInt(255)
+        };
 
         /* set sliders to midpoint */
         rgbColors = { red: 127, green: 127, blue: 127} as RGBColor;
@@ -141,16 +142,16 @@
     {/key}
     <!-- Target Color -->
     {#if finished }
-        {#each guessHistory.filter(guess => guess.playMode === playMode && guess.colorMode === colorMode) as {guessColor, targetColor, difference}, index}
+        {#each $guessHistoryStore.filter(guess => guessFilter(guess, colorMode, playMode)) as guess }
             <div class="flex space-x-4 items-center mb-2">
                 <!-- Display the guessed color -->
-                <div class="w-12 h-12" style="background-color: {rgbToHash(guessColor)};"></div>
+                <div class="w-12 h-12" style="background-color: {rgbToHash(guess.guessColor)};">Guessed</div>
                 
                 <!-- Display the target color -->
-                <div class="w-12 h-12" style="background-color: {rgbToHash(targetColor)};"></div>
+                <div class="w-12 h-12" style="background-color: {rgbToHash(guess.targetColor)};">Goal</div>
 
                 <!-- Display the difference -->
-                <p>Difference: {difference}</p>
+                <p>Difference: {guess.difference}</p>
             </div>
         {/each}
     {/if}

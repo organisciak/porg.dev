@@ -41,7 +41,7 @@ export function rgbToCmyk(rgb: RGBColor): CMYKColor {
         } as CMYKColor;
 }
 
-export function hashToRgb(hash: ColorHash): RGBColor {
+export function hexToRgb(hash: ColorHash): RGBColor {
   const hex = hash.slice(1);
   const bigint = parseInt(hex, 16);
   const r = (bigint >> 16) & 255;
@@ -51,7 +51,7 @@ export function hashToRgb(hash: ColorHash): RGBColor {
   return {'red': r, 'green': g, 'blue': b} as RGBColor;
 }
 
-export function rgbToHash(rgb: RGBColor): ColorHash {
+export function rgbToHex(rgb: RGBColor): ColorHash {
   const bigint = (rgb.red << 16) | (rgb.green << 8) | rgb.blue;
   const hex = bigint.toString(16);
 

@@ -10,8 +10,6 @@
     let shuffledkeysArray: string[] = [];
     let isLoading = false;
 
-    export const prerender = true;
-
     function shuffleArray<T>(array: T[]): T[] {
         const arr = [...array];
         for (let i = arr.length - 1; i > 0; i--) {

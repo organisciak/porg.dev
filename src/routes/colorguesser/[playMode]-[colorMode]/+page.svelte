@@ -2,16 +2,26 @@
     import { page } from '$app/stores';
 
     import { onMount } from 'svelte';
-    import { cmykToRgb, rgbToHash } from '$lib/utils/colorTools';
+    import { cmykToRgb, rgbToHex } from '$lib/utils/colorTools';
     import type { RGBColor, CMYKColor } from '$lib/utils/colorTools';
     import type { Guess, GuessHistory } from '$lib/colorguesser/types.ts';
     import { guessHistoryStore } from '$lib/colorguesser/guessHistoryStore';
 	import ColorBoxBase from '$lib/colorbox/ColorBoxBase.svelte';
+    import GuesserModeSelector from '$lib/colorguesser/GuesserModeSelector.svelte';
+    import GuesserAnswerBox from '$lib/colorguesser/GuesserAnswerBox.svelte';
+    import GuesserScore from '$lib/colorguesser/GuesserScore.svelte';
+    import Modal from '$lib/components/Modal.svelte';
+    import StarScore from '$lib/colorguesser/StarScore.svelte';
+
+    import Fa from 'svelte-fa';
+    import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 
     type PlayMode = "INFINITE" | "DAILY" | "PRACTICE";
     type ColorMode = "RGB" | "CMYK";
 
+
     // init vars
+    let showModal = false;
     let playMode: PlayMode;
     let colorMode: ColorMode;
     const maxAttempts = 5;
@@ -124,40 +134,49 @@
     }
 </script>
 
-<div class="flex flex-col items-center">
-    <h1 class="text-2xl font-bold mb-4">Color Blend Challenge</h1>
-    <!-- Mode Selectors -->
-    <div>
-        <a href="daily-rgb">Daily RGB</a> |
-        <a href="practice-rgb">Practice RGB</a> |
-        <a href="infinite-rgb">Infinite RGB</a> |
-        <a href="daily-cmyk">Daily CMYK</a> |
-        <a href="practice-cmyk">Practice CMYK</a> |
-        <a href="infinite-cmyk">Infinite CMYK</a>
-    </div>
+<Modal bind:showModal>
+	<h2 slot="header">
+		About the Color Guess Challenge
+	</h2>
 
-    {#key playMode}
-    <!-- Display Mode -->
-    <p class="mb-4">Mode: {playMode} | {colorMode}</p>
-    {/key}
+    <div>
+        <h3>
+            Goal
+        </h3>
+       Get as low of a score as possible. 
+        
+        <h3>Modes</h3>
+        <ol>
+            <li><span class='font-semibold'>Infinite</span> - Guess as many colors as you can. Your score is the average of all your guesses.</li>
+            <li><span class='font-semibold'>Daily</span> - Guess 5 colors. Your score is the sum of your guesses.</li>
+            <li><span class='font-semibold'>Practice</span> - See the result of your slider color selection.</li>
+        </ol>
+
+        <h3>Color Modes</h3>
+        <ol>
+            <li><span class='font-semibold'>RGB</span> - Red, Green, Blue. The colors of light.</li>
+            <li><span class='font-semibold'>CMYK (hard mode!)</span> - Cyan, Magenta, Yellow, Black. The colors of ink.</li>
+        </ol>
+
+    </div>
+</Modal>
+
+
+<div class="flex flex-col items-center">
+    <h1 class="text-2xl font-bold mb-4">Color Guess Challenge <button on:click={() => (showModal = true)}><Fa class="text-blue-200" icon={faQuestion} /></button></h1>
+    <!-- Mode Selectors -->
+    <GuesserModeSelector colorMode={colorMode} playMode={playMode}/>
+
     <!-- Target Color -->
     {#if finished }
+    <GuesserScore score={dayScore} />
         {#each $guessHistoryStore.filter(guess => guessFilter(guess, colorMode, playMode)) as guess }
-            <div class="flex space-x-4 items-center mb-2">
-                <!-- Display the guessed color -->
-                <div class="w-12 h-12" style="background-color: {rgbToHash(guess.guessColor)};">Guessed</div>
-                
-                <!-- Display the target color -->
-                <div class="w-12 h-12" style="background-color: {rgbToHash(guess.targetColor)};">Goal</div>
-
-                <!-- Display the difference -->
-                <p>Difference: {guess.difference}</p>
-            </div>
+            <GuesserAnswerBox guess={guess} />
         {/each}
     {/if}
     
     {#if !finished }
-        <ColorBoxBase showHex={false} csshex={rgbToHash(target)} />
+        <ColorBoxBase shareButton={false} showHex={false} csshex={rgbToHex(target)} />
     {/if}
     <!-- RGB Sliders -->
     {#if colorMode === 'RGB' && !finished}
@@ -191,10 +210,15 @@
         
         {#if playMode === 'DAILY'}
         <p class="mb-2">Attempts: {attempts}</p>
-        <p class="mt-2">Score: {dayScore}{#if submitted}(Last guess: {lastScore}){/if}</p>
+        <p class="mt-2">Score: {dayScore}
+            {#if submitted && lastScore}(Last guess: <StarScore score={lastScore} />{lastScore}){/if}
+        </p>
         {/if}
         {#if playMode === 'INFINITE'}
-        <p class="mt-2">Avg Score: {Math.floor(dayScore/attempts)}{#if submitted}(Last guess: {lastScore}){/if}</p>
+        <p class="mt-2">
+            {#if attempts > 0}Avg Score: <StarScore score={Math.floor(dayScore/attempts)} />{/if}
+            {#if submitted && lastScore}<br/>Last: <StarScore score={lastScore} />{/if}
+        </p>
         {/if}
     {/if}
 </div>

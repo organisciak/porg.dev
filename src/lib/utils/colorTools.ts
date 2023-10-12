@@ -42,7 +42,7 @@ export function rgbToCmyk(rgb: RGBColor): CMYKColor {
 }
 
 export function hexToRgb(hash: ColorHash): RGBColor {
-  const hex = hash.slice(1);
+  const hex = hash.trim().slice(1);
   const bigint = parseInt(hex, 16);
   const r = (bigint >> 16) & 255;
   const g = (bigint >> 8) & 255;

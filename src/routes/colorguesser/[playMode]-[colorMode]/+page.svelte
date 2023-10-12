@@ -2,7 +2,7 @@
     import { page } from '$app/stores';
 
     import { onMount } from 'svelte';
-    import { cmykToRgb, rgbToHex } from '$lib/utils/colorTools';
+    import { cmykToRgb, hexToRgb, rgbToHex } from '$lib/utils/colorTools';
     import type { RGBColor, CMYKColor } from '$lib/utils/colorTools';
     import type { Guess, GuessHistory } from '$lib/colorguesser/types.ts';
     import { guessHistoryStore } from '$lib/colorguesser/guessHistoryStore';
@@ -12,9 +12,12 @@
     import GuesserScore from '$lib/colorguesser/GuesserScore.svelte';
     import Modal from '$lib/components/Modal.svelte';
     import StarScore from '$lib/colorguesser/StarScore.svelte';
+    import AttemptBreadCrumbs from '$lib/colorguesser/AttemptBreadCrumbs.svelte';
+    import seedrandom from 'seedrandom';
+    import colors from '../../colors/colors.json';
 
     import Fa from 'svelte-fa';
-    import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+    import { faBullseye, faQuestion, faUser } from '@fortawesome/free-solid-svg-icons';
 
     type PlayMode = "INFINITE" | "DAILY" | "PRACTICE";
     type ColorMode = "RGB" | "CMYK";
@@ -76,19 +79,34 @@
         guessHistoryStore.update(guessHistory => [...guessHistory, newGuess]);
         submitted = true;
 
-        console.log('attempts', attempts);
         finished = (playMode == 'DAILY') && (attempts > maxAttempts);
         if (!finished) {
             getNextColor();
         }
     }
 
+    function getDailySeed() {
+        const now = new Date();
+        return now.getUTCFullYear() * 10000 + (now.getUTCMonth() + 1) * 100 + now.getUTCDate();
+    }
+
+    function getGameSeed(): number {
+        const daySeed:number = getDailySeed();
+        const attemptMod:number = attempts * 100;
+        const playMod:number = playMode === 'INFINITE' ? 2000 : 0;
+        const colorMod:number = colorMode === 'CMYK' ? 1000 : 0;
+        return daySeed + playMod + colorMod + attemptMod;
+    }
+
     function getNextColor() {
-        target = {
-            red: getRandomInt(255),
-            green: getRandomInt(255),
-            blue: getRandomInt(255)
-        };
+        const seed = getGameSeed();
+        const rng = seedrandom(seed);
+        const colorIndex = Math.floor(rng() * Object.keys(colors).length);
+
+        const colorNames = Object.keys(colors);
+        const colorHex = colors[colorNames[colorIndex]];
+        console.log(seed, colorIndex, colorHex, hexToRgb(colorHex));
+        target = hexToRgb(colorHex);
 
         /* set sliders to midpoint */
         rgbColors = { red: 127, green: 127, blue: 127} as RGBColor;
@@ -167,6 +185,11 @@
     <!-- Mode Selectors -->
     <GuesserModeSelector colorMode={colorMode} playMode={playMode}/>
 
+    <!-- Attempt bread crumbs-->
+    {#if playMode === 'DAILY' && attempts > 0}
+        <p class="mb-2"><AttemptBreadCrumbs bind:attempts /></p>
+    {/if}
+    
     <!-- Target Color -->
     {#if finished }
     <GuesserScore score={dayScore} />
@@ -204,21 +227,45 @@
         {/each}
     {/if}
 
-    <!-- Submit & Score Display -->
+    <!-- Submit  -->
     {#if playMode !== 'PRACTICE' && !finished }
         <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={submitGuess}>Submit</button>
-        
-        {#if playMode === 'DAILY'}
-        <p class="mb-2">Attempts: {attempts}</p>
-        <p class="mt-2">Score: {dayScore}
-            {#if submitted && lastScore}(Last guess: <StarScore score={lastScore} />{lastScore}){/if}
-        </p>
-        {/if}
-        {#if playMode === 'INFINITE'}
-        <p class="mt-2">
-            {#if attempts > 0}Avg Score: <StarScore score={Math.floor(dayScore/attempts)} />{/if}
-            {#if submitted && lastScore}<br/>Last: <StarScore score={lastScore} />{/if}
-        </p>
-        {/if}
     {/if}
+
+    <!-- Score Display-->
+    <div class="mt-2 text-center items-center">
+        {#if playMode === 'DAILY' && attempts > 0}
+            <p class="mt-2">Score: {dayScore}
+                {#if submitted && lastScore}(Last guess: <StarScore score={lastScore} />{lastScore}){/if}
+            </p>
+        {/if}
+        {#if playMode === 'INFINITE' && attempts > 0}
+            Avg Infinite Score<br />
+            <div class="flex items-center">
+                <StarScore score={Math.floor(dayScore/attempts)} />
+            </div>
+        {/if}
+        {#if (playMode === 'INFINITE' || playMode === 'DAILY') && attempts > 0}
+        <div class="flex flex-col items-center">
+            <div>
+                
+            Guess History<br />
+            <hr class="border-t border-gray-300 dark:border-gray-600" />
+        </div>
+            <div class="flex items-center">
+                <Fa class="m-1 flex-auto text-gray-300 dark:text-gray-1000" icon={faUser} />
+                <Fa class="m-1 text-gray-300 dark:text-gray-600" icon={faBullseye} />
+                <span class="m-1 w-12 text-sm text-gray-300 dark:text-gray-600">Score</span>
+            </div>
+            <!--loop through filteredGuess from the back to the front, up to ten guesses-->
+            {#each filteredGuesses.reverse().slice(0,100) as guess }
+                <div class="flex flex-row">
+                    <div class="w-4 flex-none h-4 mx-1 bg-grey-500 rounded-sm" style="background-color:{rgbToHex(guess.guessColor)}"></div>
+                    <div class="w-4 h-4 mx-1 bg-grey-500 rounded-sm" style="background-color:{rgbToHex(guess.targetColor)}"></div>
+                    <div><StarScore score={guess.difference} /></div>
+                </div>
+            {/each}
+        </div>
+        {/if}
+    </div>
 </div>

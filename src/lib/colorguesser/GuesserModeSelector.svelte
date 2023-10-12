@@ -23,6 +23,6 @@
             <a class='font-light mx-2' data-sveltekit-prefetch href="{playMode.toLowerCase()}-{mode.toLowerCase()}">{mode}</a>
         {/if}
     {/each}
-    <hr class='my-2' />
+    <hr class='my-2 dark:border-gray-600 border-gray-300' />
 
 </div>

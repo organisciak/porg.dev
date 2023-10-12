@@ -6,6 +6,7 @@
     import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons';
 
     export let score: number = 0;
+    export let tooltip: string | null = null;
 
     let fullStars: number;
     let halfStars: number;
@@ -18,15 +19,15 @@
     }
 </script>
 
-<div class="flex flex-row">
+<div class="flex" title={tooltip ? tooltip : undefined} >
     {#each Array(fullStars) as _}
-        <Fa icon={faStar} class="text-yellow-500" />
+        <Fa icon={faStar} class="mx-1 my-1 text-yellow-500" />
     {/each}
     {#each Array(halfStars) as _}
-        <Fa icon={faStarHalfStroke} class="text-yellow-500" />
+        <Fa icon={faStarHalfStroke} class="mx-1 my-1 text-yellow-500" />
     {/each}
     {#each Array(emptyStars) as _}
-        <Fa icon={faStarEmpty} class="text-yellow-500" />
+        <Fa icon={faStarEmpty} class="mx-1 my-1 text-yellow-500" />
     {/each}
 </div>
 

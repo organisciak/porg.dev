@@ -12,16 +12,16 @@
 	bind:this={dialog}
 	on:close={() => (showModal = false)}
 	on:click|self={() => dialog.close()}
-    class="max-w-xl rounded-none p-0 transition-transform duration-300 ease-out transform-gpu"
+    class="max-w-xl bg-transparent rounded-md p-0 transition-transform duration-300 ease-out transform-gpu"
     class:scale-95={showModal}
     class:scale-100={showModal}
 >
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="p-4" on:click|stopPropagation>
+	<div class="p-4 bg-slate-200 dark:bg-slate-800 dark:text-slate-300" on:click|stopPropagation>
 		<slot name="header" />
-		<hr class="border-t border-gray-300" />
+		<hr class="border-t border-gray-300 dark:border-gray-600" />
 		<slot />
-		<hr class="border-t border-gray-300" />
+		<hr class="border-t border-gray-300 dark:border-gray-600" />
 		<!-- svelte-ignore a11y-autofocus -->
 		<button class="block w-full px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
         autofocus on:click={() => dialog.close()}>Close</button>

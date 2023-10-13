@@ -4,44 +4,23 @@
 
     // import FiveStarScale from '$lib/components/FiveStarScale.svelte';
     export let score: number = 0;
-    export let minScore: number = 0;
-    export let maxScore: number = 100;
     export let colorGuess: string = 'rgb(139 92 246)';
-    export let colorTarget: string = 'rgb(107 114 128)';
+    export let maxScore: number = 176.30 + 10; // The raw score at which the bound score is zero, made more forgiving sliglty
     let starCount: number = 0;
-    const calculateStars = function(score: number, minScore: number, maxScore: number) {
-        // This isn't linear - it's a curve that's been tweaked heuristically
-        const percentile = (score - minScore) / (maxScore - minScore);
-        let starCount: number;
-        if (percentile < 0.05) {
-            starCount = 5;
-        } else if (percentile < 0.08) {
-            starCount = 4.5;
-        } else if (percentile < 0.13) {
-            starCount = 4;
-        } else if (percentile < 0.17) {
-            starCount = 3.5;
-        } else if (percentile < 0.22) {
-            starCount = 3;
-        } else if (percentile < 0.25) {
-            starCount = 2.5;
-        } else if (percentile < 0.30) {
-            starCount = 2;
-        } else if (percentile < 0.37) {
-            starCount = 1.5;
-        } else if (percentile < 0.42) {
-            starCount = 1;
-        } else if (percentile < 0.60) {
-            starCount = .5;
+
+    /*  normalize the score to a 0-10 scale, where zero is any number where the scale is
+     greater than maxScore, and everything else is linearly scaled to 10.
+    ] */
+    const calculateBoundScore = function(score:number) {
+        if (score > maxScore) {
+            return 0;
         } else {
-            starCount = 0;
+            return Math.round(10 * (maxScore - score) / maxScore);
         }
-        return starCount;
     }
-    $: starCount = calculateStars(score, minScore, maxScore);
+    $: starCount = calculateBoundScore(score);
 </script>
 
-<BarScale score={starCount*2} maxScore=10 
-    colorStart={colorGuess}
-    colorEnd={colorTarget} />
+<BarScale score={starCount} maxScore={10} 
+    colorStart={colorGuess} />
 

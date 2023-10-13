@@ -2,7 +2,7 @@
     import { page } from '$app/stores';
 
     import { onMount } from 'svelte';
-    import { cmykToRgb, hexToRgb, rgbToHex } from '$lib/utils/colorTools';
+    import { cmykToRgb, hexToRgb, rgbToHex, rgbColorToRGBDistance } from '$lib/utils/colorTools';
     import type { RGBColor, CMYKColor } from '$lib/utils/colorTools';
     import type { Guess, GuessHistory } from '$lib/colorguesser/types.ts';
     import { guessHistoryStore } from '$lib/colorguesser/guessHistoryStore';
@@ -54,19 +54,12 @@
         blue: getRandomInt(255)
         };
     
+    let targetColorName: string | undefined;
     // routing in +page.server.ts should ensure that these are valid
     let { rawPlayMode, rawColorMode } = $page.params;
 
-    function calculateDifference(guess: RGBColor, target: RGBColor) {
-        /* Calculate based on RGB - cmyk should have already been converted to rgb with reactive statement */
-        const difference = Math.abs(guess.red - target.red) + Math.abs(guess.green - target.green) + Math.abs(guess.blue - target.blue);
-        /* Use floor to be nicer to the user */
-        const diffRelative = Math.floor(100 * difference / (255*3));
-        return diffRelative;
-    }
-
     function submitGuess() {
-        const diffRelative = calculateDifference(rgbColors, target);
+        const diffRelative = rgbColorToRGBDistance(rgbColors, target);
 
         // Add a guess to the history
         const newGuess = {
@@ -103,9 +96,10 @@
         const rng = seedrandom(seed);
         const colorIndex = Math.floor(rng() * Object.keys(colors).length);
 
-        const colorNames = Object.keys(colors);
-        const colorHex = colors[colorNames[colorIndex]];
-        console.log(seed, colorIndex, colorHex, hexToRgb(colorHex));
+        const colorNames: string[] = Object.keys(colors);
+        targetColorName = colorNames[colorIndex];
+        const colorHex: string = colors[targetColorName];
+        console.log(seed, colorIndex, colorHex, hexToRgb(colorHex), targetColorName);
         target = hexToRgb(colorHex);
 
         /* set sliders to midpoint */
@@ -199,7 +193,7 @@
     {/if}
     
     {#if !finished }
-        <ColorBoxBase shareButton={false} showHex={false} csshex={rgbToHex(target)} />
+        <ColorBoxBase shareButton={false} showHex={false} csshex={rgbToHex(target)} colorname={targetColorName} />
     {/if}
     <!-- RGB Sliders -->
     {#if colorMode === 'RGB' && !finished}
@@ -240,17 +234,20 @@
             </p>
         {/if}
         {#if playMode === 'INFINITE' && attempts > 0}
-            Avg Infinite Score<br />
-            <div class="flex items-center">
+        <div class="flex flex-col items-center">
+            <p class="flex-auto text-gray-500 text-sm dark:text-gray-400">Score</p>
+            <div class="flex-auto">
                 <StarScore score={Math.floor(dayScore/attempts)} />
             </div>
+        </div>
         {/if}
         {#if (playMode === 'INFINITE' || playMode === 'DAILY') && attempts > 0}
         <div class="flex flex-col items-center">
-            <div>
-                
-            Guess History<br />
-            <hr class="border-t border-gray-300 dark:border-gray-600" />
+            
+            <div class="text-gray-500 text-sm dark:text-gray-400">
+                <hr class="border-t mt-4 mb-2 border-gray-300 dark:border-gray-600" />
+            History<br />
+            
         </div>
             <div class="flex items-center">
                 <Fa class="m-1 flex-auto text-gray-300 dark:text-gray-1000" icon={faUser} />
@@ -258,7 +255,7 @@
                 <span class="m-1 w-12 text-sm text-gray-300 dark:text-gray-600">Score</span>
             </div>
             <!--loop through filteredGuess from the back to the front, up to ten guesses-->
-            {#each filteredGuesses.reverse().slice(0,100) as guess }
+            {#each filteredGuesses.reverse().slice(0,25) as guess }
                 <div class="flex flex-row">
                     <div class="w-4 flex-none h-4 mx-1 bg-grey-500 rounded-sm" style="background-color:{rgbToHex(guess.guessColor)}"></div>
                     <div class="w-4 h-4 mx-1 bg-grey-500 rounded-sm" style="background-color:{rgbToHex(guess.targetColor)}"></div>

@@ -25,7 +25,7 @@ export function cmykToRgb(cmyk: CMYKColor): RGBColor {
   const g = 1 - Math.min(1, m * (1 - k) + k);
   const b = 1 - Math.min(1, y * (1 - k) + k);
 
-  return {'red': r * 255, 'green': g * 255, 'blue': b * 255} as RGBColor;
+  return {'red': Math.round(r * 255), 'green': Math.round(g * 255), 'blue': Math.round(b * 255)} as RGBColor;
 }
 
 export function rgbToCmyk(rgb: RGBColor): CMYKColor {
@@ -57,10 +57,24 @@ export function hexToRgb(hash: ColorHash): RGBColor {
 }
 
 export function rgbToHex(rgb: RGBColor): ColorHash {
-  const bigint = (rgb.red << 16) | (rgb.green << 8) | rgb.blue;
-  const hex = bigint.toString(16);
+  const { red, green, blue } = rgb;
 
-  return `#${hex}`;
+  // Ensure that the values are within the valid range (0-255), and round any decimals
+  const clamp = (value: number) => Math.max(0, Math.min(255, Math.round(value)));
+
+  const clampedRed = clamp(red);
+  const clampedGreen = clamp(green);
+  const clampedBlue = clamp(blue);
+
+  // Convert the decimal values to hexadecimal
+  const redHex = clampedRed.toString(16).padStart(2, '0');
+  const greenHex = clampedGreen.toString(16).padStart(2, '0');
+  const blueHex = clampedBlue.toString(16).padStart(2, '0');
+
+  // Combine the hexadecimal values to create the CSS hexadecimal color
+  const hexColor = `#${redHex}${greenHex}${blueHex}`;
+
+  return hexColor;
 }
 
 function rgbToXyz(rgb: RGBColor): XYZColor {

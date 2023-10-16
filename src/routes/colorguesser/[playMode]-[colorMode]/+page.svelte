@@ -30,8 +30,6 @@
     const maxAttempts = 5;
     let attempts: number = 0;
     let dayScore: number = 0;
-    let lastScore: number = 0;
-    let submitted: boolean = false;
     let finished: boolean = false;
     let filteredGuesses: GuessHistory = [];
     let rgbColors: RGBColor = {
@@ -70,7 +68,6 @@
             difference: diffRelative
         };
         guessHistoryStore.update(guessHistory => [...guessHistory, newGuess]);
-        submitted = true;
 
         finished = (playMode == 'DAILY') && (attempts > maxAttempts);
         if (!finished) {
@@ -83,12 +80,9 @@
         return now.getUTCFullYear() * 10000 + (now.getUTCMonth() + 1) * 100 + now.getUTCDate();
     }
 
-    function getGameSeed(): number {
+    function getGameSeed(): string {
         const daySeed:number = getDailySeed();
-        const attemptMod:number = attempts * 100;
-        const playMod:number = playMode === 'INFINITE' ? 2000 : 0;
-        const colorMod:number = colorMode === 'CMYK' ? 1000 : 0;
-        return daySeed + playMod + colorMod + attemptMod;
+        return `${daySeed}-${playMode}-${colorMode}-${attempts}`;
     }
 
     function getNextColor() {
@@ -112,30 +106,31 @@
     }
 
     function updateValues() {
+        // Actions triggered by changes to the guessHistoryStore
         filteredGuesses = $guessHistoryStore.filter(guess => guessFilter(guess, colorMode, playMode));
         attempts = filteredGuesses.length;
         dayScore = filteredGuesses.reduce((acc, curr) => acc + curr.difference, 0);
-        lastScore = filteredGuesses[filteredGuesses.length - 1]?.difference;
         finished = (playMode == 'DAILY') && (attempts >= maxAttempts);
+       
     }
 
     onMount(() => {
+        console.log('onMount');
         getNextColor();
         updateValues();
     });
 
-        
     $: {
         rawPlayMode = $page.params.playMode.toUpperCase();
         rawColorMode = $page.params.colorMode.toUpperCase();
         // Typed
         playMode = rawPlayMode.toUpperCase() as PlayMode;
         colorMode = rawColorMode.toUpperCase() as ColorMode;
-
+        getNextColor();
         updateValues();
     };
     
-    $: $guessHistoryStore && updateValues(); // Recompute when guessHistoryStore changes
+    $: $guessHistoryStore && updateValues();
 
     $: if (colorMode == "CMYK") {
         rgbColors = cmykToRgb(cmykColors);
@@ -228,11 +223,6 @@
 
     <!-- Score Display-->
     <div class="mt-2 text-center items-center">
-        {#if playMode === 'DAILY' && attempts > 0}
-            <p class="mt-2">Score: {dayScore}
-                {#if submitted && lastScore}(Last guess: <StarScore score={lastScore} />{lastScore}){/if}
-            </p>
-        {/if}
         {#if playMode === 'INFINITE' && attempts > 0}
         <div class="flex flex-col items-center">
             <p class="flex-auto text-gray-500 text-sm dark:text-gray-400">Score</p>

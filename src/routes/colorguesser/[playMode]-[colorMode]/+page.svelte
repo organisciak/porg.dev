@@ -93,14 +93,17 @@
         const colorIndex = Math.floor(rng() * Object.keys(colors).length);
 
         const colorNames: string[] = Object.keys(colors);
-        targetColorName = colorNames[colorIndex];
-        const colorHex: string = colors[targetColorName];
-        console.log(seed, colorIndex, colorHex, hexToRgb(colorHex), targetColorName);
-        target = hexToRgb(colorHex);
+        if (playMode === 'PRACTICE') {
+            targetColorName = undefined;
+        } else {
+            targetColorName = colorNames[colorIndex];
+            const colorHex: string = colors[targetColorName];
+            target = hexToRgb(colorHex);
 
-        /* set sliders to midpoint */
-        rgbColors = { red: 127, green: 127, blue: 127} as RGBColor;
-        cmykColors = { cyan: 50, magenta: 50, yellow: 50, black: 50} as CMYKColor;
+            /* set sliders to midpoint */
+            rgbColors = { red: 127, green: 127, blue: 127} as RGBColor;
+            cmykColors = { cyan: 50, magenta: 50, yellow: 50, black: 50} as CMYKColor;
+        }
     }
 
     function guessFilter(guess: Guess, colorMode: ColorMode, playMode: PlayMode): boolean {

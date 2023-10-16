@@ -70,9 +70,6 @@
         guessHistoryStore.update(guessHistory => [...guessHistory, newGuess]);
 
         finished = (playMode == 'DAILY') && (attempts > maxAttempts);
-        if (!finished) {
-            getNextColor();
-        }
     }
 
     function getDailySeed() {
@@ -86,6 +83,8 @@
     }
 
     function getNextColor() {
+        updateValues();
+
         const seed = getGameSeed();
         const rng = seedrandom(seed);
         const colorIndex = Math.floor(rng() * Object.keys(colors).length);
@@ -115,9 +114,7 @@
     }
 
     onMount(() => {
-        console.log('onMount');
         getNextColor();
-        updateValues();
     });
 
     $: {
@@ -127,10 +124,9 @@
         playMode = rawPlayMode.toUpperCase() as PlayMode;
         colorMode = rawColorMode.toUpperCase() as ColorMode;
         getNextColor();
-        updateValues();
     };
     
-    $: $guessHistoryStore && updateValues();
+    $: $guessHistoryStore && getNextColor();
 
     $: if (colorMode == "CMYK") {
         rgbColors = cmykToRgb(cmykColors);
@@ -181,7 +177,9 @@
     
     <!-- Target Color -->
     {#if finished }
-    <GuesserScore score={dayScore} />
+        <div class='text-lg my-2'>
+            Your Score: <StarScore score={dayScore/attempts} />
+        </div>
         {#each $guessHistoryStore.filter(guess => guessFilter(guess, colorMode, playMode)) as guess }
             <GuesserAnswerBox guess={guess} />
         {/each}

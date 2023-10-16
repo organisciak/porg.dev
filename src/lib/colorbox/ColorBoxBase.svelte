@@ -13,6 +13,10 @@
     export let showHex: boolean = true;
     export let shareButton: boolean = true;
     export let border: boolean = false;
+    // tailwind text size extension
+    export let textSize: "xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" = "base";
+    export let width: number = 32;
+    export let height: number = 28;
 
     let shareable: boolean = false;
     let hexvis: boolean = false;
@@ -22,6 +26,9 @@
     let bgColor: string;
     let borderColor: string;
     let textColor: string;
+
+    
+    
 
     $: {
       ({ bgColor, borderColor, textColor } = getTertiaryColors(csshex));
@@ -69,15 +76,15 @@
 
 <div class="flex m-1 {border ? "p-1" : ""} mb-6 border rounded-sm items-start justify-start"
 style='background:{bgColor}; border-color: {borderColor};'  in:fade={{ duration: fadeInDuration }}>
-<div role="button" tabindex="0" class="relative flex flex-col w-32 h-28 {border ? "mb-4" : "m-1"} text-sm p-1 items-start justify-start"
+<div role="button" tabindex="0" class="relative flex flex-col w-{width} h-{height} {border ? "mb-4" : "m-1"} text-sm p-1 items-start justify-start"
     in:fade={{ delay: fadeInDelay, duration: fadeInDuration }}
     style='background-color:{csshex}; color:{textColor}' 
-    aria-label="Select to see CSS"
+    aria-label="{showHex ? "Select to see CSS": "Select-to-see-color is Disabled"}"
     title="{colorname}"
     on:click={() => hexvis = true}
     on:keydown={(e) => {if (e.key === 'Enter') hexvis = true}}>
     
-    <div class="flex text-base">
+    <div class="flex text-{textSize} select-none">
         {#if colorname !== null}{colorname}{/if}
     </div>
 

@@ -94,7 +94,7 @@
 
         const colorNames: string[] = Object.keys(colors);
         if (playMode === 'PRACTICE') {
-            targetColorName = undefined;
+            targetColorName = '';
         } else {
             targetColorName = colorNames[colorIndex];
             const colorHex: string = colors[targetColorName];
@@ -207,7 +207,7 @@
         {#if playMode === 'DAILY'}
             <p class="mb-2"><AttemptBreadCrumbs bind:attempts /></p>
         {/if}
-        <ColorBoxBase shareButton={false} showHex={false} textSize='xs' csshex={rgbToHex(target)} colorname={targetColorName} />
+        <ColorBoxBase shareButton={false} showHex={false} textSize='xs' width={48} height={48} csshex={rgbToHex(target)} colorname={targetColorName} />
     {/if}
     <!-- RGB Sliders -->
     {#if colorMode === 'RGB' && !finished && !startMenu && !practiceLock }
@@ -241,7 +241,7 @@
     {/if}
 
     <!-- Score Display-->
-    <div class="mt-2 text-center items-center">
+    <div class="mt-2 text-center items-center mb-10">
         {#if playMode === 'INFINITE' && attempts > 0}
         <div class="flex flex-col items-center">
             <p class="flex-auto text-gray-500 text-sm dark:text-gray-400">Score</p>

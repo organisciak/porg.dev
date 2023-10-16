@@ -9,7 +9,6 @@
 	import ColorBoxBase from '$lib/colorbox/ColorBoxBase.svelte';
     import GuesserModeSelector from '$lib/colorguesser/GuesserModeSelector.svelte';
     import GuesserAnswerBox from '$lib/colorguesser/GuesserAnswerBox.svelte';
-    import GuesserScore from '$lib/colorguesser/GuesserScore.svelte';
     import Modal from '$lib/components/Modal.svelte';
     import StarScore from '$lib/colorguesser/StarScore.svelte';
     import AttemptBreadCrumbs from '$lib/colorguesser/AttemptBreadCrumbs.svelte';
@@ -32,6 +31,10 @@
     let dayScore: number = 0;
     let finished: boolean = false;
     let filteredGuesses: GuessHistory = [];
+    let startedDaily: { RGB: boolean, CMYK: boolean } = {
+        RGB: false,
+        CMYK: false
+    };
     let rgbColors: RGBColor = {
         red: 0,
         green: 0,
@@ -108,9 +111,14 @@
         // Actions triggered by changes to the guessHistoryStore
         filteredGuesses = $guessHistoryStore.filter(guess => guessFilter(guess, colorMode, playMode));
         attempts = filteredGuesses.length;
+        if (playMode == 'DAILY' && attempts > 0) {
+            startedDaily[colorMode] = true;
+        }
         dayScore = filteredGuesses.reduce((acc, curr) => acc + curr.difference, 0);
         finished = (playMode == 'DAILY') && (attempts >= maxAttempts);
-       
+        if (finished) {
+            startedDaily[colorMode] = false;
+        }
     }
 
     onMount(() => {
@@ -132,12 +140,18 @@
         rgbColors = cmykToRgb(cmykColors);
     };
 
-    $: if (playMode === "PRACTICE") {
+    $: if (playMode === "PRACTICE" && !startedDaily['CMYK'] && !startedDaily['RGB']) {
         target = rgbColors;
     }
+    // whether to hide the game until explicitly started. This is done so
+    // that we have a signal to turn off practice mode
+    let startMenu: boolean = false;
+    let practiceLock: boolean = false;
+    $: startMenu = playMode == 'DAILY' && !(startedDaily[colorMode]);
+    $: practiceLock = playMode === 'PRACTICE' && (startedDaily['RGB'] || startedDaily['CMYK']);
 </script>
 
-<Modal bind:showModal>
+<Modal bind:showModal={showModal}>
 	<h2 slot="header">
 		About the Color Guess Challenge
 	</h2>
@@ -169,13 +183,8 @@
     <h1 class="text-2xl font-bold mb-4">Color Guess Challenge <button on:click={() => (showModal = true)}><Fa class="text-blue-200" icon={faQuestion} /></button></h1>
     <!-- Mode Selectors -->
     <GuesserModeSelector colorMode={colorMode} playMode={playMode}/>
-
-    <!-- Attempt bread crumbs-->
-    {#if playMode === 'DAILY' && attempts > 0}
-        <p class="mb-2"><AttemptBreadCrumbs bind:attempts /></p>
-    {/if}
     
-    <!-- Target Color -->
+    <!-- Target Color & Breadcrumb -->
     {#if finished }
         <div class='text-lg my-2'>
             Your Score: <StarScore score={dayScore/attempts} />
@@ -183,13 +192,22 @@
         {#each $guessHistoryStore.filter(guess => guessFilter(guess, colorMode, playMode)) as guess }
             <GuesserAnswerBox guess={guess} />
         {/each}
-    {/if}
-    
-    {#if !finished }
-        <ColorBoxBase shareButton={false} showHex={false} csshex={rgbToHex(target)} colorname={targetColorName} />
+    {:else if practiceLock }
+        <div class='text-sm italic'>
+        Practice is disabled while a daily game is going on. Try it later!
+        </div>
+    {:else if startMenu }
+        <p class='text-sm w-48'>This is the landing page before you start a game. I'll add some instructions here. Clicking 'start' disables practice mode.</p>
+        <!--Button that sets startedDaily[playMode]to true-->
+        <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => startedDaily[colorMode] = true}>Start</button>
+    {:else }
+        {#if playMode === 'DAILY'}
+            <p class="mb-2"><AttemptBreadCrumbs bind:attempts /></p>
+        {/if}
+        <ColorBoxBase shareButton={false} showHex={false} textSize='xs' csshex={rgbToHex(target)} colorname={targetColorName} />
     {/if}
     <!-- RGB Sliders -->
-    {#if colorMode === 'RGB' && !finished}
+    {#if colorMode === 'RGB' && !finished && !startMenu && !practiceLock }
         {#each Object.entries(rgbColors) as [color, value], index (color)}
             <div class="mb-2">
                 <label class="block text-center">
@@ -202,7 +220,7 @@
     {/if}
 
 
-    {#if colorMode === 'CMYK' && !finished }
+    {#if colorMode === 'CMYK' && !finished && !startMenu && !practiceLock}
         {#each Object.entries(cmykColors) as [color, value], index (color)}
             <div class="mb-2">
                 <label class="block text-center">
@@ -215,7 +233,7 @@
     {/if}
 
     <!-- Submit  -->
-    {#if playMode !== 'PRACTICE' && !finished }
+    {#if playMode !== 'PRACTICE' && !finished && !startMenu }
         <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={submitGuess}>Submit</button>
     {/if}
 

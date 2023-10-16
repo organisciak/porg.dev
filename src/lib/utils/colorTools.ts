@@ -160,9 +160,9 @@ function cielabToXyz(cielab: CIELABColor): XYZColor {
 }
 
 function xyzToRgb(xyz: XYZColor): RGBColor {
-  let x = xyz.x / 100;
-  let y = xyz.y / 100;
-  let z = xyz.z / 100;
+  const x = xyz.x / 100;
+  const y = xyz.y / 100;
+  const z = xyz.z / 100;
 
   let r = x * 3.2406 + y * -1.5372 + z * -0.4986;
   let g = x * -0.9689 + y * 1.8758 + z * 0.0415;

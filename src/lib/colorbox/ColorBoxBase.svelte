@@ -13,10 +13,10 @@
     export let showHex: boolean = true;
     export let shareButton: boolean = true;
     export let border: boolean = false;
-    // tailwind text size extension
-    export let textSize: "xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" = "base";
-    export let width: number = 32;
-    export let height: number = 28;
+    // ALWAYS SAFELIST POSSIBLE VALUES if writing tailwind classes dynamically
+    export let textSize: "xs" | "sm" | "base" | "lg" | "xl" = "base";
+    export let width: 28 | 32 | 48 = 32;
+    export let height: 28 | 32 | 48 = 28;
 
     let shareable: boolean = false;
     let hexvis: boolean = false;

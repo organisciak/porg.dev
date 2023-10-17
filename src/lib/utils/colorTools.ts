@@ -286,3 +286,28 @@ export function rgbColorToRGBDistance(color1: RGBColor, color2: RGBColor): numbe
 export function hexColorToRGBDistance(color1: string, color2: string): number {
   return rgbColorToRGBDistance(hexToRgb(color1), hexToRgb(color2));
 }
+
+
+export function cmykToHexByKey(value: number, color: 'cyan'|'magenta'|'yellow'|'black'): string {
+  /* Convert a single band of CMYK - with the others set to 0 - to a hex color. */
+  let cmyk: CMYKColor = {
+      cyan: 0,
+      magenta: 0,
+      yellow: 0,
+      black: 0
+  };
+  cmyk[color] = value;
+  const rgb = cmykToRgb(cmyk);
+  return rgbToHex(rgb);
+}
+
+export function rgbToHexByKey(value: number, color: 'red'|'green'|'blue'): string {
+  /* Convert a single band of RGB - with the others set to 0 - to a hex color. */
+  let rgb: RGBColor = {
+      red: 0,
+      green: 0,
+      blue: 0
+  };
+  rgb[color] = value;
+  return rgbToHex(rgb);
+}

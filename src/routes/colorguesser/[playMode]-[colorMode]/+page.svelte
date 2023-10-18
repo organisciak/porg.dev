@@ -154,8 +154,20 @@
     let practiceLock: boolean = false;
     $: startMenu = playMode == 'DAILY' && !(startedDaily[colorMode]);
     $: practiceLock = playMode === 'PRACTICE' && (startedDaily['RGB'] || startedDaily['CMYK']);
+
+    const baseNameRef = {
+        "red": "#ff0000",
+        "green": "#00ff00",
+        "blue": "#0000ff",
+        "cyan": "#00ffff",
+        "magenta": "#ff00ff",
+        "yellow": "#ffff00",
+        "black": "#000000"
+    }
 </script>
 
+
+  
 <Modal bind:showModal={showModal}>
 	<h2 slot="header">
 		About the Color Guess Challenge
@@ -187,17 +199,30 @@
 <div class="flex flex-col items-center">
 
     <div class="flex-grow">
-        <h1 class="text-2xl font-bold mb-4">Color Guess Challenge <button on:click={() => (showModal = true)}><Fa class="text-blue-200" icon={faQuestion} /></button></h1>
+        <h1 class="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-600 via-violet-500 to-yellow-500 text-transparent bg-clip-text">Color Guess Challenge <button on:click={() => (showModal = true)}><Fa class="text-blue-200" icon={faQuestion} /></button></h1>
         <!-- Mode Selectors -->
         <GuesserModeSelector colorMode={colorMode} playMode={playMode}/>
         
     </div>
+
     <div class="flex-grow">
+    {#if finished || (playMode === 'INFINITE' && attempts > 0) }
+            <div class="flex flex-col items-center">
+                {#if playMode === 'INFINITE'}
+                <p class="flex-auto text-gray-500 text-sm dark:text-gray-400">Infinite Score</p>
+                {:else if playMode == 'DAILY'}
+                <p class="flex-auto text-bold bg-gradient-to-r from-magenta  to-cyan-600  text-transparent bg-clip-text font-bold">Your Score</p>
+                {/if}
+                <div class="flex-auto">
+                    <StarScore score={Math.floor(dayScore/attempts)} />
+                </div>
+            </div>
+            {/if}
+    </div>
+
+    <div class="flex-grow border-slate-900 border-2 p-2 m-3 bg-clip-border rounded-lg">
         <!-- Target Color & Breadcrumb -->
         {#if finished }
-            <div class='text-lg my-2'>
-                Your Score: <StarScore score={dayScore/attempts} />
-            </div>
             {#each $guessHistoryStore.filter(guess => guessFilter(guess, colorMode, playMode)) as guess }
                 <GuesserAnswerBox guess={guess} />
             {/each}
@@ -208,7 +233,7 @@
         {:else if startMenu }
             <p class='text-sm w-48'>This is the landing page before you start a game. I'll add some instructions here. Clicking 'start' disables practice mode.</p>
             <!--Button that sets startedDaily[playMode]to true-->
-            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => startedDaily[colorMode] = true}>Start</button>
+            <button class="bg-cyan-400 hover:bg-cyan-500 focus:bg-cyan-500 text-white font-semibold py-2 px-6 rounded-full border border-cyan-500 shadow-lg justify-center" on:click={() => startedDaily[colorMode] = true}>Start</button>
         {:else }
             {#if playMode === 'DAILY'}
                 <p class="mb-2"><AttemptBreadCrumbs bind:attempts /></p>
@@ -221,11 +246,12 @@
         <!-- RGB Sliders -->
         {#if colorMode === 'RGB' && !finished && !startMenu && !practiceLock }
             {#each Object.entries(rgbColors) as [color, value], index (color)}
-                <div class="mb-2">
-                    <label class="block text-center">
-                        {color[0].toUpperCase() + color.slice(1)}
-                        <input type="range" min="0" max="255" value={value} on:input={(e) => rgbColors[color] = +(e.target.value ?? 0)} class="w-48" />
-                        <span style="color:{rgbToHexByKey(value, color)}">{value}</span>
+                <div class="mb-2 w-full">
+                    <label class="text-center flex flex-row justify-center items-center">
+                        <span class='w-10 text-xs'>{color[0].toUpperCase() + color.slice(1)}</span>
+                        <input type="range" min="0" max="255" value={value} on:input={(e) => rgbColors[color] = +(e.target.value ?? 0)}
+                            class="bg-white w-48 flex-auto border-2 border-gray-500 rounded-lg cursor-pointer appearance-none" />
+                        <span style="color:{rgbToHexByKey(value, color)}" class="w-8">{value}</span>
                     </label>
                 </div>
             {/each}
@@ -234,34 +260,29 @@
 
         {#if colorMode === 'CMYK' && !finished && !startMenu && !practiceLock}
             {#each Object.entries(cmykColors) as [color, value], index (color)}
-                <div class="mb-2">
-                    <label class="block text-center">
-                        {color[0].toUpperCase() + color.slice(1)}
-                        <input type="range" min="0" max="100" value={value} on:input={(e) => cmykColors[color] = +e.target.value ?? 0} class="w-48" />
-                        <span style="color:{cmykToHexByKey(value, color)}">{value}</span>
+                <div class="mb-2 w-full">
+                    <label class="text-center flex flex-row justify-center items-center">
+                        <span class='w-14 text-xs'>{color[0].toUpperCase() + color.slice(1)}</span>
+                        <input style="{cmykToHexByKey(100, color)}" type="range" min="0" max="100" value={value} on:input={(e) => cmykColors[color] = +e.target.value ?? 0}
+                                class="bg-gradient-to-r from-white to-[{baseNameRef[color.toLowerCase()]}] w-48 flex-auto border-2 border-black rounded-lg cursor-pointer appearance-none" />
+                        <span style="color:{cmykToHexByKey(value, color)}" class="w-8">{value}</span>
                     </label>
+
                 </div>
             {/each}
         {/if}
 
         <!-- Submit  -->
         {#if playMode !== 'PRACTICE' && !finished && !startMenu }
-            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={submitGuess}>Submit</button>
+            <button class="px-4 py-2  border-slate-800 border-2 p-5 bg-black rounded-lg hover:bg-gradient-to-r hover:from-cyan-600 hover:via-violet-500 hover:to-yellow-500 text-transparent bg-clip-text" on:click={submitGuess}>Submit</button>
         {/if}
     </div>
 
     
     <div class="flex-grow flex flex-col">
-        <!-- Score Display-->
+        <!-- Score History Display-->
         <div class="mt-2 text-center items-center mb-10">
-            {#if playMode === 'INFINITE' && attempts > 0}
-            <div class="flex flex-col items-center">
-                <p class="flex-auto text-gray-500 text-sm dark:text-gray-400">Score</p>
-                <div class="flex-auto">
-                    <StarScore score={Math.floor(dayScore/attempts)} />
-                </div>
-            </div>
-            {/if}
+            
             {#if (playMode === 'INFINITE' || playMode === 'DAILY') && attempts > 0}
             <div class="flex flex-col items-center">
                 

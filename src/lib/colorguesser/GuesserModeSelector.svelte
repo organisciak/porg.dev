@@ -3,6 +3,7 @@
     type ColorMode = "RGB" | "CMYK";
     export let playMode: PlayMode;
     export let colorMode: ColorMode;
+    export let practiceLock: boolean = false;
 </script>
 
 <div>
@@ -10,6 +11,8 @@
     {#each ['Daily', 'Infinite', 'Practice'] as mode}
         {#if mode.toUpperCase() == playMode}
             <span class='font-extrabold mx-2'>{mode}</span>
+        {:else if (mode === 'Practice') && practiceLock}
+            <span class='font-light text-gray-400 mx-2'>{mode}</span>
         {:else}
             <a class="font-light mx-2" data-sveltekit-prefetch href="{mode.toLowerCase()}-{colorMode.toLowerCase()}">{mode}</a>
         {/if}

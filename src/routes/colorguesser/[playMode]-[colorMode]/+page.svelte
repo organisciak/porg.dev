@@ -18,7 +18,7 @@
     import colors from '../../colors/colors.json';
 
     import Fa from 'svelte-fa';
-    import { faBullseye, faQuestion, faUser } from '@fortawesome/free-solid-svg-icons';
+    import { faBullseye, faQuestion, faGear, faUser } from '@fortawesome/free-solid-svg-icons';
 
     type PlayMode = "INFINITE" | "DAILY" | "PRACTICE";
     type ColorMode = "RGB" | "CMYK";
@@ -26,6 +26,8 @@
 
     // init vars
     let showModal = false;
+    let settingsModal = false;
+
     let playMode: PlayMode;
     let colorMode: ColorMode;
     const maxAttempts = 5;
@@ -195,14 +197,21 @@
     </div>
 </Modal>
 
+<Modal bind:showModal={settingsModal}>
+    <h2 slot="header">
+		Settings
+	</h2>
+    <GuesserModeSelector colorMode={colorMode} playMode={playMode} practiceLock={(startedDaily['RGB'] || startedDaily['CMYK'])} />
+</Modal>
 
 <div class="flex flex-col items-center">
 
     <div class="flex-grow">
-        <h1 class="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-600 via-violet-500 to-yellow-500 text-transparent bg-clip-text">Color Guess Challenge <button on:click={() => (showModal = true)}><Fa class="text-blue-200" icon={faQuestion} /></button></h1>
-        <!-- Mode Selectors -->
-        <GuesserModeSelector colorMode={colorMode} playMode={playMode}/>
-        
+        <h1 class="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-600 via-violet-500 to-yellow-500 text-transparent bg-clip-text">Color Guess Challenge</h1>
+        <div>
+            <button on:click={() => (showModal = true)}><Fa class="text-blue-200" icon={faQuestion} /></button>
+            <button on:click={() => (settingsModal = true)}><Fa class="text-blue-200" icon={faGear} /></button>
+        </div>
     </div>
 
     <div class="flex-grow">

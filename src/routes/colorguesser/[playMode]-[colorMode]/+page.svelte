@@ -301,15 +301,15 @@
                 
             </div>
                 <div class="flex items-center">
-                    <Fa class="m-1 flex-auto text-gray-300 dark:text-gray-1000" icon={faUser} />
-                    <Fa class="m-1 text-gray-300 dark:text-gray-600" icon={faBullseye} />
+                    <Fa class="mr-1 text-gray-300 dark:text-gray-600" icon={faBullseye} />
+                    <Fa class="m-1 text-gray-300 dark:text-gray-1000" icon={faUser} />
                     <span class="m-1 w-12 text-sm text-gray-300 dark:text-gray-600">Score</span>
                 </div>
                 <!--loop through filteredGuess from the back to the front, up to ten guesses-->
                 {#each filteredGuesses.reverse().slice(0,25) as guess }
                     <div class="flex flex-row">
-                        <div class="w-4 flex-none h-4 mx-1 bg-grey-500 rounded-sm" style="background-color:{rgbToHex(guess.guessColor)}"></div>
                         <div class="w-4 h-4 mx-1 bg-grey-500 rounded-sm" style="background-color:{rgbToHex(guess.targetColor)}"></div>
+                        <div class="w-4 flex-none h-4 mx-1 bg-grey-500 rounded-sm" style="background-color:{rgbToHex(guess.guessColor)}"></div>
                         <div><StarScore score={guess.difference} /></div>
                     </div>
                 {/each}

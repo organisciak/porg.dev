@@ -18,7 +18,8 @@
         {/if}
     {/each}
 
-    <br /><span class="text-slate-400 text-xs uppercase mx-2">Color mode</span>
+    <br />
+    <span class="text-slate-400 text-xs uppercase mx-2">Color mode</span>
     {#each ['RGB', 'CMYK'] as mode}
         {#if mode.toUpperCase() == colorMode}
             <span class='font-extrabold mx-2'>{mode}</span>

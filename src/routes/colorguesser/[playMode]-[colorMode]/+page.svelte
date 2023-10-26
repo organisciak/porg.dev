@@ -39,6 +39,12 @@
         RGB: false,
         CMYK: false
     };
+    // Attempts by color mode
+    let dailyAttempts: { RGB: number, CMYK: number };
+    let finishedDaily: { RGB: boolean, CMYK: boolean } = {
+        RGB: false,
+        CMYK: false
+    };
     let rgbColors: RGBColor = {
         red: 0,
         green: 0,
@@ -118,14 +124,8 @@
         // Actions triggered by changes to the guessHistoryStore
         filteredGuesses = $guessHistoryStore.filter(guess => guessFilter(guess, colorMode, playMode));
         attempts = filteredGuesses.length;
-        if (playMode == 'DAILY' && attempts > 0) {
-            startedDaily[colorMode] = true;
-        }
         dayScore = filteredGuesses.reduce((acc, curr) => acc + curr.difference, 0);
         finished = (playMode == 'DAILY') && (attempts >= maxAttempts);
-        if (finished) {
-            startedDaily[colorMode] = false;
-        }
     }
 
     onMount(() => {
@@ -139,6 +139,21 @@
         playMode = rawPlayMode.toUpperCase() as PlayMode;
         colorMode = rawColorMode.toUpperCase() as ColorMode;
         getNextColor();
+    };
+
+    $: {
+        dailyAttempts = {
+            RGB: $guessHistoryStore.filter(guess => guessFilter(guess, 'RGB', 'DAILY')).length,
+            CMYK: $guessHistoryStore.filter(guess => guessFilter(guess, 'CMYK', 'DAILY')).length
+        }
+        finishedDaily = {
+            RGB: dailyAttempts.RGB >= maxAttempts,
+            CMYK: dailyAttempts.CMYK >= maxAttempts,
+        }
+        startedDaily = {
+            RGB: dailyAttempts.RGB > 0 && !finishedDaily.RGB,
+            CMYK: dailyAttempts.CMYK > 0 && !finishedDaily.CMYK
+        }
     };
     
     $: $guessHistoryStore && getNextColor();
@@ -167,8 +182,6 @@
         "black": "#000000"
     }
 </script>
-
-
   
 <Modal bind:showModal={showModal}>
 	<h2 slot="header">
@@ -212,6 +225,19 @@
             <button on:click={() => (showModal = true)}><Fa class="text-blue-200" icon={faQuestion} /></button>
             <button on:click={() => (settingsModal = true)}><Fa class="text-blue-200" icon={faGear} /></button>
         </div>
+        <div>
+            {#if playMode.toLowerCase() === 'practice'}
+                <span class="text-slate-400 text-xs uppercase mx-2">Color mode</span>
+                {#each ['RGB', 'CMYK'] as mode}
+                    {#if mode.toUpperCase() == colorMode}
+                        <span class='font-extrabold mx-2'>{mode}</span>
+                    {:else}
+                        <a class='font-light mx-2' data-sveltekit-prefetch href="{playMode.toLowerCase()}-{mode.toLowerCase()}">{mode}</a>
+                    {/if}
+                {/each}
+            {/if}
+            <hr class='my-2 dark:border-gray-600 border-gray-300' />
+        </div>
     </div>
 
     <div class="flex-grow">
@@ -240,7 +266,34 @@
             Practice is disabled while a daily game is going on. Try it later!
             </div>
         {:else if startMenu }
-            <p class='text-sm w-48'>This is the landing page before you start a game. I'll add some instructions here. Clicking 'start' disables practice mode.</p>
+            <div class='text-sm w-64'>
+                <h3 class="text-center">How to Play</h3>
+                <p class='my-3'>You're given a 
+                    <span class="font-semibold bg-gradient-to-r from-magenta  to-cyan-600  text-transparent bg-clip-text">target</span> color, and you have to guess what composition of 
+                    {#if colorMode==='RGB' }
+                        <span class='font-semibold text-red-500'>red</span>, <span class='font-semibold text-green-500'>green</span>, and <span class='font-semibold text-blue-500'>blue</span>
+                    {:else if colorMode==='CMYK' }
+                    <span class='font-semibold text-cyan-400'>cyan</span>, <span class='font-semibold text-magenta'>magenta</span>, <span class='font-semibold text-yellow-500'>yellow</span>, and <span class='font-semibold'>black</span>
+                    {/if}
+                combine to make the target.</p>
+
+                <p class='my-3'>Get as close as you can. Each day has <span class="font-semibold">5</span> target colors to get as high a score as possible.</p>
+                <p class='my-3'>Before you start, try <a data-sveltekit-prefetch href="practice-{colorMode.toLowerCase()}">Practice Mode</a>. There's also 
+                    {#if colorMode==='RGB' }
+                        a harder <a data-sveltekit-prefetch href="daily-cmyk">CMYK</a> mode.
+                    {:else if colorMode==='CMYK' }
+                        an easier <a data-sveltekit-prefetch href="daily-rgb">RGB</a> mode.
+                    {/if}
+                </p>
+                <p class='my-3 italic text-xs'>
+                    Tip: 
+                    {#if colorMode==='RGB' }
+                        RGB is additive: it gets lighter as you add color. 
+                    {:else if colorMode==='CMYK' }
+                        CMYK mode is based on inks, and is subtractive: it gets darker as you add color. Black is redundant - you can make any color without it if you like!
+                    {/if}
+                </p>
+            </div>
             <!--Button that sets startedDaily[playMode]to true-->
             <button class="bg-cyan-400 hover:bg-cyan-500 focus:bg-cyan-500 text-white font-semibold py-2 px-6 rounded-full border border-cyan-500 shadow-lg justify-center" on:click={() => startedDaily[colorMode] = true}>Start</button>
         {:else }
@@ -287,6 +340,37 @@
         {/if}
     </div>
 
+    <!-- Mode specific bottom message-->
+    <div class='text-sm text-center'>
+        {#if playMode === 'PRACTICE'}
+        
+            <hr class='my-2 dark:border-gray-600 border-gray-300' />
+            <p class='my-1'>
+                {#if finishedDaily['RGB']}
+                    Play <a data-sveltekit-prefetch href="infinite-rgb">Infinite Mode</a>
+                {:else}
+                    Play <a data-sveltekit-prefetch href="daily-rgb">Daily Mode</a>
+                {/if}
+            </p>
+            {#if colorMode == 'CMYK'}
+                <p class='my-1'>
+                    Or
+                    {#if finishedDaily['CMYK']}
+                        <a data-sveltekit-prefetch href="infinite-cmyk">CMYK Infinite Mode</a>
+                    {:else}
+                        <a data-sveltekit-prefetch href="daily-cmyk">CMYK Daily Mode</a>
+                    {/if}
+                </p>
+            {/if}
+        {:else if playMode == 'DAILY' && finished}
+        <p class='my-1'>Challenge yourself again tomorrow, or try <a data-sveltekit-prefetch href="infinite-{colorMode.toLowerCase()}">Infinite Mode</a>.</p>
+            {#if colorMode == 'RGB' && !finishedDaily['CMYK']}
+                <p class='my-1'>Want a challenge? Play <a data-sveltekit-prefetch href="daily-cmyk">CMYK Daily Mode</a></p>
+            {:else if colorMode == 'CMYK' && !finishedDaily['RGB']}
+            <p class='my-1'>You finished CMYK. Try the RGB<a data-sveltekit-prefetch href="daily-rgb">Daily Mode</a></p>
+            {/if}
+        {/if}
+    </div>
     
     <div class="flex-grow flex flex-col">
         <!-- Score History Display-->

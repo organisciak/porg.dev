@@ -10,16 +10,19 @@
     let remaining: number;
     $: remaining = ((score < maxScore) ? maxScore-score : 0);
     const tailwindstyles = 'w-1 h-4 m-px bg-grey-500 rounded-full';
-    const remainingClassBg = 'bg-gray-300 dark:bg-gray-500'
+    const remainingClassBg = 'bg-gray-300 dark:bg-gray-500';
+    const beHelpful: boolean = true;
+
     let currentClassBg = remainingClassBg;
     $: if (markCurrent) {
         currentClassBg = "bg-violet-300 dark:bg-violet-500";
     }
+    
 </script>
 
 <div class='flex flex-row flex-wrap justify-center' title={tooltip ? tooltip : undefined}>
     {#if score > 0}
-    {#each Array(Math.round(score)) as _}
+    {#each Array(Math.round(score + (beHelpful ? .4 : 0))) as _}
         <div class='{tailwindstyles}' style='background-color:{colorStart}'></div>
     {/each}
     {/if}

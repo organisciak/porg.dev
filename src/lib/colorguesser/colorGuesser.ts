@@ -1,13 +1,19 @@
+/*
+Threshold for a raw distance that is considered 0 pts (made slightly more forgiving).
+Based on 100k randomized measures.
+*/
+export const rawScoreThreshold = 176.30 + 10;
+
 /*  normalize the score to a 0-10 scale, where zero is any number where the scale is
-     greater than maxScore, and everything else is linearly scaled to 10.
-    ] */
-    export function calculateBoundScore(score:number, maxScore:number) {
-        if (score > maxScore) {
-            return 0;
-        } else {
-            return Math.round(10 * (maxScore - score) / maxScore);
-        }
+*    greater than maxScore, and everything else is linearly scaled to 10 (or whatever newScale is set to).
+*/
+export function calculateBoundScore(score:number, maxScore:number, newScale:number = 10) {
+    if (score > maxScore) {
+        return 0;
+    } else {
+        return Math.round(newScale * (maxScore - score) / maxScore);
     }
+}
 
 /* Return a string of moon emoji to represent a score. The range of the scale is 0-4*n_moons.
 * e.g. for n_moons = 3:
@@ -34,10 +40,12 @@ export function moonScale(score:number, n_moons:number = 3): string {
         moonString += '🌕';
     }
 
-    moonString += moonPhases[bound_score % moonPhases.length];
-    
-    for (let i = fullMoons + 1; i < n_moons; i++) {
-        moonString += '🌑';
+    if (fullMoons < n_moons) {
+        moonString += moonPhases[bound_score % moonPhases.length];
+        
+        for (let i = fullMoons + 1; i < n_moons; i++) {
+            moonString += '🌑';
+        }
     }
     return moonString;
 }

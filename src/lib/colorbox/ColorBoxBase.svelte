@@ -28,15 +28,13 @@
     let textColor: string;
 
     
-    
-
     $: {
       ({ bgColor, borderColor, textColor } = getTertiaryColors(csshex));
     }
 
     onMount(() => {
         if (navigator.share && navigator.canShare) {
-            shareable = true
+            shareable = true;
         } else {
             shareButton = false;
         }

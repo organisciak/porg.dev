@@ -24,6 +24,7 @@
 
     /* Data */
     import colors from '../../colors/colors.json';
+  import { calculateBoundScore, moonScale, rawScoreThreshold } from '$lib/colorguesser/colorGuesser';
 
     //import { moonScale } from '$lib/colorguesser/colorGuesser';
     // import { darkModeSetting } from '$lib/stores/darkModeStore.js';
@@ -66,6 +67,9 @@
         yellow: 0,
         black: 0
         };
+
+    let shareable: boolean = false;
+
     function getRandomInt(max: number) {
         return Math.floor(Math.random() * Math.floor(max));
     }
@@ -151,6 +155,10 @@
         getNextColor();
         cullOldRecords();
 
+        if (navigator.share && navigator.canShare) {
+            shareable = true;
+        }
+
         /*darkModeSetting.subscribe((setting) => {
             if (setting === 'system') {
             darkModeClass = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : '';
@@ -159,6 +167,25 @@
             }
         });*/
     });
+
+    async function share(rawScore: number) {
+        // normalize to 12 pt scale because that's what the moons demand
+        const normalizedScore:number = calculateBoundScore(rawScore, rawScoreThreshold, 12);
+        const moonScore:string = moonScale(normalizedScore, 3);
+        const msg:string = `${moonScore}\n${window.location.href}`;
+
+        const date = new Date();
+        if (shareable) {
+            navigator.share({
+                title: `Hue Hunter Daily ${date.getMonth()}/${date.getDate()}`,
+                text: msg,
+            })
+            .then(() => console.log('Successful share'))
+            .catch((error) => console.log('Error sharing', error));
+        } else {
+            alert("Web Share API not supported.");
+        }
+    }
 
     $: {
         rawPlayMode = $page.params.playMode.toUpperCase();
@@ -210,7 +237,6 @@
         "black": "#000000"
     }
 </script>
-
 <Modal bind:showModal={statsModal}>
     <h2 slot="header" class="text-center cmy-text-gradient">
 		Stats
@@ -242,7 +268,7 @@
 
 <Modal bind:showModal={showModal}>
 	<h2 slot="header" class="text-center cmy-text-gradient">
-		About the Color Guess Challenge
+		About Hue Hunter
 	</h2>
 
     <div>
@@ -283,7 +309,7 @@
 <div class="flex flex-col items-center">
 
     <div class="flex-grow">
-        <h1 class="text-2xl font-bold mb-3 cmy-text-gradient">Color Guess Challenge</h1>
+        <h1 class="text-2xl font-bold mb-3 cmy-text-gradient">Hue Hunter</h1>
         <div class="flex">
             <button class="flex flex-1 justify-center items-center" on:click={() => (showModal = true)}><Fa class="text-cyan-500" icon={faQuestion} /></button>
             <button class="flex flex-1 justify-center items-center" on:click={() => (settingsModal = true)}><Fa class="text-magenta" icon={faGear} /></button>
@@ -313,8 +339,13 @@
                 <p class="flex-auto text-bold bg-gradient-to-r from-magenta  to-cyan-600  text-transparent bg-clip-text font-bold">Your Score</p>
                 {/if}
                 <div class="flex-auto">
-                    <StarScore score={Math.floor(dayScore/attempts)} />
+                    <StarScore score={Math.round(dayScore/attempts)} />
                 </div>
+                {#if playMode == 'DAILY' && shareable}
+                <p class="flex-auto">
+                    <button class="guesser-button-sm text-sm p-2" on:click={() => share(dayScore/attempts)}>Share</button>
+                </p>
+                {/if}
             </div>
             {/if}
     </div>
@@ -358,7 +389,7 @@
                     {/if}
                 </p>
             </div>
-            <button class="guesser-button" on:click={() => startedDaily[colorMode] = true}>Start</button>
+            <button class="guesser-button-lg" on:click={() => startedDaily[colorMode] = true}>Start</button>
         {:else }
             {#if playMode === 'DAILY'}
                 <p class="mb-2"><AttemptBreadCrumbs bind:attempts /></p>
@@ -399,7 +430,7 @@
 
         <!-- Submit  -->
         {#if playMode !== 'PRACTICE' && !finished && !startMenu }
-            <button class="guesser-button" on:click={submitGuess}>Submit</button>
+            <button class="guesser-button-lg" on:click={submitGuess}>Submit</button>
         {/if}
     </div>
 
@@ -439,7 +470,7 @@
         <!-- Score History Display-->
         <div class="mt-2 text-center items-center mb-10">
             
-            {#if (playMode === 'INFINITE' || playMode === 'DAILY') && attempts > 0}
+            {#if (playMode === 'INFINITE' || playMode === 'DAILY') && attempts > 0 && !finished}
             <div class="flex flex-col items-center">
                 
                 <div class="text-gray-500 text-sm dark:text-gray-400">
@@ -474,9 +505,20 @@
         @apply border-black border-2;
         @apply hover:bg-gradient-to-r hover:from-cyan-600 hover:via-violet-500 hover:to-yellow-500 text-transparent bg-clip-text;
         @apply rounded-full justify-center;
-        @apply py-2 px-6;
         @apply font-semibold;
         @apply shadow-lg;
+    }
+
+    .guesser-button-sm {
+        @apply guesser-button;
+        @apply py-1 px-1;
+        @apply rounded-lg;
+        @apply border-cyan-100 border;
+    }
+
+    .guesser-button-lg {
+        @apply guesser-button;
+        @apply py-2 px-6;
     }
 
     .cmy-text-gradient {

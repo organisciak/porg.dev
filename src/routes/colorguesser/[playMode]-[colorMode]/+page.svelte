@@ -20,6 +20,7 @@
 
     import Fa from 'svelte-fa';
     import { faBullseye, faQuestion, faGear, faUser, faChartSimple } from '@fortawesome/free-solid-svg-icons';
+  import { moonScale } from '$lib/colorguesser/colorGuesser';
 
     type PlayMode = "INFINITE" | "DAILY" | "PRACTICE";
     type ColorMode = "RGB" | "CMYK";

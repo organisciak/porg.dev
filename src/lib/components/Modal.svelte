@@ -21,9 +21,9 @@
 		<slot name="header" />
 		<hr class="border-t border-gray-300 dark:border-gray-600" />
 		<slot />
-		<hr class="border-t border-gray-300 dark:border-gray-600" />
+		
 		<!-- svelte-ignore a11y-autofocus -->
-		<button class="block w-full px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+		<button class="block w-full px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 shadow-lg"
         autofocus on:click={() => dialog.close()}>Close</button>
 	</div>
 </dialog>

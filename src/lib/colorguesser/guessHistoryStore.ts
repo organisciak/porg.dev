@@ -140,10 +140,9 @@ export function guessHistoryStats(): GuessStats {
             0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0
         ], // 11-pt scale, 0-10
-        rawAverageScore: 0,
+        averageScore: 0,
         scoreByDate: []
     }
-    let totalScore = 0;
     let dayGuesses = 0;
 
     // TODO disambiguate between RGB and CMYK stats
@@ -154,8 +153,6 @@ export function guessHistoryStats(): GuessStats {
                 return;
             }
             stats.histogram[calculateBoundScore(guess.difference, 176.30 + 10)]++;
-            totalScore += guess.difference;
-            stats.colorsGuessed ++;
             dayScore += guess.difference;
             dayGuesses ++;
         });
@@ -165,7 +162,11 @@ export function guessHistoryStats(): GuessStats {
         });
         
     });
+    // sum of histogram
+    const totalScore = stats.histogram.reduce((a, b, i) => a + b * i, 0);
+    stats.colorsGuessed = stats.histogram.reduce((a, b) => a + b, 0);
     stats.averageScore = totalScore / stats.colorsGuessed;
+    console.log(stats.histogram, totalScore, stats.colorsGuessed, stats.averageScore);
     return stats
 }
 

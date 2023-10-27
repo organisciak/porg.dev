@@ -1,26 +1,33 @@
 <script lang="ts">
     import { page } from '$app/stores';
-
     import { onMount } from 'svelte';
+    import seedrandom from 'seedrandom';
+    import Fa from 'svelte-fa';
+    import { faBullseye, faQuestion, faGear, faUser, faChartSimple } from '@fortawesome/free-solid-svg-icons';
+
+    /* Color tools */
     import { cmykToRgb, hexToRgb, rgbToHex, rgbColorToRGBDistance,
             cmykToHexByKey, rgbToHexByKey
            } from '$lib/utils/colorTools';
     import type { RGBColor, CMYKColor } from '$lib/utils/colorTools';
     import type { Guess, GuessHistory, GuessStats } from '$lib/colorguesser/types.ts';
     import { guessHistoryStore, cullOldRecords, guessHistoryStats } from '$lib/colorguesser/guessHistoryStore';
+
+    /* Svelte components */
 	import ColorBoxBase from '$lib/colorbox/ColorBoxBase.svelte';
     import GuesserModeSelector from '$lib/colorguesser/GuesserModeSelector.svelte';
     import GuesserAnswerBox from '$lib/colorguesser/GuesserAnswerBox.svelte';
     import Modal from '$lib/components/Modal.svelte';
     import StarScore from '$lib/colorguesser/StarScore.svelte';
     import AttemptBreadCrumbs from '$lib/colorguesser/AttemptBreadCrumbs.svelte';
-    import seedrandom from 'seedrandom';
+    import BarScale from '$lib/components/BarScale.svelte';
+
+    /* Data */
     import colors from '../../colors/colors.json';
+
+    //import { moonScale } from '$lib/colorguesser/colorGuesser';
     // import { darkModeSetting } from '$lib/stores/darkModeStore.js';
 
-    import Fa from 'svelte-fa';
-    import { faBullseye, faQuestion, faGear, faUser, faChartSimple } from '@fortawesome/free-solid-svg-icons';
-  import { moonScale } from '$lib/colorguesser/colorGuesser';
 
     type PlayMode = "INFINITE" | "DAILY" | "PRACTICE";
     type ColorMode = "RGB" | "CMYK";
@@ -205,7 +212,7 @@
 </script>
 
 <Modal bind:showModal={statsModal}>
-    <h2 slot="header">
+    <h2 slot="header" class="text-center cmy-text-gradient">
 		Stats
 	</h2>
 
@@ -215,7 +222,7 @@
         
 
         <h4>Average Score</h4>
-        <p><StarScore score={stats.averageScore} /></p>
+        <p>{stats.averageScore}/10</p>
 
         <h4>Distribution of Scores</h4>
         <div class="">
@@ -234,7 +241,7 @@
 </Modal>
 
 <Modal bind:showModal={showModal}>
-	<h2 slot="header">
+	<h2 slot="header" class="text-center cmy-text-gradient">
 		About the Color Guess Challenge
 	</h2>
 
@@ -261,7 +268,7 @@
 </Modal>
 
 <Modal bind:showModal={settingsModal}>
-    <h2 slot="header">
+    <h2 slot="header" class="text-center cmy-text-gradient">
 		Settings
 	</h2>
     <GuesserModeSelector colorMode={colorMode} playMode={playMode} practiceLock={(startedDaily['RGB'] || startedDaily['CMYK'])} />
@@ -276,11 +283,11 @@
 <div class="flex flex-col items-center">
 
     <div class="flex-grow">
-        <h1 class="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-600 via-violet-500 to-yellow-500 text-transparent bg-clip-text">Color Guess Challenge</h1>
+        <h1 class="text-2xl font-bold mb-3 cmy-text-gradient">Color Guess Challenge</h1>
         <div class="flex">
-            <button class="flex flex-1 justify-center items-center" on:click={() => (showModal = true)}><Fa class="text-blue-200" icon={faQuestion} /></button>
-            <button class="flex flex-1 justify-center items-center" on:click={() => (settingsModal = true)}><Fa class="text-blue-200" icon={faGear} /></button>
-            <button class="flex flex-1 justify-center items-center" on:click={() => (stats = guessHistoryStats()) && (statsModal = true) }><Fa class="text-blue-200" icon={faChartSimple} /></button>
+            <button class="flex flex-1 justify-center items-center" on:click={() => (showModal = true)}><Fa class="text-cyan-500" icon={faQuestion} /></button>
+            <button class="flex flex-1 justify-center items-center" on:click={() => (settingsModal = true)}><Fa class="text-magenta" icon={faGear} /></button>
+            <button class="flex flex-1 justify-center items-center" on:click={() => (stats = guessHistoryStats()) && (statsModal = true) }><Fa class="text-yellow-500" icon={faChartSimple} /></button>
         </div>
         <div>
             {#if playMode === 'PRACTICE'}
@@ -442,7 +449,7 @@
             </div>
                 <div class="flex items-center">
                     <Fa class="mr-1 text-gray-300 dark:text-gray-600" icon={faBullseye} />
-                    <Fa class="m-1 text-gray-300 dark:text-gray-1000" icon={faUser} />
+                    <Fa class="m-1 text-gray-300 dark:text-gray-600" icon={faUser} />
                     <span class="m-1 w-12 text-sm text-gray-300 dark:text-gray-600">Score</span>
                 </div>
                 <!--loop through filteredGuess from the back to the front, up to ten guesses-->
@@ -470,5 +477,9 @@
         @apply py-2 px-6;
         @apply font-semibold;
         @apply shadow-lg;
+    }
+
+    .cmy-text-gradient {
+        @apply bg-gradient-to-r from-cyan-600 via-magenta to-yellow-500 text-transparent bg-clip-text;
     }
 </style>

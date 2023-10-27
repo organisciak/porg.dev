@@ -22,6 +22,6 @@ export type GuessStats = {
   colorsGuessed:number,
   daysPlayed:number,
   histogram: number[],
-  rawAverageScore: number,
+  averageScore: number,
   scoreByDate: DateScore[]
 };

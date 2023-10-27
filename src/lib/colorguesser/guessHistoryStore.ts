@@ -153,7 +153,7 @@ export function guessHistoryStats(): GuessStats {
             if (guess.playMode === 'INFINITE') {
                 return;
             }
-            stats.histogram[calculateBoundScore(guess.difference, 10)]++;
+            stats.histogram[calculateBoundScore(guess.difference, 176.30 + 10)]++;
             totalScore += guess.difference;
             stats.colorsGuessed ++;
             dayScore += guess.difference;

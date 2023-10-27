@@ -204,28 +204,33 @@
     }
 </script>
 
-<Modal showModal={statsModal}>
+<Modal bind:showModal={statsModal}>
     <h2 slot="header">
 		Stats
 	</h2>
 
-    <h4>Days Played</h4>
-    <p class="font-semibold">{stats.daysPlayed}</p>
+    {#if stats.colorsGuessed > 3}
+        <h4>Days Played</h4>
+        <p class="font-semibold">{stats.daysPlayed}</p>
+        
 
-    <h4>Average Score</h4>
-    <p><StarScore score={stats.averageScore} /></p>
+        <h4>Average Score</h4>
+        <p><StarScore score={stats.averageScore} /></p>
 
-    <h4>Distribution of Scores</h4>
-    <div class="">
-        {#each stats.histogram as count, index }
-            <div class="w-4 m-px flex-col text-center text-xs text-gray-300 inline-block align-baseline">
-                <div class=" bg-violet-500 rounded-sm"
-                    style="height:{0.1+2*(count/stats.colorsGuessed)}rem">
+        <h4>Distribution of Scores</h4>
+        <div class="">
+            {#each stats.histogram as count, index }
+                <div class="w-4 m-px flex-col text-center text-xs text-gray-300 inline-block align-baseline">
+                    <div class=" bg-violet-500 rounded-sm"
+                        style="height:{0.1+2*(count/stats.colorsGuessed)}rem">
+                    </div>
+                    {index}
                 </div>
-                {index}
-            </div>
-        {/each}
-    </div>
+            {/each}
+        </div>
+    {:else}
+        Play a few games to see your stats!
+    {/if}
 </Modal>
 
 <Modal bind:showModal={showModal}>
@@ -275,7 +280,7 @@
         <div class="flex">
             <button class="flex flex-1 justify-center items-center" on:click={() => (showModal = true)}><Fa class="text-blue-200" icon={faQuestion} /></button>
             <button class="flex flex-1 justify-center items-center" on:click={() => (settingsModal = true)}><Fa class="text-blue-200" icon={faGear} /></button>
-            <button class="flex flex-1 justify-center items-center" on:click={() => (stats = guessHistoryStats()) && (statsModal = true)}><Fa class="text-blue-200" icon={faChartSimple} /></button>
+            <button class="flex flex-1 justify-center items-center" on:click={() => (stats = guessHistoryStats()) && (statsModal = true) }><Fa class="text-blue-200" icon={faChartSimple} /></button>
         </div>
         <div>
             {#if playMode === 'PRACTICE'}

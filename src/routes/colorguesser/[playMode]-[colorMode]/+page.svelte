@@ -6,8 +6,8 @@
             cmykToHexByKey, rgbToHexByKey
            } from '$lib/utils/colorTools';
     import type { RGBColor, CMYKColor } from '$lib/utils/colorTools';
-    import type { Guess, GuessHistory } from '$lib/colorguesser/types.ts';
-    import { guessHistoryStore } from '$lib/colorguesser/guessHistoryStore';
+    import type { Guess, GuessHistory, GuessStats } from '$lib/colorguesser/types.ts';
+    import { guessHistoryStore, cullOldRecords, guessHistoryStats } from '$lib/colorguesser/guessHistoryStore';
 	import ColorBoxBase from '$lib/colorbox/ColorBoxBase.svelte';
     import GuesserModeSelector from '$lib/colorguesser/GuesserModeSelector.svelte';
     import GuesserAnswerBox from '$lib/colorguesser/GuesserAnswerBox.svelte';
@@ -16,9 +16,10 @@
     import AttemptBreadCrumbs from '$lib/colorguesser/AttemptBreadCrumbs.svelte';
     import seedrandom from 'seedrandom';
     import colors from '../../colors/colors.json';
+    // import { darkModeSetting } from '$lib/stores/darkModeStore.js';
 
     import Fa from 'svelte-fa';
-    import { faBullseye, faQuestion, faGear, faUser } from '@fortawesome/free-solid-svg-icons';
+    import { faBullseye, faQuestion, faGear, faUser, faChartSimple } from '@fortawesome/free-solid-svg-icons';
 
     type PlayMode = "INFINITE" | "DAILY" | "PRACTICE";
     type ColorMode = "RGB" | "CMYK";
@@ -27,6 +28,7 @@
     // init vars
     let showModal = false;
     let settingsModal = false;
+    let statsModal = false;
 
     let playMode: PlayMode;
     let colorMode: ColorMode;
@@ -68,6 +70,14 @@
     let targetColorName: string | undefined;
     // routing in +page.server.ts should ensure that these are valid
     let { rawPlayMode, rawColorMode } = $page.params;
+
+    let stats: GuessStats = {
+        colorsGuessed: 0,
+        daysPlayed: 0,
+        histogram: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        rawAverageScore: 0,
+        scoreByDate: []
+    }; 
 
     function submitGuess() {
         const diffRelative = rgbColorToRGBDistance(rgbColors, target);
@@ -128,8 +138,18 @@
         finished = (playMode == 'DAILY') && (attempts >= maxAttempts);
     }
 
+    //let darkModeClass = '';
     onMount(() => {
         getNextColor();
+        cullOldRecords();
+
+        /*darkModeSetting.subscribe((setting) => {
+            if (setting === 'system') {
+            darkModeClass = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : '';
+            } else {
+            darkModeClass = setting;
+            }
+        });*/
     });
 
     $: {
@@ -182,7 +202,31 @@
         "black": "#000000"
     }
 </script>
-  
+
+<Modal showModal={statsModal}>
+    <h2 slot="header">
+		Stats
+	</h2>
+
+    <h4>Days Played</h4>
+    <p class="font-semibold">{stats.daysPlayed}</p>
+
+    <h4>Average Score</h4>
+    <p><StarScore score={stats.averageScore} /></p>
+
+    <h4>Distribution of Scores</h4>
+    <div class="">
+        {#each stats.histogram as count, index }
+            <div class="w-4 m-px flex-col text-center text-xs text-gray-300 inline-block align-baseline">
+                <div class=" bg-violet-500 rounded-sm"
+                    style="height:{0.1+2*(count/stats.colorsGuessed)}rem">
+                </div>
+                {index}
+            </div>
+        {/each}
+    </div>
+</Modal>
+
 <Modal bind:showModal={showModal}>
 	<h2 slot="header">
 		About the Color Guess Challenge
@@ -215,18 +259,25 @@
 		Settings
 	</h2>
     <GuesserModeSelector colorMode={colorMode} playMode={playMode} practiceLock={(startedDaily['RGB'] || startedDaily['CMYK'])} />
+        
+    <!--<select bind:value={$darkModeSetting}>
+          <option value="system">System</option>
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+    </select>-->
 </Modal>
 
 <div class="flex flex-col items-center">
 
     <div class="flex-grow">
         <h1 class="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-600 via-violet-500 to-yellow-500 text-transparent bg-clip-text">Color Guess Challenge</h1>
-        <div>
-            <button on:click={() => (showModal = true)}><Fa class="text-blue-200" icon={faQuestion} /></button>
-            <button on:click={() => (settingsModal = true)}><Fa class="text-blue-200" icon={faGear} /></button>
+        <div class="flex">
+            <button class="flex flex-1 justify-center items-center" on:click={() => (showModal = true)}><Fa class="text-blue-200" icon={faQuestion} /></button>
+            <button class="flex flex-1 justify-center items-center" on:click={() => (settingsModal = true)}><Fa class="text-blue-200" icon={faGear} /></button>
+            <button class="flex flex-1 justify-center items-center" on:click={() => (stats = guessHistoryStats()) && (statsModal = true)}><Fa class="text-blue-200" icon={faChartSimple} /></button>
         </div>
         <div>
-            {#if playMode.toLowerCase() === 'practice'}
+            {#if playMode === 'PRACTICE'}
                 <span class="text-slate-400 text-xs uppercase mx-2">Color mode</span>
                 {#each ['RGB', 'CMYK'] as mode}
                     {#if mode.toUpperCase() == colorMode}
@@ -294,8 +345,7 @@
                     {/if}
                 </p>
             </div>
-            <!--Button that sets startedDaily[playMode]to true-->
-            <button class="bg-cyan-400 hover:bg-cyan-500 focus:bg-cyan-500 text-white font-semibold py-2 px-6 rounded-full border border-cyan-500 shadow-lg justify-center" on:click={() => startedDaily[colorMode] = true}>Start</button>
+            <button class="guesser-button" on:click={() => startedDaily[colorMode] = true}>Start</button>
         {:else }
             {#if playMode === 'DAILY'}
                 <p class="mb-2"><AttemptBreadCrumbs bind:attempts /></p>
@@ -307,7 +357,7 @@
     <div class="flex flex-grow flex-col items-center">
         <!-- RGB Sliders -->
         {#if colorMode === 'RGB' && !finished && !startMenu && !practiceLock }
-            {#each Object.entries(rgbColors) as [color, value], index (color)}
+            {#each Object.entries(rgbColors) as [color, value]}
                 <div class="mb-2 w-full">
                     <label class="text-center flex flex-row justify-center items-center">
                         <span class='w-10 text-xs'>{color[0].toUpperCase() + color.slice(1)}</span>
@@ -321,7 +371,7 @@
         
 
         {#if colorMode === 'CMYK' && !finished && !startMenu && !practiceLock}
-            {#each Object.entries(cmykColors) as [color, value], index (color)}
+            {#each Object.entries(cmykColors) as [color, value]}
                 <div class="mb-2 w-full">
                     <label class="text-center flex flex-row justify-center items-center">
                         <span class='w-14 text-xs'>{color[0].toUpperCase() + color.slice(1)}</span>
@@ -336,7 +386,7 @@
 
         <!-- Submit  -->
         {#if playMode !== 'PRACTICE' && !finished && !startMenu }
-            <button class="px-4 py-2  border-slate-800 border-2 p-5 bg-black rounded-lg hover:bg-gradient-to-r hover:from-cyan-600 hover:via-violet-500 hover:to-yellow-500 text-transparent bg-clip-text" on:click={submitGuess}>Submit</button>
+            <button class="guesser-button" on:click={submitGuess}>Submit</button>
         {/if}
     </div>
 
@@ -402,3 +452,17 @@
         </div>
     </div>
 </div>
+
+<style lang='postcss'>
+    .guesser-button {
+        @apply bg-cyan-400 dark:bg-cyan-700 ;
+        @apply hover:bg-cyan-500 hover:dark:bg-cyan-700;
+        @apply focus:bg-cyan-500 focus:dark:bg-cyan-700 ;
+        @apply border-black border-2;
+        @apply hover:bg-gradient-to-r hover:from-cyan-600 hover:via-violet-500 hover:to-yellow-500 text-transparent bg-clip-text;
+        @apply rounded-full justify-center;
+        @apply py-2 px-6;
+        @apply font-semibold;
+        @apply shadow-lg;
+    }
+</style>

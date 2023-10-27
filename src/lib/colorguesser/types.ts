@@ -8,3 +8,20 @@ export type Guess = { colorMode: string,
   }
 
 export type GuessHistory = Guess[];
+
+export type GuessHistoryKeyed = {date:DateKey, history:GuessHistory};
+
+type DateScore = {
+  'date': DateKey,
+  'score': number
+}
+
+export type DateKey = string;
+
+export type GuessStats = {
+  colorsGuessed:number,
+  daysPlayed:number,
+  histogram: number[],
+  rawAverageScore: number,
+  scoreByDate: DateScore[]
+};

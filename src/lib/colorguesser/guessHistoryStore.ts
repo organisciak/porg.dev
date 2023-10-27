@@ -8,9 +8,10 @@ Also stores a reference to all saved days in local storage under the key 'guessH
 */
 
 import { writable } from 'svelte/store';
-import type { GuessHistory } from '$lib/colorguesser/types.ts';
+import type { GuessHistory, GuessStats, GuessHistoryKeyed, DateKey } from '$lib/colorguesser/types.ts';
+import { calculateBoundScore } from '$lib/colorguesser/colorGuesser';
 
-function getDateKey(date: Date): string {
+function getDateKey(date: Date): DateKey {
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
@@ -18,19 +19,23 @@ function getDateKey(date: Date): string {
     return `guessHistory_${year}${month}${day}`;
 }
 
-function getTodayKey(): string {
+function getTodayKey(): DateKey {
     const today = new Date();
     return getDateKey(today);
 }
 
-/*function getDateData(date: Date): GuessHistory {
-    const key = getDateKey(date);
+function getGuessHistoryByDateKey(dateKey: DateKey): GuessHistory {
     if (typeof window !== 'undefined') {
-        const data = localStorage.getItem(key);
+        const data = localStorage.getItem(dateKey);
         return data ? JSON.parse(data) : [];
     } else {
         return [];
     }
+}
+
+/*function getGuessHistoryByDate(date: Date): GuessHistory {
+    const key: DateKey = getDateKey(date);
+    return getGuessHistoryByDateKey(key);
 }*/
 
 /*function getTodayData(): GuessHistory {
@@ -85,9 +90,83 @@ function isToday(date: Date) {
         date.getFullYear() === today.getFullYear();
 }
 
-function getGuessHistoryRecords(): string[] {
-    const records = localStorage.getItem('guessHistoryRecords');
-    return records ? JSON.parse(records) : [];
+function getFullGuessHistory(): GuessHistoryKeyed[] {
+    const daysPlayed = getGuessHistoryRecords();
+    if (!daysPlayed.length) {
+        return [];
+    }
+    const fullHistory = daysPlayed.map((date) => {
+        return {
+            date: date,
+            history: getGuessHistoryByDateKey(date)
+        }
+    });
+    return fullHistory;
+
+}
+
+function getGuessHistoryRecords(): DateKey[] {
+    if (typeof window !== 'undefined') {
+        const records = localStorage.getItem('guessHistoryRecords');
+        return records ? JSON.parse(records) : [];
+    } else {
+        return [];
+    }
+}
+
+export async function cullOldRecords(): Promise<void> {
+    const allRecords:GuessHistoryKeyed[] = getFullGuessHistory();
+    const todayKey:DateKey = getTodayKey();
+    // Iterate through all GuessHistory items except today's, removing Guesses that 
+    // are playMode == 'INFINITY' mode, and then saving the GuessHistory back to localStorage
+    //let pruneCount = 0;
+    allRecords.forEach((record:GuessHistoryKeyed) => {
+        if (record.date !== todayKey) {
+            const culledHistory = record.history.filter((guess) => {
+                return guess.playMode !== 'INFINITE';
+            });
+            localStorage.setItem(record.date, JSON.stringify(culledHistory));
+            //pruneCount += culledHistory.length - record.history.length;
+        }
+    });
+}
+
+export function guessHistoryStats(): GuessStats {
+    const allRecords:GuessHistoryKeyed[] = getFullGuessHistory();
+    const stats: GuessStats = {
+        colorsGuessed: 0,
+        daysPlayed: allRecords.length,
+        histogram: [
+            0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0
+        ], // 11-pt scale, 0-10
+        rawAverageScore: 0,
+        scoreByDate: []
+    }
+    let totalScore = 0;
+    let dayGuesses = 0;
+
+    // TODO disambiguate between RGB and CMYK stats
+    allRecords.forEach(({ date, history }) => {
+        let dayScore = 0;
+        history.forEach((guess) => {
+            if (guess.playMode === 'INFINITE') {
+                return;
+            }
+            stats.histogram[calculateBoundScore(guess.difference, 10)]++;
+            totalScore += guess.difference;
+            stats.colorsGuessed ++;
+            dayScore += guess.difference;
+            dayGuesses ++;
+        });
+        stats.scoreByDate.push({
+            'date': date,
+            'score': calculateBoundScore(dayScore / dayGuesses, 10)
+        });
+        
+    });
+    stats.averageScore = totalScore / stats.colorsGuessed;
+    return stats
 }
 
 function pushToGuessHistoryRecords(key: string) {

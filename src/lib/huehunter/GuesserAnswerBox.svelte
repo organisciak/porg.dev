@@ -1,5 +1,5 @@
 <script lang='ts'>
-    import type { Guess } from '$lib/colorguesser/types.ts';
+    import type { Guess } from '$lib/huehunter/types.ts';
     import { rgbToHex } from '$lib/utils/colorTools';
     import Fa from 'svelte-fa';
     import { faBullseye, faUser } from '@fortawesome/free-solid-svg-icons';

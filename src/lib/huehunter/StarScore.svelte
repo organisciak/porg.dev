@@ -1,7 +1,7 @@
 <script lang='ts'>
     // Show a score iconographically
     import BarScale from '$lib/components/BarScale.svelte';
-    import { calculateBoundScore, rawScoreThreshold } from '$lib/colorguesser/colorGuesser';
+    import { calculateBoundScore, rawScoreThreshold } from '$lib/huehunter/colorGuesser';
     export let score: number = 0;
     export let colorGuess: string = 'rgb(139 92 246)';
     // The raw score at which the bound score is zero, made more forgiving slightly

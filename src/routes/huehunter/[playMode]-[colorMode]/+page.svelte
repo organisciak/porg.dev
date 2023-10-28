@@ -2,6 +2,7 @@
     import { page } from '$app/stores';
     import { onMount } from 'svelte';
     import seedrandom from 'seedrandom';
+    import { MetaTags } from 'svelte-meta-tags';
     import Fa from 'svelte-fa';
     import { faBullseye, faQuestion, faGear, faUser, faChartSimple } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,29 +11,34 @@
             cmykToHexByKey, rgbToHexByKey
            } from '$lib/utils/colorTools';
     import type { RGBColor, CMYKColor } from '$lib/utils/colorTools';
-    import type { Guess, GuessHistory, GuessStats } from '$lib/colorguesser/types.ts';
-    import { guessHistoryStore, cullOldRecords, guessHistoryStats } from '$lib/colorguesser/guessHistoryStore';
+    import type { Guess, GuessHistory, GuessStats } from '$lib/huehunter/types.ts';
+    import { guessHistoryStore, cullOldRecords, guessHistoryStats } from '$lib/huehunter/guessHistoryStore';
 
     /* Svelte components */
 	import ColorBoxBase from '$lib/colorbox/ColorBoxBase.svelte';
-    import GuesserModeSelector from '$lib/colorguesser/GuesserModeSelector.svelte';
-    import GuesserAnswerBox from '$lib/colorguesser/GuesserAnswerBox.svelte';
+    import GuesserModeSelector from '$lib/huehunter/GuesserModeSelector.svelte';
+    import GuesserAnswerBox from '$lib/huehunter/GuesserAnswerBox.svelte';
     import Modal from '$lib/components/Modal.svelte';
-    import StarScore from '$lib/colorguesser/StarScore.svelte';
-    import AttemptBreadCrumbs from '$lib/colorguesser/AttemptBreadCrumbs.svelte';
+    import StarScore from '$lib/huehunter/StarScore.svelte';
+    import AttemptBreadCrumbs from '$lib/huehunter/AttemptBreadCrumbs.svelte';
     import BarScale from '$lib/components/BarScale.svelte';
 
     /* Data */
     import colors from '../../colors/colors.json';
-  import { calculateBoundScore, moonScale, rawScoreThreshold } from '$lib/colorguesser/colorGuesser';
+  import { calculateBoundScore, moonScale, rawScoreThreshold } from '$lib/huehunter/colorGuesser';
 
-    //import { moonScale } from '$lib/colorguesser/colorGuesser';
+    //import { moonScale } from '$lib/huehunter/colorGuesser';
     // import { darkModeSetting } from '$lib/stores/darkModeStore.js';
 
 
     type PlayMode = "INFINITE" | "DAILY" | "PRACTICE";
     type ColorMode = "RGB" | "CMYK";
 
+    const meta = {
+		title: 'Hue Hunter',
+		description: 'A color guessing game',
+		url: 'https://www.porg.dev/huehunter'
+	}
 
     // init vars
     let showModal = false;
@@ -172,12 +178,12 @@
         // normalize to 12 pt scale because that's what the moons demand
         const normalizedScore:number = calculateBoundScore(rawScore, rawScoreThreshold, 12);
         const moonScore:string = moonScale(normalizedScore, 3);
-        const msg:string = `${moonScore}\n${window.location.href}`;
+        const msg:string = `${moonScore}\n${meta.url}`;
 
         const date = new Date();
         if (shareable) {
             navigator.share({
-                title: `Hue Hunter Daily ${date.getMonth()}/${date.getDate()}`,
+                title: `${meta.title} Daily ${colorMode} ${date.getMonth()+1}/${date.getDate()}`,
                 text: msg,
             })
             .then(() => console.log('Successful share'))
@@ -237,6 +243,42 @@
         "black": "#000000"
     }
 </script>
+
+<svelte:head>
+
+<MetaTags 
+	title="{meta.title}"
+	canonical="{meta.url}"
+	description="{meta.description}"
+	openGraph={{
+		siteName: 'porg.dev',
+		type: 'website',
+		url: meta.url,
+		locale: 'en_US',
+		title: meta.title,
+		description: meta.description,
+		images: [
+		  {
+			url: 'https://www.porg.dev/styleimages/hue-splash.webp',
+			alt: `${meta.title} splash image`,
+			width: 1024,
+			height: 1024,
+			type: 'image/png'
+		  }
+		]
+	}}
+	twitter={{
+        handle: '@porg',
+        site: '@porg',
+        cardType: 'summary_large_image',
+        title: meta.title,
+        description: meta.description,
+        image: 'https://www.porg.dev/styleimages/hue-splash.webp',
+        imageAlt: `${meta.title} splash image`
+      }}
+	/>
+</svelte:head>
+
 <Modal bind:showModal={statsModal}>
     <h2 slot="header" class="text-center cmy-text-gradient">
 		Stats
@@ -268,7 +310,7 @@
 
 <Modal bind:showModal={showModal}>
 	<h2 slot="header" class="text-center cmy-text-gradient">
-		About Hue Hunter
+		About {meta.title}
 	</h2>
 
     <div>
@@ -309,7 +351,7 @@
 <div class="flex flex-col items-center">
 
     <div class="flex-grow">
-        <h1 class="text-2xl font-bold mb-3 cmy-text-gradient">Hue Hunter</h1>
+        <h1 class="text-2xl font-bold mb-3 cmy-text-gradient">{meta.title}</h1>
         <div class="flex">
             <button class="flex flex-1 justify-center items-center" on:click={() => (showModal = true)}><Fa class="text-cyan-500" icon={faQuestion} /></button>
             <button class="flex flex-1 justify-center items-center" on:click={() => (settingsModal = true)}><Fa class="text-magenta" icon={faGear} /></button>

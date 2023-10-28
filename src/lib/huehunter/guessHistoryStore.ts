@@ -1,5 +1,5 @@
 /*
-A Svelte Store for colorguesser game data that persists data to local storage, conditioned by date.
+A Svelte Store for huehunter game data that persists data to local storage, conditioned by date.
 
 Stores each day's data in a store bound to local storage under a key that is the date in ISO format (e.g. 2021-08-31).
 
@@ -8,8 +8,8 @@ Also stores a reference to all saved days in local storage under the key 'guessH
 */
 
 import { writable } from 'svelte/store';
-import type { GuessHistory, GuessStats, GuessHistoryKeyed, DateKey } from '$lib/colorguesser/types.ts';
-import { calculateBoundScore, rawScoreThreshold } from '$lib/colorguesser/colorGuesser';
+import type { GuessHistory, GuessStats, GuessHistoryKeyed, DateKey } from '$lib/huehunter/types.ts';
+import { calculateBoundScore, rawScoreThreshold } from '$lib/huehunter/colorGuesser';
 
 function getDateKey(date: Date): DateKey {
     const day = String(date.getDate()).padStart(2, '0');

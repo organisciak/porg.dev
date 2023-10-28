@@ -9,7 +9,7 @@ Also stores a reference to all saved days in local storage under the key 'guessH
 
 import { writable } from 'svelte/store';
 import type { GuessHistory, GuessStats, GuessHistoryKeyed, DateKey } from '$lib/colorguesser/types.ts';
-import { calculateBoundScore } from '$lib/colorguesser/colorGuesser';
+import { calculateBoundScore, rawScoreThreshold } from '$lib/colorguesser/colorGuesser';
 
 function getDateKey(date: Date): DateKey {
     const day = String(date.getDate()).padStart(2, '0');
@@ -152,7 +152,7 @@ export function guessHistoryStats(): GuessStats {
             if (guess.playMode === 'INFINITE') {
                 return;
             }
-            stats.histogram[calculateBoundScore(guess.difference, 176.30 + 10)]++;
+            stats.histogram[calculateBoundScore(guess.difference, rawScoreThreshold)]++;
             dayScore += guess.difference;
             dayGuesses ++;
         });

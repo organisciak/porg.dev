@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { setTertiaryColors } from '$lib/utils/colorBox';
+    import { getTertiaryColors } from '$lib/utils/colorBox';
     import { wrapText } from '$lib/utils/canvasUtils';
 
     export let canvas: HTMLCanvasElement;
@@ -28,7 +28,7 @@
         margin: margin * 4,
     }
 
-    const { bgColor, borderColor, textColor } = setTertiaryColors(csshex);
+    const { bgColor, borderColor, textColor } = getTertiaryColors(csshex);
 
     
     let ctx;

@@ -1,6 +1,17 @@
 import tinycolor from "tinycolor2";
 
-export function setTertiaryColors(cssHex: string) {
+export function getTextColor(cssHex: string) {
+    /* Calculate a text color based on luminosity of a background color */
+    const color = tinycolor(cssHex);
+    if (color.isDark()) {
+        color.brighten(60);
+    } else if (color.isLight()) {
+        color.darken(40);
+    }
+    return color.toHexString();
+}
+
+export function getTertiaryColors(cssHex: string) {
     /* Calculate background, text, and border colors for a ColorBox */
 
     const color = tinycolor(cssHex);
@@ -16,17 +27,11 @@ export function setTertiaryColors(cssHex: string) {
         borderColor = color.clone().brighten(7).toHexString();
     }
 
-    // if color is very dark, include a lighter text color, and vice-versa
-    let textColor = color.clone();
-    if (color.isDark()) {
-        textColor.brighten(60);
-    } else if (color.isLight()) {
-        textColor.darken(40);
-    }
+    const textColor = getTextColor(cssHex);
 
     return {
         bgColor: bgColor,
         borderColor: borderColor,
-        textColor: textColor.toHexString()
+        textColor: textColor
     }
 }

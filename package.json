@@ -19,6 +19,7 @@
     "@sveltejs/kit": "^1.25.0",
     "@types/cookie": "^0.5.2",
     "@types/node": "^20.6.3",
+    "@types/seedrandom": "^3.0.6",
     "@types/tinycolor2": "^1.4.4",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
@@ -45,7 +46,9 @@
   "type": "module",
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@vercel/analytics": "^1.0.2"
+    "@vercel/analytics": "^1.0.2",
+    "seedrandom": "^3.0.5"
   }
 }

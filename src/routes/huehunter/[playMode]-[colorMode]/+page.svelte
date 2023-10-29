@@ -178,13 +178,15 @@
         // normalize to 12 pt scale because that's what the moons demand
         const normalizedScore:number = calculateBoundScore(rawScore, rawScoreThreshold, 12);
         const moonScore:string = moonScale(normalizedScore, 3);
+        const date = new Date();
+        const title:string = `${meta.title} Daily ${colorMode} ${date.getMonth()+1}/${date.getDate()}`;
         const msg:string = `${moonScore}\n${meta.url}`;
 
-        const date = new Date();
+        
         if (shareable) {
             navigator.share({
-                title: `${meta.title} Daily ${colorMode} ${date.getMonth()+1}/${date.getDate()}`,
-                text: msg,
+                title: title,
+                text: title + '\n' + msg,
             })
             .then(() => console.log('Successful share'))
             .catch((error) => console.log('Error sharing', error));

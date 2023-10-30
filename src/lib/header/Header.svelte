@@ -54,7 +54,7 @@
 					class:small-nav={small}
 					class:normal-nav={!small}
 					class="relative h-full border-b-2 border-gradient-r from-[#4c2b69] to-[#d073ff]">
-					<a data-sveltekit-prefetch href="{base}{link.url}" class:px-4={!small} class="flex h-full items-center text-slate-900 dark:text-slate-200 dark:hover:text-slate-100 font-thin uppercase tracking-wider transition-colors duration-200 ease-linear hover:text-[var(--accent-color)]">
+					<a title={link.name} data-sveltekit-prefetch href="{base}{link.url}" class:px-4={!small} class="flex h-full items-center text-slate-900 dark:text-slate-200 dark:hover:text-slate-100 font-thin uppercase tracking-wider transition-colors duration-200 ease-linear hover:text-[var(--accent-color)]">
 						{#if small && link.icon}
 							<Fa class="text-violet-500" icon={link.icon} />
 						{:else }

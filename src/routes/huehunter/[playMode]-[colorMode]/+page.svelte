@@ -192,7 +192,6 @@
         
         if (shareable) {
             navigator.share({
-                title: title,
                 text: title + '\n' + msg,
             })
             .then(() => console.log('Successful share'))

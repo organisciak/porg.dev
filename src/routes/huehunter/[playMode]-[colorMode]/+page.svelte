@@ -521,7 +521,7 @@
         <!-- Score History Display-->
         <div class="mt-2 text-center items-center mb-10">
             
-            {#if (playMode === 'INFINITE' || playMode === 'DAILY') && attempts > 0 && !finished}
+            {#if (playMode === 'INFINITE' || playMode === 'DAILY') && attempts > 0}
             <div class="flex flex-col items-center">
                 
                 <div class="text-gray-500 text-sm dark:text-gray-400">

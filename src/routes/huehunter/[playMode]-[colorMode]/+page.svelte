@@ -1,6 +1,6 @@
 <script lang="ts">
     import { page } from '$app/stores';
-    import { onMount } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
     import seedrandom from 'seedrandom';
     import { MetaTags } from 'svelte-meta-tags';
     import Fa from 'svelte-fa';
@@ -12,7 +12,6 @@
            } from '$lib/utils/colorTools';
     import type { RGBColor, CMYKColor } from '$lib/utils/colorTools';
     import type { Guess, GuessHistory, GuessStats } from '$lib/huehunter/types.ts';
-    import { guessHistoryStore, cullOldRecords, guessHistoryStats } from '$lib/huehunter/guessHistoryStore';
 
     /* Svelte components */
 	import ColorBoxBase from '$lib/colorbox/ColorBoxBase.svelte';
@@ -21,7 +20,10 @@
     import Modal from '$lib/components/Modal.svelte';
     import StarScore from '$lib/huehunter/StarScore.svelte';
     import AttemptBreadCrumbs from '$lib/huehunter/AttemptBreadCrumbs.svelte';
-    import BarScale from '$lib/components/BarScale.svelte';
+
+    /* Stores */
+    import { isCollapsed } from '$lib/stores/headerCollapse';
+    import { guessHistoryStore, cullOldRecords, guessHistoryStats } from '$lib/huehunter/guessHistoryStore';
 
     /* Data */
     import colors from '../../colors/colors.json';
@@ -30,7 +32,7 @@
     //import { moonScale } from '$lib/huehunter/colorGuesser';
     // import { darkModeSetting } from '$lib/stores/darkModeStore.js';
 
-
+    /* Variable Defaults */
     type PlayMode = "INFINITE" | "DAILY" | "PRACTICE";
     type ColorMode = "RGB" | "CMYK";
 
@@ -39,6 +41,10 @@
 		description: 'A color guessing game',
 		url: 'https://www.porg.dev/huehunter'
 	}
+    $isCollapsed = true;
+    onDestroy(() => {
+        $isCollapsed = false;
+    });
 
     // init vars
     let showModal = false;
@@ -56,6 +62,7 @@
         RGB: false,
         CMYK: false
     };
+
     // Attempts by color mode
     let dailyAttempts: { RGB: number, CMYK: number };
     let finishedDaily: { RGB: boolean, CMYK: boolean } = {

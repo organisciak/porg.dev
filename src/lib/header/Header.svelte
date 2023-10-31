@@ -94,4 +94,11 @@
 	li.active {
 		border-bottom-width: 4px;
 	}
+
+	/* For progressive web apps, like /huehunter, just hide nav entirely */
+	@media (display-mode: standalone) {
+		nav {
+			display: none;
+		}
+		}
 </style>

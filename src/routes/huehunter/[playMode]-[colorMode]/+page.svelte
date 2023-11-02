@@ -383,7 +383,9 @@
 
     <!-- Header / Controls -->
     <div class="flex-none flex-row w-full text-center items-center">
-        <h1 class="title mt-4 font-bold cmy-text-gradient text-2xl" class:text-4xl={startMenu} class:mt-8={startMenu}>{meta.title}</h1>
+        <h1 class="title mt-4 text-2xl" class:text-4xl={startMenu} class:mt-8={startMenu}>
+            <a class="font-bold cmy-text-gradient" href="/huehunter/daily-rgb">{meta.title}</a>
+        </h1>
         <div class="flex text-lg justify-center items-center" class:text-xl={startMenu}>
             <button class="flex flex-initial w-10 h-10 justify-center items-center" on:click={() => (showModal = true)}><Fa class="text-cyan-500" icon={faQuestion} /></button>
             <button class="flex flex-initial w-10 h-10 justify-center items-center" on:click={() => (settingsModal = true)}><Fa class="text-magenta" icon={faGear} /></button>
@@ -498,7 +500,7 @@
                         <input 
                             style="background-color:{rgbToHexByKey(value, color)}"
                             type="range" min="0" max="255" value={value} on:input={(e) => rgbColors[color] = +(e.target.value ?? 0)}
-                            class="appearance-none h-6 flex-auto border-2 border-black rounded-lg cursor-pointer" />
+                            class="appearance-none h-7 flex-auto border-2 border-black rounded-lg cursor-pointer" />
                         <span style="color:{rgbToHexByKey(value, color)}" class="w-10">{value}</span>
                     </label>
                 </div>
@@ -510,10 +512,12 @@
             {#each Object.entries(cmykColors) as [color, value]}
                 <div class="mb-2 w-full">
                     <label class="text-center flex flex-row justify-center items-center">
-                        <span class='w-14 text-xs'>{color[0].toUpperCase() + color.slice(1)}</span>
-                        <input style="{cmykToHexByKey(100, color)}" type="range" min="0" max="100" value={value} on:input={(e) => cmykColors[color] = +e.target.value ?? 0}
-                                class="bg-gradient-to-r from-white to-[{baseNameRef[color.toLowerCase()]}] w-48 flex-auto border-2 border-black rounded-lg cursor-pointer appearance-none" />
-                        <span style="color:{cmykToHexByKey(value, color)}" class="w-8">{value}</span>
+                        <span class='w-14'>{color[0].toUpperCase() + color.slice(1)}</span>
+                        <input
+                            style="{cmykToHexByKey(100, color)}"
+                            type="range" min="0" max="100" value={value} on:input={(e) => cmykColors[color] = +e.target.value ?? 0}
+                            class="appearance-none h-7 flex-auto border-2 border-black rounded-lg  cursor-pointe bg-gradient-to-r from-white to-[{baseNameRef[color.toLowerCase()]}]r" />
+                        <span style="color:{cmykToHexByKey(value, color)}" class="w-10">{value}</span>
                     </label>
 
                 </div>
@@ -627,7 +631,7 @@
         @apply bg-white;
         width: 1rem;
         @apply appearance-none;
-        @apply h-5 w-6;
+        @apply h-6 w-6;
         @apply rounded-lg;
         @apply border-2;
         @apply border-black;

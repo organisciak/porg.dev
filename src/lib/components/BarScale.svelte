@@ -9,7 +9,13 @@
 
     let remaining: number;
     $: remaining = ((score < maxScore) ? maxScore-score : 0);
-    const tailwindstyles = 'w-1 h-4 m-px bg-grey-500 rounded-full';
+
+    export let size: 'base' | 'lg' = 'base';
+    const sizedStyles = {
+        'base': 'w-1 h-5 rounded-full m-px',
+        'lg': 'w-1.5 h-10 rounded-md m-0.5',
+    }
+    const tailwindstyles = sizedStyles[size];
     const remainingClassBg = 'bg-gray-300 dark:bg-gray-500';
     const beHelpful: boolean = true;
 

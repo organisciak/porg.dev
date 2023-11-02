@@ -6,11 +6,13 @@
     export let colorGuess: string = 'rgb(139 92 246)';
     // The raw score at which the bound score is zero, made more forgiving slightly
     export let maxScore: number = rawScoreThreshold;
+    export let size: 'base' | 'lg' = 'base';
     let starCount: number = 0;
 
     $: starCount = calculateBoundScore(score, maxScore);
 </script>
 
-<BarScale score={starCount} maxScore={10} 
+<BarScale score={starCount} size={size}
+    maxScore={10} 
     colorStart={colorGuess} />
 

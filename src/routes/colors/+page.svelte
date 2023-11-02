@@ -125,11 +125,11 @@
 <div class='colorcontainer'>
 <div class="colors h-screen flex flex-wrap justify-center">
     {#each displayedColors as [, colorname] }
-        <ColorBox colorname={colorname}
+        <div class="m-1"><ColorBox colorname={colorname}
         csshex={typedColors[colorname]}
         fadeInDelay={500}
         fadeInDuration={500}
-         />
+         /></div>
     {/each}
 </div>
 </div>

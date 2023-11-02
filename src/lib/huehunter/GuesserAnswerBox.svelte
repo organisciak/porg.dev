@@ -7,6 +7,7 @@
     export let guess: Guess;
 
     import { getTextColor } from '$lib/utils/colorBox';
+  import HueHunterScore from './HueHunterScore.svelte';
     const guessTextColor = getTextColor(rgbToHex(guess.guessColor));
     const targetTextColor = getTextColor(rgbToHex(guess.targetColor));
 </script>
@@ -15,6 +16,10 @@
     <!-- Display the target color -->
     <div class="w-24 h-16 p-1 text-xs rounded-md flex-initial" style="color: {targetTextColor}; background-color: {rgbToHex(guess.targetColor)};">
         <Fa class="m-1" icon={faBullseye} />Target
+    </div>
+
+    <div>
+        <HueHunterScore score={guess.difference} size="base" />
     </div>
 
     <!-- Display the guessed color -->

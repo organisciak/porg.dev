@@ -18,7 +18,7 @@
     import GuesserModeSelector from '$lib/huehunter/GuesserModeSelector.svelte';
     import GuesserAnswerBox from '$lib/huehunter/GuesserAnswerBox.svelte';
     import Modal from '$lib/components/Modal.svelte';
-    import StarScore from '$lib/huehunter/StarScore.svelte';
+    import HueHunterScore from '$lib/huehunter/HueHunterScore.svelte';
     import AttemptBreadCrumbs from '$lib/huehunter/AttemptBreadCrumbs.svelte';
 
     /* Stores */
@@ -27,7 +27,7 @@
 
     /* Data */
     import colors from '../../colors/colors.json';
-  import { calculateBoundScore, moonScale, rawScoreThreshold } from '$lib/huehunter/colorGuesser';
+    import { calculateBoundScore, moonScale, rawScoreThreshold } from '$lib/huehunter/colorGuesser';
 
     //import { moonScale } from '$lib/huehunter/colorGuesser';
     // import { darkModeSetting } from '$lib/stores/darkModeStore.js';
@@ -50,6 +50,7 @@
     let showModal = false;
     let settingsModal = false;
     let statsModal = false;
+    let aboutModal = false;
 
     let playMode: PlayMode;
     let colorMode: ColorMode;
@@ -186,8 +187,8 @@
         const normalizedScore:number = calculateBoundScore(rawScore, rawScoreThreshold, 12);
         const moonScore:string = moonScale(normalizedScore, 3);
         const date = new Date();
-        const title:string = `${meta.title} Daily ${colorMode} ${date.getMonth()+1}/${date.getDate()}`;
-        const msg:string = `${moonScore}\n${meta.url}`;
+        const title:string = `${meta.title} ${colorMode} ${date.getMonth()+1}/${date.getDate()}`;
+        const msg:string = `${moonScore}`; //\n${meta.url}`;
 
         
         if (shareable) {
@@ -238,7 +239,7 @@
     // that we have a signal to turn off practice mode
     let startMenu: boolean = false;
     let practiceLock: boolean = false;
-    $: startMenu = playMode == 'DAILY' && !(startedDaily[colorMode]);
+    $: startMenu = playMode == 'DAILY' && !(startedDaily[colorMode]) && !finished;
     $: practiceLock = playMode === 'PRACTICE' && (startedDaily['RGB'] || startedDaily['CMYK']);
 
     const baseNameRef = {
@@ -250,14 +251,24 @@
         "yellow": "#ffff00",
         "black": "#000000"
     }
+
+    const complementaryColor = {
+        "red": "cyan",
+        "green": "magenta",
+        "blue": "yellow",
+        "cyan": "red",
+        "magenta": "green",
+        "yellow": "blue",
+        "black": "white"
+    }
 </script>
 
 <svelte:head>
 
 <meta name="theme-color" content="{baseNameRef['magenta']}">
-<link rel="icon" type="image/png" sizes="16x16" href="/huehunter-assets/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/huehunter-assets/favicon-32x32.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/huehunter-assets/apple-touch-icon.png">
+<link rel="icon" type="image/webp" sizes="16x16" href="/huehunter-assets/favicon-16x16.webp" />
+<link rel="icon" type="image/webp" sizes="32x32" href="/huehunter-assets/favicon-32x32.webp" />
+<link rel="apple-touch-icon" type="image/webp" sizes="180x180" href="/huehunter-assets/apple-touch-icon.webp">
 <link rel="manifest" href="/huehunter-assets/huehunter-manifest.json">
 
 <MetaTags 
@@ -362,14 +373,21 @@
     </select>-->
 </Modal>
 
+<Modal bind:showModal={aboutModal}>
+    <h2 slot="header" class="text-center cmy-text-gradient">
+		About
+	</h2>
+</Modal>
+
 <div class="flex flex-col items-center">
 
-    <div class="flex-grow">
-        <h1 class="text-2xl font-bold mb-3 cmy-text-gradient">{meta.title}</h1>
-        <div class="flex">
-            <button class="flex flex-1 justify-center items-center" on:click={() => (showModal = true)}><Fa class="text-cyan-500" icon={faQuestion} /></button>
-            <button class="flex flex-1 justify-center items-center" on:click={() => (settingsModal = true)}><Fa class="text-magenta" icon={faGear} /></button>
-            <button class="flex flex-1 justify-center items-center" on:click={() => (stats = guessHistoryStats()) && (statsModal = true) }><Fa class="text-yellow-500" icon={faChartSimple} /></button>
+    <!-- Header / Controls -->
+    <div class="flex-none flex-row w-full text-center items-center">
+        <h1 class="title mt-4 font-bold cmy-text-gradient text-2xl" class:text-4xl={startMenu} class:mt-8={startMenu}>{meta.title}</h1>
+        <div class="flex text-lg justify-center items-center" class:text-xl={startMenu}>
+            <button class="flex flex-initial w-10 h-10 justify-center items-center" on:click={() => (showModal = true)}><Fa class="text-cyan-500" icon={faQuestion} /></button>
+            <button class="flex flex-initial w-10 h-10 justify-center items-center" on:click={() => (settingsModal = true)}><Fa class="text-magenta" icon={faGear} /></button>
+            <button class="flex flex-initial w-10 h-10 justify-center items-center" on:click={() => (stats = guessHistoryStats()) && (statsModal = true) }><Fa class="text-yellow-500" icon={faChartSimple} /></button>
         </div>
         <div>
             {#if playMode === 'PRACTICE'}
@@ -386,38 +404,31 @@
         </div>
     </div>
 
-    <div class="flex-grow">
+    <!-- Score / Share Display-->
+    <div class="flex-none">
     {#if finished || (playMode === 'INFINITE' && attempts > 0) }
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center mt-2">
                 {#if playMode === 'INFINITE'}
                 <p class="flex-auto text-gray-500 text-sm dark:text-gray-400">Infinite Score</p>
                 {:else if playMode == 'DAILY'}
-                <p class="flex-auto text-bold bg-gradient-to-r from-magenta  to-cyan-600  text-transparent bg-clip-text font-bold">Your Score</p>
+                <p class="flex-auto text-bold text-2xl bg-gradient-to-r from-magenta  to-cyan-600  text-transparent bg-clip-text font-bold">Your Score</p>
                 {/if}
                 <div class="flex-auto">
-                    <StarScore score={Math.round(dayScore/attempts)} />
+                    <HueHunterScore score={Math.round(dayScore/attempts)} size="lg" />
                 </div>
                 {#if playMode == 'DAILY' && shareable}
-                <p class="flex-auto">
-                    <button class="guesser-button-sm text-sm p-2" on:click={() => share(dayScore/attempts)}>Share</button>
+                <p class="flex-auto mt-4">
+                    <button class="guesser-button-lg text-base p-2" on:click={() => share(dayScore/attempts)}>Share score</button>
                 </p>
                 {/if}
             </div>
             {/if}
     </div>
 
-    <div class="flex-grow border-slate-900 border-2 p-2 m-3 bg-clip-border rounded-lg">
-        <!-- Target Color & Breadcrumb -->
-        {#if finished }
-            {#each $guessHistoryStore.filter(guess => guessFilter(guess, colorMode, playMode)) as guess }
-                <GuesserAnswerBox guess={guess} />
-            {/each}
-        {:else if practiceLock }
-            <div class='text-sm italic'>
-            Practice is disabled while a daily game is going on. Try it later!
-            </div>
-        {:else if startMenu }
-            <div class='text-sm w-64'>
+    {#if startMenu}
+        <!-- Instructions -->
+        <div class="flex items-center flex-col max-w-md w-5/6 flex-initial border-slate-900 border-2 p-2 m-4 bg-clip-border rounded-lg">
+            <div class='text-sm w-auto'>
                 <h3 class="text-center">How to Play</h3>
                 <p class='my-3'>You're given a 
                     <span class="font-semibold bg-gradient-to-r from-magenta  to-cyan-600  text-transparent bg-clip-text">target</span> color, and you have to guess what composition of 
@@ -446,31 +457,56 @@
                 </p>
             </div>
             <button class="guesser-button-lg" on:click={() => startedDaily[colorMode] = true}>Start</button>
-        {:else }
-            {#if playMode === 'DAILY'}
-                <p class="mb-2"><AttemptBreadCrumbs bind:attempts /></p>
+        </div>
+    {:else if finished}
+        <!-- Score Display-->
+        <div class="flex items-center flex-col w-auto flex-initial border-slate-900 border-2 p-2 m-4 bg-clip-border rounded-lg">
+            {#each $guessHistoryStore.filter(guess => guessFilter(guess, colorMode, playMode)) as guess }
+                <GuesserAnswerBox guess={guess} />
+            {/each}
+        </div>
+    {:else}
+        <!-- Target Color & Breadcrumb -->
+        <div class="flex items-center flex-col w-64 h-64 flex-initial border-slate-900 border-2 p-2 m-4 bg-clip-border rounded-lg">
+            {#if practiceLock }
+                <div class='text-sm italic'>
+                Practice is disabled while a daily game is going on. Try it later!
+                </div>
+            {:else }
+                {#if playMode === 'DAILY'}
+                    <div class="flex-none">
+                        <p class="mb-2"><AttemptBreadCrumbs bind:attempts /></p>
+                    </div>
+                {/if}
+                <div class="flex-grow w-full">
+                    <ColorBoxBase shareButton={false} showHex={false}
+                        textSize='xs' width="full" height="full" csshex={rgbToHex(target)} colorname={targetColorName} />
+                </div>
             {/if}
-            <ColorBoxBase shareButton={false} showHex={false} textSize='xs' width={48} height={48} csshex={rgbToHex(target)} colorname={targetColorName} />
-        {/if}
-    </div>
+        </div>
+    {/if}
 
-    <div class="flex flex-grow flex-col items-center">
+    <!--Sliders / Submit-->
+    {#if !finished && !startMenu}
+    <div class="flex flex-col items-center w-full max-w-xl my-2 px-2">
         <!-- RGB Sliders -->
-        {#if colorMode === 'RGB' && !finished && !startMenu && !practiceLock }
+        {#if colorMode === 'RGB' && !practiceLock }
             {#each Object.entries(rgbColors) as [color, value]}
-                <div class="mb-2 w-full">
+                <div class="font-bold text-base my-2 w-full max-w-lg">
                     <label class="text-center flex flex-row justify-center items-center">
-                        <span class='w-10 text-xs'>{color[0].toUpperCase() + color.slice(1)}</span>
-                        <input type="range" min="0" max="255" value={value} on:input={(e) => rgbColors[color] = +(e.target.value ?? 0)}
-                            class="bg-white w-48 flex-auto border-2 border-gray-500 rounded-lg cursor-pointer appearance-none" />
-                        <span style="color:{rgbToHexByKey(value, color)}" class="w-8">{value}</span>
+                        <span class='w-14'>{color[0].toUpperCase() + color.slice(1)}</span>
+                        <input 
+                            style="background-color:{rgbToHexByKey(value, color)}"
+                            type="range" min="0" max="255" value={value} on:input={(e) => rgbColors[color] = +(e.target.value ?? 0)}
+                            class="appearance-none h-6 flex-auto border-2 border-black rounded-lg cursor-pointer" />
+                        <span style="color:{rgbToHexByKey(value, color)}" class="w-10">{value}</span>
                     </label>
                 </div>
             {/each}
         {/if}
         
-
-        {#if colorMode === 'CMYK' && !finished && !startMenu && !practiceLock}
+         <!-- CMYK Sliders -->
+        {#if colorMode === 'CMYK' && !practiceLock}
             {#each Object.entries(cmykColors) as [color, value]}
                 <div class="mb-2 w-full">
                     <label class="text-center flex flex-row justify-center items-center">
@@ -485,10 +521,11 @@
         {/if}
 
         <!-- Submit  -->
-        {#if playMode !== 'PRACTICE' && !finished && !startMenu }
-            <button class="guesser-button-lg" on:click={submitGuess}>Submit</button>
+        {#if playMode !== 'PRACTICE'}
+            <button class="guesser-button-lg mt-4" on:click={submitGuess}>Submit</button>
         {/if}
     </div>
+    {/if}
 
     <!-- Mode specific bottom message-->
     <div class='text-sm text-center'>
@@ -513,20 +550,20 @@
                 </p>
             {/if}
         {:else if playMode == 'DAILY' && finished}
-        <p class='my-1'>Challenge yourself again tomorrow, or try <a data-sveltekit-prefetch href="infinite-{colorMode.toLowerCase()}">Infinite Mode</a>.</p>
+        <p class='my-1'>Challenge yourself again tomorrow, or try <a data-sveltekit-prefetch href="infinite-{colorMode.toLowerCase()}">Infinite Mode</a></p>
             {#if colorMode == 'RGB' && !finishedDaily['CMYK']}
                 <p class='my-1'>Want a challenge? Play <a data-sveltekit-prefetch href="daily-cmyk">CMYK Daily Mode</a></p>
             {:else if colorMode == 'CMYK' && !finishedDaily['RGB']}
-            <p class='my-1'>You finished CMYK. Try the RGB<a data-sveltekit-prefetch href="daily-rgb">Daily Mode</a></p>
+            <p class='my-1'>You finished CMYK. Try the RGB <a data-sveltekit-prefetch href="daily-rgb">Daily Mode</a></p>
             {/if}
         {/if}
     </div>
     
-    <div class="flex-grow flex flex-col">
+    <div class="flex-initial flex-col">
         <!-- Score History Display-->
         <div class="mt-2 text-center items-center mb-10">
             
-            {#if (playMode === 'INFINITE' || playMode === 'DAILY') && attempts > 0}
+            {#if (playMode === 'INFINITE' || playMode === 'DAILY') && attempts > 0 && !finished}
             <div class="flex flex-col items-center">
                 
                 <div class="text-gray-500 text-sm dark:text-gray-400">
@@ -544,7 +581,7 @@
                     <div class="flex flex-row">
                         <div class="w-4 h-4 mx-1 bg-grey-500 rounded-sm" style="background-color:{rgbToHex(guess.targetColor)}"></div>
                         <div class="w-4 flex-none h-4 mx-1 bg-grey-500 rounded-sm" style="background-color:{rgbToHex(guess.guessColor)}"></div>
-                        <div><StarScore score={guess.difference} /></div>
+                        <div><HueHunterScore score={guess.difference} /></div>
                     </div>
                 {/each}
             </div>
@@ -554,6 +591,11 @@
 </div>
 
 <style lang='postcss'>
+    @media (display-mode: standalone) {
+		h1.title {
+            @apply mt-8;
+        }
+		}
     .guesser-button {
         @apply bg-cyan-400 dark:bg-cyan-700 ;
         @apply hover:bg-cyan-500 hover:dark:bg-cyan-700;
@@ -580,4 +622,24 @@
     .cmy-text-gradient {
         @apply bg-gradient-to-r from-cyan-600 via-magenta to-yellow-500 text-transparent bg-clip-text;
     }
+
+    .thumb {
+        @apply bg-white;
+        width: 1rem;
+        @apply appearance-none;
+        @apply h-5 w-6;
+        @apply rounded-lg;
+        @apply border-2;
+        @apply border-black;
+        @apply border-solid;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        @apply thumb;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        @apply thumb;
+        }
+        
 </style>

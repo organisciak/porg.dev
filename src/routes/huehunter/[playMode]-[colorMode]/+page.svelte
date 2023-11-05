@@ -28,8 +28,6 @@
     /* Data */
     import colors from '../../colors/colors.json';
     import { calculateBoundScore, moonScale, rawScoreThreshold } from '$lib/huehunter/colorGuesser';
-
-    //import { moonScale } from '$lib/huehunter/colorGuesser';
     // import { darkModeSetting } from '$lib/stores/darkModeStore.js';
 
     /* Variable Defaults */
@@ -92,6 +90,7 @@
         green: getRandomInt(255),
         blue: getRandomInt(255)
         };
+    let practiceColor: RGBColor;
     
     let targetColorName: string | undefined;
     // routing in +page.server.ts should ensure that these are valid
@@ -101,7 +100,7 @@
         colorsGuessed: 0,
         daysPlayed: 0,
         histogram: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        rawAverageScore: 0,
+        averageScore: 0,
         scoreByDate: []
     }; 
 
@@ -133,23 +132,21 @@
 
     function getNextColor() {
         updateValues();
-
-        const seed = getGameSeed();
-        const rng = seedrandom(seed);
-        const colorIndex = Math.floor(rng() * Object.keys(colors).length);
-
         const colorNames: string[] = Object.keys(colors);
-        if (playMode === 'PRACTICE') {
-            targetColorName = '';
-        } else {
-            targetColorName = colorNames[colorIndex];
-            const colorHex: string = colors[targetColorName];
-            target = hexToRgb(colorHex);
+        const seed: string = getGameSeed();
+        const rng = seedrandom(seed);
+        let colorIndex: number = Math.floor(rng() * Object.keys(colors).length);
 
-            /* set sliders to midpoint */
-            rgbColors = { red: 127, green: 127, blue: 127} as RGBColor;
-            cmykColors = { cyan: 50, magenta: 50, yellow: 50, black: 50} as CMYKColor;
+        if (playMode == 'PRACTICE') {
+            colorIndex =  Math.floor(Math.random() * Object.keys(colors).length);
         }
+        targetColorName = colorNames[colorIndex];
+        const colorHex: string = colors[targetColorName];
+        target = hexToRgb(colorHex);
+
+        /* set sliders to midpoint */
+        rgbColors = { red: 127, green: 127, blue: 127} as RGBColor;
+        cmykColors = { cyan: 50, magenta: 50, yellow: 50, black: 50} as CMYKColor;
     }
 
     function guessFilter(guess: Guess, colorMode: ColorMode, playMode: PlayMode): boolean {
@@ -183,9 +180,11 @@
     });
 
     async function share(rawScore: number) {
-        // normalize to 12 pt scale because that's what the moons demand
-        const normalizedScore:number = calculateBoundScore(rawScore, rawScoreThreshold, 12);
-        const moonScore:string = moonScale(normalizedScore, 3);
+        const beHelpful:boolean = true;
+        const normalizedScore:number = Math.min(5,
+            calculateBoundScore(rawScore, rawScoreThreshold, 20)/4+ (beHelpful ? .2 : 0)
+            );
+        const moonScore:string = moonScale(normalizedScore, 5);
         const date = new Date();
         const title:string = `${meta.title} ${colorMode} ${date.getMonth()+1}/${date.getDate()}`;
         const msg:string = `${moonScore}`; //\n${meta.url}`;
@@ -233,7 +232,7 @@
     };
 
     $: if (playMode === "PRACTICE" && !startedDaily['CMYK'] && !startedDaily['RGB']) {
-        target = rgbColors;
+        practiceColor = rgbColors;
     }
     // whether to hide the game until explicitly started. This is done so
     // that we have a signal to turn off practice mode
@@ -252,7 +251,7 @@
         "black": "#000000"
     }
 
-    const complementaryColor = {
+    /*const complementaryColor = {
         "red": "cyan",
         "green": "magenta",
         "blue": "yellow",
@@ -260,48 +259,77 @@
         "magenta": "green",
         "yellow": "blue",
         "black": "white"
+    }*/
+
+    function sliderChange(e, color: string) {
+        if (colorMode === 'RGB') {
+            rgbColors[color] = +(e.target.value ?? 0)
+        } else {
+            cmykColors[color] = +(e.target.value ?? 0)
+        }
+    };
+
+    function textShadowCSS(color: string, amountOfColor: number) {
+        let bgColor: string;
+        let opacity: number;
+        // if color is red, blue or green, use white text shadow
+        if (['red', 'green', 'blue'].includes(color)) {
+            bgColor = "#ffffff";
+            opacity = 1 - amountOfColor / 255;
+        } else {
+            bgColor = "#000000";
+            opacity = 1- amountOfColor / 100;
+        }
+        // convert opacity to hex
+        const opacityBase16 = Math.round(opacity * 255).toString(16);
+        //const bgColor: string = baseNameRef[complementaryColor[color]] + opacityBase16;
+        const cssString = `text-shadow: -1px -1px 0px ${bgColor}${opacityBase16},
+            -1px  1px 0px ${bgColor}${opacityBase16},        
+             1px -1px 0px ${bgColor}${opacityBase16},
+             1px  1px 0px ${bgColor}${opacityBase16}`;
+        return cssString;
     }
 </script>
 
 <svelte:head>
 
-<meta name="theme-color" content="{baseNameRef['magenta']}">
-<link rel="icon" type="image/webp" sizes="16x16" href="/huehunter-assets/favicon-16x16.webp" />
-<link rel="icon" type="image/webp" sizes="32x32" href="/huehunter-assets/favicon-32x32.webp" />
-<link rel="apple-touch-icon" type="image/webp" sizes="180x180" href="/huehunter-assets/apple-touch-icon.webp">
-<link rel="manifest" href="/huehunter-assets/huehunter-manifest.json">
+    <meta name="theme-color" content="{baseNameRef['magenta']}">
+    <link rel="icon" type="image/webp" sizes="16x16" href="/huehunter-assets/favicon-16x16.webp" />
+    <link rel="icon" type="image/webp" sizes="32x32" href="/huehunter-assets/favicon-32x32.webp" />
+    <link rel="apple-touch-icon" type="image/webp" sizes="180x180" href="/huehunter-assets/apple-touch-icon.webp">
+    <link rel="manifest" href="/huehunter-assets/huehunter-manifest.json">
 
-<MetaTags 
-	title="{meta.title}"
-	canonical="{meta.url}"
-	description="{meta.description}"
-	openGraph={{
-		siteName: 'porg.dev',
-		type: 'website',
-		url: meta.url,
-		locale: 'en_US',
-		title: meta.title,
-		description: meta.description,
-		images: [
-		  {
-			url: 'https://www.porg.dev/styleimages/hue-splash.webp',
-			alt: `${meta.title} splash image`,
-			width: 1024,
-			height: 1024,
-			type: 'image/png'
-		  }
-		]
-	}}
-	twitter={{
-        handle: '@porg',
-        site: '@porg',
-        cardType: 'summary_large_image',
-        title: meta.title,
-        description: meta.description,
-        image: 'https://www.porg.dev/styleimages/hue-splash.webp',
-        imageAlt: `${meta.title} splash image`
-      }}
-	/>
+    <MetaTags 
+        title="{meta.title}"
+        canonical="{meta.url}"
+        description="{meta.description}"
+        openGraph={{
+            siteName: 'porg.dev',
+            type: 'website',
+            url: meta.url,
+            locale: 'en_US',
+            title: meta.title,
+            description: meta.description,
+            images: [
+            {
+                url: 'https://www.porg.dev/styleimages/hue-splash.webp',
+                alt: `${meta.title} splash image`,
+                width: 1024,
+                height: 1024,
+                type: 'image/png'
+            }
+            ]
+        }}
+        twitter={{
+            handle: '@porg',
+            site: '@porg',
+            cardType: 'summary_large_image',
+            title: meta.title,
+            description: meta.description,
+            image: 'https://www.porg.dev/styleimages/hue-splash.webp',
+            imageAlt: `${meta.title} splash image`
+        }}
+        />
 </svelte:head>
 
 <Modal bind:showModal={statsModal}>
@@ -416,7 +444,7 @@
                 <p class="flex-auto text-bold text-2xl bg-gradient-to-r from-magenta  to-cyan-600  text-transparent bg-clip-text font-bold">Your Score</p>
                 {/if}
                 <div class="flex-auto">
-                    <HueHunterScore score={Math.round(dayScore/attempts)} size="lg" />
+                    <HueHunterScore score={dayScore/attempts} />
                 </div>
                 {#if playMode == 'DAILY' && shareable}
                 <p class="flex-auto mt-4">
@@ -480,10 +508,23 @@
                         <p class="mb-2"><AttemptBreadCrumbs bind:attempts /></p>
                     </div>
                 {/if}
-                <div class="flex-grow w-full">
-                    <ColorBoxBase shareButton={false} showHex={false}
-                        textSize='xs' width="full" height="full" csshex={rgbToHex(target)} colorname={targetColorName} />
-                </div>
+                {#if playMode == "PRACTICE"}
+                    <div class="flex-grow w-full flex flex-row">
+                        <div class="h-full flex-1">
+                            <ColorBoxBase shareButton={false} showHex={false}
+                                textSize='xs' width="full" height="full" csshex={rgbToHex(practiceColor)} colorname="Your Color" />
+                        </div>
+                        <div class="h-full flex-1">
+                        <ColorBoxBase shareButton={false} showHex={false}
+                            textSize='xs' width="full" height="full" csshex={rgbToHex(target)} colorname="Target Color" />
+                        </div>
+                    </div>
+                {:else}
+                    <div class="flex-grow w-full">
+                        <ColorBoxBase shareButton={false} showHex={false}
+                            textSize='xs' width="full" height="full" csshex={rgbToHex(target)} colorname={targetColorName} />
+                    </div>
+                {/if}
             {/if}
         </div>
     {/if}
@@ -491,42 +532,46 @@
     <!--Sliders / Submit-->
     {#if !finished && !startMenu}
     <div class="flex flex-col items-center w-full max-w-xl my-2 px-2">
-        <!-- RGB Sliders -->
-        {#if colorMode === 'RGB' && !practiceLock }
-            {#each Object.entries(rgbColors) as [color, value]}
+        <!-- RGB / CMYK Sliders -->
+        {#if !practiceLock }
+            {#each Object.entries(colorMode === 'RGB' ? rgbColors : cmykColors) as [color, value]}
                 <div class="font-bold text-base my-2 w-full max-w-lg">
                     <label class="text-center flex flex-row justify-center items-center">
-                        <span class='w-14'>{color[0].toUpperCase() + color.slice(1)}</span>
+                        <span class='w-20'>{color[0].toUpperCase() + color.slice(1)}</span>
                         <input 
-                            style="background-color:{rgbToHexByKey(value, color)}"
-                            type="range" min="0" max="255" value={value} on:input={(e) => rgbColors[color] = +(e.target.value ?? 0)}
+                            style="background-color:{colorMode === 'RGB' ? rgbToHexByKey(value, color): cmykToHexByKey(value, color)}"
+                            type="range"
+                            min="0"
+                            max="{colorMode === 'RGB' ? 255 : 100}"
+                            value={value}
+                            on:input={(e) => sliderChange(e, color)}
                             class="appearance-none h-7 flex-auto border-2 border-black rounded-lg cursor-pointer" />
-                        <span style="color:{rgbToHexByKey(value, color)}" class="w-10">{value}</span>
+                        <span style="{textShadowCSS(color, value)}; color:{colorMode === 'RGB' ? rgbToHexByKey(value, color) : cmykToHexByKey(value, color)}"
+                        class="w-10">
+                            {value}</span>
                     </label>
                 </div>
             {/each}
         {/if}
         
-         <!-- CMYK Sliders -->
-        {#if colorMode === 'CMYK' && !practiceLock}
-            {#each Object.entries(cmykColors) as [color, value]}
-                <div class="mb-2 w-full">
-                    <label class="text-center flex flex-row justify-center items-center">
-                        <span class='w-14'>{color[0].toUpperCase() + color.slice(1)}</span>
-                        <input
-                            style="{cmykToHexByKey(100, color)}"
-                            type="range" min="0" max="100" value={value} on:input={(e) => cmykColors[color] = +e.target.value ?? 0}
-                            class="appearance-none h-7 flex-auto border-2 border-black rounded-lg  cursor-pointe bg-gradient-to-r from-white to-[{baseNameRef[color.toLowerCase()]}]r" />
-                        <span style="color:{cmykToHexByKey(value, color)}" class="w-10">{value}</span>
-                    </label>
-
-                </div>
-            {/each}
-        {/if}
 
         <!-- Submit  -->
         {#if playMode !== 'PRACTICE'}
             <button class="guesser-button-lg mt-4" on:click={submitGuess}>Submit</button>
+        {:else}
+            <button class="guesser-button-lg mt-4" on:click={getNextColor}>Next Practice Color</button>
+            {#if !finishedDaily['RGB']}
+                <button class="guesser-button-lg mt-4">
+                    <a data-sveltekit-prefetch  href="/huehunter/daily-rgb">
+                        Start Daily{colorMode == 'CMYK' ?" RGB ": " "}Game
+                    </a>
+                </button>
+            {/if}
+            {#if (colorMode == 'CMYK') && (!finishedDaily['CMYK']) }
+                <button class="guesser-button-lg mt-4">
+                    <a data-sveltekit-prefetch href="/huehunter/daily-cmyk">Start Daily CMYK Game</a>
+                </button>
+            {/if}
         {/if}
     </div>
     {/if}
@@ -538,23 +583,19 @@
             <hr class='my-2 dark:border-gray-600 border-gray-300' />
             <p class='my-1'>
                 {#if finishedDaily['RGB']}
-                    Play <a data-sveltekit-prefetch href="infinite-rgb">Infinite Mode</a>
-                {:else}
-                    Play <a data-sveltekit-prefetch href="daily-rgb">Daily Mode</a>
+                    Play <a data-sveltekit-prefetch href="infinite-rgb">Infinite RGB</a>
                 {/if}
             </p>
-            {#if colorMode == 'CMYK'}
+            {#if (colorMode == 'CMYK') && finishedDaily['CMYK']}
                 <p class='my-1'>
-                    Or
-                    {#if finishedDaily['CMYK']}
-                        <a data-sveltekit-prefetch href="infinite-cmyk">CMYK Infinite Mode</a>
-                    {:else}
-                        <a data-sveltekit-prefetch href="daily-cmyk">CMYK Daily Mode</a>
-                    {/if}
+                    Or <a data-sveltekit-prefetch href="infinite-cmyk">Infinite CMYK</a>
                 </p>
             {/if}
         {:else if playMode == 'DAILY' && finished}
-        <p class='my-1'>Challenge yourself again tomorrow, or try <a data-sveltekit-prefetch href="infinite-{colorMode.toLowerCase()}">Infinite Mode</a></p>
+            <p class='my-1'>
+                Challenge yourself again tomorrow, or try
+                <a data-sveltekit-prefetch href="infinite-{colorMode.toLowerCase()}">Infinite Mode</a>
+            </p>
             {#if colorMode == 'RGB' && !finishedDaily['CMYK']}
                 <p class='my-1'>Want a challenge? Play <a data-sveltekit-prefetch href="daily-cmyk">CMYK Daily Mode</a></p>
             {:else if colorMode == 'CMYK' && !finishedDaily['RGB']}
@@ -582,7 +623,7 @@
                 </div>
                 <!--loop through filteredGuess from the back to the front, up to ten guesses-->
                 {#each filteredGuesses.reverse().slice(0,25) as guess }
-                    <div class="flex flex-row">
+                    <div class="flex flex-row my-px">
                         <div class="w-4 h-4 mx-1 bg-grey-500 rounded-sm" style="background-color:{rgbToHex(guess.targetColor)}"></div>
                         <div class="w-4 flex-none h-4 mx-1 bg-grey-500 rounded-sm" style="background-color:{rgbToHex(guess.guessColor)}"></div>
                         <div><HueHunterScore score={guess.difference} /></div>
@@ -599,7 +640,7 @@
 		h1.title {
             @apply mt-8;
         }
-		}
+	}
     .guesser-button {
         @apply bg-cyan-400 dark:bg-cyan-700 ;
         @apply hover:bg-cyan-500 hover:dark:bg-cyan-700;

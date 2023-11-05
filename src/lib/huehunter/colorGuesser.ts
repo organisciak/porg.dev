@@ -15,6 +15,14 @@ export function calculateBoundScore(score:number, maxScore:number, newScale:numb
     }
 }
 
+export function moonCount(score: number, maxScore:number): {'full':number, 'partial':number, 'new':number} {
+    return {
+        full: Math.floor(score),
+        partial: Math.round(4*(score % 1)) / 4,
+        new: maxScore - Math.ceil(score)
+    }
+}
+
 /* Return a string of moon emoji to represent a score. The range of the scale is 0-4*n_moons.
 * e.g. for n_moons = 3:
 *    0 🌑🌑
@@ -27,25 +35,23 @@ export function calculateBoundScore(score:number, maxScore:number, newScale:numb
 *    7 🌕🌖
 *    8 🌕🌕
 */
-export function moonScale(score:number, n_moons:number = 3): string {
-    const max_score: number = n_moons * 4;
-    const bound_score = Math.max(Math.min(score, max_score), 0);
+export function moonScale(score:number, maxScore:number = 3): string {
+    const bound_score = Math.max(Math.min(score, maxScore), 0);
+    const moons = moonCount(bound_score, maxScore);
     const moonPhases = ['🌑', '🌘', '🌗', '🌖']
 
     const fullMoons:number = Math.floor(bound_score / moonPhases.length);
 
     let moonString = '';
 
-    for (let i = 0; i < fullMoons; i++) {
+    for (let i = 0; i < moons.full; i++) {
         moonString += '🌕';
     }
-
-    if (fullMoons < n_moons) {
-        moonString += moonPhases[bound_score % moonPhases.length];
-        
-        for (let i = fullMoons + 1; i < n_moons; i++) {
-            moonString += '🌑';
-        }
+    if (moons.partial > 0) {
+        moonString += moonPhases[moons.partial * 4]
+    }
+    for (let i = 0; i < moons.new; i++) {
+        moonString += '🌑';
     }
     return moonString;
 }

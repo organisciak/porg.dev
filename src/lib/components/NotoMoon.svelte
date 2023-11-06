@@ -8,20 +8,23 @@
     */
     export let proportion:number = 0; // Number from 0 to 1
     let roundedProportion: number;
+    import Moon0 from '$lib/assets/noto_emoji_bw/u1f311.svelte';
+    import Moon25 from '$lib/assets/noto_emoji_bw/u1f314.svelte';
+    import Moon50 from '$lib/assets/noto_emoji_bw/u1f313.svelte';
+    import Moon75 from '$lib/assets/noto_emoji_bw/u1f312.svelte';
+    import Moon100 from '$lib/assets/noto_emoji_bw/u1f315.svelte';
 
     $: roundedProportion = Math.round(proportion * 4)/4;
-
-    const svgRef = {
-        0: '/noto_emoji_bw/u1f311.svg',
-        0.25: '/noto_emoji_bw/u1f314.svg',
-        0.5: '/noto_emoji_bw/u1f313.svg',
-        0.75: '/noto_emoji_bw/u1f312.svg',
-        1: '/noto_emoji_bw/u1f315.svg',
-    }
 </script>
 
-<img 
-    src={svgRef[roundedProportion]}
-    style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible"
-/>
-
+{#if roundedProportion == 0}
+    <Moon0 />
+{:else if roundedProportion == 0.25}
+    <Moon25 />
+{:else if roundedProportion == 0.5}
+    <Moon50 />
+{:else if roundedProportion == 0.75}
+    <Moon75 />
+{:else if roundedProportion == 1}
+    <Moon100 />
+{/if}

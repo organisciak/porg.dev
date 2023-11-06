@@ -182,7 +182,7 @@
     async function share(rawScore: number) {
         const beHelpful:boolean = true;
         const normalizedScore:number = Math.min(5,
-            calculateBoundScore(rawScore, rawScoreThreshold, 20)/4+ (beHelpful ? .2 : 0)
+            calculateBoundScore(rawScore, rawScoreThreshold, 20)/4 + (beHelpful ? .2 : 0)
             );
         const moonScore:string = moonScale(normalizedScore, 5);
         const date = new Date();
@@ -451,8 +451,18 @@
                     <button class="guesser-button-lg text-base p-2" on:click={() => share(dayScore/attempts)}>Share score</button>
                 </p>
                 {/if}
+
+                {#if calculateBoundScore(dayScore/attempts, rawScoreThreshold, 10) < 4.5 }
+
+                    <p class='mt-4 mb-1 italic text-sm'>Having trouble? </p>
+                    <p class='my-1'>
+                        <button class="guesser-button-sm">
+                            <a data-sveltekit-prefetch href="practice-{colorMode.toLowerCase()}">Practice</a>
+                        </button>
+                    </p>
+                {/if}
             </div>
-            {/if}
+    {/if}
     </div>
 
     {#if startMenu}
@@ -596,6 +606,7 @@
                 Challenge yourself again tomorrow, or try
                 <a data-sveltekit-prefetch href="infinite-{colorMode.toLowerCase()}">Infinite Mode</a>
             </p>
+            
             {#if colorMode == 'RGB' && !finishedDaily['CMYK']}
                 <p class='my-1'>Want a challenge? Play <a data-sveltekit-prefetch href="daily-cmyk">CMYK Daily Mode</a></p>
             {:else if colorMode == 'CMYK' && !finishedDaily['RGB']}
@@ -654,9 +665,8 @@
 
     .guesser-button-sm {
         @apply guesser-button;
-        @apply py-1 px-1;
-        @apply rounded-lg;
-        @apply border-cyan-100 border;
+        @apply py-1 px-2;
+        @apply text-sm;
     }
 
     .guesser-button-lg {

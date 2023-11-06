@@ -10,5 +10,5 @@
     $: starCount = calculateBoundScore(score, maxScore);
 </script>
 
-<div><NotoMoonScale score={starCount/2} maxScore={5} /></div>
+<div class="text-violet-800 dark:text-violet-200"><NotoMoonScale score={starCount/2} maxScore={5} /></div>
 

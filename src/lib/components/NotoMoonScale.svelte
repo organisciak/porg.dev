@@ -21,20 +21,20 @@
     {#if moons.full > 0}
         {#each Array(moons.full) as _}
             <div>
-                <NotoMoon proportion={0} />
+                <NotoMoon proportion={1} />
             </div>
         {/each}
     {/if}
+
     {#if moons.partial > 0}
-        {#each Array(1) as _}
-            <div>
-                <NotoMoon proportion={moons.partial} />
-            </div>
-        {/each}
+    <div>
+        <NotoMoon proportion={moons.partial} />
+    </div>
     {/if}
+    
     {#if moons.new > 0}
         {#each Array(moons.new) as _}
-            <div><NotoMoon proportion={1} /></div>
+            <div><NotoMoon proportion={0} /></div>
         {/each}
     {/if}
 </div>

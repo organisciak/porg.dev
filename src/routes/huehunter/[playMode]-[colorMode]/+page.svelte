@@ -81,6 +81,7 @@
         };
 
     let shareable: boolean = false;
+    let currentDifference: number = 0;
 
     function getRandomInt(max: number) {
         return Math.floor(Math.random() * Math.floor(max));
@@ -103,6 +104,12 @@
         averageScore: 0,
         scoreByDate: []
     }; 
+
+    $: {
+        if (playMode == 'PRACTICE') {
+            currentDifference = rgbColorToRGBDistance(rgbColors, target);
+        }
+    }
 
     function submitGuess() {
         const diffRelative = rgbColorToRGBDistance(rgbColors, target);
@@ -336,21 +343,20 @@
     <h2 slot="header" class="text-center cmy-text-gradient">
 		Stats
 	</h2>
-
     {#if stats.colorsGuessed > 3}
         <h4>Days Played</h4>
         <p class="font-semibold">{stats.daysPlayed}</p>
         
 
         <h4>Average Score</h4>
-        <p>{stats.averageScore}/10</p>
+        <p>{Math.round(10*stats.averageScore)/10}/10</p>
 
         <h4>Distribution of Scores</h4>
-        <div class="">
+        <div>
             {#each stats.histogram as count, index }
-                <div class="w-4 m-px flex-col text-center text-xs text-gray-300 inline-block align-baseline">
+                <div class="w-4 h-full m-px flex-col text-center text-xs text-gray-300 inline-block align-baseline">
                     <div class=" bg-violet-500 rounded-sm"
-                        style="height:{0.1+2*(count/stats.colorsGuessed)}rem">
+                        style="height:{0.1+8*(count/stats.colorsGuessed)}rem">
                     </div>
                     {index}
                 </div>
@@ -370,19 +376,19 @@
         <h3>
             Goal
         </h3>
-       Get as low of a score as possible. 
+       Guess the composition of colors that make up a target color. Get as close as you can! 
         
         <h3>Modes</h3>
         <ol>
-            <li><span class='font-semibold'>Infinite</span> - Guess as many colors as you can. Your score is the average of all your guesses.</li>
-            <li><span class='font-semibold'>Daily</span> - Guess 5 colors. Your score is the sum of your guesses.</li>
-            <li><span class='font-semibold'>Practice</span> - See the result of your slider color selection.</li>
+            <li><span class='font-semibold'>Daily</span> - Guess 5 colors specific to today.</li>
+            <li><span class='font-semibold'>Infinite</span> - Guess as many colors as you like.</li>
+            <li><span class='font-semibold'>Practice</span> - See the result of your color selection.</li>
         </ol>
 
         <h3>Color Modes</h3>
         <ol>
-            <li><span class='font-semibold'>RGB</span> - Red, Green, Blue. The colors of light.</li>
-            <li><span class='font-semibold'>CMYK (hard mode!)</span> - Cyan, Magenta, Yellow, Black. The colors of ink.</li>
+            <li><span class='font-semibold'>RGB</span> - Red, Green, Blue. The colors of light: as you add more colors, the final color grows lighter.</li>
+            <li><span class='font-semibold'>CMYK (hard mode!)</span> - Cyan, Magenta, Yellow, Black. The colors of ink: as you add them, the final color gets darker.</li>
         </ol>
 
     </div>
@@ -496,7 +502,10 @@
                     {/if}
                 </p>
             </div>
-            <button class="guesser-button-lg" on:click={() => startedDaily[colorMode] = true}>Start</button>
+            <div class="flex flex-col">
+                <button class="guesser-button-lg" on:click={() => startedDaily[colorMode] = true}>Start</button>
+                <button class="guesser-button-sm mt-3" on:click={() => startedDaily[colorMode] = true}><a href="practice-{colorMode}">Practice</a></button>
+            </div>
         </div>
     {:else if finished}
         <!-- Score Display-->
@@ -537,6 +546,14 @@
                 {/if}
             {/if}
         </div>
+    {/if}
+
+    {#if playMode == 'PRACTICE'}
+    <div class="flex flex-col items-center w-full max-w-xl mb-2 px-2">
+        <div class="flex-auto">
+            Score: <HueHunterScore score={currentDifference} />
+        </div>
+    </div>
     {/if}
 
     <!--Sliders / Submit-->
@@ -581,6 +598,9 @@
                 <button class="guesser-button-lg mt-4">
                     <a data-sveltekit-prefetch href="/huehunter/daily-cmyk">Start Daily CMYK Game</a>
                 </button>
+            {/if}
+            {#if !finishedDaily['CMYK'] || !finishedDaily['RGB']}
+                <p class="italic text-xs text-center mb-2">Daily Games don't show the color you're mixing</p>
             {/if}
         {/if}
     </div>
@@ -627,10 +647,10 @@
                 History<br />
                 
             </div>
-                <div class="flex items-center">
-                    <Fa class="mr-1 text-gray-300 dark:text-gray-600" icon={faBullseye} />
+                <div class="flex flex-row my-px">
+                    <Fa class="m-1 text-gray-300 dark:text-gray-600" icon={faBullseye} />
                     <Fa class="m-1 text-gray-300 dark:text-gray-600" icon={faUser} />
-                    <span class="m-1 w-12 text-sm text-gray-300 dark:text-gray-600">Score</span>
+                    <span class="m-1 w-16 text-sm text-gray-300 dark:text-gray-600">Score</span>
                 </div>
                 <!--loop through filteredGuess from the back to the front, up to ten guesses-->
                 {#each filteredGuesses.reverse().slice(0,25) as guess }

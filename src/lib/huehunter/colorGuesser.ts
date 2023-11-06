@@ -11,16 +11,22 @@ export function calculateBoundScore(score:number, maxScore:number, newScale:numb
     if (score > maxScore) {
         return 0;
     } else {
-        return Math.round(newScale * (maxScore - score) / maxScore);
+        return (newScale * (maxScore - score) / maxScore);
     }
 }
 
 export function moonCount(score: number, maxScore:number): {'full':number, 'partial':number, 'new':number} {
-    return {
+    const moons = {
         full: Math.floor(score),
         partial: Math.round(4*(score % 1)) / 4,
         new: maxScore - Math.ceil(score)
     }
+    const missing = maxScore - (moons.new + moons.full);
+
+    if ((moons.partial === 0) && (missing > 0)) {
+        moons.new += missing;
+    }
+    return moons;
 }
 
 /* Return a string of moon emoji to represent a score. The range of the scale is 0-4*n_moons.

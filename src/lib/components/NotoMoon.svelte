@@ -8,11 +8,11 @@
     */
     export let proportion:number = 0; // Number from 0 to 1
     let roundedProportion: number;
-    import Moon0 from '$lib/assets/noto_emoji_bw/u1f311.svelte';
+    import Moon100 from '$lib/assets/noto_emoji_bw/u1f311.svelte';
     import Moon25 from '$lib/assets/noto_emoji_bw/u1f314.svelte';
     import Moon50 from '$lib/assets/noto_emoji_bw/u1f313.svelte';
     import Moon75 from '$lib/assets/noto_emoji_bw/u1f312.svelte';
-    import Moon100 from '$lib/assets/noto_emoji_bw/u1f315.svelte';
+    import Moon0 from '$lib/assets/noto_emoji_bw/u1f315.svelte';
 
     $: roundedProportion = Math.round(proportion * 4)/4;
 </script>

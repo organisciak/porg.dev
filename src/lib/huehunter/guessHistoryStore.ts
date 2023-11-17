@@ -105,6 +105,33 @@ function getFullGuessHistory(): GuessHistoryKeyed[] {
 
 }
 
+function calculateStreak(allRecords: GuessHistoryKeyed[]): number {
+    const today = new Date();
+    let streak = 0;
+    for (let i = 0; i < allRecords.length; i++) {
+        const recordDate = dateStringToDate(allRecords[i].date);
+ 
+        if (isConsecutiveDay(recordDate, today, i)) {
+            streak++;
+        } else {
+            // allow for streak to start yesterday (i=1)
+            if (i > 0) {
+                break;
+            }
+        }
+    }
+
+    return streak;
+}
+
+function isConsecutiveDay(recordDate: Date, currentDate: Date, dayDifference: number): boolean {
+    return (
+        recordDate.getDate() === currentDate.getDate() - dayDifference &&
+        recordDate.getMonth() === currentDate.getMonth() &&
+        recordDate.getFullYear() === currentDate.getFullYear()
+    );
+}
+
 function getGuessHistoryRecords(): DateKey[] {
     if (typeof window !== 'undefined') {
         const records = localStorage.getItem('guessHistoryRecords');
@@ -131,8 +158,20 @@ export async function cullOldRecords(): Promise<void> {
     });
 }
 
+function dateStringToDate(dateString: string): Date {
+    // Start from today, to get locale right
+    const date = new Date();
+    // update year, month and date
+    date.setFullYear(parseInt(dateString.substring(13,17)));
+    date.setMonth(parseInt(dateString.substring(17,19)) - 1);
+    date.setDate(parseInt(dateString.substring(19,21)));
+    return date;
+}
+
 export function guessHistoryStats(): GuessStats {
     const allRecords:GuessHistoryKeyed[] = getFullGuessHistory();
+    allRecords.sort((a, b) => b.date.localeCompare(a.date));
+
     const stats: GuessStats = {
         colorsGuessed: 0,
         daysPlayed: allRecords.length,
@@ -141,9 +180,11 @@ export function guessHistoryStats(): GuessStats {
             0, 0, 0, 0, 0, 0
         ], // 11-pt scale, 0-10
         averageScore: 0,
+        streak: calculateStreak(allRecords),
         scoreByDate: []
     }
     let dayGuesses = 0;
+    let processedDays = 0;
 
     // TODO disambiguate between RGB and CMYK stats
     allRecords.forEach(({ date, history }) => {
@@ -156,17 +197,20 @@ export function guessHistoryStats(): GuessStats {
             dayScore += guess.difference;
             dayGuesses ++;
         });
-        stats.scoreByDate.push({
-            'date': date,
-            'score': calculateBoundScore(dayScore / dayGuesses, 10)
-        });
+        if (processedDays <= 10) {
+            const dateScore = {
+                'date': dateStringToDate(date),
+                'score': dayScore / dayGuesses
+            };
+            stats.scoreByDate.push(dateScore);
+        }
+        processedDays++;
         
     });
     // sum of histogram
     const totalScore = stats.histogram.reduce((a, b, i) => a + b * i, 0);
     stats.colorsGuessed = stats.histogram.reduce((a, b) => a + b, 0);
     stats.averageScore = totalScore / stats.colorsGuessed;
-    console.log(stats.histogram, totalScore, stats.colorsGuessed, stats.averageScore);
     return stats
 }
 

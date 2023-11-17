@@ -338,33 +338,57 @@
         }}
         />
 </svelte:head>
-
 <Modal bind:showModal={statsModal}>
     <h2 slot="header" class="text-center cmy-text-gradient">
 		Stats
 	</h2>
+    <div class="flex flex-wrap max-w-lg items-center text-center justify-center">
     {#if stats.colorsGuessed > 3}
-        <h4>Days Played</h4>
-        <p class="font-semibold">{stats.daysPlayed}</p>
-        
 
-        <h4>Average Score</h4>
-        <p>{Math.round(10*stats.averageScore)/10}/10</p>
-
-        <h4>Distribution of Scores</h4>
-        <div>
-            {#each stats.histogram as count, index }
-                <div class="w-4 h-full m-px flex-col text-center text-xs text-gray-300 inline-block align-baseline">
-                    <div class=" bg-violet-500 rounded-sm"
-                        style="height:{0.1+8*(count/stats.colorsGuessed)}rem">
-                    </div>
-                    {index}
-                </div>
-            {/each}
+        {#if stats.streak > 0}
+        <div class="bg-cyan-100 dark:bg-cyan-700 p-4 m-2 rounded-md">
+            <h4 class="font-semibold">Streak</h4>
+            <p>{stats.streak} days in a row</p>
         </div>
+        {/if}
+
+        <div class="bg-violet-100 dark:bg-violet-700 p-4 m-2 rounded-md">
+            <h4 class="font-semibold">Days Played</h4>
+            <p>{stats.daysPlayed}</p>
+        </div>
+        
+        <div class="bg-red-100 dark:bg-red-700 p-4 m-2 rounded-md">
+            <h4 class="font-semibold">Average Score</h4>
+            <p>{Math.round(10*stats.averageScore)/10}/10</p>
+        </div>
+
+        <div class="flex-auto p-4 m-2 rounded-md w-full  text-center items-center">
+            <h4 class="font-semibold">Distribution of Scores</h4>
+            <div>
+                {#each stats.histogram as count, index }
+                    <div class="w-4 h-full m-px flex-col text-center text-xs text-gray-300 inline-block align-baseline">
+                        <div class=" bg-violet-500 rounded-sm"
+                            style="height:{0.1+8*(count/stats.colorsGuessed)}rem">
+                        </div>
+                        {index}
+                    </div>
+                {/each}
+            </div>
+        </div>
+
+        <div class="p-4 rounded-md w-full text-center items-center">
+            <h4 class="font-semibold">Recent Scores</h4>
+                {#each stats.scoreByDate as recentScore}
+                    <div>
+                        <span>{recentScore.date.toDateString()}</span>: <span><HueHunterScore score={recentScore.score} /></span>
+                    </div>
+                {/each}
+        </div>
+
     {:else}
         Play a few games to see your stats!
     {/if}
+    </div>
 </Modal>
 
 <Modal bind:showModal={showModal}>

@@ -12,7 +12,7 @@ export type GuessHistory = Guess[];
 export type GuessHistoryKeyed = {date:DateKey, history:GuessHistory};
 
 type DateScore = {
-  'date': DateKey,
+  'date': Date,
   'score': number
 }
 
@@ -23,5 +23,6 @@ export type GuessStats = {
   daysPlayed:number,
   histogram: number[],
   averageScore: number,
-  scoreByDate: DateScore[]
+  scoreByDate: DateScore[],
+  streak: number
 };

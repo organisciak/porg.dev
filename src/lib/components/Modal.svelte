@@ -17,18 +17,20 @@
     class:scale-100={showModal}
 >
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="p-4 bg-slate-200 dark:bg-slate-800 dark:text-slate-300" on:click|stopPropagation>
+	<div class="border-slate-900 border-2 p-2 m-4 rounded-lg bg-white dark:bg-slate-800 dark:text-slate-300" on:click|stopPropagation>
 		<slot name="header" />
 		<hr class="border-t border-gray-300 dark:border-gray-600" />
 		<slot />
 		
 		<!-- svelte-ignore a11y-autofocus -->
-		<button class="block w-full px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 shadow-lg"
+		<p class='my-1 text-center'>
+		<button class="text-center  guesser-button-lg"
         autofocus on:click={() => dialog.close()}>Close</button>
+		</p>
 	</div>
 </dialog>
 
-<style>
+<style lang='postcss'>
 	dialog::backdrop {
 		background: rgba(0, 0, 0, 0.3);
 	}
@@ -43,4 +45,20 @@
 			opacity: 1;
 		}
 	}
+
+	.guesser-button {
+        @apply bg-cyan-400 dark:bg-cyan-700 ;
+        @apply hover:bg-cyan-500 hover:dark:bg-cyan-700;
+        @apply focus:bg-cyan-500 focus:dark:bg-cyan-700 ;
+        @apply border-black border-2;
+        @apply hover:bg-gradient-to-r hover:from-cyan-600 hover:via-violet-500 hover:to-yellow-500 text-transparent bg-clip-text;
+        @apply rounded-full justify-center;
+        @apply font-semibold;
+        @apply shadow-lg;
+    }
+
+    .guesser-button-lg {
+        @apply guesser-button;
+        @apply py-2 px-6;
+    }
 </style>

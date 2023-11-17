@@ -390,7 +390,10 @@
             <li><span class='font-semibold'>RGB</span> - Red, Green, Blue. The colors of light: as you add more colors, the final color grows lighter.</li>
             <li><span class='font-semibold'>CMYK (hard mode!)</span> - Cyan, Magenta, Yellow, Black. The colors of ink: as you add them, the final color gets darker.</li>
         </ol>
-
+        <p class="text-center">
+            <img src="/huehunter-assets/color-mix_RGBmix.webp" class="inline-block w-24 h-24" />
+            <img src="/huehunter-assets/color-mix_CMYKmix.webp" class="inline-block w-24 h-24" />
+        </p>
     </div>
 </Modal>
 
@@ -485,6 +488,14 @@
                     {/if}
                 combine to make the target.</p>
 
+                <p class="text-center">
+                    {#if colorMode==='RGB' }
+                        <img src="/huehunter-assets/color-mix_RGBmix.webp" class="inline-block w-48 h-48" />
+                    {:else if colorMode==='CMYK' }
+                        <img src="/huehunter-assets/color-mix_CMYKmix.webp" class="inline-block w-48 h-48" />
+                    {/if}
+                </p>
+
                 <p class='my-3'>Get as close as you can. Each day has <span class="font-semibold">5</span> target colors to get as high a score as possible.</p>
                 <p class='my-3'>Before you start, try <a data-sveltekit-prefetch href="practice-{colorMode.toLowerCase()}">Practice Mode</a>. There's also 
                     {#if colorMode==='RGB' }
@@ -496,7 +507,7 @@
                 <p class='my-3 italic text-xs'>
                     Tip: 
                     {#if colorMode==='RGB' }
-                        RGB is additive: it gets lighter as you add color. 
+                        RGB is additive: it gets lighter as you add color.
                     {:else if colorMode==='CMYK' }
                         CMYK mode is based on inks, and is subtractive: it gets darker as you add color. Black is redundant - you can make any color without it if you like!
                     {/if}

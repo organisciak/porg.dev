@@ -1,5 +1,72 @@
 [
   {
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Dumas",
+        "given": "D."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Berthiaume",
+        "given": "K."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [2023]
+      ]
+    },
+    "DOI": "http://dx.doi.org/10.13140/RG.2.2.19804.56968",
+    "abstract": "Creativity is highly valued in both education and the workforce, but assessing and developing creativity can be difficult without psychometrically robust and affordable tools. The open-ended nature of creativity assessments has made them difficult to score, expensive, often imprecise, and therefore impractical for school- or district-wide use. To address this challenge, we developed and validated the Measure of Original Thinking for Elementary School (MOTES) in five phases, including the development of the item pool and test instructions, expert validation, cognitive pilots, and validation of the automated scoring and latent test structure. MOTES consists of three game-like computerized activities (Uses, Examples, and Sentences subscales), with eight items in each for a total of 24 items. Using large language modeling techniques, MOTES is scored for originality by our open-access artificial intelligence (AI) platform with a high level of agreement with independent subjective human ratings across all three subscales at the response level (rs = .79, .91, and .85 for Uses, Examples, and Sentences, respectively). Confirmatory factor analyses showed a good fit with three factors corresponding to each game, subsumed under a higher-order originality factor. Internal consistency reliability was strong for both the subscales (H = .82, .85, and .88 for Uses, Examples, and Sentences, respectively) and the higher-order originality factor (H = .89). MOTES scores showed moderate positive correlations with external creative performance indicators as well as academic achievement. The implications of these findings are discussed in relation to the challenges of assessing creativity in schools and research.",
+    "title": "Measuring original thinking in elementary school: Development and validation of a computational psychometric approach",
+    "container-title": "Journal of Educational Psychology"
+  },
+	{
+		"id": "http://zotero.org/users/95110/items/77VLSG5R",
+		"type": "article-journal",
+		"abstract": "Divergent thinking (DT) has been at the heart of creativity measurement for over seven decades. At the same time, large-scale usage of DT tests is limited due to the tedious procedure of scoring the responses, which often requires several judges to assess thousands of participants’ ideas. Across two studies (N = 195 and N = 404), we examined the quality of artificial intelligence-based scoring models (Ocsai, Organisciak et al., 2023) to score Alternate Uses Tasks (Study 1: brick, Study 2: brick, can, rope). Based on more than 6000 ideas provided by participants in Polish and automatically translated to English, we fit a series of idea (response)- and prompt (object)-level structural equation models. When artificial intelligence-based and semantic distance scores were modeled together, latent correlations with human ratings ranged from r = 0.56 to r = 0.95 at the response (idea) level and from r = 0.61 to r = 0.99 at the object (prompt) level. A hierarchical (i.e., person-level) model with three DT tasks modeled together (Study 2) demonstrated a latent correlation between automatized and human ratings of r = 0.96 (Babbage) and r = 0.98 (DaVinci). Notably, the same results were obtained based on untranslated responses provided in Polish. Automated and human scores provided the same serial-order effect pattern and the same profile of differences under “be fluent” vs. “be creative” instructions. This investigation offers an initial yet compelling argument that the new algorithms provide a close-to-perfect score of DT tasks when benchmarked against human ratings, even when the responses are created in a different language and automatically translated to English or used in an untranslated form.",
+		"container-title": "Thinking Skills and Creativity",
+		"DOI": "https://doi.org/10.1016/j.tsc.2023.101414",
+		"ISSN": "1871-1871",
+		"page": "101414",
+		"title": "Lost in translation? Not for Large Language Models: Automated divergent thinking scoring performance translates to non-English contexts",
+		"URL": "https://www.sciencedirect.com/science/article/pii/S1871187123001827",
+		"volume": "50",
+		"author": [
+			{
+				"family": "Zielińska",
+				"given": "Aleksandra"
+			},
+			{
+				"family": "Organisciak",
+				"given": "Peter"
+			},
+			{
+				"family": "Dumas",
+				"given": "Denis"
+			},
+			{
+				"family": "Karwowski",
+				"given": "Maciej"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2023"
+				]
+			]
+		}
+	},
+  {
     "id": "Organisciak2021",
     "type": "chapter",
     "title": "Research access to in-copyright texts in the humanities",
@@ -37,7 +104,7 @@
     "type": "article-journal",
     "title": "Automated feedback and creativity: On the role of metacognitive monitoring in divergent thinking",
     "container-title": "Psychology of Aesthetics, Creativity, and the Arts",
-    "URL": "https://doi.org/10.1037/aca0000592",
+    "DOI": "https://doi.org/10.1037/aca0000592",
     "author": [
       {
         "family": "De Chantel",
@@ -58,7 +125,7 @@
     "title": "Beyond semantic distance: Automated scoring of divergent thinking greatly improves with large language models",
     "container-title": "Thinking Skills and Creativity",
     "volume": "49",
-    "URL": "https://doi.org/10.1016/j.tsc.2023.101356",
+    "DOI": "https://doi.org/10.1016/j.tsc.2023.101356",
     "author": [
       {
         "family": "Organisciak",
@@ -92,7 +159,7 @@
     "type": "article-journal",
     "title": "How do the kids speak? Modeling child-directed language for educational use",
     "container-title": "Information and Learning Science",
-    "URL": "https://doi.org/10.1108/ILS-06-2022-0082",
+    "DOI": "https://doi.org/10.1108/ILS-06-2022-0082",
     "author": [
       {
         "family": "Organisciak",
@@ -130,7 +197,7 @@
     "type": "article-journal",
     "title": "What makes children’s responses to creativity assessments difficult to judge reliably?",
     "container-title": "Journal of Creative Behavior",
-    "URL": "https://doi.org/10.1002/jocb.588",
+    "DOI": "https://doi.org/10.1002/jocb.588",
     "author": [
       {
         "family": "Dumas",
@@ -198,7 +265,7 @@
     "type": "article-journal",
     "title": "Approximate Nearest Neighbor for long document relationship labeling in digital libraries",
     "container-title": "International Journal of Digital Libraries",
-    "URL": "https://doi.org/10.1007/s00799-023-00354-5",
+    "DOI": "https://doi.org/10.1007/s00799-023-00354-5",
     "author": [
       {
         "family": "Organisciak",
@@ -254,7 +321,7 @@
     "type": "article-journal",
     "title": "Defensive Driving: CAR:POOL as a Model for Proactive Postsecondary Planning and Connection",
     "container-title": "Contemporary School Psychology",
-    "URL": "https://doi.org/10.1007/s40688-022-00438-0",
+    "DOI": "https://doi.org/10.1007/s40688-022-00438-0",
     "author": [
       {
         "family": "Talley",
@@ -282,7 +349,7 @@
     "type": "article-journal",
     "title": "Job analyses of Earth science data managers: A survey validation of competencies to inform curricula in research data management education",
     "container-title": "Journal of Education for Library and Information Science",
-    "URL": "https://doi.org/10.3138/jelis-2021-0023",
+    "DOI": "https://doi.org/10.3138/jelis-2021-0023",
     "author": [
       {
         "family": "Bishop",
@@ -314,7 +381,7 @@
     "type": "article-journal",
     "title": "Improving Text Relationship Modeling with Artificial Data",
     "container-title": "Journal of Information Science",
-    "URL": "https://doi.org/10.1177/01655515221093031",
+    "DOI": "https://doi.org/10.1177/01655515221093031",
     "author": [
       {
         "family": "Organisciak",
@@ -334,7 +401,7 @@
     "type": "article-journal",
     "title": "Applying automated originality scoring to the verbal form of Torrance Tests of creative thinking",
     "container-title": "Gifted Child Quarterly",
-    "URL": "https://doi.org/10.1177/00169862211061874",
+    "DOI": "https://doi.org/10.1177/00169862211061874",
     "author": [
       {
         "family": "Acar",
@@ -370,7 +437,7 @@
     "type": "article-journal",
     "title": "Giving shape to large digital libraries through exploratory data analysis",
     "container-title": "Journal of the Association for Information Science and Technology",
-    "URL": "https://doi.org/10.1002/asi.24547",
+    "DOI": "https://doi.org/10.1002/asi.24547",
     "author": [
       {
         "family": "Organisciak",
@@ -397,7 +464,7 @@
     "volume": "55",
     "issue": "2",
     "page": "517--531",
-    "URL": "https://doi.org/10.1002/jocb.471",
+    "DOI": "https://doi.org/10.1002/jocb.471",
     "author": [
       {
         "family": "Dumas",
@@ -428,7 +495,7 @@
     "volume": "15",
     "issue": "10",
     "page": "e0240728",
-    "URL": "https://doi.org/10.1371/journal.pone.0240728",
+    "DOI": "https://doi.org/10.1371/journal.pone.0240728",
     "author": [
       {
         "family": "Dumas",
@@ -452,7 +519,7 @@
     "type": "article-journal",
     "title": "Is the reliability of objective originality scores confounded by elaboration?",
     "container-title": "Creativity Research Journal",
-    "URL": "https://doi.org/10.1080/10400419.2020.1818492",
+    "DOI": "https://doi.org/10.1080/10400419.2020.1818492",
     "author": [
       {
         "family": "Maio",
@@ -480,7 +547,7 @@
     "type": "article-journal",
     "title": "Measuring divergent thinking originality with human raters and text-mining models: A psychometric comparison of methods",
     "container-title": "Psychology of Aesthetics, Creativity, and the Arts",
-    "URL": "https://doi.org/10.1037/aca0000319",
+    "DOI": "https://doi.org/10.1037/aca0000319",
     "author": [
       {
         "family": "Dumas",
@@ -504,7 +571,7 @@
     "type": "article-journal",
     "title": "The HathiTrust Digital Library's potential for musicology research",
     "container-title": "International Journal on Digital Libraries",
-    "URL": "https://doi.org/10.1007/s00799-020-00283-7",
+    "DOI": "https://doi.org/10.1007/s00799-020-00283-7",
     "author": [
       {
         "family": "Downie",
@@ -539,7 +606,7 @@
     "volume": "68",
     "issue": "1",
     "page": "97-112",
-    "URL": "https://doi.org/10.1002/asi.23618",
+    "DOI": "https://doi.org/10.1002/asi.23618",
     "author": [
       {
         "family": "Hu",
@@ -576,7 +643,7 @@
     "title": "Text mining in Python through the HTRC Feature Reader",
     "container-title": "The Programming Historian",
     "volume": "5",
-    "URL": "https://doi.org/10.46430/phen0058",
+    "DOI": "https://doi.org/10.46430/phen0058",
     "author": [
       {
         "family": "Organisciak",
@@ -599,7 +666,7 @@
     "volume": "40",
     "issue": "1",
     "page": "61-77",
-    "URL": "https://doi.org/10.1179/0308018814Z.000000000105",
+    "DOI": "https://doi.org/10.1179/0308018814Z.000000000105",
     "author": [
       {
         "family": "Bhattacharyya",
@@ -698,7 +765,7 @@
     "container-title": "Information in Contemporary Society: iConference 2019",
     "page": "419--425",
     "genre": "Proceedings Short Article",
-    "URL": "https://doi.org/10.1007/978-3-030-15742-5_40",
+    "DOI": "https://doi.org/10.1007/978-3-030-15742-5_40",
     "author": [
       {
         "family": "Organisciak",
@@ -735,7 +802,7 @@
     "volume": "2",
     "genre": "Proceedings Short Article",
     "page": "66--76",
-    "URL": "https://doi.org/10.9776/17100",
+    "DOI": "https://doi.org/10.9776/17100",
     "author": [
       {
         "family": "Organisciak",
@@ -878,7 +945,7 @@
     "volume": "51",
     "issue": "1",
     "page": "1--9",
-    "URL": "https://doi.org/10.1002/meet.2014.14505101062",
+    "DOI": "https://doi.org/10.1002/meet.2014.14505101062",
     "author": [
       {
         "family": "Organisciak",
@@ -907,7 +974,7 @@
     "container-title": "Proceedings of the American Society for Information Science and Technology",
     "volume": "49",
     "page": "1--10",
-    "URL": "https://doi.org/10.1002/meet.14504901166",
+    "DOI": "https://doi.org/10.1002/meet.14504901166",
     "author": [
       {
         "family": "Organisciak",
@@ -937,7 +1004,7 @@
     "title": "Improving Retrieval of Short Texts Through Document Expansion",
     "container-title": "Proceedings of the 35th International ACM SIGIR Conference on Research and Development in Information Retrieval",
     "page": "911--920",
-    "URL": "https://doi.org/10.1145/2348283.2348405",
+    "DOI": "https://doi.org/10.1145/2348283.2348405",
     "author": [
       {
         "family": "Efron",
@@ -965,7 +1032,7 @@
     "volume": "48",
     "issue": "1",
     "page": "1--10",
-    "URL": "https://doi.org/10.1002/meet.2011.14504801048",
+    "DOI": "https://doi.org/10.1002/meet.2011.14504801048",
     "author": [
       {
         "family": "Efron",
@@ -1024,7 +1091,7 @@
     "type": "report",
     "title": "Similarities and Duplicates in Digital Libraries",
     "container-title": "Project Technical Report",
-    "URL": "https://doi.org/10.13140/RG.2.2.12650.59846",
+    "DOI": "https://doi.org/10.13140/RG.2.2.12650.59846",
     "author": [
       {
         "family": "Organisciak",
@@ -1047,7 +1114,7 @@
     "id": "Weber2020Report",
     "type": "report",
     "title": "SIG-CM 2019: Workshop on Conceptual Modeling Report",
-    "URL": "https://doi.org/10.5281/zenodo.3878946",
+    "DOI": "https://doi.org/10.5281/zenodo.3878946",
     "author": [
       {
         "family": "Weber",
@@ -1147,7 +1214,7 @@
     "title": "Examining patterns of text reuse in digitized text collections",
     "event": "2019 ACM/IEEE Joint Conference on Digital Libraries",
     "genre": "Poster",
-    "URL": "https://doi.org/10.1109/JCDL.2019.00071",
+    "DOI": "https://doi.org/10.1109/JCDL.2019.00071",
     "author": [
       {
         "family": "Organisciak",
@@ -1176,7 +1243,7 @@
     "title": "Worksets expand the scholarly utility of digital libraries",
     "event": "18th ACM/IEEE Joint Conference on Digital Libraries",
     "genre": "Poster",
-    "URL": "https://doi.org/10.1145/3197026.3203886",
+    "DOI": "https://doi.org/10.1145/3197026.3203886",
     "author": [
       {
         "family": "Page",
@@ -1238,7 +1305,7 @@
     "title": "Information-seeking in large-scale digital libraries: Strategies for scholarly workset creation",
     "event": "2017 ACM/IEEE Joint Conference on Digital Libraries",
     "page": "253--256",
-    "URL": "https://doi.org/10.1109/JCDL.2017.7991583",
+    "DOI": "https://doi.org/10.1109/JCDL.2017.7991583",
     "genre": "Long Paper Talk",
     "author": [
       {
@@ -1289,7 +1356,7 @@
     "title": "Improving consistency of crowdsourced multimedia similarity for evaluation",
     "event": "15th ACM/IEEE-CS Joint Conference on Digital Libraries",
     "page": "115--118",
-    "URL": "https://doi.org/10.1145/2756406.2756942",
+    "DOI": "https://doi.org/10.1145/2756406.2756942",
     "genre": "Poster",
     "author": [
       {
@@ -1985,6 +2052,39 @@
     }
   },
   {
+    "type": "speech",
+    "author": [
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Dumas",
+        "given": "D."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [2023]
+      ]
+    },
+    "title": "Applications of artificial intelligence to verbal and figural tests of creativity",
+    "container-title": "Let’s Go Beyond the Brick: Innovative Assessments of Creativity",
+    "event": "International Society for the Science of Creativity and Innovation",
+    "event-place": "presented remotely via video link",
+    "chair": [
+      {
+        "family": "Rahimi",
+        "given": "S."
+      }
+    ],
+    "genre": "Invited Talk"
+  },  
+  {
     "id": "Organisciak2020",
     "type": "speech",
     "title": "Identifying Related and Same-Work Relationships in Large Digital Libraries",
@@ -2159,5 +2259,213 @@
       { "family": "Agapie", "given": "E." }
     ],
     "issued": { "date-parts": [[2017]] }
+  },
+  {
+      "author": [
+          {"family": "Acar", "given": "S."},
+          {"family": "Lee", "given": "L. E."},
+          {"family": "Rinn-McCann", "given": "A."},
+          {"family": "Mun", "given": "R."},
+          {"family": "Rambo-Hernandez", "given": "K."},
+          {"family": "Berthiaume", "given": "K."},
+          {"family": "Dumas", "given": "D."},
+          {"family": "Organisciak", "given": "P."},
+          {"family": "Flemister", "given": "T."},
+          {"family": "Grajzel", "given": "K."},
+          {"family": "Newman", "given": "M."},
+          {"family": "Eby", "given": "D."},
+          {"family": "Deshayes", "given": "C."},
+          {"family": "Puryear", "given": "J."}
+      ],
+      "title": "Classic and Novel Approaches in Creativity Assessment and Programming: Implications for Gifted Education",
+      "event": "Annual Meeting",
+      "event-place": "Chicago, IL",
+      "publisher": "AERA",
+      "issued": {"date-parts": [[2023]]},
+      "type":"speech",
+      "genre": "Panel"
+  },
+  {
+      "author": [
+          {"family": "Boughida", "given": "K."},
+          {"family": "Zhang", "given": "B."},
+          {"family": "Organisciak", "given": "P."},
+          {"family": "D’Agostino", "given": "S."}
+      ],
+      "title": "ChatGPT: The Future of Higher Ed and Libraries, Brought to You by AI",
+      "event": "CNI Spring 2023 Membership Meeting",
+      "event-place": "Denver, CO, USA",
+      "publisher": "Coalition for Networked Information",
+      "issued": {"date-parts": [[2023]]},
+      "type":"speech",
+      "genre": "Panel"
+  },
+  {
+      "author": [
+          {"family": "Booth", "given": "K."},
+          {"family": "Sanchez", "given": "J."},
+          {"family": "Bishop", "given": "B. W."},
+          {"family": "Organisciak", "given": "P."}
+      ],
+      "title": "Resilience in iSchools cohort education during a turbulent time: Improved normalcy through systemic inclusivity and other lessons learned to optimize virtual and physical spaces",
+      "event": "iConference 2023",
+      "event-place": "Barcelona, Spain",
+      "publisher": "iSchools Consortium",
+      "issued": {"date-parts": [[2023]]},
+      "type":"speech",
+      "genre": "Panel"
+  },
+  {
+      "author": [
+          {"family": "Bishop", "given": "B. W."},
+          {"family": "Organisciak", "given": "P."},
+          {"family": "Mayernik", "given": "M."},
+          {"family": "Cowan", "given": "M."}
+      ],
+      "title": "Assessing the Research Data Management Landscape Through Practice and Education",
+      "event": "Federation of Earth Science Information Partners",
+      "event-place": "Online",
+      "issued": {"date-parts": [[2021]]},
+      "type":"speech",
+      "genre": "Panel"
+  },
+  {
+      "author": [
+          {"family": "Ruecker", "given": "S."},
+          {"family": "Rockwell", "given": "G."},
+          {"family": "Organisciak", "given": "P."},
+          {"family": "Meunier", "given": "J.-G."},
+          {"family": "Eberle-Sinatra", "given": "M."},
+          {"family": "Galey", "given": "A."},
+          {"family": "Morrison", "given": "A."},
+          {"family": "Siemens", "given": "R."}
+      ],
+      "title": "Graduate Education in the Digital Humanities",
+      "event": "Annual Meeting of the Society for Digital Humanities",
+      "event-place": "Ottawa, Canada",
+      "publisher": "Carleton University",
+      "issued": {"date-parts": [[2009]]},
+      "type":"speech",
+      "genre": "Panel"
+  },
+  {
+      "author": [
+          {"family": "Durward", "given": "M."},
+          {"family": "Organisciak", "given": "P."},
+          {"family": "Matusiak", "given": "K."}
+      ],
+      "title": "Advancing Technologies for Traditional Library Services: Utilizing Content Based Recommendation to Assist in Readers' Advisory",
+      "event": "World Library and Information Congress (WLIC)",
+      "publisher": "International Federation of Library Associations and Institutions",
+      "event-place": "Dublin, Ireland",
+      "issued": {"date-parts": [[2020]]},
+      "type": "paper-conference",
+      "extra": "Poster"
+  },
+  {
+      "author": [
+          {"family": "Ryan", "given": "M."},
+          {"family": "Gypin", "given": "L."},
+          {"family": "Matusiak", "given": "K."},
+          {"family": "Schmidt", "given": "B. M."},
+          {"family": "Organisciak", "given": "P."}
+      ],
+      "title": "Conceptual Modeling of Similarities and Duplication in Large-Scale Digital Libraries",
+      "event": "Digital Humanities 2020",
+      "publisher": "Alliance for Digital Humanities Organization",
+      "event-place": "Ottawa",
+      "issued": {"date-parts": [[2020]]},
+      "type": "paper-conference",
+      "extra": "Poster"
+  },
+  {
+      "author": [
+          {"family": "Organisciak", "given": "P."},
+          {"family": "Pares", "given": "N."}
+      ],
+      "title": "MOODs: Identifying Outlier Passages and Texts in the Legislative Process",
+      "event": "6th International Conference on Computational Social Science",
+      "event-place": "Cambridge, MA/Online",
+      "issued": {"date-parts": [[2020]]},
+      "type": "paper-conference",
+      "extra": "Poster"
+  },
+  {
+      "author": [
+          {"family": "Organisciak", "given": "P."}
+      ],
+      "title": "Including Phrases in Bags of Words",
+      "event": "Uncamp 2018",
+      "publisher": "HathiTrust Research Center",
+      "event-place": "Berkeley",
+      "issued": {"date-parts": [[2018]]},
+      "type": "paper-conference",
+      "extra": "Poster"
+  },
+  {
+      "author": [
+          {"family": "Organisciak", "given": "P."},
+          {"family": "Teevan", "given": "J."},
+          {"family": "Twidale", "given": "M. B."}
+      ],
+      "title": "Asking the Right Way: Design Interventions for Microtasks",
+      "event": "The sixth AAAI Conference on Human Computation and Crowdsourcing",
+      "publisher": "Association for Advancement of Artificial Intelligence",
+      "event-place": "Quebec City, Canada",
+      "issued": {"date-parts": [[2018]]},
+      "type": "paper-conference",
+      "extra": "Poster"
+  },
+  {
+      "author": [
+          {"family": "Organisciak", "given": "P."},
+          {"family": "Teevan", "given": "J."},
+          {"family": "Dumais", "given": "S."},
+          {"family": "Miller", "given": "R. C."},
+          {"family": "Kalai", "given": "A."}
+      ],
+      "title": "Personalized Human Computation",
+      "event": "Conference on Human Computation and Crowdsourcing (HCOMP 2013)",
+      "publisher": "AAAI",
+      "event-place": "Palm Springs, CA",
+      "issued": {"date-parts": [[2013]]},
+      "type": "paper-conference",
+      "extra": "Poster"
+  },
+  {
+      "author": [
+          {"family": "Organisciak", "given": "P."},
+          {"family": "Rockwell", "given": "G."},
+          {"family": "Sinclair", "given": "S."},
+          {"family": "Ruecker", "given": "S."}
+      ],
+      "title": "Text Analysis for me Too: An embeddable text analysis widget",
+      "event": "Annual Meeting of the Society for Digital Humanities",
+      "publisher": "SDH/SEMI",
+      "event-place": "",
+      "issued": {"date-parts": [[2009]]},
+      "type": "paper-conference",
+      "extra": "Poster"
+  },
+  {
+      "author": [
+          {"family": "Sinclair", "given": "S."},
+          {"family": "Beacon", "given": "D."},
+          {"family": "Brown", "given": "S."},
+          {"family": "Downie", "given": "J. S."},
+          {"family": "Fiorentino", "given": "C."},
+          {"family": "Juola", "given": "P."},
+          {"family": "Organisciak", "given": "P."},
+          {"family": "Rockwell", "given": "G."},
+          {"family": "Schreibman", "given": "S."},
+          {"family": "Uszkalo", "given": "K."}
+      ],
+      "title": "TADA Research Evaluation Exchange: Winning 2008 Submissions",
+      "event": "Digital Humanities 2009",
+      "publisher": "University of Maryland",
+      "event-place": "USA",
+      "issued": {"date-parts": [[2009]]},
+      "type": "paper-conference",
+      "extra": "Poster"
   }
 ]

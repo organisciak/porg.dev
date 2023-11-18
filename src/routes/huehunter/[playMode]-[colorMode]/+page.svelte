@@ -28,6 +28,7 @@
     /* Data */
     import colors from '../../colors/colors.json';
     import { calculateBoundScore, moonScale, rawScoreThreshold } from '$lib/huehunter/colorGuesser';
+  import { faGithub, faLinkedinIn, faMastodon, faTwitter } from '@fortawesome/free-brands-svg-icons';
     // import { darkModeSetting } from '$lib/stores/darkModeStore.js';
 
     /* Variable Defaults */
@@ -319,7 +320,7 @@
             description: meta.description,
             images: [
             {
-                url: 'https://www.porg.dev/styleimages/hue-splash.webp',
+                url: 'https://www.porg.dev/huehunter-assets/hue-splash.webp',
                 alt: `${meta.title} splash image`,
                 width: 1024,
                 height: 1024,
@@ -333,7 +334,7 @@
             cardType: 'summary_large_image',
             title: meta.title,
             description: meta.description,
-            image: 'https://www.porg.dev/styleimages/hue-splash.webp',
+            image: 'https://www.porg.dev/huehunter-assets/hue-splash.webp',
             imageAlt: `${meta.title} splash image`
         }}
         />
@@ -418,6 +419,16 @@
             <img src="/huehunter-assets/color-mix_RGBmix.webp" class="inline-block w-24 h-24" />
             <img src="/huehunter-assets/color-mix_CMYKmix.webp" class="inline-block w-24 h-24" />
         </p>
+    </div>
+    <hr class='my-2 dark:border-gray-600 border-gray-300' />
+    <div class='text-center'>
+        <p>Created in Denver with ❤️ by <a href="https://www.porg.dev">Peter Organisciak</a></p>
+        <div class="flex text-center items-center justify-center">
+            <a href="https://sigmoid.social/@porg" aria-label="Follow me on Mastodon" target="_blank"rel="me" class="p-1 text-lg hover:-rotate-6"><Fa icon={faMastodon} /></a>
+            <a href="https://github.com/organisciak"  aria-label="Follow me on Github" target="_blank" class="p-1 text-lg hover:-rotate-6"><Fa icon={faGithub} /></a>
+            <a href="https://twitter.com/POrg" target="_blank" aria-label="Please don't follow me on X" class="p-1 text-lg hover:-rotate-6"><Fa icon={faTwitter} /></a>
+            <a href="https://www.linkedin.com/in/organisciak/" aria-label="I have a LinkedIn, I suppose" target="_blank" class="p-1 text-lg hover:-rotate-6"><Fa icon={faLinkedinIn} /></a>
+        </div>
     </div>
 </Modal>
 

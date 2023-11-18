@@ -28,10 +28,22 @@ export interface CSLPublication {
   edition?: string;
   publisher?: string;
   URL?: string;
+  DOI?: string;
+  abstract?: string;
   author: CSLName[];
   editor?: CSLEditor[];
   issued: CSLDate;
   status?: string;
-  genre?: string; //"Long Paper Talk" | "Poster" | "Proceedings Short Article" | "Proceedings Long Article";
+  genre?: string; //"Long Paper Talk" | "Poster" | "Proceedings Short Article" | "Proceedings Long Article" | "Panel";
+  extra?: string;
   custom?: CSLCustomField[];
 }
+
+export type DirectedStudentLearning = {
+  category: 'Dissertation' | 'Capstone' | 'Thesis';
+  role: 'Committee Member' | 'Committee Chair';
+  student: string;
+  title: string;
+  institution?: string; // Optional
+  year: string;
+}[];

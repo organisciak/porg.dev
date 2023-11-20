@@ -5,6 +5,7 @@
     import { MetaTags } from 'svelte-meta-tags';
     import Fa from 'svelte-fa';
     import { faBullseye, faQuestion, faGear, faUser, faChartSimple } from '@fortawesome/free-solid-svg-icons';
+    import { faGithub, faLinkedinIn, faMastodon, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
     /* Color tools */
     import { cmykToRgb, hexToRgb, rgbToHex, rgbColorToRGBDistance,
@@ -28,7 +29,6 @@
     /* Data */
     import colors from '../../colors/colors.json';
     import { calculateBoundScore, moonScale, rawScoreThreshold } from '$lib/huehunter/colorGuesser';
-  import { faGithub, faLinkedinIn, faMastodon, faTwitter } from '@fortawesome/free-brands-svg-icons';
     // import { darkModeSetting } from '$lib/stores/darkModeStore.js';
 
     /* Variable Defaults */
@@ -194,13 +194,14 @@
             );
         const moonScore:string = moonScale(normalizedScore, 5);
         const date = new Date();
-        const title:string = `${meta.title} ${colorMode} ${date.getMonth()+1}/${date.getDate()}`;
-        const msg:string = `${moonScore}`; //\n${meta.url}`;
+        const msg:string = `${date.getMonth()+1}/${date.getDate()} ${colorMode}\n${moonScore}\n`;
 
         
         if (shareable) {
             navigator.share({
-                text: title + '\n' + msg,
+                title: meta.title,
+                text: msg,
+                url: 'https://hues.red'
             })
             .then(() => console.log('Successful share'))
             .catch((error) => console.log('Error sharing', error));
@@ -397,31 +398,33 @@
 		About {meta.title}
 	</h2>
 
-    <div>
-        <h3>
+    <div class='text-center'>
+        <h3 class='mt-3'>
             Goal
         </h3>
        Guess the composition of colors that make up a target color. Get as close as you can! 
         
-        <h3>Modes</h3>
-        <ol>
-            <li><span class='font-semibold'>Daily</span> - Guess 5 colors specific to today.</li>
-            <li><span class='font-semibold'>Infinite</span> - Guess as many colors as you like.</li>
-            <li><span class='font-semibold'>Practice</span> - See the result of your color selection.</li>
-        </ol>
+        <h3 class='mt-3'>Modes</h3>
+        <div class="flex flex-row text-center">
+            <p><a data-sveltekit-prefetch href="daily-{colorMode.toLowerCase()}" class='font-semibold'>Daily</a><br />Guess 5 colors specific to today</p>
+            <p><a data-sveltekit-prefetch href="infinite-{colorMode.toLowerCase()}" class='font-semibold'>Infinite</a><br />Guess as many colors as you like</p>
+            <p><a data-sveltekit-prefetch href="practice-{colorMode.toLowerCase()}" class='font-semibold'>Practice</a><br />See the result of your color selection</p>
+        </div>
 
-        <h3>Color Modes</h3>
-        <ol>
-            <li><span class='font-semibold'>RGB</span> - Red, Green, Blue. The colors of light: as you add more colors, the final color grows lighter.</li>
-            <li><span class='font-semibold'>CMYK (hard mode!)</span> - Cyan, Magenta, Yellow, Black. The colors of ink: as you add them, the final color gets darker.</li>
-        </ol>
-        <p class="text-center">
-            <img src="/huehunter-assets/color-mix_RGBmix.webp" class="inline-block w-24 h-24" />
-            <img src="/huehunter-assets/color-mix_CMYKmix.webp" class="inline-block w-24 h-24" />
-        </p>
+        <h3 class='mt-3'>Color Modes</h3>
+        <div class="flex flex-row text-center">
+            <div class="m-1 p-1">
+                <p><a data-sveltekit-prefetch href="{playMode.toLowerCase()}-rgb" class='font-semibold'>RGB</a><br />Red, Green, Blue<br />These are additive, like light. As you add colors, the final color grows lighter.</p>
+                <img src="/huehunter-assets/color-mix_RGBmix.webp" alt="RGB color mix" class="inline-block w-24 h-24" />
+            </div>
+            <div class="m-1 p-1">
+                <p><a data-sveltekit-prefetch href="{playMode.toLowerCase()}-cmyk" class='font-semibold'>CMYK (hard mode!)</a><br />Cyan, Magenta, Yellow, Black<br />These are subtractive, like ink. As you add colors, the final color gets darker.</p>
+                <img src="/huehunter-assets/color-mix_CMYKmix.webp" alt="CMYK color mix" class="inline-block w-24 h-24" />
+            </div>
+        </div>
     </div>
     <hr class='my-2 dark:border-gray-600 border-gray-300' />
-    <div class='text-center'>
+    <div class='text-center flex flex-col'>
         <p>Created in Denver with ❤️ by <a href="https://www.porg.dev">Peter Organisciak</a></p>
         <div class="flex text-center items-center justify-center">
             <a href="https://sigmoid.social/@porg" aria-label="Follow me on Mastodon" target="_blank"rel="me" class="p-1 text-lg hover:-rotate-6"><Fa icon={faMastodon} /></a>

@@ -166,13 +166,14 @@ TODO allow customizing the itemtype
         {#if data.custom}
           <p itemprop="additionalProperty" itemscope itemtype="http://schema.org/PropertyValue">
             {#each data.custom as field}
-              {#if field.key.toLowerCase() === 'award'}
-                <Fa class='inline' icon={faTrophy} />
-              {:else if field.key.toLowerCase() === 'feature'}
-                <Fa class='inline' icon={faNewspaper} />
-              {/if}
               {#if !customFieldsAsButtons.includes(field.key)}
+                {#if field.key.toLowerCase() === 'award'}
+                  <Fa class='inline' icon={faTrophy} />
+                {:else if field.key.toLowerCase() === 'feature'}
+                  <Fa class='inline' icon={faNewspaper} />
+                {:else}
                 <span itemprop="name">{capitalizeString(field.key)}</span>:
+                {/if}
                 {#if field.key.startsWith('http')}
                   <a href={field.value} target="_blank" rel="noopener noreferrer" itemprop="value">{capitalizeString(field.value)}</a>
                 {:else}

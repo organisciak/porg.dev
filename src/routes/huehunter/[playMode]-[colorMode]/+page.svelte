@@ -406,19 +406,19 @@
         
         <h3 class='mt-3'>Modes</h3>
         <div class="flex flex-row text-center">
-            <p><a data-sveltekit-prefetch href="daily-{colorMode.toLowerCase()}" class='font-semibold'>Daily</a><br />Guess 5 colors specific to today</p>
-            <p><a data-sveltekit-prefetch href="infinite-{colorMode.toLowerCase()}" class='font-semibold'>Infinite</a><br />Guess as many colors as you like</p>
-            <p><a data-sveltekit-prefetch href="practice-{colorMode.toLowerCase()}" class='font-semibold'>Practice</a><br />See the result of your color selection</p>
+            <p class="bg-cyan-100 dark:bg-cyan-700 p-4 m-2 rounded-md"><a href="daily-{colorMode.toLowerCase()}" class='font-semibold'>Daily</a><br />Guess 5 colors specific to today</p>
+            <p class=" bg-violet-100 dark:bg-violet-700 p-4 m-2 rounded-md"><a href="infinite-{colorMode.toLowerCase()}" class='font-semibold'>Infinite</a><br />Guess as many colors as you like</p>
+            <p class="bg-red-100 dark:bg-red-700 p-4 m-2 rounded-md"><a href="practice-{colorMode.toLowerCase()}" class='font-semibold'>Practice</a><br />See the result of your color selection</p>
         </div>
 
         <h3 class='mt-3'>Color Modes</h3>
         <div class="flex flex-row text-center">
             <div class="m-1 p-1">
-                <p><a data-sveltekit-prefetch href="{playMode.toLowerCase()}-rgb" class='font-semibold'>RGB</a><br />Red, Green, Blue<br />These are additive, like light. As you add colors, the final color grows lighter.</p>
+                <p><a href="{playMode.toLowerCase()}-rgb" class='font-semibold'>RGB</a><br />Red, Green, Blue<br />These are additive, like light. As you add colors, the final color grows lighter.</p>
                 <img src="/huehunter-assets/color-mix_RGBmix.webp" alt="RGB color mix" class="inline-block w-24 h-24" />
             </div>
             <div class="m-1 p-1">
-                <p><a data-sveltekit-prefetch href="{playMode.toLowerCase()}-cmyk" class='font-semibold'>CMYK (hard mode!)</a><br />Cyan, Magenta, Yellow, Black<br />These are subtractive, like ink. As you add colors, the final color gets darker.</p>
+                <p><a href="{playMode.toLowerCase()}-cmyk" class='font-semibold'>CMYK</a><br />Cyan, Magenta, Yellow, Black<br />These are subtractive, like ink. As you add colors, the final color gets darker.</p>
                 <img src="/huehunter-assets/color-mix_CMYKmix.webp" alt="CMYK color mix" class="inline-block w-24 h-24" />
             </div>
         </div>

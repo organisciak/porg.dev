@@ -4,6 +4,8 @@
   import Publication from '$lib/cv/Publication.svelte';
   import type { CSLPublication } from '$lib/cv/types';
   import { MetaTags } from 'svelte-meta-tags';
+  import Fa from 'svelte-fa';
+  import { faOrcid } from '@fortawesome/free-brands-svg-icons';
 
   const typedPublications: CSLPublication[] = publications;
 
@@ -347,7 +349,9 @@ use in other tools and websites, such as Qualtrics.
         title: "Associate Professor, University of Denver, Research Methods and Information Science",
         lab: "Massive Texts Lab",
         labUrl: "http://portfolio.du.edu/massivetexts",
-        orcid: "https://orcid.org/0000-0002-9058-2280"
+        orcid: "https://orcid.org/0000-0002-9058-2280",
+        email: "peter.organisciak@du.edu",
+        gscholar: "https://scholar.google.com/citations?hl=en&user=RfHXG5EAAAAJ&view_op=list_works&sortby=pubdate",
     };
 
     type positions = {
@@ -604,12 +608,28 @@ type PresentationExtension = {
 	/>
 
 <div class="container mx-auto">
-<section>
-    <h1>{bio.name}</h1>
-    <p><strong>{bio.title}</strong></p>
-    <p>{bio.lab}: <a href={bio.labUrl} target="_blank">{bio.labUrl}</a></p>
-    <p>ORCID: <a href={bio.orcid} target="_blank">{bio.orcid}</a></p>
-</section>
+  <section itemscope itemtype="http://schema.org/Person">
+    <h1 itemprop="name">{bio.name}</h1>
+    <p><strong itemprop="jobTitle">{bio.title}</strong></p>
+    
+    <div class="flex flex-row">
+      <p itemprop="affiliation"> 
+        <a href={bio.labUrl} target="_blank">{bio.lab}</a>
+        <meta itemprop="url" content={bio.labUrl} />
+      </p>
+      <p>
+        <Fa class='inline text-lg text-lime-500' icon={faOrcid} /> <a href={bio.orcid} target="_blank">{bio.orcid.split('https://orcid.org/')[1]}</a>
+          <meta itemprop="sameAs" content={bio.orcid} />
+      </p>
+      <button>
+          <a href={bio.gscholar} target="_blank" itemprop="sameAs">Google Scholar</a>
+          <meta itemprop="sameAs" content={bio.gscholar} />
+      </button>
+      <p>
+          <a href={"mailto:" + bio.email} itemprop="email">{bio.email}</a>
+      </p>
+    </div>
+  </section>
 
 <section>
     <h2>Professional Positions</h2>

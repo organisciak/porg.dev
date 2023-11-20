@@ -1,5 +1,8 @@
 <script lang="ts">
   import type { CSLPublication } from './types';
+  import { capitalizeString } from '$lib/utils/stringUtils';
+  import Fa from 'svelte-fa';
+  import { faNewspaper, faTrophy } from '@fortawesome/free-solid-svg-icons';
   export let data: CSLPublication;
 
   let copied = false;
@@ -31,6 +34,8 @@
     }
     return doi;
   }
+
+  const customFieldsAsButtons: string[] = ['preprint', 'SSRN'];
 
   // written by ChatGPT: https://chat.openai.com/c/0fa52fa7-f4b4-4ad4-b317-39ca82a4b048
   function formatAPA(publication: CSLPublication, asHTML:boolean = false): string {
@@ -155,31 +160,57 @@ TODO allow customizing the itemtype
   {/if}
 
   {#if data.custom}
-    <p itemprop="additionalProperty" itemscope itemtype="http://schema.org/PropertyValue">
       <strong>Additional Info:</strong>
       {#each data.custom as field}
-        <span itemprop="name">{field.key}</span>: 
-        <!-- only include an <a> tag if field.value starts with http-->
-        {#if field.key.startsWith('http') }
-        <a href={field.value} target="_blank" rel="noopener noreferrer" itemprop="value">{field.value}</a>
-        {:else}
-        <span itemprop="value">{field.value}</span>
+        <!-- Buttons, including select custom fields-->
+        {#if data.custom}
+          <p itemprop="additionalProperty" itemscope itemtype="http://schema.org/PropertyValue">
+            {#each data.custom as field}
+              {#if field.key.toLowerCase() === 'award'}
+                <Fa class='inline' icon={faTrophy} />
+              {:else if field.key.toLowerCase() === 'feature'}
+                <Fa class='inline' icon={faNewspaper} />
+              {/if}
+              {#if !customFieldsAsButtons.includes(field.key)}
+                <span itemprop="name">{capitalizeString(field.key)}</span>:
+                {#if field.key.startsWith('http')}
+                  <a href={field.value} target="_blank" rel="noopener noreferrer" itemprop="value">{capitalizeString(field.value)}</a>
+                {:else}
+                  <span itemprop="value">{field.value}</span>
+                {/if}
+                <br/>
+              {/if}
+            {/each}
+          </p>
         {/if}
-        <br/>
       {/each}
-    </p>
-  {/if}
-  {#if data.abstract}
-    <button on:click={() => showAbstract = !showAbstract}
-      class='dark:bg-slate-600 hover:dark:bg-slate-500 inline-block bg-slate-300 hover:bg-slate-400 leading-tight font-bold text-slate-200 p-1 rounded-lg text-xs my-1'>
-      ↓ Abstract
-    </button>
   {/if}
 
-  
-  <button on:click={() => copyToClipboard(data)} class='dark:bg-slate-600 hover:dark:bg-slate-500 inline-block bg-slate-300 hover:bg-slate-400 leading-tight font-bold text-slate-200 p-1 rounded-lg text-xs my-1'>Copy APA</button>
-  {#if copied}<p class='text-xs italic inline-block text-slate-500'>Copied</p>{/if}
-  
+  <!-- Buttons, including select custom fields-->
+  <div class="flex flex-row">
+    {#if data.custom}
+        {#each data.custom as field}
+          {#if customFieldsAsButtons.includes(field.key)}
+            <button class='pub-button' itemprop="additionalProperty" itemscope itemtype="http://schema.org/PropertyValue">
+              <a href={field.value} target="_blank" rel="noopener noreferrer" itemprop="name">{capitalizeString(field.key)}</a>
+              <meta itemprop="value" content="{field.value}" />
+            </button>
+          {/if}
+        {/each}
+    {/if}
+
+    <!-- Abstract -->
+    {#if data.abstract}
+      <button on:click={() => showAbstract = !showAbstract}
+        class='pub-button'>
+        ↓ Abstract
+      </button>
+    {/if}
+
+    <!--Copy APA -->
+    <button on:click={() => copyToClipboard(data)} class='pub-button'>Copy APA</button>
+    {#if copied}<p class='text-xs italic inline-block text-slate-500 m-1 p-1'>Copied</p>{/if}
+</div>
 
   {#if data.abstract && showAbstract}
     <div class="text-xs rounded-lg dark:bg-slate-600 bg-slate-300 p-2 mt-1">
@@ -187,3 +218,16 @@ TODO allow customizing the itemtype
     </div>
   {/if}
 </div>
+
+<style lang='postcss'>
+  .pub-button {
+    @apply dark:bg-slate-600 bg-slate-300;
+    @apply hover:dark:bg-slate-500 hover:bg-slate-400;
+    @apply text-xs text-slate-200 font-bold;
+    @apply inline-block leading-tight p-1 rounded-lg m-1;
+  }
+
+  .pub-button a {
+    @apply text-xs text-slate-200 font-bold;
+  }
+</style>

@@ -78,10 +78,8 @@
 
 
   async function copyToClipboard(data: CSLPublication) {
-    console.log(data);
     const txt = formatAPA(data, false);
     const html = formatAPA(data, true);
-    console.log(txt, html);
     try {
       await navigator.clipboard.write([
         new ClipboardItem({

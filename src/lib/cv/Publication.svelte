@@ -101,11 +101,26 @@
 <!---
 TODO allow customizing the itemtype
 -->
-<div class="text-sm publication flex-auto w-80  dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5" itemscope itemtype="http://schema.org/ScholarlyArticle">
-  <h2 class="flex text-lg" itemprop="headline">{data.title}</h2>
+<div class="text-sm publication flex-auto w-80 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5" itemscope
+  itemtype="http://schema.org/ScholarlyArticle">
+  <div class="flex items-start">
+  <h2 class="text-lg" itemprop="headline">
+      {data.title}
+  </h2>
+  <span class='text-sm ml-1 dark:text-slate-500 text-slate-400' itemprop="datePublished" >
+    {data.issued['date-parts'][0][0]}
+  </span>
+  </div>
   
   {#if data.event}
     <p class='italic text-sm text-slate-600 dark:text-slate-100' itemprop="locationCreated">{data.event}</p>
+  {/if}
+  {#if data['container-title']}
+  <div class="italic text-sm text-slate-600 dark:text-slate-100" itemprop="isPartOf" itemscope itemtype="https://schema.org/PublicationIssue">
+      <span itemscope itemtype="https://schema.org/Periodical" itemid="#periodical">
+        <span itemprop="name">{data['container-title']}</span>
+      </span>
+  </div>
   {/if}
 
   <p itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -123,10 +138,6 @@ TODO allow customizing the itemtype
       {/each}
     </p>
   {/if}
-
-  <p>
-    <strong>Year:</strong> <span itemprop="datePublished">{data.issued['date-parts'][0][0]}</span>
-  </p>
 
   {#if data.volume}
     <p>

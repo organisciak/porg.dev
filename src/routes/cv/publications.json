@@ -1,5 +1,29 @@
 [
   {
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Durward",
+        "given": "M."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
+    ],
+    "title": "Enriching Library Holdings for English Language Learners: Applying Traditional Readability Formulas and Modern Cohesion Methods to Film",
+    "container-title": "Proceedings of the Association for Information Science and Technology",
+    "volume": "60",
+    "genre": "Proceedings Long Article",
+    "issue": "1",
+    "page": "121-132",
+    "issued": {
+      "date-parts": [
+        [2023]
+      ]
+    }
+  },  
+  {
     "type": "article-journal",
     "author": [
       {

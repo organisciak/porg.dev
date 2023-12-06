@@ -10,6 +10,11 @@ export const urlMappings: UrlMapping[] = [
       "https://du.leganto.exlibrisgroup.com/leganto/public/01UODE_INST/lists/47414179690002766?auth=SAML",
   },
   {
+    shorturl: "poster",
+    destination:
+      "https://chat.openai.com/g/g-md7NjNgW7-poster-parser",
+  },
+  {
     shorturl: "chat-strategies",
     destination:
       "https://github.com/organisciak/Scripting-Course/blob/master/docs/chat-model-strategies.md",

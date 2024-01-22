@@ -19,7 +19,8 @@ export async function GET({ params }: { params: RequestParams }) {
   }
 
   // If no mapping found, return a 404
-  return new Response("Url not found", {
+
+  return new Response("Url not found\n", {
     status: 404,
   });
 }

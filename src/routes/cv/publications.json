@@ -1,6 +1,134 @@
 [
   {
     "type": "paper-conference",
+    "id": "walsh2023",
+    "author": [
+      {
+        "family": "Walsh",
+        "given": "John A"
+      },
+      {
+        "family": "Layne-Worthey",
+        "given": "Glen"
+      },
+      {
+        "family": "Jett",
+        "given": "Jacob J"
+      },
+      {
+        "family": "Capitanu",
+        "given": "Boris"
+      },
+      {
+        "family": "Organisciak",
+        "given": "Peter"
+      },
+      {
+        "family": "Dubnicek",
+        "given": "Ryan"
+      },
+      {
+        "family": "Downie",
+        "given": "J Stephen"
+      }
+    ],
+    "editor": [
+      {
+        "family": "Šeļa",
+        "given": "Artjoms"
+      },
+      {
+        "family": "Jannidis",
+        "given": "Fotis"
+      },
+      {
+        "family": "Romanowska",
+        "given": "Iza"
+      }
+    ],
+    "title": "“The Library is Open!”: Open Data and an Open API for the HathiTrust Digital Library",
+    "container-title": "Proceedings of the Computational Humanities Research Conference 2023",
+    "event": "Computational Humanities Research 2023",
+    "event-place": "Paris, France",
+    "publisher": "ceur-ws.org",
+    "ISSN": "1613",
+    "volume": "3558",
+    "page": "73",
+    "genre": "Proceedings Long Article",
+    "issued": {
+      "date-parts": [
+        [2023, 12, 6]
+      ]
+    },
+    "URL": "https://ceur-ws.org/Vol-3558/paper7875.pdf",
+    "abstract": "This paper describes the history, policy, semantics, and uses of the HathiTrust Research Center Extracted Features dataset, an open-access representation of the 17+ million volume HathiTrust Digital Library, including a major current effort to extend computational access in a variety of more flexible and easily implemented ways, including a modern API supporting customizable visualizations and analyses."
+  }, 
+  {
+    "id": "Acar2023b",
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Dumas",
+        "given": "D."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Berthiaume",
+        "given": "K."
+      }
+    ],
+    "abstract": "Creativity is highly valued in both education and the workforce, but assessing and developing creativity can be difficult without psychometrically robust and affordable tools. The open-ended nature of creativity assessments has made them difficult to score, expensive, often imprecise, and therefore impractical for school- or district-wide use. To address this challenge, we developed and validated the Measure of Original Thinking for Elementary School (MOTES) in five phases, including the development of the item pool and test instructions, expert validation, cognitive pilots, and validation of the automated scoring and latent test structure. MOTES consists of three game-like computerized activities (Uses, Examples, and Sentences subscales), with eight items in each for a total of 24 items. Using large language modeling techniques, MOTES is scored for originality by our open-access artificial intelligence (AI) platform with a high level of agreement with independent subjective human ratings across all three subscales at the response level (rs = .79, .91, and .85 for Uses, Examples, and Sentences, respectively). Confirmatory factor analyses showed a good fit with three factors corresponding to each game, subsumed under a higher-order originality factor. Internal consistency reliability was strong for both the subscales (H = .82, .85, and .88 for Uses, Examples, and Sentences, respectively) and the higher-order originality factor (H = .89). MOTES scores showed moderate positive correlations with external creative performance indicators as well as academic achievement. The implications of these findings are discussed in relation to the challenges of assessing creativity in schools and research.",
+    "title": "Measuring original thinking in elementary school: Development and validation of a computational psychometric approach",
+    "container-title": "Journal of Educational Psychology",
+    "custom": [{
+      "key": "preprint",
+      "value": "http://dx.doi.org/10.13140/RG.2.2.19804.56968"
+    }],
+    "issued": {
+      "date-parts": [
+        [2023]
+      ]
+    }
+  },  
+  {
+    "id": "Acar2023a",
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Dumas",
+        "given": "D."
+      }
+    ],
+    "title": "A comparison of supervised and unsupervised learning methods in automated scoring of figural tests of creativity",
+    "status": "Under review",
+    "issued": {
+      "date-parts": [
+        [2023]
+      ]
+    },
+    "custom": [{
+      "key": "preprint",
+      "value": "http://dx.doi.org/10.13140/RG.2.2.26865.25444"
+    }]
+  },  
+  {
+    "id": "Durward2023",
+    "type": "paper-conference",
     "author": [
       {
         "family": "Durward",
@@ -22,39 +150,9 @@
         [2023]
       ]
     }
-  },  
-  {
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Acar",
-        "given": "S."
-      },
-      {
-        "family": "Dumas",
-        "given": "D."
-      },
-      {
-        "family": "Organisciak",
-        "given": "P."
-      },
-      {
-        "family": "Berthiaume",
-        "given": "K."
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [2023]
-      ]
-    },
-    "DOI": "http://dx.doi.org/10.13140/RG.2.2.19804.56968",
-    "abstract": "Creativity is highly valued in both education and the workforce, but assessing and developing creativity can be difficult without psychometrically robust and affordable tools. The open-ended nature of creativity assessments has made them difficult to score, expensive, often imprecise, and therefore impractical for school- or district-wide use. To address this challenge, we developed and validated the Measure of Original Thinking for Elementary School (MOTES) in five phases, including the development of the item pool and test instructions, expert validation, cognitive pilots, and validation of the automated scoring and latent test structure. MOTES consists of three game-like computerized activities (Uses, Examples, and Sentences subscales), with eight items in each for a total of 24 items. Using large language modeling techniques, MOTES is scored for originality by our open-access artificial intelligence (AI) platform with a high level of agreement with independent subjective human ratings across all three subscales at the response level (rs = .79, .91, and .85 for Uses, Examples, and Sentences, respectively). Confirmatory factor analyses showed a good fit with three factors corresponding to each game, subsumed under a higher-order originality factor. Internal consistency reliability was strong for both the subscales (H = .82, .85, and .88 for Uses, Examples, and Sentences, respectively) and the higher-order originality factor (H = .89). MOTES scores showed moderate positive correlations with external creative performance indicators as well as academic achievement. The implications of these findings are discussed in relation to the challenges of assessing creativity in schools and research.",
-    "title": "Measuring original thinking in elementary school: Development and validation of a computational psychometric approach",
-    "container-title": "Journal of Educational Psychology"
   },
 	{
-		"id": "http://zotero.org/users/95110/items/77VLSG5R",
+		"id": "Zielinska2023",
 		"type": "article-journal",
 		"abstract": "Divergent thinking (DT) has been at the heart of creativity measurement for over seven decades. At the same time, large-scale usage of DT tests is limited due to the tedious procedure of scoring the responses, which often requires several judges to assess thousands of participants’ ideas. Across two studies (N = 195 and N = 404), we examined the quality of artificial intelligence-based scoring models (Ocsai, Organisciak et al., 2023) to score Alternate Uses Tasks (Study 1: brick, Study 2: brick, can, rope). Based on more than 6000 ideas provided by participants in Polish and automatically translated to English, we fit a series of idea (response)- and prompt (object)-level structural equation models. When artificial intelligence-based and semantic distance scores were modeled together, latent correlations with human ratings ranged from r = 0.56 to r = 0.95 at the response (idea) level and from r = 0.61 to r = 0.99 at the object (prompt) level. A hierarchical (i.e., person-level) model with three DT tasks modeled together (Study 2) demonstrated a latent correlation between automatized and human ratings of r = 0.96 (Babbage) and r = 0.98 (DaVinci). Notably, the same results were obtained based on untranslated responses provided in Polish. Automated and human scores provided the same serial-order effect pattern and the same profile of differences under “be fluent” vs. “be creative” instructions. This investigation offers an initial yet compelling argument that the new algorithms provide a close-to-perfect score of DT tasks when benchmarked against human ratings, even when the responses are created in a different language and automatically translated to English or used in an untranslated form.",
 		"container-title": "Thinking Skills and Creativity",
@@ -269,7 +367,6 @@
     "type": "article-journal",
     "title": "The effects of research data management services: Associating the data curation life cycle with open research output",
     "container-title": "College & Research Libraries",
-    "status": "In press",
     "author": [
       {
         "family": "Pares",
@@ -282,14 +379,17 @@
     ],
     "issued": {
       "date-parts": [[2023]]
-    }
+    },
+    "DOI": "https://doi.org/10.5860/crl.84.5.751",
+    "abstract": "This study seeks to understand the relationship between research data management (RDM) services framed in the data curation life cycle and the production of open data. An electronic questionnaire was distributed to US researchers and RDM specialists, and the results were analyzed using Chi-Square tests for association. The data curation life cycle does associate with the production of open data and shareable research, but tasks like data management plans have stronger associations with the production of open data. The findings analyze the intersection of these concepts and provide insight into RDM services that facilitate the production of open data and shareable research"
   },
-  {
+    {
     "id": "Organisciak2023c",
     "type": "article-journal",
     "title": "Approximate Nearest Neighbor for long document relationship labeling in digital libraries",
     "container-title": "International Journal of Digital Libraries",
     "DOI": "https://doi.org/10.1007/s00799-023-00354-5",
+    "abstract": "Relationship tagging of long text documents is a growing need in information science, spurred by the emergence of multi-million book bibliographic digital libraries. Large digital libraries offer an unprecedented glimpse into cultural history through their collections, but the combination of collection scale and document length complicates their study, given that prior work on large corpora has dealt primarily with much shorter texts. This study presents and evaluates an approach for fast retrieval on long texts, which leverages a chunk-and-aggregate approach with document sub-units to capture nuanced similarity relationships at scales which are not otherwise tractable. This approach is evaluated on book relationships from the HathiTrust Digital Library and shows strong results for relationships beyond exact duplicates. Finally, we argue for the value of approximate nearest neighbor search for narrowing the search space for downstream classification and retrieval contexts.",
     "author": [
       {
         "family": "Organisciak",

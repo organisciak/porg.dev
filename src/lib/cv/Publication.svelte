@@ -70,7 +70,29 @@
     } else if (publication.URL) {
       doiOrUrl = `Retrieved from ${publication.URL}`;
     }
-    
+
+    // Special case for preprints
+    if (publication.type === 'article-journal' && publication['container-title'] === 'arXiv') {
+      journal = 'arXiv preprint';
+      volume = '';
+      issue = '';
+      pages = '';
+      doiOrUrl = publication.URL;
+    }
+
+    // Special case for SSRN
+    if (publication.type === 'article-journal' && publication['container-title'] === 'SSRN') {
+      journal = 'SSRN preprint';
+      volume = '';
+      issue = '';
+      pages = '';
+      doiOrUrl = publication.URL;
+    }
+
+    // Note for CSL with a status field of 'Under Review'
+    if (publication.status === 'Under review') {
+      doiOrUrl = 'Manuscript submitted for publication.' + doiOrUrl;
+    }
 
     // Combine all parts
     return `${authors} (${year}). ${title}. ${journal}${volume}${issue}${pages}. ${doiOrUrl}`;
@@ -165,6 +187,11 @@ TODO allow customizing the itemtype
   {#if data.URL && urlToDOIShort(data.URL) != data.DOI}
     <p>
       <strong>URL:</strong> <a href={data.URL} target="_blank" rel="noopener noreferrer" itemprop="url">{truncate_url(data.URL)}</a>
+    </p>
+  {/if}
+  {#if data.status}
+    <p>
+      <strong>Status:</strong>{data.status}
     </p>
   {/if}
 

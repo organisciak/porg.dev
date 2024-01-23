@@ -426,8 +426,6 @@ const degrees: education[]= [
     }
   ]
 
-
-
     const bioData = {
   "awards": [
     {
@@ -481,7 +479,7 @@ type PresentationExtension = {
   genre: "Conference Presentation"
 }
 
-  const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[] =
+const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[] =
         [
           {
             heading: "Journal Articles",

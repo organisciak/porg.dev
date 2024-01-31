@@ -1,0 +1,119 @@
+For the movie '$movie_name', generate tags describing the movie. Correct my title or year if necessary. Return a JSON object conforming to the following MovieMetadata class:
+
+```
+/**
+ * Represents the metadata for a movie.
+ */
+interface MovieMetadata {
+    /* Film Descriptions */
+      /** Genres of the movie. */
+      genres: string[];
+
+      /** Central themes explored in the movie. */
+      themes: string[];
+
+      /** Time periods in which the movie is set. */
+      timePeriods: string[];
+
+      /** Geographic and cultural settings of the movie. */
+      settings: string[];
+
+      /** Key plot elements or tags associated with the movie. */
+      plotTags: string[];
+
+      /** General tags providing hints about the movie's content or style. */
+      genericHintTags: string[];
+
+      /** Popularity: a score from 1-5 for how well-known the movie is **/
+      popularity: int;
+
+    /** Meta information about the movie. */
+       /** Basic metadata **/
+        title: string;
+        alternativeTitles: string[];
+        releaseYear: int;
+
+        /** Key individuals involved in the making of the movie. Can be actors, directors,  or other notable staff (e.g. a notable editor,  costume designer, cinematographer, etc.) */
+        peopleInvolved: string[];
+
+        /** Decade in which the film was released. */
+        filmDecade: string;
+
+        /** Country where the movie was produced. */
+        productionCountries: string[];
+
+        /** Notable awards won or nominated for. */
+        notableAwards: string[];
+
+      /** Related films, like sequels, prequels, remakes, the remade, other adaptations**/
+      relatedFilms: {name:string, year:int, relationship:string}[]
+}
+```
+
+Here's an example with The Graduate:
+
+```
+{
+    genres: ['Drama', 'Comedy', 'Romance'],
+    themes: ['Coming of Age', 'Adultery', 'Alienation', 'Social Conformity'],
+    timePeriods: ['1960s'],
+    settings: ['California', 'United States'],
+    plotTags: ['Love Triangle', 'Older Woman-Younger Man Relationship', 'Existential Crisis'],
+    genericHintTags: ['Cult Classic', 'Iconic Soundtrack', 'Character-Driven', 'Satirical'],
+    popularity: 4,
+
+    title: 'The Graduate',
+    alternativeTitles: [],
+    releaseYear: 1967,
+    peopleInvolved: ['Mike Nichols', 'Dustin Hoffman', 'Anne Bancroft', 'Katharine Ross'],
+    filmDecade: '1960s',
+    productionCountries: ['United States'],
+    notableAwards: ['Academy Award for Best Director (won)', 'Best Picture (nom)']
+    "relatedFilms": []
+};
+```
+
+And an example with Blade Runner:
+
+```
+{
+    "genres": ["Science Fiction", "Neo-noir"],
+    "themes": ["Artificial Intelligence", "Identity", "Humanity", "Dystopia", "Moral Ambiguity"],
+    "timePeriods": ["2019"],
+    "settings": ["Los Angeles", "Futuristic City", "Dystopian World"],
+    "plotTags": ["Androids", "Future Society", "Police Detective", "Existential Drama"],
+    "genericHintTags": ["Cult Classic", "Visually Striking", "Philosophical", "Cyberpunk Aesthetic"],
+    "popularity": 4,
+    "title": "Blade Runner",
+    "alternativeTitles": [],
+    "releaseYear": 1982,
+    "peopleInvolved": ["Ridley Scott", "Harrison Ford", "Rutger Hauer", "Sean Young", "Edward James Olmos"],
+    "filmDecade": "1980s",
+    "productionCountries": ["United States", "United Kingdom"],
+    "notableAwards": ["Academy Award for Best Art Direction (nom)", "Academy Award for Best Visual Effects (nom)"]
+    "relatedFilms": [{"name":"Blade Runner 2049", year:2017, relationship:"sequel"}]
+}
+```
+
+And Space Jam:
+
+```
+{
+    "genres": ["Comedy", "Sports", "Family", "Animation"],
+    "themes": ["Teamwork", "Basketball", "Adventure", "Animation and Live Action Mix"],
+    "timePeriods": ["1990s"],
+    "settings": ["Outer Space", "Basketball Court", "United States"],
+    "plotTags": ["Cartoon Characters", "Basketball Game", "Aliens", "Sport Competition"],
+    "genericHintTags": ["Family-Friendly", "Pop Culture References", "Iconic Characters", "Comedic Tone"],
+    "popularity": 4,
+
+    "title": "Space Jam",
+    "alternativeTitles": [],
+    "releaseYear": 1996,
+    "peopleInvolved": ["Joe Pytka", "Michael Jordan", "Bugs Bunny (Voiced by Billy West)", "Daffy Duck (Voiced by Dee Bradley Baker)"],
+    "filmDecade": "1990s",
+    "productionCountries": ["United States"],
+    "notableAwards": ["Grammy Award for Best Song Written for a Motion Picture (nom)"]
+    "relatedFilms": [{"name":"Space Jam: A New Legacy", year:2017, relationship:"sequel"}]
+}
+```

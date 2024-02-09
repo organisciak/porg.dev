@@ -1,0 +1,49 @@
+{
+  "genres": [
+    "Action",
+    "Crime",
+    "Thriller"
+  ],
+  "themes": [
+    "Undercover",
+    "Street Racing",
+    "Friendship",
+    "Betrayal"
+  ],
+  "timePeriods": [
+    "2000s"
+  ],
+  "settings": [
+    "Miami",
+    "United States"
+  ],
+  "plotTags": [
+    "Illegal Racing",
+    "Underworld",
+    "Fast Cars",
+    "Law Enforcement"
+  ],
+  "genericHintTags": [
+    "High-Octane",
+    "Sequel",
+    "Adrenaline-Fueled"
+  ],
+  "popularity": 4,
+  "title": "2 Fast 2 Furious",
+  "alternativeTitles": [],
+  "releaseYear": 2003,
+  "peopleInvolved": [
+    "John Singleton",
+    "Paul Walker",
+    "Tyrese Gibson",
+    "Eva Mendes"
+  ],
+  "filmDecade": "2000s",
+  "productionCountries": [
+    "United States",
+    "Germany"
+  ],
+  "notableAwards": [
+    "MTV Movie Award for Best On-Screen Team (won)"
+  ]
+}

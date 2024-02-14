@@ -12,7 +12,9 @@
   
     let guess: string = '';
     let guessList: string[] = [];
-    let gameInfo: GameState = { round: 0, rejectedMovies: [], possibleMovies:[], isCorrectAnswerInGroup: false, gameDone: false, win: false};
+    let gameInfo: GameState = { round: 0, rejectedMovies: [], possibleMovies:[],
+      isCorrectAnswerInGroup: false, gameDone: false, win: false,
+      pastGuesses: []};
     let movieOptions: string[] = [];
     let showResults: boolean = false;
     let tags: MovieTag[] = [];

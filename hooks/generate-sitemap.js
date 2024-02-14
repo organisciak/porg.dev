@@ -15,6 +15,10 @@ const extraUrls = [
   // Add more as needed
 ];
 
+const excludeUrls = [
+  `${basePath}/l/`,
+]
+
 function listSveltePages(dir, prefix = '') {
   const dirs = fs.readdirSync(dir, { withFileTypes: true });
   const pages = [];
@@ -48,7 +52,7 @@ function generateSitemap(urls) {
 async function updateSitemap() {
   const pages = listSveltePages(routesDir);
   const dynamicUrls = pages.map(page => `${basePath}${page === '/' ? '' : page}`);
-  const urls = [...new Set([...dynamicUrls, ...extraUrls])]; // Combine and remove duplicates
+  const urls = [...new Set([...dynamicUrls, ...extraUrls])].filter(url => !excludeUrls.includes(url));
   const sitemap = generateSitemap(urls);
 
   fs.writeFileSync(sitemapPath, `

@@ -1,5 +1,40 @@
 [
   {
+    "id": "Acar2023b",
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Dumas",
+        "given": "D."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Berthiaume",
+        "given": "K."
+      }
+    ],
+    "abstract": "Creativity is highly valued in both education and the workforce, but assessing and developing creativity can be difficult without psychometrically robust and affordable tools. The open-ended nature of creativity assessments has made them difficult to score, expensive, often imprecise, and therefore impractical for school- or district-wide use. To address this challenge, we developed and validated the Measure of Original Thinking for Elementary School (MOTES) in five phases, including the development of the item pool and test instructions, expert validation, cognitive pilots, and validation of the automated scoring and latent test structure. MOTES consists of three game-like computerized activities (Uses, Examples, and Sentences subscales), with eight items in each for a total of 24 items. Using large language modeling techniques, MOTES is scored for originality by our open-access artificial intelligence (AI) platform with a high level of agreement with independent subjective human ratings across all three subscales at the response level (rs = .79, .91, and .85 for Uses, Examples, and Sentences, respectively). Confirmatory factor analyses showed a good fit with three factors corresponding to each game, subsumed under a higher-order originality factor. Internal consistency reliability was strong for both the subscales (H = .82, .85, and .88 for Uses, Examples, and Sentences, respectively) and the higher-order originality factor (H = .89). MOTES scores showed moderate positive correlations with external creative performance indicators as well as academic achievement. The implications of these findings are discussed in relation to the challenges of assessing creativity in schools and research.",
+    "title": "Measuring original thinking in elementary school: Development and validation of a computational psychometric approach",
+    "container-title": "Journal of Educational Psychology",
+    "DOI": "http://dx.doi.org/10.1037/edu0000844",
+    "custom": [{
+      "key": "preprint",
+      "value": "http://dx.doi.org/10.13140/RG.2.2.19804.56968"
+    }],
+    "issued": {
+      "date-parts": [
+        [2024]
+      ]
+    }
+  }, 
+  {
     "type": "paper-conference",
     "id": "walsh2023",
     "author": [
@@ -62,40 +97,6 @@
     },
     "URL": "https://ceur-ws.org/Vol-3558/paper7875.pdf",
     "abstract": "This paper describes the history, policy, semantics, and uses of the HathiTrust Research Center Extracted Features dataset, an open-access representation of the 17+ million volume HathiTrust Digital Library, including a major current effort to extend computational access in a variety of more flexible and easily implemented ways, including a modern API supporting customizable visualizations and analyses."
-  }, 
-  {
-    "id": "Acar2023b",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Acar",
-        "given": "S."
-      },
-      {
-        "family": "Dumas",
-        "given": "D."
-      },
-      {
-        "family": "Organisciak",
-        "given": "P."
-      },
-      {
-        "family": "Berthiaume",
-        "given": "K."
-      }
-    ],
-    "abstract": "Creativity is highly valued in both education and the workforce, but assessing and developing creativity can be difficult without psychometrically robust and affordable tools. The open-ended nature of creativity assessments has made them difficult to score, expensive, often imprecise, and therefore impractical for school- or district-wide use. To address this challenge, we developed and validated the Measure of Original Thinking for Elementary School (MOTES) in five phases, including the development of the item pool and test instructions, expert validation, cognitive pilots, and validation of the automated scoring and latent test structure. MOTES consists of three game-like computerized activities (Uses, Examples, and Sentences subscales), with eight items in each for a total of 24 items. Using large language modeling techniques, MOTES is scored for originality by our open-access artificial intelligence (AI) platform with a high level of agreement with independent subjective human ratings across all three subscales at the response level (rs = .79, .91, and .85 for Uses, Examples, and Sentences, respectively). Confirmatory factor analyses showed a good fit with three factors corresponding to each game, subsumed under a higher-order originality factor. Internal consistency reliability was strong for both the subscales (H = .82, .85, and .88 for Uses, Examples, and Sentences, respectively) and the higher-order originality factor (H = .89). MOTES scores showed moderate positive correlations with external creative performance indicators as well as academic achievement. The implications of these findings are discussed in relation to the challenges of assessing creativity in schools and research.",
-    "title": "Measuring original thinking in elementary school: Development and validation of a computational psychometric approach",
-    "container-title": "Journal of Educational Psychology",
-    "custom": [{
-      "key": "preprint",
-      "value": "http://dx.doi.org/10.13140/RG.2.2.19804.56968"
-    }],
-    "issued": {
-      "date-parts": [
-        [2023]
-      ]
-    }
   },  
   {
     "id": "Acar2023a",

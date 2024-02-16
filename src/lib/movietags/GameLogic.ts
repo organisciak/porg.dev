@@ -82,6 +82,7 @@ class GameLogic {
 
         if (this.win || this.currentRound === this.maxRounds) {
             this.gameDone = true;
+            this.possibleMovies = new Set([this.correctMovie]);
         } else {
             this.currentRound++;
         }

@@ -52,6 +52,14 @@
     let journal = publication['container-title'] ? `${publication['container-title']}` : '';
     let volume = publication.volume ? `${publication.volume}` : '';
     let issue = publication.issue ? `(${publication.issue})` : '';
+
+    let event = publication.event ? publication.event : '';
+    if (event !== '') {
+      event = event + (publication.publisher ? `, ${publication.publisher}` : '');
+      event = event + (publication['event-place'] ? `, ${publication['event-place']}` : '');
+      event = event += '.';
+    }
+
     if (volume !== '' || issue !== '') journal += ', ';
 
     if (asHTML) {
@@ -94,8 +102,13 @@
       doiOrUrl = 'Manuscript submitted for publication.' + doiOrUrl;
     }
 
+  let journal_section = `${journal}${volume}${issue}${pages}`.trim();
+  if (journal_section !== '') {
+    journal_section = `${journal_section}. `;
+  }
+
     // Combine all parts
-    return `${authors} (${year}). ${title}. ${journal}${volume}${issue}${pages}. ${doiOrUrl}`;
+    return `${authors} (${year}). ${title}. ${journal_section}${event} ${doiOrUrl}`;
   }
 
 
@@ -135,7 +148,9 @@ TODO allow customizing the itemtype
   </div>
   
   {#if data.event}
-    <p class='italic text-sm text-slate-600 dark:text-slate-100' itemprop="locationCreated">{data.event}</p>
+    <p class='italic text-sm text-slate-600 dark:text-slate-100' itemprop="locationCreated">
+      {data.event}{#if data['publisher']}, {data['publisher']}{/if}{#if data['event-place']}, {data['event-place']}{/if}
+    </p>
   {/if}
   {#if data['container-title']}
   <div class="italic text-sm text-slate-600 dark:text-slate-100" itemprop="isPartOf" itemscope itemtype="https://schema.org/PublicationIssue">
@@ -197,7 +212,6 @@ TODO allow customizing the itemtype
 
   {#if data.custom}
       <strong>Additional Info:</strong>
-      {#each data.custom as field}
         <!-- Buttons, including select custom fields-->
         {#if data.custom}
           <p itemprop="additionalProperty" itemscope itemtype="http://schema.org/PropertyValue">
@@ -208,7 +222,7 @@ TODO allow customizing the itemtype
                 {:else if field.key.toLowerCase() === 'feature'}
                   <Fa class='inline' icon={faNewspaper} />
                 {:else}
-                <span itemprop="name">{capitalizeString(field.key)}</span>:
+                  <span itemprop="name">{capitalizeString(field.key)}</span>:
                 {/if}
                 {#if field.key.startsWith('http')}
                   <a href={field.value} target="_blank" rel="noopener noreferrer" itemprop="value">{capitalizeString(field.value)}</a>
@@ -220,7 +234,6 @@ TODO allow customizing the itemtype
             {/each}
           </p>
         {/if}
-      {/each}
   {/if}
 
   <!-- Buttons, including select custom fields-->

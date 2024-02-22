@@ -1,5 +1,24 @@
 [
   {
+    "type": "speech",
+    "author": [
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [2023]
+      ]
+    },
+    "title": "Talking with Machines: The Do's and Don'ts of Effective Chatbot Use",
+    "event": "Executive Energy Leadership Academy Alumni Event",
+    "event-place": "Golden, CO",
+    "publisher": "National Renewable Energy Lab",
+    "genre": "Invited Talk"
+  },
+  {
     "id": "Acar2023b",
     "type": "article-journal",
     "author": [

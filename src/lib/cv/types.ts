@@ -36,6 +36,7 @@ export interface CSLPublication {
   status?: string;
   genre?: string; //"Long Paper Talk" | "Poster" | "Proceedings Short Article" | "Proceedings Long Article" | "Panel";
   extra?: string;
+  'event-place'?: string;
   custom?: CSLCustomField[];
 }
 

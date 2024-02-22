@@ -12,3 +12,4 @@ static/huehunter-assets/raw/
 dev/movie-tags/data/v1-tags/
 dev/movie-tags/data/popular-movies-corpora.json
 src/cv.ipynb
+src/lib/movietags/json/

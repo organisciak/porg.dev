@@ -86,7 +86,7 @@
           won't win until you get the target movie alone, though!
         </div>
       {/if}
-      <button class="m-2 rounded-md bg-orange-400 p-2 font-bold text-white">{if guessList.length == 0}Skip{:else}Submit{/if}</button>
+      <button class="m-2 rounded-md bg-orange-400 p-2 font-bold text-white">{guessList.length === 0 ? 'Skip' : 'Submit'}</button>
     </form>
     <div>
       <p>How to play: You are guess one movie, multiple movies, or 'skip'.</p>
@@ -103,7 +103,9 @@
       <!-- TODO: a) reduce search space with every new round, not just a 'skip'. b) reduce not with a random guess, but from the wrong answers. -->
     </div>
   {/if}
-
+  <!--{#if gameInfo.round > 1}
+    <TagReveal {newTag} />
+  {/if}-->
   {#if showResults}
     <div>
       {#if gameInfo.win}

@@ -1,6 +1,76 @@
 [
   {
     "type": "speech",
+    "genre": "Conference Presentation",
+    "author": [
+      {"family": "Acar", "given": "S."},
+      {"family": "Organisciak", "given": "P."},
+      {"family": "Dumas", "given": "D."}
+    ],
+    "issued": {
+      "date-parts": [
+        ["2024"]
+      ]
+    },
+    "title": "Extending Automated Scoring to the Figural Form of the Torrance Tests of Creative Thinking",
+    "container-title": "AERA Annual Meeting",
+    "publisher": "American Educational Research Association",
+    "event-place": "Philadelphia"
+  },
+  {
+    "type": "speech",
+    "genre": "Conference Presentation",
+    "author": [
+      {"family": "Primi", "given": "R."},
+      {"family": "Beaty", "given": "R. E."},
+      {"family": "Patterson", "given": "J. D."},
+      {"family": "Benedek", "given": "M."},
+      {"family": "Paraboni", "given": "I."},
+      {"family": "Dumas", "given": "D."},
+      {"family": "Organisciak", "given": "P."},
+      {"family": "Caliço", "given": "T. A."}
+    ],
+    "issued": {
+      "date-parts": [
+        ["2024"]
+      ]
+    },
+    "title": "Beyond Human Raters: Using AI and NLP in PISA’s Creative Thinking Tests",
+    "container-title": "NCME Annual Meeting",
+    "publisher": "National Council on Measurement in Education",
+    "event-place": "Philadelphia"
+  },
+  {
+    "type":"speech",
+    "genre": "Panel",
+    "author": [
+      {"family": "Spitsberg", "given": "T."},
+      {"family": "Organisciak", "given": "P."},
+      {"family": "Acar", "given": "S."},
+      {"family": "Aldemir", "given": "T."},
+      {"family": "Urban", "given": "M."},
+      {"family": "Urban", "given": "K."}
+    ],
+    "contributor": [
+      {"family": "Spitsberg", "given": "T.", "role": "moderator"},
+      {"family": "Organisciak", "given": "P.", "role": "panelist"},
+      {"family": "Acar", "given": "S.", "role": "panelist"},
+      {"family": "Aldemir", "given": "T.", "role": "panelist"},
+      {"family": "Urban", "given": "M.", "role": "panelist"},
+      {"family": "Urban", "given": "K.", "role": "panelist"}
+    ],
+    "issued": {
+      "date-parts": [
+        ["2024"]
+      ]
+    },
+    "title": "AI Today and Tomorrow in Gifted, Creativity, and Talent Research",
+    "container-title": "AERA Annual Meeting",
+    "publisher": "American Educational Research Association",
+    "event-place": "Philadelphia"
+  },
+  {
+    "type": "speech",
     "author": [
       {
         "family": "Organisciak",

@@ -186,10 +186,12 @@
     },
     "URL": "https://ceur-ws.org/Vol-3558/paper7875.pdf",
     "abstract": "This paper describes the history, policy, semantics, and uses of the HathiTrust Research Center Extracted Features dataset, an open-access representation of the 17+ million volume HathiTrust Digital Library, including a major current effort to extend computational access in a variety of more flexible and easily implemented ways, including a modern API supporting customizable visualizations and analyses."
-  },  
+  }, 
+
   {
     "id": "Acar2023a",
     "type": "article-journal",
+    "container-title": "Journal of Creative Behavior",
     "author": [
       {
         "family": "Acar",
@@ -204,8 +206,8 @@
         "given": "D."
       }
     ],
-    "title": "A comparison of supervised and unsupervised learning methods in automated scoring of figural tests of creativity",
-    "status": "Under review",
+    "title": "Automated Scoring of Figural Tests of Creativity with Computer Vision",
+    "status": "Accepted",
     "issued": {
       "date-parts": [
         [2023]
@@ -214,7 +216,11 @@
     "custom": [{
       "key": "preprint",
       "value": "http://dx.doi.org/10.13140/RG.2.2.26865.25444"
-    }]
+    },{
+      "key": "Note",
+      "value": "Acar and Organisciak contributed equally."
+    }
+  ]
   },  
   {
     "id": "Durward2023",

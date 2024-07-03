@@ -1,5 +1,42 @@
 [
   {
+    "title": "Performance and Perception of Creativity and Academic Achievement in Elementary School Students: A Normal Mixture Modeling Study",
+    "author": [
+        {
+            "given": "Alisa",
+            "family": "Scherbakova"
+        },
+        {
+            "given": "Denis",
+            "family": "Dumas"
+        },
+        {
+            "given": "Selcuk",
+            "family": "Acar"
+        },
+        {
+            "given": "Kelly",
+            "family": "Berthiaume"
+        },
+        {
+            "given": "Peter",
+            "family": "Organisciak"
+        }
+    ],
+    "container-title": "Journal of Creative Behavior",
+    "DOI": "http://dx.doi.org/10.1002/jocb.646",
+    "type": "article-journal",
+    "issued": {
+        "date-parts": [
+            [
+                2024,
+                5,
+                6
+            ]
+        ]
+    }
+},
+  {
     "type": "speech",
     "genre": "Conference Presentation",
     "author": [
@@ -206,11 +243,12 @@
         "given": "D."
       }
     ],
+    "DOI": "http://doi.org/10.1002/jocb.677",
     "title": "Automated Scoring of Figural Tests of Creativity with Computer Vision",
-    "status": "Accepted",
+    "abstract": "In this three-study investigation, we applied various approaches to score drawings created in response to both Form A and Form B of the Torrance Tests of Creative Thinking-Figural (broadly TTCT-F) as well as the Multi-Trial Creative Ideation task (MTCI). We focused on TTCT-F in Study 1, and utilizing a random forest classifier, we achieved 79% and 81% accuracy for drawings only (r = .57; .54), 80% and 85% for drawings and titles (r = .59; .65), and 78% and 85% for titles alone (r = .54; .65), across Form A and Form B, respectively. We trained a combined model for both TTCT-F forms concurrently with fine-tuned vision transformer models (i.e., BEiT) observing accuracy on images of 83% (r = .64). Study 2 extended these analyses to 11,075 drawings produced for MTCI. With the feature-based regressors, we found a Pearson correlation with human labels (rs = .80, 78, and .76 for AdaBoost, and XGBoost, respectively). Finally, the vision transformer method demonstrated a correlation of r = .85. In Study 3, we re-analyzed the TTCT-F and MTCI data with unsupervised learning methods, which worked better for MTCI than TTCT-F but still underperformed compared to supervised learning methods. Findings are discussed in terms of research and practical implications featuring Ocsai-D, a new in-browser scoring interface.",
     "issued": {
       "date-parts": [
-        [2023]
+        [2024]
       ]
     },
     "custom": [{

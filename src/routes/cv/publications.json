@@ -1,5 +1,33 @@
 [
   {
+    "type": "article-journal",
+    "title": "Research methods and the use of visual representation in library and information science research",
+    "container-title": "Journal of the Association for Information Science and Technology",
+    "URL": "https://doi.org/10.1002/asi.24945",
+    "DOI": "10.1002/asi.24945",
+    "author": [
+      {
+        "family": "Matusiak",
+        "given": "K. K."
+      },
+      {
+        "family": "Osinska",
+        "given": "V."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Thomas Pitts",
+        "given": "R."
+      }
+    ],
+    "issued": {
+      "year": 2024
+    }
+  },
+  {
     "title": "Performance and Perception of Creativity and Academic Achievement in Elementary School Students: A Normal Mixture Modeling Study",
     "author": [
         {

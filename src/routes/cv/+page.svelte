@@ -683,7 +683,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
         <span class="font-semibold">{media.title}</span><br /><span class='italic'>{media.source}, {media.date}</span>
       </div>
       {/each}
-      </div>
+      </div> 
   </section>
 
   <section>
@@ -699,6 +699,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
   </section>
 
   {#each pubSections as pubSection}
+
     <section>
       <h3>{pubSection.heading}</h3>
       {#if pubSection.comment}

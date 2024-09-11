@@ -62,7 +62,7 @@
 		<p class="my-4">I work on creativity and AI, as well as massive-scale text analysis.</p>
   
 		<p class="my-4">
-			See my <a href="/cv">CV</a>, or find <a href="https://github.com/organisciak">me</a> and the <a href="https://github.com/massivetexts">Massive Texts Lab</a> on Github.
+			See my <a href="/cv">CV</a>, or find <a href="https://github.com/organisciak">me</a> and the <a href="https://github.com/massivetexts">Massive Texts Lab</a> on Github. Subscribe to <a href="https://buttondown.com/creativity" target="_blank">Creativity Byte</a> for updates on Education and AI.
 			</p>
 			
 			<p class="my-4">
@@ -75,11 +75,11 @@
 </section>
 
   <section id="research-section" class="container mx-auto px-4 my-5 sm:rounded-2xl">
-	<div class="flex flex-col xl:flex-row w-full text-center items-center justify-center">
-	  <div class="my-4 xl:my-8 xl:basis-1/4"><h2 class="text-3xl">Recent Research</h2></div>
+	<div class="flex flex-col w-full text-center items-center justify-center">
+	  <div class='w-full'><h2 class="my-4 text-3xl">Recent Research</h2></div>
 	  <div class="w-[80%]">
 		<FindingsCarousel findings={data} />
-	</div>
+	  </div>
 	</div>
   </section>
 

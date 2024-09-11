@@ -1,5 +1,34 @@
 [
   {
+    "main": "Computer vision techniques effectively automate scoring of figural creativity tests.",
+    "details": "A three-study investigation applied computer vision approaches to score drawn tests of creative thinking and ideation. The study achieved strong correlations with human scores, demonstrating the viability of automated creativity assessment across multiple test formats.",
+    "links": [
+      { "text": "Try a live demo", "url": "https://openscoring.du.edu/draw" },
+      {
+        "text": "Read the paper",
+        "url": "http://dx.doi.org/10.1002/jocb.677"
+      },
+      {
+        "text": "Read the preprint",
+        "url": "https://www.researchgate.net/publication/381672074_Automated_Scoring_of_Figural_Tests_of_Creativity_with_Computer_Vision"
+      }
+    ]
+  },
+  {
+    "main": "An analysis of how research leverages data types and visualizations in communication.",
+    "details": "A large content analysis of JASIS&T journals, complemented by computer vision, sheds light on visual data in scholarly communication.",
+    "links": [
+      {
+        "text": "Read the paper",
+        "url": "https://doi.org/10.1002/asi.24945"
+      },
+      {
+        "text": "Brief overview",
+        "url": "https://twitter.com/POrg/status/1822747461976207576"
+      }
+    ]
+  },
+  {
     "main": "Scoring creativity with Large-Language models greatly improves on state of the art models.",
     "details": "Studying creativity is challenged by the difficulty of measuring and scoring tests of originality. We improved on automated scoring of one common test, the Alternate Uses Task, to a large degree.",
     "links": [
@@ -14,7 +43,7 @@
     ]
   },
   {
-    "main": "Artificial data can address class imbalance in digital library classifiers.",
+    "main": "Synthetic data can address class imbalance in digital library classifiers.",
     "details": "We seek to identify whole-part relationships between books, such as when one story is published in another anthology. This type of relationship is hard to infer from cataloguing metadata, but we find that constructing artificial books can teach a deep neural network classifier what the relationship looks like.",
     "links": [
       {

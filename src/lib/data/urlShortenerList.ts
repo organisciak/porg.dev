@@ -7,7 +7,7 @@ export const urlMappings: UrlMapping[] = [
   {
     shorturl: "lis4015",
     destination:
-      "https://du.leganto.exlibrisgroup.com/leganto/public/01UODE_INST/lists/47414179690002766?auth=SAML",
+      "https://du.leganto.exlibrisgroup.com/leganto/public/01UODE_INST/lists/52628494590002766?auth=SAML",
   },
   {
     shorturl: "poster",

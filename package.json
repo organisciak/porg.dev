@@ -49,10 +49,11 @@
   },
   "type": "module",
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/free-regular-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@vercel/analytics": "^1.0.2",
-    "seedrandom": "^3.0.5"
+    "seedrandom": "^3.0.5",
+    "upgrade": "^1.1.0"
   }
 }

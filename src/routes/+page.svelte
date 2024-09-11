@@ -3,7 +3,7 @@
 	import data from './recent_findings.json';
 	import { MetaTags } from 'svelte-meta-tags';
 	import Fa from 'svelte-fa';
-    import { faMastodon, faGithub, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+    import { faGithub, faTwitter, faLinkedinIn, faBluesky } from '@fortawesome/free-brands-svg-icons';
 	
 	const meta = {
 		title: 'Peter Organisciak',
@@ -59,8 +59,7 @@
 		<h1 class="text-4xl my-8">Peter Organisciak</h1>
 		<p class="italic my-4"><em>Associate Professor, Research Methods and Information Science, 
 		University of Denver</em></p>
-		<p class="my-4">I work on creativity and AI, as well as massive-scale text analysis.
-			<span class='font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-transparent bg-clip-text'>I'm on research sabbatical until September 2024</span>, building new and interesting things.</p>
+		<p class="my-4">I work on creativity and AI, as well as massive-scale text analysis.</p>
   
 		<p class="my-4">
 			See my <a href="/cv">CV</a>, or find <a href="https://github.com/organisciak">me</a> and the <a href="https://github.com/massivetexts">Massive Texts Lab</a> on Github.
@@ -89,7 +88,7 @@
 	  <p>See my papers on <a href="https://scholar.google.com/citations?user=RfHXG5EAAAAJ&hl=en">Google Scholar</a>. I once wrote about crowds and text at <a href="https://medium.com/porganized">Sense and Sentences</a>.</p>
   
 	  <h2 class="text-3xl">Consulting</h2>
-	  <p><a href="mailto:organisciak+consult@gmail.com">Contact me</a> to inquire about creativity and AI, data mining and machine learning assistance. I like playful projects and am based in the Denver area.</p>
+	  <p><a href="mailto:peter@neuristics.org">Contact me</a> to inquire about creativity and AI, data mining and machine learning assistance. I like playful projects and am based in the Denver area.</p>
 	</div>
   </section>
 
@@ -102,7 +101,7 @@
   	<hr />
   <section id="follow-section" class="container mx-auto px-4 my-5">
 	<div class="flex text-center items-center justify-center">
-		<a href="https://sigmoid.social/@porg" aria-label="Follow me on Mastodon" target="_blank"rel="me" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faMastodon} /></a>
+		<a href="https://bsky.app/profile/organi.bsky.social" aria-label="Follow me on Bluesky" target="_blank" rel="me" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faBluesky} /></a>
 		<a href="https://github.com/organisciak"  aria-label="Follow me on Github" target="_blank" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faGithub} /></a>
 		<a href="https://twitter.com/POrg" target="_blank" aria-label="Please don't follow me on X" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faTwitter} /></a>
 		<a href="https://www.linkedin.com/in/organisciak/" aria-label="I have a LinkedIn, I suppose" target="_blank" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faLinkedinIn} /></a>

@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Card from '$lib/Card.svelte';
 	import data from './recent_findings.json';
 	import { MetaTags } from 'svelte-meta-tags';
 	import Fa from 'svelte-fa';
     import { faGithub, faTwitter, faLinkedinIn, faBluesky } from '@fortawesome/free-brands-svg-icons';
-	
+	import FindingsCarousel from "$lib/components/FindingsCarousel.svelte";
+
 	const meta = {
 		title: 'Peter Organisciak',
-		description: 'Applied AI Researcher',
+		description: 'Professor and Applied AI Researcher',
 		url: 'https://www.porg.dev'
 	}
 </script>
@@ -77,7 +77,9 @@
   <section id="research-section" class="container mx-auto px-4 my-5 sm:rounded-2xl">
 	<div class="flex flex-col xl:flex-row w-full text-center items-center justify-center">
 	  <div class="my-4 xl:my-8 xl:basis-1/4"><h2 class="text-3xl">Recent Research</h2></div>
-	  <div class="my-3 xl:basis-1/2"><Card shuffle={false} msgs={data}></Card></div>
+	  <div class="w-[80%]">
+		<FindingsCarousel findings={data} />
+	</div>
 	</div>
   </section>
 
@@ -85,10 +87,12 @@
   <section id="writing-section" class='container mx-auto px-4 my-20'>
 	<div class="flex flex-col xl:flex-row w-full text-center items-center justify-center">
 	  <h2 class="text-3xl">Writing</h2>
-	  <p>See my papers on <a href="https://scholar.google.com/citations?user=RfHXG5EAAAAJ&hl=en">Google Scholar</a>. I once wrote about crowds and text at <a href="https://medium.com/porganized">Sense and Sentences</a>.</p>
+	  <p>See my papers on <a href="https://scholar.google.com/citations?user=RfHXG5EAAAAJ&hl=en">Google Scholar</a>.
+		I once wrote about crowds and text at <a href="https://medium.com/porganized">Sense and Sentences</a>.
+	</p>
   
 	  <h2 class="text-3xl">Consulting</h2>
-	  <p><a href="mailto:peter@neuristics.org">Contact me</a> to inquire about creativity and AI, data mining and machine learning assistance. I like playful projects and am based in the Denver area.</p>
+	  <p>I consult with Neuristics. <a href="mailto:peter@neuristics.org">Contact me</a> to inquire about creativity and AI, data mining and machine learning assistance.</p>
 	</div>
   </section>
 

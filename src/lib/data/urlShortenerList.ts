@@ -18,16 +18,19 @@ export const urlMappings: UrlMapping[] = [
   },
   {
     shorturl: "poster",
+    description: "Poster Parser custom GPT - upload a poster picture and can a custom calendar invite",
     destination:
       "https://chat.openai.com/g/g-md7NjNgW7-poster-parser",
   },
   {
     shorturl: "chat-strategies",
+    description: "Strategies for using chat models",
     destination:
       "https://github.com/organisciak/Scripting-Course/blob/master/docs/chat-model-strategies.md",
   },
   {
     shorturl: "book",
+    description: "Book an appointment with me",
     destination:
       "https://outlook.office.com/bookwithme/user/c18251ee829c449d93137a48095330c2@du.edu?anonymous&ep=plink",
   },

@@ -1,13 +1,20 @@
 export type UrlMapping = {
   shorturl: string;
   destination: string;
+  description?: string;
 };
 
 export const urlMappings: UrlMapping[] = [
   {
     shorturl: "lis4015",
+    description: "Course reserves link for LIS 4015",
     destination:
       "https://du.leganto.exlibrisgroup.com/leganto/public/01UODE_INST/lists/52628494590002766?auth=SAML",
+  },
+  {
+    shorturl: "acquisitions",
+    description: "Digital version of acquisitions exercise for LIS 4015",
+    destination: "https://claude.site/artifacts/66930404-85cb-4014-b4f7-24def8ae917f",
   },
   {
     shorturl: "poster",

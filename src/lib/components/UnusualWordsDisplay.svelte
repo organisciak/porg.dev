@@ -40,89 +40,30 @@
 -->
 
 <script lang="ts">
-    import { onMount } from 'svelte';
-    import { fade } from 'svelte/transition';
-    import { Card, CardContent } from "$lib/components/ui/card";
-    import { Button } from "$lib/components/ui/button";
-    import Fa from 'svelte-fa';
-    import { faRotate } from '@fortawesome/free-solid-svg-icons';
-  
+    import RandomItemLoader from '$lib/components/RandomItemLoader.svelte';
+
     type Word = {
-      word: string;
-      pos: string;
-      definition: string;
-      example: string;
-      rarity: number;
-      potential_offensiveness: number;
-      wiktionary: string;
+        word: string;
+        pos: string;
+        definition: string;
+        example: string;
+        rarity: number;
+        potential_offensiveness: number;
+        wiktionary: string;
     };
-  
-    let currentWord: Word | null = null;
-    let isLoading = false;
-  
-    async function fetchRandomWord() {
-        isLoading = true;
-        try {
-            const response = await fetch('/api/random-word');
-            if (!response.ok) {
-                throw new Error('Failed to fetch word');
-            }
-            currentWord = await response.json();
-        } catch (error) {
-            console.error('Error fetching word:', error);
-            currentWord = {
-                word: "Error",
-                pos: "",
-                definition: "Failed to load word. Please try again.",
-                example: "",
-                rarity: 0,
-                potential_offensiveness: 0,
-                wiktionary: ""
-            };
-        } finally {
-            isLoading = false;
-        }
-    }
-  
-    function handleRefresh() {
-        fetchRandomWord();
-    }
-  
-    onMount(() => {
-        fetchRandomWord();
-    });
 </script>
-  
-    <Card class="w-80 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
-        <CardContent class="p-6">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200">
-                    {#if currentWord}
-                        {currentWord.word}
-                    {:else}
-                        Loading...
-                    {/if}
-                </h2>
-                <Button
-                    variant="ghost"
-                    size="icon"
-                    on:click={handleRefresh}
-                    disabled={isLoading}
-                    class={`transition-opacity duration-500 ${isLoading ? 'opacity-50' : 'opacity-100'}`}
-                    aria-label="Refresh word"
-                >
-                    <Fa icon={faRotate} class="h-5 w-5" />
-                </Button>
-            </div>
-            {#if currentWord}
-                <div transition:fade={{ duration: 300 }}>
-                    <p class="text-xs text-gray-500 dark:text-gray-400 mb-2">{currentWord.pos}</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">{currentWord.definition}</p>
-                    <p class="text-sm text-gray-700 dark:text-gray-300 italic mb-2">"{currentWord.example}"</p>
-                    <p class="text-xs text-gray-500 dark:text-gray-400">Rarity: {currentWord.rarity}/5</p>
-                </div>
-            {:else}
-                <p class="text-sm text-gray-600 dark:text-gray-400">Loading word...</p>
-            {/if}
-        </CardContent>
-    </Card>
+
+<RandomItemLoader apiEndpoint="/api/random-word" defaultTitle="Unusual Word">
+    <svelte:fragment slot="title" let:currentItem={word}>
+        {word ? word.word : 'Unusual Word'}
+    </svelte:fragment>
+    
+    <svelte:fragment slot="default" let:currentItem={word}>
+        {#if word}
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-2">{word.pos}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">{word.definition}</p>
+            <p class="text-sm text-gray-700 dark:text-gray-300 italic mb-2">"{word.example}"</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Rarity: {word.rarity}/5</p>
+        {/if}
+    </svelte:fragment>
+</RandomItemLoader>

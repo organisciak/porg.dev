@@ -16,7 +16,7 @@ export const urlMappings: UrlMapping[] = [
   {
     shorturl: "acquisitions",
     description: "Digital version of acquisitions exercise for LIS 4015",
-    destination: "https://claude.site/artifacts/66930404-85cb-4014-b4f7-24def8ae917f",
+    destination: "https://claude.site/artifacts/66930404-85cb-4014-b4f7-24def8ae917f?fullscreen=true",
     category: "teaching",
   },
   {

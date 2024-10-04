@@ -117,13 +117,13 @@
 		}}
 		>
 	      <Carousel.Content class="-ml-1">
-			<Carousel.Item class="pl-1 xs:basis-1/2 sm:basis-1/3">
+			<Carousel.Item class="pl-1 sm:basis-1/2 md:basis-1/3 xl:basis-1/4">
 				<div class="p-1"><UnusualWordsDisplay /></div>
 			</Carousel.Item>
-			<Carousel.Item class="pl-1 xs:basis-1/2 sm:basis-1/3">
+			<Carousel.Item class="pl-1 sm:basis-1/2 md:basis-1/3 xl:basis-1/4">
 				<div class="p-1"><RandomColorSwatchLoader /></div>
 			</Carousel.Item>
-	        <Carousel.Item class="pl-1 xs:basis-1/2 sm:basis-1/3">
+	        <Carousel.Item class="pl-1 xs:basis-1/2 md:basis-1/3 xl:basis-1/4">
 				<div class="p-1">
 				<Card.Root class="h-full">
 					<Card.Header>
@@ -131,7 +131,7 @@
 					</Card.Header>
 					<Card.Content>
 						<a href="/huehunter" data-sveltekit-prefetch >
-							<img src="/huehunter-assets/color-mix_RGBmix.webp" class="inline-block w-48 h-48" alt="Hue Hunter image" />
+							<img src="/huehunter-assets/color-mix_RGBmix.webp" class="inline-block w-auto" alt="Hue Hunter image" />
 						</a>
 					<p>An installable daily color composition game.</p>
 					</Card.Content>

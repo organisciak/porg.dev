@@ -14,9 +14,11 @@
     export let shareButton: boolean = true;
     export let border: boolean = false;
     // ALWAYS SAFELIST POSSIBLE VALUES if writing tailwind classes dynamically
-    export let textSize: "xs" | "sm" | "base" | "lg" | "xl" = "base";
-    export let width: 28 | 32 | 48 | 64 | 72 | "full" = 32;
-    export let height: 28 | 32 | 48 | 64 | 72 | "full" = 28;
+    export let textSize: "xs" | "sm" | "base" | "lg" | "xl" | "inherit" = "inherit";
+    // height and width are now set dynamically based on the parent container (i.e. always full here)
+    // the below is now removed
+    //export let width: 28 | 32 | 48 | 64 | 72 | "full" = 32;
+    //export let height: 28 | 32 | 48 | 64 | 72 | "full" = 28;
 
     let shareable: boolean = false;
     let hexvis: boolean = false;
@@ -76,7 +78,7 @@
     {/if}
 
   <div role="button" tabindex="0"
-    class="w-{width} h-{height} flex flex-col text-sm p-1 items-start"
+    class="w-full h-full flex flex-col text-sm p-1 items-start"
       in:fade={{ delay: fadeInDelay, duration: fadeInDuration }}
       style='background-color:{csshex}; color:{textColor}' 
       aria-label="{showHex ? "Select to see CSS": "Select-to-see-color is Disabled"}"

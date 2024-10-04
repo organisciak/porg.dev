@@ -1,4 +1,10 @@
 {
+    "search.exclude": {
+      "**/dev": true
+    },
+    "files.exclude": {
+      "**/dev": true,
+    },
     "eslint.validate": [
         "javascript",
       "typescript",

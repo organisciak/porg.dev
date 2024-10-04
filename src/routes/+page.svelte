@@ -6,6 +6,8 @@
 	import FindingsCarousel from "$lib/components/FindingsCarousel.svelte";
 	import UnusualWordsDisplay from "$lib/components/UnusualWordsDisplay.svelte";
 	import * as Carousel from "$lib/components/ui/carousel/index.js";
+	import * as Card from "$lib/components/ui/card/index.js";
+  import RandomColorSwatchLoader from '$lib/components/RandomColorSwatchLoader.svelte';
 
 	const meta = {
 		title: 'Peter Organisciak',
@@ -103,8 +105,48 @@
   </section>
 
   <section id="unusual-words-section" class="page-section">
-	<h2 class="text-4xl font-semibold text-center mb-4">Other</h2>
-	<UnusualWordsDisplay />
+	<h2 class="text-4xl font-semibold text-center mb-4">Fun</h2>
+	<div class="flex flex-col w-full text-center items-center justify-center">
+	<div class="w-[80%]">
+	    <Carousel.Root class="mx-auto px-4"
+		opts={{
+			align: "start",
+			loop: true,
+			slidesToScroll: 'auto',
+			containScroll: 'trimSnaps'
+		}}
+		>
+	      <Carousel.Content class="-ml-1">
+			<Carousel.Item class="pl-1 xs:basis-1/2 sm:basis-1/3">
+				<div class="p-1"><UnusualWordsDisplay /></div>
+			</Carousel.Item>
+			<Carousel.Item class="pl-1 xs:basis-1/2 sm:basis-1/3">
+				<div class="p-1"><RandomColorSwatchLoader /></div>
+			</Carousel.Item>
+	        <Carousel.Item class="pl-1 xs:basis-1/2 sm:basis-1/3">
+				<div class="p-1">
+				<Card.Root class="h-full">
+					<Card.Header>
+					<Card.Title><span class="font-bold cmy-text-gradient">Hue Hunter</span></Card.Title>
+					</Card.Header>
+					<Card.Content>
+						<a href="/huehunter" data-sveltekit-prefetch >
+							<img src="/huehunter-assets/color-mix_RGBmix.webp" class="inline-block w-48 h-48" alt="Hue Hunter image" />
+						</a>
+					<p>An installable daily color composition game.</p>
+					</Card.Content>
+					<Card.Footer>
+					<a href="/huehunter" data-sveltekit-prefetch>Play</a>
+					</Card.Footer>
+				</Card.Root>
+				</div>	
+	        </Carousel.Item>
+	      </Carousel.Content>
+	      <Carousel.Previous />
+	      <Carousel.Next />
+	    </Carousel.Root>
+	</div>
+</div>
   </section>
 
   <section id="ai-note" class="h-0 overflow-hidden page-section">
@@ -125,6 +167,9 @@
 
   <style lang='postcss'>
 	
+	.cmy-text-gradient {
+        @apply bg-gradient-to-r from-cyan-600 via-magenta to-yellow-500 text-transparent bg-clip-text;
+    }
 	.bg-clip-text {
 	  -webkit-background-clip: text;
 	  background-clip: text;

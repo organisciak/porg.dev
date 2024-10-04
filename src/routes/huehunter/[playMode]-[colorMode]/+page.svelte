@@ -580,17 +580,17 @@
                     <div class="flex-grow w-full flex flex-row">
                         <div class="h-full flex-1">
                             <ColorBoxBase shareButton={false} showHex={false}
-                                textSize='xs' width="full" height="full" csshex={rgbToHex(practiceColor)} colorname="Your Color" />
+                                textSize='xs' csshex={rgbToHex(practiceColor)} colorname="Your Color" />
                         </div>
                         <div class="h-full flex-1">
                         <ColorBoxBase shareButton={false} showHex={false}
-                            textSize='xs' width="full" height="full" csshex={rgbToHex(target)} colorname="Target Color" />
+                            textSize='xs' csshex={rgbToHex(target)} colorname="Target Color" />
                         </div>
                     </div>
                 {:else}
                     <div class="flex-grow w-full">
                         <ColorBoxBase shareButton={false} showHex={false}
-                            textSize='xs' width="full" height="full" csshex={rgbToHex(target)} colorname={targetColorName} />
+                            textSize='xs' csshex={rgbToHex(target)} colorname={targetColorName} />
                     </div>
                 {/if}
             {/if}

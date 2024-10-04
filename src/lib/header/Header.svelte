@@ -30,18 +30,18 @@
 			always: true,
 			icon: faBriefcase
 		},
-		{
-			name: 'Colors',
-			url: '/colors',
-			always: true,
-			icon: faSwatchbook
-		},
-		{
-			name: 'Hue Hunter',
-			url: '/huehunter',
-			always: true,
-			icon: faFillDrip
-		}
+		// {
+		// 	name: 'Colors',
+		// 	url: '/colors',
+		// 	always: true,
+		// 	icon: faSwatchbook
+		// },
+		// {
+		// 	name: 'Hue Hunter',
+		// 	url: '/huehunter',
+		// 	always: true,
+		// 	icon: faFillDrip
+		// }
 	];
 </script>
 

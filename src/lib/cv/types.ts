@@ -7,6 +7,52 @@ interface CSLName {
   given: string;
 }
 
+export type Award = {
+  title: string;
+  amount: string;
+  funder: string;
+  grantNumber?: string;
+  grantUrl?: string;
+  investigators: string[];
+  timeframe: string;
+  subgrant?: string;
+}
+
+export type Product = {
+  category: string;
+  items: {
+    name: string;
+    url?: string;
+    description?: string;
+  }[];
+}
+
+export type Course = {
+  code: string;
+  title: string;
+  credits: string;
+  format?: string;
+  materials?: string;
+}
+
+export type Position = {
+  position: string,
+  organization: string,
+  timeframe: string
+}
+
+export type Education = {
+  degree: string,
+  university: string,
+  year: string,
+  additionalDetails: {
+      major?: string,
+      dissertationTitle?: string,
+      thesisTitle?: string,
+      committee?: string[]
+  }
+}
+
 interface CSLEditor extends CSLName {}
 
 interface CSLCustomField {

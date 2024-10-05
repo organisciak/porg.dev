@@ -7,7 +7,8 @@
 	import UnusualWordsDisplay from "$lib/components/UnusualWordsDisplay.svelte";
 	import * as Carousel from "$lib/components/ui/carousel/index.js";
 	import * as Card from "$lib/components/ui/card/index.js";
-  import RandomColorSwatchLoader from '$lib/components/RandomColorSwatchLoader.svelte';
+	import RandomColorSwatchLoader from '$lib/components/RandomColorSwatchLoader.svelte';
+	import Autoplay from "embla-carousel-autoplay";
 
 	const meta = {
 		title: 'Peter Organisciak',
@@ -115,6 +116,11 @@
 			slidesToScroll: 'auto',
 			containScroll: 'trimSnaps'
 		}}
+		plugins={[
+			Autoplay({
+			delay: 5000,
+			})
+		]}
 		>
 	      <Carousel.Content class="-ml-1">
 			<Carousel.Item class="pl-1 sm:basis-1/2 md:basis-1/3 xl:basis-1/4">
@@ -131,7 +137,7 @@
 					</Card.Header>
 					<Card.Content>
 						<a href="/huehunter" data-sveltekit-prefetch >
-							<img src="/huehunter-assets/color-mix_RGBmix.webp" class="inline-block w-auto" alt="Hue Hunter image" />
+							<img src="/huehunter-assets/color-mix_RGBmix.webp" class="inline-block max-h-48" alt="Hue Hunter image" />
 						</a>
 					<p>An installable daily color composition game.</p>
 					</Card.Content>

@@ -9,121 +9,154 @@
 
   const typedPublications: CSLPublication[] = publications;
 
-  const funding = `
-  ### Awarded
+  type Award = {
+    title: string;
+    amount: string;
+    funder: string;
+    grantNumber?: string;
+    grantUrl?: string;
+    investigators: string[];
+    timeframe: string;
+    subgrant?: string;
+  }
 
-\"Measuring Original Thinking in Elementary School: A Computational
-Psychometric Approach\" (2020-2023) \
-\$964,081 \
-Institute of Education Sciences
-[#R305A200519](https://ies.ed.gov/funding/grantsearch/details.asp?ID=4477) \
-Selcuk Acar (University of North Texas, Principal), Dumas, D. G.
-(Co-Principal), **Organisciak, P.** (Co-Principal) \
-DU sub-grant: \$451,988.
+  const awards: Award[] = [
+    {
+      title: "Measuring Original Thinking in Elementary School: A Computational Psychometric Approach",
+      amount: "$964,081",
+      funder: "Institute of Education Sciences",
+      grantNumber: "R305A200519",
+      grantUrl: "https://ies.ed.gov/funding/grantsearch/details.asp?ID=4477",
+      investigators: ["Selcuk Acar (University of North Texas, Principal)", "Dumas, D. G. (Co-Principal)", "Organisciak, P. (Co-Principal)"],
+      timeframe: "2020-2024",
+      subgrant: "DU sub-grant: $451,988"
+    },
+    {
+      title: "Collaborative Analysis Liaison Librarians (CALL)",
+      amount: "$883,034",
+      funder: "Institution of Library and Museum Services",
+      grantNumber: "RE-13-19-0027-19",
+      grantUrl: "https://www.imls.gov/grants/awarded/re-13-19-0027-19",
+      investigators: ["Wade Bishop (Principal, University of Tennessee Knoxville)", "Carole Tenopir (UTK, Co-Principal)", "Suzie Allard (UTK, Co-Principal)", "Organisciak, P. (Director)"],
+      timeframe: "2019-2022",
+      subgrant: "DU total: $129,746.00"
+    },
+    {
+      title: "Text Duplication and Similarity in Massive Digital Collections",
+      amount: "$276,943",
+      funder: "Institute of Museum and Library Services",
+      grantNumber: "LG-86-18-0061-18",
+      grantUrl: "https://www.imls.gov/grants/awarded/lg-86-18-0061-18",
+      investigators: ["Organisciak, P. (Principal)"],
+      timeframe: "2018-2021"
+    },
+    {
+      title: "Exploring the Billions of Words in the HathiTrust Corpus with Bookworm: HathiTrust + Bookworm",
+      amount: "$324,841",
+      funder: "National Endowment for the Humanities",
+      investigators: ["Downie, J. S. (Illinois, Principal)", "Aiden, E. L. (Rice University)"],
+      timeframe: "2014-2017"
+    }
+  ];
 
+  type Product = {
+    category: string;
+    items: {
+      name: string;
+      url?: string;
+      description?: string;
+    }[];
+  }
 
-\"Collaborative Analysis Liaison Librarians (CALL)\" (2019-2022)\
-\$883,034 \
-Institution of Library and Museum Services.
-[#RE-13-19-0027-19](https://www.imls.gov/grants/awarded/re-13-19-0027-19) \ 
-Wade Bishop (Principal, University of Tennessee Knoxville), Carole
-Tenopir (UTK, Co-Principal), Suzie Allard (UTK, Co-Principal),
-**Organisciak, P.** (Director). \
-DU total: \$129,746.00.
+  const products: Product[] = [
+    {
+      category: "Research Websites and Tools",
+      items: [
+        {
+          name: "Open Creativity Scoring (OCS)",
+          url: "https://openscoring.du.edu",
+          description: "(2207 unique users, June 2020-August 2022)"
+        },
+        {
+          name: "SaDDL",
+          url: "https://saddl.du.edu"
+        },
+        {
+          name: "Bookworm",
+          url: "https://bookworm.htrc.illinois.edu"
+        },
+        {
+          name: "Bookworm Playground",
+          url: "https://bookworm.htrc.illinois.edu/app/"
+        }
+      ]
+    },
+    {
+      category: "Software",
+      items: [
+        {
+          name: "HTRC Features Reader",
+          url: "http://github.com/htrc/htrc-feature-reader",
+          description: "A mature, long-developed library for working with non-consumptive book data."
+        },
+        {
+          name: "Open Scoring",
+          url: "https://github.com/massivetexts/open-scoring",
+          description: "Tools for creativity scoring."
+        }
+      ]
+    }
+  ];
 
+  type Course = {
+    code: string;
+    title: string;
+    credits: string;
+    format?: string;
+    materials?: string;
+  }
 
-\"Text Duplication and Similarity in Massive Digital Collections\"
-(2018-2021) \
-\$276,943 (Total value: \$351,031) \
-Institute of Museum and Library Services.
-[#LG-86-18-0061-18](https://www.imls.gov/grants/awarded/lg-86-18-0061-18) \
-**Organisciak, P.** (Principal)
+  const courses: Course[] = [
+    {
+      code: "LIS 4015",
+      title: "User and Access Services",
+      credits: "3 credit hours",
+      format: "in-person"
+    },
+    {
+      code: "LIS 4015",
+      title: "User and Access Services",
+      credits: "2 credit hours",
+      format: "online"
+    },
+    {
+      code: "LIS 4220",
+      title: "Data Curation",
+      credits: "3 credit hours"
+    },
+    {
+      code: "LIS 4235",
+      title: "Scripting for Large Databases",
+      credits: "4 credit hours",
+      materials: "https://github.com/organisciak/Scripting-Course"
+    },
+    {
+      code: "LIS 4700DH",
+      title: "Digital Humanities",
+      credits: "3 credit hours"
+    },
+    {
+      code: "590TXT, LIS4991TXT",
+      title: "Text Mining",
+      credits: "3 credit hours",
+      materials: "https://github.com/organisciak/Text-Mining-Course",
+      format: "Independent study at DU"
+    }
+  ];
 
+  const source = `
 
-"Exploring the Billions of Words in the HathiTrust Corpus with Bookworm:
-HathiTrust + Bookworm" (2014-2017) \
-\$324,841 (Total value: \$504,373). \
-National Endowment for the Humanities. \
-Downie, J. S. (Illinois, Principal), Aiden, E. L. (Rice University).
-\$324,841. NEH implementation grant. Sept 2014-Aug 2017.
-
-
-**DU Sponsored - Awarded**
-
-
-Dumas, D. G., **Organisciak, P.**, 84335, Internal Awards, \"FB-Dumas
-Organisciak\", \$6,486.00. (start: April 1, 2019, end: June 30, 2020).
-
-
-**Organisciak, P.**, Internal Awards, \"MOODs: Identifying Outlier
-Passages and Texts in the Legislative Process\", \$5,040.56, Awarded,
-peer-reviewed/refereed. (sub: April 2, 2018, start: July 2018, end: June
-2019).
-  `
-
-	const source = `
-
-# Products
-
-
-## Research Websites and Tools
-
-- Open Creativity Scoring (OCS) -- <https://openscoring.du.edu>
-  - (2207 unique users, June 2020-August 2022)
-- SaDDL -- [https://saddl.du.edu](https://saddl.du.edu/)
-- Bookworm -- <https://bookworm.htrc.illinois.edu>
-- Bookworm Playground - <https://bookworm.htrc.illinois.edu/app/>
-
-
-## Software
-
-- HTRC Features Reader - <http://github.com/htrc/htrc-feature-reader>\
-  - A mature, long-developed library for working with non-consumptive book
-data.
-
-- Open Scoring - <https://github.com/massivetexts/open-scoring>\
-  - Tools for creativity scoring.
-
-
-# Teaching
-
-
-## Teaching Experience
-
-
-### Courses
-
-
-LIS 4015 -- User and Access Services
-
-
-3 credit hours (in-person). 2 credit hours (online).
-
-
-LIS 4220 -- Data Curation
-
-3 credit hours.
-
-
-LIS 4235 -- Scripting for Large Databases
-
-4 credit hours. Course materials available at
-<https://github.com/organisciak/Scripting-Course>.
-
-LIS 4700DH -- Digital Humanities
-
-3 credit hours.
-
-590TXT, LIS4991TXT -- Text Mining
-
-Course materials available at
-<https://github.com/organisciak/Text-Mining-Course> (Alt metrics: 98
-stars, 29 forks). Originally taught at University of Illinois, this
-course is only taught at DU as an independent study, LIS 4991.
-
-## Directed Student Learning
-
-### Dissertation, Committee Member
+### Directed Student Learning, Dissertation Committee Member
 
 -   Matthew Durward . \"Audience Specific Text Recommendation for
     English Language Learners" University of Canterbury. (2021-)
@@ -237,8 +270,7 @@ Committee Chair, iSchools Conference Student Symposium Chair, Barcelona.
 
 ## Committee Member
 
-Committee Member, Program Committee of Digital Humanities Workshop (DHW)
-2021. (2021).
+Committee Member, Program Committee of Digital Humanities Workshop (DHW) 2021. (2021).
 
 Committee Member, JCDL 2019 Outreach Committee. (May 2018 - June 2019).
 
@@ -344,7 +376,8 @@ Working with Dr. Pier-Luc de Chantel to develop an API to Open
 Creativity Scoring, making that system's scoring methods available to
 use in other tools and websites, such as Qualtrics.
 	`
-    const bio = {
+
+	const bio = {
         name: "Dr. Peter Organisciak",
         title: "Associate Professor, University of Denver, Research Methods and Information Science",
         lab: "Massive Texts Lab",
@@ -631,10 +664,12 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 <section>
     <h2>Professional Positions</h2>
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap text-sm">
       {#each professionalPositions as position}
-        <div class="flex-none w-48 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5"> 
-            <span class="dark:text-slate-300">{position.position}</span><br/> {position.organization}. ({position.timeframe})
+        <div class="flex-none basis-1/4 sm:basis-1/2"> 
+          <div class="dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5"> 
+            <span class="dark:text-slate-300 font-semibold">{position.position}</span><br/> {position.organization}. ({position.timeframe})
+          </div>
         </div>
       {/each}
     </div>
@@ -644,7 +679,8 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
     <h2>Education</h2>
     <div class="flex flex-wrap">
       {#each degrees as edu}
-      <div class="flex-none w-48 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5">
+      <div class="flex-none basis-1/3 ">
+        <div class="dark:bg-slate-700 m-2 rounded-lg bg-slate-200 p-5">
           <span class="dark:text-slate-300"><span class="font-bold">{edu.degree}</span>, {edu.university}, {edu.year}</span>
           <div class="text-sm p-0 m-0">
           {#if edu.additionalDetails.major}
@@ -657,6 +693,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
             <p class='my-2 italic ml-4'>Committee: {edu.additionalDetails.committee.join(', ')}</p>
           {/if}
           </div></div> 
+        </div>
         
       {/each}
 
@@ -667,11 +704,13 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
     <h2>Awards</h2>
     <div class="flex flex-wrap">
       {#each bioData.awards as award}
-      <div class="text-sm flex-initial w-48 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5 dark:text-slate-300">
+      <div class="flex-initial basis-48">
+        <div class="text-sm dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5 dark:text-slate-300">
           <span class='font-semibold'>{award.name}</span>, {award.date}
+        </div>
       </div>
       {/each}
-      </div>
+    </div>
   </section>
 
 
@@ -679,19 +718,68 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
     <h2>Media</h2>
     <div class="flex flex-wrap">
       {#each bioData.media as media}
-      <div class="text-sm flex-initial w-96 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5 dark:text-slate-300">
-        <span class="font-semibold">{media.title}</span><br /><span class='italic'>{media.source}, {media.date}</span>
+      <div class="flex-initial basis-96">
+        <div class="text-sm dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5 dark:text-slate-300">
+          <span class="font-semibold">{media.title}</span><br /><span class='italic'>{media.source}, {media.date}</span>
+        </div>
       </div>
       {/each}
-      </div> 
+    </div> 
   </section>
 
   <section>
-    <h2>Funding</h2>
-    <div class="flex flex-row">
-      <div class="w-full md:w-11/12">
-          <SvelteMarkdown source={funding} />
+    <h2>Awarded Grants</h2>
+    <div class="flex flex-wrap">
+      {#each awards as award}
+        <div class="flex-initial basis-72">
+          <div class="dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5">
+            <p class="font-bold text-base mb-2">{award.title}</p>
+            <p class="text-xs"><span class="font-semibold">Amount:</span> {award.amount}</p>
+            <p class="text-xs"><span class="font-semibold">Funder:</span> {award.funder}</p>
+            {#if award.grantNumber}
+              <p class="text-xs">
+                <span class="font-semibold">Grant Number:</span> 
+                {#if award.grantUrl}
+                  <a href={award.grantUrl} target="_blank" rel="noopener noreferrer">{award.grantNumber}</a>
+                {:else}
+                  {award.grantNumber}
+                {/if}
+              </p>
+            {/if}
+            <p class="text-xs"><span class="font-semibold">Investigators:</span> {award.investigators.join(', ')}</p>
+            <p class="text-xs"><span class="font-semibold">Timeframe:</span> {award.timeframe}</p>
+            {#if award.subgrant}
+              <p class="text-xs"><span class="font-semibold">Subgrant:</span> {award.subgrant}</p>
+            {/if}
+          </div>
+        </div>
+      {/each}
+    </div>
+  </section>
+
+  <section>
+    <h2>Products</h2>
+    {#each products as product}
+      <h3 class="mt-4 mb-2 font-semibold">{product.category}</h3>
+      <div class="flex flex-wrap">
+        {#each product.items as item}
+          <div class="flex-initial basis-64">
+            <div class="dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5">
+              <h4 class="font-bold mb-2">
+                {#if item.url}
+                  <a href={item.url} target="_blank" rel="noopener noreferrer">{item.name}</a>
+                {:else}
+                  {item.name}
+                {/if}
+              </h4>
+              {#if item.description}
+                <p class="text-sm">{item.description}</p>
+              {/if}
+            </div>
+          </div>
+        {/each}
       </div>
+    {/each}
   </section>
 
   <section>
@@ -713,6 +801,30 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
       </div>
     </section>
   {/each}
+
+  <section>
+    <h2>Teaching</h2>
+    <h3 class="mt-4 mb-2 font-semibold">Courses</h3>
+    <div class="flex flex-wrap">
+      {#each courses as course}
+        <div class="flex-initial basis-64">
+          <div class="dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5">
+            <h4 class="font-bold mb-2">{course.code} - {course.title}</h4>
+            <p class="text-sm">{course.credits}</p>
+            {#if course.format}
+              <p class="text-sm"><span class="font-semibold">Format:</span> {course.format}</p>
+            {/if}
+            {#if course.materials}
+              <p class="text-sm">
+                <span class="font-semibold">Materials:</span> 
+                <a href={course.materials} target="_blank" rel="noopener noreferrer">Link</a>
+              </p>
+            {/if}
+          </div>
+        </div>
+      {/each}
+    </div>
+  </section>
 
 <section id="cv">
     <div class="container mx-auto mt-5">

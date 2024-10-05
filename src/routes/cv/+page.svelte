@@ -2,23 +2,12 @@
 	import SvelteMarkdown from 'svelte-markdown';
   import publications from './publications.json';
   import Publication from '$lib/cv/Publication.svelte';
-  import type { CSLPublication } from '$lib/cv/types';
+  import type { CSLPublication, Award, Product, Course, Position, Education } from '$lib/cv/types';
   import { MetaTags } from 'svelte-meta-tags';
   import Fa from 'svelte-fa';
   import { faOrcid } from '@fortawesome/free-brands-svg-icons';
 
   const typedPublications: CSLPublication[] = publications;
-
-  type Award = {
-    title: string;
-    amount: string;
-    funder: string;
-    grantNumber?: string;
-    grantUrl?: string;
-    investigators: string[];
-    timeframe: string;
-    subgrant?: string;
-  }
 
   const awards: Award[] = [
     {
@@ -59,15 +48,6 @@
     }
   ];
 
-  type Product = {
-    category: string;
-    items: {
-      name: string;
-      url?: string;
-      description?: string;
-    }[];
-  }
-
   const products: Product[] = [
     {
       category: "Research Websites and Tools",
@@ -107,14 +87,6 @@
       ]
     }
   ];
-
-  type Course = {
-    code: string;
-    title: string;
-    credits: string;
-    format?: string;
-    materials?: string;
-  }
 
   const courses: Course[] = [
     {
@@ -387,13 +359,7 @@ use in other tools and websites, such as Qualtrics.
         gscholar: "https://scholar.google.com/citations?hl=en&user=RfHXG5EAAAAJ&view_op=list_works&sortby=pubdate",
     };
 
-    type positions = {
-        position: string,
-        organization: string,
-        timeframe: string
-    }
-
-    const professionalPositions: positions[] = [
+  const professionalPositions: Position[] = [
         {
       "position": "Associate Professor",
       "organization": "University of Denver",
@@ -416,19 +382,7 @@ use in other tools and websites, such as Qualtrics.
     }
   ]
 
-  type education = {
-        degree: string,
-        university: string,
-        year: string,
-        additionalDetails: {
-            major?: string,
-            dissertationTitle?: string,
-            thesisTitle?: string,
-            committee?: string[]
-        }
-  }
-
-const degrees: education[]= [
+const degrees: Education[]= [
     {
       "degree": "Ph.D.",
       "university": "University of Illinois at Urbana-Champaign",
@@ -459,7 +413,7 @@ const degrees: education[]= [
     }
   ]
 
-    const bioData = {
+const bioData = {
   "awards": [
     {
       "name": "Teaching Appreciation Dinner, University of Denver",
@@ -644,20 +598,24 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
     <p><strong itemprop="jobTitle">{bio.title}</strong></p>
     
     <div class="flex flex-row">
-      <p itemprop="affiliation"> 
-        <a href={bio.labUrl} target="_blank">{bio.lab}</a>
+      <p itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+        <span itemprop="name">University of Denver</span>
+        <meta itemprop="url" content="https://www.du.edu/" />
+      </p>
+      <p itemprop="memberOf" itemscope itemtype="http://schema.org/ResearchOrganization"> 
+        <a href={bio.labUrl} target="_blank" itemprop="name">{bio.lab}</a>
         <meta itemprop="url" content={bio.labUrl} />
       </p>
       <p>
-        <Fa class='inline text-lg text-lime-500' icon={faOrcid} /> <a href={bio.orcid} target="_blank">{bio.orcid.split('https://orcid.org/')[1]}</a>
-          <meta itemprop="sameAs" content={bio.orcid} />
+        <Fa class='inline text-lg text-lime-500' icon={faOrcid} /> <a href={bio.orcid} target="_blank" itemprop="identifier">{bio.orcid.split('https://orcid.org/')[1]}</a>
+        <meta itemprop="sameAs" content={bio.orcid} />
       </p>
-      <button>
-          <a href={bio.gscholar} target="_blank" itemprop="sameAs">Google Scholar</a>
-          <meta itemprop="sameAs" content={bio.gscholar} />
-      </button>
       <p>
-          <a href={"mailto:" + bio.email} itemprop="email">{bio.email}</a>
+        <a href={bio.gscholar} target="_blank" itemprop="sameAs">Google Scholar</a>
+        <meta itemprop="sameAs" content={bio.gscholar} />
+      </p>
+      <p>
+        <a href={"mailto:" + bio.email} itemprop="email">{bio.email}</a>
       </p>
     </div>
   </section>
@@ -666,9 +624,16 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
     <h2>Professional Positions</h2>
     <div class="flex flex-wrap text-sm">
       {#each professionalPositions as position}
-        <div class="flex-none basis-1/4 sm:basis-1/2"> 
+        <div class="flex-none basis-1/4 sm:basis-1/2" itemprop="workExperience" itemscope itemtype="http://schema.org/OrganizationRole"> 
           <div class="dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5"> 
-            <span class="dark:text-slate-300 font-semibold">{position.position}</span><br/> {position.organization}. ({position.timeframe})
+            <span class="dark:text-slate-300 font-semibold" itemprop="roleName">{position.position}</span><br/> 
+            <span itemprop="memberOf" itemscope itemtype="http://schema.org/Organization">
+              <span itemprop="name">{position.organization}</span>
+            </span>. 
+            (<span itemprop="startDate">{position.timeframe.split('-')[0]}</span>
+            {#if position.timeframe.includes('-')}
+              - <span itemprop="endDate">{position.timeframe.split('-')[1]}</span>
+            {/if})
           </div>
         </div>
       {/each}
@@ -679,15 +644,19 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
     <h2>Education</h2>
     <div class="flex flex-wrap">
       {#each degrees as edu}
-      <div class="flex-none basis-1/3 ">
+      <div class="flex-none basis-1/3" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
         <div class="dark:bg-slate-700 m-2 rounded-lg bg-slate-200 p-5">
-          <span class="dark:text-slate-300"><span class="font-bold">{edu.degree}</span>, {edu.university}, {edu.year}</span>
+          <span class="dark:text-slate-300">
+            <span class="font-bold" itemprop="degreeType">{edu.degree}</span>, 
+            <span itemprop="name">{edu.university}</span>, 
+            <span itemprop="graduationYear">{edu.year}</span>
+          </span>
           <div class="text-sm p-0 m-0">
           {#if edu.additionalDetails.major}
-            <p class='my-2 italic ml-4'>Major: {edu.additionalDetails.major}</p>
+            <p class='my-2 italic ml-4'>Major: <span itemprop="educationalProgram">{edu.additionalDetails.major}</span></p>
           {/if}
           {#if edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}
-            <p class='my-2 italic ml-4'>{edu.additionalDetails.dissertationTitle ? 'Dissertation' : 'Thesis'}: {edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}</p>
+            <p class='my-2 italic ml-4'>{edu.additionalDetails.dissertationTitle ? 'Dissertation' : 'Thesis'}: <span itemprop="dissertationTitle">{edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}</span></p>
           {/if}
           {#if edu.additionalDetails.committee}
             <p class='my-2 italic ml-4'>Committee: {edu.additionalDetails.committee.join(', ')}</p>

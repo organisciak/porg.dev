@@ -61,8 +61,8 @@
 	  </div>
   
 	  <div class="flex-1 basis-1/2 px-10 text-center">
-		<h1 class="text-5xl font-bold my-8">Peter Organisciak</h1>
-		<p class="italic my-4"><em>Associate Professor, Research Methods and Information Science, 
+		<h1 class="text-5xl font-black font-serif mt-8 mb-4">Peter Organisciak</h1>
+		<p class="italic font-serif my-4"><em>Associate Professor, Research Methods and Information Science, 
 		University of Denver</em></p>
 		<p class="my-4">I work on creativity and AI, as well as massive-scale text analysis.</p>
   
@@ -81,7 +81,7 @@
 
 <section id="research-section" class="page-section">
 	<div class="flex flex-col w-full text-center items-center justify-center">
-	  <h2 class="my-4 text-4xl font-semibold">Recent Research</h2>
+	  <h2 class="my-4 text-4xl font-serif font-semibold">Recent Research</h2>
 	  <div class="w-[80%]">
 		<FindingsCarousel findings={data} />
 	  </div>
@@ -91,22 +91,22 @@
 
   <section id="writing-section" class='page-section'>
 	<div class="flex flex-col xl:flex-row w-full text-center items-center justify-center">
-	  <div>
-		<h2 class="text-4xl font-semibold mb-4">Writing</h2>
+	  <div class="w-[80%]">
+		<h2 class="text-4xl font-serif font-semibold mb-4">Writing</h2>
 		<p>See my papers on <a href="https://scholar.google.com/citations?user=RfHXG5EAAAAJ&hl=en">Google Scholar</a>.
 		I once wrote about crowds and text at <a href="https://medium.com/porganized">Sense and Sentences</a>.
 		</p>
 	  </div>
 	  
 	  <div class="mt-8 xl:mt-0 xl:ml-8">
-		<h2 class="text-4xl font-semibold mb-4">Consulting</h2>
+		<h2 class="text-4xl font-serif font-semibold mb-4">Consulting</h2>
 		<p>I consult with Neuristics. <a href="mailto:peter@neuristics.org">Contact me</a> to inquire about creativity and AI, data mining and machine learning assistance.</p>
 	  </div>
 	</div>
   </section>
 
   <section id="unusual-words-section" class="page-section">
-	<h2 class="text-4xl font-semibold text-center mb-4">Fun</h2>
+	<h2 class="text-4xl font-serif font-semibold text-center mb-4">Fun</h2>
 	<div class="flex flex-col w-full text-center items-center justify-center">
 	<div class="w-[80%]">
 	    <Carousel.Root class="mx-auto px-4"

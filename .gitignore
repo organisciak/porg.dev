@@ -10,3 +10,4 @@ node_modules
 .output
 static/huehunter-assets/raw/
 vite.config.js.timestamp-*
+src/lib/movietags/

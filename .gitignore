@@ -11,3 +11,5 @@ node_modules
 static/huehunter-assets/raw/
 vite.config.js.timestamp-*
 src/lib/movietags/
+typescript-dev.ipynb
+dev/splash.psd

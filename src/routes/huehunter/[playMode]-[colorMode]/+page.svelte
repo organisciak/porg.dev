@@ -4,8 +4,8 @@
     import seedrandom from 'seedrandom';
     import { MetaTags } from 'svelte-meta-tags';
     import Fa from 'svelte-fa';
-    import { faBullseye, faQuestion, faGear, faUser, faChartSimple } from '@fortawesome/free-solid-svg-icons';
-    import { faGithub, faLinkedinIn, faMastodon, faTwitter } from '@fortawesome/free-brands-svg-icons';
+    import { faGithub, faLinkedinIn, faBluesky } from '@fortawesome/free-brands-svg-icons';
+    import { Target, CircleHelp, Settings, User, ChartColumn, Share } from 'lucide-svelte';
 
     /* Color tools */
     import { cmykToRgb, hexToRgb, rgbToHex, rgbColorToRGBDistance,
@@ -427,10 +427,9 @@
     <div class='text-center flex flex-col'>
         <p>Created in Denver with ❤️ by <a href="https://www.porg.dev">Peter Organisciak</a></p>
         <div class="flex text-center items-center justify-center">
-            <a href="https://sigmoid.social/@porg" aria-label="Follow me on Mastodon" target="_blank"rel="me" class="p-1 text-lg hover:-rotate-6"><Fa icon={faMastodon} /></a>
-            <a href="https://github.com/organisciak"  aria-label="Follow me on Github" target="_blank" class="p-1 text-lg hover:-rotate-6"><Fa icon={faGithub} /></a>
-            <a href="https://twitter.com/POrg" target="_blank" aria-label="Please don't follow me on X" class="p-1 text-lg hover:-rotate-6"><Fa icon={faTwitter} /></a>
-            <a href="https://www.linkedin.com/in/organisciak/" aria-label="I have a LinkedIn, I suppose" target="_blank" class="p-1 text-lg hover:-rotate-6"><Fa icon={faLinkedinIn} /></a>
+            <a href="https://bsky.app/profile/porg.dev" aria-label="Follow me on Bluesky" target="_blank" rel="me" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faBluesky} /></a>
+		<a href="https://github.com/organisciak"  aria-label="Follow me on Github" target="_blank" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faGithub} /></a>
+		<a href="https://www.linkedin.com/in/organisciak/" aria-label="I have a LinkedIn, I suppose" target="_blank" class="p-1 text-2xl hover:-rotate-6"><Fa icon={faLinkedinIn} /></a>
         </div>
     </div>
 </Modal>
@@ -462,9 +461,9 @@
             <a class="font-bold cmy-text-gradient" href="/huehunter/daily-rgb">{meta.title}</a>
         </h1>
         <div class="flex text-lg justify-center items-center" class:text-xl={startMenu}>
-            <button class="flex flex-initial w-10 h-10 justify-center items-center" on:click={() => (showModal = true)}><Fa class="text-cyan-500" icon={faQuestion} /></button>
-            <button class="flex flex-initial w-10 h-10 justify-center items-center" on:click={() => (settingsModal = true)}><Fa class="text-magenta" icon={faGear} /></button>
-            <button class="flex flex-initial w-10 h-10 justify-center items-center" on:click={() => (stats = guessHistoryStats()) && (statsModal = true) }><Fa class="text-yellow-500" icon={faChartSimple} /></button>
+            <button class="flex flex-initial w-10 h-10 justify-center items-center" on:click={() => (showModal = true)}><CircleHelp class="text-cyan-500" /></button>
+            <button class="flex flex-initial w-10 h-10 justify-center items-center" on:click={() => (settingsModal = true)}><Settings class="text-magenta" /></button>
+            <button class="flex flex-initial w-10 h-10 justify-center items-center" on:click={() => (stats = guessHistoryStats()) && (statsModal = true) }><ChartColumn class="text-yellow-500" /></button>
         </div>
         <div>
             {#if playMode === 'PRACTICE'}
@@ -697,8 +696,8 @@
                 
             </div>
                 <div class="flex flex-row my-px">
-                    <Fa class="m-1 text-gray-300 dark:text-gray-600" icon={faBullseye} />
-                    <Fa class="m-1 text-gray-300 dark:text-gray-600" icon={faUser} />
+                    <Target class="m-1 text-gray-300 dark:text-gray-600" />
+                    <User class="m-1 text-gray-300 dark:text-gray-600" />
                     <span class="m-1 w-16 text-sm text-gray-300 dark:text-gray-600">Score</span>
                 </div>
                 <!--loop through filteredGuess from the back to the front, up to ten guesses-->

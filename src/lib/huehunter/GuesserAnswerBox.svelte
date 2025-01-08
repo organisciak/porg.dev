@@ -1,8 +1,8 @@
 <script lang='ts'>
     import type { Guess } from '$lib/huehunter/types.ts';
     import { rgbToHex } from '$lib/utils/colorTools';
-    import Fa from 'svelte-fa';
-    import { faBullseye, faUser } from '@fortawesome/free-solid-svg-icons';
+    import { Target } from 'lucide-svelte';
+    import { User } from 'lucide-svelte';
 
     export let guess: Guess;
 
@@ -15,7 +15,7 @@
 <div class="flex space-x-4 items-center mb-2">
     <!-- Display the target color -->
     <div class="w-24 h-16 p-1 text-xs rounded-md flex-initial" style="color: {targetTextColor}; background-color: {rgbToHex(guess.targetColor)};">
-        <Fa class="m-1" icon={faBullseye} />Target
+        <Target class="m-1" />Target
     </div>
 
     <div>
@@ -24,7 +24,7 @@
 
     <!-- Display the guessed color -->
     <div class="w-24 h-16 p-1 text-xs rounded-md flex-initial" style="color: {guessTextColor}; background-color: {rgbToHex(guess.guessColor)};">
-        <Fa class="m-1" icon={faUser} /> Guess
+        <User class="m-1" /> Guess
     </div>
     
 </div>

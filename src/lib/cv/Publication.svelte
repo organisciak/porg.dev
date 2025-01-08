@@ -1,8 +1,7 @@
 <script lang="ts">
   import type { CSLPublication } from './types';
   import { capitalizeString } from '$lib/utils/stringUtils';
-  import Fa from 'svelte-fa';
-  import { faNewspaper, faTrophy } from '@fortawesome/free-solid-svg-icons';
+  import { Newspaper, Trophy } from 'lucide-svelte';
   export let data: CSLPublication;
 
   let copied = false;
@@ -230,9 +229,9 @@ TODO allow customizing the itemtype
             {#each data.custom as field}
               {#if !customFieldsAsButtons.includes(field.key)}
                 {#if field.key.toLowerCase() === 'award'}
-                  <Fa class='inline' icon={faTrophy} />
+                  <Trophy class='inline w-5 h-5' />
                 {:else if field.key.toLowerCase() === 'feature'}
-                  <Fa class='inline' icon={faNewspaper} />
+                  <Newspaper class='inline w-5 h-5' />
                 {:else}
                   <span itemprop="name">{capitalizeString(field.key)}</span>:
                 {/if}

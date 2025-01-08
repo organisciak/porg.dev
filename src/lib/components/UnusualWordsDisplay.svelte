@@ -32,8 +32,7 @@
   Dependencies:
   - svelte
   - shadcn-svelte
-  - @fortawesome/svelte-fontawesome
-  - @fortawesome/free-solid-svg-icons
+  - lucide-svelte
   - tailwindcss (for styling)
 
   Note: Ensure that the import paths for shadcn-svelte components are correct for your project structure.

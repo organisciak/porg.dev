@@ -3,8 +3,7 @@
     import { fade } from 'svelte/transition';
     import * as Card from "$lib/components/ui/card";
     import { Button } from "$lib/components/ui/button";
-    import Fa from 'svelte-fa';
-    import { faRotate } from '@fortawesome/free-solid-svg-icons';
+    import { Repeat } from 'lucide-svelte';
 
     export let apiEndpoint: string;
     export let defaultTitle: string = 'Item';
@@ -51,7 +50,7 @@
                 class={`m-0 p-0 transition-opacity duration-500 ${isLoading ? 'opacity-50' : 'opacity-100'}`}
                 aria-label="Refresh item"
             >
-                <Fa icon={faRotate} class="h-5 w-5" />
+                <Repeat class="h-5 w-5" />
             </Button>
         </Card.Title>
     </Card.Header>

@@ -3,8 +3,7 @@
     import { onMount } from 'svelte';
     import ColorBoxCanvas from '$lib/colorbox/ColorBoxCanvas.svelte';
     import { getTertiaryColors } from '$lib/utils/colorBox';
-    import Fa from 'svelte-fa';
-    import { faShare } from '@fortawesome/free-solid-svg-icons';
+    import { Share } from 'lucide-svelte';
 
     export let colorname: string | null = null;
     export let csshex: string;
@@ -101,7 +100,7 @@
                   aria-label="Share this color"
                   title="Share this color"
                   tabindex="0">
-                  <span class="text-lg" style="color:{bgColor}"><Fa icon={faShare} /></span>
+                  <span class="text-lg" style="color:{bgColor}"><Share /></span>
               </button>
           {/if}
 

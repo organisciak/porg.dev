@@ -57,7 +57,7 @@
     </Card.Header>
     <Card.Content>
         {#if currentItem}
-            <div transition:fade={{ duration: 300 }}>
+            <div transition:fade|global={{ duration: 300 }}>
                 <slot {currentItem} />
             </div>
         {:else}

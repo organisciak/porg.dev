@@ -9,7 +9,7 @@ export async function load({ params }) {
   // Validate playMode and colorMode
   if (!allowablePlayModes.includes(playMode) ||
         !allowableColorModes.includes(colorMode)) {
-    throw redirect(308, '/huehunter/daily-rgb');
+    redirect(308, '/huehunter/daily-rgb');
   }
 
   return {

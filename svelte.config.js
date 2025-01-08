@@ -1,4 +1,4 @@
-import { vitePreprocess } from "@sveltejs/kit/vite";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import vercel from "@sveltejs/adapter-vercel";
 
 //const dev = process.env.NODE_ENV === 'development';

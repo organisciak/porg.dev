@@ -71,7 +71,7 @@
 </script>
 
 <div class="flex flex-col {border ? "p-1 pb-4" : "p-1"} border w-full h-full rounded-sm items-start justify-start"
-      style='background:{bgColor}; border-color: {borderColor};'  in:fade={{ duration: fadeInDuration }}>
+      style='background:{bgColor}; border-color: {borderColor};'  in:fade|global={{ duration: fadeInDuration }}>
 
   {#if shareButton && shareable}
       <ColorBoxCanvas hidden={true} bind:getBlob={getBlob} bind:canvas={canvas} colorname={colorname} csshex={csshex} />
@@ -79,7 +79,7 @@
 
   <div role="button" tabindex="0"
     class="w-full h-full flex flex-col text-sm p-1 items-start"
-      in:fade={{ delay: fadeInDelay, duration: fadeInDuration }}
+      in:fade|global={{ delay: fadeInDelay, duration: fadeInDuration }}
       style='background-color:{csshex}; color:{textColor}' 
       aria-label="{showHex ? "Select to see CSS": "Select-to-see-color is Disabled"}"
       title="{colorname}"
@@ -106,7 +106,7 @@
           {/if}
 
           {#if hexvis && showHex}
-            <div class="text-xs" in:fade={{ duration: 1000 }}>{csshex}</div>
+            <div class="text-xs" in:fade|global={{ duration: 1000 }}>{csshex}</div>
           {/if}
       </div>
       

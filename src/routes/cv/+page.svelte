@@ -726,6 +726,28 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
     </div>
   </section>
 
+
+
+  <section>
+    <h2>Publications</h2>
+  </section>
+
+  {#each pubSections as pubSection}
+
+    <section>
+      <h3>{pubSection.heading}</h3>
+      {#if pubSection.comment}
+        <p class="italic text-sm">{pubSection.comment}</p>
+      {/if}
+
+      <div class="flex flex-wrap">
+        {#each pubSection.entries as pub}
+          <Publication data={pub} />
+        {/each}
+      </div>
+    </section>
+  {/each}
+
   <section>
     <h2>Products</h2>
     {#each products as product}
@@ -750,27 +772,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
       </div>
     {/each}
   </section>
-
-  <section>
-    <h2>Publications</h2>
-  </section>
-
-  {#each pubSections as pubSection}
-
-    <section>
-      <h3>{pubSection.heading}</h3>
-      {#if pubSection.comment}
-        <p class="italic text-sm">{pubSection.comment}</p>
-      {/if}
-
-      <div class="flex flex-wrap">
-        {#each pubSection.entries as pub}
-          <Publication data={pub} />
-        {/each}
-      </div>
-    </section>
-  {/each}
-
+  
   <section>
     <h2>Teaching</h2>
     <h3 class="mt-4 mb-2 font-semibold">Courses</h3>

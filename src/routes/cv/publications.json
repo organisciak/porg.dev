@@ -1,6 +1,110 @@
 [
   {
     "type": "article-journal",
+    "title": "How creative is this child?: Student Demographics Affect How Teachers Rate Creativity",
+    "container-title": "Journal of Experimental Education",
+    "author": [
+      {
+        "family": "Kagan",
+        "given": "S."
+      },
+      {
+        "family": "Dumas",
+        "given": "D."
+      },
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Berthiaume",
+        "given": "K."
+      }
+    ],
+    "issued": {
+      "date-parts": [[2025]]
+    },
+    "status": "in-press"
+  },
+  {
+    "type": "chapter",
+    "title": "Making more sense with machines: artificial intelligence at the HathiTrust Research Center",
+    "container-title": "Navigating Artificial Intelligence for Cultural Heritage Organisations",
+    "publisher": "UCL Press",
+    "author": [
+      {
+        "family": "Layne-Worthey",
+        "given": "G."
+      },
+      {
+        "family": "Downie",
+        "given": "J. S."
+      },
+      {
+        "family": "Swatscheno",
+        "given": "J."
+      },
+      {
+        "family": "Parulian",
+        "given": "N."
+      },
+      {
+        "family": "Naiman",
+        "given": "J."
+      },
+      {
+        "family": "Schmidt",
+        "given": "B."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Underwood",
+        "given": "T."
+      },
+      {
+        "family": "Dubnicek",
+        "given": "R."
+      }
+    ],
+    "editor": [
+      {
+        "family": "Jaillant",
+        "given": "L."
+      },
+      {
+        "family": "Warwick",
+        "given": "C."
+      },
+      {
+        "family": "Gooding",
+        "given": "P."
+      },
+      {
+        "family": "Aske",
+        "given": "K."
+      },
+      {
+        "family": "Layne-Worthey",
+        "given": "G."
+      },
+      {
+        "family": "Downie",
+        "given": "J. S."
+      }
+    ],
+    "issued": {
+      "date-parts": [[2025]]
+    }
+  },
+  {
+    "type": "article-journal",
     "title": "Research methods and the use of visual representation in library and information science research",
     "container-title": "Journal of the Association for Information Science and Technology",
     "URL": "https://doi.org/10.1002/asi.24945",

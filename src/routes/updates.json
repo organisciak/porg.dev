@@ -1,0 +1,28 @@
+[   
+    {
+    "title": "AI Literacy Course",
+    "description": [
+            "See notes from my Winter 2025 course, <a href='https://ai.porg.dev/' class='italic'>AI/IA - Artificial Intelligence in the Information Age</a>.",
+            "Explore technical foundations, co-creativity, ethics, and practical applications of AI."
+    ],
+    "link": "https://ai.porg.dev/",
+    "linkText": "Course Website →",
+    "backgroundImage": "https://ai.porg.dev/slides/images/02/byte-mag.jpg"
+    },
+    {
+        "title": "Web Toys",
+        "description": [
+                "I've been putting some recent Web API games and experiments together in a single place."
+        ],
+        "link": "https://toys.porg.dev",
+        "linkText": "Go Tinker →",
+        "backgroundImage": "https://toys.porg.dev/images/bloops.png"
+    },
+    {
+        "title": "Creativity Scoring",
+        "description": ["If you're interesting in administering the Measure of Original Thinking in Elementary Students (MOTES), contact me."],
+        "link": "mailto:peter@neuristics.org",
+        "linkText": "Contact me →",
+        "backgroundImage": "https://ai.porg.dev/slides/images/04/rad-waves.png"
+    }
+]

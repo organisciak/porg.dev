@@ -1,5 +1,6 @@
 <script lang="ts">
 	import data from './recent_findings.json';
+	import updates from './updates.json';
 	import { MetaTags } from 'svelte-meta-tags';
 	import Fa from 'svelte-fa';
     import { faGithub, faTwitter, faLinkedinIn, faBluesky } from '@fortawesome/free-brands-svg-icons';
@@ -71,12 +72,66 @@
 			</p>
 			
 			<p class="my-4">
-			Check out online tools: <a class=" text-blue-600 dark:text-blue-500 hover:underline" href="https://openscoring.du.edu/">Open Creativity Scoring</a> for scoring tests of creativity, <a href="https://saddl.du.edu">SaDDL</a> for digital library book relationships, and <a href="https://bookworm.htrc.illinois.edu/develop/">HT+Bookworm</a> for exploring historic language trends.
+			Check out online tools: <a class=" text-blue-600 dark:text-blue-500 hover:underline" href="https://openscoring.du.edu/">Open Creativity Scoring</a> for scoring tests of creativity, and <a href="https://bookworm.htrc.illinois.edu/develop/">HT+Bookworm</a> for exploring historic language trends.
 			</p>
 			  
 	  </div>
 	</div>
   
+</section>
+
+<section id="updates-section" class="page-section">
+	<div class="flex flex-col w-full text-center items-center justify-center">
+		<h2 class="my-4 text-4xl font-serif font-semibold">Updates</h2>
+		<div class="w-[80%]">
+			<Carousel.Root class="mx-auto px-4"
+				opts={{
+					align: "start",
+					loop: true,
+					slidesToScroll: 'auto',
+					containScroll: 'trimSnaps'
+				}}
+				plugins={[
+					Autoplay({
+						delay: 5000,
+					})
+				]}
+			>
+				<Carousel.Content class="-ml-1">
+					{#each updates as update}
+						<Carousel.Item class="pl-1 sm:basis-1/1 md:basis-1/2 xl:basis-1/3">
+							<Card.Root class="h-full relative overflow-hidden">
+								{#if update.backgroundImage}
+									<div class="absolute inset-0 z-0">
+										<img 
+											src={update.backgroundImage} 
+											alt="" 
+											class="w-full h-full object-cover opacity-20"
+										/>
+									</div>
+								{/if}
+								<div class="relative z-10">
+									<Card.Header>
+										<Card.Title>{update.title}</Card.Title>
+									</Card.Header>
+									<Card.Content>
+										{#each update.description as paragraph}
+											<p class="mt-2">{@html paragraph}</p>
+										{/each}
+									</Card.Content>
+									<Card.Footer>
+										<a href={update.link} target="_blank">{update.linkText}</a>
+									</Card.Footer>
+								</div>
+							</Card.Root>
+						</Carousel.Item>
+					{/each}
+				</Carousel.Content>
+				<Carousel.Previous />
+				<Carousel.Next />
+			</Carousel.Root>
+		</div>
+	</div>
 </section>
 
 <section id="research-section" class="page-section">

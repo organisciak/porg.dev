@@ -6,7 +6,7 @@
             "Explore technical foundations, co-creativity, ethics, and practical applications of AI."
     ],
     "link": "https://ai.porg.dev/",
-    "linkText": "Course Website →",
+    "linkText": "Course website →",
     "backgroundImage": "https://ai.porg.dev/slides/images/02/byte-mag.jpg"
     },
     {
@@ -15,7 +15,7 @@
                 "I've been putting some recent Web API games and experiments together in a single place."
         ],
         "link": "https://toys.porg.dev",
-        "linkText": "Go Tinker →",
+        "linkText": "Go tinker →",
         "backgroundImage": "https://toys.porg.dev/images/bloops.png"
     },
     {

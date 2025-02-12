@@ -3,7 +3,7 @@
 	import updates from './updates.json';
 	import { MetaTags } from 'svelte-meta-tags';
 	import Fa from 'svelte-fa';
-    import { faGithub, faTwitter, faLinkedinIn, faBluesky } from '@fortawesome/free-brands-svg-icons';
+    import { faGithub, faLinkedinIn, faBluesky } from '@fortawesome/free-brands-svg-icons';
 	import FindingsCarousel from "$lib/components/FindingsCarousel.svelte";
 	import UnusualWordsDisplay from "$lib/components/UnusualWordsDisplay.svelte";
 	import * as Carousel from "$lib/components/ui/carousel/index.js";
@@ -16,6 +16,9 @@
 		description: 'Professor and Applied AI Researcher',
 		url: 'https://www.porg.dev'
 	}
+
+	// For infinite carousel. While there's 4 updates, just remove.
+	const doubledUpdates = [...updates]; //, ...updates];
 </script>
 
 <svelte:head>
@@ -42,8 +45,6 @@
 		]
 	}}
 	twitter={{
-        handle: '@porg',
-        site: '@porg',
         cardType: 'summary_large_image',
         title: meta.title,
         description: meta.description,
@@ -54,52 +55,49 @@
 </svelte:head>
 
 <section class='page-section'>
+	<div class="flex flex-col md:flex-row gap-8">
+		<div class="flex-1 basis-1/3 text-center flex flex-col justify-center">
+			<h1 class="text-5xl font-black font-serif">Peter Organisciak</h1>
+			<p class="italic font-serif mt-4"><em>Associate Professor, Research Methods and Information Science, 
+			University of Denver</em></p>
+		</div>
 
-	<div class="flex flex-col md:flex-row">
-	  
-	  <div class="md:flex justify-center items-center px-10 md:shrink-0 hidden md:visible">
-		<img class="rounded-lg" src="https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200" alt="Peter Organisciak">
-	  </div>
-  
-	  <div class="flex-1 basis-1/2 px-10 text-center">
-		<h1 class="text-5xl font-black font-serif mt-8 mb-4">Peter Organisciak</h1>
-		<p class="italic font-serif my-4"><em>Associate Professor, Research Methods and Information Science, 
-		University of Denver</em></p>
-		<p class="my-4">I work on creativity and AI, as well as massive-scale text analysis.</p>
-  
-		<p class="my-4">
-			See my <a href="/cv">CV</a>, or find <a href="https://github.com/organisciak">me</a> and the <a href="https://github.com/massivetexts">Massive Texts Lab</a> on Github. Subscribe to <a href="https://buttondown.com/creativity" target="_blank">Creativity Byte</a> for updates on Education and AI.
+		<div class="hidden md:block w-px bg-slate-200 dark:bg-slate-700"></div>
+
+		<div class="flex-1 basis-2/3 text-sm">
+			<p class="my-4">I work on creativity and AI, as well as massive-scale text analysis.</p>
+			
+			<p class="my-4">
+				See my <a href="/cv">CV</a>, or find <a href="https://github.com/organisciak">me</a> and the <a href="https://github.com/massivetexts">Massive Texts Lab</a> on Github. Subscribe to <a href="https://buttondown.com/creativity" target="_blank">Creativity Byte</a> for updates on Education and AI.
 			</p>
 			
 			<p class="my-4">
-			Check out online tools: <a class=" text-blue-600 dark:text-blue-500 hover:underline" href="https://openscoring.du.edu/">Open Creativity Scoring</a> for scoring tests of creativity, and <a href="https://bookworm.htrc.illinois.edu/develop/">HT+Bookworm</a> for exploring historic language trends.
+				Check out online tools: <a class="text-blue-600 dark:text-blue-500 hover:underline" href="https://openscoring.du.edu/">Open Creativity Scoring</a> for scoring tests of creativity, and <a href="https://bookworm.htrc.illinois.edu/develop/">HT+Bookworm</a> for exploring historic language trends.
 			</p>
-			  
-	  </div>
+		</div>
 	</div>
-  
 </section>
 
 <section id="updates-section" class="page-section">
-	<div class="flex flex-col w-full text-center items-center justify-center">
+	<div class="flex flex-col w-full text-center items-center justify-center text-sm">
 		<h2 class="my-4 text-4xl font-serif font-semibold">Updates</h2>
 		<div class="w-[80%]">
 			<Carousel.Root class="mx-auto px-4"
 				opts={{
 					align: "start",
 					loop: true,
-					slidesToScroll: 'auto',
+					slidesToScroll: 1, // when there's more content (maybe six?), set to 2 at a time https://www.embla-carousel.com/api/options/#slidestoscroll
 					containScroll: 'trimSnaps'
 				}}
 				plugins={[
 					Autoplay({
-						delay: 5000,
+						delay: 10000,
 					})
 				]}
 			>
 				<Carousel.Content class="-ml-1">
-					{#each updates as update}
-						<Carousel.Item class="pl-1 sm:basis-1/1 md:basis-1/2 xl:basis-1/3">
+					{#each doubledUpdates as update }
+						<Carousel.Item class="pl-1 xs:basis-1/1 sm:basis-1/2 md:basis-1/3 xl:basis-1/4">
 							<Card.Root class="h-full relative overflow-hidden">
 								{#if update.backgroundImage}
 									<div class="absolute inset-0 z-0">
@@ -173,7 +171,7 @@
 		}}
 		plugins={[
 			Autoplay({
-			delay: 5000,
+			delay: 10000,
 			})
 		]}
 		>

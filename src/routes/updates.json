@@ -14,9 +14,9 @@
         "description": [
                 "I've been putting some recent Web API games and experiments together in a single place."
         ],
-        "link": "https://toys.porg.dev",
+        "link": "https://etc.porg.dev",
         "linkText": "Go tinker →",
-        "backgroundImage": "https://toys.porg.dev/images/bloops.png"
+        "backgroundImage": "https://etc.porg.dev/images/bloops.png"
     },
     {
         "title": "Creativity Scoring",
@@ -24,5 +24,13 @@
         "link": "mailto:peter@neuristics.org",
         "linkText": "Contact me →",
         "backgroundImage": "https://ai.porg.dev/slides/images/04/rad-waves.png"
+    },
+    {
+        "title": "Study At Denver",
+        "description": [
+            "Interested in Library and Information Science in Denver? See information about our <a href='https://morgridge.du.edu/academic-programs/library-information-science'>onsite</a> program (especially the Research Data Management concentration) and our <a href='https://info.morgridgeonline.du.edu/requestinfo/mslis/'>online</a> program. Feel free to reach out!"
+        ],
+        "link": "mailto:peter.organisciak@du.edu",
+        "linkText": "Contact me →"
     }
 ]

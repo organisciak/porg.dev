@@ -1,6 +1,67 @@
 [
   {
     "type": "article-journal",
+    "title": "Investigating Lasting Effects of Real-Time Feedback on Originality and Evaluation Accuracy",
+    "container-title": "Creativity Research Journal",
+    "volume": "0",
+    "issue": "0",
+    "page": "1-18",
+    "DOI": "https://doi.org/10.1080/10400419.2024.2441014",
+    "author": [
+      {
+        "family": "de Chantal",
+        "given": "P.-L."
+      },
+      {
+        "family": "Houde-Labrecque",
+        "given": "C."
+      },
+      {
+        "family": "Leblanc",
+        "given": "M.-C."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
+    ],
+    "issued": {
+      "date-parts": [[2025]]
+    }
+  },
+  {
+    "type": "article-journal",
+    "title": "Conceptual models of the sociotechnical: Introduction to special issue",
+    "container-title": "Journal of the Association for Information Science and Technology",
+    "volume": "76",
+    "issue": "2",
+    "page": "349-352",
+    "DOI": "https://doi.org/10.1002/asi.24958",
+    "author": [
+      {
+        "family": "Fenlon",
+        "given": "K."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Thomer",
+        "given": "A."
+      },
+      {
+        "family": "Weber",
+        "given": "N. M."
+      }
+    ],
+    "issued": {
+      "date-parts": [[2025]]
+    },
+    "genre": "Guest Editorial"
+  },
+  {
+    "type": "article-journal",
     "title": "How creative is this child?: Student Demographics Affect How Teachers Rate Creativity",
     "container-title": "Journal of Experimental Education",
     "author": [

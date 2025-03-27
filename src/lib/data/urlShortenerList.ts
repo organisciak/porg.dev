@@ -10,7 +10,7 @@ export const urlMappings: UrlMapping[] = [
     shorturl: "lis4015",
     description: "Course reserves link for LIS 4015",
     destination:
-      "https://du.leganto.exlibrisgroup.com/leganto/public/01UODE_INST/lists/52628494590002766?auth=SAML",
+      "https://du.leganto.exlibrisgroup.com/leganto/public/01UODE_INST/lists/55033087480002766?auth=SAML",
     category: "teaching",
   },
   {

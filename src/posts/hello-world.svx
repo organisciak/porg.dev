@@ -1,0 +1,28 @@
+---
+title: No Blogs
+date: '2025-05-09'
+description: I don't have a blog
+---
+
+<script>
+	import UnusualWordsDisplay from "$lib/components/UnusualWordsDisplay.svelte";
+    const count = 42;
+</script>
+
+# {title}
+
+I don't have a blog, but if I did, it would go here.
+
+I kind of already put the code together. I don't want to put it in a branch and forget about it. So here we are.
+
+For reference, here's some other stuff.
+
+<UnusualWordsDisplay />
+
+```js
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet('World'));
+```

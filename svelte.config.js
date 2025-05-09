@@ -1,11 +1,19 @@
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import vercel from "@sveltejs/adapter-vercel";
+import { mdsvex } from "mdsvex";
 
 //const dev = process.env.NODE_ENV === 'development';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  preprocess: [vitePreprocess({})],
+  extensions: ['.svelte', '.svx', '.md'],
+  preprocess: [
+    vitePreprocess({}),
+    mdsvex({
+      extensions: ['.svx', '.md']
+      // Remove layout for now to simplify
+    })
+  ],
 
   kit: {
     adapter: vercel({}),
@@ -14,6 +22,9 @@ const config = {
       assets: "", // dev ? '/Users/peter.organisciak/Documents/projects/organisciak.github.io/static' : '',
     },
     appDir: "internal",
+    alias: {
+      $posts: 'src/posts'
+    }
   },
 };
 

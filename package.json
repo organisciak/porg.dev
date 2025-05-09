@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "node scripts/generate-post-list.js && vite build",
+    "prebuild": "node scripts/generate-post-list.js",
+    "generate-posts": "node scripts/generate-post-list.js",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",

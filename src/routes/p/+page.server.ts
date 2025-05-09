@@ -5,67 +5,80 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const postsDirectory = path.join(__dirname, '../../../src/posts');
+const postsJsonPath = path.join(__dirname, '../../../src/lib/generated/posts.json');
+
+type FileType = 'md' | 'svx';
 
 interface PostMetadata {
   title: string;
   date: string;
   description?: string;
   slug: string;
+  fileType: FileType;
 }
 
 export const load: PageServerLoad = async () => {
   try {
-    // Get all files from the posts directory
-    const files = fs.readdirSync(postsDirectory);
+    // Check if the generated JSON file exists, if not generate it on demand
+    let posts: PostMetadata[] = [];
     
-    // Filter for .md and .svx files
-    const postFiles = files.filter(file => file.endsWith('.md') || file.endsWith('.svx'));
-    
-    // Get metadata for each post
-    const posts = postFiles.map(filename => {
-      const filePath = path.join(postsDirectory, filename);
-      const content = fs.readFileSync(filePath, 'utf-8');
+    if (fs.existsSync(postsJsonPath)) {
+      // Use the pre-generated JSON file
+      const postsJson = fs.readFileSync(postsJsonPath, 'utf-8');
+      posts = JSON.parse(postsJson);
+    } else {
+      // For development: if the JSON doesn't exist, log a warning
+      console.warn('Posts JSON file not found. Run "pnpm generate-posts" to create it.');
       
-      // Extract frontmatter
-      const frontmatterMatch = content.match(/---\r?\n([\s\S]*?)\r?\n---/);
-      if (!frontmatterMatch) {
-        return null;
-      }
+      // Fallback to the original directory reading logic
+      const postsDirectory = path.join(__dirname, '../../../src/posts');
+      const files = fs.readdirSync(postsDirectory);
+      const postFiles = files.filter(file => (file.endsWith('.md') || file.endsWith('.svx')) && !file.startsWith('_'));
       
-      const frontmatter = frontmatterMatch[1];
-      const metadata: Partial<PostMetadata> = {};
-      
-      // Parse frontmatter
-      frontmatter.split('\n').forEach(line => {
-        const [key, ...valueParts] = line.split(':');
-        if (key && valueParts.length) {
-          let value = valueParts.join(':').trim();
-          // Remove quotes if present
-          if (value.startsWith("'") && value.endsWith("'")) {
-            value = value.slice(1, -1);
+      const tempPosts = postFiles.map(filename => {
+        const filePath = path.join(postsDirectory, filename);
+        const content = fs.readFileSync(filePath, 'utf-8');
+        
+        const frontmatterMatch = content.match(/---\r?\n([\s\S]*?)\r?\n---/);
+        if (!frontmatterMatch) return null;
+        
+        const frontmatter = frontmatterMatch[1];
+        const metadata: Record<string, string> = {}; // Use a simple record instead
+        
+        frontmatter.split('\n').forEach(line => {
+          const [key, ...valueParts] = line.split(':');
+          if (key && valueParts.length) {
+            let value = valueParts.join(':').trim();
+            if (value.startsWith("'") && value.endsWith("'")) {
+              value = value.slice(1, -1);
+            }
+            metadata[key.trim()] = value;
           }
-          metadata[key.trim() as keyof PostMetadata] = value;
-        }
+        });
+        
+        const slug = filename.replace(/\.(md|svx)$/, '');
+        const fileType: FileType = filename.endsWith('.md') ? 'md' : 'svx';
+        
+        // Create a properly typed PostMetadata object
+        const postData: PostMetadata = {
+          title: metadata.title || filename, // Default to filename if no title
+          date: metadata.date || new Date().toISOString().split('T')[0],
+          description: metadata.description,
+          slug,
+          fileType
+        };
+        
+        return postData;
       });
       
-      // Get slug from filename
-      const slug = filename.replace(/\.(md|svx)$/, '');
+      // Filter out nulls
+      posts = tempPosts.filter((post): post is PostMetadata => post !== null);
       
-      return {
-        ...metadata,
-        slug
-      } as PostMetadata;
-    }).filter(Boolean);
+      // Sort posts by date (newest first)
+      posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    }
     
-    // Sort posts by date (newest first)
-    const sortedPosts = posts.sort((a, b) => {
-      return new Date(b!.date).getTime() - new Date(a!.date).getTime();
-    });
-    
-    return {
-      posts: sortedPosts
-    };
+    return { posts };
   } catch (err) {
     console.error('Error loading posts:', err);
     throw error(500, 'Could not load blog posts');

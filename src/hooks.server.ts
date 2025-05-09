@@ -5,8 +5,9 @@ export const handle: Handle = async ({ event, resolve }) => {
   const cookies = cookie.parse(event.request.headers.get("cookie") || "");
   event.locals.userid = cookies["userid"] || crypto.randomUUID();
 
-  let modifiedEvent = event;
+  const modifiedEvent = event;
 
+  // Handle links redirection
   if (event.url.host.startsWith("links.") && !event.url.pathname.startsWith("/l/")) {
     return new Response("Redirect", {
       status: 308,

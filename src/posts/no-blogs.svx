@@ -6,7 +6,7 @@ description: I don't have a blog
 
 <script>
 	import UnusualWordsDisplay from "$lib/components/UnusualWordsDisplay.svelte";
-    const count = 42;
+  const count = 42;
 </script>
 
 # {title}

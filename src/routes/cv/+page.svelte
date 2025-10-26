@@ -6,10 +6,30 @@
   import { MetaTags } from 'svelte-meta-tags';
   import Fa from 'svelte-fa';
   import { faOrcid } from '@fortawesome/free-brands-svg-icons';
-
+  
   const typedPublications: CSLPublication[] = publications;
 
+  // Utility to normalize various grant number formats (e.g., remove PR/Award prefix)
+  function cleanGrantNumber(id: string) {
+    return id.replace(/^PR\/?Award\s*#?\s*/i, '').trim();
+  }
+
+  // Collapsible config for awards section
+
   const awards: Award[] = [
+    {
+      title: "Innovative AI Systems for Nurturing and Assessing Creativity in K-12 Learning Environments",
+      amount: "$898,326",
+      funder: "National Science Foundation",
+      grantNumber: "2507129",
+      grantUrl: "https://www.nsf.gov/awardsearch/show-award?AWD_ID=2507129",
+      investigators: [
+        "Organisciak, P. (Principal Investigator)",
+        "Acar, S. (Co-PI)",
+        "Dong, Y. (Co-PI)"
+      ],
+      timeframe: "2025-2028"
+    },
     {
       title: "Measuring Original Thinking in Elementary School: A Computational Psychometric Approach",
       amount: "$964,081",
@@ -47,6 +67,11 @@
       timeframe: "2014-2017"
     }
   ];
+
+  // Collapsible config for awards section
+  let showMoreAwards: boolean = false;
+  const primaryAwards = awards.slice(0, 3);
+  const extraAwards = awards.slice(3);
 
   const products: Product[] = [
     {
@@ -599,7 +624,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 <div class="container mx-auto">
   <section itemscope itemtype="http://schema.org/Person">
-    <h1 itemprop="name">{bio.name}</h1>
+    <h1 class="font-serif cmy-text-gradient" itemprop="name">{bio.name}</h1>
     <p><strong itemprop="jobTitle">{bio.title}</strong></p>
     
     <div class="flex flex-row">
@@ -627,21 +652,24 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 <section>
     <h2>Professional Positions</h2>
-    <div class="flex flex-wrap text-sm">
-      {#each professionalPositions as position}
-        <div class="flex-none basis-1/4 sm:basis-1/2" itemprop="workExperience" itemscope itemtype="http://schema.org/OrganizationRole"> 
-          <div class="dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5"> 
-            <span class="dark:text-slate-300 font-semibold" itemprop="roleName">{position.position}</span><br/> 
-            <span itemprop="memberOf" itemscope itemtype="http://schema.org/Organization">
-              <span itemprop="name">{position.organization}</span>
-            </span>. 
-            (<span itemprop="startDate">{position.timeframe.split('-')[0]}</span>
-            {#if position.timeframe.includes('-')}
-              - <span itemprop="endDate">{position.timeframe.split('-')[1]}</span>
-            {/if})
-          </div>
-        </div>
-      {/each}
+    <div class="m-2 rounded-lg p-5 dark:bg-slate-700 bg-slate-200">
+      <ul class="space-y-1">
+        {#each professionalPositions as position}
+          <li class="py-1 flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm" itemprop="workExperience" itemscope itemtype="http://schema.org/OrganizationRole">
+            <div>
+              <span class="font-semibold" itemprop="roleName">{position.position}</span> at
+              <span itemprop="memberOf" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">{position.organization}</span>
+              </span>
+            </div>
+            <div class="mt-1 sm:mt-0">
+              <span class="inline-block rounded-full px-2 py-0.5 text-xs bg-slate-300 dark:bg-slate-600 dark:text-slate-200">
+                {position.timeframe}
+              </span>
+            </div>
+          </li>
+        {/each}
+      </ul>
     </div>
 </section>
 
@@ -675,59 +703,63 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
   </section>
 
   <section>
-    <h2>Awards</h2>
-    <div class="flex flex-wrap">
-      {#each bioData.awards as award}
-      <div class="flex-initial basis-48">
-        <div class="text-sm dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5 dark:text-slate-300">
-          <span class='font-semibold'>{award.name}</span>, {award.date}
-        </div>
-      </div>
-      {/each}
-    </div>
-  </section>
-
-
-  <section>
-    <h2>Media</h2>
-    <div class="flex flex-wrap">
-      {#each bioData.media as media}
-      <div class="flex-initial basis-96">
-        <div class="text-sm dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5 dark:text-slate-300">
-          <span class="font-semibold">{media.title}</span><br /><span class='italic'>{media.source}, {media.date}</span>
-        </div>
-      </div>
-      {/each}
-    </div> 
-  </section>
-
-  <section>
     <h2>Awarded Grants</h2>
-    <div class="flex flex-wrap">
-      {#each awards as award}
-        <div class="flex-initial basis-72">
-          <div class="dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5">
-            <p class="font-bold text-base mb-2">{award.title}</p>
-            <p class="text-xs"><span class="font-semibold">Amount:</span> {award.amount}</p>
-            <p class="text-xs"><span class="font-semibold">Funder:</span> {award.funder}</p>
-            {#if award.grantNumber}
-              <p class="text-xs">
-                <span class="font-semibold">Grant Number:</span> 
-                {#if award.grantUrl}
-                  <a href={award.grantUrl} target="_blank" rel="noopener noreferrer">{award.grantNumber}</a>
-                {:else}
-                  {award.grantNumber}
+    <div class="m-2 rounded-lg p-3 dark:bg-slate-700 bg-slate-200">
+      {#if awards && awards.length}
+        <ul class="space-y-0.5">
+          {#each primaryAwards as award}
+            <li class="py-0.5 text-sm leading-snug">
+              <p class="font-semibold my-1">{award.title}</p>
+              <p class="text-xs sm:text-sm leading-snug my-1">
+                <span class="font-semibold">Funder:</span> {award.funder}
+                · <span class="font-semibold">Amount:</span> {award.amount}
+                {#if award.grantNumber}
+                  · <span class="font-semibold">Grant #:</span>
+                  {#if award.grantUrl}
+                    <a href={award.grantUrl} target="_blank" rel="noopener noreferrer">{cleanGrantNumber(award.grantNumber)}</a>
+                  {:else}
+                    {cleanGrantNumber(award.grantNumber)}
+                  {/if}
                 {/if}
+                · <span class="font-semibold">Timeframe:</span> {award.timeframe}
+                {#if award.subgrant}
+                  · <span class="font-semibold">Subgrant:</span> {award.subgrant}
+                {/if}
+                · <span class="font-semibold">Investigators:</span> {award.investigators.join(', ')}
               </p>
+            </li>
+          {/each}
+          {#if extraAwards.length > 0}
+            {#if showMoreAwards}
+              {#each extraAwards as award}
+                <li class="py-0.5 text-sm leading-snug">
+                  <p class="font-semibold my-1">{award.title}</p>
+                  <p class="text-xs sm:text-sm leading-snug my-1">
+                    <span class="font-semibold">Funder:</span> {award.funder}
+                    · <span class="font-semibold">Amount:</span> {award.amount}
+                    {#if award.grantNumber}
+                      · <span class="font-semibold">Grant #:</span>
+                      {#if award.grantUrl}
+                        <a href={award.grantUrl} target="_blank" rel="noopener noreferrer">{cleanGrantNumber(award.grantNumber)}</a>
+                      {:else}
+                        {cleanGrantNumber(award.grantNumber)}
+                      {/if}
+                    {/if}
+                    · <span class="font-semibold">Timeframe:</span> {award.timeframe}
+                    {#if award.subgrant}
+                      · <span class="font-semibold">Subgrant:</span> {award.subgrant}
+                    {/if}
+                    · <span class="font-semibold">Investigators:</span> {award.investigators.join(', ')}
+                  </p>
+                </li>
+              {/each}
+              <li class="py-0.5"><button class="text-xs text-blue-700 dark:text-blue-300 hover:underline" on:click={() => showMoreAwards = false}>Show fewer</button></li>
+            {:else}
+              <li class="py-0.5"><button class="text-xs text-blue-700 dark:text-blue-300 hover:underline" on:click={() => showMoreAwards = true}>+{extraAwards.length} more</button></li>
             {/if}
-            <p class="text-xs"><span class="font-semibold">Investigators:</span> {award.investigators.join(', ')}</p>
-            <p class="text-xs"><span class="font-semibold">Timeframe:</span> {award.timeframe}</p>
-            {#if award.subgrant}
-              <p class="text-xs"><span class="font-semibold">Subgrant:</span> {award.subgrant}</p>
-            {/if}
-          </div>
-        </div>
-      {/each}
+          {/if}
+        </ul>
+      {/if}
     </div>
   </section>
 
@@ -802,6 +834,33 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
     </div>
   </section>
 
+  <!-- Move Awards and Media further down for concision near the top -->
+  <section>
+    <h2>Awards</h2>
+    <div class="flex flex-wrap">
+      {#each bioData.awards as award}
+      <div class="flex-initial basis-48">
+        <div class="text-sm dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5 dark:text-slate-300">
+          <span class='font-semibold'>{award.name}</span>, {award.date}
+        </div>
+      </div>
+      {/each}
+    </div>
+  </section>
+
+  <section>
+    <h2>Media</h2>
+    <div class="flex flex-wrap">
+      {#each bioData.media as media}
+      <div class="flex-initial basis-96">
+        <div class="text-sm dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5 dark:text-slate-300">
+          <span class="font-semibold">{media.title}</span><br /><span class='italic'>{media.source}, {media.date}</span>
+        </div>
+      </div>
+      {/each}
+    </div> 
+  </section>
+
 <section id="cv">
     <div class="container mx-auto mt-5">
       <div class="flex flex-row">
@@ -815,12 +874,19 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 </div>
 
 <style lang="postcss">
+    .cmy-text-gradient {
+        @apply bg-gradient-to-r from-cyan-600 via-magenta to-yellow-500 text-transparent bg-clip-text;
+    }
+    .bg-clip-text {
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
     p {
         @apply mx-auto my-3;
     }
 
     h2 {
-      @apply text-center my-5;
+      @apply text-center my-5 font-serif text-3xl;
     }
 
 </style>

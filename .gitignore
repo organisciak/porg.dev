@@ -13,3 +13,4 @@ vite.config.js.timestamp-*
 src/lib/movietags/
 typescript-dev.ipynb
 dev/splash.psd
+.playwright-mcp/

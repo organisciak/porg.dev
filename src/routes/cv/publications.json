@@ -1,6 +1,91 @@
 [
   {
     "type": "article-journal",
+    "title": "Reversing the alternate uses task",
+    "container-title": "Thinking Skills and Creativity",
+    "volume": "55",
+    "page": "101915",
+    "DOI": "https://doi.org/10.1016/j.tsc.2025.101915",
+    "author": [
+      {
+        "family": "Scherbakova",
+        "given": "A."
+      },
+      {
+        "family": "Dumas",
+        "given": "D."
+      },
+      {
+        "family": "Kagan",
+        "given": "S."
+      },
+      {
+        "family": "Vlaamster",
+        "given": "T."
+      },
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
+    ],
+    "issued": {
+      "date-parts": [[2025, 12]]
+    }
+  },
+  {
+    "type": "article-journal",
+    "title": "Artificial Intelligence Enhances Human Creativity Through Real-Time Evaluative Feedback",
+    "DOI": "https://doi.org/10.31219/osf.io/qrgbn_v1",
+    "author": [
+      {
+        "family": "de Chantal",
+        "given": "P.-L."
+      },
+      {
+        "family": "Beaty",
+        "given": "R."
+      },
+      {
+        "family": "Laverghetta",
+        "given": "A.",
+        "suffix": "Jr."
+      },
+      {
+        "family": "Pronchick",
+        "given": "J."
+      },
+      {
+        "family": "Patterson",
+        "given": "J."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Potega vel Zabik",
+        "given": "K."
+      },
+      {
+        "family": "Barbot",
+        "given": "B."
+      },
+      {
+        "family": "Karwowski",
+        "given": "M."
+      }
+    ],
+    "issued": {
+      "date-parts": [[2025, 5, 8]]
+    },
+    "status": "preprint"
+  },
+  {
+    "type": "article-journal",
     "title": "Investigating Lasting Effects of Real-Time Feedback on Originality and Evaluation Accuracy",
     "container-title": "Creativity Research Journal",
     "volume": "0",
@@ -96,6 +181,8 @@
     "title": "Making more sense with machines: artificial intelligence at the HathiTrust Research Center",
     "container-title": "Navigating Artificial Intelligence for Cultural Heritage Organisations",
     "publisher": "UCL Press",
+    "DOI": "10.2307/jj.24215718.13",
+    "URL": "https://www.jstor.org/stable/jj.24215718.13?seq=1",
     "author": [
       {
         "family": "Layne-Worthey",
@@ -162,7 +249,13 @@
     ],
     "issued": {
       "date-parts": [[2025]]
-    }
+    },
+    "custom": [
+      {
+        "key": "Open Access",
+        "value": "https://www.jstor.org/stable/jj.24215718.13"
+      }
+    ]
   },
   {
     "type": "article-journal",

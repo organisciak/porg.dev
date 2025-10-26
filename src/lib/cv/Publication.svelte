@@ -41,7 +41,7 @@
     return doi;
   }
 
-  const customFieldsAsButtons: string[] = ['preprint', 'SSRN'];
+  const customFieldsAsButtons: string[] = ['preprint', 'SSRN', 'Open Access'];
 
   function formatAPA(publication: CSLPublication, asHTML:boolean = false): string {
     if (!publication) return '';

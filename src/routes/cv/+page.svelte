@@ -351,7 +351,7 @@ use in other tools and websites, such as Qualtrics.
 
 	const bio = {
         name: "Dr. Peter Organisciak",
-        title: "Associate Professor, University of Denver, Research Methods and Information Science",
+        title: "Department Chair and Associate Professor, University of Denver, Research Methods and Information Science",
         lab: "Massive Texts Lab",
         labUrl: "http://portfolio.du.edu/massivetexts",
         orcid: "https://orcid.org/0000-0002-9058-2280",
@@ -361,6 +361,11 @@ use in other tools and websites, such as Qualtrics.
 
   const professionalPositions: Position[] = [
         {
+      "position": "Department Chair, Research Methods and Information Science",
+      "organization": "University of Denver",
+      "timeframe": "January 2025-present"
+    },
+    {
       "position": "Associate Professor",
       "organization": "University of Denver",
       "timeframe": "September 2023-present"

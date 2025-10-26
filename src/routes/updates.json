@@ -1,5 +1,15 @@
 [   
     {
+      "title": "NSF Grant: AI Co-Creativity in K-12",
+      "description": [
+        "Our project, <span class='italic'>Innovative AI Systems for Nurturing and Assessing Creativity in K-12 Learning Environments</span>, received NSF support (2025–2028).",
+        "We're developing AI-powered tools to make creativity assessment and mentoring scalable and accessible in K-12 education."
+      ],
+      "link": "https://www.nsf.gov/awardsearch/show-award?AWD_ID=2507129",
+      "linkText": "See NSF award →",
+      "backgroundImage": "/update-images/paint-canvas.png"
+    },
+    {
     "title": "AI Literacy Course",
     "description": [
             "See notes from my Winter 2025 course, <a href='https://ai.porg.dev/' class='italic'>AI/IA - Artificial Intelligence in the Information Age</a>.",

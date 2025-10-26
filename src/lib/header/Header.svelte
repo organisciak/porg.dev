@@ -53,8 +53,8 @@
 				<li class:active={$page.url.pathname === '{base}' + link.url}
 					class:small-nav={small}
 					class:normal-nav={!small}
-					class="relative h-full border-b-2 border-gradient-r from-[#4c2b69] to-[#d073ff]">
-					<a title={link.name} data-sveltekit-prefetch href="{base}{link.url}" class:px-4={!small} class="flex h-full items-center text-slate-900 dark:text-slate-200 dark:hover:text-slate-100 font-thin uppercase tracking-wider transition-colors duration-200 ease-linear hover:text-[var(--accent-color)]">
+					class="relative h-full">
+					<a title={link.name} data-sveltekit-prefetch href="{base}{link.url}" class:px-4={!small} class:squiggle-underline={!small} class="flex h-full items-center text-slate-900 dark:text-slate-200 dark:hover:text-slate-100 font-thin uppercase tracking-wider transition-colors duration-200 ease-linear hover:text-[var(--accent-color)]">
 						{#if small && link.icon}
 							<Fa class="text-violet-500" icon={link.icon} />
 						{:else }
@@ -78,21 +78,42 @@
 	}
 
 	li.small-nav {
-		@apply border-b-0;
 		@apply mx-1.5;
 		@apply text-sm;
 	}
 	li.normal-nav {
-		@apply border-b-2;
+		@apply border-b-0;
 		@apply mx-2;
 	}
-	li {
-		/* Use the gradient as the border image */
-		border-image: linear-gradient(to right, #4c2b69, #d073ff);
-		border-image-slice: 1; /* This ensures the gradient spans the entire border width */
+
+	/* Elegant squiggly underline using CSS text-decoration */
+	.squiggle-underline {
+		text-decoration-line: underline;
+		text-decoration-style: wavy;
+		text-underline-offset: 8px;
+		text-decoration-thickness: 1.5px;
+		text-decoration-color: #7c3aed; /* violet-600 */
 	}
-	li.active {
-		border-bottom-width: 4px;
+	/* Jiggle the underline on hover */
+	.squiggle-underline:hover {
+		animation: underline-jiggle 0.8s ease-in-out infinite;
+	}
+	@keyframes underline-jiggle {
+		0% { text-underline-offset: 6px; }
+		50% { text-underline-offset: 11px; }
+		100% { text-underline-offset: 6px; }
+	}
+	li.active a.squiggle-underline {
+		text-decoration-thickness: 2.5px;
+		text-decoration-color: #6d28d9; /* violet-700 */
+	}
+	@media (prefers-color-scheme: dark) {
+		.squiggle-underline {
+			text-decoration-color: #a78bfa; /* violet-300 for dark */
+		}
+		li.active a.squiggle-underline {
+			text-decoration-color: #c4b5fd; /* violet-200 */
+		}
 	}
 
 	/* For progressive web apps, like /huehunter, just hide nav entirely */

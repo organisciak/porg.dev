@@ -6,7 +6,7 @@
   import { MetaTags } from 'svelte-meta-tags';
   import Fa from 'svelte-fa';
   import { faOrcid } from '@fortawesome/free-brands-svg-icons';
-  
+
   const typedPublications: CSLPublication[] = publications;
 
   // Utility to normalize various grant number formats (e.g., remove PR/Award prefix)
@@ -583,11 +583,38 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
           }
   ]
 
+  // Publication section show-more controls and limits
+  let pubShowMore: Record<string, boolean> = {};
+  const pubLimits: Record<string, number> = {
+    'Journal Articles': 8,
+    'Book Chapters': 4,
+    'Proceedings Paper': 8,
+    'Reports': 4,
+    'Extended Abstracts': 6,
+    'Presentations (refereed)': 8,
+    'Presentations (invited)': 6,
+    'Presentations (other)': 6,
+    'Workshops (refereed)': 6,
+    'Teaching Workshops': 6,
+    'Panels': 6,
+    'Posters': 6
+  };
+  pubSections.forEach(s => pubShowMore[s.heading] = false);
+
   const meta = {
-		title: 'Curriculum Vitae',
-		description: 'CV for Dr. Peter Oragnisciak, Associate Professor and Applied AI Researcher',
-		url: 'https://www.porg.dev'
-	}
+			title: 'Curriculum Vitae',
+			description: 'CV for Dr. Peter Oragnisciak, Associate Professor and Applied AI Researcher',
+			url: 'https://www.porg.dev'
+		}
+
+  // Global expand/collapse across collapsible sections
+  let expandAll: boolean = false;
+  function setAllCollapsed(expanded: boolean) {
+    expandAll = expanded;
+    showMoreAwards = expanded;
+    // publications
+    pubSections.forEach((s) => (pubShowMore[s.heading] = expanded));
+  }
 </script>
 
 <MetaTags 
@@ -652,6 +679,10 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 <section>
     <h2>Professional Positions</h2>
+    <div class="text-right -mt-2 mb-2">
+      <button class="text-xs text-blue-700 dark:text-blue-300 hover:underline mr-2" on:click={() => setAllCollapsed(true)}>Uncollapse all</button>
+      <button class="text-xs text-blue-700 dark:text-blue-300 hover:underline" on:click={() => setAllCollapsed(false)}>Collapse all</button>
+    </div>
     <div class="m-2 rounded-lg p-5 dark:bg-slate-700 bg-slate-200">
       <ul class="space-y-1">
         {#each professionalPositions as position}
@@ -675,31 +706,34 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 <section>
     <h2>Education</h2>
-    <div class="flex flex-wrap">
-      {#each degrees as edu}
-      <div class="flex-none basis-1/3" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
-        <div class="dark:bg-slate-700 m-2 rounded-lg bg-slate-200 p-5">
-          <span class="dark:text-slate-300">
-            <span class="font-bold" itemprop="degreeType">{edu.degree}</span>, 
-            <span itemprop="name">{edu.university}</span>, 
-            <span itemprop="graduationYear">{edu.year}</span>
-          </span>
-          <div class="text-sm p-0 m-0">
-          {#if edu.additionalDetails.major}
-            <p class='my-2 italic ml-4'>Major: <span itemprop="educationalProgram">{edu.additionalDetails.major}</span></p>
-          {/if}
-          {#if edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}
-            <p class='my-2 italic ml-4'>{edu.additionalDetails.dissertationTitle ? 'Dissertation' : 'Thesis'}: <span itemprop="dissertationTitle">{edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}</span></p>
-          {/if}
-          {#if edu.additionalDetails.committee}
-            <p class='my-2 italic ml-4'>Committee: {edu.additionalDetails.committee.join(', ')}</p>
-          {/if}
-          </div></div> 
-        </div>
-        
-      {/each}
-
-</div>
+    <div class="m-2 rounded-lg p-5 dark:bg-slate-700 bg-slate-200">
+      <ul class="space-y-1">
+        {#each degrees as edu}
+        <li class="py-1 text-sm" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <span class="font-bold" itemprop="degreeType">{edu.degree}</span> at 
+              <span itemprop="name">{edu.university}</span>
+            </div>
+            <div class="mt-1 sm:mt-0">
+              <span class="inline-block rounded-full px-2 py-0.5 text-xs bg-slate-300 dark:bg-slate-600 dark:text-slate-200" itemprop="graduationYear">{edu.year}</span>
+            </div>
+          </div>
+          <div class="text-xs mt-1">
+            {#if edu.additionalDetails.major}
+              <span class='italic'>Major: <span itemprop="educationalProgram">{edu.additionalDetails.major}</span></span>
+            {/if}
+            {#if edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}
+              <span class='italic ml-3'>{edu.additionalDetails.dissertationTitle ? 'Dissertation' : 'Thesis'}: <span itemprop="dissertationTitle">{edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}</span></span>
+            {/if}
+            {#if edu.additionalDetails.committee}
+              <span class='italic ml-3'>Committee: {edu.additionalDetails.committee.join(', ')}</span>
+            {/if}
+          </div>
+        </li>
+        {/each}
+      </ul>
+    </div>
   </section>
 
   <section>
@@ -770,7 +804,6 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
   </section>
 
   {#each pubSections as pubSection}
-
     <section>
       <h3>{pubSection.heading}</h3>
       {#if pubSection.comment}
@@ -778,10 +811,23 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
       {/if}
 
       <div class="flex flex-wrap">
-        {#each pubSection.entries as pub}
-          <Publication data={pub} />
-        {/each}
+        {#if pubShowMore[pubSection.heading]}
+          {#each pubSection.entries as pub}
+            <Publication data={pub} />
+          {/each}
+        {:else}
+          {#each pubSection.entries.slice(0, (pubLimits[pubSection.heading] ?? 6)) as pub}
+            <Publication data={pub} />
+          {/each}
+        {/if}
       </div>
+      {#if pubSection.entries.length > (pubLimits[pubSection.heading] ?? 6)}
+        <div class="mt-2">
+          <button class="text-xs text-blue-700 dark:text-blue-300 hover:underline" on:click={() => pubShowMore[pubSection.heading] = !pubShowMore[pubSection.heading]}>
+            {pubShowMore[pubSection.heading] ? 'Show fewer' : `+${pubSection.entries.length - (pubLimits[pubSection.heading] ?? 6)} more`}
+          </button>
+        </div>
+      {/if}
     </section>
   {/each}
 

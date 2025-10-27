@@ -115,6 +115,13 @@
 
   const courses: Course[] = [
     {
+      code: "LIS 4700AI",
+      title: "AI/IA - Artificial Intelligence in the Information Age",
+      credits: "3 credit hours",
+      format: "in-person",
+      materials: "https://ai.porg.dev"
+    },
+    {
       code: "LIS 4015",
       title: "User and Access Services",
       credits: "3 credit hours",

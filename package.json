@@ -2,9 +2,6 @@
   "name": "porg.dev",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "23.x"
-  },
   "scripts": {
     "dev": "vite dev",
     "build": "node scripts/generate-post-list.js && vite build",
@@ -30,7 +27,7 @@
     "@sveltejs/kit": "^2.7.0",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "@types/cookie": "^0.5.2",
-    "@types/node": "^23.0.0",
+    "@types/node": "^22.0.0",
     "@types/seedrandom": "^3.0.6",
     "@types/tinycolor2": "^1.4.4",
     "@typescript-eslint/eslint-plugin": "^6.7.3",

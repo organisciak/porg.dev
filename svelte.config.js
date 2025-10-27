@@ -16,7 +16,9 @@ const config = {
   ],
 
   kit: {
-    adapter: vercel({}),
+    adapter: vercel({
+      runtime: 'nodejs22.x'
+    }),
     paths: {
       base: "",
       assets: "", // dev ? '/Users/peter.organisciak/Documents/projects/organisciak.github.io/static' : '',

@@ -58,7 +58,7 @@
 	<div class="flex flex-col md:flex-row gap-8">
 		<div class="flex-1 basis-1/3 text-center flex flex-col justify-center">
 			<h1 class="text-5xl font-black font-serif">Peter Organisciak</h1>
-			<p class="italic font-serif mt-4"><em>Associate Professor, Research Methods and Information Science, 
+			<p class="italic font-serif mt-4"><em>Associate Professor and Department Chair, Research Methods and Information Science, 
 			University of Denver</em></p>
 		</div>
 

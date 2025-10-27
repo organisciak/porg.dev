@@ -29,9 +29,6 @@ importers:
       cookie:
         specifier: ^1.0.2
         version: 1.0.2
-      embla-carousel-svelte:
-        specifier: ^8.2.1
-        version: 8.5.2(svelte@5.42.2)
       lucide-svelte:
         specifier: ^0.439.0
         version: 0.439.0(svelte@5.42.2)
@@ -48,6 +45,9 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
     devDependencies:
+      '@lucide/svelte':
+        specifier: ^0.482.0
+        version: 0.482.0(svelte@5.42.2)
       '@playwright/test':
         specifier: ^1.38.0
         version: 1.49.1
@@ -90,6 +90,9 @@ importers:
       embla-carousel-autoplay:
         specifier: ^8.2.1
         version: 8.5.2(embla-carousel@8.5.2)
+      embla-carousel-svelte:
+        specifier: ^8.1.6
+        version: 8.1.6(svelte@5.42.2)
       eslint:
         specifier: ^8.50.0
         version: 8.57.1
@@ -528,6 +531,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@lucide/svelte@0.482.0':
+    resolution: {integrity: sha512-n2ycHU9cNcleRDwwpEHBJ6pYzVhHIaL3a+9dQa8kns9hB2g05bY+v2p2KP8v0pZwtNhYTHk/F2o2uZ1bVtQGhw==}
+    peerDependencies:
+      svelte: ^5
 
   '@mapbox/node-pre-gyp@1.0.11':
     resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
@@ -1099,15 +1107,18 @@ packages:
     peerDependencies:
       embla-carousel: 8.5.2
 
-  embla-carousel-reactive-utils@8.5.2:
-    resolution: {integrity: sha512-QC8/hYSK/pEmqEdU1IO5O+XNc/Ptmmq7uCB44vKplgLKhB/l0+yvYx0+Cv0sF6Ena8Srld5vUErZkT+yTahtDg==}
+  embla-carousel-reactive-utils@8.1.6:
+    resolution: {integrity: sha512-Wg+J2YoqLqkaqsXi7fTJaLmXm6BpgDRJ0EfTdvQ4KE/ip5OsUuKGpJsEQDTt4waGXSDyZhIBlfoQtgGJeyYQ1Q==}
     peerDependencies:
-      embla-carousel: 8.5.2
+      embla-carousel: 8.1.6
 
-  embla-carousel-svelte@8.5.2:
-    resolution: {integrity: sha512-tuzX8df2cMBwBtxJtIGPzUbLFBv0ujT4iOx1wMferFfztE7ebbHoYXrE9/JRjjp8ld+Wsc35yR8fWkuSaSxgpQ==}
+  embla-carousel-svelte@8.1.6:
+    resolution: {integrity: sha512-6ia2gyL5ckGhN4jOQTk0+RVyEpgZ5w5WfHKRPEs0pcB+Zh6eNuOQN5MKutm7DjiTRNpCTPF29WykjvW1q3DN2Q==}
     peerDependencies:
-      svelte: ^3.49.0 || ^4.0.0 || ^5.0.0
+      svelte: ^3.49.0 || ^4.0.0
+
+  embla-carousel@8.1.6:
+    resolution: {integrity: sha512-9n7FVsbPAs1KD+JmO84DnEDOZMXPBQbLujjMQqvsBRN2CDWwgZ9hRSNapztdPnyJfzOIxowGmj0BUQ8ACYAPkA==}
 
   embla-carousel@8.5.2:
     resolution: {integrity: sha512-xQ9oVLrun/eCG/7ru3R+I5bJ7shsD8fFwLEY7yPe27/+fDHCNj0OT5EoG5ZbFyOxOcG6yTwW8oTz/dWyFnyGpg==}
@@ -2434,6 +2445,10 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
+  '@lucide/svelte@0.482.0(svelte@5.42.2)':
+    dependencies:
+      svelte: 5.42.2
+
   '@mapbox/node-pre-gyp@1.0.11':
     dependencies:
       detect-libc: 2.0.3
@@ -2965,15 +2980,17 @@ snapshots:
     dependencies:
       embla-carousel: 8.5.2
 
-  embla-carousel-reactive-utils@8.5.2(embla-carousel@8.5.2):
+  embla-carousel-reactive-utils@8.1.6(embla-carousel@8.1.6):
     dependencies:
-      embla-carousel: 8.5.2
+      embla-carousel: 8.1.6
 
-  embla-carousel-svelte@8.5.2(svelte@5.42.2):
+  embla-carousel-svelte@8.1.6(svelte@5.42.2):
     dependencies:
-      embla-carousel: 8.5.2
-      embla-carousel-reactive-utils: 8.5.2(embla-carousel@8.5.2)
+      embla-carousel: 8.1.6
+      embla-carousel-reactive-utils: 8.1.6(embla-carousel@8.1.6)
       svelte: 5.42.2
+
+  embla-carousel@8.1.6: {}
 
   embla-carousel@8.5.2: {}
 

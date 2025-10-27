@@ -1,11 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
-  import type { ComponentType } from 'svelte';
+  import type { Component } from 'svelte';
   
   export let data;
   
-  let Post: ComponentType | undefined;
+  let Post: Component | undefined;
   let metadata: Record<string, unknown> = {};
   
   onMount(async () => {

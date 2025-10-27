@@ -16,13 +16,15 @@ declare namespace App {
 }
 
 declare module '*.svx' {
-  import type { SvelteComponent } from 'svelte';
-  export default class Comp extends SvelteComponent {}
+  import type { Component } from 'svelte';
+  const component: Component;
+  export default component;
   export const metadata: Record<string, unknown>;
 }
 
 declare module '*.md' {
-  import type { SvelteComponent } from 'svelte';
-  export default class Comp extends SvelteComponent {}
+  import type { Component } from 'svelte';
+  const component: Component;
+  export default component;
   export const metadata: Record<string, unknown>;
 }

@@ -86,34 +86,30 @@
 		@apply mx-2;
 	}
 
-	/* Elegant squiggly underline using CSS text-decoration */
-	.squiggle-underline {
-		text-decoration-line: underline;
-		text-decoration-style: wavy;
-		text-underline-offset: 8px;
-		text-decoration-thickness: 1.5px;
-		text-decoration-color: #7c3aed; /* violet-600 */
+	/* Elegant squiggly underline using a repeating SVG wave that moves left/right on hover */
+	a.squiggle-underline { position: relative; }
+	a.squiggle-underline::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 2px;
+		height: 6px;
+		background-repeat: repeat-x;
+		background-size: 20px 6px;
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='6' viewBox='0 0 20 6'><path d='M0 3 C 3 0 7 6 10 3 C 13 0 17 6 20 3' fill='none' stroke='%237c3aed' stroke-width='1.5' stroke-linecap='round'/></svg>");
+		pointer-events: none;
 	}
-	/* Jiggle the underline on hover */
-	.squiggle-underline:hover {
-		animation: underline-jiggle 0.8s ease-in-out infinite;
+	a.squiggle-underline:hover::after {
+		animation: wave-shift 1.2s linear infinite;
 	}
-	@keyframes underline-jiggle {
-		0% { text-underline-offset: 6px; }
-		50% { text-underline-offset: 11px; }
-		100% { text-underline-offset: 6px; }
-	}
-	li.active a.squiggle-underline {
-		text-decoration-thickness: 2.5px;
-		text-decoration-color: #6d28d9; /* violet-700 */
+	li.active a.squiggle-underline::after { height: 7px; background-size: 20px 7px; }
+	@keyframes wave-shift {
+		from { background-position-x: 0; }
+		to   { background-position-x: 20px; }
 	}
 	@media (prefers-color-scheme: dark) {
-		.squiggle-underline {
-			text-decoration-color: #a78bfa; /* violet-300 for dark */
-		}
-		li.active a.squiggle-underline {
-			text-decoration-color: #c4b5fd; /* violet-200 */
-		}
+		a.squiggle-underline::after { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='6' viewBox='0 0 20 6'><path d='M0 3 C 3 0 7 6 10 3 C 13 0 17 6 20 3' fill='none' stroke='%23a78bfa' stroke-width='1.5' stroke-linecap='round'/></svg>"); }
 	}
 
 	/* For progressive web apps, like /huehunter, just hide nav entirely */

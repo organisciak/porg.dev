@@ -1,5 +1,43 @@
 [
   {
+    "type": "chapter",
+    "title": "Toward a New AI Literacy",
+    "container-title": "A Critical Look at Information Science and Librarianship in a New Age: Constellation of Insanity",
+    "publisher": "Emerald Publishing Limited",
+    "publisher-place": "Bingley, UK",
+    "collection-title": "Advances in Librarianship",
+    "ISBN": "9781836086574",
+    "URL": "https://indiepubs.com/products/a-critical-look-at-information-science-and-librarianship-in-a-new-age",
+    "author": [
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Gillette",
+        "given": "E."
+      }
+    ],
+    "editor": [
+      {
+        "family": "Bishop",
+        "given": "W."
+      },
+      {
+        "family": "Chancellor",
+        "given": "R. L."
+      },
+      {
+        "family": "Sánchez",
+        "given": "J."
+      }
+    ],
+    "issued": {
+      "date-parts": [[2026, 4]]
+    },
+    "status": "forthcoming"
+  },
+  {
     "type": "article-journal",
     "title": "Reversing the alternate uses task",
     "container-title": "Thinking Skills and Creativity",

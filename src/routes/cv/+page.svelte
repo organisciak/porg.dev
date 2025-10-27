@@ -680,8 +680,8 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 <section>
     <h2>Professional Positions</h2>
     <div class="text-right -mt-2 mb-2">
-      <button class="text-xs text-blue-700 dark:text-blue-300 hover:underline mr-2" on:click={() => setAllCollapsed(true)}>Uncollapse all</button>
-      <button class="text-xs text-blue-700 dark:text-blue-300 hover:underline" on:click={() => setAllCollapsed(false)}>Collapse all</button>
+      <button class="text-xs text-blue-700 dark:text-blue-300 hover:underline mr-2" on:click={() => setAllCollapsed(true)} aria-label="Show all sections">Show all</button>
+      <button class="text-xs text-blue-700 dark:text-blue-300 hover:underline" on:click={() => setAllCollapsed(false)} aria-label="Show newer items only">Show newer</button>
     </div>
     <div class="m-2 rounded-lg p-5 dark:bg-slate-700 bg-slate-200">
       <ul class="space-y-1">

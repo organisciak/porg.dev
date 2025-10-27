@@ -45,7 +45,7 @@
             <Button
                 variant="ghost"
                 size="icon"
-                on:click={handleRefresh}
+                onclick={handleRefresh}
                 disabled={isLoading}
                 class={`m-0 p-0 transition-opacity duration-500 ${isLoading ? 'opacity-50' : 'opacity-100'}`}
                 aria-label="Refresh item"

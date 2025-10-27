@@ -615,6 +615,18 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
     // publications
     pubSections.forEach((s) => (pubShowMore[s.heading] = expanded));
   }
+
+  // Toggle group: newer vs all
+  let displayMode: 'newer' | 'all' = 'newer';
+  $: setAllCollapsed(displayMode === 'all');
+
+  function setDisplayMode(mode: 'newer' | 'all', reapply = false) {
+    const changed = displayMode !== mode;
+    displayMode = mode;
+    if (reapply || changed) {
+      setAllCollapsed(mode === 'all');
+    }
+  }
 </script>
 
 <MetaTags 
@@ -677,12 +689,22 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
     </div>
   </section>
 
+<div class="flex justify-end -mb-2 mt-2">
+  <nav aria-label="Display range" class="text-xs">
+    <a href="#" on:click|preventDefault={() => setDisplayMode('newer', true)}
+       class={`${displayMode==='newer' ? 'link-toggle-selected text-slate-900 dark:text-slate-100 font-semibold' : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+       aria-current={displayMode==='newer' ? 'true' : 'false'}
+    >Show newer</a>
+    <span class="mx-2 text-slate-400">·</span>
+    <a href="#" on:click|preventDefault={() => setDisplayMode('all', true)}
+       class={`${displayMode==='all' ? 'link-toggle-selected text-slate-900 dark:text-slate-100 font-semibold' : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+       aria-current={displayMode==='all' ? 'true' : 'false'}
+    >Show all</a>
+  </nav>
+</div>
+
 <section>
     <h2>Professional Positions</h2>
-    <div class="text-right -mt-2 mb-2">
-      <button class="text-xs text-blue-700 dark:text-blue-300 hover:underline mr-2" on:click={() => setAllCollapsed(true)} aria-label="Show all sections">Show all</button>
-      <button class="text-xs text-blue-700 dark:text-blue-300 hover:underline" on:click={() => setAllCollapsed(false)} aria-label="Show newer items only">Show newer</button>
-    </div>
     <div class="m-2 rounded-lg p-5 dark:bg-slate-700 bg-slate-200">
       <ul class="space-y-1">
         {#each professionalPositions as position}
@@ -920,6 +942,12 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 </div>
 
 <style lang="postcss">
+    .link-toggle-selected {
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1.5px;
+    }
     .cmy-text-gradient {
         @apply bg-gradient-to-r from-cyan-600 via-magenta to-yellow-500 text-transparent bg-clip-text;
     }

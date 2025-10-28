@@ -54,6 +54,53 @@
     // Format title
     let title = publication.title;
 
+    // Special handling for book chapters with editors
+    if (publication.type === 'chapter') {
+      // Format editors as: G. Family, G. Family
+      const editorsArr = publication.editor || [];
+      const editorsFormatted = editorsArr
+        .map(e => {
+          const given = e.given ? e.given.trim() : '';
+          // Use existing initials if provided (e.g., "R. L.") otherwise take first character
+          const initials = given.includes('.') ? given : (given ? `${given.charAt(0)}.` : '');
+          return `${initials} ${e.family}`.trim();
+        })
+        .join(', ');
+
+      const edLabel = editorsArr.length === 1 ? 'Ed.' : 'Eds.';
+
+      // Book title (container-title)
+      let bookTitle = publication['container-title'] ? `${publication['container-title']}` : '';
+      if (asHTML && bookTitle) {
+        bookTitle = `<i>${bookTitle}</i>`;
+      }
+
+      // Pages
+      const pagesPart = publication.page ? ` (pp. ${publication.page})` : '';
+
+      // Publisher
+      const publisher = publication.publisher ? `${publication.publisher}` : '';
+
+      // DOI or URL
+      let doiOrUrl: string = '';
+      if (publication.DOI && publication.DOI.startsWith('http')) {
+        doiOrUrl = publication.DOI;
+      } else if (publication.DOI) {
+        doiOrUrl = `doi:${publication.DOI}`;
+      } else if (publication.URL) {
+        doiOrUrl = `Retrieved from ${publication.URL}`;
+      }
+
+      // ISBN
+      const isbnPart = publication.ISBN ? `ISBN: ${publication.ISBN}` : '';
+
+      const inEditors = editorsFormatted ? ` In ${editorsFormatted} (${edLabel}), ` : ' ';
+      const pubSection = [bookTitle + pagesPart, publisher].filter(Boolean).join('. ');
+      const tail = [pubSection, doiOrUrl, isbnPart].filter(Boolean).join('. ');
+
+      return `${authors} (${year}). ${title}.${inEditors}${tail}`.trim();
+    }
+
     // Format journal name, volume, and issue
     let journal = publication['container-title'] ? `${publication['container-title']}` : '';
     let volume = publication.volume ? `${publication.volume}` : '';
@@ -114,7 +161,11 @@
   }
 
     // Combine all parts
-    return `${authors} (${year}). ${title}. ${journal_section}${event} ${doiOrUrl}`;
+    const base = `${authors} (${year}). ${title}. ${journal_section}${event} ${doiOrUrl}`.trim();
+    const isbnPart = publication.ISBN ? `ISBN: ${publication.ISBN}` : '';
+    if (!isbnPart) return base;
+    const joiner = base.endsWith('.') ? ' ' : '. ';
+    return `${base}${joiner}${isbnPart}`;
   }
 
 

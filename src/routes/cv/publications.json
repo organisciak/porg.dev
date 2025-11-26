@@ -38,6 +38,26 @@
     "status": "forthcoming"
   },
   {
+    "type": "speech",
+    "genre": "Conference Presentation",
+    "author": [
+      {"family": "Kim", "given": "Y."},
+      {"family": "Dumas", "given": "D."},
+      {"family": "Acar", "given": "S."},
+      {"family": "Organisciak", "given": "P."}
+    ],
+    "issued": {
+      "date-parts": [
+        ["2026", "4"]
+      ]
+    },
+    "title": "Innovative-Adaptive Model of TTCT Figural: Invariance Across Ethnicity, Not Gender",
+    "container-title": "NCME Annual Meeting",
+    "publisher": "National Council on Measurement in Education",
+    "event-place": "Los Angeles, California",
+    "status": "forthcoming"
+  },
+  {
     "type": "article-journal",
     "title": "Reversing the alternate uses task",
     "container-title": "Thinking Skills and Creativity",

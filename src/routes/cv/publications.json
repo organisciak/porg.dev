@@ -1,5 +1,33 @@
 [
   {
+    "type": "article-journal",
+    "title": "The Innovative-Adaptive Model of the TTCT Figural Is Invariant Across Ethnicity but Not Gender",
+    "container-title": "Gifted Child Quarterly",
+    "DOI": "10.1177/00169862251388487",
+    "URL": "https://journals.sagepub.com/doi/abs/10.1177/00169862251388487",
+    "author": [
+      {
+        "family": "Kim",
+        "given": "Yoojoong"
+      },
+      {
+        "family": "Dumas",
+        "given": "Denis"
+      },
+      {
+        "family": "Acar",
+        "given": "Selcuk"
+      },
+      {
+        "family": "Organisciak",
+        "given": "Peter"
+      }
+    ],
+    "issued": {
+      "date-parts": [[2025, 11, 30]]
+    }
+  },
+  {
     "type": "chapter",
     "title": "Toward a New AI Literacy",
     "container-title": "A Critical Look at Information Science and Librarianship in a New Age: Constellation of Insanity",

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { MetaTags } from 'svelte-meta-tags';
 	import Fa from 'svelte-fa';
-	import { faGithub, faTwitter, faLinkedinIn, faBluesky } from '@fortawesome/free-brands-svg-icons';
+	import { faGithub, faLinkedinIn, faBluesky } from '@fortawesome/free-brands-svg-icons';
 	import { onMount } from 'svelte';
 
 	const meta = {
@@ -193,9 +193,6 @@
 			</a>
 			<a href="https://github.com/organisciak" aria-label="Github" target="_blank" class="social-icon">
 				<Fa icon={faGithub} />
-			</a>
-			<a href="https://twitter.com/POrg" aria-label="X/Twitter" target="_blank" class="social-icon">
-				<Fa icon={faTwitter} />
 			</a>
 			<a href="https://www.linkedin.com/in/organisciak/" aria-label="LinkedIn" target="_blank" class="social-icon">
 				<Fa icon={faLinkedinIn} />

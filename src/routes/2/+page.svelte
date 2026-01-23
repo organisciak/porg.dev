@@ -2,7 +2,9 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import Fa from 'svelte-fa';
 	import { faGithub, faLinkedinIn, faBluesky } from '@fortawesome/free-brands-svg-icons';
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
+	import SNESHeader from '$lib/header/SNESHeader.svelte';
+	import { hideStandardHeader } from '$lib/stores/headerVisibility';
 
 	const meta = {
 		title: 'Peter Organisciak',
@@ -16,6 +18,7 @@
 	let mounted = false;
 
 	onMount(() => {
+		hideStandardHeader.set(true);
 		stars = Array.from({ length: 100 }, () => ({
 			x: Math.random() * 100,
 			y: Math.random() * 100,
@@ -24,6 +27,10 @@
 			brightness: 0.4 + Math.random() * 0.6
 		}));
 		mounted = true;
+	});
+
+	onDestroy(() => {
+		hideStandardHeader.set(false);
 	});
 
 	let menuIndex = 0;
@@ -99,6 +106,8 @@
 </svelte:head>
 
 <svelte:window on:keydown={handleKeydown} />
+
+<SNESHeader />
 
 <div class="snes-page">
 	<!-- Starfield background -->

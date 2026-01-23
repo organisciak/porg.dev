@@ -182,8 +182,8 @@
 
 		<!-- Controls hint -->
 		<div class="controls-hint">
-			<span class="key">W</span><span class="key">S</span> or <span class="key">\u2191</span><span class="key">\u2193</span> SELECT
-			<span class="separator">\u00A0\u00A0\u00A0</span>
+			<span class="key">W</span><span class="key">S</span> or <span class="key">&uarr;</span><span class="key">&darr;</span> SELECT
+			<span class="separator">&nbsp;&nbsp;&nbsp;</span>
 			<span class="key">ENTER</span> CONFIRM
 		</div>
 

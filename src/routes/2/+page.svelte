@@ -9,6 +9,7 @@
 		description: 'Professor and Applied AI Researcher',
 		url: 'https://www.porg.dev'
 	}
+	const currentYear = new Date().getFullYear();
 
 	// Generate stars for the background
 	let stars: { x: number; y: number; size: number; twinkleDelay: number; brightness: number }[] = [];
@@ -201,7 +202,7 @@
 
 		<!-- Copyright in retro style -->
 		<div class="copyright">
-			\u00A9 2025 PORG.DEV \u00A0\u00A0 ALL RIGHTS RESERVED
+			&copy; {currentYear} PORG.DEV
 		</div>
 	</div>
 </div>

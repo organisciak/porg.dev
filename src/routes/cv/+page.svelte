@@ -1342,7 +1342,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 	.publication-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		grid-template-columns: repeat(2, 1fr);
 		gap: 0.75rem;
 	}
 

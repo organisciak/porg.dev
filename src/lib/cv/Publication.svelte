@@ -325,7 +325,7 @@ TODO allow customizing the itemtype
 </div>
 
   {#if data?.abstract && showAbstract}
-    <div class="text-xs rounded-lg dark:bg-slate-600 bg-slate-300 p-2 mt-1">
+    <div class="text-sm leading-relaxed rounded-lg dark:bg-slate-800 bg-slate-100 text-slate-800 dark:text-slate-100 p-4 mt-2 border border-slate-400 dark:border-slate-600">
       {data.abstract}
     </div>
   {/if}

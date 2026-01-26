@@ -407,7 +407,7 @@ use in other tools and websites, such as Qualtrics.
         name: "Dr. Peter Organisciak",
         title: "Department Chair and Associate Professor, University of Denver, Research Methods and Information Science",
         lab: "Massive Texts Lab",
-        labUrl: "http://portfolio.du.edu/massivetexts",
+        labUrl: "https://github.com/massivetexts",
         orcid: "https://orcid.org/0000-0002-9058-2280",
         email: "peter.organisciak@du.edu",
         gscholar: "https://scholar.google.com/citations?hl=en&user=RfHXG5EAAAAJ&view_op=list_works&sortby=pubdate",

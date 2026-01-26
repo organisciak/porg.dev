@@ -188,14 +188,36 @@
 
 
 
+  const schemaItemTypeByCSL: Record<string, string> = {
+    'article': 'ScholarlyArticle',
+    'article-journal': 'ScholarlyArticle',
+    'article-magazine': 'Article',
+    'article-newspaper': 'NewsArticle',
+    'book': 'Book',
+    'chapter': 'Chapter',
+    'dataset': 'Dataset',
+    'manuscript': 'Manuscript',
+    'paper-conference': 'ScholarlyArticle',
+    'post': 'BlogPosting',
+    'report': 'Report',
+    'thesis': 'Thesis',
+    'webpage': 'WebPage'
+  };
+
+  const defaultItemType = 'ScholarlyArticle';
+
+  function resolveItemType(publication: CSLPublication | undefined): string {
+    if (!publication?.type) return defaultItemType;
+    return schemaItemTypeByCSL[publication.type] ?? defaultItemType;
+  }
+
+  $: publicationItemType = `http://schema.org/${resolveItemType(data)}`;
+
   let showAbstract = false;
 
 </script>
-<!---
-TODO allow customizing the itemtype
--->
 <div class="text-sm publication flex-auto w-80 dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5" itemscope
-  itemtype="http://schema.org/ScholarlyArticle">
+  itemtype={publicationItemType}>
   <div class="flex items-start">
   <h2 class="text-lg" itemprop="headline">
       {data?.title || 'Untitled'}

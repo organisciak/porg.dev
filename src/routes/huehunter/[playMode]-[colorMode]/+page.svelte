@@ -1219,7 +1219,8 @@
     }
 
     .color-panel {
-        min-height: 160px;
+        min-height: 180px;
+        height: clamp(180px, 28vw, 240px);
     }
 
     .score-block {

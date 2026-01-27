@@ -1605,14 +1605,18 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
     encodeURIComponent([book.title, book.searchAuthor].filter(Boolean).join(' '));
 
   const amazonLink = (book) => `https://www.amazon.com/s?k=${buildQuery(book)}`;
-  const bookshopLink = (book) => `https://bookshop.org/search?query=${buildQuery(book)}`;
-  const libbyLink = () => 'https://libbyapp.com/';
+  const bookshopLink = (book) => `https://bookshop.org/beta-search?keywords=${buildQuery(book)}`;
+  const libbyLibrarySlug = 'denver';
+  const libbyLink = (book) =>
+    libbyLibrarySlug
+      ? `https://libbyapp.com/search/${libbyLibrarySlug}/search/query-${buildQuery(book)}/page-1`
+      : '';
   const labelFor = (book) => book.label || (book.kind === 'winner' ? 'Winner' : 'Honor');
 </script>
 
 # {title}
 
-The American Library Association has announced the **2026 Youth Media Award winners**. This post includes the winners *and* honor books, grouped by award, with covers, short descriptions, and quick links to Amazon, Bookshop.org, and Libby. Winners are highlighted in gold. Libby searches are library-specific, so the Libby button opens Libby where you can select your library and search.
+The American Library Association has announced the **2026 Youth Media Award winners**. This post includes the winners *and* honor books, grouped by award, with covers, short descriptions, and quick links to Amazon, Bookshop.org, and Libby. Winners are highlighted in gold. Libby links are library-specific; update `libbyLibrarySlug` (default: `denver`) to your library's slug from your Libby URL, or leave it blank to hide Libby buttons.
 
 For the full official list (including non-book awards), see the [ALA announcement](https://www.ala.unikron.com/).
 
@@ -1704,14 +1708,16 @@ For the full official list (including non-book awards), see the [ALA announcemen
                 >
                   Bookshop.org
                 </a>
-                <a
-                  class="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-300 hover:text-slate-900"
-                  href={libbyLink(book)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Libby
-                </a>
+                {#if libbyLibrarySlug}
+                  <a
+                    class="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-300 hover:text-slate-900"
+                    href={libbyLink(book)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Libby
+                  </a>
+                {/if}
               </div>
             </div>
           </article>

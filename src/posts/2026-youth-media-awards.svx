@@ -5,6 +5,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
 ---
 
 <script>
+  import { Star } from 'lucide-svelte';
   const awards = [
     {
       "award": "John Newbery Medal",
@@ -1617,7 +1618,8 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
 
 # {title}
 
-The American Library Association has announced the **2026 Youth Media Award winners**. This post includes the winners *and* honor books, grouped by award, with covers, short descriptions, and quick links to Amazon, Bookshop.org, and Libby. Winners are highlighted in gold.
+The American Library Association has announced the **2026 Youth Media Award winners**.
+I wanted an easy way to view the winners and honor books, with links to Amazon, Bookshop.org, and Libby. Winners are marked with a star.
 
 <div class="not-prose mt-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
   <label class="flex items-center gap-2 text-sm font-semibold text-slate-700" for="libby-toggle">
@@ -1636,7 +1638,7 @@ The American Library Association has announced the **2026 Youth Media Award winn
         Libby Library
       </label>
       <p class="mt-1 text-xs text-slate-500">
-        The link that you see after logging into libby. Example: `denver` from `libbyapp.com/library/denver`
+        The link that you see after logging into <a href="https://libbyapp.com/library/denver">libby</a>. Example: `denver` from `https://libbyapp.com/library/<strong>denver</strong>`
       </p>
       <input
         id="libby-slug"
@@ -1679,14 +1681,8 @@ For the full official list (including non-book awards), see the [ALA announcemen
 
       <div class={`not-prose ${group.name ? 'mt-4' : 'mt-6'} grid gap-6 sm:grid-cols-2 lg:grid-cols-3`}>
         {#each group.items as book}
-          <article
-            class={`flex h-full flex-col overflow-hidden rounded-xl border shadow-sm ${
-              book.kind === 'winner' ? 'border-amber-300 bg-amber-50/60' : 'border-slate-200 bg-white'
-            }`}
-          >
-            <div class={`flex items-center justify-center p-4 ${
-              book.kind === 'winner' ? 'bg-amber-50' : 'bg-slate-50'
-            }`}>
+          <article class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+            <div class="flex items-center justify-center bg-slate-50 p-4">
               <div class="aspect-[2/3] w-40 sm:w-44 md:w-48">
                 {#if book.cover}
                   <img
@@ -1704,13 +1700,10 @@ For the full official list (including non-book awards), see the [ALA announcemen
             </div>
             <div class="flex flex-1 flex-col gap-3 p-4">
               <div class="flex flex-wrap items-center gap-2">
-                <span
-                  class={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${
-                    book.kind === 'winner'
-                      ? 'bg-amber-200 text-amber-900'
-                      : 'bg-slate-100 text-slate-600'
-                  }`}
-                >
+                <span class="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-600">
+                  {#if book.kind === 'winner'}
+                    <Star class="h-3.5 w-3.5 text-amber-500" />
+                  {/if}
                   {labelFor(book)}
                 </span>
               </div>

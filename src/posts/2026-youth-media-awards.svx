@@ -1606,7 +1606,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
 
   const amazonLink = (book) => `https://www.amazon.com/s?k=${buildQuery(book)}`;
   const bookshopLink = (book) => `https://bookshop.org/beta-search?keywords=${buildQuery(book)}`;
-  const libbyLibrarySlug = 'denver';
+  let libbyLibrarySlug = 'denver';
   const libbyLink = (book) =>
     libbyLibrarySlug
       ? `https://libbyapp.com/search/${libbyLibrarySlug}/search/query-${buildQuery(book)}/page-1`
@@ -1616,7 +1616,23 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
 
 # {title}
 
-The American Library Association has announced the **2026 Youth Media Award winners**. This post includes the winners *and* honor books, grouped by award, with covers, short descriptions, and quick links to Amazon, Bookshop.org, and Libby. Winners are highlighted in gold. Libby links are library-specific; update `libbyLibrarySlug` (default: `denver`) to your library's slug from your Libby URL, or leave it blank to hide Libby buttons.
+The American Library Association has announced the **2026 Youth Media Award winners**. This post includes the winners *and* honor books, grouped by award, with covers, short descriptions, and quick links to Amazon, Bookshop.org, and Libby. Winners are highlighted in gold. Libby links are library-specific; enter your library slug (the part after `libbyapp.com/library/`) below, or leave it blank to hide Libby buttons.
+
+<div class="not-prose mt-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
+  <label class="text-sm font-semibold text-slate-700" for="libby-slug">
+    Libby library slug
+  </label>
+  <p class="mt-1 text-xs text-slate-500">
+    Example: `denver` from `libbyapp.com/library/denver`
+  </p>
+  <input
+    id="libby-slug"
+    class="mt-3 w-full max-w-xs rounded-md border border-slate-200 px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-200"
+    type="text"
+    placeholder="denver"
+    bind:value={libbyLibrarySlug}
+  />
+</div>
 
 For the full official list (including non-book awards), see the [ALA announcement](https://www.ala.unikron.com/).
 

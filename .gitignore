@@ -14,3 +14,5 @@ src/lib/movietags/
 typescript-dev.ipynb
 dev/splash.psd
 .playwright-mcp/
+test-results/
+playwright-report/

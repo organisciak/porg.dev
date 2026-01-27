@@ -6,13 +6,13 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const basePath = 'https://porg.dev';
 const routesDir = path.join(__dirname, '../src/routes');
+const postsDir = path.join(__dirname, '../src/posts');
+const postsJsonPath = path.join(__dirname, '../src/lib/generated/posts.json');
 const sitemapPath = path.join(__dirname, '../src/routes/sitemap.xml/+server.ts');
 
 // hardcoded extra URLs if this script has blind spots
 const extraUrls = [
-  //`${basePath}/extra-page-1`,
-  //`${basePath}/extra-page-2`,
-  // Add more as needed
+  `${basePath}/rss.xml`,
 ];
 
 const excludeUrls = [
@@ -38,6 +38,36 @@ function listSveltePages(dir, prefix = '') {
   return [...new Set(pages)];
 }
 
+function loadPostSlugsFromJson() {
+  if (!fs.existsSync(postsJsonPath)) {
+    return [];
+  }
+
+  const postsJson = fs.readFileSync(postsJsonPath, 'utf-8');
+  const posts = JSON.parse(postsJson);
+  return posts.map(post => post.slug).filter(Boolean);
+}
+
+function loadPostSlugsFromFilesystem() {
+  if (!fs.existsSync(postsDir)) {
+    return [];
+  }
+
+  const files = fs.readdirSync(postsDir);
+  return files
+    .filter(file => (file.endsWith('.md') || file.endsWith('.svx')) && !file.startsWith('_'))
+    .map(file => file.replace(/\.(md|svx)$/, ''));
+}
+
+function getPostSlugs() {
+  const slugsFromJson = loadPostSlugsFromJson();
+  if (slugsFromJson.length) {
+    return slugsFromJson;
+  }
+
+  return loadPostSlugsFromFilesystem();
+}
+
 function generateSitemap(urls) {
   const urlset = urls.map(url => `<url><loc>${url}</loc></url>`).join('\n');
 
@@ -52,7 +82,10 @@ function generateSitemap(urls) {
 async function updateSitemap() {
   const pages = listSveltePages(routesDir);
   const dynamicUrls = pages.map(page => `${basePath}${page === '/' ? '' : page}`);
-  const urls = [...new Set([...dynamicUrls, ...extraUrls])].filter(url => !excludeUrls.includes(url));
+  const postUrls = getPostSlugs().map(slug => `${basePath}/p/${slug}`);
+  const urls = [...new Set([...dynamicUrls, ...extraUrls, ...postUrls])].filter(
+    url => !excludeUrls.includes(url)
+  );
   const sitemap = generateSitemap(urls);
 
   fs.writeFileSync(sitemapPath, `

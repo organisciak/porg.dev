@@ -7,6 +7,7 @@
 <svelte:head>
   <title>Blog | P</title>
   <meta name="description" content="My blog posts" />
+  <link rel="alternate" type="application/rss+xml" title="porg.dev blog" href="{base}/rss.xml" />
 </svelte:head>
 
 <div class="container mx-auto px-4 py-8">

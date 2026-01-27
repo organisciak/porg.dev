@@ -35,6 +35,7 @@
   {#if metadata.description}
     <meta name="description" content={String(metadata.description)} />
   {/if}
+  <link rel="alternate" type="application/rss+xml" title="porg.dev blog" href="{base}/rss.xml" />
 </svelte:head>
 
 <div class="container mx-auto px-4 py-8">

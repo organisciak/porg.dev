@@ -1,5 +1,5 @@
 ---
-title: '2026 Youth Media Award Winners: Covers, Links, and Quick Descriptions'
+title: '2026 Youth Media Award Winners'
 date: '2026-01-27'
 description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners with covers, bookstore/library links, and quick blurbs.'
 ---
@@ -477,9 +477,9 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
 
 # {title}
 
-The American Library Association has announced the **2026 Youth Media Award winners**. This post focuses on the *winning books* (not the honor lists) and groups them by award. Each title includes a cover image, a short description, and quick links to Amazon, Bookshop.org, and Libby.
+The American Library Association has announced the **2026 Youth Media Award winners**. I wanted to collect the books for easy browsing.
 
-For the full official list (including honors and non-book awards), see the [ALA announcement](https://www.ala.unikron.com/).
+The full official list (including honors and non-book awards), see the [ALA announcement](https://www.ala.unikron.com/).
 
 <nav class="not-prose mt-6 mb-10 rounded-xl border border-slate-200 bg-slate-50 p-4">
   <p class="text-sm font-semibold text-slate-700">Jump to an award</p>

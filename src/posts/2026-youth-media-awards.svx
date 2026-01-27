@@ -475,6 +475,8 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
   const libbyLink = (book) => `https://libbyapp.com/search?query=${buildQuery(book)}`;
 </script>
 
+# {title}
+
 The American Library Association has announced the **2026 Youth Media Award winners**. This post focuses on the *winning books* (not the honor lists) and groups them by award. Each title includes a cover image, a short description, and quick links to Amazon, Bookshop.org, and Libby.
 
 For the full official list (including honors and non-book awards), see the [ALA announcement](https://www.ala.unikron.com/).

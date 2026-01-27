@@ -1,5 +1,5 @@
 ---
-title: '2026 Youth Media Award Winners'
+title: '2026 Youth Media Award Winners: Covers, Links, and Quick Descriptions'
 date: '2026-01-27'
 description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners with covers, bookstore/library links, and quick blurbs.'
 ---
@@ -9,453 +9,1587 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
     {
       "award": "John Newbery Medal",
       "awardDescription": "For the most outstanding contribution to children's literature.",
-      "winners": [
+      "groups": [
         {
-          "title": "All the Blues in the Sky",
-          "creators": "Renée Watson",
-          "searchAuthor": "Renée Watson",
-          "publisher": "Bloomsbury Children's Books (Bloomsbury Publishing)",
-          "cover": "https://books.google.com/books/content?id=-Y9DEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-          "description": "When thirteen-year-old Sage's best friend dies, Sage struggles with grief and feels that she is at fault, but when she joins a grief group, she slowly learns to heal."
+          "name": "",
+          "items": [
+            {
+              "title": "All the Blues in the Sky",
+              "creators": "Renee Watson",
+              "searchAuthor": "Renee Watson",
+              "publisher": "Bloomsbury Children's Books (Bloomsbury Publishing)",
+              "kind": "winner",
+              "label": "Medal Winner",
+              "cover": "https://books.google.com/books/content?id=-Y9DEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "When thirteen-year-old Sage's best friend dies, Sage struggles with grief and feels that she is at fault, but when she joins a grief group, she slowly learns to heal."
+            },
+            {
+              "title": "The Nine Moons of Han Yu and Luli",
+              "creators": "Karina Yan Glaser",
+              "searchAuthor": "Karina Yan Glaser",
+              "publisher": "Allida (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=mmQ4EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "INSTANT NEW YORK TIMES AND USA TODAY BESTSELLER * INDIE NEXT PICK * FIVE STARRED REVIEWS!"
+            },
+            {
+              "title": "A Sea of Lemon Trees: The Corrido of Roberto Alvarez",
+              "creators": "Maria Dolores Aguila",
+              "searchAuthor": "Maria Dolores Aguila",
+              "publisher": "Roaring Brook Press (Holtzbrinck Publishing)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=6KssEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "2025 NATIONAL BOOK AWARD LONGLIST FOR YOUNG PEOPLE'S LITERATURE Based on the true story of Roberto Alvarez and the Lemon Grove Incident, this vivid and uplifting middle grade debut novel in verse about one young child's courage to..."
+            },
+            {
+              "title": "The Teacher of Nomad Land: A World War II Story",
+              "creators": "Daniel Nayeri",
+              "searchAuthor": "Daniel Nayeri",
+              "publisher": "Arthur A. Levine (Levine Querido)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=xnc4EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Winner of the National Book Award for Young People's Literature Page-turning WW2 hidden history masterfully told by award winner Daniel Nayeri 1941."
+            },
+            {
+              "title": "The Undead Fox of Deadwood Forest",
+              "creators": "Aubrey Hartman; illustrated by Marcin Minor",
+              "searchAuthor": "Aubrey Hartman",
+              "publisher": "Little, Brown and Company (Hachette Book Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=GoQNEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "This delightfully grim tale is a heartwarming exploration of moving on, perfect for fans of Kate DiCamillo and Tim Burton!"
+            }
+          ]
         }
       ]
     },
     {
       "award": "Randolph Caldecott Medal",
       "awardDescription": "For the most distinguished American picture book for children.",
-      "winners": [
+      "groups": [
         {
-          "title": "Fireworks",
-          "creators": "Matthew Burgess; illustrated by Cátia Chien",
-          "searchAuthor": "Matthew Burgess",
-          "publisher": "Clarion Books (HarperCollins Publishers)",
-          "cover": "https://books.google.com/books/content?id=YJon0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-          "description": "Fireworks is a sparkling picture book from the award-winning team of Matthew Burgess and Cátia Chien, highlighting the simple delights of a steamy July day in the city as two siblings eagerly anticipate a spectacular fireworks display."
+          "name": "",
+          "items": [
+            {
+              "title": "Fireworks",
+              "creators": "Matthew Burgess; illustrated by Catia Chien",
+              "searchAuthor": "Matthew Burgess",
+              "publisher": "Clarion Books (HarperCollins Publishers)",
+              "kind": "winner",
+              "label": "Medal Winner",
+              "cover": "https://books.google.com/books/content?id=YJon0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "Fireworks is a sparkling picture book from the award-winning team of Matthew Burgess and Cátia Chien, highlighting the simple delights of a steamy July day in the city as two siblings eagerly anticipate a spectacular fireworks display."
+            },
+            {
+              "title": "Every Monday Mabel",
+              "creators": "Jashar Awan",
+              "searchAuthor": "Jashar Awan",
+              "publisher": "Simon & Schuster Books for Young Readers (Simon & Schuster)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=cH9CEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Every Monday Mabel takes her breakfast outside and waits for her favorite part of the week: the garbage truck."
+            },
+            {
+              "title": "Our Lake",
+              "creators": "Angie Kang",
+              "searchAuthor": "Angie Kang",
+              "publisher": "Kokila (Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=JyUMEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A tender and vulnerable exploration of love and loss that follows two boys as they take their first trip back to the lake without their father, from debut author-illustrator Angie Kang."
+            },
+            {
+              "title": "Stalactite & Stalagmite: A Big Tale from a Little Cave",
+              "creators": "Drew Beckmeyer",
+              "searchAuthor": "Drew Beckmeyer",
+              "publisher": "Atheneum Books for Young Readers (Simon & Schuster)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=YsNHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Two little mineral piles, Stalactite and Stalagmite, foster a friendship over millions of years as they grow closer together, figuratively and literally."
+            },
+            {
+              "title": "Sundust",
+              "creators": "Zeke Pena",
+              "searchAuthor": "Zeke Pena",
+              "publisher": "Kokila (Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=204vEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In his striking author-illustrator debut, the award-winning illustrator of My Papi Has a Motorcycle offers an immersive and fantastical desert adventure, where the sun reigns over the vast landscape and shapes all that it touches."
+            }
+          ]
         }
       ]
     },
     {
       "award": "Coretta Scott King Book Awards",
       "awardDescription": "Honoring outstanding books by African American authors and illustrators.",
-      "winners": [
+      "groups": [
         {
-          "title": "Will's Race for Home",
-          "creators": "Jewell Parker Rhodes",
-          "searchAuthor": "Jewell Parker Rhodes",
-          "publisher": "Little, Brown Books for Young Readers (Hachette Book Group)",
-          "note": "King Author Award Book winner",
-          "cover": "https://books.google.com/books/content?id=Z2sHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "Rhodes deftly captures a unique aspect of this historical event, with a perspective that is often under-represented in historical fiction."
+          "name": "King Author Award",
+          "items": [
+            {
+              "title": "Will's Race for Home",
+              "creators": "Jewell Parker Rhodes",
+              "searchAuthor": "Jewell Parker Rhodes",
+              "publisher": "Little, Brown and Company (Hachette Book Group)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=Z2sHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Rhodes deftly captures a unique ­aspect of this historical event, with a perspective that is ­often under-represented in historical ­fiction."
+            },
+            {
+              "title": "The Incredibly Human Henson Blayze",
+              "creators": "Derrick Barnes",
+              "searchAuthor": "Derrick Barnes",
+              "publisher": "Viking (Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=ueE-EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Derrick Barnes takes all forms of storytelling available to him­—allegory, folktales, and classics—to weave a novel that is empowered, empowering, and incredibly human."
+            },
+            {
+              "title": "The Library in the Woods",
+              "creators": "Calvin Alexander Ramsey; illustrated by R. Gregory Christie",
+              "searchAuthor": "Calvin Alexander Ramsey",
+              "publisher": "Carolrhoda Books (Lerner Publishing Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=UGFkEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "After a storm devastates the farm his parents have been renting, Junior moves with his family to Roxboro, North Carolina."
+            },
+            {
+              "title": "Split the Sky",
+              "creators": "Marie Arnold",
+              "searchAuthor": "Marie Arnold",
+              "publisher": "Little, Brown and Company (Hachette Book Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=GLc2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In this haunting story about family, legacy, and sacrifice, a young Black girl living in a Texas sundown town must find the courage to stand up for what's right even when it means facing impossible choices—perfect for fans of Dear Martin..."
+            }
+          ]
         },
         {
-          "title": "The Library in the Woods",
-          "creators": "Calvin Alexander Ramsey; illustrated by R. Gregory Christie",
-          "searchAuthor": "Calvin Alexander Ramsey",
-          "publisher": "Holiday House",
-          "note": "King Illustrator Award Book winner",
-          "cover": "https://books.google.com/books/content?id=UGFkEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "After a storm devastates the farm his parents have been renting, Junior moves with his family to Roxboro, North Carolina."
+          "name": "King Illustrator Award",
+          "items": [
+            {
+              "title": "The Library in the Woods",
+              "creators": "Calvin Alexander Ramsey; illustrated by R. Gregory Christie",
+              "searchAuthor": "Calvin Alexander Ramsey",
+              "publisher": "Carolrhoda Books (Lerner Publishing Group)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=UGFkEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "After a storm devastates the farm his parents have been renting, Junior moves with his family to Roxboro, North Carolina."
+            },
+            {
+              "title": "Andre: Andre Leon Talley - A Fabulously Fashionable Fairy Tale",
+              "creators": "Carole Boston Weatherford and Rob Sanders; illustrated by Lamont O'Neal",
+              "searchAuthor": "Carole Boston Weatherford",
+              "publisher": "Henry Holt and Company (Macmillan Publishing Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://covers.openlibrary.org/b/id/12366237-L.jpg",
+              "description": "This captivating biography chronicles the remarkable journey of renowned fashion editor and arbiter of style Andre Leon Talley-from humble beginnings in rural North Carolina to the pinnacle of the international world of fashion."
+            },
+            {
+              "title": "City Summer, Country Summer",
+              "creators": "Kiese Laymon; illustrated by Alexis Franklin",
+              "searchAuthor": "Kiese Laymon",
+              "publisher": "Kokila (Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=hEUTEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A lyrical picture book from the award-winning author of Heavy, about three Black boys who form a deep connection during a transformative summer trip down South to visit family."
+            }
+          ]
         },
         {
-          "title": "Under the Neon Lights",
-          "creators": "Arriel Vinson",
-          "searchAuthor": "Arriel Vinson",
-          "publisher": "Nancy Paulsen Books (Penguin Young Readers, PRH)",
-          "note": "John Steptoe New Talent Author Award winner",
-          "cover": "https://books.google.com/books/content?id=4_geEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "In this sparkling and heartfelt debut YA novel in verse by a Reese's Book Club LitUp fellow, a young Black girl discovers first love, self-worth, and the power of a good skate."
+          "name": "John Steptoe New Talent Author Award",
+          "items": [
+            {
+              "title": "Under the Neon Lights",
+              "creators": "Arriel Vinson",
+              "searchAuthor": "Arriel Vinson",
+              "publisher": "G.P. Putnam's Sons (Penguin Random House)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=4_geEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In this sparkling and heartfelt debut YA novel in verse by a Reese's Book Club LitUp fellow, a young Black girl discovers first love, self-worth, and the power of a good skate."
+            }
+          ]
         }
       ]
     },
     {
       "award": "Michael L. Printz Award",
       "awardDescription": "For excellence in literature written for young adults.",
-      "winners": [
+      "groups": [
         {
-          "title": "Legendary Frybread Drive-In: Intertribal Stories",
-          "creators": "Edited by Cynthia Leitich Smith",
-          "searchAuthor": "Cynthia Leitich Smith",
-          "publisher": "Heartdrum (HarperCollins Publishers)",
-          "cover": "https://books.google.com/books/content?id=EKszEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "Featuring the voices of both new and acclaimed Indigenous writers and edited by bestselling Muscogee author Cynthia Leitich Smith, this collection of interconnected stories serves up laughter, love, Native pride, and the world's best..."
+          "name": "",
+          "items": [
+            {
+              "title": "Legendary Frybread Drive-In: Intertribal Stories",
+              "creators": "Edited by Cynthia Leitich Smith",
+              "searchAuthor": "Cynthia Leitich Smith",
+              "publisher": "Heartdrum (HarperCollins Publishers)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=EKszEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Featuring the voices of both new and acclaimed Indigenous writers and edited by bestselling Muscogee author Cynthia Leitich Smith, this collection of interconnected stories serves up laughter, love, Native pride, and the world's best..."
+            },
+            {
+              "title": "Cope Field",
+              "creators": "T.L. Simpson",
+              "searchAuthor": "T.L. Simpson",
+              "publisher": "Flux (North Star Editions)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=C2XS0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "A teen baseball star who \"has it all\"--looks, wealth, and a pro-MLB father--grapples with an impossible choice: reveal his abuse at the hands of his father and risk being separated from his younger brother in the foster care system, or..."
+            },
+            {
+              "title": "The House That No One Sees",
+              "creators": "Adina King",
+              "searchAuthor": "Adina King",
+              "publisher": "Feiwel and Friends (Macmillan Children’s Publishing Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=gi76EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Penelope Ross has always felt like a passenger in her mother's fairytale - until the night of her 17th birthday, when she is forced to enter her own. After a text from her estranged mother rips her away from a night with friends, Penny is..."
+            },
+            {
+              "title": "Sisters in the Wind",
+              "creators": "Angeline Boulley",
+              "searchAuthor": "Angeline Boulley",
+              "publisher": "Henry Holt Books for Young Readers (Macmillan Children’s Publishing Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=H7pEEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "From the instant New York Times bestselling author of Firekeeper's Daughter and Warrior Girl Unearthed comes a daring new mystery about a foster teen claiming her heritage on her own terms."
+            },
+            {
+              "title": "Song of a Blackbird",
+              "creators": "Maria van Lieshout",
+              "searchAuthor": "Maria van Lieshout",
+              "publisher": "First Second (Macmillan Children’s Publishing Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=9SAwEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "FIVE STARRED REVIEWS! A NATIONAL BOOK AWARD LONGLIST SELECTION A Publisher's Weekly Best Book of the Year \"This is essential, illuminating reading.\" —R. J. Palacio, bestselling author of Wonder Fight hate. Make art. In 1943 Amsterdam, Emma..."
+            }
+          ]
         }
       ]
     },
     {
       "award": "Schneider Family Book Award",
       "awardDescription": "Honoring books that embody the disability experience.",
-      "winners": [
+      "groups": [
         {
-          "title": "Wanda Hears the Stars: A Blind Astronomer Listens to the Universe",
-          "creators": "Amy S. Hansen with Wanda Díaz Merced; illustrated by Rocio Arreola Mendoza",
-          "searchAuthor": "Amy S. Hansen",
-          "publisher": "Capstone Editions (Capstone)",
-          "note": "Younger Children's winner",
-          "cover": "https://books.google.com/books/content?id=KaYyEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "A nonfiction picture book biography of astrophysicist Wanda Díaz Merced and how losing her sight didn't stop her from studying the stars."
+          "name": "Younger Children (Ages 0-8)",
+          "items": [
+            {
+              "title": "Wanda Hears the Stars: A Blind Astronomer Listens to the Universe",
+              "creators": "Amy S. Hansen with Wanda Diaz Merced; illustrated by Rocio Arreola Mendoza",
+              "searchAuthor": "Amy S. Hansen",
+              "publisher": "Charlesbridge",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=KaYyEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A nonfiction picture book biography of astrophysicist Wanda Díaz Merced and how losing her sight didn't stop her from studying the stars."
+            },
+            {
+              "title": "Bat and the Business of Ferrets",
+              "creators": "Elana K. Arnold; illustrated by Charles Santoso",
+              "searchAuthor": "Elana K. Arnold",
+              "publisher": "Clarion Books (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=SlUHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "The bestselling Bat returns! Bat and the Business of Ferrets is the fourth title in National Book Award finalist Elana K. Arnold's heartfelt and widely acclaimed series featuring an unforgettable young boy on the autism spectrum. Bixby..."
+            },
+            {
+              "title": "I Hear the Snow, I Smell the Sea",
+              "creators": "Janice Milusich; illustrated by Chris Raschka",
+              "searchAuthor": "Janice Milusich",
+              "publisher": "Anne Schwartz Books (Random House Children's Books, Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=NRtEEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In this lyrical picture book illustrated by a two-time Caldecott Medalist, share in a blind child's joyful experience of the changing seasons."
+            }
+          ]
         },
         {
-          "title": "Where Only Storms Grow",
-          "creators": "Alyssa Colman",
-          "searchAuthor": "Alyssa Colman",
-          "publisher": "Roaring Brook Press (Holtzbrinck Publishing Group)",
-          "note": "Middle Grade winner",
-          "cover": "https://books.google.com/books/content?id=EI4cEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "For Fans of the I Survived series and The War That Saved My Life, this gripping middle grade novel is set during one of the most dangerous storms in American history."
+          "name": "Middle Grade (Ages 9-13)",
+          "items": [
+            {
+              "title": "Where Only Storms Grow",
+              "creators": "Alyssa Colman",
+              "searchAuthor": "Alyssa Colman",
+              "publisher": "Farrar, Straus and Giroux Books for Young Readers (Macmillan Publishing Group)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=EI4cEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "For Fans of the I Survived series and The War That Saved My Life, this gripping middle grade novel is set during one of the most dangerous storms in American history."
+            },
+            {
+              "title": "Octopus Moon",
+              "creators": "Bobbie Pyron",
+              "searchAuthor": "Bobbie Pyron",
+              "publisher": "Nancy Paulsen Books (Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=Z2gQEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A deeply moving middle grade novel in verse about a girl struggling with depression when she starts fifth grade amidst a sea of changes."
+            },
+            {
+              "title": "The Strongest Heart",
+              "creators": "Saadia Faruqi",
+              "searchAuthor": "Saadia Faruqi",
+              "publisher": "Quill Tree Books (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=fBANEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "From beloved middle grade author Saadia Faruqi comes a poignant exploration of the impact of mental illness on families—and the love and hope that it takes to begin telling a different tale."
+            }
+          ]
         },
         {
-          "title": "Whale Eyes: A Memoir About Seeing and Being Seen",
-          "creators": "James Robinson; illustrated by Brian Rea",
-          "searchAuthor": "James Robinson",
-          "publisher": "Penguin Workshop (Penguin Random House)",
-          "note": "Young Adult winner",
-          "cover": "https://books.google.com/books/content?id=NEQPEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "Lively, interactive...truly eye-opening.\" -Booklist \"A sincere reflection on childhood...growing up in a world not built with him in mind.\" -Publishers Weekly \"A superb middle grade memoir that champions..."
+          "name": "Young Adult (Ages 14-18)",
+          "items": [
+            {
+              "title": "Whale Eyes: A Memoir About Seeing and Being Seen",
+              "creators": "James Robinson; illustrated by Brian Rea",
+              "searchAuthor": "James Robinson",
+              "publisher": "Penguin Workshop (Penguin Random House)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=NEQPEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "5 STARRED REVIEWS \"Lively, interactive...truly eye-opening.\" —Booklist \"A sincere reflection on childhood...growing up in a world not built with him in mind.\" —Publishers Weekly \"A superb middle grade memoir that champions..."
+            },
+            {
+              "title": "The Golden Boy's Guide to Bipolar",
+              "creators": "Sonora Reyes",
+              "searchAuthor": "Sonora Reyes",
+              "publisher": "Harper (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=MWY4EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "This is Sonora Reyes at their absolute best.\" — Aiden Thomas, New York Times bestselling author of Cemetery Boys From bestselling author Sonora Reyes comes a poignant and searingly honest companion novel to the multi-award-winning The..."
+            },
+            {
+              "title": "The Poetry of Car Mechanics",
+              "creators": "Heidi E.Y. Stemple",
+              "searchAuthor": "Heidi E.Y. Stemple",
+              "publisher": "Wordsong (Astra Books for Young Readers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=5_UNEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "This beautifully crafted novel sings and soars.\" —Nikki Grimes, author of Ordinary Hazards Dylan seeks solace through birdwatching and poetry in the woods behind his grandfather's auto shop—but when he rescues an injured hawk, he must..."
+            }
+          ]
         }
       ]
     },
     {
       "award": "Alex Awards",
       "awardDescription": "Adult books with special appeal to young adults.",
-      "winners": [
+      "groups": [
         {
-          "title": "The Favorites",
-          "creators": "Layne Fargo",
-          "searchAuthor": "Layne Fargo",
-          "publisher": "Random House (Penguin Random House)",
-          "cover": "https://books.google.com/books/content?id=5wwCEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "To the world, they were a scandal. To each other, an obsession. NATIONAL BESTSELLER • An epic love story set in the sparkling, savage sphere of elite figure skating, starring a woman determined to carve her own path on and off the ice-now..."
-        },
-        {
-          "title": "The Girls Who Grew Big",
-          "creators": "Leila Mottley",
-          "searchAuthor": "Leila Mottley",
-          "publisher": "Knopf (Penguin Random House)",
-          "cover": "https://books.google.com/books/content?id=7Ow2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "From the author of Oprah's Book Club pick and New York Times best seller Nightcrawling, here is an astonishing new novel about the joys and entanglements of a fierce group of teenage mothers in a small town on the Florida panhandle."
-        },
-        {
-          "title": "Harriet Tubman: Live in Concert",
-          "creators": "Bob the Drag Queen",
-          "searchAuthor": "Bob the Drag Queen",
-          "publisher": "Gallery Books (Simon & Schuster)",
-          "cover": "https://books.google.com/books/content?id=kOAPEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "In an age where the greatest heroes from history have magically returned to help save the world, Harriet Tubman returns to create a hip-hop album with a fallen producer, forging powerful music that inspires a divided nation."
-        },
-        {
-          "title": "Hole in the Sky",
-          "creators": "Daniel H. Wilson",
-          "searchAuthor": "Daniel H. Wilson",
-          "publisher": "Doubleday (Penguin Random House)",
-          "cover": "https://books.google.com/books/content?id=vU1PEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "A gripping sci-fi thriller-and Native American First Contact story-from the New York Times bestselling author of Robopocalypse, Daniel Wilson, who is a Cherokee Nation citizen and works as a threat forecaster for NASA."
-        },
-        {
-          "title": "Insectopolis: A Natural History",
-          "creators": "Peter Kuper",
-          "searchAuthor": "Peter Kuper",
-          "publisher": "W. W. Norton & Company",
-          "cover": "https://books.google.com/books/content?id=b7spEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "Award-winning cartoonist Peter Kuper transports readers through the 400-million-year history of insects and the remarkable entomologists who have studied them."
-        },
-        {
-          "title": "Plum",
-          "creators": "Andy Anderegg",
-          "searchAuthor": "Andy Anderegg",
-          "publisher": "Andrews McMeel Publishing",
-          "cover": "https://books.google.com/books/content?id=CWjK0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-          "description": "You wish to never see a plum again in your life... You think: When I am an adult, I will never have a fruit tree. I will never be like this.\" For fans of Sarah Rose Etter and Scott McClanahan, Plum is a darkly beautiful, unflinching novel..."
-        },
-        {
-          "title": "Sonita: My Fight Against Tyranny and My Escape to Freedom",
-          "creators": "Sonita Alizada",
-          "searchAuthor": "Sonita Alizada",
-          "publisher": "Harper Influence (HarperCollins Publishers)",
-          "cover": "https://books.google.com/books/content?id=3V0pEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "Nearly 15 million girls, including many in the U.S., are forced into marriage each year."
-        },
-        {
-          "title": "These Heathens",
-          "creators": "Mia McKenzie",
-          "searchAuthor": "Mia McKenzie",
-          "publisher": "Bold Strokes Books",
-          "cover": "https://books.google.com/books/content?id=_dk5EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "From the \"razor-sharp and outrageously funny\" (Taylor Jenkins Reid) mind of Mia McKenzie comes a vibrant novel exploring how one weekend can change your whole life."
-        },
-        {
-          "title": "What Kind of Paradise",
-          "creators": "Janelle Brown",
-          "searchAuthor": "Janelle Brown",
-          "publisher": "Random House (Penguin Random House)",
-          "cover": "https://books.google.com/books/content?id=VGgwEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "A teenage girl breaks free from her father's world of isolation to discover that her whole life is a lie in this \"absorbing and well-crafted\" (The Washington Post) novel from the New York Times bestselling author of Pretty Things and Watch..."
-        },
-        {
-          "title": "The Whyte Python World Tour",
-          "creators": "Travis Kennedy",
-          "searchAuthor": "Travis Kennedy",
-          "publisher": "Doubleday (Penguin Random House)",
-          "cover": "https://books.google.com/books/content?id=oOgjEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "Rikki Thunder, twenty-two-year-old drummer for the scorching new '80s metal band Whyte Python, is about to have it all: absurd wealth, global fame, and a dream girlfriend."
+          "name": "",
+          "items": [
+            {
+              "title": "The Favorites",
+              "creators": "Layne Fargo",
+              "searchAuthor": "Layne Fargo",
+              "publisher": "Random House (Penguin Random House)",
+              "kind": "winner",
+              "label": "Alex Award",
+              "cover": "https://books.google.com/books/content?id=5wwCEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "To the world, they were a scandal. To each other, an obsession. NATIONAL BESTSELLER • An epic love story set in the sparkling, savage sphere of elite figure skating, starring a woman determined to carve her own path on and off the ice—now..."
+            },
+            {
+              "title": "The Girls Who Grew Big",
+              "creators": "Leila Mottley",
+              "searchAuthor": "Leila Mottley",
+              "publisher": "Alfred A. Knopf (Penguin Random House)",
+              "kind": "winner",
+              "label": "Alex Award",
+              "cover": "https://books.google.com/books/content?id=7Ow2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "From the author of Oprah's Book Club pick and New York Times best seller Nightcrawling, here is an astonishing new novel about the joys and entanglements of a fierce group of teenage mothers in a small town on the Florida panhandle."
+            },
+            {
+              "title": "Harriet Tubman: Live in Concert",
+              "creators": "Bob the Drag Queen",
+              "searchAuthor": "Bob the Drag Queen",
+              "publisher": "Gallery Books (Simon & Schuster)",
+              "kind": "winner",
+              "label": "Alex Award",
+              "cover": "https://books.google.com/books/content?id=kOAPEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In an age where the greatest heroes from history have magically returned to help save the world, Harriet Tubman returns to create a hip-hop album with a fallen producer, forging powerful music that inspires a divided nation."
+            },
+            {
+              "title": "Hole in the Sky",
+              "creators": "Daniel H. Wilson",
+              "searchAuthor": "Daniel H. Wilson",
+              "publisher": "Doubleday (Penguin Random House)",
+              "kind": "winner",
+              "label": "Alex Award",
+              "cover": "https://books.google.com/books/content?id=vU1PEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A gripping sci-fi thriller—and Native American First Contact story—from the New York Times bestselling author of Robopocalypse, Daniel Wilson, who is a Cherokee Nation citizen and works as a threat forecaster for NASA."
+            },
+            {
+              "title": "Insectopolis: A Natural History",
+              "creators": "Peter Kuper",
+              "searchAuthor": "Peter Kuper",
+              "publisher": "W.W. Norton & Company",
+              "kind": "winner",
+              "label": "Alex Award",
+              "cover": "https://books.google.com/books/content?id=b7spEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Award-winning cartoonist Peter Kuper transports readers through the 400-million-year history of insects and the remarkable entomologists who have studied them."
+            },
+            {
+              "title": "Plum",
+              "creators": "Andy Anderegg",
+              "searchAuthor": "Andy Anderegg",
+              "publisher": "Hub City Press",
+              "kind": "winner",
+              "label": "Alex Award",
+              "cover": "https://books.google.com/books/content?id=CWjK0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "You wish to never see a plum again in your life... You think: When I am an adult, I will never have a fruit tree. I will never be like this.\" For fans of Sarah Rose Etter and Scott McClanahan, Plum is a darkly beautiful, unflinching novel..."
+            },
+            {
+              "title": "Sonita: My Fight Against Tyranny and My Escape to Freedom",
+              "creators": "Sonita Alizada",
+              "searchAuthor": "Sonita Alizada",
+              "publisher": "HarperOne (HarperCollins Publishers)",
+              "kind": "winner",
+              "label": "Alex Award",
+              "cover": "https://books.google.com/books/content?id=3V0pEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Nearly 15 million girls, including many in the U.S., are forced into marriage each year."
+            },
+            {
+              "title": "These Heathens",
+              "creators": "Mia McKenzie",
+              "searchAuthor": "Mia McKenzie",
+              "publisher": "Random House (Penguin Random House)",
+              "kind": "winner",
+              "label": "Alex Award",
+              "cover": "https://books.google.com/books/content?id=_dk5EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "From the \"razor-sharp and outrageously funny\" (Taylor Jenkins Reid) mind of Mia McKenzie comes a vibrant novel exploring how one weekend can change your whole life."
+            },
+            {
+              "title": "What Kind of Paradise",
+              "creators": "Janelle Brown",
+              "searchAuthor": "Janelle Brown",
+              "publisher": "Random House (Penguin Random House)",
+              "kind": "winner",
+              "label": "Alex Award",
+              "cover": "https://books.google.com/books/content?id=VGgwEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A teenage girl breaks free from her father's world of isolation to discover that her whole life is a lie in this \"absorbing and well-crafted\" (The Washington Post) novel from the New York Times bestselling author of Pretty Things and Watch..."
+            },
+            {
+              "title": "The Whyte Python World Tour",
+              "creators": "Travis Kennedy",
+              "searchAuthor": "Travis Kennedy",
+              "publisher": "Doubleday (Penguin Random House)",
+              "kind": "winner",
+              "label": "Alex Award",
+              "cover": "https://books.google.com/books/content?id=oOgjEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Rikki Thunder, twenty-two-year-old drummer for the scorching new '80s metal band Whyte Python, is about to have it all: absurd wealth, global fame, and a dream girlfriend."
+            }
+          ]
         }
       ]
     },
     {
       "award": "Mildred L. Batchelder Award",
       "awardDescription": "Honoring outstanding children's books originally published in a foreign language.",
-      "winners": [
+      "groups": [
         {
-          "title": "Croco",
-          "creators": "Azul López; translated by Kit Maude",
-          "searchAuthor": "Azul López",
-          "publisher": "Greystone Kids (Greystone Books Ltd.)",
-          "cover": "https://books.google.com/books/content?id=dl0_0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-          "description": "In a vibrant tropical jungle, Croco the Crocodile has fallen into a hole and can't climb out."
+          "name": "",
+          "items": [
+            {
+              "title": "Croco",
+              "creators": "Azul Lopez; translated by Kit Maude",
+              "searchAuthor": "Azul Lopez",
+              "publisher": "Tapioca Stories",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=dl0_0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "In a vibrant tropical jungle, Croco the Crocodile has fallen into a hole and can't climb out."
+            },
+            {
+              "title": "The Adventures of Cipollino",
+              "creators": "Gianni Rodari; illustrated by Dasha Tolstikova; translated by Antony Shugaar",
+              "searchAuthor": "Gianni Rodari",
+              "publisher": "Enchanted Lion Books",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=im0a0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "In this enchantingly whimsical, darkly comic tale from Gianni Rodari (Italy's Roald Dahl), an unlikely hero--none other than a young onion!--takes up the fight against the tyrannical Prince Lemon, with wit and heart."
+            },
+            {
+              "title": "From Memen to Mori",
+              "creators": "Shinsuke Yoshitake; translated by Ajani Oloye",
+              "searchAuthor": "Shinsuke Yoshitake",
+              "publisher": "Yen Press",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=I5ZKEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Meet Memen, the calm and collected older sister, and Mori, the curious younger brother."
+            },
+            {
+              "title": "Picking Tea with Baba",
+              "creators": "Xu Bin; illustrated by Yu Yin; translated by Shan Chen",
+              "searchAuthor": "Xu Bin",
+              "publisher": "Charlesbridge",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=8P4qEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Working in a Chinese tea garden is hard work, but it's rewarding when it's done with family!"
+            },
+            {
+              "title": "Pilgrim Codex",
+              "creators": "Vivian Mansour; illustrated by Emmanuel Valtierra; translated by Carlos Rodriguez Cortez",
+              "searchAuthor": "Vivian Mansour",
+              "publisher": "Em Querido (Levine Querido)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=dxZEEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "For fans of Duncan Tonatiuh and Yuyi Morales' Dreamers, a one-of-a-kind picture book about one immigrant family's journey north, illustrated in the vein of an ancient codex and drawing upon Mesoamerican mythology."
+            }
+          ]
         }
       ]
     },
     {
       "award": "Odyssey Awards",
       "awardDescription": "Excellence in audiobooks for children and young adults.",
-      "winners": [
+      "groups": [
         {
-          "title": "Clack, Clack! Smack! A Cherokee Stickball Story",
-          "creators": "Produced by Live Oak Media",
-          "searchAuthor": "",
-          "publisher": "Recorded Books",
-          "note": "Children's winner",
-          "cover": "https://books.google.com/books/content?id=eugjEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "Vann, a struggling stickball player, competes in a game on the Cherokee Nation."
+          "name": "Odyssey Award for Children",
+          "items": [
+            {
+              "title": "Clack, Clack! Smack! A Cherokee Stickball Story",
+              "creators": "Traci Sorell; produced by Live Oak Media",
+              "searchAuthor": "Traci Sorell",
+              "publisher": "Live Oak Media",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=Y5ThEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Vann, a struggling stickball player, competes in a game on the Cherokee Nation."
+            }
+          ]
         },
         {
-          "title": "Trans History: From Ancient Times to the Present Day",
-          "creators": "Produced by Listening Library",
-          "searchAuthor": "",
-          "publisher": "Listening Library (Penguin Random House Audio)",
-          "note": "Young Adult winner",
-          "cover": "https://books.google.com/books/content?id=BMfb0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-          "description": "An essential introduction to trans history, from ancient times to the present day, in full-color graphic nonfiction format."
+          "name": "Odyssey Award for Young Adults",
+          "items": [
+            {
+              "title": "Trans History: From Ancient Times to the Present Day",
+              "creators": "Alex L. Combs and Andrew Eakett; produced by Listening Library",
+              "searchAuthor": "Alex L. Combs",
+              "publisher": "Listening Library (Penguin Random House Audio)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=BMfb0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "An essential introduction to trans history, from ancient times to the present day, in full-color graphic nonfiction format."
+            }
+          ]
+        },
+        {
+          "name": "Odyssey Honor Audiobooks",
+          "items": [
+            {
+              "title": "The Dead of Summer",
+              "creators": "Ryan La Sala; produced by Scholastic Audio",
+              "searchAuthor": "Ryan La Sala",
+              "publisher": "Scholastic Audio",
+              "kind": "honor",
+              "label": "Honor Audiobook",
+              "cover": "https://books.google.com/books/content?id=1tJEEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A heart-pounding thriller told in a mix of narrative voices and found documents from the bestselling author of The Honeys, perfect for fans of Tiffany D."
+            },
+            {
+              "title": "Legendary Frybread Drive-In: Intertribal Stories",
+              "creators": "Edited by Cynthia Leitich Smith; produced by Heartdrum",
+              "searchAuthor": "Cynthia Leitich Smith",
+              "publisher": "Heartdrum (HarperCollins Audio)",
+              "kind": "honor",
+              "label": "Honor Audiobook",
+              "cover": "https://books.google.com/books/content?id=EKszEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Featuring the voices of both new and acclaimed Indigenous writers and edited by bestselling Muscogee author Cynthia Leitich Smith, this collection of interconnected stories serves up laughter, love, Native pride, and the world's best..."
+            },
+            {
+              "title": "Soundtrack",
+              "creators": "Jason Reynolds; produced by Listening Library",
+              "searchAuthor": "Jason Reynolds",
+              "publisher": "Listening Library (Penguin Random House Audio)",
+              "kind": "honor",
+              "label": "Honor Audiobook",
+              "cover": "https://books.google.com/books/content?id=lkGWEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "From the #1 New York Times bestselling author of Long Way Down comes a powerful print adaptation of the acclaimed, award-winning audiobook Soundtrack—a stirring story of music, friendship, and finding your voice in 2000s New York City."
+            },
+            {
+              "title": "Whale Eyes: A Memoir About Seeing and Being Seen",
+              "creators": "James Robinson; produced by Listening Library",
+              "searchAuthor": "James Robinson",
+              "publisher": "Listening Library (Penguin Random House Audio)",
+              "kind": "honor",
+              "label": "Honor Audiobook",
+              "cover": "https://books.google.com/books/content?id=NEQPEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "5 STARRED REVIEWS \"Lively, interactive...truly eye-opening.\" —Booklist \"A sincere reflection on childhood...growing up in a world not built with him in mind.\" —Publishers Weekly \"A superb middle grade memoir that champions..."
+            }
+          ]
         }
       ]
     },
     {
-      "award": "Pura Belpré Awards",
+      "award": "Pura Belpre Awards",
       "awardDescription": "Celebrating Latino/Latina authors and illustrators.",
-      "winners": [
+      "groups": [
         {
-          "title": "Popo the Xolo",
-          "creators": "Paloma Angelina Lopez; illustrated by Abraham Matias",
-          "searchAuthor": "Paloma Angelina Lopez",
-          "publisher": "Simon & Schuster Books for Young Readers",
-          "note": "Children's Illustration winner",
-          "cover": "https://books.google.com/books/content?id=VaYyEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "An emotionally resonant and visually stirring picture book about life, death, and celebrating those we love."
+          "name": "Children's Illustration",
+          "items": [
+            {
+              "title": "Popo the Xolo",
+              "creators": "Paloma Angelina Lopez; illustrated by Abraham Matias",
+              "searchAuthor": "Paloma Angelina Lopez",
+              "publisher": "Charlesbridge",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=VaYyEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "An emotionally resonant and visually stirring picture book about life, death, and celebrating those we love."
+            },
+            {
+              "title": "A-Ztec: A Bilingual Alphabet Book",
+              "creators": "Emmanuel Valtierra",
+              "searchAuthor": "Emmanuel Valtierra",
+              "publisher": "Arthur A. Levine (Levine Querido)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=7-Tw0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "Chocolatl and Axolotl Guacamole and Quetzacoatl. Open up this treasury Aztec words-- from A to Z! From singular artist Emmanuel Valtierra comes a spectacular introduction to twenty-six words, concepts, and gods central to Aztec and Mexican..."
+            },
+            {
+              "title": "The Invisible Parade",
+              "creators": "Leigh Bardugo and John Picacio; illustrated by John Picacio",
+              "searchAuthor": "Leigh Bardugo",
+              "publisher": "Little, Brown and Company (Hachette Book Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=6AREEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "The picture book debut from #1 New York Times bestselling author Leigh Bardugo and World Fantasy Award winner John Picacio."
+            }
+          ]
         },
         {
-          "title": "The Pecan Sheller",
-          "creators": "Lupe Ruiz-Flores",
-          "searchAuthor": "Lupe Ruiz-Flores",
-          "publisher": "Dial Books for Young Readers (Penguin Random House)",
-          "note": "Children's Author winner",
-          "cover": "https://books.google.com/books/content?id=wXs2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "In 1930s San Antonio, thirteen-year-old Petra dreams of going to college and becoming a writer."
+          "name": "Children's Author",
+          "items": [
+            {
+              "title": "The Pecan Sheller",
+              "creators": "Lupe Ruiz-Flores",
+              "searchAuthor": "Lupe Ruiz-Flores",
+              "publisher": "Carolrhoda Books (Lerner Publishing Group)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=wXs2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In 1930s San Antonio, thirteen-year-old Petra dreams of going to college and becoming a writer."
+            },
+            {
+              "title": "A Hero's Guide to Summer Vacation",
+              "creators": "Pablo Cartaya",
+              "searchAuthor": "Pablo Cartaya",
+              "publisher": "Kokila (Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=T0oYEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A New York Times bestseller! Reality proves more epic than fantasy in this family road trip story starring a reluctant young hero and his curmudgeonly grandfather. Gonzalo Alberto Sánchez García has never considered himself the hero of his..."
+            },
+            {
+              "title": "The Island of Forgotten Gods",
+              "creators": "Victor Pineiro",
+              "searchAuthor": "Victor Pineiro",
+              "publisher": "Sourcebooks Young Readers (Sourcebooks Kids)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=RkkqEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "From the author of Time Villains comes a new fantastical adventure about family, tradition, and seeing things for what they truly are."
+            },
+            {
+              "title": "A Sea of Lemon Trees: The Corrido of Roberto Alvarez",
+              "creators": "Maria Dolores Aguila",
+              "searchAuthor": "Maria Dolores Aguila",
+              "publisher": "Roaring Brook Press (Holtzbrinck Publishing)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=6KssEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "2025 NATIONAL BOOK AWARD LONGLIST FOR YOUNG PEOPLE'S LITERATURE Based on the true story of Roberto Alvarez and the Lemon Grove Incident, this vivid and uplifting middle grade debut novel in verse about one young child's courage to..."
+            }
+          ]
         },
         {
-          "title": "On the Wings of la Noche",
-          "creators": "Vanessa L. Torres",
-          "searchAuthor": "Vanessa L. Torres",
-          "publisher": "Knopf Books for Young Readers (Penguin Random House)",
-          "note": "Young Adult Author winner",
-          "cover": "https://books.google.com/books/content?id=hOoQEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "Noche is a Lechuza by night, an ethereal jet-black owl who guides the dead to the after."
+          "name": "Young Adult Author",
+          "items": [
+            {
+              "title": "On the Wings of la Noche",
+              "creators": "Vanessa L. Torres",
+              "searchAuthor": "Vanessa L. Torres",
+              "publisher": "Alfred A. Knopf (Random House Children's Books, Penguin Random House)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=hOoQEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Noche is a Lechuza by night, an ethereal jet-black owl who guides the dead to the after."
+            },
+            {
+              "title": "Rosa by Any Other Name",
+              "creators": "Hailey Alcaraz",
+              "searchAuthor": "Hailey Alcaraz",
+              "publisher": "Viking (Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=cFcvEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In this Romeo and Juliet-inspired retelling set during the civil rights era, a Mexican American girl is driven to join a movement for justice after her white classmate and best friend from the barrio are tragically murdered."
+            },
+            {
+              "title": "Silenced Voices: Reclaiming Memories from the Guatemalan Genocide",
+              "creators": "Pablo Leon",
+              "searchAuthor": "Pablo Leon",
+              "publisher": "HarperAlley (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=lzQ1EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In this moving intergenerational tale perfect for fans of Messy Roots and Illegal, Eisner-nominated creator Pablo Leon combines historical research of the Guatemalan Civil War with his own experiences as a Guatemalan immigrant to depict a..."
+            },
+            {
+              "title": "The Story of My Anger",
+              "creators": "Jasminne Mendez",
+              "searchAuthor": "Jasminne Mendez",
+              "publisher": "Dial Books (Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=vrxKEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "The Pura Belpré Honor Award winning author of Aniana del Mar Jumps In makes her YA debut with a powerful novel-in-verse about a Texas teen who is battling racism in her theatre program and book banning efforts by her town's school board."
+            }
+          ]
         }
       ]
     },
     {
       "award": "Robert F. Sibert Informational Book Award",
       "awardDescription": "For the most distinguished informational book for children.",
-      "winners": [
+      "groups": [
         {
-          "title": "Alberto Salas Plays Paka Paka con la Papa",
-          "creators": "Sara Andrea Fajardo; illustrated by Juana Martinez-Neal",
-          "searchAuthor": "Sara Andrea Fajardo",
-          "publisher": "Atheneum Books for Young Readers (Simon & Schuster)",
-          "cover": "https://books.google.com/books/content?id=STJDEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "What can a potato do? To Peruvian scientist Alberto Salas, they have the power to change the world. Go on the hunt with Alberto for for wild potatoes before they go extinct in this playful picture book biography, gorgeously illustrated by..."
+          "name": "",
+          "items": [
+            {
+              "title": "Alberto Salas Plays Paka Paka con la Papa",
+              "creators": "Sara Andrea Fajardo; illustrated by Juana Martinez-Neal",
+              "searchAuthor": "Sara Andrea Fajardo",
+              "publisher": "Roaring Brook Press (Holtzbrinck Publishing)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=STJDEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "What can a potato do? To Peruvian scientist Alberto Salas, they have the power to change the world. Go on the hunt with Alberto for for wild potatoes before they go extinct in this playful picture book biography, gorgeously illustrated by..."
+            },
+            {
+              "title": "At Last She Stood: How Joey Guerrero Spied, Survived, and Fought for Freedom",
+              "creators": "Erin Entrada Kelly",
+              "searchAuthor": "Erin Entrada Kelly",
+              "publisher": "Greenwillow Books (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=61AYEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A courageous, uplifting biography of a woman almost lost to history.\" –ALA Booklist World War II spy, Filipino guerrilla fighter, war hero, Medal of Freedom recipient, leprosy survivor, teacher, peacemaker ."
+            },
+            {
+              "title": "Go Tell It: How James Baldwin Became a Writer",
+              "creators": "Quartez Harris; illustrated by Gordon C. James",
+              "searchAuthor": "Quartez Harris",
+              "publisher": "Little, Brown and Company (Hachette Book Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=Y8sW0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "A boy who loves stories grows into a teenager who escapes into his writing and then a young man who plays his typewriter like a piano to show the fullness of Black life, in this lyrical picture book biography of James Baldwin, the..."
+            },
+            {
+              "title": "The History of We",
+              "creators": "Nikkolas Smith",
+              "searchAuthor": "Nikkolas Smith",
+              "publisher": "Kokila (Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=AgFzEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A rich and beautifully told history of humanity...Sublime.\" Joseph Coelho What did \"the beginning\" look like?"
+            },
+            {
+              "title": "Silenced Voices: Reclaiming Memories from the Guatemalan Genocide",
+              "creators": "Pablo Leon",
+              "searchAuthor": "Pablo Leon",
+              "publisher": "HarperAlley (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=lzQ1EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In this moving intergenerational tale perfect for fans of Messy Roots and Illegal, Eisner-nominated creator Pablo Leon combines historical research of the Guatemalan Civil War with his own experiences as a Guatemalan immigrant to depict a..."
+            },
+            {
+              "title": "A World Without Summer: A Volcano Erupts, A Creature Awakens, and the Sun Goes Out",
+              "creators": "Nicholas Day; illustrated by Yas Imamura",
+              "searchAuthor": "Nicholas Day",
+              "publisher": "Random House Studio (Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=JNpAEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "The true story of how a massive catastrophic eruption plunged the world into darkness, altering the global climate and inspiring the likes of Mary Shelley's Frankenstein—from the award-winning author of The Mona Lisa Vanishes and featuring..."
+            }
+          ]
         }
       ]
     },
     {
       "award": "Stonewall Book Awards",
       "awardDescription": "Honoring books of exceptional merit relating to LGBTQIA+ experience.",
-      "winners": [
+      "groups": [
         {
-          "title": "Halfway to Somewhere",
-          "creators": "Jose Pimienta",
-          "searchAuthor": "Jose Pimienta",
-          "publisher": "Random House Studio (Penguin Random House)",
-          "note": "Children's Literature winner",
-          "cover": "https://books.google.com/books/content?id=ywoNEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "New school, new country, but only half a family?! Embark on a coming of age journey with a middle school teen navigating their parent's divorce while moving to a new country in this stunning graphic novel. Ave thought moving to Kansas..."
+          "name": "Children's Literature",
+          "items": [
+            {
+              "title": "Halfway to Somewhere",
+              "creators": "Jose Pimienta",
+              "searchAuthor": "Jose Pimienta",
+              "publisher": "RH Graphic (Random House Children's Books, Penguin Random House)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=ywoNEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "New school, new country, but only half a family?! Embark on a coming of age journey with a middle school teen navigating their parent's divorce while moving to a new country in this stunning graphic novel. Ave thought moving to Kansas..."
+            },
+            {
+              "title": "Call Me Gray",
+              "creators": "Andrew Larsen and Bells Larsen; illustrated by Tallulah Fontaine",
+              "searchAuthor": "Andrew Larsen",
+              "publisher": "Kids Can Press",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=bxF0EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A child shares feelings about their identity with their dad in this powerful journey of self-discovery."
+            },
+            {
+              "title": "The Ink Witch",
+              "creators": "Steph Cherrywell",
+              "searchAuthor": "Steph Cherrywell",
+              "publisher": "Little, Brown and Company (Hachette Book Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=Kmo8EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "For fans of Amari and the Night Brothers and The Okay Witch comes a hilarious and affirming cozy fantasy about the adventures of a girl who discovers she is the descendant of a powerful witch coven."
+            },
+            {
+              "title": "Ollie in Between",
+              "creators": "Jess Callans",
+              "searchAuthor": "Jess Callans",
+              "publisher": "Feiwel and Friends (Macmillan Publishing Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=ZwYAEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "AN INDIE'S INTRODUCE PICK! In this modern take on Are You There God? It's Me, Margaret, debut writer Jess Callans delivers a tender, queer coming of age story about finding your voice and choosing to live authentically, even when it's..."
+            },
+            {
+              "title": "Woods & Words: The Story of Poet Mary Oliver",
+              "creators": "Sara Holly Ackerman; illustrated by Naoko Stoop",
+              "searchAuthor": "Sara Holly Ackerman",
+              "publisher": "Beach Lane Books (Simon & Schuster)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=NlQUEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "This inspiring and enriching picture book biography explores the life and work of beloved poet Mary Oliver in its own uniquely lyrical way, shining a light on Mary's belief that there are treasures and poems all around us in nature waiting..."
+            }
+          ]
         },
         {
-          "title": "One of the Boys",
-          "creators": "Victoria Zeller",
-          "searchAuthor": "Victoria Zeller",
-          "publisher": "Levine Querido",
-          "note": "Young Adult Literature winner",
-          "cover": "https://books.google.com/books/content?id=nCUXEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "A New York Times Bestseller Grace Woodhouse was the star kicker with a D1 future, but that was before she came out as transgender and quit football."
+          "name": "Young Adult Literature",
+          "items": [
+            {
+              "title": "One of the Boys",
+              "creators": "Victoria Zeller",
+              "searchAuthor": "Victoria Zeller",
+              "publisher": "Arthur A. Levine (Levine Querido)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=nCUXEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A New York Times Bestseller Grace Woodhouse was the star kicker with a D1 future, but that was before she came out as transgender and quit football."
+            },
+            {
+              "title": "Devils Like Us",
+              "creators": "L.T. Thompson",
+              "searchAuthor": "L.T. Thompson",
+              "publisher": "Bloomsbury YA (Bloomsbury Publishing)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=J-E5EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Our Flag Means Death meets The Gentleman's Guide to Vice and Virtue in this YA historical fantasy about three queer teens and their found family of queer pirates facing down a secret magical society."
+            },
+            {
+              "title": "He's So Possessed with Me",
+              "creators": "Corey Liu",
+              "searchAuthor": "Corey Liu",
+              "publisher": "Little, Brown and Company (Hachette Book Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=1oZDEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Jennifer's Body meets Heartstopper in this terrifying, tender, and bitingly hilarious supernatural horror about a boy who must save his best friend from a demon that wants to steal his heart—literally."
+            },
+            {
+              "title": "Hick: The Trailblazing Journalist Who Captured Eleanor Roosevelt's Heart",
+              "creators": "Sarah Miller",
+              "searchAuthor": "Sarah Miller",
+              "publisher": "Random House Studio (Random House Children's Books, Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=sskpEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In this riveting YA non-fiction set against the backdrop of the Great Depression, trace Lorena Hickok--or Hick's-- rise from devastating childhood to renowned journalist, and watch as she forms the most significant friendship and romantic..."
+            },
+            {
+              "title": "Sometimes the Girl",
+              "creators": "Jennifer Mason-Black",
+              "searchAuthor": "Jennifer Mason-Black",
+              "publisher": "Carolrhoda Lab (Lerner Publishing Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=tXs2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Eighteen-year-old Holiday needs to sort her life out. She's still shaken from her brother's recent suicide attempt; still pining over her ex, Maya; and still struggling to write again after a long dry spell. To earn enough money for a..."
+            }
+          ]
         }
       ]
     },
     {
       "award": "Theodor Seuss Geisel Award",
       "awardDescription": "Honoring the most distinguished book for beginning readers.",
-      "winners": [
+      "groups": [
         {
-          "title": "Stop That Mop!",
-          "creators": "Jonathan Fenske",
-          "searchAuthor": "Jonathan Fenske",
-          "publisher": "Nancy Paulsen Books (Penguin Young Readers, PRH)",
-          "cover": "https://books.google.com/books/content?id=vy03EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "Tired of mopping slop, this Mop wants to run away, and challenges anyone who wants to stop it."
+          "name": "",
+          "items": [
+            {
+              "title": "Stop That Mop!",
+              "creators": "Jonathan Fenske",
+              "searchAuthor": "Jonathan Fenske",
+              "publisher": "Simon Spotlight (Simon & Schuster)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=vy03EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Tired of mopping slop, this Mop wants to run away, and challenges anyone who wants to stop it."
+            },
+            {
+              "title": "Earl and Worm: The Big Mess and Other Stories",
+              "creators": "Greg Pizzoli",
+              "searchAuthor": "Greg Pizzoli",
+              "publisher": "Alfred A. Knopf (Random House Children's Books, Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=eJQREQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "This sweet, giggle-inducing early reader kicks off a brand-new series featuring two unlikely friends in the tradition of Frog and Toad, from the beloved Geisel Award-winning author of The Watermelon Seed."
+            },
+            {
+              "title": "I Like Hoops",
+              "creators": "Juwanda G. Ford; illustrated by Jada Jeni Bennett",
+              "searchAuthor": "Juwanda G. Ford",
+              "publisher": "Holiday House",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=lgWx0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "A close game of basketball played by a diverse group of first and second graders is full of suspense, joy--and good sportsmanship too\"--"
+            },
+            {
+              "title": "The Tunneler Tunnels in the Tunnel",
+              "creators": "Michael Rex",
+              "searchAuthor": "Michael Rex",
+              "publisher": "Simon Spotlight (Simon & Schuster)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=7xtoEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A penguin in a hardhat digs in a tunnel, popping up in different places, visiting a gardener, a farmer, a banker and others until he and everybody along the way reach a surprise ending."
+            }
+          ]
         }
       ]
     },
     {
       "award": "William C. Morris Award",
       "awardDescription": "Honoring a debut book published by a first-time author writing for teens.",
-      "winners": [
+      "groups": [
         {
-          "title": "All the Noise at Once",
-          "creators": "DeAndra Davis",
-          "searchAuthor": "DeAndra Davis",
-          "publisher": "Atheneum Books for Young Readers (Simon & Schuster)",
-          "cover": "https://books.google.com/books/content?id=ZBMMEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "A Black, autistic teen tries to figure out what happened the night his older brother was unjustly arrested in this \"propulsive\" (Jas Hammonds, award-winning author of We Deserve Monuments), moving story about brotherhood, identity, and..."
+          "name": "",
+          "items": [
+            {
+              "title": "All the Noise at Once",
+              "creators": "DeAndra Davis",
+              "searchAuthor": "DeAndra Davis",
+              "publisher": "Atheneum Books for Young Readers (Simon & Schuster)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=ZBMMEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A Black, autistic teen tries to figure out what happened the night his older brother was unjustly arrested in this \"propulsive\" (Jas Hammonds, award-winning author of We Deserve Monuments), moving story about brotherhood, identity, and..."
+            },
+            {
+              "title": "First Love Language",
+              "creators": "Stefany Valentine",
+              "searchAuthor": "Stefany Valentine",
+              "publisher": "Penguin Workshop (Penguin Random House)",
+              "kind": "honor",
+              "label": "Finalist",
+              "cover": "https://books.google.com/books/content?id=FOhjEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A swoon-worthy romantic dramedy about finding love and reconnecting with your culture in the most surprising ways—now in paperback."
+            },
+            {
+              "title": "Love, Misha",
+              "creators": "Askel Aden",
+              "searchAuthor": "Askel Aden",
+              "publisher": "First Second (Roaring Brook Press, Holtzbrinck Publishing)",
+              "kind": "honor",
+              "label": "Finalist",
+              "cover": "https://books.google.com/books/content?id=iIxVEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In this stunning YA adventure, debut author Askel Aden weaves a story of family schism and reconciliation that effortlessly enriches the complex dynamics of mother and child."
+            },
+            {
+              "title": "Red Flags and Butterflies",
+              "creators": "Sheryl Azzam",
+              "searchAuthor": "Sheryl Azzam",
+              "publisher": "DCB Young Readers (Cormorant Books Inc.)",
+              "kind": "honor",
+              "label": "Finalist",
+              "cover": "https://books.google.com/books/content?id=mZeHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Straight A student, talented artist, swim team star — tenth-grader Lexie Moore is a shoo-in for Sunridge High's prestigious fine art program, if only she can find the right words to tell her dad she wants to apply."
+            },
+            {
+              "title": "You and Me on Repeat",
+              "creators": "Mary Shyne",
+              "searchAuthor": "Mary Shyne",
+              "publisher": "Henry Holt Books for Young Readers (Macmillan Children’s Publishing Group)",
+              "kind": "honor",
+              "label": "Finalist",
+              "cover": "https://books.google.com/books/content?id=j5tSEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "I fell so hard for Chris and Alicia and all of the stupidly teenage and deeply human choices that lead them into a pocket dimension of space-time."
+            }
+          ]
         }
       ]
     },
     {
       "award": "Award for Excellence in Nonfiction for Young Adults",
       "awardDescription": "Recognizing the best nonfiction book for young adults.",
-      "winners": [
+      "groups": [
         {
-          "title": "Death in the Jungle: Murder, Betrayal, and the Lost Dream of Jonestown",
-          "creators": "Candace Fleming",
-          "searchAuthor": "Candace Fleming",
-          "publisher": "Random House Children's Books (Penguin Random House)",
-          "cover": "https://books.google.com/books/content?id=Is0WEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "How did Jim Jones, the leader of Peoples Temple, convince more than 900 of his followers to commit \"revolutionary suicide\" by drinking cyanide-laced punch?"
+          "name": "",
+          "items": [
+            {
+              "title": "Death in the Jungle: Murder, Betrayal, and the Lost Dream of Jonestown",
+              "creators": "Candace Fleming",
+              "searchAuthor": "Candace Fleming",
+              "publisher": "Anne Schwartz Books (Random House Children's Books, Penguin Random House)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=Is0WEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "How did Jim Jones, the leader of Peoples Temple, convince more than 900 of his followers to commit \"revolutionary suicide\" by drinking cyanide-laced punch?"
+            },
+            {
+              "title": "American Spirits: The Famous Fox Sisters and the Mysterious Fad That Haunted a Nation",
+              "creators": "Barb Rosenstock",
+              "searchAuthor": "Barb Rosenstock",
+              "publisher": "Calkins Creek (Astra Books for Young Readers)",
+              "kind": "honor",
+              "label": "Finalist",
+              "cover": "https://books.google.com/books/content?id=JxTwk5JVTvkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Barbara Weisberg's Talking to the Dead blends biography and social history in this revelatory story of the family responsible for the rise of Spiritualism."
+            },
+            {
+              "title": "White House Secrets: Medical Lies and Cover-Ups",
+              "creators": "Gail Jarrow",
+              "searchAuthor": "Gail Jarrow",
+              "publisher": "Calkins Creek (Astra Books for Young Readers)",
+              "kind": "honor",
+              "label": "Finalist",
+              "cover": "https://books.google.com/books/content?id=CD46EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A School Library Journal Best Book Chicago Public Library Best of the Best List 2025 Here are the shocking, yet true, stories of presidential medical cover-ups from the 19th to the 21st century—the latest thrilling title in award-winning..."
+            },
+            {
+              "title": "White Lies: How the South Lost the Civil War, Then Rewrote the History",
+              "creators": "Ann Bausum",
+              "searchAuthor": "Ann Bausum",
+              "publisher": "Roaring Brook Press (Macmillan Children’s Publishing Group)",
+              "kind": "honor",
+              "label": "Finalist",
+              "cover": "https://books.google.com/books/content?id=aQv2EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "This powerful and unflinching examination of racism in America by award-winning historian Ann Bausum deconstructs the warped history of the Civil War, perfect for fans of STAMPED FROM THE BEGINNING and JUST MERCY. Warning: This is not your..."
+            },
+            {
+              "title": "A World Without Summer: A Volcano Erupts, A Creature Awakens, and the Sun Goes Out",
+              "creators": "Nicholas Day; illustrated by Yas Imamura",
+              "searchAuthor": "Nicholas Day",
+              "publisher": "Random House Studio (Random House Children's Books, Penguin Random House)",
+              "kind": "honor",
+              "label": "Finalist",
+              "cover": "https://books.google.com/books/content?id=JNpAEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "The true story of how a massive catastrophic eruption plunged the world into darkness, altering the global climate and inspiring the likes of Mary Shelley's Frankenstein—from the award-winning author of The Mona Lisa Vanishes and featuring..."
+            }
+          ]
         }
       ]
     },
     {
       "award": "American Indian Youth Literature Awards",
       "awardDescription": "Honoring books by and about American Indians.",
-      "winners": [
+      "groups": [
         {
-          "title": "Chooch Helped",
-          "creators": "Andrea L. Rogers; illustrated by Rebecca Lee Kunz",
-          "searchAuthor": "Andrea L. Rogers",
-          "publisher": "Levine Querido",
-          "note": "Best Picture Book winner",
-          "cover": "https://books.google.com/books/content?id=8qj0EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "A Cherokee girl introduces her younger brother to their family's traditions - begrudgingly!"
+          "name": "Picture Book",
+          "items": [
+            {
+              "title": "Chooch Helped",
+              "creators": "Andrea L. Rogers; illustrated by Rebecca Lee Kunz",
+              "searchAuthor": "Andrea L. Rogers",
+              "publisher": "Arthur A. Levine (Levine Querido)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=8qj0EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A Cherokee girl introduces her younger brother to their family's traditions — begrudgingly!"
+            },
+            {
+              "title": "Braided Roots",
+              "creators": "Pasha Westbrook; illustrated by Madelyn Goodnight",
+              "searchAuthor": "Pasha Westbrook",
+              "publisher": "Orchard Books (Scholastic Inc.)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=KHkyEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A stunning, poetic debut picture book from Pasha Westbrook about honoring one's roots and the unbreakable bond of familial love, brought to life with enchanting illustrations by Madelyn Goodnight."
+            },
+            {
+              "title": "Fierce Aunties!",
+              "creators": "Laurel Goodluck; illustrated by Steph Littlebird",
+              "searchAuthor": "Laurel Goodluck",
+              "publisher": "Simon & Schuster Books for Young Readers (Simon & Schuster)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=lV1PEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Celebrates aunts, related by birth or not, who surround children with unyielding love and support."
+            },
+            {
+              "title": "For a Girl Becoming",
+              "creators": "Joy Harjo; illustrated by Adriana Garcia",
+              "searchAuthor": "Joy Harjo",
+              "publisher": "Norton Young Readers (W.W. Norton & Company)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=8xNJKjjcY9wC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Celebrates a young girl's transitions through birth, childhood, and young adulthood, with advice on remaining connected to loved ones and nature."
+            },
+            {
+              "title": "Raven's Ribbons",
+              "creators": "Tasha Spillett; illustrated by Daniel Ramirez",
+              "searchAuthor": "Tasha Spillett",
+              "publisher": "Little, Brown and Company (Hachette Book Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=VhcI0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "A joyous celebration of gender expression through an Indigenous lens, by New York Times bestselling author Tasha Spillett and Ojibwe elder Daniel Ramirez"
+            },
+            {
+              "title": "We Weave",
+              "creators": "Daniel W. Vandever; illustrated by Deonoveigh Mitchell",
+              "searchAuthor": "Daniel W. Vandever",
+              "publisher": "South of Sunrise Creative",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=N9UK0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "We Weave is an intergenerational tale about a Navajo boy and his grandmother using their creativity to purchase a computer when schools transition to digital learning."
+            }
+          ]
         },
         {
-          "title": "Buffalo Dreamer",
-          "creators": "Violet Duncan",
-          "searchAuthor": "Violet Duncan",
-          "publisher": "Roaring Brook Press (Holtzbrinck Publishing Group)",
-          "note": "Best Middle Grade Book winner",
-          "cover": "https://books.google.com/books/content?id=-zTyEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "NATIONAL BOOK AWARD FINALIST An illuminating novel about the importance of reclaiming the past, based on the author's family history Summer and her family always spend relaxed summers in Alberta, Canada, on the reservation where her mom's..."
+          "name": "Middle Grade",
+          "items": [
+            {
+              "title": "Buffalo Dreamer",
+              "creators": "Violet Duncan",
+              "searchAuthor": "Violet Duncan",
+              "publisher": "Nancy Paulsen Books (Penguin Random House)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=-zTyEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "NATIONAL BOOK AWARD FINALIST An illuminating novel about the importance of reclaiming the past, based on the author's family history Summer and her family always spend relaxed summers in Alberta, Canada, on the reservation where her mom's..."
+            },
+            {
+              "title": "Jo Jo Makoons: The Super-Scary Sleepover",
+              "creators": "Dawn Quigley; illustrated by Tara Audibert",
+              "searchAuthor": "Dawn Quigley",
+              "publisher": "Heartdrum (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=U2U4EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "There's no \"brave\" without \"afraid\"! Jo Jo is back to face her fears, in her own special way, in the fifth book in the beloved Jo Jo Makoons chapter book series. Spunky Ojibwe first-grader Jo Jo Makoons knows a lot about bravery and..."
+            },
+            {
+              "title": "Lost at Windy River: A True Story of Survival",
+              "creators": "Trina Rathgeber; illustrated by Alina Pete and Jillian Dolan",
+              "searchAuthor": "Trina Rathgeber",
+              "publisher": "Orca Book Publishers",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=qbeW0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "This graphic novel for middle-grade readers tells the true story of how a young Indigenous girl survived nine days after getting lost during a snowstorm in northern Canada."
+            },
+            {
+              "title": "Outfoxed",
+              "creators": "Elise McMullen-Ciotti",
+              "searchAuthor": "Elise McMullen-Ciotti",
+              "publisher": "Scholastic Inc.",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=ynsWEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "From the author of Hedge Over Heels comes another irresistible story featuring family, friendship, and an adorable baby fox!"
+            },
+            {
+              "title": "Red Bird Danced",
+              "creators": "Dawn Quigley",
+              "searchAuthor": "Dawn Quigley",
+              "publisher": "Heartdrum (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=SJLS0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "With lyrical verse and powerful emotion, Dawn Quigley (Ojibwe) tells the story of urban Native kids who find strength in connection with those who came before and in the hope that lets them take flight. Ariel and Tomah have lived in the..."
+            },
+            {
+              "title": "The Ribbon Skirt",
+              "creators": "Cameron Mukwa",
+              "searchAuthor": "Cameron Mukwa",
+              "publisher": "Graphix (Scholastic Inc.)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=v9blEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A joyful coming-of-age middle-grade graphic novel by debut Indigenous creator Cameron Mukwa about the journey of a two-spirit kid who wants to create a ribbon skirt for the upcoming powwow."
+            },
+            {
+              "title": "The Summer of the Bone Horses",
+              "creators": "Virginia Driving Hawk Sneve; illustrated by Steph Littlebird",
+              "searchAuthor": "Virginia Driving Hawk Sneve",
+              "publisher": "Amulet Books (Abrams Books for Young Readers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=ZVYaEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A Lakota child spends a summer with grandparents at their home on the Rosebud Reservation in this young chapter book, illustrated in full-color This charming chapter book follows a present-day Lakota child connecting with extended family,..."
+            }
+          ]
         },
         {
-          "title": "Legendary Frybread Drive-In: Intertribal Stories",
-          "creators": "Edited by Cynthia Leitich Smith",
-          "searchAuthor": "Cynthia Leitich Smith",
-          "publisher": "Heartdrum (HarperCollins Publishers)",
-          "note": "Best Young Adult Book winner",
-          "cover": "https://books.google.com/books/content?id=EKszEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "Featuring the voices of both new and acclaimed Indigenous writers and edited by bestselling Muscogee author Cynthia Leitich Smith, this collection of interconnected stories serves up laughter, love, Native pride, and the world's best..."
+          "name": "Young Adult",
+          "items": [
+            {
+              "title": "Legendary Frybread Drive-In: Intertribal Stories",
+              "creators": "Edited by Cynthia Leitich Smith",
+              "searchAuthor": "Cynthia Leitich Smith",
+              "publisher": "Heartdrum (HarperCollins Publishers)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=EKszEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Featuring the voices of both new and acclaimed Indigenous writers and edited by bestselling Muscogee author Cynthia Leitich Smith, this collection of interconnected stories serves up laughter, love, Native pride, and the world's best..."
+            },
+            {
+              "title": "Sheine Lende: A Prequel to Elatsoe",
+              "creators": "Darcie Little Badger; illustrated by Rovina Cai",
+              "searchAuthor": "Darcie Little Badger",
+              "publisher": "Levine Querido",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=LwbTEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "BOOKPAGE MOST ANTICIPATED YA OF 2024 Shane works with her mother and their ghost dogs, tracking down missing persons even when their families can't afford to pay."
+            },
+            {
+              "title": "Sisters in the Wind",
+              "creators": "Angeline Boulley",
+              "searchAuthor": "Angeline Boulley",
+              "publisher": "Henry Holt Books for Young Readers (Macmillan Children’s Publishing Group)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=H7pEEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "From the instant New York Times bestselling author of Firekeeper's Daughter and Warrior Girl Unearthed comes a daring new mystery about a foster teen claiming her heritage on her own terms."
+            },
+            {
+              "title": "Super Indian, Volume Three",
+              "creators": "Arigon Starr",
+              "searchAuthor": "Arigon Starr",
+              "publisher": "Wacky Productions Unlimited",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=AtrfxQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "The continuing comic adventures of reservation sensation Super Indian."
+            },
+            {
+              "title": "The Unfinished",
+              "creators": "Cheryl Isaacs",
+              "searchAuthor": "Cheryl Isaacs",
+              "publisher": "Heartdrum (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=JgnvEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In her stunning debut, Cheryl Isaacs (Mohawk) pulls the reader into an unsettling tale of monsters, mystery, and secrets that refuse to stay submerged."
+            },
+            {
+              "title": "Where Wolves Don't Die",
+              "creators": "Anton Treuer",
+              "searchAuthor": "Anton Treuer",
+              "publisher": "Levine Querido",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=MHnaEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Best of the Year: NYPL - Chicago Public Library - American Indians in Children's Literature - CCBC Ezra Cloud hates living in Northeast Minneapolis."
+            }
+          ]
         }
       ]
     },
     {
       "award": "Asian/Pacific American Awards for Literature",
       "awardDescription": "Honoring books that highlight Asian/Pacific American experiences.",
-      "winners": [
+      "groups": [
         {
-          "title": "Kaho'olawe: The True Story of an Island and Her People",
-          "creators": "Kamalani Hurley; illustrated by Harinani Orme",
-          "searchAuthor": "Kamalani Hurley",
-          "publisher": "Levine Querido",
-          "note": "Picture Book (Pasifika) winner",
-          "cover": "https://books.google.com/books/content?id=k3w2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "In the middle of the great Pacific Ocean is a little island."
+          "name": "Pasifika Picture Book",
+          "items": [
+            {
+              "title": "Kaho'olawe: The True Story of an Island and Her People",
+              "creators": "Kamalani Hurley; illustrated by Harinani Orme",
+              "searchAuthor": "Kamalani Hurley",
+              "publisher": "Millbrook Press (Lerner Publishing Group)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=k3w2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In the middle of the great Pacific Ocean is a little island."
+            },
+            {
+              "title": "Filo's Butterflies",
+              "creators": "Litea Fuata; illustrated by Myo Yim",
+              "searchAuthor": "Litea Fuata",
+              "publisher": "Hardie Grant Children's Publishing",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=5UwvEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Filo's Butterflies is a charming picture book about how a young Samoan boy calms his nerves before his first siva performance at a family wedding."
+            },
+            {
+              "title": "White Sunday",
+              "creators": "Litea Fuata; illustrated by Myo Yim",
+              "searchAuthor": "Litea Fuata",
+              "publisher": "Hardie Grant Children's Publishing",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=-aqr0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "Every year in October, Sina and her family celebrate White Sunday."
+            }
+          ]
         },
         {
-          "title": "Many Things at Once",
-          "creators": "Veera Hiranandani; illustrated by Nadia Alam",
-          "searchAuthor": "Veera Hiranandani",
-          "publisher": "Random House Studio (Penguin Random House)",
-          "note": "Picture Book (Asian American) winner",
-          "cover": "https://books.google.com/books/content?id=dj4HEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "In this poignant picture book about family and belonging, the child of a Jewish mother and a South Asian father hears stories about her family history."
+          "name": "Asian American Picture Book",
+          "items": [
+            {
+              "title": "Many Things at Once",
+              "creators": "Veera Hiranandani; illustrated by Nadia Alam",
+              "searchAuthor": "Veera Hiranandani",
+              "publisher": "Random House Studio (Penguin Random House)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=dj4HEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In this poignant picture book about family and belonging, the child of a Jewish mother and a South Asian father hears stories about her family history."
+            },
+            {
+              "title": "Every Peach Is a Story",
+              "creators": "David Mas Masumoto and Nikiko Masumoto; illustrated by Lauren Tamaki",
+              "searchAuthor": "David Mas Masumoto",
+              "publisher": "Abrams Books for Young Readers",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=e1YaEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In this poignant debut picture book from authors and farmers Nikiko Masumoto and David Mas Masumoto, with illustrations by award-winning artist Lauren Tamaki, little Midori discovers that every peach on her Japanese American family's farm..."
+            },
+            {
+              "title": "A Vaisakhi to Remember",
+              "creators": "Simran Jeet Singh; illustrated by Japneet Kaur",
+              "searchAuthor": "Simran Jeet Singh",
+              "publisher": "Kokila (Penguin Random House)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=K1IPEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A new picture book from Simran Jeet Singh, A Vaisakhi to Remember celebrates community and heritage as a young girl looks for points of connection in a new country through the joyous Sikh spring harvest holiday of Vaisakhi."
+            }
+          ]
         },
         {
-          "title": "Hungry Bones",
-          "creators": "Louise Hung",
-          "searchAuthor": "Louise Hung",
-          "publisher": "Roaring Brook Press (Holtzbrinck Publishing Group)",
-          "note": "Children's Literature winner",
-          "cover": "https://books.google.com/books/content?id=2Q7OEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "A chilling middle grade novel about a girl haunted by a hungry ghost."
+          "name": "Children's Literature",
+          "items": [
+            {
+              "title": "Hungry Bones",
+              "creators": "Louise Hung",
+              "searchAuthor": "Louise Hung",
+              "publisher": "Scholastic Press (Scholastic Inc.)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=2Q7OEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A chilling middle grade novel about a girl haunted by a hungry ghost."
+            },
+            {
+              "title": "The Queen Bees of Tybee County",
+              "creators": "Kyle Casey Chu",
+              "searchAuthor": "Kyle Casey Chu",
+              "publisher": "Quill Tree Books (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=zEkUEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Better Nate Than Ever meets Dumplin' in this charming, poignant debut by Kyle Casey Chu, aka Panda Dulce, a founding queen of Drag Story Hour."
+            },
+            {
+              "title": "Fresh Start",
+              "creators": "Gale Galligan",
+              "searchAuthor": "Gale Galligan",
+              "publisher": "Graphix (Scholastic Inc.)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=RTnk0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "Ollie Herisson's dad is a diplomat, which means her family moves around a lot."
+            }
+          ]
         },
         {
-          "title": "The Red Car to Hollywood",
-          "creators": "Jennie Liu",
-          "searchAuthor": "Jennie Liu",
-          "publisher": "Carolrhoda Lab (Lerner Publishing Group)",
-          "note": "Young Adult Literature winner",
-          "cover": "https://books.google.com/books/content?id=zE1kEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "Los Angeles, 1924 Sixteen-year-old Ruby Chan considers herself a modern, independent American girl."
+          "name": "Young Adult Literature",
+          "items": [
+            {
+              "title": "The Red Car to Hollywood",
+              "creators": "Jennie Liu",
+              "searchAuthor": "Jennie Liu",
+              "publisher": "Carolrhoda Lab (Lerner Publishing Group)",
+              "kind": "winner",
+              "label": "Winner",
+              "cover": "https://books.google.com/books/content?id=zE1kEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Los Angeles, 1924 Sixteen-year-old Ruby Chan considers herself a modern, independent American girl."
+            },
+            {
+              "title": "Tall Water",
+              "creators": "SJ Sindu; illustrated by Dion MBD",
+              "searchAuthor": "SJ Sindu",
+              "publisher": "HarperAlley (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Honor Book",
+              "cover": "https://books.google.com/books/content?id=mFIbEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "From Stonewall Honor–winning writer SJ Sindu, author of Shakti, and celebrated illustrator Dion MBD comes a powerful coming-of-age teen graphic novel that follows one girl's journey to Sri Lanka to reconnect with her long-lost mother..."
+            }
+          ]
         }
       ]
     },
     {
       "award": "Sydney Taylor Book Awards",
       "awardDescription": "Celebrating the Jewish experience in children's literature.",
-      "winners": [
+      "groups": [
         {
-          "title": "Shabbat Shalom: Let's Rest and Reset",
-          "creators": "Suzy Ultman",
-          "searchAuthor": "Suzy Ultman",
-          "publisher": "Appleseed Press (Simon & Schuster)",
-          "note": "Picture Book Gold Medalist",
-          "cover": "https://books.google.com/books/content?id=xFgHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "The second book in a stylish, current, and multi-faceted series of Jewish-themed casebound board books for curious young readers."
+          "name": "Picture Book",
+          "items": [
+            {
+              "title": "Shabbat Shalom: Let's Rest and Reset",
+              "creators": "Suzy Ultman",
+              "searchAuthor": "Suzy Ultman",
+              "publisher": "Rise x Penguin Workshop (Penguin Random House)",
+              "kind": "winner",
+              "label": "Gold Medalist",
+              "cover": "https://books.google.com/books/content?id=xFgHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "The second book in a stylish, current, and multi-faceted series of Jewish-themed casebound board books for curious young readers."
+            },
+            {
+              "title": "The Book of Candles: Eight Poems for Hanukkah",
+              "creators": "Laurel Snyder; illustrated by Leanne Hatch",
+              "searchAuthor": "Laurel Snyder",
+              "publisher": "Clarion Books (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Silver Medalist",
+              "cover": "https://books.google.com/books/content?id=HTEI0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "From Sydney Taylor Award winner and National Jewish Book Award honoree Laurel Snyder comes a warm, reverential, lyrical, and fresh read-aloud picture book about Hanukkah, perfect for the modern family."
+            },
+            {
+              "title": "The Keeper of Stories",
+              "creators": "Caroline Kusin Pritchard; illustrated by Selina Alko",
+              "searchAuthor": "Caroline Kusin Pritchard",
+              "publisher": "Simon & Schuster Books for Young Readers (Simon & Schuster)",
+              "kind": "honor",
+              "label": "Silver Medalist",
+              "cover": "https://books.google.com/books/content?id=9hIMEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Three starred reviews! In this \"poignant\" (Booklist, starred review) and uplifting true story of community, a neighborhood comes together in the wake of a library fire to save the stories within, offering a timely reminder of the essential..."
+            },
+            {
+              "title": "My Body Can",
+              "creators": "Laura Gehl; illustrated by Alexandra Colombo",
+              "searchAuthor": "Laura Gehl",
+              "publisher": "Apples & Honey Press (Behrman House)",
+              "kind": "honor",
+              "label": "Silver Medalist",
+              "cover": "https://books.google.com/books/content?id=wu4O0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "description": "My Body Can showcases all the different talents bodies have throughout the year."
+            }
+          ]
         },
         {
-          "title": "Neshama",
-          "creators": "Marcella Pixley",
-          "searchAuthor": "Marcella Pixley",
-          "publisher": "Candlewick Press",
-          "note": "Middle Grade Gold Medalist",
-          "cover": "https://books.google.com/books/content?id=Eyc3EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "A mesmerizing meditation on family, forgiveness, and the freedom to be found in embracing one's truest self.\" -Booklist (starred review) A bullied girl who communicates with ghosts finds her inner strength in this haunting novel in verse..."
+          "name": "Middle Grade",
+          "items": [
+            {
+              "title": "Neshama",
+              "creators": "Marcella Pixley",
+              "searchAuthor": "Marcella Pixley",
+              "publisher": "Candlewick Press",
+              "kind": "winner",
+              "label": "Gold Medalist",
+              "cover": "https://books.google.com/books/content?id=Eyc3EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A mesmerizing meditation on family, forgiveness, and the freedom to be found in embracing one's truest self.\" —Booklist (starred review) A bullied girl who communicates with ghosts finds her inner strength in this haunting novel in verse..."
+            },
+            {
+              "title": "Beinoni",
+              "creators": "Mari Lowe",
+              "searchAuthor": "Mari Lowe",
+              "publisher": "Arthur A. Levine (Levine Querido)",
+              "kind": "honor",
+              "label": "Silver Medalist",
+              "cover": "https://books.google.com/books/content?id=UiUXEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "In a Beinoni time there should be no war, no terrible illness, no crime."
+            }
+          ]
         },
         {
-          "title": "D.J. Rosenblum Becomes the G.O.A.T.",
-          "creators": "Abby White",
-          "searchAuthor": "Abby White",
-          "publisher": "Viking Books for Young Readers (Penguin Random House)",
-          "note": "Young Adult Gold Medalist",
-          "cover": "https://books.google.com/books/content?id=oXc4EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "description": "A fresh new voice, Abby White delivers the perfect dose of humor and heartbreak with her debut D.J."
+          "name": "Young Adult",
+          "items": [
+            {
+              "title": "D.J. Rosenblum Becomes the G.O.A.T.",
+              "creators": "Abby White",
+              "searchAuthor": "Abby White",
+              "publisher": "Arthur A. Levine (Levine Querido)",
+              "kind": "winner",
+              "label": "Gold Medalist",
+              "cover": "https://books.google.com/books/content?id=oXc4EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "A fresh new voice, Abby White delivers the perfect dose of humor and heartbreak with her debut D.J."
+            },
+            {
+              "title": "The Rebel Girls of Rome",
+              "creators": "Jordyn Taylor",
+              "searchAuthor": "Jordyn Taylor",
+              "publisher": "HarperCollins Children's Books (HarperCollins Publishers)",
+              "kind": "honor",
+              "label": "Silver Medalist",
+              "cover": "https://books.google.com/books/content?id=wBAJEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "description": "Part historical mystery, part sweeping romance, The Rebel Girls of Rome brings the stories of two young women to brilliant life: Lilah, a college student looking to understand her grandfather's mysterious past, and Bruna, a queer Jewish..."
+            }
+          ]
         }
       ]
     }
@@ -473,13 +1607,14 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
   const amazonLink = (book) => `https://www.amazon.com/s?k=${buildQuery(book)}`;
   const bookshopLink = (book) => `https://bookshop.org/search?query=${buildQuery(book)}`;
   const libbyLink = (book) => `https://libbyapp.com/search?query=${buildQuery(book)}`;
+  const labelFor = (book) => book.label || (book.kind === 'winner' ? 'Winner' : 'Honor');
 </script>
 
 # {title}
 
-The American Library Association has announced the **2026 Youth Media Award winners**. I wanted to collect the books for easy browsing.
+The American Library Association has announced the **2026 Youth Media Award winners**. This post includes the winners *and* honor books, grouped by award, with covers, short descriptions, and quick links to Amazon, Bookshop.org, and Libby. Winners are highlighted in gold.
 
-The full official list (including honors and non-book awards), see the [ALA announcement](https://www.ala.unikron.com/).
+For the full official list (including non-book awards), see the [ALA announcement](https://www.ala.unikron.com/).
 
 <nav class="not-prose mt-6 mb-10 rounded-xl border border-slate-200 bg-slate-50 p-4">
   <p class="text-sm font-semibold text-slate-700">Jump to an award</p>
@@ -502,68 +1637,86 @@ The full official list (including honors and non-book awards), see the [ALA anno
     <h2 class="mb-2 text-2xl font-semibold">{award.award}</h2>
     <p class="text-sm text-slate-600">{award.awardDescription}</p>
 
-    <div class="not-prose mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {#each award.winners as book}
-        <article class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-          <div class="flex items-center justify-center bg-slate-50 p-4">
-            <div class="aspect-[2/3] w-40 sm:w-44 md:w-48">
-              {#if book.cover}
-                <img
-                  src={book.cover}
-                  alt={`Cover of ${book.title}`}
-                  class="h-full w-full rounded-md border border-slate-200 object-cover shadow-sm"
-                  loading="lazy"
-                />
-              {:else}
-                <div class="flex h-full w-full items-center justify-center rounded-md border border-slate-200 text-xs text-slate-400">
-                  Cover unavailable
-                </div>
-              {/if}
-            </div>
-          </div>
-          <div class="flex flex-1 flex-col gap-3 p-4">
-            <div>
-              <h3 class="text-lg font-semibold leading-snug text-slate-900">{book.title}</h3>
-              {#if book.note}
-                <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-emerald-600">
-                  {book.note}
-                </p>
-              {/if}
-              <p class="mt-2 text-sm text-slate-700">{book.creators}</p>
-              <p class="mt-1 text-xs text-slate-500">{book.publisher}</p>
-            </div>
+    {#each award.groups as group}
+      {#if group.name}
+        <h3 class="mt-8 text-xl font-semibold text-slate-800">{group.name}</h3>
+      {/if}
 
-            <p class="text-sm leading-relaxed text-slate-700">{book.description}</p>
-
-            <div class="mt-auto flex flex-wrap gap-2">
-              <a
-                class="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-300 hover:text-slate-900"
-                href={amazonLink(book)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Amazon
-              </a>
-              <a
-                class="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-300 hover:text-slate-900"
-                href={bookshopLink(book)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Bookshop.org
-              </a>
-              <a
-                class="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-300 hover:text-slate-900"
-                href={libbyLink(book)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Libby
-              </a>
+      <div class={`not-prose ${group.name ? 'mt-4' : 'mt-6'} grid gap-6 sm:grid-cols-2 lg:grid-cols-3`}>
+        {#each group.items as book}
+          <article
+            class={`flex h-full flex-col overflow-hidden rounded-xl border shadow-sm ${
+              book.kind === 'winner' ? 'border-amber-300 bg-amber-50/60' : 'border-slate-200 bg-white'
+            }`}
+          >
+            <div class={`flex items-center justify-center p-4 ${
+              book.kind === 'winner' ? 'bg-amber-50' : 'bg-slate-50'
+            }`}>
+              <div class="aspect-[2/3] w-40 sm:w-44 md:w-48">
+                {#if book.cover}
+                  <img
+                    src={book.cover}
+                    alt={`Cover of ${book.title}`}
+                    class="h-full w-full rounded-md border border-slate-200 object-cover shadow-sm"
+                    loading="lazy"
+                  />
+                {:else}
+                  <div class="flex h-full w-full items-center justify-center rounded-md border border-slate-200 text-xs text-slate-400">
+                    Cover unavailable
+                  </div>
+                {/if}
+              </div>
             </div>
-          </div>
-        </article>
-      {/each}
-    </div>
+            <div class="flex flex-1 flex-col gap-3 p-4">
+              <div class="flex flex-wrap items-center gap-2">
+                <span
+                  class={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${
+                    book.kind === 'winner'
+                      ? 'bg-amber-200 text-amber-900'
+                      : 'bg-slate-100 text-slate-600'
+                  }`}
+                >
+                  {labelFor(book)}
+                </span>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold leading-snug text-slate-900">{book.title}</h4>
+                <p class="mt-2 text-sm text-slate-700">{book.creators}</p>
+                <p class="mt-1 text-xs text-slate-500">{book.publisher}</p>
+              </div>
+
+              <p class="text-sm leading-relaxed text-slate-700">{book.description}</p>
+
+              <div class="mt-auto flex flex-wrap gap-2">
+                <a
+                  class="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-300 hover:text-slate-900"
+                  href={amazonLink(book)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Amazon
+                </a>
+                <a
+                  class="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-300 hover:text-slate-900"
+                  href={bookshopLink(book)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Bookshop.org
+                </a>
+                <a
+                  class="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-300 hover:text-slate-900"
+                  href={libbyLink(book)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Libby
+                </a>
+              </div>
+            </div>
+          </article>
+        {/each}
+      </div>
+    {/each}
   </section>
 {/each}

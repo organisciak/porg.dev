@@ -1396,6 +1396,24 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
 	}
 
+	:global(.snes-page .publication .pub-button) {
+		background: #22224a;
+		border: 1px solid #3a3a6a;
+		color: #ffcc00;
+		font-size: 0.5rem;
+		padding: 0.3rem 0.5rem;
+		border-radius: 0;
+	}
+
+	:global(.snes-page .publication .pub-button:hover) {
+		background: #2a2a5a;
+		text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+	}
+
+	:global(.snes-page .publication .pub-button a) {
+		color: #ffcc00;
+	}
+
 	@media (max-width: 720px) {
 		.content {
 			padding: 2rem 1rem 3rem;

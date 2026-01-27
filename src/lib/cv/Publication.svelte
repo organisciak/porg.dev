@@ -333,13 +333,13 @@ TODO allow customizing the itemtype
 
 <style lang='postcss'>
   .pub-button {
-    @apply dark:bg-slate-600 bg-slate-300;
-    @apply hover:dark:bg-slate-500 hover:bg-slate-400;
-    @apply text-xs text-slate-200 font-bold;
+    @apply dark:bg-slate-700 bg-slate-300;
+    @apply hover:dark:bg-slate-600 hover:bg-slate-400;
+    @apply text-xs text-slate-700 dark:text-slate-100 font-bold;
     @apply inline-block leading-tight p-1 rounded-lg m-1;
   }
 
   .pub-button a {
-    @apply text-xs text-slate-200 font-bold;
+    @apply text-xs text-slate-700 dark:text-slate-100 font-bold;
   }
 </style>

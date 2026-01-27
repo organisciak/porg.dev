@@ -197,7 +197,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Henry Holt and Company (Macmillan Publishing Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://covers.openlibrary.org/b/id/12366237-L.jpg",
+              "cover": "https://prodimage.images-bn.com/pimages/9781250887283_p0_v1_s600x595.jpg",
               "description": "This captivating biography chronicles the remarkable journey of renowned fashion editor and arbiter of style Andre Leon Talley-from humble beginnings in rural North Carolina to the pinnacle of the international world of fashion."
             },
             {
@@ -1606,13 +1606,13 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
 
   const amazonLink = (book) => `https://www.amazon.com/s?k=${buildQuery(book)}`;
   const bookshopLink = (book) => `https://bookshop.org/search?query=${buildQuery(book)}`;
-  const libbyLink = (book) => `https://libbyapp.com/search?query=${buildQuery(book)}`;
+  const libbyLink = () => 'https://libbyapp.com/';
   const labelFor = (book) => book.label || (book.kind === 'winner' ? 'Winner' : 'Honor');
 </script>
 
 # {title}
 
-The American Library Association has announced the **2026 Youth Media Award winners**. This post includes the winners *and* honor books, grouped by award, with covers, short descriptions, and quick links to Amazon, Bookshop.org, and Libby. Winners are highlighted in gold.
+The American Library Association has announced the **2026 Youth Media Award winners**. This post includes the winners *and* honor books, grouped by award, with covers, short descriptions, and quick links to Amazon, Bookshop.org, and Libby. Winners are highlighted in gold. Libby searches are library-specific, so the Libby button opens Libby where you can select your library and search.
 
 For the full official list (including non-book awards), see the [ALA announcement](https://www.ala.unikron.com/).
 

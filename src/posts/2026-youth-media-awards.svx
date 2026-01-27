@@ -1606,6 +1606,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
 
   const amazonLink = (book) => `https://www.amazon.com/s?k=${buildQuery(book)}`;
   const bookshopLink = (book) => `https://bookshop.org/beta-search?keywords=${buildQuery(book)}`;
+  let includeLibbyLinks = false;
   let libbyLibrarySlug = 'denver';
   const libbyLink = (book) =>
     libbyLibrarySlug
@@ -1616,22 +1617,36 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
 
 # {title}
 
-The American Library Association has announced the **2026 Youth Media Award winners**. This post includes the winners *and* honor books, grouped by award, with covers, short descriptions, and quick links to Amazon, Bookshop.org, and Libby. Winners are highlighted in gold. Libby links are library-specific; enter your library slug (the part after `libbyapp.com/library/`) below, or leave it blank to hide Libby buttons.
+The American Library Association has announced the **2026 Youth Media Award winners**. This post includes the winners *and* honor books, grouped by award, with covers, short descriptions, and quick links to Amazon, Bookshop.org, and Libby. Winners are highlighted in gold.
 
 <div class="not-prose mt-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
-  <label class="text-sm font-semibold text-slate-700" for="libby-slug">
-    Libby library slug
+  <label class="flex items-center gap-2 text-sm font-semibold text-slate-700" for="libby-toggle">
+    <input
+      id="libby-toggle"
+      class="h-4 w-4 rounded border-slate-300 text-slate-700 focus:ring-slate-200"
+      type="checkbox"
+      bind:checked={includeLibbyLinks}
+    />
+    Include Libby links
   </label>
-  <p class="mt-1 text-xs text-slate-500">
-    Example: `denver` from `libbyapp.com/library/denver`
-  </p>
-  <input
-    id="libby-slug"
-    class="mt-3 w-full max-w-xs rounded-md border border-slate-200 px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-200"
-    type="text"
-    placeholder="denver"
-    bind:value={libbyLibrarySlug}
-  />
+
+  {#if includeLibbyLinks}
+    <div class="mt-3">
+      <label class="text-sm font-semibold text-slate-700" for="libby-slug">
+        Libby Library
+      </label>
+      <p class="mt-1 text-xs text-slate-500">
+        The link that you see after logging into libby. Example: `denver` from `libbyapp.com/library/denver`
+      </p>
+      <input
+        id="libby-slug"
+        class="mt-3 w-full max-w-xs rounded-md border border-slate-200 px-3 py-2 text-sm text-slate-800 shadow-sm focus:border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-200"
+        type="text"
+        placeholder="denver"
+        bind:value={libbyLibrarySlug}
+      />
+    </div>
+  {/if}
 </div>
 
 For the full official list (including non-book awards), see the [ALA announcement](https://www.ala.unikron.com/).
@@ -1724,7 +1739,7 @@ For the full official list (including non-book awards), see the [ALA announcemen
                 >
                   Bookshop.org
                 </a>
-                {#if libbyLibrarySlug}
+                {#if includeLibbyLinks && libbyLibrarySlug}
                   <a
                     class="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-slate-300 hover:text-slate-900"
                     href={libbyLink(book)}

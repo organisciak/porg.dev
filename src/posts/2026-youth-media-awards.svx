@@ -503,19 +503,21 @@ For the full official list (including honors and non-book awards), see the [ALA 
     <div class="not-prose mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {#each award.winners as book}
         <article class="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-          <div class="aspect-[2/3] w-full bg-slate-100">
-            {#if book.cover}
-              <img
-                src={book.cover}
-                alt={`Cover of ${book.title}`}
-                class="h-full w-full object-cover"
-                loading="lazy"
-              />
-            {:else}
-              <div class="flex h-full w-full items-center justify-center text-sm text-slate-400">
-                Cover unavailable
-              </div>
-            {/if}
+          <div class="flex items-center justify-center bg-slate-50 p-4">
+            <div class="aspect-[2/3] w-40 sm:w-44 md:w-48">
+              {#if book.cover}
+                <img
+                  src={book.cover}
+                  alt={`Cover of ${book.title}`}
+                  class="h-full w-full rounded-md border border-slate-200 object-cover shadow-sm"
+                  loading="lazy"
+                />
+              {:else}
+                <div class="flex h-full w-full items-center justify-center rounded-md border border-slate-200 text-xs text-slate-400">
+                  Cover unavailable
+                </div>
+              {/if}
+            </div>
           </div>
           <div class="flex flex-1 flex-col gap-3 p-4">
             <div>

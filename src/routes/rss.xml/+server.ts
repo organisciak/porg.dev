@@ -19,7 +19,8 @@ function dateToRfc822(dateStr: string): string {
 	return date.toUTCString();
 }
 
-export const GET: RequestHandler = async () => {
+export const GET: RequestHandler = async ({ url }) => {
+	const siteUrl = url?.origin || SITE_URL;
 	const sortedPosts = [...posts].sort(
 		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 	);
@@ -29,8 +30,8 @@ export const GET: RequestHandler = async () => {
 			(post) => `
     <item>
       <title>${escapeXml(post.title)}</title>
-      <link>${SITE_URL}/p/${post.slug}</link>
-      <guid isPermaLink="true">${SITE_URL}/p/${post.slug}</guid>
+      <link>${siteUrl}/p/${post.slug}</link>
+      <guid isPermaLink="true">${siteUrl}/p/${post.slug}</guid>
       <pubDate>${dateToRfc822(post.date)}</pubDate>
       ${post.description ? `<description>${escapeXml(post.description)}</description>` : ''}
     </item>`
@@ -41,11 +42,11 @@ export const GET: RequestHandler = async () => {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${escapeXml(SITE_TITLE)}</title>
-    <link>${SITE_URL}</link>
+    <link>${siteUrl}</link>
     <description>${escapeXml(SITE_DESCRIPTION)}</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-    <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml" />
     ${items}
   </channel>
 </rss>`;

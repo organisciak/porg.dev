@@ -1,8 +1,9 @@
 import { expect, test } from "@playwright/test";
 
-const baseUrl = process.env.PLAYWRIGHT_BASE_URL ?? "http://localhost:4173";
+const fallbackBaseUrl = "http://localhost:4173";
 
-test("rss feed uses request origin and includes posts", async ({ request }) => {
+test("rss feed uses request origin and includes posts", async ({ request }, testInfo) => {
+  const baseUrl = testInfo.project.use.baseURL ?? fallbackBaseUrl;
   const response = await request.get(`${baseUrl}/rss.xml`);
   expect(response.ok()).toBeTruthy();
 
@@ -12,4 +13,5 @@ test("rss feed uses request origin and includes posts", async ({ request }) => {
   const body = await response.text();
   expect(body).toContain(`<atom:link href="${baseUrl}/rss.xml"`);
   expect(body).toContain(`<link>${baseUrl}/p/no-blogs</link>`);
+  expect(body).toContain(`<link>${baseUrl}/p/2026-youth-media-awards</link>`);
 });

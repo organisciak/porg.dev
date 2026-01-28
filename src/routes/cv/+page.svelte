@@ -6,6 +6,7 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import Fa from 'svelte-fa';
 	import { faOrcid } from '@fortawesome/free-brands-svg-icons';
+	import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 	import { onDestroy, onMount } from 'svelte';
 	import SNESHeader from '$lib/header/SNESHeader.svelte';
 	import { hideStandardHeader } from '$lib/stores/headerVisibility';
@@ -19,6 +20,11 @@
 
 	let stars: { x: number; y: number; size: number; twinkleDelay: number; brightness: number }[] = [];
 	let mounted = false;
+	let lightTheme = false;
+
+	function toggleTheme() {
+		lightTheme = !lightTheme;
+	}
 
 	onMount(() => {
 		hideStandardHeader.set(true);
@@ -31,6 +37,11 @@
 		}));
 		mounted = true;
 	});
+
+	// Update body background when theme changes
+	$: if (typeof document !== 'undefined') {
+		document.body.style.background = lightTheme ? '#f0f4f8' : '#0a0a1a';
+	}
 
 	onDestroy(() => {
 		hideStandardHeader.set(false);
@@ -698,7 +709,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 <SNESHeader />
 
-<div class="snes-page">
+<div class="snes-page" class:light-theme={lightTheme}>
 	<div class="stars-container">
 		{#if mounted}
 			{#each stars as star}
@@ -744,6 +755,14 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		</section>
 
 		<div class="toggle-row">
+			<button
+				type="button"
+				class="theme-toggle"
+				on:click={toggleTheme}
+				aria-label={lightTheme ? 'Switch to dark mode' : 'Switch to light mode'}
+			>
+				<Fa icon={lightTheme ? faMoon : faSun} />
+			</button>
 			<nav aria-label="Display range" class="toggle-nav">
 				<button
 					type="button"
@@ -1433,5 +1452,196 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		.publication-grid {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	/* Theme toggle button */
+	.theme-toggle {
+		background: rgba(34, 34, 74, 0.8);
+		border: 2px solid #3a3a6a;
+		color: #ffcc00;
+		font-size: 0.8rem;
+		padding: 0.4rem 0.6rem;
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	.theme-toggle:hover {
+		background: #2a2a5a;
+		text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+	}
+
+	/* Light theme overrides */
+	.light-theme {
+		background: linear-gradient(180deg, #f0f4f8 0%, #e8ecf0 45%, #f0f4f8 100%);
+		color: #1a1a2e;
+	}
+
+	.light-theme .stars-container {
+		display: none;
+	}
+
+	.light-theme .scanlines {
+		background: repeating-linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.03) 0px,
+			rgba(0, 0, 0, 0.03) 1px,
+			transparent 1px,
+			transparent 2px
+		);
+	}
+
+	.light-theme .hero-name {
+		color: #1a1a3a;
+		text-shadow:
+			2px 2px 0 #cc8800,
+			-1px -1px 0 #0088aa,
+			0 0 10px rgba(204, 136, 0, 0.3);
+	}
+
+	.light-theme .hero-title {
+		color: #2a5580;
+	}
+
+	.light-theme .hero-panel {
+		background: rgba(255, 255, 255, 0.9);
+		border-color: #ccd0d8;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	}
+
+	.light-theme .hero-item {
+		background: #f8fafc;
+		border-color: #d0d4dc;
+		color: #2a3a4a;
+	}
+
+	.light-theme .hero-item a {
+		color: #b87800;
+	}
+
+	.light-theme .section-title {
+		color: #1a1a3a;
+		text-shadow: 0 0 8px rgba(0, 102, 170, 0.2);
+	}
+
+	.light-theme .section-subtitle {
+		color: #b87800;
+	}
+
+	.light-theme .section-comment {
+		color: #2a5580;
+	}
+
+	.light-theme .panel {
+		background: rgba(255, 255, 255, 0.95);
+		border-color: #ccd0d8;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	}
+
+	.light-theme .stack-item {
+		color: #2a3a4a;
+		border-bottom-color: #d0d4dc;
+	}
+
+	.light-theme .stack-title {
+		color: #1a1a3a;
+	}
+
+	.light-theme .chip {
+		background: #e8ecf0;
+		border-color: #c0c4cc;
+		color: #8a6600;
+	}
+
+	.light-theme .stack-details {
+		color: #4a5a6a;
+	}
+
+	.light-theme .detail-label {
+		color: #1a1a3a;
+	}
+
+	.light-theme .card {
+		background: #f8fafc;
+		border-color: #d0d4dc;
+	}
+
+	.light-theme .card-title {
+		color: #1a1a3a;
+	}
+
+	.light-theme .card-body {
+		color: #4a5a6a;
+	}
+
+	.light-theme .link-button {
+		color: #b87800;
+	}
+
+	.light-theme .prose-panel {
+		color: #2a3a4a;
+	}
+
+	.light-theme .prose-panel :global(h3),
+	.light-theme .prose-panel :global(h2) {
+		color: #b87800;
+	}
+
+	.light-theme .toggle-link {
+		color: #666;
+	}
+
+	.light-theme .toggle-link.active {
+		color: #b87800;
+		text-shadow: none;
+	}
+
+	.light-theme .toggle-link:hover {
+		color: #1a1a3a;
+	}
+
+	.light-theme .theme-toggle {
+		background: rgba(255, 255, 255, 0.9);
+		border-color: #c0c4cc;
+		color: #4a5a6a;
+	}
+
+	.light-theme .theme-toggle:hover {
+		background: #e8ecf0;
+		color: #1a1a3a;
+	}
+
+	/* Light theme publication overrides */
+	:global(.light-theme .publication) {
+		background: #f8fafc;
+		border-color: #d0d4dc;
+		color: #2a3a4a;
+	}
+
+	:global(.light-theme .publication h2) {
+		color: #1a1a3a;
+	}
+
+	:global(.light-theme .publication p),
+	:global(.light-theme .publication span),
+	:global(.light-theme .publication strong) {
+		color: #4a5a6a;
+	}
+
+	:global(.light-theme .publication a) {
+		color: #b87800;
+	}
+
+	:global(.light-theme .publication .pub-button) {
+		background: #e8ecf0;
+		border-color: #c0c4cc;
+		color: #8a6600;
+	}
+
+	:global(.light-theme .publication .pub-button:hover) {
+		background: #d8dce0;
+	}
+
+	:global(.light-theme .publication .pub-button a) {
+		color: #8a6600;
 	}
 </style>

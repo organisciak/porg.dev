@@ -46,6 +46,7 @@ The `hideStandardHeader` store (`src/lib/stores/headerVisibility.ts`) controls w
   - Create a post by adding `src/posts/<slug>.md` or `src/posts/<slug>.svx` with frontmatter:
     - Required: `title: ...`, `date: 'YYYY-MM-DD'`, `description: ...`
     - Optional SEO fields: `image: /path-or-url`, `keywords: ...` or `tags: ...`, `modified: 'YYYY-MM-DD'` or `updated: 'YYYY-MM-DD'`
+    - Fallbacks: missing `image` uses the default OG image; missing `modified/updated` falls back to `date`.
   - Filenames become the slug (`/p/<slug>`). Files starting with `_` are ignored.
   - Run `pnpm generate-posts` to refresh `src/lib/generated/posts.json` (also runs on `pnpm build`).
   - `/p` reads the JSON when present, and falls back to reading `src/posts/` in dev.

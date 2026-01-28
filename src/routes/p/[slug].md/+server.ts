@@ -8,6 +8,11 @@ interface PostMetadata {
   title?: string;
   date?: string;
   description?: string;
+  image?: string;
+  keywords?: string;
+  tags?: string;
+  modified?: string;
+  updated?: string;
   slug: string;
   fileType: FileType;
 }

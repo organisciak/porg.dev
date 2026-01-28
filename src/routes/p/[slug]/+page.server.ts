@@ -16,7 +16,9 @@ interface PostMetadata {
   description?: string;
   image?: string;
   keywords?: string;
+  tags?: string;
   modified?: string;
+  updated?: string;
   slug: string;
   fileType: FileType;
 }
@@ -42,13 +44,18 @@ const parseFrontmatter = (content: string): Record<string, string> | null => {
 };
 
 const buildPostMetadata = (metadata: Record<string, string>, slug: string, fileType: FileType): PostMetadata => {
+  const keywords = metadata.keywords || metadata.tags;
+  const modified = metadata.modified || metadata.updated;
+
   return {
     title: metadata.title || slug,
     date: metadata.date || new Date().toISOString().split('T')[0],
     description: metadata.description,
     image: metadata.image,
-    keywords: metadata.keywords,
-    modified: metadata.modified || metadata.updated,
+    keywords,
+    tags: metadata.tags,
+    modified,
+    updated: metadata.updated,
     slug,
     fileType
   };

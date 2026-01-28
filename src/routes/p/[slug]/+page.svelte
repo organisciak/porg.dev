@@ -11,7 +11,9 @@
     description?: string;
     image?: string;
     keywords?: string | string[];
+    tags?: string | string[];
     modified?: string;
+    updated?: string;
   };
 
   let Post: Component | undefined;
@@ -51,16 +53,16 @@
     return asString;
   };
 
-  const buildJsonLd = (meta: PostMetadata, url?: string) => {
+  const buildJsonLd = (meta: PostMetadata, url?: string, image?: string) => {
     if (!meta?.title || !meta?.date || !url) return null;
-    const keywords = normalizeKeywords(meta.keywords);
+    const keywords = normalizeKeywords(meta.keywords ?? meta.tags);
     const jsonLd: Record<string, unknown> = {
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
       headline: meta.title,
       description: meta.description || meta.title,
       datePublished: meta.date,
-      dateModified: meta.modified || meta.date,
+      dateModified: meta.modified || meta.updated || meta.date,
       author: {
         '@type': 'Person',
         name: siteAuthor
@@ -68,17 +70,17 @@
       url
     };
 
-    if (meta.image) jsonLd.image = meta.image;
+    if (image) jsonLd.image = image;
     if (keywords) jsonLd.keywords = keywords;
     return jsonLd;
   };
 
-  $: jsonLd = buildJsonLd(metadata, canonicalUrl);
   $: metaTitle = metadata.title ? String(metadata.title) : 'Blog Post';
   $: metaDescription = metadata.description ? String(metadata.description) : metaTitle;
   $: metaUrl = canonicalUrl;
   $: metaImage = resolveAbsoluteUrl(metadata.image || defaultOgImagePath, canonicalUrl);
   $: twitterCard = metaImage ? 'summary_large_image' : 'summary';
+  $: jsonLd = buildJsonLd(metadata, canonicalUrl, metaImage);
 
   onMount(async () => {
     try {

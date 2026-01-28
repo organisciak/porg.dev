@@ -14,7 +14,9 @@ date: 'YYYY-MM-DD'
 description: 'A brief description of your post'
 image: '/opengraph/your-image.png' # optional
 keywords: 'ai, creativity, evaluation' # optional (or tags)
+tags: 'ai, creativity, evaluation' # optional (or keywords)
 modified: 'YYYY-MM-DD' # optional (or updated)
+updated: 'YYYY-MM-DD' # optional (or modified)
 ---
 ```
 
@@ -57,6 +59,8 @@ pnpm generate-posts
 - `/llms.txt` - LLM-friendly index with key links and recent posts
 - `/p/<slug>` - Full post page with SEO meta tags + Schema.org BlogPosting JSON-LD
 - `/p/<slug>.md` - Markdown mirror of the post content
+  - Missing `image` falls back to the default OG image.
+  - Missing `modified/updated` falls back to `date`.
 
 ## Validation & Tests
 

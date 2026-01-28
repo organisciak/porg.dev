@@ -55,8 +55,20 @@ function generatePostsList() {
     const slug = filename.replace(/\.(md|svx)$/, '');
     const fileType = filename.endsWith('.md') ? 'md' : 'svx';
     
+    const normalized = {
+      ...metadata
+    };
+
+    if (!normalized.keywords && normalized.tags) {
+      normalized.keywords = normalized.tags;
+    }
+
+    if (!normalized.modified && normalized.updated) {
+      normalized.modified = normalized.updated;
+    }
+
     return {
-      ...metadata,
+      ...normalized,
       slug,
       fileType
     };

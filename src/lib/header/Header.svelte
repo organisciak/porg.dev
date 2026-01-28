@@ -3,7 +3,7 @@
 	import { base } from '$app/paths';
 
 	import Fa from 'svelte-fa';
-    import { faHome, faSwatchbook, faFillDrip, faBriefcase } from '@fortawesome/free-solid-svg-icons';
+    import { faHome, faSwatchbook, faFillDrip, faBriefcase, faNewspaper } from '@fortawesome/free-solid-svg-icons';
 
 	import { isCollapsed } from '$lib/stores/headerCollapse';
 
@@ -29,6 +29,12 @@
 			url: '/cv',
 			always: true,
 			icon: faBriefcase
+		},
+		{
+			name: 'Posts',
+			url: '/p',
+			always: true,
+			icon: faNewspaper
 		},
 		// {
 		// 	name: 'Colors',

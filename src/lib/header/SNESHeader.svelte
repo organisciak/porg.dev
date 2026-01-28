@@ -11,6 +11,7 @@
 	const links: Link[] = [
 		{ name: 'HOME', url: '/' },
 		{ name: 'CV', url: '/cv' },
+		{ name: 'POSTS', url: '/p' },
 		{ name: 'GAMES', url: '/huehunter' }
 	];
 </script>

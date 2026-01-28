@@ -21,7 +21,7 @@
   const canonicalUrl: string | undefined = data.canonicalUrl;
   const siteAuthor = 'Peter Organisciak';
   let jsonLd: Record<string, unknown> | null = null;
-  let metaTitle = 'Blog Post';
+  let metaTitle = 'Post';
   let metaDescription = '';
   let metaUrl: string | undefined = canonicalUrl;
   let metaImage: string | undefined;
@@ -75,7 +75,7 @@
     return jsonLd;
   };
 
-  $: metaTitle = metadata.title ? String(metadata.title) : 'Blog Post';
+  $: metaTitle = metadata.title ? String(metadata.title) : 'Post';
   $: metaDescription = metadata.description ? String(metadata.description) : metaTitle;
   $: metaUrl = canonicalUrl;
   $: metaImage = resolveAbsoluteUrl(metadata.image || defaultOgImagePath, canonicalUrl);
@@ -128,7 +128,7 @@
   {#if jsonLd}
     <script type="application/ld+json">{@html JSON.stringify(jsonLd)}</script>
   {/if}
-  <link rel="alternate" type="application/rss+xml" title="porg.dev blog" href="{base}/rss.xml" />
+  <link rel="alternate" type="application/rss+xml" title="porg.dev posts" href="{base}/rss.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">

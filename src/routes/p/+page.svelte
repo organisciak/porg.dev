@@ -5,9 +5,9 @@
 </script>
 
 <svelte:head>
-  <title>Blog | P</title>
-  <meta name="description" content="My blog posts" />
-  <link rel="alternate" type="application/rss+xml" title="porg.dev blog" href="{base}/rss.xml" />
+  <title>Posts | porg.dev</title>
+  <meta name="description" content="Posts from Peter Organisciak on AI, creativity, and information science" />
+  <link rel="alternate" type="application/rss+xml" title="porg.dev posts" href="{base}/rss.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
 
   <div class="content">
     <header class="blog-header">
-      <h1>Blog Posts</h1>
+      <h1>Posts</h1>
       <p class="subtitle">Thoughts on AI, creativity, and information science</p>
     </header>
 

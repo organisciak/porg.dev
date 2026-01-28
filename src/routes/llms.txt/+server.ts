@@ -23,10 +23,10 @@ export const GET: RequestHandler = async ({ url }) => {
 
 - Home: ${siteUrl}/
 - CV / Academic Profile: ${siteUrl}/cv
-- Blog Posts: ${siteUrl}/p
+- Posts: ${siteUrl}/p
 - RSS Feed: ${siteUrl}/rss.xml
 
-## Recent Blog Posts
+## Recent Posts
 
 ${postsList}
 

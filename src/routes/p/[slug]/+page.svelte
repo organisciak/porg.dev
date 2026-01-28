@@ -5,8 +5,59 @@
   
   export let data;
   
+  type PostMetadata = {
+    title?: string;
+    date?: string;
+    description?: string;
+    image?: string;
+    keywords?: string | string[];
+    modified?: string;
+  };
+
   let Post: Component | undefined;
-  let metadata: Record<string, unknown> = {};
+  let metadata: PostMetadata = data.metadata ?? {};
+  const canonicalUrl: string | undefined = data.canonicalUrl;
+  const siteAuthor = 'Peter Organisciak';
+  let jsonLd: Record<string, unknown> | null = null;
+
+  const normalizeKeywords = (value: unknown) => {
+    if (!value) return undefined;
+    if (Array.isArray(value)) {
+      const cleaned = value.map(item => String(item).trim()).filter(Boolean);
+      return cleaned.length ? cleaned : undefined;
+    }
+    const asString = String(value).trim();
+    if (!asString) return undefined;
+    if (asString.includes(',')) {
+      const split = asString.split(',').map(item => item.trim()).filter(Boolean);
+      return split.length ? split : undefined;
+    }
+    return asString;
+  };
+
+  const buildJsonLd = (meta: PostMetadata, url?: string) => {
+    if (!meta?.title || !meta?.date || !url) return null;
+    const keywords = normalizeKeywords(meta.keywords);
+    const jsonLd: Record<string, unknown> = {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: meta.title,
+      description: meta.description || meta.title,
+      datePublished: meta.date,
+      dateModified: meta.modified || meta.date,
+      author: {
+        '@type': 'Person',
+        name: siteAuthor
+      },
+      url
+    };
+
+    if (meta.image) jsonLd.image = meta.image;
+    if (keywords) jsonLd.keywords = keywords;
+    return jsonLd;
+  };
+
+  $: jsonLd = buildJsonLd(metadata, canonicalUrl);
   
   onMount(async () => {
     try {
@@ -14,11 +65,11 @@
       if (data.postType === 'svx') {
         const module = await import(`$posts/${data.slug}.svx`);
         Post = module.default;
-        metadata = module.metadata || {};
+        metadata = { ...metadata, ...(module.metadata || {}) };
       } else {
         const module = await import(`$posts/${data.slug}.md`);
         Post = module.default;
-        metadata = module.metadata || {};
+        metadata = { ...metadata, ...(module.metadata || {}) };
       }
     } catch (e) {
       console.error('Error loading post:', e);
@@ -34,6 +85,9 @@
   {/if}
   {#if metadata.description}
     <meta name="description" content={String(metadata.description)} />
+  {/if}
+  {#if jsonLd}
+    <script type="application/ld+json">{@html JSON.stringify(jsonLd)}</script>
   {/if}
   <link rel="alternate" type="application/rss+xml" title="porg.dev blog" href="{base}/rss.xml" />
 </svelte:head>

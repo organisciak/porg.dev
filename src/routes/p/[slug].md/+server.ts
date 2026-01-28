@@ -1,12 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const postsDirectory = path.join(__dirname, '../../../../src/posts');
-const postsJsonPath = path.join(__dirname, '../../../../src/lib/generated/posts.json');
+import posts from '$lib/generated/posts.json';
 
 type FileType = 'md' | 'svx';
 
@@ -17,6 +11,12 @@ interface PostMetadata {
   slug: string;
   fileType: FileType;
 }
+
+const rawPosts = import.meta.glob('/src/posts/*.{md,svx}', {
+  eager: true,
+  query: '?raw',
+  import: 'default'
+}) as Record<string, string>;
 
 const parseFrontmatter = (content: string) => {
   const frontmatterMatch = content.match(/---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
@@ -63,41 +63,38 @@ const buildMarkdown = (meta: { title: string; date?: string; description?: strin
   return parts.join('\n');
 };
 
+const findRawPost = (slug: string) => {
+  for (const [filePath, content] of Object.entries(rawPosts)) {
+    const match = filePath.match(/\/src\/posts\/(.+)\.(md|svx)$/);
+    if (!match) continue;
+    const [, fileSlug, extension] = match;
+    if (fileSlug === slug) {
+      return {
+        content,
+        fileType: extension as FileType
+      };
+    }
+  }
+  return null;
+};
+
 export const GET: RequestHandler = async ({ params }) => {
   const { slug } = params;
 
   try {
-    let postType: FileType = 'svx';
-    let metadataFromJson: PostMetadata | null = null;
+    const postRecord = (posts as PostMetadata[]).find(post => post.slug === slug) ?? null;
+    const rawPost = findRawPost(slug);
 
-    if (fs.existsSync(postsJsonPath)) {
-      const postsJson = fs.readFileSync(postsJsonPath, 'utf-8');
-      const posts: PostMetadata[] = JSON.parse(postsJson);
-      const post = posts.find(p => p.slug === slug);
-      if (post) {
-        postType = post.fileType;
-        metadataFromJson = post;
-      }
-    }
-
-    let postPath = path.join(postsDirectory, `${slug}.${postType}`);
-    if (!fs.existsSync(postPath)) {
-      const fallbackType: FileType = postType === 'svx' ? 'md' : 'svx';
-      postPath = path.join(postsDirectory, `${slug}.${fallbackType}`);
-      postType = fallbackType;
-    }
-
-    if (!fs.existsSync(postPath)) {
+    if (!rawPost) {
       throw error(404, `Post not found: ${slug}`);
     }
 
-    const content = fs.readFileSync(postPath, 'utf-8');
-    const { metadata, body } = parseFrontmatter(content);
+    const { metadata, body } = parseFrontmatter(rawPost.content);
     const cleanBody = stripScriptBlocks(body);
 
-    const finalTitle = metadata.title || metadataFromJson?.title || slug;
-    const finalDate = metadata.date || metadataFromJson?.date;
-    const finalDescription = metadata.description || metadataFromJson?.description;
+    const finalTitle = metadata.title || postRecord?.title || slug;
+    const finalDate = metadata.date || postRecord?.date;
+    const finalDescription = metadata.description || postRecord?.description;
 
     const markdown = buildMarkdown(
       {

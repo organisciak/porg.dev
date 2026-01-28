@@ -13,6 +13,7 @@ export async function GET() {
 <url><loc>https://porg.dev/p/</loc></url>
 <url><loc>https://porg.dev/tft/</loc></url>
 <url><loc>https://porg.dev/rss.xml</loc></url>
+<url><loc>https://porg.dev/llms.txt</loc></url>
 <url><loc>https://porg.dev/p/2026-youth-media-awards</loc></url>
 <url><loc>https://porg.dev/p/no-blogs</loc></url>
     </urlset>`, {

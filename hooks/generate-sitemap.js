@@ -13,6 +13,7 @@ const sitemapPath = path.join(__dirname, '../src/routes/sitemap.xml/+server.ts')
 // hardcoded extra URLs if this script has blind spots
 const extraUrls = [
   `${basePath}/rss.xml`,
+  `${basePath}/llms.txt`,
 ];
 
 const excludeUrls = [

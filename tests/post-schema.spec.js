@@ -11,6 +11,7 @@ test("post pages include BlogPosting JSON-LD", async ({ page, baseURL }) => {
 
   const resolvedBase = baseURL ? baseURL.replace(/\/$/, "") : new URL(page.url()).origin;
 
+  expect(data["@context"]).toBe("https://schema.org");
   expect(data["@type"]).toBe("BlogPosting");
   expect(data.headline).toBe("No Blogs");
   expect(data.description).toBe("I don't have a blog");

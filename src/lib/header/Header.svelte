@@ -177,6 +177,9 @@
 	li.active a::after {
 		transform: scaleX(1);
 		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='6' viewBox='0 0 20 6'><path d='M0 3 C 3 0 7 6 10 3 C 13 0 17 6 20 3' fill='none' stroke='%23ff6600' stroke-width='2' stroke-linecap='square'/></svg>");
+	}
+
+	li.active a:hover::after {
 		animation: wave-shift 1s linear infinite;
 	}
 

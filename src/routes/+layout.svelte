@@ -2,23 +2,19 @@
 	import "../app.postcss";
     import Header from '$lib/header/Header.svelte';
 	import { hideStandardHeader } from '$lib/stores/headerVisibility';
-	import { onMount } from 'svelte';
-	import { initTheme } from '$lib/stores/theme';
+	import { ModeWatcher } from 'mode-watcher';
 
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
 
 	inject({ mode: dev ? 'development' : 'production' });
-
-	onMount(() => {
-		initTheme();
-	});
 </script>
 
 <svelte:head>
 	<link href="https://sigmoid.social/@porg" rel="me">
 </svelte:head>
 
+<ModeWatcher />
 {#if !$hideStandardHeader}
 	<Header></Header>
 {/if}

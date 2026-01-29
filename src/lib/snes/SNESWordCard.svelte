@@ -52,7 +52,7 @@
 	}
 
 	.fun-card-title {
-		font-size: 0.45rem;
+		font-size: 0.5rem;
 		color: #ffcc00;
 	}
 
@@ -60,7 +60,7 @@
 		background: none;
 		border: 1px solid #555;
 		color: #888;
-		font-size: 0.6rem;
+		font-size: 0.7rem;
 		padding: 0.2rem 0.4rem;
 		cursor: pointer;
 		font-family: inherit;
@@ -73,7 +73,7 @@
 	}
 
 	.loading-text {
-		font-size: 0.4rem;
+		font-size: 0.5rem;
 		color: #666;
 		text-align: center;
 		padding: 1rem 0;
@@ -86,25 +86,65 @@
 	}
 
 	.word-term {
-		font-size: 0.55rem;
+		font-size: 0.65rem;
 		color: #fff;
 	}
 
 	.word-pos {
-		font-size: 0.35rem;
+		font-size: 0.45rem;
 		color: #888;
 	}
 
 	.word-def {
-		font-size: 0.4rem;
+		font-size: 0.5rem;
 		color: #aaa;
 		margin: 0;
 		line-height: 1.5;
 	}
 
 	.word-rarity {
-		font-size: 0.35rem;
+		font-size: 0.45rem;
 		color: #ff6600;
 		margin-top: 0.25rem;
+	}
+
+	:global(html:not(.dark)) .fun-card {
+		background: #fffdf8;
+		border-color: #e6dfd5;
+		color: #5b5b70;
+	}
+
+	:global(html:not(.dark)) .fun-card-title {
+		color: #7c3aed;
+	}
+
+	:global(html:not(.dark)) .refresh-btn {
+		color: #7c3aed;
+		border-color: #d7c8ba;
+	}
+
+	:global(html:not(.dark)) .refresh-btn:hover {
+		color: #5b21b6;
+		border-color: #5b21b6;
+	}
+
+	:global(html:not(.dark)) .loading-text {
+		color: #7c7c90;
+	}
+
+	:global(html:not(.dark)) .word-term {
+		color: #15152b;
+	}
+
+	:global(html:not(.dark)) .word-pos {
+		color: #7c7c90;
+	}
+
+	:global(html:not(.dark)) .word-def {
+		color: #5b5b70;
+	}
+
+	:global(html:not(.dark)) .word-rarity {
+		color: #ff9f1c;
 	}
 </style>

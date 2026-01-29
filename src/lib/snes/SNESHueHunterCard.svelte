@@ -31,7 +31,7 @@
 	}
 
 	.fun-card-title {
-		font-size: 0.45rem;
+		font-size: 0.5rem;
 		color: #ffcc00;
 	}
 
@@ -66,16 +66,44 @@
 	}
 
 	.hue-hunter-desc {
-		font-size: 0.35rem;
+		font-size: 0.45rem;
 		color: #888;
 		text-align: center;
 	}
 
 	.play-prompt {
-		font-size: 0.45rem;
+		font-size: 0.55rem;
 		color: #00ff00;
 		text-shadow: 0 0 8px #00ff00;
 		animation: pulse-play 1.5s ease-in-out infinite;
+	}
+
+	:global(html:not(.dark)) .fun-card {
+		background: #fffdf8;
+		border-color: #e6dfd5;
+		color: #5b5b70;
+	}
+
+	:global(html:not(.dark)) .fun-card-title {
+		color: #7c3aed;
+	}
+
+	:global(html:not(.dark)) .hue-hunter-card {
+		border-color: #e6dfd5;
+	}
+
+	:global(html:not(.dark)) .hue-hunter-card:hover {
+		border-color: #7c3aed;
+		box-shadow: 0 0 10px rgba(124, 58, 237, 0.25);
+	}
+
+	:global(html:not(.dark)) .hue-hunter-desc {
+		color: #5b5b70;
+	}
+
+	:global(html:not(.dark)) .play-prompt {
+		color: #2f9e44;
+		text-shadow: none;
 	}
 
 	@keyframes pulse-play {

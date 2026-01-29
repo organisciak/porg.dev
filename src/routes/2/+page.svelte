@@ -2,8 +2,7 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import Fa from 'svelte-fa';
 	import { faGithub, faLinkedinIn, faBluesky } from '@fortawesome/free-brands-svg-icons';
-	import { onMount, onDestroy } from 'svelte';
-	import { hideStandardHeader } from '$lib/stores/headerVisibility';
+	import { onMount } from 'svelte';
 	import findings from '../recent_findings.json';
 	import SNESWordCard from '$lib/snes/SNESWordCard.svelte';
 	import SNESColorCard from '$lib/snes/SNESColorCard.svelte';
@@ -21,7 +20,6 @@
 	let mounted = false;
 
 	onMount(() => {
-		hideStandardHeader.set(true);
 		stars = Array.from({ length: 100 }, () => ({
 			x: Math.random() * 100,
 			y: Math.random() * 100,
@@ -30,10 +28,6 @@
 			brightness: 0.4 + Math.random() * 0.6
 		}));
 		mounted = true;
-	});
-
-	onDestroy(() => {
-		hideStandardHeader.set(false);
 	});
 
 	let menuIndex = 0;
@@ -306,7 +300,7 @@
 		position: fixed;
 		inset: 0;
 		pointer-events: none;
-		z-index: 100;
+		z-index: 20;
 		background: repeating-linear-gradient(
 			0deg,
 			rgba(0, 0, 0, 0.15) 0px,
@@ -502,7 +496,7 @@
 
 	/* Controls hint */
 	.controls-hint {
-		font-size: 0.45rem;
+		font-size: 0.55rem;
 		color: #666;
 		display: flex;
 		align-items: center;
@@ -547,7 +541,7 @@
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
-		font-size: 0.5rem;
+		font-size: 0.6rem;
 		color: #666;
 		margin-top: 1rem;
 	}
@@ -597,7 +591,7 @@
 	.research-item {
 		display: flex;
 		gap: 0.5rem;
-		font-size: 0.45rem;
+		font-size: 0.55rem;
 		line-height: 1.6;
 	}
 
@@ -627,7 +621,7 @@
 	.research-link {
 		color: #88ccff;
 		text-decoration: none;
-		font-size: 0.4rem;
+		font-size: 0.5rem;
 	}
 
 	.research-link:hover {
@@ -644,7 +638,7 @@
 		display: flex;
 		align-items: center;
 		gap: 0.4rem;
-		font-size: 0.45rem;
+		font-size: 0.55rem;
 		color: #666;
 		margin-top: 1rem;
 		flex-wrap: wrap;
@@ -677,6 +671,7 @@
 		padding: 1rem;
 		border: 2px solid #333;
 		background: rgba(0, 0, 0, 0.3);
+		font-size: 0.6rem;
 	}
 
 	.fun-grid {
@@ -687,7 +682,7 @@
 
 	/* Copyright */
 	.copyright {
-		font-size: 0.4rem;
+		font-size: 0.5rem;
 		color: #444;
 		margin-top: 2rem;
 	}
@@ -699,6 +694,149 @@
 		width: 1px;
 		height: 1px;
 		overflow: hidden;
+	}
+
+	:global(html:not(.dark)) .snes-page {
+		background:
+			radial-gradient(circle at 12% 12%, rgba(255, 159, 28, 0.12), transparent 45%),
+			radial-gradient(circle at 90% 10%, rgba(124, 58, 237, 0.12), transparent 45%),
+			linear-gradient(180deg, #fbf7f1 0%, #f1f1f7 100%);
+		color: #15152b;
+	}
+
+	:global(html:not(.dark)) .stars-container {
+		display: none;
+	}
+
+	:global(html:not(.dark)) .scanlines {
+		background: repeating-linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.04) 0px,
+			rgba(0, 0, 0, 0.04) 1px,
+			transparent 1px,
+			transparent 2px
+		);
+	}
+
+	:global(html:not(.dark)) .portrait-frame::before {
+		background: #fffdf8;
+	}
+
+	:global(html:not(.dark)) .portrait-glow {
+		background: radial-gradient(circle, rgba(255, 159, 28, 0.25) 0%, transparent 70%);
+	}
+
+	:global(html:not(.dark)) .title-line {
+		color: #15152b;
+		text-shadow:
+			0 2px 0 rgba(255, 159, 28, 0.35),
+			0 0 16px rgba(124, 58, 237, 0.2);
+	}
+
+	:global(html:not(.dark)) .stats-bar {
+		color: #5b5b70;
+	}
+
+	:global(html:not(.dark)) .stat-label {
+		color: #ff9f1c;
+	}
+
+	:global(html:not(.dark)) .stat-value {
+		color: #15152b;
+	}
+
+	:global(html:not(.dark)) .tagline {
+		color: #5b5b70;
+		text-shadow: none;
+	}
+
+	:global(html:not(.dark)) .menu-item {
+		color: #5b5b70;
+	}
+
+	:global(html:not(.dark)) .menu-item:hover,
+	:global(html:not(.dark)) .menu-item.active {
+		color: #7c3aed;
+	}
+
+	:global(html:not(.dark)) .menu-item .cursor {
+		color: #ff9f1c;
+		text-shadow: 0 0 8px rgba(255, 159, 28, 0.45);
+	}
+
+	:global(html:not(.dark)) .controls-hint {
+		color: #7c7c90;
+	}
+
+	:global(html:not(.dark)) .key {
+		background: #fff6ef;
+		border-color: #e6dfd5;
+		color: #5b5b70;
+	}
+
+	:global(html:not(.dark)) .separator {
+		color: #c0b3a4;
+	}
+
+	:global(html:not(.dark)) .social-icon {
+		color: #7c7c90;
+	}
+
+	:global(html:not(.dark)) .social-icon:hover {
+		color: #7c3aed;
+		text-shadow: none;
+	}
+
+	:global(html:not(.dark)) .tools-section,
+	:global(html:not(.dark)) .consulting-section {
+		color: #7c7c90;
+	}
+
+	:global(html:not(.dark)) .tools-label,
+	:global(html:not(.dark)) .consulting-label,
+	:global(html:not(.dark)) .consulting-text {
+		color: #5b5b70;
+	}
+
+	:global(html:not(.dark)) .tool-link,
+	:global(html:not(.dark)) .research-link,
+	:global(html:not(.dark)) .consulting-link {
+		color: #7c3aed;
+	}
+
+	:global(html:not(.dark)) .tool-link:hover,
+	:global(html:not(.dark)) .research-link:hover,
+	:global(html:not(.dark)) .consulting-link:hover {
+		color: #5b21b6;
+		text-shadow: none;
+	}
+
+	:global(html:not(.dark)) .link-sep,
+	:global(html:not(.dark)) .tool-divider {
+		color: #c0b3a4;
+	}
+
+	:global(html:not(.dark)) .research-section,
+	:global(html:not(.dark)) .fun-section {
+		border-color: #e6dfd5;
+		background: #fffdf8;
+	}
+
+	:global(html:not(.dark)) .section-title {
+		color: #7c3aed;
+		text-shadow: none;
+	}
+
+	:global(html:not(.dark)) .research-main {
+		color: #5b5b70;
+	}
+
+	:global(html:not(.dark)) .research-bullet {
+		color: #ff9f1c;
+	}
+
+	:global(html:not(.dark)) .copyright {
+		color: #b4a89a;
 	}
 
 	/* Responsive */

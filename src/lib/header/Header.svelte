@@ -2,15 +2,39 @@
 	import { page } from '$app/stores';
 	import { base } from '$app/paths';
 	import Fa from 'svelte-fa';
-	import { faHome, faBriefcase, faNewspaper, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+	import { faHome, faBriefcase, faNewspaper, faSun, faMoon, faCircleHalfStroke } from '@fortawesome/free-solid-svg-icons';
 	import { isCollapsed } from '$lib/stores/headerCollapse';
-	import { theme, toggleTheme } from '$lib/stores/theme';
+	import { userPrefersMode, setMode } from 'mode-watcher';
 
 	export let small: boolean = false;
 
 	$: small = $isCollapsed;
-	let isLight = false;
-	$: isLight = $theme === 'light';
+	let currentPreference: 'light' | 'dark' | 'system' = 'system';
+	let nextPreference: 'light' | 'dark' | 'system' = 'light';
+	let toggleLabel = 'AUTO';
+	let toggleIcon = faCircleHalfStroke;
+	let ariaLabel = 'Switch theme';
+
+	const preferenceLabel = (value: 'light' | 'dark' | 'system') =>
+		value === 'system' ? 'AUTO' : value.toUpperCase();
+
+	const getNextPreference = (value: 'light' | 'dark' | 'system') =>
+		value === 'light' ? 'dark' : value === 'dark' ? 'system' : 'light';
+
+	const cycleTheme = () => {
+		setMode(nextPreference);
+	};
+
+	$: currentPreference = (userPrefersMode.current ?? 'system') as 'light' | 'dark' | 'system';
+	$: nextPreference = getNextPreference(currentPreference);
+	$: toggleLabel = preferenceLabel(currentPreference);
+	$: toggleIcon =
+		currentPreference === 'system'
+			? faCircleHalfStroke
+			: currentPreference === 'light'
+				? faSun
+				: faMoon;
+	$: ariaLabel = `Theme: ${toggleLabel}. Switch to ${preferenceLabel(nextPreference)}.`;
 
 	type Link = {
 		name: string;
@@ -57,12 +81,11 @@
 	<button
 		type="button"
 		class="theme-toggle"
-		aria-label={isLight ? 'Switch to dark theme' : 'Switch to light theme'}
-		aria-pressed={isLight}
-		on:click={toggleTheme}
+		aria-label={ariaLabel}
+		on:click={cycleTheme}
 	>
-		<Fa class="icon" icon={isLight ? faMoon : faSun} />
-		<span class="toggle-label">{isLight ? 'LIGHT' : 'DARK'}</span>
+		<Fa class="icon" icon={toggleIcon} />
+		<span class="toggle-label">{toggleLabel}</span>
 	</button>
 </header>
 
@@ -86,7 +109,7 @@
 		) 1;
 		padding: 0.75rem 1rem;
 		position: relative;
-		z-index: 50;
+		z-index: 120;
 	}
 
 	.site-header.small {
@@ -255,7 +278,7 @@
 		50% { opacity: 1; }
 	}
 
-	:global([data-theme='light']) .site-header {
+	:global(html:not(.dark)) .site-header {
 		font-family: 'Space Grotesk', system-ui, sans-serif;
 		background: linear-gradient(180deg, #fff6ef 0%, #fbf7f1 100%);
 		border-image: repeating-linear-gradient(
@@ -269,7 +292,7 @@
 		) 1;
 	}
 
-	:global([data-theme='light']) .site-header::before {
+	:global(html:not(.dark)) .site-header::before {
 		background: repeating-linear-gradient(
 			0deg,
 			rgba(0, 0, 0, 0.04) 0px,
@@ -279,27 +302,27 @@
 		);
 	}
 
-	:global([data-theme='light']) .site-header a {
+	:global(html:not(.dark)) .site-header a {
 		color: #5b5b70;
 		text-transform: uppercase;
 		letter-spacing: 0.12em;
 	}
 
-	:global([data-theme='light']) .site-header a:hover {
+	:global(html:not(.dark)) .site-header a:hover {
 		color: #7c3aed;
 		text-shadow: none;
 	}
 
-	:global([data-theme='light']) .site-header li.active a {
+	:global(html:not(.dark)) .site-header li.active a {
 		color: #7c3aed;
 		text-shadow: none;
 	}
 
-	:global([data-theme='light']) .site-header a::after {
+	:global(html:not(.dark)) .site-header a::after {
 		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='6' viewBox='0 0 20 6'><path d='M0 3 C 3 0 7 6 10 3 C 13 0 17 6 20 3' fill='none' stroke='%237c3aed' stroke-width='2' stroke-linecap='square'/></svg>");
 	}
 
-	:global([data-theme='light']) .theme-toggle {
+	:global(html:not(.dark)) .theme-toggle {
 		font-family: 'Space Grotesk', system-ui, sans-serif;
 		background: #fffdf8;
 		border-color: #e6dfd5;
@@ -307,7 +330,7 @@
 		box-shadow: 4px 4px 0 rgba(21, 21, 43, 0.12);
 	}
 
-	:global([data-theme='light']) .theme-toggle:hover {
+	:global(html:not(.dark)) .theme-toggle:hover {
 		background: #fff0e1;
 		color: #5b21b6;
 		box-shadow: 6px 6px 0 rgba(21, 21, 43, 0.16);

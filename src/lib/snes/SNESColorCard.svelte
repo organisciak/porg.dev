@@ -52,7 +52,7 @@
 	}
 
 	.fun-card-title {
-		font-size: 0.45rem;
+		font-size: 0.5rem;
 		color: #ffcc00;
 	}
 
@@ -60,7 +60,7 @@
 		background: none;
 		border: 1px solid #555;
 		color: #888;
-		font-size: 0.6rem;
+		font-size: 0.7rem;
 		padding: 0.2rem 0.4rem;
 		cursor: pointer;
 		font-family: inherit;
@@ -73,7 +73,7 @@
 	}
 
 	.loading-text {
-		font-size: 0.4rem;
+		font-size: 0.5rem;
 		color: #666;
 		text-align: center;
 		padding: 1rem 0;
@@ -93,18 +93,18 @@
 	}
 
 	.color-name {
-		font-size: 0.45rem;
+		font-size: 0.55rem;
 		color: #fff;
 		text-align: center;
 	}
 
 	.color-hex {
-		font-size: 0.35rem;
+		font-size: 0.45rem;
 		color: #888;
 	}
 
 	.fun-link {
-		font-size: 0.35rem;
+		font-size: 0.45rem;
 		color: #88ccff;
 		text-decoration: none;
 		text-align: center;
@@ -113,5 +113,45 @@
 
 	.fun-link:hover {
 		color: #ffcc00;
+	}
+
+	:global(html:not(.dark)) .fun-card {
+		background: #fffdf8;
+		border-color: #e6dfd5;
+		color: #5b5b70;
+	}
+
+	:global(html:not(.dark)) .fun-card-title {
+		color: #7c3aed;
+	}
+
+	:global(html:not(.dark)) .refresh-btn {
+		color: #7c3aed;
+		border-color: #d7c8ba;
+	}
+
+	:global(html:not(.dark)) .refresh-btn:hover {
+		color: #5b21b6;
+		border-color: #5b21b6;
+	}
+
+	:global(html:not(.dark)) .loading-text {
+		color: #7c7c90;
+	}
+
+	:global(html:not(.dark)) .color-name {
+		color: #15152b;
+	}
+
+	:global(html:not(.dark)) .color-hex {
+		color: #7c7c90;
+	}
+
+	:global(html:not(.dark)) .fun-link {
+		color: #7c3aed;
+	}
+
+	:global(html:not(.dark)) .fun-link:hover {
+		color: #5b21b6;
 	}
 </style>

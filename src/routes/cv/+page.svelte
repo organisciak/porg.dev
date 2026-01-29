@@ -7,7 +7,7 @@
 	import Fa from 'svelte-fa';
 	import { faOrcid } from '@fortawesome/free-brands-svg-icons';
 	import { onMount } from 'svelte';
-	import { theme } from '$lib/stores/theme';
+	import { mode } from 'mode-watcher';
 
 	const typedPublications: CSLPublication[] = publications;
 
@@ -690,7 +690,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		/>
 </svelte:head>
 
-<div class="snes-page" class:light-theme={$theme === 'light'}>
+<div class="snes-page" class:light-theme={mode.current === 'light'}>
 	<div class="stars-container">
 		{#if mounted}
 			{#each stars as star}
@@ -1006,11 +1006,11 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		background: var(--background);
 	}
 
-	:global([data-theme='dark'] body) {
+	:global(html.dark body) {
 		background: #0a0a1a;
 	}
 
-	:global([data-theme='light'] body) {
+	:global(html:not(.dark) body) {
 		background: #fbf7f1;
 	}
 
@@ -1478,7 +1478,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 	.light-theme .hero-title {
 		color: var(--muted-ink);
-		font-size: 0.85rem;
+		font-size: 0.95rem;
 	}
 
 	.light-theme .hero-panel {
@@ -1493,7 +1493,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		border-color: var(--paper-edge);
 		color: var(--muted-ink);
 		border-radius: 10px;
-		font-size: 0.8rem;
+		font-size: 0.9rem;
 	}
 
 	.light-theme .hero-item a {
@@ -1505,17 +1505,17 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		letter-spacing: 0.02em;
 		color: var(--ink);
 		text-shadow: 0 0 8px rgba(124, 58, 237, 0.15);
-		font-size: 1.05rem;
+		font-size: 1.2rem;
 	}
 
 	.light-theme .section-subtitle {
 		color: var(--accent-warm);
-		font-size: 0.85rem;
+		font-size: 0.95rem;
 	}
 
 	.light-theme .section-comment {
 		color: var(--muted-ink);
-		font-size: 0.75rem;
+		font-size: 0.85rem;
 	}
 
 	.light-theme .panel {
@@ -1528,7 +1528,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 	.light-theme .stack-item {
 		color: var(--muted-ink);
 		border-bottom-color: var(--paper-edge);
-		font-size: 0.8rem;
+		font-size: 0.9rem;
 	}
 
 	.light-theme .stack-title {
@@ -1540,12 +1540,12 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		border-color: rgba(255, 159, 28, 0.4);
 		color: #7a4a00;
 		border-radius: 999px;
-		font-size: 0.7rem;
+		font-size: 0.8rem;
 	}
 
 	.light-theme .stack-details {
 		color: var(--muted-ink);
-		font-size: 0.75rem;
+		font-size: 0.85rem;
 	}
 
 	.light-theme .detail-label {
@@ -1560,33 +1560,33 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 	.light-theme .card-title {
 		color: var(--ink);
-		font-size: 0.85rem;
+		font-size: 0.95rem;
 	}
 
 	.light-theme .card-body {
 		color: var(--muted-ink);
-		font-size: 0.75rem;
+		font-size: 0.85rem;
 	}
 
 	.light-theme .link-button {
 		color: var(--accent-ink);
-		font-size: 0.75rem;
+		font-size: 0.85rem;
 	}
 
 	.light-theme .prose-panel {
 		color: var(--muted-ink);
-		font-size: 0.8rem;
+		font-size: 0.9rem;
 	}
 
 	.light-theme .prose-panel :global(h3),
 	.light-theme .prose-panel :global(h2) {
 		color: var(--accent-ink);
-		font-size: 0.85rem;
+		font-size: 1rem;
 	}
 
 	.light-theme .toggle-link {
 		color: var(--muted-ink);
-		font-size: 0.75rem;
+		font-size: 0.85rem;
 	}
 
 	.light-theme .toggle-link.active {
@@ -1599,7 +1599,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 	}
 
 	.light-theme .toggle-nav {
-		font-size: 0.75rem;
+		font-size: 0.85rem;
 	}
 
 	/* Light theme publication overrides */
@@ -1612,14 +1612,14 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 	:global(.light-theme .publication h2) {
 		color: var(--ink);
-		font-size: 0.85rem;
+		font-size: 0.95rem;
 	}
 
 	:global(.light-theme .publication p),
 	:global(.light-theme .publication span),
 	:global(.light-theme .publication strong) {
 		color: var(--muted-ink);
-		font-size: 0.75rem;
+		font-size: 0.85rem;
 	}
 
 	:global(.light-theme .publication a) {
@@ -1630,7 +1630,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		background: rgba(255, 159, 28, 0.16);
 		border-color: rgba(255, 159, 28, 0.4);
 		color: #7a4a00;
-		font-size: 0.7rem;
+		font-size: 0.75rem;
 	}
 
 	:global(.light-theme .publication .pub-button:hover) {

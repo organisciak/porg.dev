@@ -150,27 +150,27 @@
 			</h1>
 		</div>
 
-		<!-- Stats bar like an RPG -->
+		<!-- Stats bar -->
 		<div class="stats-bar">
 			<div class="stat">
-				<span class="stat-label">CLASS</span>
+				<span class="stat-label">TITLE</span>
 				<span class="stat-value">PROFESSOR</span>
 			</div>
 			<div class="stat-divider">|</div>
 			<div class="stat">
-				<span class="stat-label">SPEC</span>
+				<span class="stat-label">RESEARCH</span>
 				<span class="stat-value">AI + CREATIVITY</span>
 			</div>
 			<div class="stat-divider">|</div>
 			<div class="stat">
-				<span class="stat-label">GUILD</span>
+				<span class="stat-label">AT</span>
 				<span class="stat-value">UNIV. OF DENVER</span>
 			</div>
 		</div>
 
 		<!-- Tagline -->
 		<p class="tagline">
-			Building tools that unlock creativity<br/>and secrets in massive text archives.
+			Researching AI applications in creativity<br/>assessment and large-scale text analysis.
 		</p>
 
 		<!-- Menu -->

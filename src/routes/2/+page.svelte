@@ -42,10 +42,13 @@
 
 	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'ArrowDown' || e.key === 's') {
+			e.preventDefault();
 			menuIndex = (menuIndex + 1) % menuItems.length;
 		} else if (e.key === 'ArrowUp' || e.key === 'w') {
+			e.preventDefault();
 			menuIndex = (menuIndex - 1 + menuItems.length) % menuItems.length;
 		} else if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
 			const item = menuItems[menuIndex];
 			if (item.href.startsWith('http')) {
 				window.open(item.href, '_blank');

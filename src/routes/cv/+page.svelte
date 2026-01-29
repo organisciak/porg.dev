@@ -40,7 +40,7 @@
 
 	// Update body background when theme changes
 	$: if (typeof document !== 'undefined') {
-		document.body.style.background = lightTheme ? '#f0f4f8' : '#0a0a1a';
+		document.body.style.background = lightTheme ? '#fbf7f1' : '#0a0a1a';
 	}
 
 	onDestroy(() => {
@@ -672,7 +672,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 
 	<MetaTags 
 		title="{meta.title}"
@@ -1472,8 +1472,20 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 	/* Light theme overrides */
 	.light-theme {
-		background: linear-gradient(180deg, #f0f4f8 0%, #e8ecf0 45%, #f0f4f8 100%);
-		color: #1a1a2e;
+		--ink: #15152b;
+		--muted-ink: #5b5b70;
+		--paper: #fffdf8;
+		--paper-edge: #e6dfd5;
+		--paper-shadow: rgba(21, 21, 43, 0.12);
+		--accent-warm: #ff9f1c;
+		--accent-cool: #00b4d8;
+		--accent-ink: #7c3aed;
+		background:
+			radial-gradient(circle at 12% 12%, rgba(255, 159, 28, 0.12), transparent 45%),
+			radial-gradient(circle at 90% 10%, rgba(124, 58, 237, 0.12), transparent 45%),
+			linear-gradient(180deg, #fbf7f1 0%, #f1f1f7 100%);
+		color: var(--ink);
+		font-family: 'Space Grotesk', system-ui, sans-serif;
 	}
 
 	.light-theme .stars-container {
@@ -1491,157 +1503,166 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 	}
 
 	.light-theme .hero-name {
-		color: #1a1a3a;
+		font-family: 'Fraunces', serif;
+		letter-spacing: -0.02em;
+		color: var(--ink);
 		text-shadow:
-			2px 2px 0 #cc8800,
-			-1px -1px 0 #0088aa,
-			0 0 10px rgba(204, 136, 0, 0.3);
+			0 2px 0 rgba(255, 159, 28, 0.35),
+			0 0 18px rgba(124, 58, 237, 0.15);
 	}
 
 	.light-theme .hero-title {
-		color: #2a5580;
+		color: var(--muted-ink);
 	}
 
 	.light-theme .hero-panel {
-		background: rgba(255, 255, 255, 0.9);
-		border-color: #ccd0d8;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		background: linear-gradient(135deg, #ffffff 0%, #fff6ef 100%);
+		border-color: var(--paper-edge);
+		box-shadow: 6px 6px 0 var(--paper-shadow);
+		border-radius: 12px;
 	}
 
 	.light-theme .hero-item {
-		background: #f8fafc;
-		border-color: #d0d4dc;
-		color: #2a3a4a;
+		background: #fffdf8;
+		border-color: var(--paper-edge);
+		color: var(--muted-ink);
+		border-radius: 10px;
 	}
 
 	.light-theme .hero-item a {
-		color: #b87800;
+		color: var(--accent-ink);
 	}
 
 	.light-theme .section-title {
-		color: #1a1a3a;
-		text-shadow: 0 0 8px rgba(0, 102, 170, 0.2);
+		font-family: 'Fraunces', serif;
+		letter-spacing: 0.02em;
+		color: var(--ink);
+		text-shadow: 0 0 8px rgba(124, 58, 237, 0.15);
 	}
 
 	.light-theme .section-subtitle {
-		color: #b87800;
+		color: var(--accent-warm);
 	}
 
 	.light-theme .section-comment {
-		color: #2a5580;
+		color: var(--muted-ink);
 	}
 
 	.light-theme .panel {
-		background: rgba(255, 255, 255, 0.95);
-		border-color: #ccd0d8;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+		background: linear-gradient(135deg, #ffffff 0%, #fff6ef 100%);
+		border-color: var(--paper-edge);
+		box-shadow: 6px 6px 0 var(--paper-shadow);
+		border-radius: 12px;
 	}
 
 	.light-theme .stack-item {
-		color: #2a3a4a;
-		border-bottom-color: #d0d4dc;
+		color: var(--muted-ink);
+		border-bottom-color: var(--paper-edge);
 	}
 
 	.light-theme .stack-title {
-		color: #1a1a3a;
+		color: var(--ink);
 	}
 
 	.light-theme .chip {
-		background: #e8ecf0;
-		border-color: #c0c4cc;
-		color: #8a6600;
+		background: rgba(255, 159, 28, 0.16);
+		border-color: rgba(255, 159, 28, 0.4);
+		color: #7a4a00;
+		border-radius: 999px;
 	}
 
 	.light-theme .stack-details {
-		color: #4a5a6a;
+		color: var(--muted-ink);
 	}
 
 	.light-theme .detail-label {
-		color: #1a1a3a;
+		color: var(--ink);
 	}
 
 	.light-theme .card {
-		background: #f8fafc;
-		border-color: #d0d4dc;
+		background: #fffdf8;
+		border-color: var(--paper-edge);
+		border-radius: 10px;
 	}
 
 	.light-theme .card-title {
-		color: #1a1a3a;
+		color: var(--ink);
 	}
 
 	.light-theme .card-body {
-		color: #4a5a6a;
+		color: var(--muted-ink);
 	}
 
 	.light-theme .link-button {
-		color: #b87800;
+		color: var(--accent-ink);
 	}
 
 	.light-theme .prose-panel {
-		color: #2a3a4a;
+		color: var(--muted-ink);
 	}
 
 	.light-theme .prose-panel :global(h3),
 	.light-theme .prose-panel :global(h2) {
-		color: #b87800;
+		color: var(--accent-ink);
 	}
 
 	.light-theme .toggle-link {
-		color: #666;
+		color: var(--muted-ink);
 	}
 
 	.light-theme .toggle-link.active {
-		color: #b87800;
+		color: var(--accent-ink);
 		text-shadow: none;
 	}
 
 	.light-theme .toggle-link:hover {
-		color: #1a1a3a;
+		color: var(--ink);
 	}
 
 	.light-theme .theme-toggle {
-		background: rgba(255, 255, 255, 0.9);
-		border-color: #c0c4cc;
-		color: #4a5a6a;
+		background: #fffdf8;
+		border-color: var(--paper-edge);
+		color: var(--muted-ink);
 	}
 
 	.light-theme .theme-toggle:hover {
-		background: #e8ecf0;
-		color: #1a1a3a;
+		background: #fff0e1;
+		color: var(--ink);
 	}
 
 	/* Light theme publication overrides */
 	:global(.light-theme .publication) {
-		background: #f8fafc;
-		border-color: #d0d4dc;
-		color: #2a3a4a;
+		background: #fffdf8;
+		border-color: var(--paper-edge);
+		color: var(--muted-ink);
+		border-radius: 10px;
 	}
 
 	:global(.light-theme .publication h2) {
-		color: #1a1a3a;
+		color: var(--ink);
 	}
 
 	:global(.light-theme .publication p),
 	:global(.light-theme .publication span),
 	:global(.light-theme .publication strong) {
-		color: #4a5a6a;
+		color: var(--muted-ink);
 	}
 
 	:global(.light-theme .publication a) {
-		color: #b87800;
+		color: var(--accent-ink);
 	}
 
 	:global(.light-theme .publication .pub-button) {
-		background: #e8ecf0;
-		border-color: #c0c4cc;
-		color: #8a6600;
+		background: rgba(255, 159, 28, 0.16);
+		border-color: rgba(255, 159, 28, 0.4);
+		color: #7a4a00;
 	}
 
 	:global(.light-theme .publication .pub-button:hover) {
-		background: #d8dce0;
+		background: rgba(255, 159, 28, 0.25);
 	}
 
 	:global(.light-theme .publication .pub-button a) {
-		color: #8a6600;
+		color: #7a4a00;
 	}
 </style>

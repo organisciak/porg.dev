@@ -226,7 +226,7 @@
 		<!-- Tools section -->
 		<div class="tools-section">
 			<span class="tools-label">TOOLS:</span>
-			<a href="https://github.com/massivetexts/saddl-website" target="_blank" class="tool-link">SaDDL</a>
+			<a href="https://github.com/massivetexts/saddl-dataset" target="_blank" class="tool-link">SaDDL</a>
 			<span class="tool-divider">·</span>
 			<a href="https://bookworm.htrc.illinois.edu/develop/" target="_blank" class="tool-link">HT+BOOKWORM</a>
 		</div>

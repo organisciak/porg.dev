@@ -2,12 +2,15 @@
 	import { page } from '$app/stores';
 	import { base } from '$app/paths';
 	import Fa from 'svelte-fa';
-	import { faHome, faBriefcase, faNewspaper } from '@fortawesome/free-solid-svg-icons';
+	import { faHome, faBriefcase, faNewspaper, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 	import { isCollapsed } from '$lib/stores/headerCollapse';
+	import { theme, toggleTheme } from '$lib/stores/theme';
 
 	export let small: boolean = false;
 
 	$: small = $isCollapsed;
+	let isLight = false;
+	$: isLight = $theme === 'light';
 
 	type Link = {
 		name: string;
@@ -26,7 +29,7 @@
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 </svelte:head>
 
 <header class="site-header" class:small>
@@ -51,6 +54,16 @@
 			{/each}
 		</ul>
 	</nav>
+	<button
+		type="button"
+		class="theme-toggle"
+		aria-label={isLight ? 'Switch to dark theme' : 'Switch to light theme'}
+		aria-pressed={isLight}
+		on:click={toggleTheme}
+	>
+		<Fa class="icon" icon={isLight ? faMoon : faSun} />
+		<span class="toggle-label">{isLight ? 'LIGHT' : 'DARK'}</span>
+	</button>
 </header>
 
 <style>
@@ -80,6 +93,11 @@
 		padding: 0.4rem 0.75rem;
 	}
 
+	.site-header.small .theme-toggle {
+		padding: 0.2rem 0.35rem;
+		font-size: 0.5rem;
+	}
+
 	/* Scanline effect */
 	.site-header::before {
 		content: '';
@@ -98,6 +116,40 @@
 	nav {
 		position: relative;
 		z-index: 1;
+	}
+
+	.theme-toggle {
+		position: absolute;
+		right: 1rem;
+		top: 50%;
+		transform: translateY(-50%);
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		border: 2px solid #3a3a6a;
+		background: rgba(20, 20, 40, 0.85);
+		color: #ffcc00;
+		font-family: inherit;
+		font-size: 0.55rem;
+		letter-spacing: 0.08em;
+		padding: 0.3rem 0.45rem;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		z-index: 2;
+	}
+
+	.theme-toggle:hover {
+		background: rgba(30, 30, 60, 0.95);
+		color: #fff;
+		box-shadow: 0 0 10px rgba(255, 204, 0, 0.35);
+	}
+
+	.theme-toggle :global(.icon) {
+		color: inherit;
+	}
+
+	.theme-toggle .toggle-label {
+		display: inline-block;
 	}
 
 	ul {
@@ -203,6 +255,64 @@
 		50% { opacity: 1; }
 	}
 
+	:global([data-theme='light']) .site-header {
+		font-family: 'Space Grotesk', system-ui, sans-serif;
+		background: linear-gradient(180deg, #fff6ef 0%, #fbf7f1 100%);
+		border-image: repeating-linear-gradient(
+			90deg,
+			#ff9f1c 0px,
+			#ff9f1c 14px,
+			#7c3aed 14px,
+			#7c3aed 28px,
+			#00b4d8 28px,
+			#00b4d8 42px
+		) 1;
+	}
+
+	:global([data-theme='light']) .site-header::before {
+		background: repeating-linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.04) 0px,
+			rgba(0, 0, 0, 0.04) 1px,
+			transparent 1px,
+			transparent 2px
+		);
+	}
+
+	:global([data-theme='light']) .site-header a {
+		color: #5b5b70;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+	}
+
+	:global([data-theme='light']) .site-header a:hover {
+		color: #7c3aed;
+		text-shadow: none;
+	}
+
+	:global([data-theme='light']) .site-header li.active a {
+		color: #7c3aed;
+		text-shadow: none;
+	}
+
+	:global([data-theme='light']) .site-header a::after {
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='6' viewBox='0 0 20 6'><path d='M0 3 C 3 0 7 6 10 3 C 13 0 17 6 20 3' fill='none' stroke='%237c3aed' stroke-width='2' stroke-linecap='square'/></svg>");
+	}
+
+	:global([data-theme='light']) .theme-toggle {
+		font-family: 'Space Grotesk', system-ui, sans-serif;
+		background: #fffdf8;
+		border-color: #e6dfd5;
+		color: #7c3aed;
+		box-shadow: 4px 4px 0 rgba(21, 21, 43, 0.12);
+	}
+
+	:global([data-theme='light']) .theme-toggle:hover {
+		background: #fff0e1;
+		color: #5b21b6;
+		box-shadow: 6px 6px 0 rgba(21, 21, 43, 0.16);
+	}
+
 	/* Responsive */
 	@media (max-width: 640px) {
 		ul {
@@ -211,6 +321,16 @@
 
 		a {
 			font-size: 0.55rem;
+		}
+
+		.theme-toggle {
+			right: 0.6rem;
+			font-size: 0.5rem;
+			padding: 0.25rem 0.35rem;
+		}
+
+		.theme-toggle .toggle-label {
+			display: none;
 		}
 	}
 

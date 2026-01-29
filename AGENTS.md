@@ -74,3 +74,8 @@ Before ending a session, always:
 1. Run `bd sync` to commit beads changes
 2. Commit code changes
 3. `git push` - work is not complete until pushed
+
+
+## Grabbing a task
+
+When grabbing a task from bd ready, do your work in a worktree if it's a more significant task. Small tasks don't need it. If you see a series of small tasks, do all of them.

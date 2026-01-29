@@ -6,8 +6,8 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import Fa from 'svelte-fa';
 	import { faOrcid } from '@fortawesome/free-brands-svg-icons';
-	import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 	import { onMount } from 'svelte';
+	import { theme } from '$lib/stores/theme';
 
 	const typedPublications: CSLPublication[] = publications;
 
@@ -18,11 +18,6 @@
 
 	let stars: { x: number; y: number; size: number; twinkleDelay: number; brightness: number }[] = [];
 	let mounted = false;
-	let lightTheme = false;
-
-	function toggleTheme() {
-		lightTheme = !lightTheme;
-	}
 
 	onMount(() => {
 		stars = Array.from({ length: 120 }, () => ({
@@ -34,11 +29,6 @@
 		}));
 		mounted = true;
 	});
-
-	// Update body background when theme changes
-	$: if (typeof document !== 'undefined') {
-		document.body.style.background = lightTheme ? '#fbf7f1' : '#0a0a1a';
-	}
 
 	// Collapsible config for awards section
 
@@ -700,7 +690,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		/>
 </svelte:head>
 
-<div class="snes-page" class:light-theme={lightTheme}>
+<div class="snes-page" class:light-theme={$theme === 'light'}>
 	<div class="stars-container">
 		{#if mounted}
 			{#each stars as star}
@@ -746,14 +736,6 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		</section>
 
 		<div class="toggle-row">
-			<button
-				type="button"
-				class="theme-toggle"
-				on:click={toggleTheme}
-				aria-label={lightTheme ? 'Switch to dark mode' : 'Switch to light mode'}
-			>
-				<Fa icon={lightTheme ? faMoon : faSun} />
-			</button>
 			<nav aria-label="Display range" class="toggle-nav">
 				<button
 					type="button"
@@ -1021,7 +1003,15 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 <style>
 	:global(body) {
 		overflow-x: hidden;
+		background: var(--background);
+	}
+
+	:global([data-theme='dark'] body) {
 		background: #0a0a1a;
+	}
+
+	:global([data-theme='light'] body) {
+		background: #fbf7f1;
 	}
 
 	.snes-page {
@@ -1445,22 +1435,6 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		}
 	}
 
-	/* Theme toggle button */
-	.theme-toggle {
-		background: rgba(34, 34, 74, 0.8);
-		border: 2px solid #3a3a6a;
-		color: #ffcc00;
-		font-size: 0.8rem;
-		padding: 0.4rem 0.6rem;
-		cursor: pointer;
-		transition: all 0.2s ease;
-	}
-
-	.theme-toggle:hover {
-		background: #2a2a5a;
-		text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
-	}
-
 	/* Light theme overrides */
 	.light-theme {
 		--ink: #15152b;
@@ -1504,6 +1478,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 	.light-theme .hero-title {
 		color: var(--muted-ink);
+		font-size: 0.85rem;
 	}
 
 	.light-theme .hero-panel {
@@ -1518,6 +1493,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		border-color: var(--paper-edge);
 		color: var(--muted-ink);
 		border-radius: 10px;
+		font-size: 0.8rem;
 	}
 
 	.light-theme .hero-item a {
@@ -1529,14 +1505,17 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		letter-spacing: 0.02em;
 		color: var(--ink);
 		text-shadow: 0 0 8px rgba(124, 58, 237, 0.15);
+		font-size: 1.05rem;
 	}
 
 	.light-theme .section-subtitle {
 		color: var(--accent-warm);
+		font-size: 0.85rem;
 	}
 
 	.light-theme .section-comment {
 		color: var(--muted-ink);
+		font-size: 0.75rem;
 	}
 
 	.light-theme .panel {
@@ -1549,6 +1528,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 	.light-theme .stack-item {
 		color: var(--muted-ink);
 		border-bottom-color: var(--paper-edge);
+		font-size: 0.8rem;
 	}
 
 	.light-theme .stack-title {
@@ -1560,10 +1540,12 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		border-color: rgba(255, 159, 28, 0.4);
 		color: #7a4a00;
 		border-radius: 999px;
+		font-size: 0.7rem;
 	}
 
 	.light-theme .stack-details {
 		color: var(--muted-ink);
+		font-size: 0.75rem;
 	}
 
 	.light-theme .detail-label {
@@ -1578,27 +1560,33 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 	.light-theme .card-title {
 		color: var(--ink);
+		font-size: 0.85rem;
 	}
 
 	.light-theme .card-body {
 		color: var(--muted-ink);
+		font-size: 0.75rem;
 	}
 
 	.light-theme .link-button {
 		color: var(--accent-ink);
+		font-size: 0.75rem;
 	}
 
 	.light-theme .prose-panel {
 		color: var(--muted-ink);
+		font-size: 0.8rem;
 	}
 
 	.light-theme .prose-panel :global(h3),
 	.light-theme .prose-panel :global(h2) {
 		color: var(--accent-ink);
+		font-size: 0.85rem;
 	}
 
 	.light-theme .toggle-link {
 		color: var(--muted-ink);
+		font-size: 0.75rem;
 	}
 
 	.light-theme .toggle-link.active {
@@ -1610,15 +1598,8 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		color: var(--ink);
 	}
 
-	.light-theme .theme-toggle {
-		background: #fffdf8;
-		border-color: var(--paper-edge);
-		color: var(--muted-ink);
-	}
-
-	.light-theme .theme-toggle:hover {
-		background: #fff0e1;
-		color: var(--ink);
+	.light-theme .toggle-nav {
+		font-size: 0.75rem;
 	}
 
 	/* Light theme publication overrides */
@@ -1631,12 +1612,14 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 
 	:global(.light-theme .publication h2) {
 		color: var(--ink);
+		font-size: 0.85rem;
 	}
 
 	:global(.light-theme .publication p),
 	:global(.light-theme .publication span),
 	:global(.light-theme .publication strong) {
 		color: var(--muted-ink);
+		font-size: 0.75rem;
 	}
 
 	:global(.light-theme .publication a) {
@@ -1647,6 +1630,7 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		background: rgba(255, 159, 28, 0.16);
 		border-color: rgba(255, 159, 28, 0.4);
 		color: #7a4a00;
+		font-size: 0.7rem;
 	}
 
 	:global(.light-theme .publication .pub-button:hover) {

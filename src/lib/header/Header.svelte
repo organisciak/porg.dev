@@ -6,9 +6,7 @@
 	import { isCollapsed } from '$lib/stores/headerCollapse';
 	import { userPrefersMode, setMode } from 'mode-watcher';
 
-	export let small: boolean = false;
-
-	$: small = $isCollapsed;
+	let small = $derived($isCollapsed);
 	let currentPreference: 'light' | 'dark' | 'system' = 'system';
 	let nextPreference: 'light' | 'dark' | 'system' = 'light';
 	let toggleLabel = 'AUTO';
@@ -25,16 +23,18 @@
 		setMode(nextPreference);
 	};
 
-	$: currentPreference = (userPrefersMode.current ?? 'system') as 'light' | 'dark' | 'system';
-	$: nextPreference = getNextPreference(currentPreference);
-	$: toggleLabel = preferenceLabel(currentPreference);
-	$: toggleIcon =
-		currentPreference === 'system'
-			? faCircleHalfStroke
-			: currentPreference === 'light'
-				? faSun
-				: faMoon;
-	$: ariaLabel = `Theme: ${toggleLabel}. Switch to ${preferenceLabel(nextPreference)}.`;
+	$effect(() => {
+		currentPreference = (userPrefersMode.current ?? 'system') as 'light' | 'dark' | 'system';
+		nextPreference = getNextPreference(currentPreference);
+		toggleLabel = preferenceLabel(currentPreference);
+		toggleIcon =
+			currentPreference === 'system'
+				? faCircleHalfStroke
+				: currentPreference === 'light'
+					? faSun
+					: faMoon;
+		ariaLabel = `Theme: ${toggleLabel}. Switch to ${preferenceLabel(nextPreference)}.`;
+	});
 
 	type Link = {
 		name: string;

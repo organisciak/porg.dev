@@ -5,6 +5,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import SNESHeader from '$lib/header/SNESHeader.svelte';
 	import { hideStandardHeader } from '$lib/stores/headerVisibility';
+	import findings from '../recent_findings.json';
 
 	const meta = {
 		title: 'Peter Organisciak',
@@ -41,6 +42,7 @@
 		{ label: 'CREATIVITY BYTE', href: 'https://buttondown.com/creativity' },
 		{ label: 'OPEN CREATIVITY SCORING', href: 'https://openscoring.du.edu/' },
 		{ label: 'MASSIVE TEXTS LAB', href: 'https://github.com/massivetexts' },
+		{ label: 'HUE HUNTER', href: '/huehunter' },
 		{ label: 'CLASSIC MODE', href: '/1' }
 	];
 
@@ -204,6 +206,35 @@
 			<a href="https://saddl.du.edu" target="_blank" class="tool-link">SaDDL</a>
 			<span class="tool-divider">·</span>
 			<a href="https://bookworm.htrc.illinois.edu/develop/" target="_blank" class="tool-link">HT+BOOKWORM</a>
+		</div>
+
+		<!-- Recent Research section -->
+		<div class="research-section">
+			<h2 class="section-title">RECENT RESEARCH</h2>
+			<div class="research-list">
+				{#each findings.slice(0, 3) as finding}
+					<div class="research-item">
+						<span class="research-bullet">▸</span>
+						<div class="research-content">
+							<p class="research-main">{finding.main}</p>
+							{#if finding.links && finding.links.length > 0}
+								<div class="research-links">
+									{#each finding.links as link, i}
+										<a href={link.url} target="_blank" class="research-link">{link.text}</a>{#if i < finding.links.length - 1}<span class="link-sep">·</span>{/if}
+									{/each}
+								</div>
+							{/if}
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+
+		<!-- Consulting -->
+		<div class="consulting-section">
+			<span class="consulting-label">CONSULTING:</span>
+			<span class="consulting-text">AI & creativity research via</span>
+			<a href="mailto:peter@neuristics.org" class="consulting-link">Neuristics</a>
 		</div>
 
 		<!-- Social icons in pixel style -->
@@ -530,6 +561,104 @@
 
 	.tool-divider {
 		color: #444;
+	}
+
+	/* Research section */
+	.research-section {
+		max-width: 500px;
+		margin-top: 1.5rem;
+		padding: 1rem;
+		border: 2px solid #333;
+		background: rgba(0, 0, 0, 0.3);
+	}
+
+	.section-title {
+		font-size: 0.6rem;
+		color: #ffcc00;
+		text-align: center;
+		margin-bottom: 1rem;
+		text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+	}
+
+	.research-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.research-item {
+		display: flex;
+		gap: 0.5rem;
+		font-size: 0.45rem;
+		line-height: 1.6;
+	}
+
+	.research-bullet {
+		color: #ff6600;
+		flex-shrink: 0;
+	}
+
+	.research-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.research-main {
+		color: #ccc;
+		margin: 0;
+	}
+
+	.research-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem;
+		align-items: center;
+	}
+
+	.research-link {
+		color: #88ccff;
+		text-decoration: none;
+		font-size: 0.4rem;
+	}
+
+	.research-link:hover {
+		color: #ffcc00;
+		text-shadow: 0 0 8px #ffcc00;
+	}
+
+	.link-sep {
+		color: #444;
+	}
+
+	/* Consulting section */
+	.consulting-section {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-size: 0.45rem;
+		color: #666;
+		margin-top: 1rem;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.consulting-label {
+		color: #888;
+	}
+
+	.consulting-text {
+		color: #888;
+	}
+
+	.consulting-link {
+		color: #ff6600;
+		text-decoration: none;
+	}
+
+	.consulting-link:hover {
+		color: #ffcc00;
+		text-shadow: 0 0 8px #ffcc00;
 	}
 
 	/* Copyright */

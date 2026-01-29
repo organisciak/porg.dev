@@ -3,9 +3,11 @@
 	import Fa from 'svelte-fa';
 	import { faGithub, faLinkedinIn, faBluesky } from '@fortawesome/free-brands-svg-icons';
 	import { onMount, onDestroy } from 'svelte';
-	import SNESHeader from '$lib/header/SNESHeader.svelte';
 	import { hideStandardHeader } from '$lib/stores/headerVisibility';
 	import findings from '../recent_findings.json';
+	import SNESWordCard from '$lib/snes/SNESWordCard.svelte';
+	import SNESColorCard from '$lib/snes/SNESColorCard.svelte';
+	import SNESHueHunterCard from '$lib/snes/SNESHueHunterCard.svelte';
 
 	const meta = {
 		title: 'Peter Organisciak',
@@ -13,28 +15,6 @@
 		url: 'https://www.porg.dev'
 	}
 	const currentYear = new Date().getFullYear();
-
-	// Fun section data
-	let currentWord: { word: string; pos: string; definition: string; rarity: number } | null = null;
-	let currentColor: { name: string; hex: string } | null = null;
-
-	async function fetchWord() {
-		try {
-			const res = await fetch('/api/random-word');
-			currentWord = await res.json();
-		} catch (e) {
-			console.error('Failed to fetch word', e);
-		}
-	}
-
-	async function fetchColor() {
-		try {
-			const res = await fetch('/api/random-color');
-			currentColor = await res.json();
-		} catch (e) {
-			console.error('Failed to fetch color', e);
-		}
-	}
 
 	// Generate stars for the background
 	let stars: { x: number; y: number; size: number; twinkleDelay: number; brightness: number }[] = [];
@@ -50,8 +30,6 @@
 			brightness: 0.4 + Math.random() * 0.6
 		}));
 		mounted = true;
-		fetchWord();
-		fetchColor();
 	});
 
 	onDestroy(() => {
@@ -65,8 +43,7 @@
 		{ label: 'GOOGLE SCHOLAR', href: 'https://scholar.google.com/citations?user=RfHXG5EAAAAJ&hl=en' },
 		{ label: 'CREATIVITY BYTE', href: 'https://buttondown.com/creativity' },
 		{ label: 'OPEN CREATIVITY SCORING', href: 'https://openscoring.du.edu/' },
-		{ label: 'MASSIVE TEXTS LAB', href: 'https://github.com/massivetexts' },
-		{ label: 'CLASSIC MODE', href: '/1' }
+		{ label: 'MASSIVE TEXTS LAB', href: 'https://github.com/massivetexts' }
 	];
 
 	function handleKeydown(e: KeyboardEvent) {
@@ -133,8 +110,6 @@
 </svelte:head>
 
 <svelte:window on:keydown={handleKeydown} />
-
-<SNESHeader />
 
 <div class="snes-page">
 	<!-- Starfield background -->
@@ -264,53 +239,9 @@
 		<div class="fun-section">
 			<h2 class="section-title">FUN</h2>
 			<div class="fun-grid">
-				<!-- Unusual Word -->
-				<div class="fun-card">
-					<div class="fun-card-header">
-						<span class="fun-card-title">UNUSUAL WORD</span>
-						<button class="refresh-btn" on:click={fetchWord} aria-label="Get new word">↻</button>
-					</div>
-					{#if currentWord}
-						<div class="word-content">
-							<span class="word-term">{currentWord.word}</span>
-							<span class="word-pos">{currentWord.pos}</span>
-							<p class="word-def">{currentWord.definition}</p>
-							<span class="word-rarity">RARITY: {'★'.repeat(currentWord.rarity)}{'☆'.repeat(5 - currentWord.rarity)}</span>
-						</div>
-					{:else}
-						<div class="loading-text">LOADING...</div>
-					{/if}
-				</div>
-
-				<!-- Color Swatch -->
-				<div class="fun-card">
-					<div class="fun-card-header">
-						<span class="fun-card-title">COLOR SWATCH</span>
-						<button class="refresh-btn" on:click={fetchColor} aria-label="Get new color">↻</button>
-					</div>
-					{#if currentColor}
-						<div class="color-content">
-							<div class="color-box" style="background-color: {currentColor.hex};"></div>
-							<span class="color-name">{currentColor.name}</span>
-							<span class="color-hex">{currentColor.hex}</span>
-						</div>
-					{:else}
-						<div class="loading-text">LOADING...</div>
-					{/if}
-					<a href="/colors" class="fun-link">BROWSE ALL</a>
-				</div>
-
-				<!-- Hue Hunter -->
-				<a href="/huehunter" class="fun-card hue-hunter-card">
-					<div class="fun-card-header">
-						<span class="fun-card-title hue-hunter-title">HUE HUNTER</span>
-					</div>
-					<div class="hue-hunter-visual">
-						<img src="/huehunter-assets/color-mix_RGBmix.webp" alt="Hue Hunter" class="hue-hunter-img" />
-					</div>
-					<span class="hue-hunter-desc">COLOR GUESSING GAME</span>
-					<span class="play-prompt">▶ PLAY</span>
-				</a>
+				<SNESWordCard />
+				<SNESColorCard />
+				<SNESHueHunterCard />
 			</div>
 		</div>
 
@@ -752,165 +683,6 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 		gap: 1rem;
-	}
-
-	.fun-card {
-		background: rgba(0, 0, 0, 0.4);
-		border: 1px solid #444;
-		padding: 0.75rem;
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-
-	.fun-card-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.fun-card-title {
-		font-size: 0.45rem;
-		color: #ffcc00;
-	}
-
-	.refresh-btn {
-		background: none;
-		border: 1px solid #555;
-		color: #888;
-		font-size: 0.6rem;
-		padding: 0.2rem 0.4rem;
-		cursor: pointer;
-		font-family: inherit;
-		transition: all 0.2s;
-	}
-
-	.refresh-btn:hover {
-		color: #ffcc00;
-		border-color: #ffcc00;
-	}
-
-	.loading-text {
-		font-size: 0.4rem;
-		color: #666;
-		text-align: center;
-		padding: 1rem 0;
-	}
-
-	/* Word styles */
-	.word-content {
-		display: flex;
-		flex-direction: column;
-		gap: 0.25rem;
-	}
-
-	.word-term {
-		font-size: 0.55rem;
-		color: #fff;
-	}
-
-	.word-pos {
-		font-size: 0.35rem;
-		color: #888;
-	}
-
-	.word-def {
-		font-size: 0.4rem;
-		color: #aaa;
-		margin: 0;
-		line-height: 1.5;
-	}
-
-	.word-rarity {
-		font-size: 0.35rem;
-		color: #ff6600;
-		margin-top: 0.25rem;
-	}
-
-	/* Color styles */
-	.color-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.25rem;
-	}
-
-	.color-box {
-		width: 100%;
-		height: 50px;
-		border: 1px solid #555;
-	}
-
-	.color-name {
-		font-size: 0.45rem;
-		color: #fff;
-		text-align: center;
-	}
-
-	.color-hex {
-		font-size: 0.35rem;
-		color: #888;
-	}
-
-	.fun-link {
-		font-size: 0.35rem;
-		color: #88ccff;
-		text-decoration: none;
-		text-align: center;
-		margin-top: auto;
-	}
-
-	.fun-link:hover {
-		color: #ffcc00;
-	}
-
-	/* Hue Hunter card */
-	.hue-hunter-card {
-		text-decoration: none;
-		transition: all 0.2s;
-		align-items: center;
-	}
-
-	.hue-hunter-card:hover {
-		border-color: #ffcc00;
-		box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
-	}
-
-	.hue-hunter-title {
-		background: linear-gradient(90deg, #ff0066, #ffcc00, #00ccff);
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
-
-	.hue-hunter-visual {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-	}
-
-	.hue-hunter-img {
-		max-width: 80px;
-		height: auto;
-		image-rendering: pixelated;
-	}
-
-	.hue-hunter-desc {
-		font-size: 0.35rem;
-		color: #888;
-		text-align: center;
-	}
-
-	.play-prompt {
-		font-size: 0.45rem;
-		color: #00ff00;
-		text-shadow: 0 0 8px #00ff00;
-		animation: pulse-play 1.5s ease-in-out infinite;
-	}
-
-	@keyframes pulse-play {
-		0%, 100% { opacity: 1; }
-		50% { opacity: 0.5; }
 	}
 
 	/* Copyright */

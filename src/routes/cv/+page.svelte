@@ -7,9 +7,7 @@
 	import Fa from 'svelte-fa';
 	import { faOrcid } from '@fortawesome/free-brands-svg-icons';
 	import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
-	import { onDestroy, onMount } from 'svelte';
-	import SNESHeader from '$lib/header/SNESHeader.svelte';
-	import { hideStandardHeader } from '$lib/stores/headerVisibility';
+	import { onMount } from 'svelte';
 
 	const typedPublications: CSLPublication[] = publications;
 
@@ -27,7 +25,6 @@
 	}
 
 	onMount(() => {
-		hideStandardHeader.set(true);
 		stars = Array.from({ length: 120 }, () => ({
 			x: Math.random() * 100,
 			y: Math.random() * 100,
@@ -42,10 +39,6 @@
 	$: if (typeof document !== 'undefined') {
 		document.body.style.background = lightTheme ? '#fbf7f1' : '#0a0a1a';
 	}
-
-	onDestroy(() => {
-		hideStandardHeader.set(false);
-	});
 
 	// Collapsible config for awards section
 
@@ -706,8 +699,6 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
 		  }}
 		/>
 </svelte:head>
-
-<SNESHeader />
 
 <div class="snes-page" class:light-theme={lightTheme}>
 	<div class="stars-container">

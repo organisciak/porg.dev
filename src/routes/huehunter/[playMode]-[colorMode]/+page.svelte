@@ -1,13 +1,11 @@
 <script lang="ts">
     import { page } from '$app/stores';
-    import { onMount, onDestroy } from 'svelte';
+    import { onMount } from 'svelte';
     import seedrandom from 'seedrandom';
     import { MetaTags } from 'svelte-meta-tags';
     import Fa from 'svelte-fa';
     import { faGithub, faLinkedinIn, faBluesky } from '@fortawesome/free-brands-svg-icons';
     import { Target, CircleHelp, Settings, User, ChartColumn, Share } from 'lucide-svelte';
-    import SNESHeader from '$lib/header/SNESHeader.svelte';
-    import { hideStandardHeader } from '$lib/stores/headerVisibility';
 
     /* Color tools */
     import { cmykToRgb, hexToRgb, rgbToHex, rgbColorToRGBDistance,
@@ -171,7 +169,6 @@
 
     //let darkModeClass = '';
     onMount(() => {
-        hideStandardHeader.set(true);
         stars = Array.from({ length: 120 }, () => ({
             x: Math.random() * 100,
             y: Math.random() * 100,
@@ -195,10 +192,6 @@
             darkModeClass = setting;
             }
         });*/
-    });
-
-    onDestroy(() => {
-        hideStandardHeader.set(false);
     });
 
     async function share(rawScore: number) {
@@ -357,8 +350,6 @@
         }}
         />
 </svelte:head>
-
-<SNESHeader />
 
 <div class="snes-page">
     <div class="stars-container">

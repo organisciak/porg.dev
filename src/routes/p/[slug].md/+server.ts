@@ -1,8 +1,8 @@
-import { error } from '@sveltejs/kit';
-import type { RequestHandler } from './$types';
-import posts from '$lib/generated/posts.json';
+import { error } from "@sveltejs/kit";
+import type { RequestHandler } from "./$types";
+import posts from "$lib/generated/posts.json";
 
-type FileType = 'md' | 'svx';
+type FileType = "md" | "svx";
 
 interface PostMetadata {
   title?: string;
@@ -17,10 +17,10 @@ interface PostMetadata {
   fileType: FileType;
 }
 
-const rawPosts = import.meta.glob('/src/posts/*.{md,svx}', {
+const rawPosts = import.meta.glob("/src/posts/*.{md,svx}", {
   eager: true,
-  query: '?raw',
-  import: 'default'
+  query: "?raw",
+  import: "default",
 }) as Record<string, string>;
 
 const parseFrontmatter = (content: string) => {
@@ -28,17 +28,17 @@ const parseFrontmatter = (content: string) => {
   if (!frontmatterMatch) {
     return {
       metadata: {},
-      body: content
+      body: content,
     };
   }
 
   const frontmatter = frontmatterMatch[1];
   const metadata: Record<string, string> = {};
 
-  frontmatter.split('\n').forEach(line => {
-    const [key, ...valueParts] = line.split(':');
+  frontmatter.split("\n").forEach((line) => {
+    const [key, ...valueParts] = line.split(":");
     if (!key || !valueParts.length) return;
-    let value = valueParts.join(':').trim();
+    let value = valueParts.join(":").trim();
     if (value.startsWith("'") && value.endsWith("'")) {
       value = value.slice(1, -1);
     }
@@ -48,24 +48,27 @@ const parseFrontmatter = (content: string) => {
   const body = content.slice(frontmatterMatch.index! + frontmatterMatch[0].length);
   return {
     metadata,
-    body
+    body,
   };
 };
 
 const stripScriptBlocks = (content: string) => {
-  return content.replace(/<script[\s\S]*?<\/script>\s*/g, '').trim();
+  return content.replace(/<script[\s\S]*?<\/script>\s*/g, "").trim();
 };
 
-const buildMarkdown = (meta: { title: string; date?: string; description?: string }, body: string) => {
+const buildMarkdown = (
+  meta: { title: string; date?: string; description?: string },
+  body: string,
+) => {
   const parts = [`# ${meta.title}`];
   if (meta.date) {
-    parts.push('', `_Date: ${meta.date}_`);
+    parts.push("", `_Date: ${meta.date}_`);
   }
   if (meta.description) {
-    parts.push('', meta.description);
+    parts.push("", meta.description);
   }
-  parts.push('', '---', '', body.trim());
-  return parts.join('\n');
+  parts.push("", "---", "", body.trim());
+  return parts.join("\n");
 };
 
 const findRawPost = (slug: string) => {
@@ -76,7 +79,7 @@ const findRawPost = (slug: string) => {
     if (fileSlug === slug) {
       return {
         content,
-        fileType: extension as FileType
+        fileType: extension as FileType,
       };
     }
   }
@@ -87,7 +90,7 @@ export const GET: RequestHandler = async ({ params }) => {
   const { slug } = params;
 
   try {
-    const postRecord = (posts as PostMetadata[]).find(post => post.slug === slug) ?? null;
+    const postRecord = (posts as PostMetadata[]).find((post) => post.slug === slug) ?? null;
     const rawPost = findRawPost(slug);
 
     if (!rawPost) {
@@ -105,18 +108,18 @@ export const GET: RequestHandler = async ({ params }) => {
       {
         title: finalTitle,
         date: finalDate,
-        description: finalDescription
+        description: finalDescription,
       },
-      cleanBody
+      cleanBody,
     );
 
     return new Response(markdown, {
       headers: {
-        'content-type': 'text/markdown; charset=utf-8'
-      }
+        "content-type": "text/markdown; charset=utf-8",
+      },
     });
   } catch (err) {
     console.error(`Error building markdown mirror for ${slug}:`, err);
-    throw error(500, 'Could not build markdown mirror');
+    throw error(500, "Could not build markdown mirror");
   }
 };

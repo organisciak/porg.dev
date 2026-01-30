@@ -1,21 +1,21 @@
-import type { RequestHandler } from './$types';
-import posts from '$lib/generated/posts.json';
+import type { RequestHandler } from "./$types";
+import posts from "$lib/generated/posts.json";
 
-const SITE_URL = 'https://porg.dev';
+const SITE_URL = "https://porg.dev";
 
 export const GET: RequestHandler = async ({ url }) => {
-	const siteUrl = url?.origin || SITE_URL;
+  const siteUrl = url?.origin || SITE_URL;
 
-	// Get recent posts for the posts section
-	const recentPosts = [...posts]
-		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-		.slice(0, 5);
+  // Get recent posts for the posts section
+  const recentPosts = [...posts]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 5);
 
-	const postsList = recentPosts
-		.map((post) => `- ${post.title}: ${siteUrl}/p/${post.slug}`)
-		.join('\n');
+  const postsList = recentPosts
+    .map((post) => `- ${post.title}: ${siteUrl}/p/${post.slug}`)
+    .join("\n");
 
-	const content = `# porg.dev
+  const content = `# porg.dev
 
 > Personal website of Dr. Peter Organisciak - Associate Professor and Department Chair at the University of Denver, researching AI applications in creativity assessment and information science.
 
@@ -47,10 +47,10 @@ ${postsList}
 This is an llms.txt file providing structured information about this website for AI assistants and language models. For more information about the llms.txt convention, see https://llmstxt.org/
 `;
 
-	return new Response(content.trim(), {
-		headers: {
-			'Content-Type': 'text/plain; charset=utf-8',
-			'Cache-Control': 'max-age=3600'
-		}
-	});
+  return new Response(content.trim(), {
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "max-age=3600",
+    },
+  });
 };

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { base } from '$app/paths';
-  import type { Component } from 'svelte';
+  import { onMount } from "svelte";
+  import { base } from "$app/paths";
+  import type { Component } from "svelte";
 
   export let data;
 
@@ -19,14 +19,14 @@
   let Post: Component | undefined;
   let metadata: PostMetadata = data.metadata ?? {};
   const canonicalUrl: string | undefined = data.canonicalUrl;
-  const siteAuthor = 'Peter Organisciak';
+  const siteAuthor = "Peter Organisciak";
   let jsonLd: Record<string, unknown> | null = null;
-  let metaTitle = 'Post';
-  let metaDescription = '';
+  let metaTitle = "Post";
+  let metaDescription = "";
   let metaUrl: string | undefined = canonicalUrl;
   let metaImage: string | undefined;
-  let twitterCard = 'summary';
-  const defaultOgImagePath = '/opengraph/IMG_20230926_120405.png';
+  let twitterCard = "summary";
+  const defaultOgImagePath = "/opengraph/IMG_20230926_120405.png";
 
   const resolveAbsoluteUrl = (value?: string, baseUrl?: string) => {
     if (!value) return undefined;
@@ -41,13 +41,16 @@
   const normalizeKeywords = (value: unknown) => {
     if (!value) return undefined;
     if (Array.isArray(value)) {
-      const cleaned = value.map(item => String(item).trim()).filter(Boolean);
+      const cleaned = value.map((item) => String(item).trim()).filter(Boolean);
       return cleaned.length ? cleaned : undefined;
     }
     const asString = String(value).trim();
     if (!asString) return undefined;
-    if (asString.includes(',')) {
-      const split = asString.split(',').map(item => item.trim()).filter(Boolean);
+    if (asString.includes(",")) {
+      const split = asString
+        .split(",")
+        .map((item) => item.trim())
+        .filter(Boolean);
       return split.length ? split : undefined;
     }
     return asString;
@@ -57,17 +60,17 @@
     if (!meta?.title || !meta?.date || !url) return null;
     const keywords = normalizeKeywords(meta.keywords ?? meta.tags);
     const jsonLd: Record<string, unknown> = {
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
       headline: meta.title,
       description: meta.description || meta.title,
       datePublished: meta.date,
       dateModified: meta.modified || meta.updated || meta.date,
       author: {
-        '@type': 'Person',
-        name: siteAuthor
+        "@type": "Person",
+        name: siteAuthor,
       },
-      url
+      url,
     };
 
     if (image) jsonLd.image = image;
@@ -75,17 +78,17 @@
     return jsonLd;
   };
 
-  $: metaTitle = metadata.title ? String(metadata.title) : 'Post';
+  $: metaTitle = metadata.title ? String(metadata.title) : "Post";
   $: metaDescription = metadata.description ? String(metadata.description) : metaTitle;
   $: metaUrl = canonicalUrl;
   $: metaImage = resolveAbsoluteUrl(metadata.image || defaultOgImagePath, canonicalUrl);
-  $: twitterCard = metaImage ? 'summary_large_image' : 'summary';
+  $: twitterCard = metaImage ? "summary_large_image" : "summary";
   $: jsonLd = buildJsonLd(metadata, canonicalUrl, metaImage);
 
   onMount(async () => {
     try {
       // Dynamically import the blog post based on the slug and type
-      if (data.postType === 'svx') {
+      if (data.postType === "svx") {
         const module = await import(`$posts/${data.slug}.svx`);
         Post = module.default;
         metadata = { ...metadata, ...(module.metadata || {}) };
@@ -95,7 +98,7 @@
         metadata = { ...metadata, ...(module.metadata || {}) };
       }
     } catch (e) {
-      console.error('Error loading post:', e);
+      console.error("Error loading post:", e);
     }
   });
 </script>
@@ -126,12 +129,15 @@
   {/if}
   <meta name="twitter:card" content={twitterCard} />
   {#if jsonLd}
-    <script type="application/ld+json">{@html JSON.stringify(jsonLd)}</script>
+    {@html `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`}
   {/if}
   <link rel="alternate" type="application/rss+xml" title="porg.dev posts" href="{base}/rss.xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
 </svelte:head>
 
 <div class="post-page">
@@ -216,7 +222,7 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem 1.5rem 4rem;
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: "Space Grotesk", system-ui, sans-serif;
   }
 
   .breadcrumb {
@@ -224,7 +230,7 @@
   }
 
   .breadcrumb a {
-    font-family: 'Press Start 2P', monospace;
+    font-family: "Press Start 2P", monospace;
     font-size: 0.6rem;
     color: #6f6f7f;
     text-decoration: none;
@@ -247,7 +253,7 @@
   }
 
   .post-article::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -272,7 +278,7 @@
   }
 
   .post-header h1 {
-    font-family: 'Fraunces', serif;
+    font-family: "Fraunces", serif;
     font-size: 2.5rem;
     font-weight: 600;
     color: var(--ink);
@@ -283,7 +289,7 @@
   }
 
   .post-header time {
-    font-family: 'Press Start 2P', monospace;
+    font-family: "Press Start 2P", monospace;
     font-size: 0.55rem;
     color: #6f6f7f;
     letter-spacing: 0.05em;
@@ -300,7 +306,7 @@
   }
 
   .post-content :global(h2) {
-    font-family: 'Fraunces', serif;
+    font-family: "Fraunces", serif;
     font-size: 1.6rem;
     font-weight: 600;
     color: var(--ink);
@@ -311,7 +317,7 @@
   }
 
   .post-content :global(h3) {
-    font-family: 'Fraunces', serif;
+    font-family: "Fraunces", serif;
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--ink);
@@ -333,7 +339,7 @@
   }
 
   .post-content :global(code) {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 0.9em;
     background: #f5f2ec;
     padding: 0.15em 0.4em;
@@ -399,7 +405,7 @@
   }
 
   .back-link {
-    font-family: 'Press Start 2P', monospace;
+    font-family: "Press Start 2P", monospace;
     font-size: 0.6rem;
     color: #6f6f7f;
     text-decoration: none;

@@ -29,10 +29,12 @@ This is a personal academic website built with **SvelteKit 2.x** and **Svelte 5*
 ### Dual Front Page Design
 
 The site has two different homepage designs that are randomly served:
+
 - `/1` - Classic academic/professional design (85% traffic)
 - `/2` - SNES retro gaming theme (15% traffic)
 
 The root route (`/`) performs a server-side redirect in `src/routes/+page.server.ts`. Each design has its own header component:
+
 - `src/lib/header/Header.svelte` - Standard header with squiggly underline animation
 - `src/lib/header/SNESHeader.svelte` - Retro pixel-style header
 
@@ -71,10 +73,10 @@ Uses shadcn-style components based on **bits-ui** located in `src/lib/components
 ## Session Completion
 
 Before ending a session, always:
+
 1. Run `bd sync` to commit beads changes
 2. Commit code changes
 3. `git push` - work is not complete until pushed
-
 
 ## Grabbing a task
 

@@ -1,7 +1,7 @@
-import { redirect } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
+import { redirect } from "@sveltejs/kit";
+import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async () => {
-	// SNES design is now the default homepage
-	throw redirect(302, '/2');
+  // SNES design is now the default homepage
+  throw redirect(302, "/2");
 };

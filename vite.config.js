@@ -4,8 +4,8 @@ import { sveltekit } from "@sveltejs/kit/vite";
 const config = {
   plugins: [sveltekit()],
   server: {
-    port: 7029
-  }
+    port: 7029,
+  },
 };
 
 export default config;

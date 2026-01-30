@@ -1,16 +1,22 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { base } from "$app/paths";
 
   export let data;
 </script>
 
 <svelte:head>
   <title>Posts | porg.dev</title>
-  <meta name="description" content="Posts from Peter Organisciak on AI, creativity, and information science" />
+  <meta
+    name="description"
+    content="Posts from Peter Organisciak on AI, creativity, and information science"
+  />
   <link rel="alternate" type="application/rss+xml" title="porg.dev posts" href="{base}/rss.xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
 </svelte:head>
 
 <div class="blog-page">
@@ -90,7 +96,7 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 3rem 1.5rem 4rem;
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: "Space Grotesk", system-ui, sans-serif;
   }
 
   .blog-header {
@@ -99,7 +105,7 @@
   }
 
   .blog-header h1 {
-    font-family: 'Fraunces', serif;
+    font-family: "Fraunces", serif;
     font-size: 2.6rem;
     color: var(--ink);
     margin: 0 0 0.65rem;
@@ -110,7 +116,7 @@
   }
 
   .blog-header h1::after {
-    content: '';
+    content: "";
     display: block;
     height: 6px;
     margin-top: 0.6rem;
@@ -140,7 +146,10 @@
     border-radius: 12px;
     text-decoration: none;
     color: inherit;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
     position: relative;
     box-shadow: 6px 6px 0 var(--paper-shadow);
     overflow: hidden;
@@ -151,7 +160,7 @@
   }
 
   .post-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -184,7 +193,7 @@
   }
 
   .post-card h2 {
-    font-family: 'Fraunces', serif;
+    font-family: "Fraunces", serif;
     font-size: 1.55rem;
     font-weight: 600;
     color: var(--ink);
@@ -193,7 +202,7 @@
   }
 
   .post-card time {
-    font-family: 'Press Start 2P', monospace;
+    font-family: "Press Start 2P", monospace;
     font-size: 0.58rem;
     color: #6f6f7f;
     letter-spacing: 0.05em;
@@ -211,7 +220,7 @@
   }
 
   .card-arrow {
-    font-family: 'Press Start 2P', monospace;
+    font-family: "Press Start 2P", monospace;
     font-size: 0.9rem;
     color: #c0b3a4;
     transition: all 0.2s ease;

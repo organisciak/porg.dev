@@ -79,6 +79,6 @@ pnpm generate-posts
 - Efficient loading using pre-generated JSON
 - Responsive design with Tailwind CSS
 - Markdown syntax highlighting
-- Ability to use Svelte components in `.svx` files 
+- Ability to use Svelte components in `.svx` files
 - SEO meta tags + JSON-LD for posts
 - RSS + llms.txt metadata surfaces

@@ -7,18 +7,18 @@ test("post pages include canonical, OG, and Twitter meta tags", async ({ page, b
 
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
-    `${resolvedBase}/p/no-blogs`
+    `${resolvedBase}/p/no-blogs`,
   );
 
   await expect(page.locator('meta[property="og:type"]')).toHaveAttribute("content", "article");
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute("content", "No Blogs");
   await expect(page.locator('meta[property="og:description"]')).toHaveAttribute(
     "content",
-    "I don't have a blog"
+    "I don't have a blog",
   );
   await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
     "content",
-    `${resolvedBase}/p/no-blogs`
+    `${resolvedBase}/p/no-blogs`,
   );
 
   const ogImage = await page.locator('meta[property="og:image"]').getAttribute("content");
@@ -27,12 +27,12 @@ test("post pages include canonical, OG, and Twitter meta tags", async ({ page, b
 
   await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
     "content",
-    "summary_large_image"
+    "summary_large_image",
   );
   await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute("content", "No Blogs");
   await expect(page.locator('meta[name="twitter:description"]')).toHaveAttribute(
     "content",
-    "I don't have a blog"
+    "I don't have a blog",
   );
   const twitterImage = await page.locator('meta[name="twitter:image"]').getAttribute("content");
   expect(twitterImage).toBeTruthy();

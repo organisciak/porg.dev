@@ -2,7 +2,7 @@ export type UrlMapping = {
   shorturl: string;
   destination: string;
   description?: string;
-  category?: 'teaching' | 'tools' | 'presentations' | 'research' | "fun" | 'other';
+  category?: "teaching" | "tools" | "presentations" | "research" | "fun" | "other";
 };
 
 export const urlMappings: UrlMapping[] = [
@@ -16,20 +16,21 @@ export const urlMappings: UrlMapping[] = [
   {
     shorturl: "acquisitions",
     description: "Digital version of acquisitions exercise for LIS 4015",
-    destination: "https://claude.site/artifacts/66930404-85cb-4014-b4f7-24def8ae917f?fullscreen=true",
+    destination:
+      "https://claude.site/artifacts/66930404-85cb-4014-b4f7-24def8ae917f?fullscreen=true",
     category: "teaching",
   },
   {
     shorturl: "patterns",
     description: "Randomized pattern generator",
     destination: "https://claude.site/artifacts/73b647e6-ce28-4d6b-8265-51c67f6f39f5",
-    category: "fun"
+    category: "fun",
   },
   {
     shorturl: "poster",
-    description: "Poster Parser custom GPT - upload a poster picture and can a custom calendar invite",
-    destination:
-      "https://chat.openai.com/g/g-md7NjNgW7-poster-parser",
+    description:
+      "Poster Parser custom GPT - upload a poster picture and can a custom calendar invite",
+    destination: "https://chat.openai.com/g/g-md7NjNgW7-poster-parser",
     category: "tools",
   },
   {

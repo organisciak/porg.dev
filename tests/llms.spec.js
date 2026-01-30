@@ -14,9 +14,7 @@ const getLatestPost = async () => {
 
   return posts.reduce((latest, post) => {
     if (!latest) return post;
-    return new Date(post.date).getTime() > new Date(latest.date).getTime()
-      ? post
-      : latest;
+    return new Date(post.date).getTime() > new Date(latest.date).getTime() ? post : latest;
   }, null);
 };
 

@@ -1,6 +1,7 @@
 <script lang="ts">
   import "../app.postcss";
   import Header from "$lib/header/Header.svelte";
+  import PageTransition from "$lib/components/PageTransition.svelte";
   import { hideStandardHeader } from "$lib/stores/headerVisibility";
   import { ModeWatcher } from "mode-watcher";
 
@@ -19,9 +20,11 @@
   <Header></Header>
 {/if}
 
-<main>
-  <slot></slot>
-</main>
+<PageTransition>
+  <main>
+    <slot></slot>
+  </main>
+</PageTransition>
 
 <footer>
   <!-- TODO Footer-->

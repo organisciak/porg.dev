@@ -6,7 +6,7 @@
   import { MetaTags } from "svelte-meta-tags";
   import Fa from "svelte-fa";
   import { faOrcid } from "@fortawesome/free-brands-svg-icons";
-  import { onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import { mode } from "mode-watcher";
 
   const typedPublications: CSLPublication[] = publications;
@@ -19,6 +19,7 @@
   let stars: { x: number; y: number; size: number; twinkleDelay: number; brightness: number }[] =
     [];
   let mounted = false;
+  let handleKeydown: ((event: KeyboardEvent) => void) | null = null;
 
   onMount(() => {
     stars = Array.from({ length: 120 }, () => ({
@@ -29,6 +30,59 @@
       brightness: 0.4 + Math.random() * 0.6,
     }));
     mounted = true;
+
+    handleKeydown = (event) => {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey) return;
+      const target = event.target as HTMLElement | null;
+      if (!target) return;
+      const tagName = target.tagName.toLowerCase();
+      if (
+        tagName === "input" ||
+        tagName === "textarea" ||
+        tagName === "select" ||
+        target.isContentEditable
+      ) {
+        return;
+      }
+
+      const sections = Array.from(
+        document.querySelectorAll<HTMLElement>(".cv-section")
+      ).filter((section) => section.offsetParent !== null);
+      if (!sections.length) return;
+
+      const currentY = window.scrollY + window.innerHeight * 0.25;
+      const offsets = sections.map((section) => section.getBoundingClientRect().top + window.scrollY);
+      const currentIndex = offsets.findIndex((offset) => offset >= currentY);
+      const activeIndex = currentIndex === -1 ? sections.length - 1 : Math.max(0, currentIndex - 1);
+
+      const goToIndex = (index: number) => {
+        const clamped = Math.max(0, Math.min(sections.length - 1, index));
+        sections[clamped]?.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+
+      const key = event.key.toLowerCase();
+      if (key === "arrowdown" || key === "pagedown" || key === "j") {
+        event.preventDefault();
+        goToIndex(activeIndex + 1);
+      } else if (key === "arrowup" || key === "pageup" || key === "k") {
+        event.preventDefault();
+        goToIndex(activeIndex - 1);
+      } else if (key === "home" || (key === "g" && !event.shiftKey)) {
+        event.preventDefault();
+        goToIndex(0);
+      } else if (key === "end" || (key === "g" && event.shiftKey)) {
+        event.preventDefault();
+        goToIndex(sections.length - 1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeydown);
+  });
+
+  onDestroy(() => {
+    if (handleKeydown) {
+      window.removeEventListener("keydown", handleKeydown);
+    }
   });
 
   // Collapsible config for awards section
@@ -716,7 +770,7 @@ use in other tools and websites, such as Qualtrics.
 
   <div class="scanlines"></div>
 
-  <div class="content">
+  <div class="content" aria-describedby="cv-keyboard-hint">
     <div class="pixel-border-top"></div>
 
     <section class="hero" itemscope itemtype="http://schema.org/Person">
@@ -764,6 +818,10 @@ use in other tools and websites, such as Qualtrics.
     </section>
 
     <div class="toggle-row">
+      <p id="cv-keyboard-hint" class="visually-hidden">
+        Use j or k, or the up and down arrow keys, to move between sections. Press g to jump to the
+        top or shift+g to jump to the end.
+      </p>
       <nav aria-label="Display range" class="toggle-nav">
         <button
           type="button"
@@ -1272,6 +1330,18 @@ use in other tools and websites, such as Qualtrics.
   .toggle-divider {
     margin: 0 0.4rem;
     color: #444;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
   .cv-section {

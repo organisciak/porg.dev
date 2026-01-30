@@ -1205,7 +1205,7 @@ use in other tools and websites, such as Qualtrics.
   .hero-panel {
     margin-top: 0.5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 0.75rem;
     background: rgba(10, 10, 26, 0.7);
     border: 2px solid #2c2c50;
@@ -1399,16 +1399,16 @@ use in other tools and websites, such as Qualtrics.
 
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 0.75rem;
   }
 
   .card-grid.compact {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
   .card-grid.wide {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   }
 
   .card {
@@ -1431,8 +1431,8 @@ use in other tools and websites, such as Qualtrics.
   }
 
   .publication-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 0.75rem;
   }
 
@@ -1519,8 +1519,7 @@ use in other tools and websites, such as Qualtrics.
 
     .card-grid,
     .card-grid.compact,
-    .card-grid.wide,
-    .publication-grid {
+    .card-grid.wide {
       grid-template-columns: 1fr;
     }
   }

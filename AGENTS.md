@@ -81,3 +81,7 @@ Before ending a session, always:
 ## Grabbing a task
 
 When grabbing a task from bd ready, do your work in a worktree if it's a more significant task. Small tasks don't need it. If you see a series of small tasks, do all of them.
+
+### Worktrees
+
+Worktrees go in ../

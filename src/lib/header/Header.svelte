@@ -12,36 +12,20 @@
   } from "@fortawesome/free-solid-svg-icons";
   import { isCollapsed } from "$lib/stores/headerCollapse";
   import { userPrefersMode, setMode } from "mode-watcher";
+  import * as ToggleGroup from "$lib/components/ui/toggle-group";
 
   let small = $derived($isCollapsed);
-  let currentPreference: "light" | "dark" | "system" = "system";
-  let nextPreference: "light" | "dark" | "system" = "light";
-  let toggleLabel = "AUTO";
-  let toggleIcon = faCircleHalfStroke;
-  let ariaLabel = "Switch theme";
-
-  const preferenceLabel = (value: "light" | "dark" | "system") =>
-    value === "system" ? "AUTO" : value.toUpperCase();
-
-  const getNextPreference = (value: "light" | "dark" | "system") =>
-    value === "light" ? "dark" : value === "dark" ? "system" : "light";
-
-  const cycleTheme = () => {
-    setMode(nextPreference);
-  };
+  let themeValue: string = $state("system");
 
   $effect(() => {
-    currentPreference = (userPrefersMode.current ?? "system") as "light" | "dark" | "system";
-    nextPreference = getNextPreference(currentPreference);
-    toggleLabel = preferenceLabel(currentPreference);
-    toggleIcon =
-      currentPreference === "system"
-        ? faCircleHalfStroke
-        : currentPreference === "light"
-          ? faSun
-          : faMoon;
-    ariaLabel = `Theme: ${toggleLabel}. Switch to ${preferenceLabel(nextPreference)}.`;
+    themeValue = userPrefersMode.current ?? "system";
   });
+
+  function handleThemeChange(value: string | undefined) {
+    if (value) {
+      setMode(value as "light" | "dark" | "system");
+    }
+  }
 
   type Link = {
     name: string;
@@ -84,10 +68,24 @@
       {/each}
     </ul>
   </nav>
-  <button type="button" class="theme-toggle" aria-label={ariaLabel} on:click={cycleTheme}>
-    <Fa class="icon" icon={toggleIcon} />
-    <span class="toggle-label">{toggleLabel}</span>
-  </button>
+  <div class="theme-toggle" role="group" aria-label="Theme selection">
+    <ToggleGroup.Root
+      type="single"
+      value={themeValue}
+      onValueChange={handleThemeChange}
+      class="toggle-group"
+    >
+      <ToggleGroup.Item value="light" aria-label="Light theme" class="toggle-item">
+        <Fa icon={faSun} />
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value="system" aria-label="System theme" class="toggle-item">
+        <Fa icon={faCircleHalfStroke} />
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value="dark" aria-label="Dark theme" class="toggle-item">
+        <Fa icon={faMoon} />
+      </ToggleGroup.Item>
+    </ToggleGroup.Root>
+  </div>
 </header>
 
 <style>
@@ -118,9 +116,18 @@
     padding: 0.4rem 0.75rem;
   }
 
-  .site-header.small .theme-toggle {
-    padding: 0.2rem 0.35rem;
-    font-size: 0.5rem;
+  .site-header.small .theme-toggle :global(.toggle-group) {
+    padding: 0.1rem;
+  }
+
+  .site-header.small .theme-toggle :global(.toggle-item) {
+    width: 1.3rem;
+    height: 1.1rem;
+  }
+
+  .site-header.small .theme-toggle :global(.toggle-item svg) {
+    width: 0.6rem;
+    height: 0.6rem;
   }
 
   /* Scanline effect */
@@ -148,33 +155,47 @@
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    border: 2px solid #3a3a6a;
-    background: rgba(20, 20, 40, 0.85);
-    color: #ffcc00;
-    font-family: inherit;
-    font-size: 0.55rem;
-    letter-spacing: 0.08em;
-    padding: 0.3rem 0.45rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
     z-index: 2;
   }
 
-  .theme-toggle:hover {
-    background: rgba(30, 30, 60, 0.95);
-    color: #fff;
-    box-shadow: 0 0 10px rgba(255, 204, 0, 0.35);
+  .theme-toggle :global(.toggle-group) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    border: 2px solid #3a3a6a;
+    background: rgba(20, 20, 40, 0.85);
+    padding: 0.15rem;
+    border-radius: 4px;
   }
 
-  .theme-toggle :global(.icon) {
-    color: inherit;
+  .theme-toggle :global(.toggle-item) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.6rem;
+    height: 1.4rem;
+    border: none;
+    background: transparent;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border-radius: 2px;
+    padding: 0;
   }
 
-  .theme-toggle .toggle-label {
-    display: inline-block;
+  .theme-toggle :global(.toggle-item:hover) {
+    color: #999;
+  }
+
+  .theme-toggle :global(.toggle-item[data-state="on"]) {
+    background: rgba(255, 204, 0, 0.2);
+    color: #ffcc00;
+    box-shadow: 0 0 6px rgba(255, 204, 0, 0.3);
+  }
+
+  .theme-toggle :global(.toggle-item svg) {
+    width: 0.75rem;
+    height: 0.75rem;
   }
 
   ul {
@@ -334,18 +355,24 @@
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='6' viewBox='0 0 20 6'><path d='M0 3 C 3 0 7 6 10 3 C 13 0 17 6 20 3' fill='none' stroke='%237c3aed' stroke-width='2' stroke-linecap='square'/></svg>");
   }
 
-  :global(html:not(.dark)) .theme-toggle {
-    font-family: "Space Grotesk", system-ui, sans-serif;
+  :global(html:not(.dark)) .theme-toggle :global(.toggle-group) {
     background: #fffdf8;
     border-color: #e6dfd5;
-    color: #7c3aed;
-    box-shadow: 4px 4px 0 rgba(21, 21, 43, 0.12);
+    box-shadow: 3px 3px 0 rgba(21, 21, 43, 0.12);
   }
 
-  :global(html:not(.dark)) .theme-toggle:hover {
-    background: #fff0e1;
-    color: #5b21b6;
-    box-shadow: 6px 6px 0 rgba(21, 21, 43, 0.16);
+  :global(html:not(.dark)) .theme-toggle :global(.toggle-item) {
+    color: #bbb;
+  }
+
+  :global(html:not(.dark)) .theme-toggle :global(.toggle-item:hover) {
+    color: #888;
+  }
+
+  :global(html:not(.dark)) .theme-toggle :global(.toggle-item[data-state="on"]) {
+    background: rgba(124, 58, 237, 0.15);
+    color: #7c3aed;
+    box-shadow: 0 0 4px rgba(124, 58, 237, 0.2);
   }
 
   /* Responsive */
@@ -360,12 +387,20 @@
 
     .theme-toggle {
       right: 0.6rem;
-      font-size: 0.5rem;
-      padding: 0.25rem 0.35rem;
     }
 
-    .theme-toggle .toggle-label {
-      display: none;
+    .theme-toggle :global(.toggle-group) {
+      padding: 0.1rem;
+    }
+
+    .theme-toggle :global(.toggle-item) {
+      width: 1.4rem;
+      height: 1.2rem;
+    }
+
+    .theme-toggle :global(.toggle-item svg) {
+      width: 0.65rem;
+      height: 0.65rem;
     }
   }
 

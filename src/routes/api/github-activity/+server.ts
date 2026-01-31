@@ -44,9 +44,9 @@ export const GET: RequestHandler = async ({ fetch }) => {
 
     // Fetch user events and org events in parallel
     const eventPromises = [
-      fetch(`https://api.github.com/users/${username}/events/public?per_page=30`, { headers }),
+      fetch(`https://api.github.com/users/${username}/events/public?per_page=100`, { headers }),
       ...orgs.map((org) =>
-        fetch(`https://api.github.com/orgs/${org}/events?per_page=15`, { headers })
+        fetch(`https://api.github.com/orgs/${org}/events?per_page=50`, { headers })
       ),
     ];
 

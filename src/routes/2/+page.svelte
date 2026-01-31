@@ -7,6 +7,7 @@
   import SNESWordCard from "$lib/snes/SNESWordCard.svelte";
   import SNESColorCard from "$lib/snes/SNESColorCard.svelte";
   import SNESHueHunterCard from "$lib/snes/SNESHueHunterCard.svelte";
+  import SNESGitHubActivity from "$lib/snes/SNESGitHubActivity.svelte";
 
   const meta = {
     title: "Peter Organisciak",
@@ -217,6 +218,9 @@
         >HT+BOOKWORM</a
       >
     </div>
+
+    <!-- GitHub Activity section -->
+    <SNESGitHubActivity />
 
     <!-- Recent Research section -->
     <div class="research-section">

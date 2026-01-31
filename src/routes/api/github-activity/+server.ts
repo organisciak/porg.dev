@@ -1,0 +1,140 @@
+import { json } from "@sveltejs/kit";
+import type { RequestHandler } from "./$types";
+import { env } from "$env/dynamic/private";
+
+interface GitHubEvent {
+  type: string;
+  repo: { name: string; url: string };
+  payload: {
+    commits?: { message: string }[];
+    action?: string;
+    pull_request?: { title: string; html_url: string };
+    issue?: { title: string; html_url: string };
+    ref?: string;
+    ref_type?: string;
+  };
+  created_at: string;
+}
+
+interface ActivityItem {
+  type: "commit" | "pr" | "issue" | "other";
+  repo: string;
+  repoUrl: string;
+  description: string;
+  url?: string;
+  date: string;
+}
+
+export const GET: RequestHandler = async ({ fetch }) => {
+  const username = "organisciak";
+
+  try {
+    const headers: Record<string, string> = {
+      Accept: "application/vnd.github.v3+json",
+      "User-Agent": "porg.dev",
+    };
+
+    // Use token if available for higher rate limits
+    if (env.GITHUB_TOKEN) {
+      headers["Authorization"] = `token ${env.GITHUB_TOKEN}`;
+    }
+
+    const response = await fetch(`https://api.github.com/users/${username}/events/public?per_page=30`, {
+      headers,
+    });
+
+    if (!response.ok) {
+      throw new Error(`GitHub API returned ${response.status}`);
+    }
+
+    const events: GitHubEvent[] = await response.json();
+
+    // Process and deduplicate by repo
+    const repoActivity = new Map<string, ActivityItem>();
+
+    for (const event of events) {
+      const repoName = event.repo.name.replace(`${username}/`, "");
+      const repoUrl = `https://github.com/${event.repo.name}`;
+
+      // Skip if we already have activity for this repo
+      if (repoActivity.has(repoName)) continue;
+
+      let item: ActivityItem | null = null;
+
+      switch (event.type) {
+        case "PushEvent":
+          if (event.payload.commits && event.payload.commits.length > 0) {
+            const latestCommit = event.payload.commits[event.payload.commits.length - 1];
+            item = {
+              type: "commit",
+              repo: repoName,
+              repoUrl,
+              description: latestCommit.message.split("\n")[0].slice(0, 60),
+              date: event.created_at,
+            };
+          }
+          break;
+
+        case "PullRequestEvent":
+          if (event.payload.pull_request) {
+            item = {
+              type: "pr",
+              repo: repoName,
+              repoUrl,
+              description: event.payload.pull_request.title.slice(0, 60),
+              url: event.payload.pull_request.html_url,
+              date: event.created_at,
+            };
+          }
+          break;
+
+        case "IssuesEvent":
+          if (event.payload.issue) {
+            item = {
+              type: "issue",
+              repo: repoName,
+              repoUrl,
+              description: event.payload.issue.title.slice(0, 60),
+              url: event.payload.issue.html_url,
+              date: event.created_at,
+            };
+          }
+          break;
+
+        case "CreateEvent":
+          if (event.payload.ref_type === "repository") {
+            item = {
+              type: "other",
+              repo: repoName,
+              repoUrl,
+              description: "Created new repository",
+              date: event.created_at,
+            };
+          }
+          break;
+      }
+
+      if (item) {
+        repoActivity.set(repoName, item);
+      }
+
+      // Limit to 5 unique repos
+      if (repoActivity.size >= 5) break;
+    }
+
+    return json({
+      activity: Array.from(repoActivity.values()),
+      updated: new Date().toISOString(),
+    });
+  } catch (error) {
+    console.error("GitHub API error:", error);
+    return json(
+      {
+        activity: [],
+        error: "Failed to fetch GitHub activity",
+        updated: new Date().toISOString(),
+      },
+      { status: 500 }
+    );
+  }
+};

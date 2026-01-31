@@ -62,7 +62,9 @@ export const GET: RequestHandler = async ({ fetch }) => {
       let item: ActivityItem | null = null;
 
       switch (event.type) {
-        case "PushEvent":
+        case "PushEvent": {
+          // Public events API may not include commits array
+          const branch = event.payload.ref?.replace("refs/heads/", "") || "main";
           if (event.payload.commits && event.payload.commits.length > 0) {
             const latestCommit = event.payload.commits[event.payload.commits.length - 1];
             item = {
@@ -72,8 +74,18 @@ export const GET: RequestHandler = async ({ fetch }) => {
               description: latestCommit.message.split("\n")[0].slice(0, 60),
               date: event.created_at,
             };
+          } else {
+            // Fallback when commits aren't included
+            item = {
+              type: "commit",
+              repo: repoName,
+              repoUrl,
+              description: `Pushed to ${branch}`,
+              date: event.created_at,
+            };
           }
           break;
+        }
 
         case "PullRequestEvent":
           if (event.payload.pull_request) {

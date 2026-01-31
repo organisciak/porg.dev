@@ -1616,8 +1616,6 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
   const labelFor = (book) => book.label || (book.kind === 'winner' ? 'Winner' : 'Honor');
 </script>
 
-# {title}
-
 The American Library Association has announced the **2026 Youth Media Award winners**.
 I wanted an easy way to view the winners and honor books, with links to Amazon, Bookshop.org, and Libby. Winners are marked with a star.
 

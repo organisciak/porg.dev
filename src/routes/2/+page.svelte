@@ -9,6 +9,7 @@
   import SNESHueHunterCard from "$lib/snes/SNESHueHunterCard.svelte";
   import SNESEtcCard from "$lib/snes/SNESEtcCard.svelte";
   import SNESGitHubActivity from "$lib/snes/SNESGitHubActivity.svelte";
+  import SNESAsciiNav from "$lib/snes/SNESAsciiNav.svelte";
 
   const meta = {
     title: "Peter Organisciak",
@@ -48,6 +49,10 @@
   ];
 
   function handleKeydown(e: KeyboardEvent) {
+    const target = e.target as HTMLElement | null;
+    if (target?.closest("[data-ascii-nav]")) {
+      return;
+    }
     if (e.key === "ArrowDown" || e.key === "s") {
       e.preventDefault();
       menuIndex = (menuIndex + 1) % menuItems.length;
@@ -208,6 +213,8 @@
       <span class="separator">&nbsp;&nbsp;&nbsp;</span>
       <span class="key">ENTER</span> CONFIRM
     </div>
+
+    <SNESAsciiNav />
 
     <!-- Tools section -->
     <div class="tools-section">

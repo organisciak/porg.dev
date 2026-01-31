@@ -1,14 +1,14 @@
-export type RGBColor = {'red': number, 'green': number, 'blue': number};
-export type CMYKColor = {'cyan': number, 'magenta': number, 'yellow': number, 'black': number };
-export type HSLColor = {'hue': number, 'saturation': number, 'lightness': number};
-export type HSVColor = { 'hue': number, 'saturation': number, 'value': number};
-export type XYZColor = { x: number, y: number, z: number };
-export type CIELABColor = { l: number, a: number, b: number };
+export type RGBColor = { red: number; green: number; blue: number };
+export type CMYKColor = { cyan: number; magenta: number; yellow: number; black: number };
+export type HSLColor = { hue: number; saturation: number; lightness: number };
+export type HSVColor = { hue: number; saturation: number; value: number };
+export type XYZColor = { x: number; y: number; z: number };
+export type CIELABColor = { l: number; a: number; b: number };
 
 // Reference white for D65 illuminant
 // This is a constant in the CIE XYZ color space, relying on Google+ChatGPT here...
-const refX =  95.047;
-const refY = 100.000;
+const refX = 95.047;
+const refY = 100.0;
 const refZ = 108.883;
 
 export type Color = RGBColor | CMYKColor | HSLColor | HSVColor;
@@ -25,7 +25,11 @@ export function cmykToRgb(cmyk: CMYKColor): RGBColor {
   const g = 1 - Math.min(1, m * (1 - k) + k);
   const b = 1 - Math.min(1, y * (1 - k) + k);
 
-  return {'red': Math.round(r * 255), 'green': Math.round(g * 255), 'blue': Math.round(b * 255)} as RGBColor;
+  return {
+    red: Math.round(r * 255),
+    green: Math.round(g * 255),
+    blue: Math.round(b * 255),
+  } as RGBColor;
 }
 
 export function rgbToCmyk(rgb: RGBColor): CMYKColor {
@@ -39,11 +43,11 @@ export function rgbToCmyk(rgb: RGBColor): CMYKColor {
   const y = (1 - b - k) / (1 - k) || 0;
 
   return {
-          'cyan': c * 100,
-          'magenta': m * 100,
-          'yellow': y * 100,
-          'black': k * 100
-        } as CMYKColor;
+    cyan: c * 100,
+    magenta: m * 100,
+    yellow: y * 100,
+    black: k * 100,
+  } as CMYKColor;
 }
 
 export function hexToRgb(hash: ColorHash): RGBColor {
@@ -53,7 +57,7 @@ export function hexToRgb(hash: ColorHash): RGBColor {
   const g = (bigint >> 8) & 255;
   const b = bigint & 255;
 
-  return {'red': r, 'green': g, 'blue': b} as RGBColor;
+  return { red: r, green: g, blue: b } as RGBColor;
 }
 
 export function rgbToHex(rgb: RGBColor): ColorHash {
@@ -67,9 +71,9 @@ export function rgbToHex(rgb: RGBColor): ColorHash {
   const clampedBlue = clamp(blue);
 
   // Convert the decimal values to hexadecimal
-  const redHex = clampedRed.toString(16).padStart(2, '0');
-  const greenHex = clampedGreen.toString(16).padStart(2, '0');
-  const blueHex = clampedBlue.toString(16).padStart(2, '0');
+  const redHex = clampedRed.toString(16).padStart(2, "0");
+  const greenHex = clampedGreen.toString(16).padStart(2, "0");
+  const blueHex = clampedBlue.toString(16).padStart(2, "0");
 
   // Combine the hexadecimal values to create the CSS hexadecimal color
   const hexColor = `#${redHex}${greenHex}${blueHex}`;
@@ -78,22 +82,24 @@ export function rgbToHex(rgb: RGBColor): ColorHash {
 }
 
 function rgbToXyz(rgb: RGBColor): XYZColor {
-  let r = rgb.red / 255, g = rgb.green / 255, b = rgb.blue / 255;
+  let r = rgb.red / 255,
+    g = rgb.green / 255,
+    b = rgb.blue / 255;
 
   if (r > 0.04045) {
-      r = Math.pow(((r + 0.055) / 1.055), 2.4);
+    r = Math.pow((r + 0.055) / 1.055, 2.4);
   } else {
-      r = r / 12.92;
+    r = r / 12.92;
   }
   if (g > 0.04045) {
-      g = Math.pow(((g + 0.055) / 1.055), 2.4);
+    g = Math.pow((g + 0.055) / 1.055, 2.4);
   } else {
-      g = g / 12.92;
+    g = g / 12.92;
   }
   if (b > 0.04045) {
-      b = Math.pow(((b + 0.055) / 1.055), 2.4);
+    b = Math.pow((b + 0.055) / 1.055, 2.4);
   } else {
-      b = b / 12.92;
+    b = b / 12.92;
   }
 
   r = r * 100;
@@ -104,7 +110,7 @@ function rgbToXyz(rgb: RGBColor): XYZColor {
   const y = r * 0.2126 + g * 0.7152 + b * 0.0722;
   const z = r * 0.0193 + g * 0.1192 + b * 0.9505;
 
-  return {x, y, z};
+  return { x, y, z };
 }
 
 function xyzToCielab(xyz: XYZColor): CIELABColor {
@@ -113,22 +119,22 @@ function xyzToCielab(xyz: XYZColor): CIELABColor {
   let z = xyz.z / refZ;
 
   if (x > 0.008856) {
-      x = Math.pow(x, 1/3);
+    x = Math.pow(x, 1 / 3);
   } else {
-      x = (903.3 * x + 16) / 116;
+    x = (903.3 * x + 16) / 116;
   }
   if (y > 0.008856) {
-      y = Math.pow(y, 1/3);
+    y = Math.pow(y, 1 / 3);
   } else {
-      y = (903.3 * y + 16) / 116;
+    y = (903.3 * y + 16) / 116;
   }
   if (z > 0.008856) {
-      z = Math.pow(z, 1/3);
+    z = Math.pow(z, 1 / 3);
   } else {
-      z = (903.3 * z + 16) / 116;
+    z = (903.3 * z + 16) / 116;
   }
 
-  const l = (116 * y) - 16;
+  const l = 116 * y - 16;
   const a = 500 * (x - y);
   const b = 200 * (y - z);
 
@@ -151,26 +157,26 @@ function cielabToXyz(cielab: CIELABColor): XYZColor {
   const z3 = z * z * z;
 
   if (y3 > 0.008856) {
-      y = y3;
+    y = y3;
   } else {
-      y = (y - 16 / 116) / 7.787;
+    y = (y - 16 / 116) / 7.787;
   }
   if (x3 > 0.008856) {
-      x = x3;
+    x = x3;
   } else {
-      x = (x - 16 / 116) / 7.787;
+    x = (x - 16 / 116) / 7.787;
   }
   if (z3 > 0.008856) {
-      z = z3;
+    z = z3;
   } else {
-      z = (z - 16 / 116) / 7.787;
+    z = (z - 16 / 116) / 7.787;
   }
 
   x = refX * x;
   y = refY * y;
   z = refZ * z;
 
-  return {x, y, z};
+  return { x, y, z };
 }
 
 function xyzToRgb(xyz: XYZColor): RGBColor {
@@ -180,29 +186,29 @@ function xyzToRgb(xyz: XYZColor): RGBColor {
 
   let r = x * 3.2406 + y * -1.5372 + z * -0.4986;
   let g = x * -0.9689 + y * 1.8758 + z * 0.0415;
-  let b = x * 0.0557 + y * -0.2040 + z * 1.0570;
+  let b = x * 0.0557 + y * -0.204 + z * 1.057;
 
   if (r > 0.0031308) {
-      r = 1.055 * Math.pow(r, 1/2.4) - 0.055;
+    r = 1.055 * Math.pow(r, 1 / 2.4) - 0.055;
   } else {
-      r = 12.92 * r;
+    r = 12.92 * r;
   }
   if (g > 0.0031308) {
-      g = 1.055 * Math.pow(g, 1/2.4) - 0.055;
+    g = 1.055 * Math.pow(g, 1 / 2.4) - 0.055;
   } else {
-      g = 12.92 * g;
+    g = 12.92 * g;
   }
   if (b > 0.0031308) {
-      b = 1.055 * Math.pow(b, 1/2.4) - 0.055;
+    b = 1.055 * Math.pow(b, 1 / 2.4) - 0.055;
   } else {
-      b = 12.92 * b;
+    b = 12.92 * b;
   }
 
   r = Math.min(Math.max(0, r), 1);
   g = Math.min(Math.max(0, g), 1);
   b = Math.min(Math.max(0, b), 1);
 
-  return {'red': r * 255, 'green': g * 255, 'blue': b * 255};
+  return { red: r * 255, green: g * 255, blue: b * 255 };
 }
 
 export function cielabToHex(cielab: CIELABColor): ColorHash {
@@ -225,20 +231,26 @@ function rgbToHsv(rgb: RGBColor): HSVColor {
   const v = max;
 
   if (max !== min) {
-      switch (max) {
-          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-          case g: h = (b - r) / d + 2; break;
-          case b: h = (r - g) / d + 4; break;
-      }
-      h /= 6;
+    switch (max) {
+      case r:
+        h = (g - b) / d + (g < b ? 6 : 0);
+        break;
+      case g:
+        h = (b - r) / d + 2;
+        break;
+      case b:
+        h = (r - g) / d + 4;
+        break;
+    }
+    h /= 6;
   }
 
-  return { 'hue': h * 360, 'saturation': s * 100, 'value': v * 100 };
+  return { hue: h * 360, saturation: s * 100, value: v * 100 };
 }
 
 // DISTANCES
 
-function euclideanDistance(coords1:number[], coords2:number[]): number {
+function euclideanDistance(coords1: number[], coords2: number[]): number {
   let sum = 0;
   for (let i = 0; i < coords1.length; i++) {
     sum += Math.pow(coords1[i] - coords2[i], 2);
@@ -251,7 +263,7 @@ Calculate the distance between two hex colors via Euclidean cielab distance
 For reference, black to white distance is 100. Not sure the max dist, but
 brute-forcing 10k comparisons, the highest I saw was 248.6 (avg 84.3)
 */
-export function hexColorToCielabDistance(color1:string, color2:string): number {
+export function hexColorToCielabDistance(color1: string, color2: string): number {
   const c1 = hexToCielab(color1);
   const c2 = hexToCielab(color2);
   return euclideanDistance([c1.l, c1.a, c1.b], [c2.l, c2.a, c2.b]);
@@ -265,9 +277,9 @@ export function rgbColorToCielabDistance(color1: RGBColor, color2: RGBColor): nu
 Stats for a 100k randomized HSV dist measures:
 avg dist:  137.04     max dist:  375.74
 */
-export function hexColorToHSVDistance(color1:string, color2:string): number {
+export function hexColorToHSVDistance(color1: string, color2: string): number {
   return rgbColorToHSVDistance(hexToRgb(color1), hexToRgb(color2));
-};
+}
 
 export function rgbColorToHSVDistance(color1: RGBColor, color2: RGBColor): number {
   const c1 = rgbToHsv(color1);
@@ -280,33 +292,38 @@ Stats for a 100k randomized RGB dist measures:
 avg dist:  176.30     max dist:  414.33
 */
 export function rgbColorToRGBDistance(color1: RGBColor, color2: RGBColor): number {
-  return euclideanDistance([color1.red, color1.green, color1.blue], [color2.red, color2.green, color2.blue]);
+  return euclideanDistance(
+    [color1.red, color1.green, color1.blue],
+    [color2.red, color2.green, color2.blue],
+  );
 }
 
 export function hexColorToRGBDistance(color1: string, color2: string): number {
   return rgbColorToRGBDistance(hexToRgb(color1), hexToRgb(color2));
 }
 
-
-export function cmykToHexByKey(value: number, color: 'cyan'|'magenta'|'yellow'|'black'): string {
+export function cmykToHexByKey(
+  value: number,
+  color: "cyan" | "magenta" | "yellow" | "black",
+): string {
   /* Convert a single band of CMYK - with the others set to 0 - to a hex color. */
   let cmyk: CMYKColor = {
-      cyan: 0,
-      magenta: 0,
-      yellow: 0,
-      black: 0
+    cyan: 0,
+    magenta: 0,
+    yellow: 0,
+    black: 0,
   };
   cmyk[color] = value;
   const rgb = cmykToRgb(cmyk);
   return rgbToHex(rgb);
 }
 
-export function rgbToHexByKey(value: number, color: 'red'|'green'|'blue'): string {
+export function rgbToHexByKey(value: number, color: "red" | "green" | "blue"): string {
   /* Convert a single band of RGB - with the others set to 0 - to a hex color. */
   let rgb: RGBColor = {
-      red: 0,
-      green: 0,
-      blue: 0
+    red: 0,
+    green: 0,
+    blue: 0,
   };
   rgb[color] = value;
   return rgbToHex(rgb);

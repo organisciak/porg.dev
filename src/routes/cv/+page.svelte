@@ -1,24 +1,96 @@
 <script lang="ts">
-	import SvelteMarkdown from 'svelte-markdown';
-  import publications from './publications.json';
-  import Publication from '$lib/cv/Publication.svelte';
-  import type { CSLPublication, Award, Product, Course, Position, Education } from '$lib/cv/types';
-  import { MetaTags } from 'svelte-meta-tags';
-  import Fa from 'svelte-fa';
-  import { faOrcid } from '@fortawesome/free-brands-svg-icons';
+  import SvelteMarkdown from "svelte-markdown";
+  import publications from "./publications.json";
+  import Publication from "$lib/cv/Publication.svelte";
+  import type { CSLPublication, Award, Product, Course, Position, Education } from "$lib/cv/types";
+  import { MetaTags } from "svelte-meta-tags";
+  import Fa from "svelte-fa";
+  import { faOrcid } from "@fortawesome/free-brands-svg-icons";
+  import { onDestroy, onMount } from "svelte";
+  import { mode } from "mode-watcher";
 
   const typedPublications: CSLPublication[] = publications;
 
   // Utility to normalize various grant number formats (e.g., remove PR/Award prefix)
   function cleanGrantNumber(id: string) {
-    return id.replace(/^PR\/?Award\s*#?\s*/i, '').trim();
+    return id.replace(/^PR\/?Award\s*#?\s*/i, "").trim();
   }
+
+  let stars: { x: number; y: number; size: number; twinkleDelay: number; brightness: number }[] =
+    [];
+  let mounted = false;
+  let handleKeydown: ((event: KeyboardEvent) => void) | null = null;
+
+  onMount(() => {
+    stars = Array.from({ length: 120 }, () => ({
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() > 0.85 ? 3 : Math.random() > 0.5 ? 2 : 1,
+      twinkleDelay: Math.random() * 4,
+      brightness: 0.4 + Math.random() * 0.6,
+    }));
+    mounted = true;
+
+    handleKeydown = (event) => {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey) return;
+      const target = event.target as HTMLElement | null;
+      if (!target) return;
+      const tagName = target.tagName.toLowerCase();
+      if (
+        tagName === "input" ||
+        tagName === "textarea" ||
+        tagName === "select" ||
+        target.isContentEditable
+      ) {
+        return;
+      }
+
+      const sections = Array.from(
+        document.querySelectorAll<HTMLElement>(".cv-section")
+      ).filter((section) => section.offsetParent !== null);
+      if (!sections.length) return;
+
+      const currentY = window.scrollY + window.innerHeight * 0.25;
+      const offsets = sections.map((section) => section.getBoundingClientRect().top + window.scrollY);
+      const currentIndex = offsets.findIndex((offset) => offset >= currentY);
+      const activeIndex = currentIndex === -1 ? sections.length - 1 : Math.max(0, currentIndex - 1);
+
+      const goToIndex = (index: number) => {
+        const clamped = Math.max(0, Math.min(sections.length - 1, index));
+        sections[clamped]?.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+
+      const key = event.key.toLowerCase();
+      if (key === "arrowdown" || key === "pagedown" || key === "j") {
+        event.preventDefault();
+        goToIndex(activeIndex + 1);
+      } else if (key === "arrowup" || key === "pageup" || key === "k") {
+        event.preventDefault();
+        goToIndex(activeIndex - 1);
+      } else if (key === "home" || (key === "g" && !event.shiftKey)) {
+        event.preventDefault();
+        goToIndex(0);
+      } else if (key === "end" || (key === "g" && event.shiftKey)) {
+        event.preventDefault();
+        goToIndex(sections.length - 1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeydown);
+  });
+
+  onDestroy(() => {
+    if (handleKeydown) {
+      window.removeEventListener("keydown", handleKeydown);
+    }
+  });
 
   // Collapsible config for awards section
 
   const awards: Award[] = [
     {
-      title: "Innovative AI Systems for Nurturing and Assessing Creativity in K-12 Learning Environments",
+      title:
+        "Innovative AI Systems for Nurturing and Assessing Creativity in K-12 Learning Environments",
       amount: "$898,326",
       funder: "National Science Foundation",
       grantNumber: "2507129",
@@ -26,19 +98,24 @@
       investigators: [
         "Organisciak, P. (Principal Investigator)",
         "Acar, S. (Co-PI)",
-        "Dong, Y. (Co-PI)"
+        "Dong, Y. (Co-PI)",
       ],
-      timeframe: "2025-2028"
+      timeframe: "2025-2028",
     },
     {
-      title: "Measuring Original Thinking in Elementary School: A Computational Psychometric Approach",
+      title:
+        "Measuring Original Thinking in Elementary School: A Computational Psychometric Approach",
       amount: "$964,081",
       funder: "Institute of Education Sciences",
       grantNumber: "R305A200519",
       grantUrl: "https://ies.ed.gov/funding/grantsearch/details.asp?ID=4477",
-      investigators: ["Selcuk Acar (University of North Texas, Principal)", "Dumas, D. G. (Co-Principal)", "Organisciak, P. (Co-Principal)"],
+      investigators: [
+        "Selcuk Acar (University of North Texas, Principal)",
+        "Dumas, D. G. (Co-Principal)",
+        "Organisciak, P. (Co-Principal)",
+      ],
       timeframe: "2020-2024",
-      subgrant: "DU sub-grant: $451,988"
+      subgrant: "DU sub-grant: $451,988",
     },
     {
       title: "Collaborative Analysis Liaison Librarians (CALL)",
@@ -46,9 +123,14 @@
       funder: "Institution of Library and Museum Services",
       grantNumber: "RE-13-19-0027-19",
       grantUrl: "https://www.imls.gov/grants/awarded/re-13-19-0027-19",
-      investigators: ["Wade Bishop (Principal, University of Tennessee Knoxville)", "Carole Tenopir (UTK, Co-Principal)", "Suzie Allard (UTK, Co-Principal)", "Organisciak, P. (Director)"],
+      investigators: [
+        "Wade Bishop (Principal, University of Tennessee Knoxville)",
+        "Carole Tenopir (UTK, Co-Principal)",
+        "Suzie Allard (UTK, Co-Principal)",
+        "Organisciak, P. (Director)",
+      ],
       timeframe: "2019-2022",
-      subgrant: "DU total: $129,746.00"
+      subgrant: "DU total: $129,746.00",
     },
     {
       title: "Text Duplication and Similarity in Massive Digital Collections",
@@ -57,15 +139,16 @@
       grantNumber: "LG-86-18-0061-18",
       grantUrl: "https://www.imls.gov/grants/awarded/lg-86-18-0061-18",
       investigators: ["Organisciak, P. (Principal)"],
-      timeframe: "2018-2021"
+      timeframe: "2018-2021",
     },
     {
-      title: "Exploring the Billions of Words in the HathiTrust Corpus with Bookworm: HathiTrust + Bookworm",
+      title:
+        "Exploring the Billions of Words in the HathiTrust Corpus with Bookworm: HathiTrust + Bookworm",
       amount: "$324,841",
       funder: "National Endowment for the Humanities",
       investigators: ["Downie, J. S. (Illinois, Principal)", "Aiden, E. L. (Rice University)"],
-      timeframe: "2014-2017"
-    }
+      timeframe: "2014-2017",
+    },
   ];
 
   // Collapsible config for awards section
@@ -80,21 +163,21 @@
         {
           name: "Open Creativity Scoring (OCS)",
           url: "https://openscoring.du.edu",
-          description: "(2207 unique users, June 2020-August 2022)"
+          description: "(2207 unique users, June 2020-August 2022)",
         },
         {
           name: "SaDDL",
-          url: "https://saddl.du.edu"
+          url: "https://saddl.du.edu",
         },
         {
           name: "Bookworm",
-          url: "https://bookworm.htrc.illinois.edu"
+          url: "https://bookworm.htrc.illinois.edu",
         },
         {
           name: "Bookworm Playground",
-          url: "https://bookworm.htrc.illinois.edu/app/"
-        }
-      ]
+          url: "https://bookworm.htrc.illinois.edu/app/",
+        },
+      ],
     },
     {
       category: "Software",
@@ -102,15 +185,16 @@
         {
           name: "HTRC Features Reader",
           url: "http://github.com/htrc/htrc-feature-reader",
-          description: "A mature, long-developed library for working with non-consumptive book data."
+          description:
+            "A mature, long-developed library for working with non-consumptive book data.",
         },
         {
           name: "Open Scoring",
           url: "https://github.com/massivetexts/open-scoring",
-          description: "Tools for creativity scoring."
-        }
-      ]
-    }
+          description: "Tools for creativity scoring.",
+        },
+      ],
+    },
   ];
 
   const courses: Course[] = [
@@ -119,43 +203,43 @@
       title: "AI/IA - Artificial Intelligence in the Information Age",
       credits: "3 credit hours",
       format: "in-person",
-      materials: "https://ai.porg.dev"
+      materials: "https://ai.porg.dev",
     },
     {
       code: "LIS 4015",
       title: "User and Access Services",
       credits: "3 credit hours",
-      format: "in-person"
+      format: "in-person",
     },
     {
       code: "LIS 4015",
       title: "User and Access Services",
       credits: "2 credit hours",
-      format: "online"
+      format: "online",
     },
     {
       code: "LIS 4220",
       title: "Data Curation",
-      credits: "3 credit hours"
+      credits: "3 credit hours",
     },
     {
       code: "LIS 4235",
       title: "Scripting for Large Databases",
       credits: "4 credit hours",
-      materials: "https://github.com/organisciak/Scripting-Course"
+      materials: "https://github.com/organisciak/Scripting-Course",
     },
     {
       code: "LIS 4700DH",
       title: "Digital Humanities",
-      credits: "3 credit hours"
+      credits: "3 credit hours",
     },
     {
       code: "590TXT, LIS4991TXT",
       title: "Text Mining",
       credits: "3 credit hours",
       materials: "https://github.com/organisciak/Text-Mining-Course",
-      format: "Independent study at DU"
-    }
+      format: "Independent study at DU",
+    },
   ];
 
   const source = `
@@ -379,240 +463,234 @@ Higher Education, Université du Québec à Montréal, Montreal, Canada.
 Working with Dr. Pier-Luc de Chantel to develop an API to Open
 Creativity Scoring, making that system's scoring methods available to
 use in other tools and websites, such as Qualtrics.
-	`
+	`;
 
-	const bio = {
-        name: "Dr. Peter Organisciak",
-        title: "Department Chair and Associate Professor, University of Denver, Research Methods and Information Science",
-        lab: "Massive Texts Lab",
-        labUrl: "http://portfolio.du.edu/massivetexts",
-        orcid: "https://orcid.org/0000-0002-9058-2280",
-        email: "peter.organisciak@du.edu",
-        gscholar: "https://scholar.google.com/citations?hl=en&user=RfHXG5EAAAAJ&view_op=list_works&sortby=pubdate",
-    };
+  const bio = {
+    name: "Dr. Peter Organisciak",
+    title:
+      "Department Chair and Associate Professor, University of Denver, Research Methods and Information Science",
+    lab: "Massive Texts Lab",
+    labUrl: "https://github.com/massivetexts",
+    orcid: "https://orcid.org/0000-0002-9058-2280",
+    email: "peter.organisciak@du.edu",
+    gscholar:
+      "https://scholar.google.com/citations?hl=en&user=RfHXG5EAAAAJ&view_op=list_works&sortby=pubdate",
+  };
 
   const professionalPositions: Position[] = [
-        {
-      "position": "Department Chair, Research Methods and Information Science",
-      "organization": "University of Denver",
-      "timeframe": "January 2025-present"
+    {
+      position: "Department Chair, Research Methods and Information Science",
+      organization: "University of Denver",
+      timeframe: "January 2025-present",
     },
     {
-      "position": "Associate Professor",
-      "organization": "University of Denver",
-      "timeframe": "September 2023-present"
+      position: "Associate Professor",
+      organization: "University of Denver",
+      timeframe: "September 2023-present",
     },
     {
-      "position": "Assistant Professor",
-      "organization": "University of Denver",
-      "timeframe": "September 2017-August 2023"
+      position: "Assistant Professor",
+      organization: "University of Denver",
+      timeframe: "September 2017-August 2023",
     },
     {
-      "position": "Postdoctoral Research Associate",
-      "organization": "HathiTrust Research Center",
-      "timeframe": "2015-2017"
+      position: "Postdoctoral Research Associate",
+      organization: "HathiTrust Research Center",
+      timeframe: "2015-2017",
     },
     {
-      "position": "Research Intern",
-      "organization": "Microsoft Research",
-      "timeframe": "April 2013 - August 2013"
-    }
-  ]
+      position: "Research Intern",
+      organization: "Microsoft Research",
+      timeframe: "April 2013 - August 2013",
+    },
+  ];
 
-const degrees: Education[]= [
+  const degrees: Education[] = [
     {
-      "degree": "Ph.D.",
-      "university": "University of Illinois at Urbana-Champaign",
-      "year": "2015",
-      "additionalDetails": {
-        "major": "Library and Information Science",
-        "dissertationTitle": "Design Problems in Crowdsourcing: Improving the Quality of Crowd-Based Data Collection",
-        "committee": ["Michael Twidale", "J. Stephen Downie", "Miles Efron", "Jaime Teevan"]
-      }
+      degree: "Ph.D.",
+      university: "University of Illinois at Urbana-Champaign",
+      year: "2015",
+      additionalDetails: {
+        major: "Library and Information Science",
+        dissertationTitle:
+          "Design Problems in Crowdsourcing: Improving the Quality of Crowd-Based Data Collection",
+        committee: ["Michael Twidale", "J. Stephen Downie", "Miles Efron", "Jaime Teevan"],
+      },
     },
     {
-      "degree": "MA",
-      "university": "University of Alberta",
-      "year": "2010",
-      "additionalDetails": {
-        "major": "Humanities Computing - Library and Information Studies",
-        "thesisTitle": "Why Bother? Examining the motivations of users in large-scale crowd-powered online initiatives",
-        "committee": ["Lisa Given", "Geoffrey Rockwell", "Stan Ruecker"]
-      }
+      degree: "MA",
+      university: "University of Alberta",
+      year: "2010",
+      additionalDetails: {
+        major: "Humanities Computing - Library and Information Studies",
+        thesisTitle:
+          "Why Bother? Examining the motivations of users in large-scale crowd-powered online initiatives",
+        committee: ["Lisa Given", "Geoffrey Rockwell", "Stan Ruecker"],
+      },
     },
     {
-      "degree": "BA",
-      "university": "McMaster University",
-      "year": "2008",
-      "additionalDetails": {
-        "major": "Communication Studies and Multimedia"
-      }
-    }
-  ]
+      degree: "BA",
+      university: "McMaster University",
+      year: "2008",
+      additionalDetails: {
+        major: "Communication Studies and Multimedia",
+      },
+    },
+  ];
 
-const bioData = {
-  "awards": [
-    {
-      "name": "Teaching Appreciation Dinner, University of Denver",
-      "date": "March 2020"
-    },
-    {
-      "name": "Best Short Research Paper Winner, iSchools Conference",
-      "date": "June 2019"
-    },
-    {
-      "name": "Notable Paper, Conference on Human Computation and Crowdsourcing",
-      "date": "2014"
-    },
-    {
-      "name": "Outstanding Contribution Award, Canadian Society for Digital Humanities",
-      "date": "2014"
-    },
-    {
-      "name": "Best Paper, Association for Information Science and Technology",
-      "date": "2011"
-    },
-    {
-      "name": "Best Student Paper, Canadian Society for Digital Humanities",
-      "date": "2011"
-    }
-  ],
-  "media": [
-    {
-      "title": "It's Out of Africa meets Pretty Woman! The Art and Science of Mixture Descriptions",
-      "source": "Katy Waldman, Slate (Lexicon Valley: A Blog about Language)",
-      "date": "November 23, 2015"
-    },
-    {
-      "title": "Online crowds can guess what you want to watch or buy.",
-      "source": "Hal Hodson, New Scientist, 2989",
-      "date": "October 2, 2014"
-    }
-  ]
-}
+  const bioData = {
+    awards: [
+      {
+        name: "Teaching Appreciation Dinner, University of Denver",
+        date: "March 2020",
+      },
+      {
+        name: "Best Short Research Paper Winner, iSchools Conference",
+        date: "June 2019",
+      },
+      {
+        name: "Notable Paper, Conference on Human Computation and Crowdsourcing",
+        date: "2014",
+      },
+      {
+        name: "Outstanding Contribution Award, Canadian Society for Digital Humanities",
+        date: "2014",
+      },
+      {
+        name: "Best Paper, Association for Information Science and Technology",
+        date: "2011",
+      },
+      {
+        name: "Best Student Paper, Canadian Society for Digital Humanities",
+        date: "2011",
+      },
+    ],
+    media: [
+      {
+        title: "It's Out of Africa meets Pretty Woman! The Art and Science of Mixture Descriptions",
+        source: "Katy Waldman, Slate (Lexicon Valley: A Blog about Language)",
+        date: "November 23, 2015",
+      },
+      {
+        title: "Online crowds can guess what you want to watch or buy.",
+        source: "Hal Hodson, New Scientist, 2989",
+        date: "October 2, 2014",
+      },
+    ],
+  };
 
-type ExtendedAbstractExtension = {
-  genre: 'Long Paper Talk' | 'Poster';
-};
+  type ExtendedAbstractExtension = {
+    genre: "Long Paper Talk" | "Poster";
+  };
 
-type AbstractExtension = {
-  genre: 'Proceedings Short Article' | 'Proceedings Long Article';
-};
+  type AbstractExtension = {
+    genre: "Proceedings Short Article" | "Proceedings Long Article";
+  };
 
-type PresentationExtension = {
-  genre: "Conference Presentation"
-}
+  type PresentationExtension = {
+    genre: "Conference Presentation";
+  };
 
-const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[] =
-        [
-          {
-            heading: "Journal Articles",
-            entries: typedPublications.filter(p => p.type === 'article-journal')
-          },
-          {
-            heading: "Book Chapters",
-            entries: typedPublications.filter(p => p.type === 'chapter')
-          },
-          {
-            heading: "Proceedings Paper",
-            entries: typedPublications.filter(function(p) {
-              return p.type === "paper-conference"  && (p.genre === 'Proceedings Short Article' || p.genre === 'Proceedings Long Article')
-              }) as (CSLPublication & AbstractExtension)[]
-          },
-          {
-            heading: "Reports",
-            entries: typedPublications.filter(p => p.type === "report")
-          },
-          {
-            heading: "Extended Abstracts",
-            comment: "Long paper abstracts at certain Humanities and Social Science venues, and poster extended-abstracts in Computer and Information Science proceedings.",
-            entries: typedPublications.filter(function (pub) {
-              return pub.type === 'speech' && (pub.genre === 'Long Paper Talk' || pub.genre === 'Poster')
-            }) as (CSLPublication & ExtendedAbstractExtension)[]
-          },
-          {
-            heading: "Presentations (refereed)",
-            comment: "Conference presentations refereed from peer-reviewed short abstracts, as at Education conferences and some Social Science and Humanities conferences.",
-            entries: typedPublications.filter(function (pub) {
-              return (pub.type === 'speech' && 
-                      (pub.genre === 'Conference Presentation')
-              )
-            }) as (CSLPublication & PresentationExtension)[]
-          },
-          {
-            heading: "Presentations (invited)",
-            entries: typedPublications.filter(function (pub) {
-              return (pub.type === 'speech' && 
-                      (pub.genre === 'Invited Talk')
-              )
-            }) as (CSLPublication & {"genre": "Invited Talk"})[]
-          },
-          {
-            heading: "Presentations (other)",
-            entries: typedPublications.filter(function (pub) {
-              return (pub.type === 'speech' && 
-                      (pub.genre === 'Talk (Other)')
-              )
-            }) as (CSLPublication & {"genre": "Talk (Other)"})[]
-          },
-          {
-            heading: "Workshops (refereed)",
-            entries: typedPublications.filter(function (pub) {
-              return (pub.type === 'event' && 
-                      (pub.genre === 'Refereed Workshop')
-              )
-            }) as (CSLPublication & {"genre": 'Refereed Workshop'})[]
-          },
-          {
-            heading: "Teaching Workshops",
-            entries: typedPublications.filter(function (pub) {
-              return (pub.type === 'event' && 
-                      (pub.genre === 'Invited Teaching Workshop')
-              )
-            }) as (CSLPublication & {"genre": 'Invited Teaching Workshop'})[]
-          },
-          {
-            heading: "Panels",
-            entries: typedPublications.filter(function (pub) {
-              return (pub.type === 'speech' && 
-                      (pub.genre === 'Panel')
-              )
-            }) as (CSLPublication & {"genre": 'Panel'})[]
-          },
-          {
-            heading: "Posters",
-            comment: "Conference posters associated with a peer-reviewed short abstract.",
-            entries: typedPublications.filter(function (pub) {
-              return (pub.type === 'paper-conference' && 
-                      (pub.extra === 'Poster')
-              )
-            }) as (CSLPublication & {"genre": 'Poster'})[]
-          }
-  ]
+  const pubSections: { heading: string; entries: CSLPublication[]; comment?: string }[] = [
+    {
+      heading: "Journal Articles",
+      entries: typedPublications.filter((p) => p.type === "article-journal"),
+    },
+    {
+      heading: "Book Chapters",
+      entries: typedPublications.filter((p) => p.type === "chapter"),
+    },
+    {
+      heading: "Proceedings Paper",
+      entries: typedPublications.filter(function (p) {
+        return (
+          p.type === "paper-conference" &&
+          (p.genre === "Proceedings Short Article" || p.genre === "Proceedings Long Article")
+        );
+      }) as (CSLPublication & AbstractExtension)[],
+    },
+    {
+      heading: "Reports",
+      entries: typedPublications.filter((p) => p.type === "report"),
+    },
+    {
+      heading: "Extended Abstracts",
+      comment:
+        "Long paper abstracts at certain Humanities and Social Science venues, and poster extended-abstracts in Computer and Information Science proceedings.",
+      entries: typedPublications.filter(function (pub) {
+        return pub.type === "speech" && (pub.genre === "Long Paper Talk" || pub.genre === "Poster");
+      }) as (CSLPublication & ExtendedAbstractExtension)[],
+    },
+    {
+      heading: "Presentations (refereed)",
+      comment:
+        "Conference presentations refereed from peer-reviewed short abstracts, as at Education conferences and some Social Science and Humanities conferences.",
+      entries: typedPublications.filter(function (pub) {
+        return pub.type === "speech" && pub.genre === "Conference Presentation";
+      }) as (CSLPublication & PresentationExtension)[],
+    },
+    {
+      heading: "Presentations (invited)",
+      entries: typedPublications.filter(function (pub) {
+        return pub.type === "speech" && pub.genre === "Invited Talk";
+      }) as (CSLPublication & { genre: "Invited Talk" })[],
+    },
+    {
+      heading: "Presentations (other)",
+      entries: typedPublications.filter(function (pub) {
+        return pub.type === "speech" && pub.genre === "Talk (Other)";
+      }) as (CSLPublication & { genre: "Talk (Other)" })[],
+    },
+    {
+      heading: "Workshops (refereed)",
+      entries: typedPublications.filter(function (pub) {
+        return pub.type === "event" && pub.genre === "Refereed Workshop";
+      }) as (CSLPublication & { genre: "Refereed Workshop" })[],
+    },
+    {
+      heading: "Teaching Workshops",
+      entries: typedPublications.filter(function (pub) {
+        return pub.type === "event" && pub.genre === "Invited Teaching Workshop";
+      }) as (CSLPublication & { genre: "Invited Teaching Workshop" })[],
+    },
+    {
+      heading: "Panels",
+      entries: typedPublications.filter(function (pub) {
+        return pub.type === "speech" && pub.genre === "Panel";
+      }) as (CSLPublication & { genre: "Panel" })[],
+    },
+    {
+      heading: "Posters",
+      comment: "Conference posters associated with a peer-reviewed short abstract.",
+      entries: typedPublications.filter(function (pub) {
+        return pub.type === "paper-conference" && pub.extra === "Poster";
+      }) as (CSLPublication & { genre: "Poster" })[],
+    },
+  ];
 
   // Publication section show-more controls and limits
   let pubShowMore: Record<string, boolean> = {};
   const pubLimits: Record<string, number> = {
-    'Journal Articles': 8,
-    'Book Chapters': 4,
-    'Proceedings Paper': 8,
-    'Reports': 4,
-    'Extended Abstracts': 6,
-    'Presentations (refereed)': 8,
-    'Presentations (invited)': 6,
-    'Presentations (other)': 6,
-    'Workshops (refereed)': 6,
-    'Teaching Workshops': 6,
-    'Panels': 6,
-    'Posters': 6
+    "Journal Articles": 8,
+    "Book Chapters": 4,
+    "Proceedings Paper": 8,
+    Reports: 4,
+    "Extended Abstracts": 6,
+    "Presentations (refereed)": 8,
+    "Presentations (invited)": 6,
+    "Presentations (other)": 6,
+    "Workshops (refereed)": 6,
+    "Teaching Workshops": 6,
+    Panels: 6,
+    Posters: 6,
   };
-  pubSections.forEach(s => pubShowMore[s.heading] = false);
+  pubSections.forEach((s) => (pubShowMore[s.heading] = false));
 
   const meta = {
-			title: 'Curriculum Vitae',
-			description: 'CV for Dr. Peter Oragnisciak, Associate Professor and Applied AI Researcher',
-			url: 'https://www.porg.dev'
-		}
+    title: "Curriculum Vitae",
+    description: "CV for Dr. Peter Oragnisciak, Associate Professor and Applied AI Researcher",
+    url: "https://www.porg.dev",
+  };
 
   // Global expand/collapse across collapsible sections
   let expandAll: boolean = false;
@@ -624,350 +702,1101 @@ const pubSections: {heading:string, entries:CSLPublication[], comment?:string}[]
   }
 
   // Toggle group: newer vs all
-  let displayMode: 'newer' | 'all' = 'newer';
-  $: setAllCollapsed(displayMode === 'all');
+  let displayMode: "newer" | "all" = "newer";
+  $: setAllCollapsed(displayMode === "all");
 
-  function setDisplayMode(mode: 'newer' | 'all', reapply = false) {
+  function setDisplayMode(mode: "newer" | "all", reapply = false) {
     const changed = displayMode !== mode;
     displayMode = mode;
     if (reapply || changed) {
-      setAllCollapsed(mode === 'all');
+      setAllCollapsed(mode === "all");
     }
   }
 </script>
 
-<MetaTags 
-	title="{meta.title}"
-	canonical="{meta.url}"
-	description="{meta.description}"
-	openGraph={{
-		siteName: 'porg.dev',
-		type: 'website',
-		url: meta.url,
-		locale: 'en_US',
-		title: meta.title,
-		description: meta.description,
-		images: [
-		  {
-			url: 'https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200',
-			alt: 'Photo of Dr. Peter Organisciak',
-			width: 200,
-			height: 200,
-			type: 'image/png'
-		  }
-		]
-	}}
-	twitter={{
-        handle: '@porg',
-        site: '@porg',
-        cardType: 'summary_large_image',
-        title: meta.title,
-        description: meta.description,
-        image: 'https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200',
-        imageAlt: 'Photo of Dr. Peter Organisciak'
-      }}
-	/>
+<svelte:head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
 
-<div class="container mx-auto">
-  <section itemscope itemtype="http://schema.org/Person">
-    <h1 class="font-serif cmy-text-gradient" itemprop="name">{bio.name}</h1>
-    <p><strong itemprop="jobTitle">{bio.title}</strong></p>
-    
-    <div class="flex flex-row">
-      <p itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-        <span itemprop="name">University of Denver</span>
-        <meta itemprop="url" content="https://www.du.edu/" />
+  <MetaTags
+    title={meta.title}
+    canonical={meta.url}
+    description={meta.description}
+    openGraph={{
+      siteName: "porg.dev",
+      type: "website",
+      url: meta.url,
+      locale: "en_US",
+      title: meta.title,
+      description: meta.description,
+      images: [
+        {
+          url: "https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200",
+          alt: "Photo of Dr. Peter Organisciak",
+          width: 200,
+          height: 200,
+          type: "image/png",
+        },
+      ],
+    }}
+    twitter={{
+      handle: "@porg",
+      site: "@porg",
+      cardType: "summary_large_image",
+      title: meta.title,
+      description: meta.description,
+      image:
+        "https://en.gravatar.com/userimage/77028/c3830b8a81f001e01a2f5e96ade157b8.jpg?size=200",
+      imageAlt: "Photo of Dr. Peter Organisciak",
+    }}
+  />
+</svelte:head>
+
+<div class="snes-page" class:light-theme={mode.current === "light"}>
+  <div class="stars-container">
+    {#if mounted}
+      {#each stars as star}
+        <div
+          class="star"
+          style="left: {star.x}%; top: {star.y}%; width: {star.size}px; height: {star.size}px; animation-delay: {star.twinkleDelay}s; opacity: {star.brightness};"
+        ></div>
+      {/each}
+    {/if}
+  </div>
+
+  <div class="scanlines"></div>
+
+  <div class="content" aria-describedby="cv-keyboard-hint">
+    <div class="pixel-border-top"></div>
+
+    <section class="hero" itemscope itemtype="http://schema.org/Person">
+      <h1 class="hero-name" itemprop="name">{bio.name}</h1>
+      <p class="hero-title"><strong itemprop="jobTitle">{bio.title}</strong></p>
+
+      <div class="hero-panel">
+        <div
+          class="hero-item"
+          itemprop="worksFor"
+          itemscope
+          itemtype="http://schema.org/Organization"
+        >
+          <span itemprop="name">University of Denver</span>
+          <meta itemprop="url" content="https://www.du.edu/" />
+        </div>
+        <div
+          class="hero-item"
+          itemprop="memberOf"
+          itemscope
+          itemtype="http://schema.org/ResearchOrganization"
+        >
+          <a href={bio.labUrl} target="_blank" itemprop="name" rel="noopener noreferrer"
+            >{bio.lab}</a
+          >
+          <meta itemprop="url" content={bio.labUrl} />
+        </div>
+        <div class="hero-item">
+          <Fa class="orcid-icon" icon={faOrcid} />
+          <a href={bio.orcid} target="_blank" itemprop="identifier" rel="noopener noreferrer"
+            >{bio.orcid.split("https://orcid.org/")[1]}</a
+          >
+          <meta itemprop="sameAs" content={bio.orcid} />
+        </div>
+        <div class="hero-item">
+          <a href={bio.gscholar} target="_blank" itemprop="sameAs" rel="noopener noreferrer"
+            >Google Scholar</a
+          >
+          <meta itemprop="sameAs" content={bio.gscholar} />
+        </div>
+        <div class="hero-item">
+          <a href={"mailto:" + bio.email} itemprop="email">{bio.email}</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="toggle-row">
+      <p id="cv-keyboard-hint" class="visually-hidden">
+        Use j or k, or the up and down arrow keys, to move between sections. Press g to jump to the
+        top or shift+g to jump to the end.
       </p>
-      <p itemprop="memberOf" itemscope itemtype="http://schema.org/ResearchOrganization"> 
-        <a href={bio.labUrl} target="_blank" itemprop="name">{bio.lab}</a>
-        <meta itemprop="url" content={bio.labUrl} />
-      </p>
-      <p>
-        <Fa class='inline text-lg text-lime-500' icon={faOrcid} /> <a href={bio.orcid} target="_blank" itemprop="identifier">{bio.orcid.split('https://orcid.org/')[1]}</a>
-        <meta itemprop="sameAs" content={bio.orcid} />
-      </p>
-      <p>
-        <a href={bio.gscholar} target="_blank" itemprop="sameAs">Google Scholar</a>
-        <meta itemprop="sameAs" content={bio.gscholar} />
-      </p>
-      <p>
-        <a href={"mailto:" + bio.email} itemprop="email">{bio.email}</a>
-      </p>
+      <nav aria-label="Display range" class="toggle-nav">
+        <button
+          type="button"
+          on:click={() => setDisplayMode("newer", true)}
+          class={`toggle-link ${displayMode === "newer" ? "active" : ""}`}
+          aria-current={displayMode === "newer" ? "true" : "false"}>Show newer</button
+        >
+        <span class="toggle-divider">·</span>
+        <button
+          type="button"
+          on:click={() => setDisplayMode("all", true)}
+          class={`toggle-link ${displayMode === "all" ? "active" : ""}`}
+          aria-current={displayMode === "all" ? "true" : "false"}>Show all</button
+        >
+      </nav>
     </div>
-  </section>
 
-<div class="flex justify-end -mb-2 mt-2">
-  <nav aria-label="Display range" class="text-xs">
-    <a href="#" on:click|preventDefault={() => setDisplayMode('newer', true)}
-       class={`${displayMode==='newer' ? 'link-toggle-selected text-slate-900 dark:text-slate-100 font-semibold' : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
-       aria-current={displayMode==='newer' ? 'true' : 'false'}
-    >Show newer</a>
-    <span class="mx-2 text-slate-400">·</span>
-    <a href="#" on:click|preventDefault={() => setDisplayMode('all', true)}
-       class={`${displayMode==='all' ? 'link-toggle-selected text-slate-900 dark:text-slate-100 font-semibold' : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
-       aria-current={displayMode==='all' ? 'true' : 'false'}
-    >Show all</a>
-  </nav>
-</div>
-
-<section>
-    <h2>Professional Positions</h2>
-    <div class="m-2 rounded-lg p-5 dark:bg-slate-700 bg-slate-200">
-      <ul class="space-y-1">
-        {#each professionalPositions as position}
-          <li class="py-1 flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm" itemprop="workExperience" itemscope itemtype="http://schema.org/OrganizationRole">
-            <div>
-              <span class="font-semibold" itemprop="roleName">{position.position}</span> at
-              <span itemprop="memberOf" itemscope itemtype="http://schema.org/Organization">
-                <span itemprop="name">{position.organization}</span>
-              </span>
-            </div>
-            <div class="mt-1 sm:mt-0">
-              <span class="inline-block rounded-full px-2 py-0.5 text-xs bg-slate-300 dark:bg-slate-600 dark:text-slate-200">
-                {position.timeframe}
-              </span>
-            </div>
-          </li>
-        {/each}
-      </ul>
-    </div>
-</section>
-
-<section>
-    <h2>Education</h2>
-    <div class="m-2 rounded-lg p-5 dark:bg-slate-700 bg-slate-200">
-      <ul class="space-y-1">
-        {#each degrees as edu}
-        <li class="py-1 text-sm" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <span class="font-bold" itemprop="degreeType">{edu.degree}</span> at 
-              <span itemprop="name">{edu.university}</span>
-            </div>
-            <div class="mt-1 sm:mt-0">
-              <span class="inline-block rounded-full px-2 py-0.5 text-xs bg-slate-300 dark:bg-slate-600 dark:text-slate-200" itemprop="graduationYear">{edu.year}</span>
-            </div>
-          </div>
-          <div class="text-xs mt-1">
-            {#if edu.additionalDetails.major}
-              <span class='italic'>Major: <span itemprop="educationalProgram">{edu.additionalDetails.major}</span></span>
-            {/if}
-            {#if edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}
-              <span class='italic ml-3'>{edu.additionalDetails.dissertationTitle ? 'Dissertation' : 'Thesis'}: <span itemprop="dissertationTitle">{edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}</span></span>
-            {/if}
-            {#if edu.additionalDetails.committee}
-              <span class='italic ml-3'>Committee: {edu.additionalDetails.committee.join(', ')}</span>
-            {/if}
-          </div>
-        </li>
-        {/each}
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Awarded Grants</h2>
-    <div class="m-2 rounded-lg p-3 dark:bg-slate-700 bg-slate-200">
-      {#if awards && awards.length}
-        <ul class="space-y-0.5">
-          {#each primaryAwards as award}
-            <li class="py-0.5 text-sm leading-snug">
-              <p class="font-semibold my-1">{award.title}</p>
-              <p class="text-xs sm:text-sm leading-snug my-1">
-                <span class="font-semibold">Funder:</span> {award.funder}
-                · <span class="font-semibold">Amount:</span> {award.amount}
-                {#if award.grantNumber}
-                  · <span class="font-semibold">Grant #:</span>
-                  {#if award.grantUrl}
-                    <a href={award.grantUrl} target="_blank" rel="noopener noreferrer">{cleanGrantNumber(award.grantNumber)}</a>
-                  {:else}
-                    {cleanGrantNumber(award.grantNumber)}
-                  {/if}
-                {/if}
-                · <span class="font-semibold">Timeframe:</span> {award.timeframe}
-                {#if award.subgrant}
-                  · <span class="font-semibold">Subgrant:</span> {award.subgrant}
-                {/if}
-                · <span class="font-semibold">Investigators:</span> {award.investigators.join(', ')}
-              </p>
+    <section class="cv-section">
+      <h2 class="section-title">Professional Positions</h2>
+      <div class="panel">
+        <ul class="stack-list">
+          {#each professionalPositions as position}
+            <li
+              class="stack-item"
+              itemprop="workExperience"
+              itemscope
+              itemtype="http://schema.org/OrganizationRole"
+            >
+              <div class="stack-row">
+                <div>
+                  <span class="stack-title" itemprop="roleName">{position.position}</span> at
+                  <span itemprop="memberOf" itemscope itemtype="http://schema.org/Organization">
+                    <span itemprop="name">{position.organization}</span>
+                  </span>
+                </div>
+                <div class="stack-meta">
+                  <span class="chip">
+                    {position.timeframe}
+                  </span>
+                </div>
+              </div>
             </li>
           {/each}
-          {#if extraAwards.length > 0}
-            {#if showMoreAwards}
-              {#each extraAwards as award}
-                <li class="py-0.5 text-sm leading-snug">
-                  <p class="font-semibold my-1">{award.title}</p>
-                  <p class="text-xs sm:text-sm leading-snug my-1">
-                    <span class="font-semibold">Funder:</span> {award.funder}
-                    · <span class="font-semibold">Amount:</span> {award.amount}
-                    {#if award.grantNumber}
-                      · <span class="font-semibold">Grant #:</span>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2 class="section-title">Education</h2>
+      <div class="panel">
+        <ul class="stack-list">
+          {#each degrees as edu}
+            <li
+              class="stack-item"
+              itemprop="alumniOf"
+              itemscope
+              itemtype="http://schema.org/EducationalOrganization"
+            >
+              <div class="stack-row">
+                <div>
+                  <span class="stack-title" itemprop="degreeType">{edu.degree}</span> at
+                  <span itemprop="name">{edu.university}</span>
+                </div>
+                <div class="stack-meta">
+                  <span class="chip" itemprop="graduationYear">{edu.year}</span>
+                </div>
+              </div>
+              <div class="stack-details">
+                {#if edu.additionalDetails.major}
+                  <span class="detail-item"
+                    >Major: <span itemprop="educationalProgram">{edu.additionalDetails.major}</span
+                    ></span
+                  >
+                {/if}
+                {#if edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}
+                  <span class="detail-item"
+                    >{edu.additionalDetails.dissertationTitle ? "Dissertation" : "Thesis"}:
+                    <span itemprop="dissertationTitle"
+                      >{edu.additionalDetails.dissertationTitle ||
+                        edu.additionalDetails.thesisTitle}</span
+                    ></span
+                  >
+                {/if}
+                {#if edu.additionalDetails.committee}
+                  <span class="detail-item"
+                    >Committee: {edu.additionalDetails.committee.join(", ")}</span
+                  >
+                {/if}
+              </div>
+            </li>
+          {/each}
+        </ul>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2 class="section-title">Awarded Grants</h2>
+      <div class="panel">
+        {#if awards && awards.length}
+          <ul class="stack-list compact">
+            {#each primaryAwards as award}
+              <li class="stack-item">
+                <p class="stack-title">{award.title}</p>
+                <p class="stack-details">
+                  <span class="detail-item"
+                    ><span class="detail-label">Funder:</span> {award.funder}</span
+                  >
+                  <span class="detail-item"
+                    ><span class="detail-label">Amount:</span> {award.amount}</span
+                  >
+                  {#if award.grantNumber}
+                    <span class="detail-item"
+                      ><span class="detail-label">Grant #:</span>
                       {#if award.grantUrl}
-                        <a href={award.grantUrl} target="_blank" rel="noopener noreferrer">{cleanGrantNumber(award.grantNumber)}</a>
+                        <a href={award.grantUrl} target="_blank" rel="noopener noreferrer"
+                          >{cleanGrantNumber(award.grantNumber)}</a
+                        >
                       {:else}
                         {cleanGrantNumber(award.grantNumber)}
                       {/if}
-                    {/if}
-                    · <span class="font-semibold">Timeframe:</span> {award.timeframe}
-                    {#if award.subgrant}
-                      · <span class="font-semibold">Subgrant:</span> {award.subgrant}
-                    {/if}
-                    · <span class="font-semibold">Investigators:</span> {award.investigators.join(', ')}
-                  </p>
+                    </span>
+                  {/if}
+                  <span class="detail-item"
+                    ><span class="detail-label">Timeframe:</span> {award.timeframe}</span
+                  >
+                  {#if award.subgrant}
+                    <span class="detail-item"
+                      ><span class="detail-label">Subgrant:</span> {award.subgrant}</span
+                    >
+                  {/if}
+                  <span class="detail-item"
+                    ><span class="detail-label">Investigators:</span>
+                    {award.investigators.join(", ")}</span
+                  >
+                </p>
+              </li>
+            {/each}
+            {#if extraAwards.length > 0}
+              {#if showMoreAwards}
+                {#each extraAwards as award}
+                  <li class="stack-item">
+                    <p class="stack-title">{award.title}</p>
+                    <p class="stack-details">
+                      <span class="detail-item"
+                        ><span class="detail-label">Funder:</span> {award.funder}</span
+                      >
+                      <span class="detail-item"
+                        ><span class="detail-label">Amount:</span> {award.amount}</span
+                      >
+                      {#if award.grantNumber}
+                        <span class="detail-item"
+                          ><span class="detail-label">Grant #:</span>
+                          {#if award.grantUrl}
+                            <a href={award.grantUrl} target="_blank" rel="noopener noreferrer"
+                              >{cleanGrantNumber(award.grantNumber)}</a
+                            >
+                          {:else}
+                            {cleanGrantNumber(award.grantNumber)}
+                          {/if}
+                        </span>
+                      {/if}
+                      <span class="detail-item"
+                        ><span class="detail-label">Timeframe:</span> {award.timeframe}</span
+                      >
+                      {#if award.subgrant}
+                        <span class="detail-item"
+                          ><span class="detail-label">Subgrant:</span> {award.subgrant}</span
+                        >
+                      {/if}
+                      <span class="detail-item"
+                        ><span class="detail-label">Investigators:</span>
+                        {award.investigators.join(", ")}</span
+                      >
+                    </p>
+                  </li>
+                {/each}
+                <li class="stack-item">
+                  <button class="link-button" on:click={() => (showMoreAwards = false)}
+                    >Show fewer</button
+                  >
                 </li>
-              {/each}
-              <li class="py-0.5"><button class="text-xs text-blue-700 dark:text-blue-300 hover:underline" on:click={() => showMoreAwards = false}>Show fewer</button></li>
-            {:else}
-              <li class="py-0.5"><button class="text-xs text-blue-700 dark:text-blue-300 hover:underline" on:click={() => showMoreAwards = true}>+{extraAwards.length} more</button></li>
+              {:else}
+                <li class="stack-item">
+                  <button class="link-button" on:click={() => (showMoreAwards = true)}
+                    >+{extraAwards.length} more</button
+                  >
+                </li>
+              {/if}
             {/if}
-          {/if}
-        </ul>
-      {/if}
-    </div>
-  </section>
-
-
-
-  <section>
-    <h2>Publications</h2>
-  </section>
-
-  {#each pubSections as pubSection}
-    <section>
-      <h3>{pubSection.heading}</h3>
-      {#if pubSection.comment}
-        <p class="italic text-sm">{pubSection.comment}</p>
-      {/if}
-
-      <div class="flex flex-wrap">
-        {#if pubShowMore[pubSection.heading]}
-          {#each pubSection.entries as pub}
-            <Publication data={pub} />
-          {/each}
-        {:else}
-          {#each pubSection.entries.slice(0, (pubLimits[pubSection.heading] ?? 6)) as pub}
-            <Publication data={pub} />
-          {/each}
+          </ul>
         {/if}
       </div>
-      {#if pubSection.entries.length > (pubLimits[pubSection.heading] ?? 6)}
-        <div class="mt-2">
-          <button class="text-xs text-blue-700 dark:text-blue-300 hover:underline" on:click={() => pubShowMore[pubSection.heading] = !pubShowMore[pubSection.heading]}>
-            {pubShowMore[pubSection.heading] ? 'Show fewer' : `+${pubSection.entries.length - (pubLimits[pubSection.heading] ?? 6)} more`}
-          </button>
-        </div>
-      {/if}
     </section>
-  {/each}
 
-  <section>
-    <h2>Products</h2>
-    {#each products as product}
-      <h3 class="mt-4 mb-2 font-semibold">{product.category}</h3>
-      <div class="flex flex-wrap">
-        {#each product.items as item}
-          <div class="flex-initial basis-64">
-            <div class="dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5">
-              <h4 class="font-bold mb-2">
-                {#if item.url}
-                  <a href={item.url} target="_blank" rel="noopener noreferrer">{item.name}</a>
-                {:else}
-                  {item.name}
+    <section class="cv-section">
+      <h2 class="section-title">Publications</h2>
+    </section>
+
+    {#each pubSections as pubSection}
+      <section class="cv-section">
+        <h3 class="section-subtitle">{pubSection.heading}</h3>
+        {#if pubSection.comment}
+          <p class="section-comment">{pubSection.comment}</p>
+        {/if}
+
+        <div class="panel publications-panel">
+          <div class="publication-grid">
+            {#if pubShowMore[pubSection.heading]}
+              {#each pubSection.entries as pub}
+                <Publication data={pub} />
+              {/each}
+            {:else}
+              {#each pubSection.entries.slice(0, pubLimits[pubSection.heading] ?? 6) as pub}
+                <Publication data={pub} />
+              {/each}
+            {/if}
+          </div>
+          {#if pubSection.entries.length > (pubLimits[pubSection.heading] ?? 6)}
+            <div class="panel-actions">
+              <button
+                class="link-button"
+                on:click={() =>
+                  (pubShowMore[pubSection.heading] = !pubShowMore[pubSection.heading])}
+              >
+                {pubShowMore[pubSection.heading]
+                  ? "Show fewer"
+                  : `+${pubSection.entries.length - (pubLimits[pubSection.heading] ?? 6)} more`}
+              </button>
+            </div>
+          {/if}
+        </div>
+      </section>
+    {/each}
+
+    <section class="cv-section">
+      <h2 class="section-title">Products</h2>
+      {#each products as product}
+        <h3 class="section-subtitle">{product.category}</h3>
+        <div class="panel">
+          <div class="card-grid">
+            {#each product.items as item}
+              <div class="card">
+                <h4 class="card-title">
+                  {#if item.url}
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">{item.name}</a>
+                  {:else}
+                    {item.name}
+                  {/if}
+                </h4>
+                {#if item.description}
+                  <p class="card-body">{item.description}</p>
                 {/if}
-              </h4>
-              {#if item.description}
-                <p class="text-sm">{item.description}</p>
+              </div>
+            {/each}
+          </div>
+        </div>
+      {/each}
+    </section>
+
+    <section class="cv-section">
+      <h2 class="section-title">Teaching</h2>
+      <h3 class="section-subtitle">Courses</h3>
+      <div class="panel">
+        <div class="card-grid">
+          {#each courses as course}
+            <div class="card">
+              <h4 class="card-title">{course.code} - {course.title}</h4>
+              <p class="card-body">{course.credits}</p>
+              {#if course.format}
+                <p class="card-body"><span class="detail-label">Format:</span> {course.format}</p>
+              {/if}
+              {#if course.materials}
+                <p class="card-body">
+                  <span class="detail-label">Materials:</span>
+                  <a href={course.materials} target="_blank" rel="noopener noreferrer">Link</a>
+                </p>
               {/if}
             </div>
-          </div>
-        {/each}
-      </div>
-    {/each}
-  </section>
-  
-  <section>
-    <h2>Teaching</h2>
-    <h3 class="mt-4 mb-2 font-semibold">Courses</h3>
-    <div class="flex flex-wrap">
-      {#each courses as course}
-        <div class="flex-initial basis-64">
-          <div class="dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5">
-            <h4 class="font-bold mb-2">{course.code} - {course.title}</h4>
-            <p class="text-sm">{course.credits}</p>
-            {#if course.format}
-              <p class="text-sm"><span class="font-semibold">Format:</span> {course.format}</p>
-            {/if}
-            {#if course.materials}
-              <p class="text-sm">
-                <span class="font-semibold">Materials:</span> 
-                <a href={course.materials} target="_blank" rel="noopener noreferrer">Link</a>
-              </p>
-            {/if}
-          </div>
-        </div>
-      {/each}
-    </div>
-  </section>
-
-  <!-- Move Awards and Media further down for concision near the top -->
-  <section>
-    <h2>Awards</h2>
-    <div class="flex flex-wrap">
-      {#each bioData.awards as award}
-      <div class="flex-initial basis-48">
-        <div class="text-sm dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5 dark:text-slate-300">
-          <span class='font-semibold'>{award.name}</span>, {award.date}
+          {/each}
         </div>
       </div>
-      {/each}
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Media</h2>
-    <div class="flex flex-wrap">
-      {#each bioData.media as media}
-      <div class="flex-initial basis-96">
-        <div class="text-sm dark:bg-slate-700 bg-slate-200 m-2 rounded-lg p-5 dark:text-slate-300">
-          <span class="font-semibold">{media.title}</span><br /><span class='italic'>{media.source}, {media.date}</span>
+    <!-- Move Awards and Media further down for concision near the top -->
+    <section class="cv-section">
+      <h2 class="section-title">Awards</h2>
+      <div class="panel">
+        <div class="card-grid compact">
+          {#each bioData.awards as award}
+            <div class="card">
+              <span class="card-title">{award.name}</span>
+              <p class="card-body">{award.date}</p>
+            </div>
+          {/each}
         </div>
       </div>
-      {/each}
-    </div> 
-  </section>
+    </section>
 
-<section id="cv">
-    <div class="container mx-auto mt-5">
-      <div class="flex flex-row">
-        <!--<div class="w-1/12 hidden md:hidden"><SvelteMarkdown source={test} /></div>-->
-        <div class="w-full md:w-11/12">
-            <SvelteMarkdown source={source} />
+    <section class="cv-section">
+      <h2 class="section-title">Media</h2>
+      <div class="panel">
+        <div class="card-grid wide">
+          {#each bioData.media as media}
+            <div class="card">
+              <span class="card-title">{media.title}</span>
+              <p class="card-body">{media.source}, {media.date}</p>
+            </div>
+          {/each}
         </div>
-      </div><p></p>
-    </div>
-  </section>
+      </div>
+    </section>
+
+    <section id="cv" class="cv-section">
+      <h2 class="section-title">Additional Service</h2>
+      <div class="panel prose-panel">
+        <SvelteMarkdown {source} />
+      </div>
+    </section>
+  </div>
 </div>
 
-<style lang="postcss">
-    .link-toggle-selected {
-        text-decoration-line: underline;
-        text-decoration-style: wavy;
-        text-underline-offset: 4px;
-        text-decoration-thickness: 1.5px;
+<style>
+  :global(body) {
+    overflow-x: hidden;
+    background: var(--background);
+  }
+
+  :global(html.dark body) {
+    background: #0a0a1a;
+  }
+
+  :global(html:not(.dark) body) {
+    background: #fbf7f1;
+  }
+
+  .snes-page {
+    font-family: "Press Start 2P", monospace;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0a0a1a 0%, #161633 45%, #0a0a1a 100%);
+    position: relative;
+    color: #e6e6e6;
+  }
+
+  .stars-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .star {
+    position: absolute;
+    background: #fff;
+    border-radius: 0;
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: var(--star-opacity, 0.6);
     }
-    .cmy-text-gradient {
-        @apply bg-gradient-to-r from-cyan-600 via-magenta to-yellow-500 text-transparent bg-clip-text;
+    50% {
+      opacity: 0.2;
     }
-    .bg-clip-text {
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-    p {
-        @apply mx-auto my-3;
+  }
+
+  .scanlines {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15) 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .pixel-border-top {
+    width: 100%;
+    max-width: 920px;
+    height: 8px;
+    margin: 0 auto;
+    background: repeating-linear-gradient(
+      90deg,
+      #ffcc00 0px,
+      #ffcc00 8px,
+      #ff6600 8px,
+      #ff6600 16px,
+      #ff0066 16px,
+      #ff0066 24px,
+      #cc00ff 24px,
+      #cc00ff 32px,
+      #00ccff 32px,
+      #00ccff 40px
+    );
+    image-rendering: pixelated;
+  }
+
+  .hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero-name {
+    margin: 0;
+    font-size: clamp(1.2rem, 3.5vw, 2.2rem);
+    color: #fff;
+    text-shadow:
+      3px 3px 0 #ff6600,
+      -1px -1px 0 #00ccff,
+      0 0 20px rgba(255, 102, 0, 0.5);
+    letter-spacing: 0.12em;
+  }
+
+  .hero-title {
+    margin: 0;
+    font-size: 0.6rem;
+    color: #88ccff;
+    line-height: 1.6;
+  }
+
+  .hero-panel {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.75rem;
+    background: rgba(10, 10, 26, 0.7);
+    border: 2px solid #2c2c50;
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-item {
+    font-size: 0.55rem;
+    color: #cfd6ff;
+    background: #121228;
+    border: 1px solid #2f2f58;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+
+  .hero-item a {
+    color: #ffcc00;
+    text-decoration: none;
+  }
+
+  .hero-item a:hover {
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+  }
+
+  .orcid-icon {
+    font-size: 0.7rem;
+    color: #7cff6b;
+    margin-right: 0.35rem;
+  }
+
+  .toggle-row {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .toggle-nav {
+    font-size: 0.5rem;
+    color: #777;
+    display: flex;
+    align-items: center;
+  }
+
+  .toggle-link {
+    color: #777;
+    text-decoration: none;
+    padding: 0.2rem 0.4rem;
+    transition: color 0.15s ease;
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  .toggle-link.active {
+    color: #ffcc00;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+  }
+
+  .toggle-link:hover {
+    color: #fff;
+  }
+
+  .toggle-divider {
+    margin: 0 0.4rem;
+    color: #444;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .cv-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 0.8rem;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 12px rgba(0, 204, 255, 0.4);
+  }
+
+  .section-subtitle {
+    font-size: 0.65rem;
+    color: #ffcc00;
+    margin: 0.5rem 0 0;
+    letter-spacing: 0.08em;
+  }
+
+  .section-comment {
+    font-size: 0.5rem;
+    color: #88ccff;
+    margin: 0;
+  }
+
+  .panel {
+    background: rgba(18, 18, 40, 0.9);
+    border: 2px solid #2c2c50;
+    padding: 1rem;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  }
+
+  .publications-panel {
+    padding: 0.75rem;
+  }
+
+  .prose-panel {
+    font-size: 0.55rem;
+    line-height: 1.7;
+    color: #cfd6ff;
+  }
+
+  .prose-panel :global(p) {
+    margin: 0.6rem 0;
+  }
+
+  .prose-panel :global(h3),
+  .prose-panel :global(h2) {
+    color: #ffcc00;
+    margin: 1rem 0 0.4rem;
+    font-size: 0.6rem;
+  }
+
+  .stack-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .stack-list.compact {
+    gap: 0.5rem;
+  }
+
+  .stack-item {
+    font-size: 0.55rem;
+    color: #cfd6ff;
+    border-bottom: 1px dashed #2a2a4a;
+    padding-bottom: 0.75rem;
+  }
+
+  .stack-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .stack-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .stack-title {
+    color: #fff;
+  }
+
+  .stack-meta {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .chip {
+    background: #22224a;
+    border: 1px solid #3a3a6a;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.45rem;
+    color: #ffcc00;
+  }
+
+  .stack-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    font-size: 0.5rem;
+    color: #9fb7ff;
+    margin-top: 0.35rem;
+  }
+
+  .detail-item {
+    display: inline-block;
+  }
+
+  .detail-label {
+    color: #fff;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .card-grid.compact {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .card-grid.wide {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  }
+
+  .card {
+    background: #161633;
+    border: 1px solid #2f2f58;
+    padding: 0.75rem;
+  }
+
+  .card-title {
+    font-size: 0.6rem;
+    color: #fff;
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .card-body {
+    font-size: 0.5rem;
+    color: #9fb7ff;
+    margin: 0.2rem 0 0;
+  }
+
+  .publication-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .panel-actions {
+    margin-top: 0.5rem;
+  }
+
+  .link-button {
+    background: none;
+    border: none;
+    color: #ffcc00;
+    font-family: inherit;
+    font-size: 0.5rem;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .link-button:hover {
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+  }
+
+  :global(.snes-page .publication) {
+    background: #161633;
+    border: 1px solid #2f2f58;
+    border-radius: 0;
+    padding: 0.75rem;
+    margin: 0;
+    width: 100%;
+    color: #cfd6ff;
+  }
+
+  :global(.snes-page .publication h2) {
+    font-size: 0.55rem;
+    color: #fff;
+    margin: 0 0 0.35rem;
+  }
+
+  :global(.snes-page .publication p),
+  :global(.snes-page .publication span),
+  :global(.snes-page .publication strong) {
+    font-size: 0.5rem;
+    color: #9fb7ff;
+  }
+
+  :global(.snes-page .publication a) {
+    color: #ffcc00;
+    text-decoration: none;
+  }
+
+  :global(.snes-page .publication a:hover) {
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+  }
+
+  :global(.snes-page .publication .pub-button) {
+    background: #22224a;
+    border: 1px solid #3a3a6a;
+    color: #ffcc00;
+    font-size: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0;
+  }
+
+  :global(.snes-page .publication .pub-button:hover) {
+    background: #2a2a5a;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+  }
+
+  :global(.snes-page .publication .pub-button a) {
+    color: #ffcc00;
+  }
+
+  @media (max-width: 720px) {
+    .content {
+      padding: 2rem 1rem 3rem;
     }
 
-    h2 {
-      @apply text-center my-5 font-serif text-3xl;
+    .hero-panel {
+      grid-template-columns: 1fr;
     }
 
+    .toggle-row {
+      justify-content: center;
+    }
+
+    .card-grid,
+    .card-grid.compact,
+    .card-grid.wide {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Light theme overrides */
+  .light-theme {
+    --ink: #15152b;
+    --muted-ink: #5b5b70;
+    --paper: #fffdf8;
+    --paper-edge: #e6dfd5;
+    --paper-shadow: rgba(21, 21, 43, 0.12);
+    --accent-warm: #ff9f1c;
+    --accent-cool: #00b4d8;
+    --accent-ink: #7c3aed;
+    background:
+      radial-gradient(circle at 12% 12%, rgba(255, 159, 28, 0.12), transparent 45%),
+      radial-gradient(circle at 90% 10%, rgba(124, 58, 237, 0.12), transparent 45%),
+      linear-gradient(180deg, #fbf7f1 0%, #f1f1f7 100%);
+    color: var(--ink);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+  }
+
+  .light-theme .stars-container {
+    display: none;
+  }
+
+  .light-theme .scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  }
+
+  .light-theme .hero-name {
+    font-family: "Fraunces", serif;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-shadow:
+      0 2px 0 rgba(255, 159, 28, 0.35),
+      0 0 18px rgba(124, 58, 237, 0.15);
+  }
+
+  .light-theme .hero-title {
+    color: var(--muted-ink);
+    font-size: 0.95rem;
+  }
+
+  .light-theme .hero-panel {
+    background: linear-gradient(135deg, #ffffff 0%, #fff6ef 100%);
+    border-color: var(--paper-edge);
+    box-shadow: 6px 6px 0 var(--paper-shadow);
+    border-radius: 12px;
+  }
+
+  .light-theme .hero-item {
+    background: #fffdf8;
+    border-color: var(--paper-edge);
+    color: var(--muted-ink);
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+
+  .light-theme .hero-item a {
+    color: var(--accent-ink);
+  }
+
+  .light-theme .section-title {
+    font-family: "Fraunces", serif;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-shadow: 0 0 8px rgba(124, 58, 237, 0.15);
+    font-size: 1.2rem;
+  }
+
+  .light-theme .section-subtitle {
+    color: var(--accent-warm);
+    font-size: 0.95rem;
+  }
+
+  .light-theme .section-comment {
+    color: var(--muted-ink);
+    font-size: 0.85rem;
+  }
+
+  .light-theme .panel {
+    background: linear-gradient(135deg, #ffffff 0%, #fff6ef 100%);
+    border-color: var(--paper-edge);
+    box-shadow: 6px 6px 0 var(--paper-shadow);
+    border-radius: 12px;
+  }
+
+  .light-theme .stack-item {
+    color: var(--muted-ink);
+    border-bottom-color: var(--paper-edge);
+    font-size: 0.9rem;
+  }
+
+  .light-theme .stack-title {
+    color: var(--ink);
+  }
+
+  .light-theme .chip {
+    background: rgba(255, 159, 28, 0.16);
+    border-color: rgba(255, 159, 28, 0.4);
+    color: #7a4a00;
+    border-radius: 999px;
+    font-size: 0.8rem;
+  }
+
+  .light-theme .stack-details {
+    color: var(--muted-ink);
+    font-size: 0.85rem;
+  }
+
+  .light-theme .detail-label {
+    color: var(--ink);
+  }
+
+  .light-theme .card {
+    background: #fffdf8;
+    border-color: var(--paper-edge);
+    border-radius: 10px;
+  }
+
+  .light-theme .card-title {
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+
+  .light-theme .card-body {
+    color: var(--muted-ink);
+    font-size: 0.85rem;
+  }
+
+  .light-theme .link-button {
+    color: var(--accent-ink);
+    font-size: 0.85rem;
+  }
+
+  .light-theme .prose-panel {
+    color: var(--muted-ink);
+    font-size: 0.9rem;
+  }
+
+  .light-theme .prose-panel :global(h3),
+  .light-theme .prose-panel :global(h2) {
+    color: var(--accent-ink);
+    font-size: 1rem;
+  }
+
+  .light-theme .toggle-link {
+    color: var(--muted-ink);
+    font-size: 0.85rem;
+  }
+
+  .light-theme .toggle-link.active {
+    color: var(--accent-ink);
+    text-shadow: none;
+  }
+
+  .light-theme .toggle-link:hover {
+    color: var(--ink);
+  }
+
+  .light-theme .toggle-nav {
+    font-size: 0.85rem;
+  }
+
+  /* Light theme publication overrides */
+  :global(.light-theme .publication) {
+    background: #fffdf8;
+    border-color: var(--paper-edge);
+    color: var(--muted-ink);
+    border-radius: 10px;
+  }
+
+  :global(.light-theme .publication h2) {
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+
+  :global(.light-theme .publication p),
+  :global(.light-theme .publication span),
+  :global(.light-theme .publication strong) {
+    color: var(--muted-ink);
+    font-size: 0.85rem;
+  }
+
+  :global(.light-theme .publication a) {
+    color: var(--accent-ink);
+  }
+
+  :global(.light-theme .publication .pub-button) {
+    background: rgba(255, 159, 28, 0.16);
+    border-color: rgba(255, 159, 28, 0.4);
+    color: #7a4a00;
+    font-size: 0.75rem;
+  }
+
+  :global(.light-theme .publication .pub-button:hover) {
+    background: rgba(255, 159, 28, 0.25);
+  }
+
+  :global(.light-theme .publication .pub-button a) {
+    color: #7a4a00;
+  }
 </style>

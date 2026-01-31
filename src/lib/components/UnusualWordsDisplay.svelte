@@ -39,18 +39,17 @@
 -->
 
 <script lang="ts">
-    import RandomItemLoader from '$lib/components/RandomItemLoader.svelte';
+  import RandomItemLoader from "$lib/components/RandomItemLoader.svelte";
 </script>
 
 <RandomItemLoader apiEndpoint="/api/random-word" defaultTitle="Unusual Words">
-    
-    <svelte:fragment slot="default" let:currentItem={word}>
-        {#if word}
-            <h3 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">{word.word}</h3>
-            <p class="text-xs text-gray-500 dark:text-gray-400 mb-2">{word.pos}</p>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">{word.definition}</p>
-            <p class="text-sm text-gray-700 dark:text-gray-300 italic mb-2">"{word.example}"</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Rarity: {word.rarity}/5</p>
-        {/if}
-    </svelte:fragment>
+  <svelte:fragment slot="default" let:currentItem={word}>
+    {#if word}
+      <h3 class="mb-2 text-lg font-bold text-gray-800 dark:text-gray-200">{word.word}</h3>
+      <p class="mb-2 text-xs text-gray-500 dark:text-gray-400">{word.pos}</p>
+      <p class="mb-2 text-sm text-gray-600 dark:text-gray-400">{word.definition}</p>
+      <p class="mb-2 text-sm italic text-gray-700 dark:text-gray-300">"{word.example}"</p>
+      <p class="text-xs text-gray-500 dark:text-gray-400">Rarity: {word.rarity}/5</p>
+    {/if}
+  </svelte:fragment>
 </RandomItemLoader>

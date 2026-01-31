@@ -12,6 +12,11 @@ This is a simple blog implementation using mdsvex for SvelteKit, supporting both
 title: Your Post Title
 date: 'YYYY-MM-DD'
 description: 'A brief description of your post'
+image: '/opengraph/your-image.png' # optional
+keywords: 'ai, creativity, evaluation' # optional (or tags)
+tags: 'ai, creativity, evaluation' # optional (or keywords)
+modified: 'YYYY-MM-DD' # optional (or updated)
+updated: 'YYYY-MM-DD' # optional (or modified)
 ---
 ```
 
@@ -44,8 +49,28 @@ pnpm generate-posts
   - `+page.svelte` - Blog index page listing all posts
   - `+page.server.ts` - Server-side logic to load posts
   - `[slug]/` - Dynamic route for individual posts
+  - `[slug].md/` - Markdown mirror endpoint for LLMs and tooling
 - `src/lib/generated/posts.json` - Generated metadata for all posts
 - `scripts/generate-post-list.js` - Script to generate posts JSON
+
+## Metadata Outputs
+
+- `/rss.xml` - RSS 2.0 feed built from `posts.json` (includes Atom self-link)
+- `/llms.txt` - LLM-friendly index with key links and recent posts
+- `/p/<slug>` - Full post page with SEO meta tags + Schema.org BlogPosting JSON-LD
+- `/p/<slug>.md` - Markdown mirror of the post content
+  - Missing `image` falls back to the default OG image.
+  - Missing `modified/updated` falls back to `date`.
+
+## Validation & Tests
+
+- `pnpm run validate-posts` - Validates frontmatter fields and formats.
+- Playwright coverage:
+  - `tests/post-meta.spec.js` (canonical + OG/Twitter)
+  - `tests/post-schema.spec.js` (JSON-LD)
+  - `tests/post-markdown.spec.js` (markdown mirror)
+  - `tests/rss.spec.js` (RSS feed contents)
+  - `tests/llms.spec.js` (llms.txt contents)
 
 ## Features
 
@@ -54,4 +79,6 @@ pnpm generate-posts
 - Efficient loading using pre-generated JSON
 - Responsive design with Tailwind CSS
 - Markdown syntax highlighting
-- Ability to use Svelte components in `.svx` files 
+- Ability to use Svelte components in `.svx` files
+- SEO meta tags + JSON-LD for posts
+- RSS + llms.txt metadata surfaces

@@ -1,46 +1,48 @@
-[   
-    {
-      "title": "NSF Grant: AI Co-Creativity in K-12",
-      "description": [
-        "Our project, <span class='italic'>Innovative AI Systems for Nurturing and Assessing Creativity in K-12 Learning Environments</span>, received NSF support (2025–2028).",
-        "We're developing AI-powered tools to make creativity assessment and mentoring scalable and accessible in K-12 education."
-      ],
-      "link": "https://www.nsf.gov/awardsearch/show-award?AWD_ID=2507129",
-      "linkText": "See NSF award →",
-      "backgroundImage": "/update-images/paint-canvas.png"
-    },
-    {
+[
+  {
+    "title": "NSF Grant: AI Co-Creativity in K-12",
+    "description": [
+      "Our project, <span class='italic'>Innovative AI Systems for Nurturing and Assessing Creativity in K-12 Learning Environments</span>, received NSF support (2025–2028).",
+      "We're developing AI-powered tools to make creativity assessment and mentoring scalable and accessible in K-12 education."
+    ],
+    "link": "https://www.nsf.gov/awardsearch/show-award?AWD_ID=2507129",
+    "linkText": "See NSF award →",
+    "backgroundImage": "/update-images/paint-canvas.png"
+  },
+  {
     "title": "AI Literacy Course",
     "description": [
-            "See notes from my Winter 2025 course, <a href='https://ai.porg.dev/' class='italic'>AI/IA - Artificial Intelligence in the Information Age</a>.",
-            "Explore technical foundations, co-creativity, ethics, and practical applications of AI."
+      "See notes from my Winter 2025 course, <a href='https://ai.porg.dev/' class='italic'>AI/IA - Artificial Intelligence in the Information Age</a>.",
+      "Explore technical foundations, co-creativity, ethics, and practical applications of AI."
     ],
     "link": "https://ai.porg.dev/",
     "linkText": "Course website →",
     "backgroundImage": "https://ai.porg.dev/slides/images/02/byte-mag.jpg"
-    },
-    {
-        "title": "etc.",
-        "description": [
-                "I've been putting some recent Web API games and experiments together in a single place."
-        ],
-        "link": "https://etc.porg.dev",
-        "linkText": "Go tinker →",
-        "backgroundImage": "https://etc.porg.dev/images/bloops.png"
-    },
-    {
-        "title": "Creativity Scoring",
-        "description": ["If you're interesting in administering the Measure of Original Thinking in Elementary Students (MOTES), contact me."],
-        "link": "mailto:peter@neuristics.org",
-        "linkText": "Contact me →",
-        "backgroundImage": "https://ai.porg.dev/slides/images/04/rad-waves.png"
-    },
-    {
-        "title": "Study At Denver",
-        "description": [
-            "Interested in Library and Information Science in Denver? See information about our <a href='https://morgridge.du.edu/academic-programs/library-information-science'>onsite</a> program (especially the Research Data Management concentration) and our <a href='https://info.morgridgeonline.du.edu/requestinfo/mslis/'>online</a> program. Feel free to reach out!"
-        ],
-        "link": "mailto:peter.organisciak@du.edu",
-        "linkText": "Contact me →"
-    }
+  },
+  {
+    "title": "etc.",
+    "description": [
+      "I've been putting some recent Web API games and experiments together in a single place."
+    ],
+    "link": "https://etc.porg.dev",
+    "linkText": "Go tinker →",
+    "backgroundImage": "https://etc.porg.dev/images/bloops.png"
+  },
+  {
+    "title": "Creativity Scoring",
+    "description": [
+      "If you're interesting in administering the Measure of Original Thinking in Elementary Students (MOTES), contact me."
+    ],
+    "link": "mailto:peter@neuristics.org",
+    "linkText": "Contact me →",
+    "backgroundImage": "https://ai.porg.dev/slides/images/04/rad-waves.png"
+  },
+  {
+    "title": "Study At Denver",
+    "description": [
+      "Interested in Library and Information Science in Denver? See information about our <a href='https://morgridge.du.edu/academic-programs/library-information-science'>onsite</a> program (especially the Research Data Management concentration) and our <a href='https://info.morgridgeonline.du.edu/requestinfo/mslis/'>online</a> program. Feel free to reach out!"
+    ],
+    "link": "mailto:peter.organisciak@du.edu",
+    "linkText": "Contact me →"
+  }
 ]

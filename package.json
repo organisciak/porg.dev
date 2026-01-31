@@ -5,14 +5,15 @@
   "scripts": {
     "dev": "vite dev",
     "build": "node scripts/generate-post-list.js && vite build",
-    "prebuild": "node scripts/generate-post-list.js",
+    "prebuild": "node scripts/generate-post-list.js && node scripts/validate-frontmatter.js",
     "generate-posts": "node scripts/generate-post-list.js",
     "preview": "vite preview",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json && node scripts/validate-frontmatter.js",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
     "test": "playwright test",
     "lint": "prettier --check . && eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "validate-posts": "node scripts/validate-frontmatter.js"
   },
   "husky": {
     "hooks": {
@@ -47,6 +48,7 @@
     "prettier-plugin-svelte": "^3.4.0",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "svelte": "^5.42.2",
+    "svelte-check": "^4.3.5",
     "svelte-fa": "^3.0.4",
     "svelte-markdown": "^0.4.1",
     "svelte-meta-tags": "^3.1.4",
@@ -66,6 +68,7 @@
     "clsx": "^2.1.1",
     "cookie": "^1.0.2",
     "lucide-svelte": "^0.439.0",
+    "mode-watcher": "^1.1.0",
     "seedrandom": "^3.0.5",
     "tailwind-merge": "^2.6.0",
     "tailwind-variants": "^0.2.1",

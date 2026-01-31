@@ -6,18 +6,18 @@ import { mdsvex } from "mdsvex";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  extensions: ['.svelte', '.svx', '.md'],
+  extensions: [".svelte", ".svx", ".md"],
   preprocess: [
     vitePreprocess({}),
     mdsvex({
-      extensions: ['.svx', '.md']
+      extensions: [".svx", ".md"],
       // Remove layout for now to simplify
-    })
+    }),
   ],
 
   kit: {
     adapter: vercel({
-      runtime: 'nodejs22.x'
+      runtime: "nodejs22.x",
     }),
     paths: {
       base: "",
@@ -25,8 +25,8 @@ const config = {
     },
     appDir: "internal",
     alias: {
-      $posts: 'src/posts'
-    }
+      $posts: "src/posts",
+    },
   },
 };
 

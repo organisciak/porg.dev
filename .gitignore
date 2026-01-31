@@ -14,3 +14,8 @@ src/lib/movietags/
 typescript-dev.ipynb
 dev/splash.psd
 .playwright-mcp/
+test-results/
+playwright-report/
+
+# bv (beads viewer) local config and caches
+.bv/

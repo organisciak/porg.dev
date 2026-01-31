@@ -1,91 +1,99 @@
 {
-    "short_name": "Hue Hunter",
-    "name": "Hue Hunter",
-    "description": "Guess the RGB or CMYK composition of colors",
-    "start_url": "/huehunter",
-    "id": "/huehunter",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#00FFFF",
-    "icons": [
-      {
-        "src": "/huehunter-assets/android-chrome-192x192.webp",
-        "sizes": "192x192",
-        "type": "image/webp"
-      },
-      {
-        "src": "/huehunter-assets/android-chrome-512x512.webp",
-        "sizes": "512x512",
-        "type": "image/webp"
-      },
-      {
-        "src": "/huehunter-assets/android-chrome-512x512-maskable.webp",
-        "sizes": "512x512",
-        "type": "image/webp",
-        "purpose": "maskable"
-      },
-      {
-        "src": "/huehunter-assets/android-chrome-512x512-monochrome.webp",
-        "sizes": "512x512",
-        "type": "image/webp",
-        "purpose": "monochrome"
-      }
-    ],
-    "screenshots" : [
-      {
-        "src": "/huehunter-assets/screenshot-wide.webp",
-        "sizes": "713x530",
-        "type": "image/webp",
-        "form_factor": "wide",
-        "label": "Hue Hunter Daily Game"
-      },
-      {
-        "src": "/huehunter-assets/screenshot-narrow.webp",
-        "sizes": "385x708",
-        "type": "image/webp",
-        "form_factor": "narrow",
-        "label": "Hue Hunter Daily Game"
-      }
-    ],
-    "shortcuts": [
-      {
-        "name": "New Daily Game",
-        "short_name": "Daily RGB",
-        "url": "/huehunter/daily-rgb",
-        "icons": [{
-          "src":"/huehunter-assets/calendar-day-solid.webp",
+  "short_name": "Hue Hunter",
+  "name": "Hue Hunter",
+  "description": "Guess the RGB or CMYK composition of colors",
+  "start_url": "/huehunter",
+  "id": "/huehunter",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00FFFF",
+  "icons": [
+    {
+      "src": "/huehunter-assets/android-chrome-192x192.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "/huehunter-assets/android-chrome-512x512.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    },
+    {
+      "src": "/huehunter-assets/android-chrome-512x512-maskable.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/huehunter-assets/android-chrome-512x512-monochrome.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "monochrome"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/huehunter-assets/screenshot-wide.webp",
+      "sizes": "713x530",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Hue Hunter Daily Game"
+    },
+    {
+      "src": "/huehunter-assets/screenshot-narrow.webp",
+      "sizes": "385x708",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Hue Hunter Daily Game"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Daily Game",
+      "short_name": "Daily RGB",
+      "url": "/huehunter/daily-rgb",
+      "icons": [
+        {
+          "src": "/huehunter-assets/calendar-day-solid.webp",
           "sizes": "96x96",
           "type": "image/webp"
-          }]
-      },
-      {
-        "name": "New Daily CMYK Game",
-        "short_name": "Daily CMYK",
-        "url": "/huehunter/daily-cmyk",
-        "icons": [{
-          "src":"/huehunter-assets/calendar-plus-solid.webp",
+        }
+      ]
+    },
+    {
+      "name": "New Daily CMYK Game",
+      "short_name": "Daily CMYK",
+      "url": "/huehunter/daily-cmyk",
+      "icons": [
+        {
+          "src": "/huehunter-assets/calendar-plus-solid.webp",
           "sizes": "96x96",
           "type": "image/webp"
-          }]
-      },
-      {
-        "name": "Infinite Mode",
-        "short_name": "Infinite",
-        "url": "/huehunter/infinite-rgb",
-        "icons": [{
-          "src":"/huehunter-assets/infinity-solid.webp",
+        }
+      ]
+    },
+    {
+      "name": "Infinite Mode",
+      "short_name": "Infinite",
+      "url": "/huehunter/infinite-rgb",
+      "icons": [
+        {
+          "src": "/huehunter-assets/infinity-solid.webp",
           "sizes": "96x96",
           "type": "image/webp"
-          }]
-      },
-      {
-        "name": "Practice",
-        "url": "/huehunter/practice-rgb",
-        "icons": [{
-          "src":"/huehunter-assets/lines-leaning-solid.webp",
+        }
+      ]
+    },
+    {
+      "name": "Practice",
+      "url": "/huehunter/practice-rgb",
+      "icons": [
+        {
+          "src": "/huehunter-assets/lines-leaning-solid.webp",
           "sizes": "96x96",
           "type": "image/webp"
-        }]
-      }
-    ]
+        }
+      ]
+    }
+  ]
 }

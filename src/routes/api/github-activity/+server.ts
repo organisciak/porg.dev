@@ -27,6 +27,7 @@ interface ActivityItem {
 
 export const GET: RequestHandler = async ({ fetch }) => {
   const username = "organisciak";
+  const orgs = ["massivetexts", "neuristics"];
 
   try {
     const headers: Record<string, string> = {
@@ -39,15 +40,29 @@ export const GET: RequestHandler = async ({ fetch }) => {
       headers["Authorization"] = `token ${env.GITHUB_TOKEN}`;
     }
 
-    const response = await fetch(`https://api.github.com/users/${username}/events/public?per_page=30`, {
-      headers,
-    });
+    // Fetch user events and org events in parallel
+    const eventPromises = [
+      fetch(`https://api.github.com/users/${username}/events/public?per_page=30`, { headers }),
+      ...orgs.map((org) =>
+        fetch(`https://api.github.com/orgs/${org}/events?per_page=15`, { headers })
+      ),
+    ];
 
-    if (!response.ok) {
-      throw new Error(`GitHub API returned ${response.status}`);
+    const responses = await Promise.all(eventPromises);
+
+    // Collect all events
+    let allEvents: GitHubEvent[] = [];
+    for (const response of responses) {
+      if (response.ok) {
+        const events = await response.json();
+        allEvents = allEvents.concat(events);
+      }
     }
 
-    const events: GitHubEvent[] = await response.json();
+    // Sort by date (most recent first)
+    allEvents.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+
+    const events: GitHubEvent[] = allEvents;
 
     // Process and deduplicate by repo
     const repoActivity = new Map<string, ActivityItem>();

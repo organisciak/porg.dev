@@ -221,9 +221,6 @@
       >
     </div>
 
-    <!-- GitHub Activity section -->
-    <SNESGitHubActivity />
-
     <!-- Recent Research section -->
     <div class="research-section">
       <h2 class="section-title">RECENT RESEARCH</h2>
@@ -246,6 +243,9 @@
         {/each}
       </div>
     </div>
+
+    <!-- GitHub Activity section -->
+    <SNESGitHubActivity />
 
     <!-- Consulting -->
     <div class="consulting-section">

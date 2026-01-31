@@ -7,6 +7,7 @@
   import SNESWordCard from "$lib/snes/SNESWordCard.svelte";
   import SNESColorCard from "$lib/snes/SNESColorCard.svelte";
   import SNESHueHunterCard from "$lib/snes/SNESHueHunterCard.svelte";
+  import SNESEtcCard from "$lib/snes/SNESEtcCard.svelte";
 
   const meta = {
     title: "Peter Organisciak",
@@ -34,6 +35,7 @@
   let menuIndex = 0;
   const menuItems = [
     { label: "VIEW CV", href: "/cv" },
+    { label: "ETC.PORG.DEV", href: "https://etc.porg.dev" },
     { label: "GITHUB", href: "https://github.com/organisciak" },
     {
       label: "GOOGLE SCHOLAR",
@@ -255,6 +257,7 @@
         <SNESWordCard />
         <SNESColorCard />
         <SNESHueHunterCard />
+        <SNESEtcCard />
       </div>
     </div>
 

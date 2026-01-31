@@ -14,6 +14,7 @@
     repo: string;
     repoUrl: string;
     description: string;
+    repoDescription?: string;
     url?: string;
     date: string;
   }
@@ -27,13 +28,6 @@
     pr: faCodePullRequest,
     issue: faCircleExclamation,
     other: faStar,
-  };
-
-  const typeLabels = {
-    commit: "COMMIT",
-    pr: "PR",
-    issue: "ISSUE",
-    other: "NEW",
   };
 
   function formatDate(dateStr: string): string {
@@ -97,13 +91,10 @@
           <div class="activity-content">
             <div class="activity-header">
               <a href={item.repoUrl} target="_blank" class="repo-name">{item.repo}</a>
-              <span class="activity-type">{typeLabels[item.type]}</span>
               <span class="activity-date">{formatDate(item.date)}</span>
             </div>
-            {#if item.url}
-              <a href={item.url} target="_blank" class="activity-desc">{item.description}</a>
-            {:else}
-              <span class="activity-desc">{item.description}</span>
+            {#if item.repoDescription}
+              <span class="activity-desc">{item.repoDescription}</span>
             {/if}
           </div>
         </div>

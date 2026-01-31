@@ -21,6 +21,7 @@ interface ActivityItem {
   repo: string;
   repoUrl: string;
   description: string;
+  repoDescription?: string;
   url?: string;
   date: string;
 }
@@ -28,6 +29,7 @@ interface ActivityItem {
 export const GET: RequestHandler = async ({ fetch }) => {
   const username = "organisciak";
   const orgs = ["massivetexts", "neuristics"];
+  const excludedRepos = ["organisciak/porg.dev"];
 
   try {
     const headers: Record<string, string> = {
@@ -68,11 +70,15 @@ export const GET: RequestHandler = async ({ fetch }) => {
     const repoActivity = new Map<string, ActivityItem>();
 
     for (const event of events) {
-      const repoName = event.repo.name.replace(`${username}/`, "");
-      const repoUrl = `https://github.com/${event.repo.name}`;
+      const fullRepoName = event.repo.name;
+      const repoName = fullRepoName.replace(`${username}/`, "");
+      const repoUrl = `https://github.com/${fullRepoName}`;
+
+      // Skip excluded repos
+      if (excludedRepos.includes(fullRepoName)) continue;
 
       // Skip if we already have activity for this repo
-      if (repoActivity.has(repoName)) continue;
+      if (repoActivity.has(fullRepoName)) continue;
 
       let item: ActivityItem | null = null;
 
@@ -142,15 +148,41 @@ export const GET: RequestHandler = async ({ fetch }) => {
       }
 
       if (item) {
-        repoActivity.set(repoName, item);
+        repoActivity.set(fullRepoName, item);
       }
 
       // Limit to 5 unique repos
       if (repoActivity.size >= 5) break;
     }
 
+    // Fetch repo descriptions in parallel
+    const repoDescPromises = Array.from(repoActivity.keys()).map(async (fullRepoName) => {
+      try {
+        const res = await fetch(`https://api.github.com/repos/${fullRepoName}`, { headers });
+        if (res.ok) {
+          const repoData = await res.json();
+          return { fullRepoName, description: repoData.description };
+        }
+      } catch {
+        // Ignore errors fetching repo info
+      }
+      return { fullRepoName, description: null };
+    });
+
+    const repoDescs = await Promise.all(repoDescPromises);
+    const descMap = new Map(repoDescs.map((r) => [r.fullRepoName, r.description]));
+
+    // Add descriptions to activity items
+    const activityWithDescs = Array.from(repoActivity.values()).map((item) => {
+      const fullName = Array.from(repoActivity.entries()).find(([, v]) => v === item)?.[0];
+      if (fullName && descMap.get(fullName)) {
+        return { ...item, repoDescription: descMap.get(fullName) };
+      }
+      return item;
+    });
+
     return json({
-      activity: Array.from(repoActivity.values()),
+      activity: activityWithDescs,
       updated: new Date().toISOString(),
     });
   } catch (error) {

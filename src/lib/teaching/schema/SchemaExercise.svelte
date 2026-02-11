@@ -93,12 +93,13 @@
     <h4 class="mb-1 text-base font-bold text-gray-900 dark:text-gray-100">
       Group Exercise: Describe a Website with Schema.org
     </h4>
-    <ExerciseTimer phases={[{ label: "Pick & annotate", minutes: 8 }, { label: "Compare & discuss", minutes: 5 }]}>
+    <ExerciseTimer phases={[{ label: "Pick & annotate", minutes: 13 }, { label: "Compare & discuss", minutes: 5 }]}>
     <p class="mb-4 text-sm text-gray-700 dark:text-gray-300">
       Pick <strong>2 websites</strong> from the list below. For each, choose a
       <a href="https://schema.org/docs/full.html" target="_blank" rel="noopener noreferrer">schema.org type</a>
       and fill in its properties. Think about: What type best describes this entity? What properties
-      matter most?
+      matter most? <strong>Tip:</strong> open the website in another tab so you can compare what's on the page
+      with the schema.org types and properties available.
     </p>
 
     <div class="mb-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">

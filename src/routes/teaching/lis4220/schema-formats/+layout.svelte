@@ -16,7 +16,7 @@
       Schema, Formats &amp; Data Management Plans
     </h1>
     <p class="text-base text-gray-600 dark:text-gray-400">
-      LIS 4220: Data Curation &middot; Week 5 Activities
+      LIS 4220: Data Curation &middot; Week 6 Activities
     </p>
   </div>
 

@@ -20,6 +20,11 @@ bd show <id>              # View issue details
 bd update <id> --status in_progress  # Claim work
 bd close <id>             # Complete work
 bd sync                   # Sync issues with git
+
+# Media (R2)
+npx wrangler r2 bucket list
+npx wrangler r2 object put porg-media/<key> --file <local-path> --remote
+npx wrangler r2 bucket dev-url get porg-media
 ```
 
 ## Architecture
@@ -69,6 +74,25 @@ Uses shadcn-style components based on **bits-ui** located in `src/lib/components
 
 - `/api/random-color` - Returns random color data
 - `/api/random-word` - Returns random unusual words
+
+### Media Storage (Book Covers)
+
+Book-cover media is stored in Cloudflare R2 and mirrored locally:
+
+- **R2 bucket**: `porg-media`
+- **Public base URL**: `https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev`
+- **Local mirror**: `static/book-covers/2026-youth-media-awards/`
+- **Post using this**: `src/posts/2026-youth-media-awards.svx`
+
+Operational rules:
+
+1. Always upload with `--remote` when using Wrangler object commands.  
+   Without `--remote`, Wrangler writes to local dev storage only.
+2. Keep local copies in `static/` for backup and reproducibility, even when post URLs point to R2.
+3. For Youth Media Awards covers, use:
+   - `scripts/scrape-yma-covers.mjs` for initial scrape
+   - `scripts/backfill-yma-covers.mjs` for fallback recovery of missing covers
+4. After adding/updating covers, verify R2 URLs return `200` before finalizing edits.
 
 ## Session Completion
 

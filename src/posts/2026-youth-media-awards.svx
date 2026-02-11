@@ -21,7 +21,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Bloomsbury Children's Books (Bloomsbury Publishing)",
               "kind": "winner",
               "label": "Medal Winner",
-              "cover": "https://books.google.com/books/content?id=-Y9DEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/Y9DEQAAQBAJ.jpg",
               "description": "When thirteen-year-old Sage's best friend dies, Sage struggles with grief and feels that she is at fault, but when she joins a grief group, she slowly learns to heal."
             },
             {
@@ -31,7 +31,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Allida (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=mmQ4EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/mmQ4EQAAQBAJ.jpg",
               "description": "INSTANT NEW YORK TIMES AND USA TODAY BESTSELLER * INDIE NEXT PICK * FIVE STARRED REVIEWS!"
             },
             {
@@ -41,7 +41,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Roaring Brook Press (Holtzbrinck Publishing)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=6KssEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/6KssEQAAQBAJ.jpg",
               "description": "2025 NATIONAL BOOK AWARD LONGLIST FOR YOUNG PEOPLE'S LITERATURE Based on the true story of Roberto Alvarez and the Lemon Grove Incident, this vivid and uplifting middle grade debut novel in verse about one young child's courage to..."
             },
             {
@@ -51,7 +51,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Arthur A. Levine (Levine Querido)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=xnc4EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/xnc4EQAAQBAJ.jpg",
               "description": "Winner of the National Book Award for Young People's Literature Page-turning WW2 hidden history masterfully told by award winner Daniel Nayeri 1941."
             },
             {
@@ -61,7 +61,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Little, Brown and Company (Hachette Book Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=GoQNEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/GoQNEQAAQBAJ.jpg",
               "description": "This delightfully grim tale is a heartwarming exploration of moving on, perfect for fans of Kate DiCamillo and Tim Burton!"
             }
           ]
@@ -82,7 +82,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Clarion Books (HarperCollins Publishers)",
               "kind": "winner",
               "label": "Medal Winner",
-              "cover": "https://books.google.com/books/content?id=YJon0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/YJon0AEACAAJ.jpg",
               "description": "Fireworks is a sparkling picture book from the award-winning team of Matthew Burgess and Cátia Chien, highlighting the simple delights of a steamy July day in the city as two siblings eagerly anticipate a spectacular fireworks display."
             },
             {
@@ -92,7 +92,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Simon & Schuster Books for Young Readers (Simon & Schuster)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=cH9CEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/cH9CEQAAQBAJ.jpg",
               "description": "Every Monday Mabel takes her breakfast outside and waits for her favorite part of the week: the garbage truck."
             },
             {
@@ -102,7 +102,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Kokila (Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=JyUMEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/JyUMEQAAQBAJ.jpg",
               "description": "A tender and vulnerable exploration of love and loss that follows two boys as they take their first trip back to the lake without their father, from debut author-illustrator Angie Kang."
             },
             {
@@ -112,7 +112,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Atheneum Books for Young Readers (Simon & Schuster)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=YsNHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/YsNHEQAAQBAJ.jpg",
               "description": "Two little mineral piles, Stalactite and Stalagmite, foster a friendship over millions of years as they grow closer together, figuratively and literally."
             },
             {
@@ -122,7 +122,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Kokila (Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=204vEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/204vEQAAQBAJ.jpg",
               "description": "In his striking author-illustrator debut, the award-winning illustrator of My Papi Has a Motorcycle offers an immersive and fantastical desert adventure, where the sun reigns over the vast landscape and shapes all that it touches."
             }
           ]
@@ -143,7 +143,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Little, Brown and Company (Hachette Book Group)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=Z2sHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/Z2sHEQAAQBAJ.jpg",
               "description": "Rhodes deftly captures a unique ­aspect of this historical event, with a perspective that is ­often under-represented in historical ­fiction."
             },
             {
@@ -153,7 +153,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Viking (Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=ueE-EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/ueE-EQAAQBAJ.jpg",
               "description": "Derrick Barnes takes all forms of storytelling available to him­—allegory, folktales, and classics—to weave a novel that is empowered, empowering, and incredibly human."
             },
             {
@@ -163,7 +163,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Carolrhoda Books (Lerner Publishing Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=UGFkEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/UGFkEQAAQBAJ.jpg",
               "description": "After a storm devastates the farm his parents have been renting, Junior moves with his family to Roxboro, North Carolina."
             },
             {
@@ -173,7 +173,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Little, Brown and Company (Hachette Book Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=GLc2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/GLc2EQAAQBAJ.jpg",
               "description": "In this haunting story about family, legacy, and sacrifice, a young Black girl living in a Texas sundown town must find the courage to stand up for what's right even when it means facing impossible choices—perfect for fans of Dear Martin..."
             }
           ]
@@ -188,7 +188,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Carolrhoda Books (Lerner Publishing Group)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=UGFkEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/UGFkEQAAQBAJ.jpg",
               "description": "After a storm devastates the farm his parents have been renting, Junior moves with his family to Roxboro, North Carolina."
             },
             {
@@ -198,7 +198,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Henry Holt and Company (Macmillan Publishing Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://prodimage.images-bn.com/pimages/9781250887283_p0_v1_s600x595.jpg",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/9781250887283_p0_v1_s600x595.jpg",
               "description": "This captivating biography chronicles the remarkable journey of renowned fashion editor and arbiter of style Andre Leon Talley-from humble beginnings in rural North Carolina to the pinnacle of the international world of fashion."
             },
             {
@@ -208,7 +208,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Kokila (Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=hEUTEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/hEUTEQAAQBAJ.jpg",
               "description": "A lyrical picture book from the award-winning author of Heavy, about three Black boys who form a deep connection during a transformative summer trip down South to visit family."
             }
           ]
@@ -223,7 +223,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "G.P. Putnam's Sons (Penguin Random House)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=4_geEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/4_geEQAAQBAJ.jpg",
               "description": "In this sparkling and heartfelt debut YA novel in verse by a Reese's Book Club LitUp fellow, a young Black girl discovers first love, self-worth, and the power of a good skate."
             }
           ]
@@ -244,7 +244,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Heartdrum (HarperCollins Publishers)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=EKszEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/EKszEQAAQBAJ.jpg",
               "description": "Featuring the voices of both new and acclaimed Indigenous writers and edited by bestselling Muscogee author Cynthia Leitich Smith, this collection of interconnected stories serves up laughter, love, Native pride, and the world's best..."
             },
             {
@@ -254,7 +254,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Flux (North Star Editions)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=C2XS0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/C2XS0AEACAAJ.jpg",
               "description": "A teen baseball star who \"has it all\"--looks, wealth, and a pro-MLB father--grapples with an impossible choice: reveal his abuse at the hands of his father and risk being separated from his younger brother in the foster care system, or..."
             },
             {
@@ -264,7 +264,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Feiwel and Friends (Macmillan Children’s Publishing Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=gi76EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/gi76EAAAQBAJ.jpg",
               "description": "Penelope Ross has always felt like a passenger in her mother's fairytale - until the night of her 17th birthday, when she is forced to enter her own. After a text from her estranged mother rips her away from a night with friends, Penny is..."
             },
             {
@@ -274,7 +274,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Henry Holt Books for Young Readers (Macmillan Children’s Publishing Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=H7pEEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/H7pEEQAAQBAJ.jpg",
               "description": "From the instant New York Times bestselling author of Firekeeper's Daughter and Warrior Girl Unearthed comes a daring new mystery about a foster teen claiming her heritage on her own terms."
             },
             {
@@ -284,7 +284,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "First Second (Macmillan Children’s Publishing Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=9SAwEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/9SAwEQAAQBAJ.jpg",
               "description": "FIVE STARRED REVIEWS! A NATIONAL BOOK AWARD LONGLIST SELECTION A Publisher's Weekly Best Book of the Year \"This is essential, illuminating reading.\" —R. J. Palacio, bestselling author of Wonder Fight hate. Make art. In 1943 Amsterdam, Emma..."
             }
           ]
@@ -305,7 +305,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Charlesbridge",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=KaYyEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/KaYyEQAAQBAJ.jpg",
               "description": "A nonfiction picture book biography of astrophysicist Wanda Díaz Merced and how losing her sight didn't stop her from studying the stars."
             },
             {
@@ -315,7 +315,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Clarion Books (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=SlUHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/SlUHEQAAQBAJ.jpg",
               "description": "The bestselling Bat returns! Bat and the Business of Ferrets is the fourth title in National Book Award finalist Elana K. Arnold's heartfelt and widely acclaimed series featuring an unforgettable young boy on the autism spectrum. Bixby..."
             },
             {
@@ -325,7 +325,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Anne Schwartz Books (Random House Children's Books, Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=NRtEEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/NRtEEQAAQBAJ.jpg",
               "description": "In this lyrical picture book illustrated by a two-time Caldecott Medalist, share in a blind child's joyful experience of the changing seasons."
             }
           ]
@@ -340,7 +340,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Farrar, Straus and Giroux Books for Young Readers (Macmillan Publishing Group)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=EI4cEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/EI4cEQAAQBAJ.jpg",
               "description": "For Fans of the I Survived series and The War That Saved My Life, this gripping middle grade novel is set during one of the most dangerous storms in American history."
             },
             {
@@ -350,7 +350,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Nancy Paulsen Books (Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=Z2gQEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/Z2gQEQAAQBAJ.jpg",
               "description": "A deeply moving middle grade novel in verse about a girl struggling with depression when she starts fifth grade amidst a sea of changes."
             },
             {
@@ -360,7 +360,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Quill Tree Books (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=fBANEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/fBANEQAAQBAJ.jpg",
               "description": "From beloved middle grade author Saadia Faruqi comes a poignant exploration of the impact of mental illness on families—and the love and hope that it takes to begin telling a different tale."
             }
           ]
@@ -375,7 +375,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Penguin Workshop (Penguin Random House)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=NEQPEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/NEQPEQAAQBAJ.jpg",
               "description": "5 STARRED REVIEWS \"Lively, interactive...truly eye-opening.\" —Booklist \"A sincere reflection on childhood...growing up in a world not built with him in mind.\" —Publishers Weekly \"A superb middle grade memoir that champions..."
             },
             {
@@ -385,7 +385,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Harper (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=MWY4EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/MWY4EQAAQBAJ.jpg",
               "description": "This is Sonora Reyes at their absolute best.\" — Aiden Thomas, New York Times bestselling author of Cemetery Boys From bestselling author Sonora Reyes comes a poignant and searingly honest companion novel to the multi-award-winning The..."
             },
             {
@@ -395,7 +395,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Wordsong (Astra Books for Young Readers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=5_UNEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/5_UNEQAAQBAJ.jpg",
               "description": "This beautifully crafted novel sings and soars.\" —Nikki Grimes, author of Ordinary Hazards Dylan seeks solace through birdwatching and poetry in the woods behind his grandfather's auto shop—but when he rescues an injured hawk, he must..."
             }
           ]
@@ -416,7 +416,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Random House (Penguin Random House)",
               "kind": "winner",
               "label": "Alex Award",
-              "cover": "https://books.google.com/books/content?id=5wwCEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/5wwCEQAAQBAJ.jpg",
               "description": "To the world, they were a scandal. To each other, an obsession. NATIONAL BESTSELLER • An epic love story set in the sparkling, savage sphere of elite figure skating, starring a woman determined to carve her own path on and off the ice—now..."
             },
             {
@@ -426,7 +426,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Alfred A. Knopf (Penguin Random House)",
               "kind": "winner",
               "label": "Alex Award",
-              "cover": "https://books.google.com/books/content?id=7Ow2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/7Ow2EQAAQBAJ.jpg",
               "description": "From the author of Oprah's Book Club pick and New York Times best seller Nightcrawling, here is an astonishing new novel about the joys and entanglements of a fierce group of teenage mothers in a small town on the Florida panhandle."
             },
             {
@@ -436,7 +436,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Gallery Books (Simon & Schuster)",
               "kind": "winner",
               "label": "Alex Award",
-              "cover": "https://books.google.com/books/content?id=kOAPEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/kOAPEQAAQBAJ.jpg",
               "description": "In an age where the greatest heroes from history have magically returned to help save the world, Harriet Tubman returns to create a hip-hop album with a fallen producer, forging powerful music that inspires a divided nation."
             },
             {
@@ -446,7 +446,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Doubleday (Penguin Random House)",
               "kind": "winner",
               "label": "Alex Award",
-              "cover": "https://books.google.com/books/content?id=vU1PEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/vU1PEQAAQBAJ.jpg",
               "description": "A gripping sci-fi thriller—and Native American First Contact story—from the New York Times bestselling author of Robopocalypse, Daniel Wilson, who is a Cherokee Nation citizen and works as a threat forecaster for NASA."
             },
             {
@@ -456,7 +456,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "W.W. Norton & Company",
               "kind": "winner",
               "label": "Alex Award",
-              "cover": "https://books.google.com/books/content?id=b7spEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/b7spEQAAQBAJ.jpg",
               "description": "Award-winning cartoonist Peter Kuper transports readers through the 400-million-year history of insects and the remarkable entomologists who have studied them."
             },
             {
@@ -466,7 +466,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Hub City Press",
               "kind": "winner",
               "label": "Alex Award",
-              "cover": "https://books.google.com/books/content?id=CWjK0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/CWjK0AEACAAJ.jpg",
               "description": "You wish to never see a plum again in your life... You think: When I am an adult, I will never have a fruit tree. I will never be like this.\" For fans of Sarah Rose Etter and Scott McClanahan, Plum is a darkly beautiful, unflinching novel..."
             },
             {
@@ -476,7 +476,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "HarperOne (HarperCollins Publishers)",
               "kind": "winner",
               "label": "Alex Award",
-              "cover": "https://books.google.com/books/content?id=3V0pEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/3V0pEQAAQBAJ.jpg",
               "description": "Nearly 15 million girls, including many in the U.S., are forced into marriage each year."
             },
             {
@@ -486,7 +486,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Random House (Penguin Random House)",
               "kind": "winner",
               "label": "Alex Award",
-              "cover": "https://books.google.com/books/content?id=_dk5EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/_dk5EQAAQBAJ.jpg",
               "description": "From the \"razor-sharp and outrageously funny\" (Taylor Jenkins Reid) mind of Mia McKenzie comes a vibrant novel exploring how one weekend can change your whole life."
             },
             {
@@ -496,7 +496,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Random House (Penguin Random House)",
               "kind": "winner",
               "label": "Alex Award",
-              "cover": "https://books.google.com/books/content?id=VGgwEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/VGgwEQAAQBAJ.jpg",
               "description": "A teenage girl breaks free from her father's world of isolation to discover that her whole life is a lie in this \"absorbing and well-crafted\" (The Washington Post) novel from the New York Times bestselling author of Pretty Things and Watch..."
             },
             {
@@ -506,7 +506,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Doubleday (Penguin Random House)",
               "kind": "winner",
               "label": "Alex Award",
-              "cover": "https://books.google.com/books/content?id=oOgjEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/oOgjEQAAQBAJ.jpg",
               "description": "Rikki Thunder, twenty-two-year-old drummer for the scorching new '80s metal band Whyte Python, is about to have it all: absurd wealth, global fame, and a dream girlfriend."
             }
           ]
@@ -527,7 +527,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Tapioca Stories",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=dl0_0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/dl0_0QEACAAJ.jpg",
               "description": "In a vibrant tropical jungle, Croco the Crocodile has fallen into a hole and can't climb out."
             },
             {
@@ -537,7 +537,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Enchanted Lion Books",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=im0a0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/im0a0QEACAAJ.jpg",
               "description": "In this enchantingly whimsical, darkly comic tale from Gianni Rodari (Italy's Roald Dahl), an unlikely hero--none other than a young onion!--takes up the fight against the tyrannical Prince Lemon, with wit and heart."
             },
             {
@@ -547,7 +547,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Yen Press",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=I5ZKEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/I5ZKEQAAQBAJ.jpg",
               "description": "Meet Memen, the calm and collected older sister, and Mori, the curious younger brother."
             },
             {
@@ -557,7 +557,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Charlesbridge",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=8P4qEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/8P4qEQAAQBAJ.jpg",
               "description": "Working in a Chinese tea garden is hard work, but it's rewarding when it's done with family!"
             },
             {
@@ -567,7 +567,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Em Querido (Levine Querido)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=dxZEEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/dxZEEQAAQBAJ.jpg",
               "description": "For fans of Duncan Tonatiuh and Yuyi Morales' Dreamers, a one-of-a-kind picture book about one immigrant family's journey north, illustrated in the vein of an ancient codex and drawing upon Mesoamerican mythology."
             }
           ]
@@ -588,7 +588,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Live Oak Media",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=Y5ThEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/Y5ThEAAAQBAJ.jpg",
               "description": "Vann, a struggling stickball player, competes in a game on the Cherokee Nation."
             }
           ]
@@ -603,7 +603,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Listening Library (Penguin Random House Audio)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=BMfb0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/BMfb0AEACAAJ.jpg",
               "description": "An essential introduction to trans history, from ancient times to the present day, in full-color graphic nonfiction format."
             }
           ]
@@ -618,7 +618,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Scholastic Audio",
               "kind": "honor",
               "label": "Honor Audiobook",
-              "cover": "https://books.google.com/books/content?id=1tJEEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/1tJEEQAAQBAJ.jpg",
               "description": "A heart-pounding thriller told in a mix of narrative voices and found documents from the bestselling author of The Honeys, perfect for fans of Tiffany D."
             },
             {
@@ -628,7 +628,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Heartdrum (HarperCollins Audio)",
               "kind": "honor",
               "label": "Honor Audiobook",
-              "cover": "https://books.google.com/books/content?id=EKszEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/EKszEQAAQBAJ.jpg",
               "description": "Featuring the voices of both new and acclaimed Indigenous writers and edited by bestselling Muscogee author Cynthia Leitich Smith, this collection of interconnected stories serves up laughter, love, Native pride, and the world's best..."
             },
             {
@@ -638,7 +638,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Listening Library (Penguin Random House Audio)",
               "kind": "honor",
               "label": "Honor Audiobook",
-              "cover": "https://books.google.com/books/content?id=lkGWEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/lkGWEQAAQBAJ.jpg",
               "description": "From the #1 New York Times bestselling author of Long Way Down comes a powerful print adaptation of the acclaimed, award-winning audiobook Soundtrack—a stirring story of music, friendship, and finding your voice in 2000s New York City."
             },
             {
@@ -648,7 +648,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Listening Library (Penguin Random House Audio)",
               "kind": "honor",
               "label": "Honor Audiobook",
-              "cover": "https://books.google.com/books/content?id=NEQPEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/NEQPEQAAQBAJ.jpg",
               "description": "5 STARRED REVIEWS \"Lively, interactive...truly eye-opening.\" —Booklist \"A sincere reflection on childhood...growing up in a world not built with him in mind.\" —Publishers Weekly \"A superb middle grade memoir that champions..."
             }
           ]
@@ -669,7 +669,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Charlesbridge",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=VaYyEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/VaYyEQAAQBAJ.jpg",
               "description": "An emotionally resonant and visually stirring picture book about life, death, and celebrating those we love."
             },
             {
@@ -679,7 +679,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Arthur A. Levine (Levine Querido)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=7-Tw0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/7-Tw0AEACAAJ.jpg",
               "description": "Chocolatl and Axolotl Guacamole and Quetzacoatl. Open up this treasury Aztec words-- from A to Z! From singular artist Emmanuel Valtierra comes a spectacular introduction to twenty-six words, concepts, and gods central to Aztec and Mexican..."
             },
             {
@@ -689,7 +689,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Little, Brown and Company (Hachette Book Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=6AREEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/6AREEQAAQBAJ.jpg",
               "description": "The picture book debut from #1 New York Times bestselling author Leigh Bardugo and World Fantasy Award winner John Picacio."
             }
           ]
@@ -704,7 +704,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Carolrhoda Books (Lerner Publishing Group)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=wXs2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/wXs2EQAAQBAJ.jpg",
               "description": "In 1930s San Antonio, thirteen-year-old Petra dreams of going to college and becoming a writer."
             },
             {
@@ -714,7 +714,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Kokila (Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=T0oYEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/T0oYEQAAQBAJ.jpg",
               "description": "A New York Times bestseller! Reality proves more epic than fantasy in this family road trip story starring a reluctant young hero and his curmudgeonly grandfather. Gonzalo Alberto Sánchez García has never considered himself the hero of his..."
             },
             {
@@ -724,7 +724,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Sourcebooks Young Readers (Sourcebooks Kids)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=RkkqEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/RkkqEQAAQBAJ.jpg",
               "description": "From the author of Time Villains comes a new fantastical adventure about family, tradition, and seeing things for what they truly are."
             },
             {
@@ -734,7 +734,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Roaring Brook Press (Holtzbrinck Publishing)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=6KssEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/6KssEQAAQBAJ.jpg",
               "description": "2025 NATIONAL BOOK AWARD LONGLIST FOR YOUNG PEOPLE'S LITERATURE Based on the true story of Roberto Alvarez and the Lemon Grove Incident, this vivid and uplifting middle grade debut novel in verse about one young child's courage to..."
             }
           ]
@@ -749,7 +749,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Alfred A. Knopf (Random House Children's Books, Penguin Random House)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=hOoQEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/hOoQEQAAQBAJ.jpg",
               "description": "Noche is a Lechuza by night, an ethereal jet-black owl who guides the dead to the after."
             },
             {
@@ -759,7 +759,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Viking (Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=cFcvEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/cFcvEQAAQBAJ.jpg",
               "description": "In this Romeo and Juliet-inspired retelling set during the civil rights era, a Mexican American girl is driven to join a movement for justice after her white classmate and best friend from the barrio are tragically murdered."
             },
             {
@@ -769,7 +769,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "HarperAlley (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=lzQ1EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/lzQ1EQAAQBAJ.jpg",
               "description": "In this moving intergenerational tale perfect for fans of Messy Roots and Illegal, Eisner-nominated creator Pablo Leon combines historical research of the Guatemalan Civil War with his own experiences as a Guatemalan immigrant to depict a..."
             },
             {
@@ -779,7 +779,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Dial Books (Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=vrxKEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/vrxKEQAAQBAJ.jpg",
               "description": "The Pura Belpré Honor Award winning author of Aniana del Mar Jumps In makes her YA debut with a powerful novel-in-verse about a Texas teen who is battling racism in her theatre program and book banning efforts by her town's school board."
             }
           ]
@@ -800,7 +800,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Roaring Brook Press (Holtzbrinck Publishing)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=STJDEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/STJDEQAAQBAJ.jpg",
               "description": "What can a potato do? To Peruvian scientist Alberto Salas, they have the power to change the world. Go on the hunt with Alberto for for wild potatoes before they go extinct in this playful picture book biography, gorgeously illustrated by..."
             },
             {
@@ -810,7 +810,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Greenwillow Books (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=61AYEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/61AYEQAAQBAJ.jpg",
               "description": "A courageous, uplifting biography of a woman almost lost to history.\" –ALA Booklist World War II spy, Filipino guerrilla fighter, war hero, Medal of Freedom recipient, leprosy survivor, teacher, peacemaker ."
             },
             {
@@ -820,7 +820,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Little, Brown and Company (Hachette Book Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=Y8sW0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/Y8sW0AEACAAJ.jpg",
               "description": "A boy who loves stories grows into a teenager who escapes into his writing and then a young man who plays his typewriter like a piano to show the fullness of Black life, in this lyrical picture book biography of James Baldwin, the..."
             },
             {
@@ -830,7 +830,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Kokila (Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=AgFzEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/AgFzEQAAQBAJ.jpg",
               "description": "A rich and beautifully told history of humanity...Sublime.\" Joseph Coelho What did \"the beginning\" look like?"
             },
             {
@@ -840,7 +840,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "HarperAlley (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=lzQ1EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/lzQ1EQAAQBAJ.jpg",
               "description": "In this moving intergenerational tale perfect for fans of Messy Roots and Illegal, Eisner-nominated creator Pablo Leon combines historical research of the Guatemalan Civil War with his own experiences as a Guatemalan immigrant to depict a..."
             },
             {
@@ -850,7 +850,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Random House Studio (Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=JNpAEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/JNpAEQAAQBAJ.jpg",
               "description": "The true story of how a massive catastrophic eruption plunged the world into darkness, altering the global climate and inspiring the likes of Mary Shelley's Frankenstein—from the award-winning author of The Mona Lisa Vanishes and featuring..."
             }
           ]
@@ -871,7 +871,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "RH Graphic (Random House Children's Books, Penguin Random House)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=ywoNEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/ywoNEQAAQBAJ.jpg",
               "description": "New school, new country, but only half a family?! Embark on a coming of age journey with a middle school teen navigating their parent's divorce while moving to a new country in this stunning graphic novel. Ave thought moving to Kansas..."
             },
             {
@@ -881,7 +881,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Kids Can Press",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=bxF0EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/bxF0EQAAQBAJ.jpg",
               "description": "A child shares feelings about their identity with their dad in this powerful journey of self-discovery."
             },
             {
@@ -891,7 +891,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Little, Brown and Company (Hachette Book Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=Kmo8EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/Kmo8EQAAQBAJ.jpg",
               "description": "For fans of Amari and the Night Brothers and The Okay Witch comes a hilarious and affirming cozy fantasy about the adventures of a girl who discovers she is the descendant of a powerful witch coven."
             },
             {
@@ -901,7 +901,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Feiwel and Friends (Macmillan Publishing Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=ZwYAEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/ZwYAEQAAQBAJ.jpg",
               "description": "AN INDIE'S INTRODUCE PICK! In this modern take on Are You There God? It's Me, Margaret, debut writer Jess Callans delivers a tender, queer coming of age story about finding your voice and choosing to live authentically, even when it's..."
             },
             {
@@ -911,7 +911,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Beach Lane Books (Simon & Schuster)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=NlQUEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/NlQUEQAAQBAJ.jpg",
               "description": "This inspiring and enriching picture book biography explores the life and work of beloved poet Mary Oliver in its own uniquely lyrical way, shining a light on Mary's belief that there are treasures and poems all around us in nature waiting..."
             }
           ]
@@ -926,7 +926,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Arthur A. Levine (Levine Querido)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=nCUXEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/nCUXEQAAQBAJ.jpg",
               "description": "A New York Times Bestseller Grace Woodhouse was the star kicker with a D1 future, but that was before she came out as transgender and quit football."
             },
             {
@@ -936,7 +936,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Bloomsbury YA (Bloomsbury Publishing)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=J-E5EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/J-E5EQAAQBAJ.jpg",
               "description": "Our Flag Means Death meets The Gentleman's Guide to Vice and Virtue in this YA historical fantasy about three queer teens and their found family of queer pirates facing down a secret magical society."
             },
             {
@@ -946,7 +946,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Little, Brown and Company (Hachette Book Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=1oZDEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/1oZDEQAAQBAJ.jpg",
               "description": "Jennifer's Body meets Heartstopper in this terrifying, tender, and bitingly hilarious supernatural horror about a boy who must save his best friend from a demon that wants to steal his heart—literally."
             },
             {
@@ -956,7 +956,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Random House Studio (Random House Children's Books, Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=sskpEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/sskpEQAAQBAJ.jpg",
               "description": "In this riveting YA non-fiction set against the backdrop of the Great Depression, trace Lorena Hickok--or Hick's-- rise from devastating childhood to renowned journalist, and watch as she forms the most significant friendship and romantic..."
             },
             {
@@ -966,7 +966,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Carolrhoda Lab (Lerner Publishing Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=tXs2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/tXs2EQAAQBAJ.jpg",
               "description": "Eighteen-year-old Holiday needs to sort her life out. She's still shaken from her brother's recent suicide attempt; still pining over her ex, Maya; and still struggling to write again after a long dry spell. To earn enough money for a..."
             }
           ]
@@ -987,7 +987,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Simon Spotlight (Simon & Schuster)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=vy03EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/vy03EQAAQBAJ.jpg",
               "description": "Tired of mopping slop, this Mop wants to run away, and challenges anyone who wants to stop it."
             },
             {
@@ -997,7 +997,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Alfred A. Knopf (Random House Children's Books, Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=eJQREQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/eJQREQAAQBAJ.jpg",
               "description": "This sweet, giggle-inducing early reader kicks off a brand-new series featuring two unlikely friends in the tradition of Frog and Toad, from the beloved Geisel Award-winning author of The Watermelon Seed."
             },
             {
@@ -1007,7 +1007,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Holiday House",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=lgWx0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/lgWx0QEACAAJ.jpg",
               "description": "A close game of basketball played by a diverse group of first and second graders is full of suspense, joy--and good sportsmanship too\"--"
             },
             {
@@ -1017,7 +1017,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Simon Spotlight (Simon & Schuster)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=7xtoEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/7xtoEQAAQBAJ.jpg",
               "description": "A penguin in a hardhat digs in a tunnel, popping up in different places, visiting a gardener, a farmer, a banker and others until he and everybody along the way reach a surprise ending."
             }
           ]
@@ -1038,7 +1038,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Atheneum Books for Young Readers (Simon & Schuster)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=ZBMMEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/ZBMMEQAAQBAJ.jpg",
               "description": "A Black, autistic teen tries to figure out what happened the night his older brother was unjustly arrested in this \"propulsive\" (Jas Hammonds, award-winning author of We Deserve Monuments), moving story about brotherhood, identity, and..."
             },
             {
@@ -1048,7 +1048,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Penguin Workshop (Penguin Random House)",
               "kind": "honor",
               "label": "Finalist",
-              "cover": "https://books.google.com/books/content?id=FOhjEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/FOhjEQAAQBAJ.jpg",
               "description": "A swoon-worthy romantic dramedy about finding love and reconnecting with your culture in the most surprising ways—now in paperback."
             },
             {
@@ -1058,7 +1058,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "First Second (Roaring Brook Press, Holtzbrinck Publishing)",
               "kind": "honor",
               "label": "Finalist",
-              "cover": "https://books.google.com/books/content?id=iIxVEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/iIxVEQAAQBAJ.jpg",
               "description": "In this stunning YA adventure, debut author Askel Aden weaves a story of family schism and reconciliation that effortlessly enriches the complex dynamics of mother and child."
             },
             {
@@ -1068,7 +1068,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "DCB Young Readers (Cormorant Books Inc.)",
               "kind": "honor",
               "label": "Finalist",
-              "cover": "https://books.google.com/books/content?id=mZeHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/mZeHEQAAQBAJ.jpg",
               "description": "Straight A student, talented artist, swim team star — tenth-grader Lexie Moore is a shoo-in for Sunridge High's prestigious fine art program, if only she can find the right words to tell her dad she wants to apply."
             },
             {
@@ -1078,7 +1078,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Henry Holt Books for Young Readers (Macmillan Children’s Publishing Group)",
               "kind": "honor",
               "label": "Finalist",
-              "cover": "https://books.google.com/books/content?id=j5tSEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/j5tSEQAAQBAJ.jpg",
               "description": "I fell so hard for Chris and Alicia and all of the stupidly teenage and deeply human choices that lead them into a pocket dimension of space-time."
             }
           ]
@@ -1099,7 +1099,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Anne Schwartz Books (Random House Children's Books, Penguin Random House)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=Is0WEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/Is0WEQAAQBAJ.jpg",
               "description": "How did Jim Jones, the leader of Peoples Temple, convince more than 900 of his followers to commit \"revolutionary suicide\" by drinking cyanide-laced punch?"
             },
             {
@@ -1109,7 +1109,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Calkins Creek (Astra Books for Young Readers)",
               "kind": "honor",
               "label": "Finalist",
-              "cover": "https://books.google.com/books/content?id=JxTwk5JVTvkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/JxTwk5JVTvkC.jpg",
               "description": "Barbara Weisberg's Talking to the Dead blends biography and social history in this revelatory story of the family responsible for the rise of Spiritualism."
             },
             {
@@ -1119,7 +1119,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Calkins Creek (Astra Books for Young Readers)",
               "kind": "honor",
               "label": "Finalist",
-              "cover": "https://books.google.com/books/content?id=CD46EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/CD46EQAAQBAJ.jpg",
               "description": "A School Library Journal Best Book Chicago Public Library Best of the Best List 2025 Here are the shocking, yet true, stories of presidential medical cover-ups from the 19th to the 21st century—the latest thrilling title in award-winning..."
             },
             {
@@ -1129,7 +1129,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Roaring Brook Press (Macmillan Children’s Publishing Group)",
               "kind": "honor",
               "label": "Finalist",
-              "cover": "https://books.google.com/books/content?id=aQv2EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/aQv2EAAAQBAJ.jpg",
               "description": "This powerful and unflinching examination of racism in America by award-winning historian Ann Bausum deconstructs the warped history of the Civil War, perfect for fans of STAMPED FROM THE BEGINNING and JUST MERCY. Warning: This is not your..."
             },
             {
@@ -1139,7 +1139,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Random House Studio (Random House Children's Books, Penguin Random House)",
               "kind": "honor",
               "label": "Finalist",
-              "cover": "https://books.google.com/books/content?id=JNpAEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/JNpAEQAAQBAJ.jpg",
               "description": "The true story of how a massive catastrophic eruption plunged the world into darkness, altering the global climate and inspiring the likes of Mary Shelley's Frankenstein—from the award-winning author of The Mona Lisa Vanishes and featuring..."
             }
           ]
@@ -1160,7 +1160,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Arthur A. Levine (Levine Querido)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=8qj0EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/8qj0EAAAQBAJ.jpg",
               "description": "A Cherokee girl introduces her younger brother to their family's traditions — begrudgingly!"
             },
             {
@@ -1170,7 +1170,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Orchard Books (Scholastic Inc.)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=KHkyEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/KHkyEQAAQBAJ.jpg",
               "description": "A stunning, poetic debut picture book from Pasha Westbrook about honoring one's roots and the unbreakable bond of familial love, brought to life with enchanting illustrations by Madelyn Goodnight."
             },
             {
@@ -1180,7 +1180,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Simon & Schuster Books for Young Readers (Simon & Schuster)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=lV1PEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/lV1PEQAAQBAJ.jpg",
               "description": "Celebrates aunts, related by birth or not, who surround children with unyielding love and support."
             },
             {
@@ -1190,7 +1190,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Norton Young Readers (W.W. Norton & Company)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=8xNJKjjcY9wC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/8xNJKjjcY9wC.jpg",
               "description": "Celebrates a young girl's transitions through birth, childhood, and young adulthood, with advice on remaining connected to loved ones and nature."
             },
             {
@@ -1200,7 +1200,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Little, Brown and Company (Hachette Book Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=VhcI0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/VhcI0QEACAAJ.jpg",
               "description": "A joyous celebration of gender expression through an Indigenous lens, by New York Times bestselling author Tasha Spillett and Ojibwe elder Daniel Ramirez"
             },
             {
@@ -1210,7 +1210,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "South of Sunrise Creative",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=N9UK0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/N9UK0QEACAAJ.jpg",
               "description": "We Weave is an intergenerational tale about a Navajo boy and his grandmother using their creativity to purchase a computer when schools transition to digital learning."
             }
           ]
@@ -1225,7 +1225,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Nancy Paulsen Books (Penguin Random House)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=-zTyEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/zTyEAAAQBAJ.jpg",
               "description": "NATIONAL BOOK AWARD FINALIST An illuminating novel about the importance of reclaiming the past, based on the author's family history Summer and her family always spend relaxed summers in Alberta, Canada, on the reservation where her mom's..."
             },
             {
@@ -1235,7 +1235,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Heartdrum (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=U2U4EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/U2U4EQAAQBAJ.jpg",
               "description": "There's no \"brave\" without \"afraid\"! Jo Jo is back to face her fears, in her own special way, in the fifth book in the beloved Jo Jo Makoons chapter book series. Spunky Ojibwe first-grader Jo Jo Makoons knows a lot about bravery and..."
             },
             {
@@ -1245,7 +1245,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Orca Book Publishers",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=qbeW0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/qbeW0AEACAAJ.jpg",
               "description": "This graphic novel for middle-grade readers tells the true story of how a young Indigenous girl survived nine days after getting lost during a snowstorm in northern Canada."
             },
             {
@@ -1255,7 +1255,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Scholastic Inc.",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=ynsWEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/ynsWEQAAQBAJ.jpg",
               "description": "From the author of Hedge Over Heels comes another irresistible story featuring family, friendship, and an adorable baby fox!"
             },
             {
@@ -1265,7 +1265,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Heartdrum (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=SJLS0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/SJLS0AEACAAJ.jpg",
               "description": "With lyrical verse and powerful emotion, Dawn Quigley (Ojibwe) tells the story of urban Native kids who find strength in connection with those who came before and in the hope that lets them take flight. Ariel and Tomah have lived in the..."
             },
             {
@@ -1275,7 +1275,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Graphix (Scholastic Inc.)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=v9blEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/v9blEAAAQBAJ.jpg",
               "description": "A joyful coming-of-age middle-grade graphic novel by debut Indigenous creator Cameron Mukwa about the journey of a two-spirit kid who wants to create a ribbon skirt for the upcoming powwow."
             },
             {
@@ -1285,7 +1285,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Amulet Books (Abrams Books for Young Readers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=ZVYaEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/ZVYaEQAAQBAJ.jpg",
               "description": "A Lakota child spends a summer with grandparents at their home on the Rosebud Reservation in this young chapter book, illustrated in full-color This charming chapter book follows a present-day Lakota child connecting with extended family,..."
             }
           ]
@@ -1300,7 +1300,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Heartdrum (HarperCollins Publishers)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=EKszEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/EKszEQAAQBAJ.jpg",
               "description": "Featuring the voices of both new and acclaimed Indigenous writers and edited by bestselling Muscogee author Cynthia Leitich Smith, this collection of interconnected stories serves up laughter, love, Native pride, and the world's best..."
             },
             {
@@ -1310,7 +1310,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Levine Querido",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=LwbTEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/LwbTEAAAQBAJ.jpg",
               "description": "BOOKPAGE MOST ANTICIPATED YA OF 2024 Shane works with her mother and their ghost dogs, tracking down missing persons even when their families can't afford to pay."
             },
             {
@@ -1320,7 +1320,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Henry Holt Books for Young Readers (Macmillan Children’s Publishing Group)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=H7pEEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/H7pEEQAAQBAJ.jpg",
               "description": "From the instant New York Times bestselling author of Firekeeper's Daughter and Warrior Girl Unearthed comes a daring new mystery about a foster teen claiming her heritage on her own terms."
             },
             {
@@ -1330,7 +1330,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Wacky Productions Unlimited",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=AtrfxQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/AtrfxQEACAAJ.jpg",
               "description": "The continuing comic adventures of reservation sensation Super Indian."
             },
             {
@@ -1340,7 +1340,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Heartdrum (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=JgnvEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/JgnvEAAAQBAJ.jpg",
               "description": "In her stunning debut, Cheryl Isaacs (Mohawk) pulls the reader into an unsettling tale of monsters, mystery, and secrets that refuse to stay submerged."
             },
             {
@@ -1350,7 +1350,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Levine Querido",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=MHnaEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/MHnaEAAAQBAJ.jpg",
               "description": "Best of the Year: NYPL - Chicago Public Library - American Indians in Children's Literature - CCBC Ezra Cloud hates living in Northeast Minneapolis."
             }
           ]
@@ -1371,7 +1371,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Millbrook Press (Lerner Publishing Group)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=k3w2EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/k3w2EQAAQBAJ.jpg",
               "description": "In the middle of the great Pacific Ocean is a little island."
             },
             {
@@ -1381,7 +1381,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Hardie Grant Children's Publishing",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=5UwvEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/5UwvEQAAQBAJ.jpg",
               "description": "Filo's Butterflies is a charming picture book about how a young Samoan boy calms his nerves before his first siva performance at a family wedding."
             },
             {
@@ -1391,7 +1391,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Hardie Grant Children's Publishing",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=-aqr0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/aqr0AEACAAJ.jpg",
               "description": "Every year in October, Sina and her family celebrate White Sunday."
             }
           ]
@@ -1406,7 +1406,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Random House Studio (Penguin Random House)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=dj4HEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/dj4HEQAAQBAJ.jpg",
               "description": "In this poignant picture book about family and belonging, the child of a Jewish mother and a South Asian father hears stories about her family history."
             },
             {
@@ -1416,7 +1416,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Abrams Books for Young Readers",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=e1YaEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/e1YaEQAAQBAJ.jpg",
               "description": "In this poignant debut picture book from authors and farmers Nikiko Masumoto and David Mas Masumoto, with illustrations by award-winning artist Lauren Tamaki, little Midori discovers that every peach on her Japanese American family's farm..."
             },
             {
@@ -1426,7 +1426,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Kokila (Penguin Random House)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=K1IPEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/K1IPEQAAQBAJ.jpg",
               "description": "A new picture book from Simran Jeet Singh, A Vaisakhi to Remember celebrates community and heritage as a young girl looks for points of connection in a new country through the joyous Sikh spring harvest holiday of Vaisakhi."
             }
           ]
@@ -1441,7 +1441,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Scholastic Press (Scholastic Inc.)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=2Q7OEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/2Q7OEAAAQBAJ.jpg",
               "description": "A chilling middle grade novel about a girl haunted by a hungry ghost."
             },
             {
@@ -1451,7 +1451,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Quill Tree Books (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=zEkUEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/zEkUEQAAQBAJ.jpg",
               "description": "Better Nate Than Ever meets Dumplin' in this charming, poignant debut by Kyle Casey Chu, aka Panda Dulce, a founding queen of Drag Story Hour."
             },
             {
@@ -1461,7 +1461,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Graphix (Scholastic Inc.)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=RTnk0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/RTnk0AEACAAJ.jpg",
               "description": "Ollie Herisson's dad is a diplomat, which means her family moves around a lot."
             }
           ]
@@ -1476,7 +1476,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Carolrhoda Lab (Lerner Publishing Group)",
               "kind": "winner",
               "label": "Winner",
-              "cover": "https://books.google.com/books/content?id=zE1kEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/zE1kEQAAQBAJ.jpg",
               "description": "Los Angeles, 1924 Sixteen-year-old Ruby Chan considers herself a modern, independent American girl."
             },
             {
@@ -1486,7 +1486,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "HarperAlley (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Honor Book",
-              "cover": "https://books.google.com/books/content?id=mFIbEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/mFIbEQAAQBAJ.jpg",
               "description": "From Stonewall Honor–winning writer SJ Sindu, author of Shakti, and celebrated illustrator Dion MBD comes a powerful coming-of-age teen graphic novel that follows one girl's journey to Sri Lanka to reconnect with her long-lost mother..."
             }
           ]
@@ -1507,7 +1507,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Rise x Penguin Workshop (Penguin Random House)",
               "kind": "winner",
               "label": "Gold Medalist",
-              "cover": "https://books.google.com/books/content?id=xFgHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/xFgHEQAAQBAJ.jpg",
               "description": "The second book in a stylish, current, and multi-faceted series of Jewish-themed casebound board books for curious young readers."
             },
             {
@@ -1517,7 +1517,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Clarion Books (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Silver Medalist",
-              "cover": "https://books.google.com/books/content?id=HTEI0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/HTEI0QEACAAJ.jpg",
               "description": "From Sydney Taylor Award winner and National Jewish Book Award honoree Laurel Snyder comes a warm, reverential, lyrical, and fresh read-aloud picture book about Hanukkah, perfect for the modern family."
             },
             {
@@ -1527,7 +1527,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Simon & Schuster Books for Young Readers (Simon & Schuster)",
               "kind": "honor",
               "label": "Silver Medalist",
-              "cover": "https://books.google.com/books/content?id=9hIMEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/9hIMEQAAQBAJ.jpg",
               "description": "Three starred reviews! In this \"poignant\" (Booklist, starred review) and uplifting true story of community, a neighborhood comes together in the wake of a library fire to save the stories within, offering a timely reminder of the essential..."
             },
             {
@@ -1537,7 +1537,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Apples & Honey Press (Behrman House)",
               "kind": "honor",
               "label": "Silver Medalist",
-              "cover": "https://books.google.com/books/content?id=wu4O0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/wu4O0QEACAAJ.jpg",
               "description": "My Body Can showcases all the different talents bodies have throughout the year."
             }
           ]
@@ -1552,7 +1552,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Candlewick Press",
               "kind": "winner",
               "label": "Gold Medalist",
-              "cover": "https://books.google.com/books/content?id=Eyc3EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/Eyc3EQAAQBAJ.jpg",
               "description": "A mesmerizing meditation on family, forgiveness, and the freedom to be found in embracing one's truest self.\" —Booklist (starred review) A bullied girl who communicates with ghosts finds her inner strength in this haunting novel in verse..."
             },
             {
@@ -1562,7 +1562,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Arthur A. Levine (Levine Querido)",
               "kind": "honor",
               "label": "Silver Medalist",
-              "cover": "https://books.google.com/books/content?id=UiUXEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/UiUXEQAAQBAJ.jpg",
               "description": "In a Beinoni time there should be no war, no terrible illness, no crime."
             }
           ]
@@ -1577,7 +1577,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "Arthur A. Levine (Levine Querido)",
               "kind": "winner",
               "label": "Gold Medalist",
-              "cover": "https://books.google.com/books/content?id=oXc4EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/oXc4EQAAQBAJ.jpg",
               "description": "A fresh new voice, Abby White delivers the perfect dose of humor and heartbreak with her debut D.J."
             },
             {
@@ -1587,7 +1587,7 @@ description: 'A book-by-book roundup of the 2026 ALA Youth Media Award winners w
               "publisher": "HarperCollins Children's Books (HarperCollins Publishers)",
               "kind": "honor",
               "label": "Silver Medalist",
-              "cover": "https://books.google.com/books/content?id=wBAJEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "cover": "https://pub-d2b2f43205f749fd91a04de32f92245d.r2.dev/book-covers/2026-youth-media-awards/wBAJEQAAQBAJ.jpg",
               "description": "Part historical mystery, part sweeping romance, The Rebel Girls of Rome brings the stories of two young women to brilliant life: Lilah, a college student looking to understand her grandfather's mysterious past, and Bruna, a queer Jewish..."
             }
           ]

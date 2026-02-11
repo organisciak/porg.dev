@@ -1,6 +1,7 @@
 <script lang="ts">
   import { hideStandardHeader } from "$lib/stores/headerVisibility";
   import { onMount, onDestroy } from "svelte";
+  import ProfessorQuestions from "$lib/teaching/ProfessorQuestions.svelte";
 
   let { children } = $props();
 
@@ -26,6 +27,8 @@
   </header>
   {@render children()}
 </div>
+
+<ProfessorQuestions />
 
 <style>
   :global(.teaching-layout a) {

@@ -1,4 +1,23 @@
 <script lang="ts">
+  const STORAGE_KEY = "lis4220-dmp-scaffold";
+
+  function loadState<T>(key: string, fallback: T): T {
+    if (typeof localStorage === "undefined") return fallback;
+    try {
+      const raw = localStorage.getItem(`${STORAGE_KEY}-${key}`);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch {
+      return fallback;
+    }
+  }
+
+  function saveState(key: string, value: unknown) {
+    if (typeof localStorage === "undefined") return;
+    try {
+      localStorage.setItem(`${STORAGE_KEY}-${key}`, JSON.stringify(value));
+    } catch { /* quota exceeded */ }
+  }
+
   const rules = [
     {
       num: 1,
@@ -52,9 +71,11 @@
     },
   ];
 
-  let checkedRules = $state<Set<number>>(new Set());
-  let ruleNotes = $state<Record<number, string>>({});
-  let projectDescription = $state("");
+  let ruleNotes = $state<Record<number, string>>(loadState("ruleNotes", {}));
+  let projectDescription = $state(loadState("projectDescription", ""));
+
+  $effect(() => { saveState("ruleNotes", ruleNotes); });
+  $effect(() => { saveState("projectDescription", projectDescription); });
 
   const scenarios = [
     {
@@ -71,17 +92,8 @@
     },
   ];
 
-  let selectedScenario = $state(0);
-
-  function toggleRule(num: number) {
-    const newSet = new Set(checkedRules);
-    if (newSet.has(num)) {
-      newSet.delete(num);
-    } else {
-      newSet.add(num);
-    }
-    checkedRules = newSet;
-  }
+  let selectedScenario = $state(loadState("selectedScenario", 0));
+  $effect(() => { saveState("selectedScenario", selectedScenario); });
 </script>
 
 <!-- Intro -->
@@ -102,39 +114,19 @@
   <h4 class="mb-3 text-base font-bold text-gray-900 dark:text-gray-100">
     Michener's 10 Rules for Creating a Good DMP
   </h4>
-  <p class="mb-3 text-sm text-gray-600 dark:text-gray-400">
-    Check off the rules you'd include in your plan. Which ones seem most important for your scenario?
-  </p>
   <div class="space-y-1.5">
     {#each rules as rule}
-      <button
-        class="flex w-full items-start gap-3 rounded-lg border p-3 text-left transition-all {checkedRules.has(
-          rule.num,
-        )
-          ? 'border-green-300 bg-green-50 dark:border-green-700 dark:bg-green-900/20'
-          : 'border-gray-200 bg-white hover:border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-gray-600'}"
-        onclick={() => toggleRule(rule.num)}
-      >
-        <span
-          class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border text-xs {checkedRules.has(
-            rule.num,
-          )
-            ? 'border-green-500 bg-green-500 text-white'
-            : 'border-gray-300 dark:border-gray-600'}"
-        >
-          {checkedRules.has(rule.num) ? "✓" : ""}
+      <div class="flex items-start gap-3 rounded-lg border border-gray-200 bg-white p-3 dark:border-gray-700 dark:bg-gray-800">
+        <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
+          {rule.num}
         </span>
         <div>
-          <span class="text-sm font-semibold text-gray-900 dark:text-gray-100">
-            Rule {rule.num}: {rule.title}
-          </span>
+          <span class="text-sm font-semibold text-gray-900 dark:text-gray-100">{rule.title}</span>
+          <p class="mt-0.5 text-xs text-gray-500 dark:text-gray-400">{rule.prompt}</p>
         </div>
-      </button>
+      </div>
     {/each}
   </div>
-  <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">
-    {checkedRules.size} of {rules.length} rules selected
-  </p>
 </div>
 
 <!-- Group Exercise: Mini-DMP -->
@@ -187,6 +179,8 @@
       </div>
     {/each}
   </div>
+
+  <p class="mt-3 text-xs text-gray-400 dark:text-gray-500">Your work is saved automatically in your browser.</p>
 
   <div class="mt-4 text-sm text-gray-600 dark:text-gray-400">
     For a full DMP, try <a

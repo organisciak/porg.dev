@@ -1,5 +1,14 @@
 [
   {
+    "title": "Introducing atmux: A Practical Tmux Companion for AI Coding Work",
+    "date": "2026-02-11",
+    "description": "A conversational launch post for atmux: project-scoped tmux sessions, fast resume workflows, and a browse/send interface built for real coding loops.",
+    "tags": "tmux, ai-coding, developer-tools, cli",
+    "keywords": "tmux, ai-coding, developer-tools, cli",
+    "slug": "atmux-announcement",
+    "fileType": "svx"
+  },
+  {
     "title": "2026 Youth Media Award Winners: Covers, Links, and Quick Descriptions",
     "date": "2026-01-27",
     "description": "A book-by-book roundup of the 2026 ALA Youth Media Award winners with covers, bookstore/library links, and quick blurbs.",

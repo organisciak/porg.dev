@@ -1,0 +1,283 @@
+---
+title: 'Introducing atmux: A Practical Tmux Companion for AI Coding Work'
+date: '2026-02-11'
+description: 'A conversational launch post for atmux: project-scoped tmux sessions, fast resume workflows, and a browse/send interface built for real coding loops.'
+tags: tmux, ai-coding, developer-tools, cli
+---
+
+<script lang="ts">
+  import AtmuxInterfaceTour from "$lib/components/AtmuxInterfaceTour.svelte";
+  import AtmuxFeatureFlip from "$lib/components/AtmuxFeatureFlip.svelte";
+
+  const featureSlides = [
+    {
+      id: "session-bootstrap",
+      eyebrow: "Start Fast",
+      title: "Every repo gets a ready-to-work tmux session",
+      body:
+        "Run atmux in any project and it creates (or re-attaches to) a project-scoped session. No repetitive pane setup, no hunting around.",
+      lines: [
+        {
+          role: "command",
+          segments: [
+            { text: "$ ", tone: "prompt" },
+            { text: "cd ~/projects/my-app && atmux", tone: "command" }
+          ]
+        },
+        {
+          role: "output",
+          segments: [{ text: "Creating new session: agent-my-app", tone: "success" }]
+        },
+        {
+          role: "output",
+          segments: [{ text: "agents window: claude + codex panes started", tone: "plain" }]
+        },
+        {
+          role: "output",
+          segments: [{ text: "Attach: tmux session agent-my-app", tone: "muted" }]
+        }
+      ],
+      bullets: [
+        "Per-project naming: agent-<folder>",
+        "Consistent startup without shell glue scripts",
+        "Works with local + project config"
+      ]
+    },
+    {
+      id: "resume-work",
+      eyebrow: "Resume Easily",
+      title: "Hop back into active and recent sessions",
+      body:
+        "The sessions/open/recents flow is built for interruptions: leave, come back later, and keep momentum.",
+      lines: [
+        {
+          role: "command",
+          segments: [
+            { text: "$ ", tone: "prompt" },
+            { text: "atmux recents --list", tone: "command" }
+          ]
+        },
+        {
+          role: "output",
+          segments: [
+            { text: "demo-app", tone: "success" },
+            { text: "  ", tone: "plain" },
+            { text: "/workspace/projects/demo-app", tone: "path" },
+            { text: "  (just now)", tone: "muted" }
+          ]
+        },
+        {
+          role: "output",
+          segments: [
+            { text: "docs-site", tone: "success" },
+            { text: "  /workspace/projects/docs-site  (5 minutes ago)", tone: "muted" }
+          ]
+        },
+        {
+          role: "note",
+          segments: [{ text: "Use atmux open for quick number-jump navigation.", tone: "muted" }]
+        }
+      ],
+      bullets: [
+        "History-backed workflow for context switching",
+        "Interactive or non-interactive list modes",
+        "Designed for short, frequent coding sessions"
+      ]
+    },
+    {
+      id: "browse",
+      eyebrow: "Control Center",
+      title: "Browse sessions, preview panes, send commands in one place",
+      body:
+        "Browse mode gives you a tree view and live pane preview so you can steer your tmux workspace from one interface.",
+      lines: [
+        {
+          role: "command",
+          segments: [
+            { text: "$ ", tone: "prompt" },
+            { text: "atmux browse", tone: "command" }
+          ]
+        },
+        {
+          role: "output",
+          segments: [{ text: "Tree: sessions → windows → panes", tone: "plain" }]
+        },
+        {
+          role: "output",
+          segments: [{ text: "Pane preview updates in place", tone: "plain" }]
+        },
+        {
+          role: "output",
+          segments: [{ text: "Click [SEND] to dispatch commands to selected pane", tone: "warning" }]
+        }
+      ],
+      bullets: [
+        "Keyboard + mouse support",
+        "Fast attach for selected targets",
+        "Debug send-method mode when needed"
+      ]
+    },
+    {
+      id: "remote-send",
+      eyebrow: "Remote-Aware",
+      title: "Send commands to remote panes from your local CLI",
+      body:
+        "You can send the same command to one or more remote tmux targets over SSH-backed executors. Good for mirrored workflows.",
+      lines: [
+        {
+          role: "command",
+          segments: [
+            { text: "$ ", tone: "prompt" },
+            { text: "atmux send --remote=devbox agent-my-app:agents.0 \"bd ready\"", tone: "command" }
+          ]
+        },
+        {
+          role: "output",
+          segments: [{ text: "Remote executor: devbox", tone: "success" }]
+        },
+        {
+          role: "output",
+          segments: [{ text: "tmux send-keys delivered to target pane", tone: "plain" }]
+        },
+        {
+          role: "note",
+          segments: [{ text: "Connection reuse uses SSH ControlMaster/ControlPersist.", tone: "muted" }]
+        }
+      ],
+      bullets: [
+        "Single-host and multi-host remote sends",
+        "Consistent send methods (enter, literal, delayed)",
+        "Useful for distributed/devbox setups"
+      ]
+    },
+    {
+      id: "shareable-output",
+      eyebrow: "Sharing-Friendly",
+      title: "Path-hiding mode for screenshot-safe terminal output",
+      body:
+        "When you want to share examples publicly, hide personal filesystem paths while keeping command context readable.",
+      lines: [
+        {
+          role: "command",
+          segments: [
+            { text: "$ ", tone: "prompt" },
+            { text: "atmux history list --hide-paths", tone: "command" }
+          ]
+        },
+        {
+          role: "output",
+          segments: [{ text: "Recent Sessions", tone: "plain" }]
+        },
+        {
+          role: "output",
+          segments: [
+            { text: "demo-app", tone: "success" },
+            { text: "  <path hidden>/demo-app  (just now)", tone: "muted" }
+          ]
+        },
+        {
+          role: "note",
+          segments: [
+            {
+              text:
+                "Help text: \"I don't know why you'd hide paths. I did it for taking screenshots without showing everything off in my filesystem!\"",
+              tone: "muted"
+            }
+          ]
+        }
+      ],
+      bullets: [
+        "Safer demos for posts, docs, and talks",
+        "Keeps output structure while redacting details",
+        "Now available on non-interactive history/recents lists"
+      ]
+    }
+  ];
+</script>
+
+The short version: I wanted tmux to feel smoother for project- and agent-based flows.
+
+So I built **atmux** to do one practical thing well: make project-scoped tmux sessions easy to start, easy to revisit, and easy to operate while you’re actually coding.
+
+It's not a framework, and not a platform. Just a tool on top of tmux that removes repetitive setup friction.
+
+<AtmuxInterfaceTour autoplay={true} intervalMs={6400} />
+
+<AtmuxFeatureFlip slides={featureSlides} intervalMs={5600} autoplay={true} />
+
+## The Motivation
+
+I kept repeating the same ritual every time I context-switched:
+
+1. open tmux
+2. split panes again
+3. start the same agents again
+4. try to remember where I left off
+
+That was fine for one project. It was annoying for three. It was brutal for ten.
+
+`atmux` is my attempt to make that loop calmer and faster. `tmux` already has great quality-of-life features on top of its windowing model, like mouse mode and shell autocomplete (I haven't typed beyond `tmux att` in a decade). I wanted to expand on those UI conveniences: mouse-enabled session switching and attaching, easier sending of input to panes, and config support so a directory can start with standard windows and panes (for me, that's usually `pnpm dev`, `build:watch`, or local emulators).
+
+## What atmux Is Good At
+
+- **Project identity:** each repo maps to a predictable session name.
+- **Session memory:** active + recent workflows are first-class, so interruptions are cheap.
+- **Operational control:** browse and send commands without constantly switching windows.
+- **Low-friction customization:** one `.agent-tmux.conf` per project for pane layouts, plus optional global defaults.
+
+## Why the Interface Looks This Way
+
+I care a lot about tools that stay understandable under stress.
+
+So the interface choices are intentionally boring in the best way:
+
+- obvious commands (`atmux`, `atmux sessions`, `atmux browse`)
+- list-first navigation patterns
+- plain text output you can copy into docs, issues, and chats
+
+And because sharing matters, there’s now path-hiding support in list output for screenshot-safe examples.
+
+## Configuration That Sticks
+
+`atmux onboard` is the fast way to set your default agent setup once.
+
+After that, you can save preferred pane/window layouts in config files:
+
+- global defaults: `~/.config/atmux/config`
+- per-project overrides: `.agent-tmux.conf` (create with `atmux init`)
+
+That combo is where the tool starts feeling personal: your defaults everywhere, plus project-specific pane layouts where they matter.
+
+## A Quick Try
+
+Install from the Homebrew tap, then bootstrap your defaults:
+
+```bash
+brew tap organisciak/tap
+brew install atmux
+cd ~/projects/my-app
+atmux onboard
+atmux
+```
+
+Then:
+
+```bash
+atmux sessions
+atmux browse
+atmux recents
+```
+
+## Yes, it's opinionated and vibe-coded 
+
+If you want to follow along or contribute, the repo is here:
+
+- https://github.com/organisciak/atmux
+
+One final note: with Claude Code, Codex, and other agents, most of us end up building our own workflow tooling.
+
+So if this exact setup doesn’t fit your stack, that’s fine. The useful move might be to branch it, tweak it, and make it yours.
+
+It's being adapted to my opinions through non-stop^ dogfooding; ^seriously, I have to touch grass. The current roadmap is more remote workflow attention. That may not be what you need, and that's fine - fork it!
+
+I’m excited about this one because it’s small, concrete, and easy to adapt.

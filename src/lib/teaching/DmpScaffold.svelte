@@ -154,14 +154,14 @@
   </div>
 
   <div class="mb-4">
-    <label class="mb-1 block text-xs font-medium text-gray-500 dark:text-gray-400"
-      >Or describe your own project:</label
-    >
-    <textarea
-      bind:value={projectDescription}
-      placeholder="Describe your research scenario..."
-      class="h-16 w-full rounded-lg border border-gray-300 p-2 text-sm dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"
-    ></textarea>
+    <label>
+      <span class="mb-1 block text-xs font-medium text-gray-500 dark:text-gray-400">Or describe your own project:</span>
+      <textarea
+        bind:value={projectDescription}
+        placeholder="Describe your research scenario..."
+        class="h-16 w-full rounded-lg border border-gray-300 p-2 text-sm dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"
+      ></textarea>
+    </label>
   </div>
 
   <div class="space-y-3">

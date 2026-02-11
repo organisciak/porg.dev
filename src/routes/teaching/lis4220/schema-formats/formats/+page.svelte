@@ -114,13 +114,15 @@
     <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {#each categories as cat}
         <div>
-          <label class="mb-1 block text-sm font-semibold text-gray-700 dark:text-gray-300">{cat.label}</label>
-          <input
-            type="text"
-            bind:value={formatChoices[cat.key]}
-            placeholder={cat.placeholder}
-            class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:focus:border-blue-400 dark:focus:ring-blue-800"
-          />
+          <label>
+            <span class="mb-1 block text-sm font-semibold text-gray-700 dark:text-gray-300">{cat.label}</span>
+            <input
+              type="text"
+              bind:value={formatChoices[cat.key]}
+              placeholder={cat.placeholder}
+              class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:focus:border-blue-400 dark:focus:ring-blue-800"
+            />
+          </label>
         </div>
       {/each}
     </div>

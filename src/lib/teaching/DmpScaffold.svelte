@@ -1,4 +1,6 @@
 <script lang="ts">
+  import ExerciseTimer from "$lib/teaching/ExerciseTimer.svelte";
+
   const STORAGE_KEY = "lis4220-dmp-scaffold";
 
   function loadState<T>(key: string, fallback: T): T {
@@ -131,9 +133,10 @@
 
 <!-- Group Exercise: Mini-DMP -->
 <div class="rounded-xl border border-amber-200 bg-amber-50/50 p-5 dark:border-amber-800 dark:bg-amber-900/20">
-  <h4 class="mb-3 text-base font-bold text-gray-900 dark:text-gray-100">
+  <h4 class="mb-1 text-base font-bold text-gray-900 dark:text-gray-100">
     Group Exercise: Draft a Mini-DMP
   </h4>
+  <ExerciseTimer phases={[{ label: "Pick scenario", minutes: 2 }, { label: "Draft rules", minutes: 10 }, { label: "Compare with group", minutes: 5 }]}>
   <p class="mb-4 text-sm text-gray-700 dark:text-gray-300">
     Choose a research scenario below (or use your own project idea). For each of Michener's rules,
     write 2-3 sentences about how you'd address it. Then compare with another group!
@@ -181,6 +184,7 @@
   </div>
 
   <p class="mt-3 text-xs text-gray-400 dark:text-gray-500">Your work is saved automatically in your browser.</p>
+  </ExerciseTimer>
 
   <div class="mt-4 text-sm text-gray-600 dark:text-gray-400">
     For a full DMP, try <a

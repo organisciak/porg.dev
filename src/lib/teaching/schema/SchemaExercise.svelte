@@ -1,6 +1,7 @@
 <script lang="ts">
   import TypeCombobox from "./TypeCombobox.svelte";
   import PropertyCombobox from "./PropertyCombobox.svelte";
+  import ExerciseTimer from "$lib/teaching/ExerciseTimer.svelte";
 
   const STORAGE_KEY = "lis4220-schema-exercise";
 
@@ -89,9 +90,10 @@
   <div
     class="rounded-xl border border-amber-200 bg-amber-50/50 p-5 dark:border-amber-800 dark:bg-amber-900/20"
   >
-    <h4 class="mb-3 text-base font-bold text-gray-900 dark:text-gray-100">
+    <h4 class="mb-1 text-base font-bold text-gray-900 dark:text-gray-100">
       Group Exercise: Describe a Website with Schema.org
     </h4>
+    <ExerciseTimer phases={[{ label: "Pick & annotate", minutes: 8 }, { label: "Compare & discuss", minutes: 5 }]}>
     <p class="mb-4 text-sm text-gray-700 dark:text-gray-300">
       Pick <strong>2 websites</strong> from the list below. For each, choose a
       <a href="https://schema.org/docs/full.html" target="_blank" rel="noopener noreferrer">schema.org type</a>
@@ -198,6 +200,7 @@
       </button>
       <span class="text-xs text-gray-400 dark:text-gray-500">Your work is saved automatically in your browser.</span>
     </div>
+    </ExerciseTimer>
   </div>
 
   <!-- Discussion Prompts -->

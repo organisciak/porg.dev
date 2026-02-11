@@ -66,10 +66,55 @@
     <a href="https://cuberule.com/" target="_blank" rel="noopener noreferrer">"Cube Rule of Food"</a
     >: all dishes can be classified by where the starch goes. A hot dog and a taco have the same
     <em>format</em> (starch on three sides) &mdash; but nobody would confuse the two. The format is
-    the <em>container</em>; the content and expectations are separate. Similarly, JSON and XML are
-    formats for data, while schema.org is a schema that tells you what to put inside.
+    the <em>container</em>; the content and expectations are separate.
   </p>
 </section>
+
+<!-- Vocabulary Ladder -->
+<div class="my-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+  <div class="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
+    <div class="mb-1 text-xs font-bold uppercase tracking-wide text-gray-400 dark:text-gray-500">Format</div>
+    <div class="text-sm font-semibold text-gray-900 dark:text-gray-100">JSON</div>
+    <p class="mt-1 text-xs text-gray-600 dark:text-gray-400">
+      A general-purpose data format &mdash; curly braces, key-value pairs, arrays.
+      Defines <em>how</em> data is written, not what it means.
+    </p>
+  </div>
+  <div class="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
+    <div class="mb-1 text-xs font-bold uppercase tracking-wide text-gray-400 dark:text-gray-500">Format + Linking</div>
+    <div class="text-sm font-semibold text-gray-900 dark:text-gray-100">JSON-LD</div>
+    <p class="mt-1 text-xs text-gray-600 dark:text-gray-400">
+      JSON for Linked Data. Still valid JSON, but adds <code class="text-[10px]">@context</code> and
+      <code class="text-[10px]">@type</code> so machines know what the data <em>means</em>.
+    </p>
+  </div>
+  <div class="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
+    <div class="mb-1 text-xs font-bold uppercase tracking-wide text-gray-400 dark:text-gray-500">Schema</div>
+    <div class="text-sm font-semibold text-gray-900 dark:text-gray-100">Schema.org</div>
+    <p class="mt-1 text-xs text-gray-600 dark:text-gray-400">
+      A shared vocabulary of types and properties (<em>Person</em>, <em>name</em>, <em>Book</em>, <em>author</em>).
+      The agreed-upon dictionary that gives JSON-LD its meaning.
+    </p>
+  </div>
+  <div class="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
+    <div class="mb-1 text-xs font-bold uppercase tracking-wide text-gray-400 dark:text-gray-500">Concept</div>
+    <div class="text-sm font-semibold text-gray-900 dark:text-gray-100">A schema</div>
+    <p class="mt-1 text-xs text-gray-600 dark:text-gray-400">
+      Any structured plan for organizing information &mdash; Dublin Core, DDI, MARC, or Schema.org.
+      The <em>blueprint</em> that says what fields exist and what they mean.
+    </p>
+  </div>
+</div>
+
+<div class="mb-8 rounded-lg border border-blue-200 bg-blue-50/50 p-4 dark:border-blue-800 dark:bg-blue-900/20">
+  <p class="text-sm text-gray-700 dark:text-gray-300">
+    <strong>In short:</strong> JSON and XML are <em>formats</em> (containers). Schema.org is a <em>schema</em>
+    (vocabulary). JSON-LD is a format that carries schema-based meaning. You can explore how schemas
+    and formats work together in
+    <a href="./schema" class="text-blue-600 hover:underline dark:text-blue-400">Module A: Schema.org Explorer</a>,
+    including how JSON-LD and RDFa embed structured data into web pages.
+  </p>
+</div>
 
 <figure class="my-6">
   <a href="https://cuberule.com/" target="_blank" rel="noopener noreferrer">

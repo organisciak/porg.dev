@@ -142,6 +142,14 @@
                 >Schema.org Type</label
               >
               <TypeCombobox bind:value={entry.type} onselect={() => clearPropertyHints(i)} />
+              {#if entry.type}
+                <a
+                  href="https://schema.org/{entry.type}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-1 inline-block text-[10px] text-blue-500 hover:underline dark:text-blue-400"
+                >schema.org/{entry.type} &nearr;</a>
+              {/if}
             </div>
           </div>
           <div class="space-y-2">

@@ -20,8 +20,10 @@
     ).slice(0, 20);
   });
 
-  // Sync external value changes back to query
-  $effect(() => { if (value !== query) query = value; });
+  let focused = $state(false);
+
+  // Sync external value changes back to query (only when not actively editing)
+  $effect(() => { if (!focused && value !== query) query = value; });
 
   function select(prop: TypeProperty) {
     query = prop.name;
@@ -55,10 +57,12 @@
   }
 
   function handleBlur() {
+    focused = false;
     setTimeout(() => { open = false; }, 150);
   }
 
   function handleFocus() {
+    focused = true;
     if (allProperties.length) open = true;
     highlightIndex = 0;
   }

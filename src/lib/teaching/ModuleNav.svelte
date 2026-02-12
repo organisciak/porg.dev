@@ -5,6 +5,7 @@
     { href: "/teaching/lis4220/schema-formats/schema", label: "A: Schema.org Explorer", time: "~40 min" },
     { href: "/teaching/lis4220/schema-formats/formats", label: "B: Format Playground", time: "~30 min" },
     { href: "/teaching/lis4220/schema-formats/dmp", label: "C: DMP Quick-Plan", time: "~30 min" },
+    { href: "/teaching/lis4220/schema-formats/markdown", label: "D: Markdown", time: "~15 min" },
   ];
 </script>
 

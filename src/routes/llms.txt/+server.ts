@@ -25,6 +25,7 @@ export const GET: RequestHandler = async ({ url }) => {
 - CV / Academic Profile: ${siteUrl}/cv
 - Posts: ${siteUrl}/p
 - RSS Feed: ${siteUrl}/rss.xml
+- Full Post Index: ${siteUrl}/llms-full.txt
 
 ## Recent Posts
 

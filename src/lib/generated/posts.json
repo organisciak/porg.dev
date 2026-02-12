@@ -5,7 +5,7 @@
     "description": "A conversational launch post for atmux: project-scoped tmux sessions, fast resume workflows, and a browse/send interface built for real coding loops.",
     "tags": "tmux, ai-coding, developer-tools, cli",
     "keywords": "tmux, ai-coding, developer-tools, cli",
-    "slug": "atmux-announcement",
+    "slug": "atmux",
     "fileType": "svx"
   },
   {

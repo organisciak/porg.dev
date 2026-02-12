@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-  <title>Schema.org Explorer | LIS 4220 | Data Curation</title>
+  <title>Schema.org | LIS 4220 | Data Curation</title>
   <meta
     name="description"
     content="Explore the schema.org vocabulary: types, properties, hierarchy, and hands-on exercises."
@@ -16,7 +16,7 @@
 </svelte:head>
 
 <section class="prose prose-gray max-w-none dark:prose-invert">
-  <h2 class="text-xl">Module A: Schema.org Explorer</h2>
+  <h2 class="text-xl">Module A: Schema.org</h2>
 </section>
 
 <div class="mt-6 space-y-10">

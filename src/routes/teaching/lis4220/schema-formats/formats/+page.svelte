@@ -46,7 +46,7 @@
 </script>
 
 <svelte:head>
-  <title>Format Playground | LIS 4220 | Data Curation</title>
+  <title>Formats | LIS 4220 | Data Curation</title>
   <meta
     name="description"
     content="Interactive activities for JSON, XML, CSV, and other data formats."
@@ -54,7 +54,7 @@
 </svelte:head>
 
 <section class="prose prose-gray max-w-none dark:prose-invert">
-  <h2 class="text-xl">Module B: Format Playground</h2>
+  <h2 class="text-xl">Module B: Formats</h2>
 
   <p>
     A <strong>file format</strong> is the way that information is encoded into a computer file. How is
@@ -89,11 +89,12 @@
   <p>When choosing a format, prefer formats that are:</p>
   <ul>
     <li>
-      <strong>Non-proprietary</strong> &mdash; the specification for reading the file is public and
-      known
+      <strong>Non-proprietary</strong> &mdash; no single company controls the format; the specification
+      for reading and writing it is publicly available
     </li>
     <li>
-      <strong>Open</strong> &mdash; the format is documented, and anybody has permission to use it
+      <strong>Open</strong> &mdash; anyone is legally permitted to use the format without licensing
+      fees or restrictions (a format can be publicly documented yet still require a license to use)
     </li>
     <li><strong>Standard</strong> &mdash; the target community uses the format</li>
   </ul>
@@ -106,8 +107,9 @@
   </h4>
   <ExerciseTimer phases={[{ label: "Brainstorm", minutes: 3 }, { label: "Reveal & compare", minutes: 3 }]}>
     <p class="mb-4 text-sm text-gray-700 dark:text-gray-300">
-      For each type of data below, what format(s) would you recommend for <strong>long-term preservation
-      and sharing</strong>? Think about what makes a format non-proprietary, open, and standard.
+      Based on <strong>what you already know</strong>, for each type of data below, what format(s) would
+      you recommend for <strong>long-term preservation and sharing</strong>? Don't worry about getting
+      the "right" answer &mdash; just use your best intuition. We'll compare with expert recommendations after.
     </p>
 
     <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -236,7 +238,7 @@
     <strong>In short:</strong> JSON and XML are <em>formats</em> (containers). Schema.org is a <em>schema</em>
     (vocabulary). JSON-LD is a format that carries schema-based meaning. You can explore how schemas
     and formats work together in
-    <a href="./schema" class="text-blue-600 hover:underline dark:text-blue-400">Module A: Schema.org Explorer</a>,
+    <a href="./schema" class="text-blue-600 hover:underline dark:text-blue-400">Module A: Schema.org</a>,
     including how JSON-LD and RDFa embed structured data into web pages.
   </p>
 </div>

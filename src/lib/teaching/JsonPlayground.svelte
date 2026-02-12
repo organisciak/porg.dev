@@ -427,7 +427,7 @@
       Same data, but now machines (search engines, assistants, databases) can understand it. Google
       <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline dark:text-blue-400">recommends JSON-LD</a>
       for adding structured data to web pages. You'll explore this further in
-      <strong>Module A: Schema.org Explorer</strong>.
+      <strong>Module A: Schema.org</strong>.
     </p>
   </div>
 </div>

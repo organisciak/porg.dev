@@ -331,16 +331,4 @@
     {/if}
   </div>
 
-  <!-- Discussion questions -->
-  <div
-    class="mt-6 rounded-xl border border-purple-200 bg-purple-50/50 p-5 dark:border-purple-800 dark:bg-purple-900/20"
-  >
-    <h4 class="mb-3 text-base font-bold text-gray-900 dark:text-gray-100">Discussion</h4>
-    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-      <li>Which format would you choose for your personal website? Why?</li>
-      <li>When might RDFa be preferable to JSON-LD?</li>
-      <li>How does the separation vs. integration trade-off relate to data curation principles?</li>
-      <li>Which format survives an HTML redesign more easily? What does this mean for long-term preservation?</li>
-    </ul>
-  </div>
 </section>

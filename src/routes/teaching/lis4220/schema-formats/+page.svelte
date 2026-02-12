@@ -20,7 +20,7 @@
     <h2
       class="mb-2 text-lg font-bold text-gray-900 group-hover:text-blue-600 dark:text-gray-100 dark:group-hover:text-blue-400"
     >
-      Schema.org Explorer
+      Schema.org
     </h2>
     <p class="text-sm text-gray-600 dark:text-gray-400">
       Explore the full schema.org vocabulary: data types, Thing properties, 900+ types with inheritance, and a hands-on website annotation exercise.
@@ -40,7 +40,7 @@
     <h2
       class="mb-2 text-lg font-bold text-gray-900 group-hover:text-emerald-600 dark:text-gray-100 dark:group-hover:text-emerald-400"
     >
-      Format Playground
+      Formats
     </h2>
     <p class="text-sm text-gray-600 dark:text-gray-400">
       Learn JSON syntax hands-on, see how JSON-LD bridges formats and schemas, and compare JSON, XML, CSV, and more.
@@ -60,7 +60,7 @@
     <h2
       class="mb-2 text-lg font-bold text-gray-900 group-hover:text-purple-600 dark:text-gray-100 dark:group-hover:text-purple-400"
     >
-      DMP Quick-Plan
+      DMP
     </h2>
     <p class="text-sm text-gray-600 dark:text-gray-400">
       Walk through Michener's 10 Rules for Data Management Plans and draft a mini-DMP for a research scenario.

@@ -28,9 +28,12 @@ test("sitemap is valid XML with urlset", async ({ request }, testInfo) => {
   expect(body).toContain("</urlset>");
 });
 
-test("sitemap uses request origin for URLs", async ({ request }, testInfo) => {
+test("sitemap includes static routes", async ({ request }, testInfo) => {
   const baseUrl = testInfo.project.use.baseURL ?? fallbackBaseUrl;
   const response = await request.get(`${baseUrl}/sitemap.xml`);
   const body = await response.text();
-  expect(body).toContain(`<loc>${baseUrl}/</loc>`);
+  expect(body).toContain("/cv/");
+  expect(body).toContain("/huehunter/");
+  expect(body).toContain("/rss.xml");
+  expect(body).toContain("/llms.txt");
 });

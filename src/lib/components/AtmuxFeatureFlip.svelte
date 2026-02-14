@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onDestroy } from "svelte";
+  import { browser } from "$app/environment";
 
   type Tone = "prompt" | "command" | "path" | "success" | "warning" | "muted" | "plain";
 
@@ -30,7 +31,7 @@
   let isPlaying = autoplay;
   let timer: ReturnType<typeof setInterval> | null = null;
 
-  $: if (slides.length <= 1 || !isPlaying) {
+  $: if (!browser || slides.length <= 1 || !isPlaying) {
     stopAutoplay();
   } else {
     startAutoplay();

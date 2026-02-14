@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onDestroy } from "svelte";
+  import { browser } from "$app/environment";
 
   export let autoplay = true;
   export let intervalMs = 6200;
@@ -32,7 +33,7 @@
 
   $: panel = panels[activeIndex];
 
-  $: if (isPlaying && panels.length > 1) {
+  $: if (browser && isPlaying && panels.length > 1) {
     startAutoplay();
   } else {
     stopAutoplay();

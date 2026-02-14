@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Introducing atmux</title>
+  <desc id="desc">Project-scoped tmux sessions and browse/send workflows for agentic coding.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbf7f1" />
+      <stop offset="100%" stop-color="#eef0f6" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#fff6ef" />
+    </linearGradient>
+    <linearGradient id="terminalBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1021" />
+      <stop offset="100%" stop-color="#1a1f3d" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#15152b" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="92" cy="88" r="132" fill="#ff9f1c" fill-opacity="0.12" />
+  <circle cx="1088" cy="76" r="136" fill="#7c3aed" fill-opacity="0.12" />
+  <circle cx="970" cy="580" r="190" fill="#00b4d8" fill-opacity="0.08" />
+
+  <g>
+    <rect x="0" y="0" width="1200" height="12" fill="#ffcc00" />
+    <rect x="40" y="0" width="40" height="12" fill="#ff6600" />
+    <rect x="80" y="0" width="40" height="12" fill="#ff0066" />
+    <rect x="120" y="0" width="40" height="12" fill="#cc00ff" />
+    <rect x="160" y="0" width="40" height="12" fill="#00ccff" />
+    <rect x="200" y="0" width="40" height="12" fill="#ffcc00" />
+    <rect x="240" y="0" width="40" height="12" fill="#ff6600" />
+    <rect x="280" y="0" width="40" height="12" fill="#ff0066" />
+    <rect x="320" y="0" width="40" height="12" fill="#cc00ff" />
+    <rect x="360" y="0" width="40" height="12" fill="#00ccff" />
+    <rect x="400" y="0" width="40" height="12" fill="#ffcc00" />
+    <rect x="440" y="0" width="40" height="12" fill="#ff6600" />
+    <rect x="480" y="0" width="40" height="12" fill="#ff0066" />
+    <rect x="520" y="0" width="40" height="12" fill="#cc00ff" />
+    <rect x="560" y="0" width="40" height="12" fill="#00ccff" />
+    <rect x="600" y="0" width="40" height="12" fill="#ffcc00" />
+    <rect x="640" y="0" width="40" height="12" fill="#ff6600" />
+    <rect x="680" y="0" width="40" height="12" fill="#ff0066" />
+    <rect x="720" y="0" width="40" height="12" fill="#cc00ff" />
+    <rect x="760" y="0" width="40" height="12" fill="#00ccff" />
+    <rect x="800" y="0" width="40" height="12" fill="#ffcc00" />
+    <rect x="840" y="0" width="40" height="12" fill="#ff6600" />
+    <rect x="880" y="0" width="40" height="12" fill="#ff0066" />
+    <rect x="920" y="0" width="40" height="12" fill="#cc00ff" />
+    <rect x="960" y="0" width="40" height="12" fill="#00ccff" />
+    <rect x="1000" y="0" width="40" height="12" fill="#ffcc00" />
+    <rect x="1040" y="0" width="40" height="12" fill="#ff6600" />
+    <rect x="1080" y="0" width="40" height="12" fill="#ff0066" />
+    <rect x="1120" y="0" width="40" height="12" fill="#cc00ff" />
+    <rect x="1160" y="0" width="40" height="12" fill="#00ccff" />
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="58" y="54" width="1084" height="522" rx="20" fill="url(#panel)" stroke="#e6dfd5" stroke-width="3" />
+  </g>
+
+  <g>
+    <text x="110" y="164" fill="#7c3aed" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="32" font-weight="700" letter-spacing="1.2">ATMUX</text>
+    <text x="110" y="236" fill="#15152b" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="66" font-weight="800">Project-scoped tmux</text>
+    <text x="110" y="298" fill="#15152b" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="48" font-weight="700">for AI coding loops</text>
+    <text x="110" y="354" fill="#5b5b70" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="28">sessions, recents, browse/send</text>
+
+    <rect x="110" y="404" width="170" height="44" rx="22" fill="#ff9f1c" fill-opacity="0.2" />
+    <text x="144" y="433" fill="#5b3400" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="19" font-weight="700">atmux</text>
+
+    <rect x="292" y="404" width="184" height="44" rx="22" fill="#7c3aed" fill-opacity="0.16" />
+    <text x="320" y="433" fill="#3f1b83" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="19" font-weight="700">atmux browse</text>
+
+    <rect x="488" y="404" width="190" height="44" rx="22" fill="#00b4d8" fill-opacity="0.16" />
+    <text x="520" y="433" fill="#004a58" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="19" font-weight="700">atmux recents</text>
+
+    <text x="110" y="510" fill="#5b5b70" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="22">porg.dev/p/atmux</text>
+  </g>
+
+  <g transform="translate(700 120)">
+    <rect x="0" y="0" width="380" height="340" rx="18" fill="url(#terminalBg)" stroke="#2a2f57" stroke-width="3" />
+    <rect x="0" y="0" width="380" height="40" rx="18" fill="#131a34" />
+    <rect x="0" y="28" width="380" height="12" fill="#131a34" />
+    <circle cx="24" cy="20" r="6" fill="#f87171" />
+    <circle cx="42" cy="20" r="6" fill="#fbbf24" />
+    <circle cx="60" cy="20" r="6" fill="#34d399" />
+    <text x="200" y="25" text-anchor="middle" fill="#94a3b8" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="14">atmux-demo</text>
+
+    <text x="22" y="74" fill="#86efac" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16">$ atmux</text>
+    <text x="22" y="106" fill="#e2e8f0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="15">Creating session: agent-my-app</text>
+    <text x="22" y="136" fill="#93c5fd" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="15">agents: claude | codex</text>
+    <text x="22" y="166" fill="#fca5a5" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="15">Attach: tmux session agent-my-app</text>
+    <text x="22" y="214" fill="#86efac" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16">$ atmux browse</text>
+    <text x="22" y="246" fill="#e2e8f0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="15">Tree: sessions -&gt; windows -&gt; panes</text>
+    <text x="22" y="276" fill="#fde68a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="15">Click [SEND] to dispatch command</text>
+    <rect x="22" y="294" width="336" height="22" rx="6" fill="#0f172a" stroke="#334155" />
+    <text x="30" y="310" fill="#67e8f9" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12">agent-web-app:0.0</text>
+  </g>
+</svg>

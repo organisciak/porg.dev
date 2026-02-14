@@ -3,6 +3,7 @@
     "title": "Introducing atmux: A Tmux Companion for Agentic Coding in Projects",
     "date": "2026-02-11",
     "description": "atmux: project-scoped tmux sessions, fast resume workflows, and a browse/send interface built for real coding loops.",
+    "image": "/opengraph/atmux-card.png",
     "tags": "tmux, ai-coding, developer-tools, cli",
     "keywords": "tmux, ai-coding, developer-tools, cli",
     "slug": "atmux",

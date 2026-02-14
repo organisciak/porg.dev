@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import { base } from "$app/paths";
   import type { Component } from "svelte";
 
@@ -16,8 +15,8 @@
     updated?: string;
   };
 
-  let Post: Component | undefined;
-  let metadata: PostMetadata = data.metadata ?? {};
+  let Post: Component | undefined = data.PostComponent ?? undefined;
+  let metadata: PostMetadata = { ...(data.metadata ?? {}), ...(data.postMetadata ?? {}) };
   const canonicalUrl: string | undefined = data.canonicalUrl;
   const siteAuthor = "Peter Organisciak";
   let jsonLd: Record<string, unknown> | null = null;
@@ -84,23 +83,6 @@
   $: metaImage = resolveAbsoluteUrl(metadata.image || defaultOgImagePath, canonicalUrl);
   $: twitterCard = metaImage ? "summary_large_image" : "summary";
   $: jsonLd = buildJsonLd(metadata, canonicalUrl, metaImage);
-
-  onMount(async () => {
-    try {
-      // Dynamically import the blog post based on the slug and type
-      if (data.postType === "svx") {
-        const module = await import(`$posts/${data.slug}.svx`);
-        Post = module.default;
-        metadata = { ...metadata, ...(module.metadata || {}) };
-      } else {
-        const module = await import(`$posts/${data.slug}.md`);
-        Post = module.default;
-        metadata = { ...metadata, ...(module.metadata || {}) };
-      }
-    } catch (e) {
-      console.error("Error loading post:", e);
-    }
-  });
 </script>
 
 <svelte:head>

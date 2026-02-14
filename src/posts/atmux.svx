@@ -1,7 +1,7 @@
 ---
-title: 'Introducing atmux: A Practical Tmux Companion for AI Coding Work'
+title: 'Introducing atmux: A Tmux Companion for Agentic Coding in Projects'
 date: '2026-02-11'
-description: 'A conversational launch post for atmux: project-scoped tmux sessions, fast resume workflows, and a browse/send interface built for real coding loops.'
+description: 'atmux: project-scoped tmux sessions, fast resume workflows, and a browse/send interface built for real coding loops.'
 tags: tmux, ai-coding, developer-tools, cli
 ---
 

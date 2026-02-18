@@ -43,7 +43,14 @@ Markdown is a plain-text markup language. Unlike a Word document, a Markdown fil
 John Gruber, Markdown's creator, set a clear goal:
 
 The overriding design goal for Markdown\u2019s formatting syntax is to make it as readable as possible.
-Markdown is widely used in data curation: README files, data dictionaries, documentation, GitHub, and even some metadata standards. If you can write Markdown, you can document data anywhere.`;
+Markdown is widely used in data curation:
+README files
+Data dictionaries
+Documentation sites
+GitHub
+Some metadata standards
+
+If you can write Markdown, you can document data anywhere.`;
 
   const challengeHint = `Markdown is a **plain-text format** for writing formatted documents. Unlike proprietary formats like \`.docx\`, a Markdown file is just text \u2014 readable on any computer, in any editor, decades from now. That makes it an excellent choice for data documentation.
 
@@ -55,7 +62,15 @@ John Gruber, Markdown's creator, set a clear goal:
 
 > The overriding design goal for Markdown\u2019s formatting syntax is to make it as readable as possible.
 
-Markdown is widely used in data curation: README files, data dictionaries, documentation, GitHub, and even some metadata standards. If you can write Markdown, you can document data anywhere.`;
+Markdown is widely used in data curation:
+
+- README files
+- Data dictionaries
+- Documentation sites
+- GitHub
+- Some metadata standards
+
+If you can write Markdown, you can document data anywhere.`;
 
   let editorText = $state(loadState("editor", "# Hello!\n\nStart writing **Markdown** here and see it rendered on the right.\n\n- Try a list\n- With multiple items\n\n> Or a blockquote"));
   $effect(() => { saveState("editor", editorText); });
@@ -87,10 +102,15 @@ Markdown is widely used in data curation: README files, data dictionaries, docum
   <blockquote>
     The overriding design goal for Markdown's formatting syntax is to make it as readable as possible.
   </blockquote>
-  <p>
-    Markdown is widely used in data curation: README files, data dictionaries, documentation, GitHub,
-    and even some metadata standards. If you can write Markdown, you can document data anywhere.
-  </p>
+  <p>Markdown is widely used in data curation:</p>
+  <ul>
+    <li>README files</li>
+    <li>Data dictionaries</li>
+    <li>Documentation sites</li>
+    <li>GitHub</li>
+    <li>Some metadata standards</li>
+  </ul>
+  <p>If you can write Markdown, you can document data anywhere.</p>
 </section>
 
 <!-- Syntax Quick Reference -->

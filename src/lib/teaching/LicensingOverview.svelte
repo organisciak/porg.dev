@@ -58,20 +58,64 @@
       </thead>
       <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
         {#each [
-          { name: "CC-BY", family: "Creative Commons", conditions: "Attribution" },
-          { name: "CC-BY-SA", family: "Creative Commons", conditions: "Attribution, Share-alike" },
-          { name: "CC-BY-NC", family: "Creative Commons", conditions: "Attribution, Non-commercial" },
-          { name: "ODbL", family: "Open Data Commons", conditions: "Attribution, Share-alike" },
-          { name: "CC0", family: "Creative Commons", conditions: "None (public domain)" },
+          { name: "CC-BY 4.0", family: "Creative Commons", conditions: "Attribution", url: "https://creativecommons.org/licenses/by/4.0/legalcode" },
+          { name: "CC-BY-SA 4.0", family: "Creative Commons", conditions: "Attribution, Share-alike", url: "https://creativecommons.org/licenses/by-sa/4.0/legalcode" },
+          { name: "CC-BY-NC 4.0", family: "Creative Commons", conditions: "Attribution, Non-commercial", url: "https://creativecommons.org/licenses/by-nc/4.0/legalcode" },
+          { name: "ODbL 1.0", family: "Open Data Commons", conditions: "Attribution, Share-alike", url: "https://opendatacommons.org/licenses/odbl/1-0/" },
+          { name: "CC0 1.0", family: "Creative Commons", conditions: "None (public domain)", url: "https://creativecommons.org/publicdomain/zero/1.0/legalcode" },
         ] as lic}
           <tr>
-            <td class="py-2 pr-4 font-medium text-gray-900 dark:text-gray-100">{lic.name}</td>
+            <td class="py-2 pr-4 font-medium text-gray-900 dark:text-gray-100">
+              <a href={lic.url} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline dark:text-blue-400">{lic.name}</a>
+            </td>
             <td class="py-2 pr-4 text-gray-600 dark:text-gray-400">{lic.family}</td>
             <td class="py-2 text-gray-600 dark:text-gray-400">{lic.conditions}</td>
           </tr>
         {/each}
       </tbody>
     </table>
+  </div>
+</div>
+
+<!-- License discussion questions -->
+<div class="mt-6 rounded-lg border border-purple-200 bg-purple-50/50 p-4 dark:border-purple-800 dark:bg-purple-900/20">
+  <h4 class="mb-3 text-sm font-bold text-gray-900 dark:text-gray-100">Discussion: Reading Licenses</h4>
+  <div class="space-y-4">
+    <div>
+      <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
+        1. What's the difference between an "open license" and just a "license"?
+      </p>
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+        Think about what permissions each grants, and to whom.
+      </p>
+    </div>
+
+    <div>
+      <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
+        2. For each license in the table above, what <em>can't</em> you do with the data?
+      </p>
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+        Click the license names to read the actual legal text. What specific restrictions does each one impose?
+      </p>
+    </div>
+
+    <div>
+      <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
+        3. CC-BY-SA and ODbL both require attribution and share-alike. How are they different?
+      </p>
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+        Hint: read the license texts. What does ODbL cover that CC-BY-SA doesn't? Why might that matter for databases specifically?
+      </p>
+    </div>
+
+    <div>
+      <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
+        4. CC0 and ODbL are both commonly used for open data. How are they different in practice?
+      </p>
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+        Look at the legal language of each. What does CC0 give up that ODbL retains? When would you choose one over the other?
+      </p>
+    </div>
   </div>
 </div>
 

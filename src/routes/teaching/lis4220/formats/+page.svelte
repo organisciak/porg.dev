@@ -1,5 +1,4 @@
 <script lang="ts">
-  import JsonPlayground from "$lib/teaching/JsonPlayground.svelte";
   import ExerciseTimer from "$lib/teaching/ExerciseTimer.svelte";
 
   const STORAGE_KEY = "lis4220-format-chooser";
@@ -21,6 +20,7 @@
     } catch { /* quota exceeded */ }
   }
 
+  // --- Format Chooser exercise ---
   const categories = [
     { key: "image", label: "Image", placeholder: "What image formats would you recommend?" },
     { key: "text", label: "Text", placeholder: "What text/document formats?" },
@@ -43,6 +43,55 @@
   $effect(() => { saveState("choices", formatChoices); });
 
   let showAnswers = $state(false);
+
+  // --- Format comparison exercise (uses format-playground key for backward compat) ---
+  function loadFormatNotes(): Record<string, string> {
+    if (typeof localStorage === "undefined") return { json: "", xml: "", csv: "" };
+    try {
+      const raw = localStorage.getItem("lis4220-format-playground-formatNotes");
+      return raw ? JSON.parse(raw) : { json: "", xml: "", csv: "" };
+    } catch {
+      return { json: "", xml: "", csv: "" };
+    }
+  }
+
+  let formatNotes = $state<Record<string, string>>(loadFormatNotes());
+  $effect(() => {
+    if (typeof localStorage === "undefined") return;
+    try {
+      localStorage.setItem("lis4220-format-playground-formatNotes", JSON.stringify(formatNotes));
+    } catch { /* quota exceeded */ }
+  });
+
+  // --- Additional formats ---
+  let expandedFormat: string | null = $state(null);
+
+  const additionalFormats = [
+    {
+      id: "netcdf",
+      name: "NetCDF",
+      full: "Network Common Data Form",
+      desc: "For sharing n-dimensional array data. Supports compression, quick reads, and self-describing metadata. Common in climate science, oceanography, and atmospheric research.",
+    },
+    {
+      id: "hdf5",
+      name: "HDF5",
+      full: "Hierarchical Data Format 5",
+      desc: "Binary format for n-dimensional arrays with hierarchical group structure. Portable, fast to access, supports compression. Used in astronomy, bioinformatics, and high-performance computing.",
+    },
+    {
+      id: "markdown",
+      name: "Markdown",
+      full: "Markdown (.md)",
+      desc: 'A plain-text markup language for written material. "The overriding design goal for Markdown\'s formatting syntax is to make it as readable as possible." - John Gruber. Used widely in documentation, README files, and academic writing.',
+    },
+    {
+      id: "warc",
+      name: "WARC",
+      full: "Web Archive Format",
+      desc: "For preserving web page data including HTTP headers, page content, and metadata. Used by the Internet Archive and national libraries for web archiving at scale.",
+    },
+  ];
 </script>
 
 <svelte:head>
@@ -54,7 +103,7 @@
 </svelte:head>
 
 <section class="prose prose-gray max-w-none dark:prose-invert">
-  <h2 class="text-xl">Module B: Formats</h2>
+  <h2 class="text-xl">Formats</h2>
 
   <p>
     A <strong>file format</strong> is the way that information is encoded into a computer file. How is
@@ -181,19 +230,7 @@
   </ExerciseTimer>
 </div>
 
-<section class="prose prose-gray max-w-none dark:prose-invert">
-  <h3>JSON (JavaScript Object Notation)</h3>
-  <p>
-    JSON is a lightweight, text-based format for structured data. It's human-readable and widely
-    supported. Let's explore its building blocks and try writing some.
-  </p>
-</section>
-
-<div class="mt-6">
-  <JsonPlayground />
-</div>
-
-<!-- Vocabulary Ladder (after students have worked with JSON, XML, JSON-LD) -->
+<!-- Vocabulary Ladder -->
 <section class="prose prose-gray mt-10 max-w-none dark:prose-invert">
   <h3>Putting It All Together: Format vs. Schema</h3>
 </section>
@@ -238,7 +275,60 @@
     <strong>In short:</strong> JSON and XML are <em>formats</em> (containers). Schema.org is a <em>schema</em>
     (vocabulary). JSON-LD is a format that carries schema-based meaning. You can explore how schemas
     and formats work together in
-    <a href="./schema" class="text-blue-600 hover:underline dark:text-blue-400">Module A: Schema.org</a>,
+    <a href="/teaching/lis4220/schema" class="text-blue-600 hover:underline dark:text-blue-400">Schema.org</a>,
     including how JSON-LD and RDFa embed structured data into web pages.
   </p>
+</div>
+
+<!-- Format Comparison Exercise -->
+<div class="mb-8 rounded-xl border border-amber-200 bg-amber-50/50 p-5 dark:border-amber-800 dark:bg-amber-900/20">
+  <h4 class="mb-1 text-base font-bold text-gray-900 dark:text-gray-100">
+    Exercise: Format Comparison
+  </h4>
+  <ExerciseTimer phases={[{ label: "Note pros/cons", minutes: 3 }, { label: "Discuss", minutes: 2 }]}>
+    <p class="mb-4 text-sm text-gray-700 dark:text-gray-300">
+      For each format, note its <strong>strengths</strong> and <strong>weaknesses</strong>. Think about: readability,
+      flexibility, file size, tool support, data types...
+    </p>
+    <div class="grid gap-4 md:grid-cols-3">
+      {#each [
+        { key: "json" as const, label: "JSON" },
+        { key: "xml" as const, label: "XML" },
+        { key: "csv" as const, label: "CSV" },
+      ] as format}
+        <div>
+          <label class="mb-1 block text-sm font-semibold text-gray-700 dark:text-gray-300"
+            >{format.label}</label
+          >
+          <textarea
+            bind:value={formatNotes[format.key]}
+            placeholder="Pros / cons..."
+            class="h-24 w-full rounded-lg border border-gray-300 p-2 text-sm dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"
+          ></textarea>
+        </div>
+      {/each}
+    </div>
+    <p class="mt-2 text-xs text-gray-400 dark:text-gray-500">Your notes are saved automatically in your browser.</p>
+  </ExerciseTimer>
+</div>
+
+<!-- More Formats -->
+<div>
+  <h4 class="mb-3 text-base font-bold text-gray-900 dark:text-gray-100">More Formats</h4>
+  <div class="grid gap-2 sm:grid-cols-2">
+    {#each additionalFormats as fmt}
+      <button
+        class="rounded-lg border p-3 text-left transition-all {expandedFormat === fmt.id
+          ? 'border-blue-500 bg-blue-50 dark:border-blue-400 dark:bg-blue-900/30'
+          : 'border-gray-200 bg-white hover:border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-gray-600'}"
+        onclick={() => (expandedFormat = expandedFormat === fmt.id ? null : fmt.id)}
+      >
+        <div class="text-sm font-bold text-gray-900 dark:text-gray-100">{fmt.name}</div>
+        <div class="text-xs text-gray-500 dark:text-gray-400">{fmt.full}</div>
+        {#if expandedFormat === fmt.id}
+          <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">{fmt.desc}</p>
+        {/if}
+      </button>
+    {/each}
+  </div>
 </div>

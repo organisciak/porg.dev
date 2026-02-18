@@ -1,6 +1,4 @@
 <script lang="ts">
-  import ExerciseTimer from "$lib/teaching/ExerciseTimer.svelte";
-
   const STORAGE_KEY = "lis4220-format-playground";
 
   // --- localStorage helpers ---
@@ -127,42 +125,6 @@
 
   let showPreview = $state(false);
 
-  // --- XML comparison ---
-  let showXmlComparison = $state(false);
-
-  const recipeJson = `{
-  "name": "Garlic Roasted Potatoes",
-  "author": "Ina Garten",
-  "prepTime": "10 minutes",
-  "cookTime": "1 hour",
-  "servings": 8,
-  "ingredients": [
-    "3 pounds small red potatoes",
-    "1/4 cup olive oil",
-    "1.5 teaspoons kosher salt",
-    "2 tablespoons minced garlic"
-  ],
-  "vegetarian": true,
-  "glutenFree": true
-}`;
-
-  const xmlExample = `<?xml version="1.0" encoding="UTF-8"?>
-<recipe>
-  <name>Garlic Roasted Potatoes</name>
-  <author>Ina Garten</author>
-  <prepTime>10 minutes</prepTime>
-  <cookTime>1 hour</cookTime>
-  <servings>8</servings>
-  <ingredients>
-    <ingredient>3 pounds small red potatoes</ingredient>
-    <ingredient>1/4 cup olive oil</ingredient>
-    <ingredient>1.5 teaspoons kosher salt</ingredient>
-    <ingredient>2 tablespoons minced garlic</ingredient>
-  </ingredients>
-  <vegetarian>true</vegetarian>
-  <glutenFree>true</glutenFree>
-</recipe>`;
-
   // --- JSON-LD standalone examples ---
   const plainJsonExample = `{
   "name": "Data Curation",
@@ -188,39 +150,6 @@
   "description": "Data cleaning, management plans, preservation, and policy."
 }`;
 
-  // --- Format comparison exercise (persisted) ---
-  let formatNotes = $state(loadState("formatNotes", { json: "", xml: "", csv: "" }));
-  $effect(() => { saveState("formatNotes", formatNotes); });
-
-  // --- Additional formats ---
-  let expandedFormat: string | null = $state(null);
-
-  const additionalFormats = [
-    {
-      id: "netcdf",
-      name: "NetCDF",
-      full: "Network Common Data Form",
-      desc: "For sharing n-dimensional array data. Supports compression, quick reads, and self-describing metadata. Common in climate science, oceanography, and atmospheric research.",
-    },
-    {
-      id: "hdf5",
-      name: "HDF5",
-      full: "Hierarchical Data Format 5",
-      desc: "Binary format for n-dimensional arrays with hierarchical group structure. Portable, fast to access, supports compression. Used in astronomy, bioinformatics, and high-performance computing.",
-    },
-    {
-      id: "markdown",
-      name: "Markdown",
-      full: "Markdown (.md)",
-      desc: 'A plain-text markup language for written material. "The overriding design goal for Markdown\'s formatting syntax is to make it as readable as possible." - John Gruber. Used widely in documentation, README files, and academic writing.',
-    },
-    {
-      id: "warc",
-      name: "WARC",
-      full: "Web Archive Format",
-      desc: "For preserving web page data including HTTP headers, page content, and metadata. Used by the Internet Archive and national libraries for web archiving at scale.",
-    },
-  ];
 </script>
 
 <!-- JSON Section -->
@@ -426,176 +355,9 @@
     <p class="text-sm text-gray-700 dark:text-gray-300">
       Same data, but now machines (search engines, assistants, databases) can understand it. Google
       <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline dark:text-blue-400">recommends JSON-LD</a>
-      for adding structured data to web pages. You'll explore this further in
-      <strong>Module A: Schema.org</strong>.
+      for adding structured data to web pages. You'll explore this further in the
+      <a href="/teaching/lis4220/schema" class="text-blue-600 hover:underline dark:text-blue-400">Schema.org</a> section.
     </p>
   </div>
 </div>
 
-<!-- XML Section -->
-<div class="mb-8">
-  <h4 class="mb-3 text-base font-bold text-gray-900 dark:text-gray-100">XML: Tags, Attributes, Elements, Content</h4>
-
-  <p class="mb-3 text-sm text-gray-600 dark:text-gray-400">
-    XML (eXtensible Markup Language) organizes data with <strong>tags</strong> that you define.
-    Unlike JSON's braces and brackets, XML uses angle-bracket tags that wrap around content.
-  </p>
-
-  <div class="mb-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-    {#each [
-      { term: "Tag", example: "<book>", desc: "A name in angle brackets that marks the start or end of data" },
-      { term: "Element", example: "<book>...</book>", desc: "Everything from the opening tag through the closing tag, including content" },
-      { term: "Attribute", example: 'id="bk101"', desc: "Named values inside an opening tag that add metadata" },
-      { term: "Content", example: "Tolkien, J.R.R.", desc: "The actual data between the opening and closing tags" },
-    ] as item}
-      <div class="rounded-lg border border-gray-200 bg-white p-3 dark:border-gray-700 dark:bg-gray-800">
-        <div class="text-sm font-bold text-gray-900 dark:text-gray-100">{item.term}</div>
-        <code class="mt-1 block text-xs text-purple-600 dark:text-purple-400">{item.example}</code>
-        <div class="mt-1 text-xs text-gray-500 dark:text-gray-400">{item.desc}</div>
-      </div>
-    {/each}
-  </div>
-
-  <!-- XML Nesting Rules -->
-  <div class="mb-4 rounded-lg border border-purple-200 bg-purple-50/50 p-5 dark:border-purple-800 dark:bg-purple-900/20">
-    <h5 class="mb-3 text-sm font-bold text-gray-900 dark:text-gray-100">XML Nesting Rules</h5>
-    <p class="mb-3 text-sm text-gray-700 dark:text-gray-300">
-      XML is <strong>strictly hierarchical</strong>. Every tag that opens must close, and tags cannot overlap.
-      If an element is inside a parent, it must close <em>before</em> the parent closes &mdash; like
-      Russian nesting dolls.
-    </p>
-
-    <div class="grid gap-4 sm:grid-cols-2">
-      <!-- Valid example -->
-      <div>
-        <div class="mb-1 flex items-center gap-1.5">
-          <span class="rounded bg-green-100 px-1.5 py-0.5 text-xs font-bold text-green-700 dark:bg-green-900/30 dark:text-green-400">Valid</span>
-          <span class="text-xs text-gray-500 dark:text-gray-400">Elements properly nested</span>
-        </div>
-        <pre class="overflow-auto rounded-lg bg-white p-3 text-sm dark:bg-gray-900 dark:text-gray-300"><code>&lt;catalog&gt;
-  &lt;book id="bk101"&gt;
-    &lt;author&gt;Gambardella, Matthew&lt;/author&gt;
-    &lt;title&gt;XML Developer's Guide&lt;/title&gt;
-    &lt;price&gt;44.95&lt;/price&gt;
-  &lt;/book&gt;
-  &lt;book id="bk102"&gt;
-    &lt;author&gt;Ralls, Kim&lt;/author&gt;
-    &lt;title&gt;Midnight Rain&lt;/title&gt;
-    &lt;price&gt;5.95&lt;/price&gt;
-  &lt;/book&gt;
-&lt;/catalog&gt;</code></pre>
-      </div>
-
-      <!-- Invalid example -->
-      <div>
-        <div class="mb-1 flex items-center gap-1.5">
-          <span class="rounded bg-red-100 px-1.5 py-0.5 text-xs font-bold text-red-700 dark:bg-red-900/30 dark:text-red-400">Invalid</span>
-          <span class="text-xs text-gray-500 dark:text-gray-400">Tags overlap &mdash; not allowed!</span>
-        </div>
-        <pre class="overflow-auto rounded-lg bg-white p-3 text-sm dark:bg-gray-900 dark:text-gray-300"><code>&lt;catalog&gt;
-  &lt;book&gt;
-    &lt;author&gt;Gambardella
-  &lt;/book&gt;
-    &lt;/author&gt;  <span class="text-red-500 dark:text-red-400">&lt;!-- ERROR: author</span>
-                   <span class="text-red-500 dark:text-red-400">closed after book --&gt;</span>
-&lt;/catalog&gt;</code></pre>
-        <p class="mt-2 text-xs text-gray-600 dark:text-gray-400">
-          The <code>&lt;author&gt;</code> element must close <em>before</em> its parent <code>&lt;book&gt;</code> closes.
-          Every child element is fully contained within its parent.
-        </p>
-      </div>
-    </div>
-
-    <!-- Hierarchy visualization -->
-    <div class="mt-4">
-      <div class="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">The nesting forms a tree structure:</div>
-      <pre class="overflow-auto rounded-lg bg-white p-3 text-sm dark:bg-gray-900 dark:text-gray-300"><code>CATALOG
-├── BOOK id="bk101"
-│   ├── AUTHOR → "Gambardella, Matthew"
-│   ├── TITLE  → "XML Developer's Guide"
-│   └── PRICE  → "44.95"
-└── BOOK id="bk102"
-    ├── AUTHOR → "Ralls, Kim"
-    ├── TITLE  → "Midnight Rain"
-    └── PRICE  → "5.95"</code></pre>
-    </div>
-  </div>
-
-  <button
-    onclick={() => (showXmlComparison = !showXmlComparison)}
-    class="mb-3 flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-  >
-    <span class="transition-transform {showXmlComparison ? 'rotate-90' : ''}">&rsaquo;</span>
-    Compare: Same data in JSON vs XML
-  </button>
-
-  {#if showXmlComparison}
-    <div class="grid gap-4 lg:grid-cols-2">
-      <div>
-        <div class="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">JSON</div>
-        <pre
-          class="h-64 overflow-auto rounded-lg border border-gray-200 bg-gray-50 p-3 text-sm dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300"
-        >{recipeJson}</pre>
-      </div>
-      <div>
-        <div class="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">XML</div>
-        <pre
-          class="h-64 overflow-auto rounded-lg border border-gray-200 bg-gray-50 p-3 text-sm dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300"
-        >{xmlExample}</pre>
-      </div>
-    </div>
-  {/if}
-</div>
-
-<!-- Format Comparison Exercise -->
-<div class="mb-8 rounded-xl border border-amber-200 bg-amber-50/50 p-5 dark:border-amber-800 dark:bg-amber-900/20">
-  <h4 class="mb-1 text-base font-bold text-gray-900 dark:text-gray-100">
-    Exercise: Format Comparison
-  </h4>
-  <ExerciseTimer phases={[{ label: "Note pros/cons", minutes: 3 }, { label: "Discuss", minutes: 2 }]}>
-    <p class="mb-4 text-sm text-gray-700 dark:text-gray-300">
-      For each format, note its <strong>strengths</strong> and <strong>weaknesses</strong>. Think about: readability,
-      flexibility, file size, tool support, data types...
-    </p>
-    <div class="grid gap-4 md:grid-cols-3">
-      {#each [
-        { key: "json" as const, label: "JSON" },
-        { key: "xml" as const, label: "XML" },
-        { key: "csv" as const, label: "CSV" },
-      ] as format}
-        <div>
-          <label class="mb-1 block text-sm font-semibold text-gray-700 dark:text-gray-300"
-            >{format.label}</label
-          >
-          <textarea
-            bind:value={formatNotes[format.key]}
-            placeholder="Pros / cons..."
-            class="h-24 w-full rounded-lg border border-gray-300 p-2 text-sm dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"
-          ></textarea>
-        </div>
-      {/each}
-    </div>
-    <p class="mt-2 text-xs text-gray-400 dark:text-gray-500">Your notes are saved automatically in your browser.</p>
-  </ExerciseTimer>
-</div>
-
-<!-- More Formats -->
-<div>
-  <h4 class="mb-3 text-base font-bold text-gray-900 dark:text-gray-100">More Formats</h4>
-  <div class="grid gap-2 sm:grid-cols-2">
-    {#each additionalFormats as fmt}
-      <button
-        class="rounded-lg border p-3 text-left transition-all {expandedFormat === fmt.id
-          ? 'border-blue-500 bg-blue-50 dark:border-blue-400 dark:bg-blue-900/30'
-          : 'border-gray-200 bg-white hover:border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-gray-600'}"
-        onclick={() => (expandedFormat = expandedFormat === fmt.id ? null : fmt.id)}
-      >
-        <div class="text-sm font-bold text-gray-900 dark:text-gray-100">{fmt.name}</div>
-        <div class="text-xs text-gray-500 dark:text-gray-400">{fmt.full}</div>
-        {#if expandedFormat === fmt.id}
-          <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">{fmt.desc}</p>
-        {/if}
-      </button>
-    {/each}
-  </div>
-</div>

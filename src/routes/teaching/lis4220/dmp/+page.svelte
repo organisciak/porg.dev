@@ -1,5 +1,6 @@
 <script lang="ts">
   import DmpScaffold from "$lib/teaching/DmpScaffold.svelte";
+  import ModulePrevNext from "$lib/teaching/ModulePrevNext.svelte";
 </script>
 
 <svelte:head>
@@ -11,7 +12,7 @@
 </svelte:head>
 
 <section class="prose prose-gray max-w-none dark:prose-invert">
-  <h2 class="text-xl">Module C: DMP</h2>
+  <h2 class="text-xl">DMP</h2>
 
   <p>
     A <strong>Data Management Plan</strong> anticipates the future of your data. It's a living
@@ -30,3 +31,5 @@
 <div class="mt-6">
   <DmpScaffold />
 </div>
+
+<ModulePrevNext />

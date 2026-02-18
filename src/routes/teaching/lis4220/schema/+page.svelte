@@ -5,6 +5,7 @@
   import SchemaTypeExplorer from "$lib/teaching/schema/SchemaTypeExplorer.svelte";
   import SchemaExercise from "$lib/teaching/schema/SchemaExercise.svelte";
   import SchemaEmbedding from "$lib/teaching/schema/SchemaEmbedding.svelte";
+  import ModulePrevNext from "$lib/teaching/ModulePrevNext.svelte";
 </script>
 
 <svelte:head>
@@ -16,7 +17,7 @@
 </svelte:head>
 
 <section class="prose prose-gray max-w-none dark:prose-invert">
-  <h2 class="text-xl">Module A: Schema.org</h2>
+  <h2 class="text-xl">Schema.org</h2>
 </section>
 
 <div class="mt-6 space-y-10">
@@ -27,3 +28,5 @@
   <SchemaExercise />
   <SchemaEmbedding />
 </div>
+
+<ModulePrevNext />

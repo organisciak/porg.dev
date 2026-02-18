@@ -1,5 +1,6 @@
 <script lang="ts">
   import MarkdownPlayground from "$lib/teaching/MarkdownPlayground.svelte";
+  import ModulePrevNext from "$lib/teaching/ModulePrevNext.svelte";
 </script>
 
 <svelte:head>
@@ -21,3 +22,5 @@
 <div class="mt-6">
   <MarkdownPlayground />
 </div>
+
+<ModulePrevNext />

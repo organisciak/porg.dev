@@ -1,5 +1,6 @@
 <script lang="ts">
   import LicensingOverview from "$lib/teaching/LicensingOverview.svelte";
+  import ModulePrevNext from "$lib/teaching/ModulePrevNext.svelte";
 </script>
 
 <svelte:head>
@@ -20,3 +21,5 @@
 <div class="mt-6">
   <LicensingOverview />
 </div>
+
+<ModulePrevNext />

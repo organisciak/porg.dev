@@ -1,20 +1,20 @@
 <svelte:head>
-  <title>Schema, Formats & DMPs | LIS 4220 | Data Curation</title>
+  <title>LIS 4220: Data Curation | Use and Analysis</title>
   <meta
     name="description"
-    content="Interactive activities for Schema.org, data formats, and data management plans."
+    content="Interactive activities for schema, formats, data management, markdown, and licensing."
   />
 </svelte:head>
 
-<div class="grid gap-4 sm:grid-cols-3">
+<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
   <a
-    href="/teaching/lis4220/schema-formats/schema"
+    href="/teaching/lis4220/schema"
     class="group rounded-xl border border-gray-200 bg-white p-6 no-underline transition-all hover:border-blue-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-600"
   >
     <div class="mb-3 flex items-center gap-2">
       <span
         class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 text-sm font-bold text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
-      >A</span>
+      >1</span>
       <span class="text-xs text-gray-400 dark:text-gray-500">~40 min</span>
     </div>
     <h2
@@ -28,13 +28,13 @@
   </a>
 
   <a
-    href="/teaching/lis4220/schema-formats/formats"
+    href="/teaching/lis4220/formats"
     class="group rounded-xl border border-gray-200 bg-white p-6 no-underline transition-all hover:border-emerald-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-emerald-600"
   >
     <div class="mb-3 flex items-center gap-2">
       <span
         class="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100 text-sm font-bold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
-      >B</span>
+      >2</span>
       <span class="text-xs text-gray-400 dark:text-gray-500">~30 min</span>
     </div>
     <h2
@@ -48,13 +48,13 @@
   </a>
 
   <a
-    href="/teaching/lis4220/schema-formats/dmp"
+    href="/teaching/lis4220/dmp"
     class="group rounded-xl border border-gray-200 bg-white p-6 no-underline transition-all hover:border-purple-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-purple-600"
   >
     <div class="mb-3 flex items-center gap-2">
       <span
         class="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-100 text-sm font-bold text-purple-700 dark:bg-purple-900/30 dark:text-purple-400"
-      >C</span>
+      >3</span>
       <span class="text-xs text-gray-400 dark:text-gray-500">~30 min</span>
     </div>
     <h2
@@ -67,4 +67,43 @@
     </p>
   </a>
 
+  <a
+    href="/teaching/lis4220/markdown"
+    class="group rounded-xl border border-gray-200 bg-white p-6 no-underline transition-all hover:border-amber-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-amber-600"
+  >
+    <div class="mb-3 flex items-center gap-2">
+      <span
+        class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
+      >4</span>
+      <span class="text-xs text-gray-400 dark:text-gray-500">~15 min</span>
+    </div>
+    <h2
+      class="mb-2 text-lg font-bold text-gray-900 group-hover:text-amber-600 dark:text-gray-100 dark:group-hover:text-amber-400"
+    >
+      Markdown
+    </h2>
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      Learn Markdown syntax with a live editor and convert plain text to formatted documentation.
+    </p>
+  </a>
+
+  <a
+    href="/teaching/lis4220/licensing"
+    class="group rounded-xl border border-gray-200 bg-white p-6 no-underline transition-all hover:border-rose-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-rose-600"
+  >
+    <div class="mb-3 flex items-center gap-2">
+      <span
+        class="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-100 text-sm font-bold text-rose-700 dark:bg-rose-900/30 dark:text-rose-400"
+      >5</span>
+      <span class="text-xs text-gray-400 dark:text-gray-500">~15 min</span>
+    </div>
+    <h2
+      class="mb-2 text-lg font-bold text-gray-900 group-hover:text-rose-600 dark:text-gray-100 dark:group-hover:text-rose-400"
+    >
+      Licensing
+    </h2>
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      Copyright, open licenses, Creative Commons, and data use agreements for data curation.
+    </p>
+  </a>
 </div>

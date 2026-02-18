@@ -126,4 +126,24 @@
       Answer the specific questions funders ask on a real DMP form, using a research project scenario.
     </p>
   </a>
+
+  <a
+    href="/teaching/lis4220/git"
+    class="group rounded-xl border border-gray-200 bg-white p-6 no-underline transition-all hover:border-orange-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-orange-600"
+  >
+    <div class="mb-3 flex items-center gap-2">
+      <span
+        class="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-100 text-sm font-bold text-orange-700 dark:bg-orange-900/30 dark:text-orange-400"
+      >7</span>
+      <span class="text-xs text-gray-400 dark:text-gray-500">~20 min</span>
+    </div>
+    <h2
+      class="mb-2 text-lg font-bold text-gray-900 group-hover:text-orange-600 dark:text-gray-100 dark:group-hover:text-orange-400"
+    >
+      Git
+    </h2>
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      Learn Git version control: commits, branches, merging, conflicts, and handling large files.
+    </p>
+  </a>
 </div>

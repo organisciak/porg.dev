@@ -8,6 +8,7 @@
     { href: "/teaching/lis4220/markdown", label: "Markdown", time: "~15 min" },
     { href: "/teaching/lis4220/licensing", label: "Licensing", time: "~15 min" },
     { href: "/teaching/lis4220/dmp-applied", label: "DMP Applied", time: "~20 min" },
+    { href: "/teaching/lis4220/git", label: "Git", time: "~20 min" },
   ];
 </script>
 

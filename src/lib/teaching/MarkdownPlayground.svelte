@@ -111,6 +111,11 @@ If you can write Markdown, you can document data anywhere.`;
     <li>Some metadata standards</li>
   </ul>
   <p>If you can write Markdown, you can document data anywhere.</p>
+  <p class="text-sm">
+    Notice: that list above is written in Markdown as <code>- README files</code>, <code>- Data dictionaries</code>, etc.
+    Compare the plain-text source with the rendered version &mdash; still perfectly readable either way.
+    That's the point.
+  </p>
 </section>
 
 <!-- Syntax Quick Reference -->

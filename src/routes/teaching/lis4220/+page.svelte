@@ -6,7 +6,7 @@
   />
 </svelte:head>
 
-<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
   <a
     href="/teaching/lis4220/schema"
     class="group rounded-xl border border-gray-200 bg-white p-6 no-underline transition-all hover:border-blue-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-600"
@@ -104,6 +104,26 @@
     </h2>
     <p class="text-sm text-gray-600 dark:text-gray-400">
       Copyright, open licenses, Creative Commons, and data use agreements for data curation.
+    </p>
+  </a>
+
+  <a
+    href="/teaching/lis4220/dmp-applied"
+    class="group rounded-xl border border-gray-200 bg-white p-6 no-underline transition-all hover:border-indigo-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-indigo-600"
+  >
+    <div class="mb-3 flex items-center gap-2">
+      <span
+        class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-100 text-sm font-bold text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400"
+      >6</span>
+      <span class="text-xs text-gray-400 dark:text-gray-500">~20 min</span>
+    </div>
+    <h2
+      class="mb-2 text-lg font-bold text-gray-900 group-hover:text-indigo-600 dark:text-gray-100 dark:group-hover:text-indigo-400"
+    >
+      DMP Applied
+    </h2>
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      Answer the specific questions funders ask on a real DMP form, using a research project scenario.
     </p>
   </a>
 </div>

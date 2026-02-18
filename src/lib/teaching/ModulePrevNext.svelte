@@ -7,6 +7,7 @@
     { href: "/teaching/lis4220/dmp", label: "DMP" },
     { href: "/teaching/lis4220/markdown", label: "Markdown" },
     { href: "/teaching/lis4220/licensing", label: "Licensing" },
+    { href: "/teaching/lis4220/dmp-applied", label: "DMP Applied" },
   ];
 
   const currentIndex = $derived(

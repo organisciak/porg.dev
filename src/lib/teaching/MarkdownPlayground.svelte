@@ -22,7 +22,7 @@
   }
 
   const syntaxReference = [
-    { label: "Heading", md: "# Heading 1\n## Heading 2\n### Heading 3", desc: "Use 1–6 # symbols" },
+    { label: "Heading", md: "# Heading 1\n## Heading 2\n### Heading 3", desc: "Use 1\u20136 # symbols" },
     { label: "Bold", md: "**bold text**", desc: "Double asterisks or underscores" },
     { label: "Italic", md: "*italic text*", desc: "Single asterisks or underscores" },
     { label: "Link", md: "[link text](https://example.com)", desc: "Square brackets + parentheses" },
@@ -35,37 +35,37 @@
     { label: "Horizontal rule", md: "---", desc: "Three dashes, asterisks, or underscores" },
   ];
 
-  const challengeText = `Practicing Markdown
+  const challengeText = `Markdown is a plain-text format for writing formatted documents. Unlike proprietary formats like .docx, a Markdown file is just text \u2014 readable on any computer, in any editor, decades from now. That makes it an excellent choice for data documentation.
 
-Markdown is a plain-text markup language. Formatting in Markdown can be rendered with bold, italics and other visual styles seen in word processors, but is also understandable in a plain text file. John Gruber, Markdown's creator, notes that:
+Why Markdown?
+Markdown is a plain-text markup language. Unlike a Word document, a Markdown file is just text \u2014 you can open it in any text editor, on any operating system, forever. But it still supports formatting: headings, bold, links, lists, and more.
 
-The overriding design goal for Markdown's formatting syntax is to make it as readable as possible.
+John Gruber, Markdown's creator, set a clear goal:
 
-Exercise
+The overriding design goal for Markdown\u2019s formatting syntax is to make it as readable as possible.
+Markdown is widely used in data curation: README files, data dictionaries, documentation, GitHub, and even some metadata standards. If you can write Markdown, you can document data anywhere.`;
 
-Open a text editor on your computer. Try rewriting the text of this slide in Markdown. Instructions are available at the GitHub formatting guide. When you're done, test it at stackedit.io, and fix remaining problems.`;
+  const challengeHint = `Markdown is a **plain-text format** for writing formatted documents. Unlike proprietary formats like \`.docx\`, a Markdown file is just text \u2014 readable on any computer, in any editor, decades from now. That makes it an excellent choice for data documentation.
 
-  const challengeHint = `# Practicing Markdown
+## Why Markdown?
 
-Markdown is a plain-text markup language. Formatting in Markdown can be rendered with **bold**, *italics* and other visual styles seen in word processors, but is also understandable in a plain text file. John Gruber, Markdown's creator, notes that:
+Markdown is a **plain-text markup language**. Unlike a Word document, a Markdown file is just text \u2014 you can open it in any text editor, on any operating system, forever. But it still supports formatting: headings, **bold**, links, lists, and more.
 
-> The overriding design goal for Markdown's formatting syntax is to make it as readable as possible.
+John Gruber, Markdown's creator, set a clear goal:
 
-## Exercise
+> The overriding design goal for Markdown\u2019s formatting syntax is to make it as readable as possible.
 
-1. Open a text editor on your computer
-2. Try rewriting the text of this slide in Markdown. Instructions are available at the [GitHub formatting guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-3. When you're done, test it at [stackedit.io](https://stackedit.io), and fix remaining problems`;
+Markdown is widely used in data curation: README files, data dictionaries, documentation, GitHub, and even some metadata standards. If you can write Markdown, you can document data anywhere.`;
 
   let editorText = $state(loadState("editor", "# Hello!\n\nStart writing **Markdown** here and see it rendered on the right.\n\n- Try a list\n- With multiple items\n\n> Or a blockquote"));
   $effect(() => { saveState("editor", editorText); });
 
-  let showReference = $state(false);
+  let showReference = $state(true);
   let showHint = $state(false);
-  let activeTab: "editor" | "challenge" = $state("editor");
+  let activeTab: "exercise" | "freewrite" = $state("exercise");
 
-  let challengeText2 = $state(loadState("challenge", ""));
-  $effect(() => { saveState("challenge", challengeText2); });
+  let challengeAnswer = $state(loadState("challenge", ""));
+  $effect(() => { saveState("challenge", challengeAnswer); });
 
   // Copy reference syntax to clipboard
   function copySyntax(md: string) {
@@ -130,53 +130,32 @@ Markdown is a plain-text markup language. Formatting in Markdown can be rendered
   <!-- Tab bar -->
   <div class="mb-3 flex gap-1 rounded-lg bg-gray-100 p-1 dark:bg-gray-800">
     <button
-      onclick={() => (activeTab = "editor")}
-      class="flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-all {activeTab === 'editor'
+      onclick={() => (activeTab = "exercise")}
+      class="flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-all {activeTab === 'exercise'
+        ? 'bg-white text-gray-900 shadow-sm dark:bg-gray-900 dark:text-gray-100'
+        : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'}"
+    >
+      Exercise
+    </button>
+    <button
+      onclick={() => (activeTab = "freewrite")}
+      class="flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-all {activeTab === 'freewrite'
         ? 'bg-white text-gray-900 shadow-sm dark:bg-gray-900 dark:text-gray-100'
         : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'}"
     >
       Free Write
     </button>
-    <button
-      onclick={() => (activeTab = "challenge")}
-      class="flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-all {activeTab === 'challenge'
-        ? 'bg-white text-gray-900 shadow-sm dark:bg-gray-900 dark:text-gray-100'
-        : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'}"
-    >
-      Challenge
-    </button>
   </div>
 
-  {#if activeTab === "editor"}
-    <!-- Free write mode -->
-    <div class="grid gap-4 lg:grid-cols-2">
-      <div>
-        <div class="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">Markdown</div>
-        <textarea
-          bind:value={editorText}
-          class="h-72 w-full resize-none rounded-lg border border-gray-300 bg-white p-3 font-mono text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:focus:border-blue-400 dark:focus:ring-blue-800"
-          spellcheck="false"
-        ></textarea>
-      </div>
-      <div>
-        <div class="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">Preview</div>
-        <div
-          class="prose prose-sm prose-gray h-72 overflow-auto rounded-lg border border-gray-200 bg-white p-3 dark:prose-invert dark:border-gray-700 dark:bg-gray-900"
-        >
-          <SvelteMarkdown source={editorText} />
-        </div>
-      </div>
-    </div>
-    <p class="mt-2 text-xs text-gray-400 dark:text-gray-500">Your text is saved automatically in your browser.</p>
-  {:else}
-    <!-- Challenge mode -->
+  {#if activeTab === "exercise"}
+    <!-- Exercise mode -->
     <div class="rounded-xl border border-amber-200 bg-amber-50/50 p-5 dark:border-amber-800 dark:bg-amber-900/20">
       <h5 class="mb-1 text-sm font-bold text-gray-900 dark:text-gray-100">
         Exercise: Convert Plain Text to Markdown
       </h5>
       <ExerciseTimer phases={[{ label: "Write Markdown", minutes: 5 }, { label: "Compare & refine", minutes: 3 }]}>
         <p class="mb-3 text-sm text-gray-700 dark:text-gray-300">
-          The text below is plain, unformatted content from a lecture slide. Rewrite it in the editor using
+          The text below is a plain, unformatted version of the content above. Rewrite it in the editor using
           proper Markdown: headings, bold, italic, blockquotes, lists, and links where appropriate.
         </p>
 
@@ -191,7 +170,7 @@ Markdown is a plain-text markup language. Formatting in Markdown can be rendered
           <div>
             <div class="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">Your Markdown</div>
             <textarea
-              bind:value={challengeText2}
+              bind:value={challengeAnswer}
               placeholder="Rewrite the text above using Markdown..."
               class="h-56 w-full resize-none rounded-lg border border-gray-300 bg-white p-3 font-mono text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:focus:border-blue-400 dark:focus:ring-blue-800"
               spellcheck="false"
@@ -202,8 +181,8 @@ Markdown is a plain-text markup language. Formatting in Markdown can be rendered
             <div
               class="prose prose-sm prose-gray h-56 overflow-auto rounded-lg border border-gray-200 bg-white p-3 dark:prose-invert dark:border-gray-700 dark:bg-gray-900"
             >
-              {#if challengeText2.trim()}
-                <SvelteMarkdown source={challengeText2} />
+              {#if challengeAnswer.trim()}
+                <SvelteMarkdown source={challengeAnswer} />
               {:else}
                 <p class="text-gray-400 italic">Your preview will appear here...</p>
               {/if}
@@ -249,6 +228,27 @@ Markdown is a plain-text markup language. Formatting in Markdown can be rendered
         <p class="mt-3 text-xs text-gray-400 dark:text-gray-500">Your work is saved automatically in your browser.</p>
       </ExerciseTimer>
     </div>
+  {:else}
+    <!-- Free write mode -->
+    <div class="grid gap-4 lg:grid-cols-2">
+      <div>
+        <div class="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">Markdown</div>
+        <textarea
+          bind:value={editorText}
+          class="h-72 w-full resize-none rounded-lg border border-gray-300 bg-white p-3 font-mono text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:focus:border-blue-400 dark:focus:ring-blue-800"
+          spellcheck="false"
+        ></textarea>
+      </div>
+      <div>
+        <div class="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">Preview</div>
+        <div
+          class="prose prose-sm prose-gray h-72 overflow-auto rounded-lg border border-gray-200 bg-white p-3 dark:prose-invert dark:border-gray-700 dark:bg-gray-900"
+        >
+          <SvelteMarkdown source={editorText} />
+        </div>
+      </div>
+    </div>
+    <p class="mt-2 text-xs text-gray-400 dark:text-gray-500">Your text is saved automatically in your browser.</p>
   {/if}
 </div>
 

@@ -111,11 +111,6 @@ If you can write Markdown, you can document data anywhere.`;
     <li>Some metadata standards</li>
   </ul>
   <p>If you can write Markdown, you can document data anywhere.</p>
-  <p class="text-sm">
-    Notice: that list above is written in Markdown as <code>- README files</code>, <code>- Data dictionaries</code>, etc.
-    Compare the plain-text source with the rendered version &mdash; still perfectly readable either way.
-    That's the point.
-  </p>
 </section>
 
 <!-- Syntax Quick Reference -->
@@ -249,6 +244,12 @@ If you can write Markdown, you can document data anywhere.`;
             </p>
           </div>
         {/if}
+
+        <div class="mt-4 rounded-lg border border-purple-200 bg-purple-50/50 p-3 dark:border-purple-800 dark:bg-purple-900/20">
+          <p class="text-sm text-gray-700 dark:text-gray-300">
+            Compare your Markdown source to the rendered preview. Is the plain-text version still readable on its own?
+          </p>
+        </div>
 
         <p class="mt-3 text-xs text-gray-400 dark:text-gray-500">Your work is saved automatically in your browser.</p>
       </ExerciseTimer>

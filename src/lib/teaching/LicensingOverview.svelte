@@ -116,6 +116,15 @@
         Look at the legal language of each. What does CC0 give up that ODbL retains? When would you choose one over the other?
       </p>
     </div>
+
+    <div>
+      <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
+        5. ODbL keeps derivatives open and requires attribution. CC0 gives up everything. Why would anyone <em>choose</em> CC0?
+      </p>
+      <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+        Think about friction, enforcement, combining datasets, and what happens when legal requirements and community norms diverge.
+      </p>
+    </div>
   </div>
 </div>
 

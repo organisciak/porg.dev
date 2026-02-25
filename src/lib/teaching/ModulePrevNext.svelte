@@ -9,17 +9,23 @@
     { href: "/teaching/lis4220/licensing", label: "Licensing" },
     { href: "/teaching/lis4220/dmp-applied", label: "DMP Applied" },
     { href: "/teaching/lis4220/git", label: "Git" },
+    { href: "/teaching/lis4220/visualization", label: "Visualization" },
+    { href: "/teaching/lis4220/data-reporting", label: "Data Reporting" },
   ];
 
   const currentIndex = $derived(
-    modules.findIndex(m => page.url.pathname === m.href || page.url.pathname.startsWith(m.href + '/'))
+    modules.findIndex(
+      (m) => page.url.pathname === m.href || page.url.pathname.startsWith(m.href + "/"),
+    ),
   );
   const prev = $derived(currentIndex > 0 ? modules[currentIndex - 1] : null);
   const next = $derived(currentIndex < modules.length - 1 ? modules[currentIndex + 1] : null);
 </script>
 
 {#if prev || next}
-  <nav class="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-700">
+  <nav
+    class="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-700"
+  >
     {#if prev}
       <a
         href={prev.href}

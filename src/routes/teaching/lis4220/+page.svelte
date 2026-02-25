@@ -2,7 +2,7 @@
   <title>LIS 4220: Data Curation | Use and Analysis</title>
   <meta
     name="description"
-    content="Interactive activities for schema, formats, data management, markdown, and licensing."
+    content="Interactive activities for schema, formats, data management, markdown, licensing, visualization, and data reporting."
   />
 </svelte:head>
 
@@ -14,7 +14,8 @@
     <div class="mb-3 flex items-center gap-2">
       <span
         class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 text-sm font-bold text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
-      >1</span>
+        >1</span
+      >
       <span class="text-xs text-gray-400 dark:text-gray-500">~40 min</span>
     </div>
     <h2
@@ -23,7 +24,8 @@
       Schema.org
     </h2>
     <p class="text-sm text-gray-600 dark:text-gray-400">
-      Explore the full schema.org vocabulary: data types, Thing properties, 900+ types with inheritance, and a hands-on website annotation exercise.
+      Explore the full schema.org vocabulary: data types, Thing properties, 900+ types with
+      inheritance, and a hands-on website annotation exercise.
     </p>
   </a>
 
@@ -34,7 +36,8 @@
     <div class="mb-3 flex items-center gap-2">
       <span
         class="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100 text-sm font-bold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
-      >2</span>
+        >2</span
+      >
       <span class="text-xs text-gray-400 dark:text-gray-500">~30 min</span>
     </div>
     <h2
@@ -43,7 +46,8 @@
       Formats
     </h2>
     <p class="text-sm text-gray-600 dark:text-gray-400">
-      Learn JSON syntax hands-on, see how JSON-LD bridges formats and schemas, and compare JSON, XML, CSV, and more.
+      Learn JSON syntax hands-on, see how JSON-LD bridges formats and schemas, and compare JSON,
+      XML, CSV, and more.
     </p>
   </a>
 
@@ -54,7 +58,8 @@
     <div class="mb-3 flex items-center gap-2">
       <span
         class="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-100 text-sm font-bold text-purple-700 dark:bg-purple-900/30 dark:text-purple-400"
-      >3</span>
+        >3</span
+      >
       <span class="text-xs text-gray-400 dark:text-gray-500">~30 min</span>
     </div>
     <h2
@@ -63,7 +68,8 @@
       DMP
     </h2>
     <p class="text-sm text-gray-600 dark:text-gray-400">
-      Walk through Michener's 10 Rules for Data Management Plans and draft a mini-DMP for a research scenario.
+      Walk through Michener's 10 Rules for Data Management Plans and draft a mini-DMP for a research
+      scenario.
     </p>
   </a>
 
@@ -74,7 +80,8 @@
     <div class="mb-3 flex items-center gap-2">
       <span
         class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
-      >4</span>
+        >4</span
+      >
       <span class="text-xs text-gray-400 dark:text-gray-500">~15 min</span>
     </div>
     <h2
@@ -94,7 +101,8 @@
     <div class="mb-3 flex items-center gap-2">
       <span
         class="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-100 text-sm font-bold text-rose-700 dark:bg-rose-900/30 dark:text-rose-400"
-      >5</span>
+        >5</span
+      >
       <span class="text-xs text-gray-400 dark:text-gray-500">~15 min</span>
     </div>
     <h2
@@ -114,7 +122,8 @@
     <div class="mb-3 flex items-center gap-2">
       <span
         class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-100 text-sm font-bold text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400"
-      >6</span>
+        >6</span
+      >
       <span class="text-xs text-gray-400 dark:text-gray-500">~20 min</span>
     </div>
     <h2
@@ -123,7 +132,8 @@
       DMP Applied
     </h2>
     <p class="text-sm text-gray-600 dark:text-gray-400">
-      Answer the specific questions funders ask on a real DMP form, using a research project scenario.
+      Answer the specific questions funders ask on a real DMP form, using a research project
+      scenario.
     </p>
   </a>
 
@@ -134,7 +144,8 @@
     <div class="mb-3 flex items-center gap-2">
       <span
         class="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-100 text-sm font-bold text-orange-700 dark:bg-orange-900/30 dark:text-orange-400"
-      >7</span>
+        >7</span
+      >
       <span class="text-xs text-gray-400 dark:text-gray-500">~20 min</span>
     </div>
     <h2
@@ -144,6 +155,50 @@
     </h2>
     <p class="text-sm text-gray-600 dark:text-gray-400">
       Learn Git version control: commits, branches, merging, conflicts, and handling large files.
+    </p>
+  </a>
+
+  <a
+    href="/teaching/lis4220/visualization"
+    class="group rounded-xl border border-gray-200 bg-white p-6 no-underline transition-all hover:border-teal-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-teal-600"
+  >
+    <div class="mb-3 flex items-center gap-2">
+      <span
+        class="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-100 text-sm font-bold text-teal-700 dark:bg-teal-900/30 dark:text-teal-400"
+        >8</span
+      >
+      <span class="text-xs text-gray-400 dark:text-gray-500">~22 min</span>
+    </div>
+    <h2
+      class="mb-2 text-lg font-bold text-gray-900 group-hover:text-teal-600 dark:text-gray-100 dark:group-hover:text-teal-400"
+    >
+      Visualization
+    </h2>
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      Match analytical questions to chart types, then defend your choice and identify misleading
+      alternatives.
+    </p>
+  </a>
+
+  <a
+    href="/teaching/lis4220/data-reporting"
+    class="group rounded-xl border border-gray-200 bg-white p-6 no-underline transition-all hover:border-cyan-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-cyan-600"
+  >
+    <div class="mb-3 flex items-center gap-2">
+      <span
+        class="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-100 text-sm font-bold text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400"
+        >9</span
+      >
+      <span class="text-xs text-gray-400 dark:text-gray-500">~20 min</span>
+    </div>
+    <h2
+      class="mb-2 text-lg font-bold text-gray-900 group-hover:text-cyan-600 dark:text-gray-100 dark:group-hover:text-cyan-400"
+    >
+      Data Reporting
+    </h2>
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      Build a reporting plan from real datasets: user stories, summary stats, visualization choices,
+      and validity/risk framing.
     </p>
   </a>
 </div>

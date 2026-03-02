@@ -90,6 +90,7 @@
   };
 
   let shareable: boolean = false;
+  let copied: boolean = false;
   let currentDifference: number = 0;
 
   function getRandomInt(max: number) {
@@ -225,6 +226,43 @@
         .catch((error) => console.log("Error sharing", error));
     } else {
       alert("Web Share API not supported.");
+    }
+  }
+
+  function generateShareText(): string {
+    const date = new Date();
+    const monthNames = [
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+    ];
+    const dateStr = `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+    const dailyGuesses = $guessHistoryStore.filter((g) => guessFilter(g, colorMode, "DAILY"));
+
+    function scoreToEmoji(difference: number, isLast: boolean): string {
+      const score = calculateBoundScore(difference, rawScoreThreshold, 100);
+      if (isLast && score >= 90) return "✅";
+      if (score >= 90) return "🟢";
+      if (score >= 70) return "🟡";
+      if (score >= 40) return "🟠";
+      return "🔴";
+    }
+
+    const emojiRow = dailyGuesses
+      .map((g, i) => scoreToEmoji(g.difference, i === dailyGuesses.length - 1))
+      .join("");
+
+    return `Hue Hunter 🎨 — ${dateStr}\n${colorMode} · ${dailyGuesses.length}/${maxAttempts}\n\n${emojiRow}\n\nporg.dev/huehunter`;
+  }
+
+  async function copyShareText(): Promise<void> {
+    try {
+      await navigator.clipboard.writeText(generateShareText());
+      copied = true;
+      setTimeout(() => {
+        copied = false;
+      }, 2000);
+    } catch (e) {
+      console.error("Failed to copy share text", e);
     }
   }
 
@@ -771,14 +809,14 @@
             <div class="score-value">
               <HueHunterScore score={dayScore / attempts} />
             </div>
-            {#if playMode == "DAILY" && shareable}
+            {#if finished && playMode === "DAILY"}
               <button
                 class="guesser-button-sm"
                 type="button"
-                on:click={() => share(dayScore / attempts)}
+                on:click={copyShareText}
               >
                 <Share class="button-icon" />
-                Share score
+                {copied ? "Copied!" : "Share score"}
               </button>
             {/if}
 

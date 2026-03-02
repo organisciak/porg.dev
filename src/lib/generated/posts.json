@@ -1,5 +1,14 @@
 [
   {
+    "title": "Toward a New AI Literacy (chapter overview + preprint link)",
+    "date": "2026-03-01",
+    "description": "A short overview of my AI literacy chapter, and a placeholder link to the preprint until it’s posted.",
+    "tags": "ai, literacy, education, writing",
+    "keywords": "ai, ai literacy, education, writing, llms",
+    "slug": "toward-a-new-ai-literacy",
+    "fileType": "svx"
+  },
+  {
     "title": "Introducing atmux: A Tmux Companion for Agentic Coding in Projects",
     "date": "2026-02-11",
     "description": "atmux: project-scoped tmux sessions, fast resume workflows, and a browse/send interface built for real coding loops.",

@@ -6,7 +6,7 @@ tags: ai, literacy, education, libraries, equity
 keywords: ai literacy, information literacy, digital divide, ai ethics, educational equity
 ---
 
-As part of the book [*A Critical Look at Information Science and Librarianship in a New Age: Constellation of Insanity*](https://bookstore.emerald.com/a-critical-look-at-information-science-and-librarianship-in-a-new-age-hb-9781836086574.html) (Advances in Librarianship, Vol. 60; Emerald Publishing), Emily Gillette and I contributed a chapter called **"Toward a New AI Literacy."** This survey of the space informed much of the [AI literacy class](https://ai.porg.dev) I taught last year.
+As part of the book *A Critical Look at Information Science and Librarianship in a New Age: Constellation of Insanity* (Advances in Librarianship, Vol. 60; Emerald Publishing), Emily Gillette and I contributed a chapter called [**"Toward a New AI Literacy"**](https://zenodo.org/records/18867770) (preprint). This survey of the space informed much of the [AI literacy class](https://ai.porg.dev) I taught last year.
 
 ## The problem—and the opportunity
 

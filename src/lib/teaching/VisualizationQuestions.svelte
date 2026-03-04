@@ -149,7 +149,7 @@
   <ExerciseTimer
     phases={[
       { label: "Scenario matching", minutes: 10 },
-      { label: "Defend choices", minutes: 6 },
+      { label: "Defend choices", minutes: 5 },
     ]}
   >
     <p class="mb-4 text-sm text-gray-700 dark:text-gray-300">

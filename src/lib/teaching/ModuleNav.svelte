@@ -9,8 +9,8 @@
     { href: "/teaching/lis4220/licensing", label: "Licensing", time: "~15 min" },
     { href: "/teaching/lis4220/dmp-applied", label: "DMP Applied", time: "~20 min" },
     { href: "/teaching/lis4220/git", label: "Git", time: "~20 min" },
-    { href: "/teaching/lis4220/visualization", label: "Visualization", time: "~22 min" },
-    { href: "/teaching/lis4220/data-reporting", label: "Data Reporting", time: "~20 min" },
+    { href: "/teaching/lis4220/visualization", label: "Visualization", time: "~15 min" },
+    { href: "/teaching/lis4220/data-reporting", label: "Data Reporting", time: "~15 min" },
   ];
 </script>
 

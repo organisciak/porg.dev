@@ -110,14 +110,6 @@
     and use case, then works toward appropriate summaries, visualizations, and risk framing.
   </p>
   <div
-    class="rounded-lg border border-blue-200 bg-blue-50/50 p-4 dark:border-blue-800 dark:bg-blue-900/20"
-  >
-    <p class="text-sm text-gray-700 dark:text-gray-300">
-      <strong>Hyflex delivery:</strong> form mixed groups (in-room + Zoom), pick one dataset case, and
-      produce a shared reporting brief. One person can screen-share while others write in a shared document.
-    </p>
-  </div>
-  <div
     class="mt-3 rounded-lg border border-purple-200 bg-purple-50/50 p-4 dark:border-purple-800 dark:bg-purple-900/20"
   >
     <p class="text-sm text-gray-700 dark:text-gray-300">
@@ -142,8 +134,8 @@
   <ExerciseTimer
     phases={[
       { label: "Pick case", minutes: 2 },
-      { label: "Plan report", minutes: 12 },
-      { label: "Share out", minutes: 5 },
+      { label: "Plan report", minutes: 9 },
+      { label: "Share out", minutes: 4 },
     ]}
   >
     <p class="mb-4 text-sm text-gray-700 dark:text-gray-300">

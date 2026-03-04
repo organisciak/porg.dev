@@ -1,0 +1,70 @@
+---
+title: 'Toward a New AI Literacy'
+date: '2026-03-01'
+description: 'AI literacy as a framework for equity and access, not just productivity hacks.'
+tags: ai, literacy, education, libraries, equity
+keywords: ai literacy, information literacy, digital divide, ai ethics, educational equity
+---
+
+As part of the book [*A Critical Look at Information Science and Librarianship in a New Age: Constellation of Insanity*](https://bookstore.emerald.com/a-critical-look-at-information-science-and-librarianship-in-a-new-age-hb-9781836086574.html) (Advances in Librarianship, Vol. 60; Emerald Publishing), Emily Gillette and I contributed a chapter called **"Toward a New AI Literacy."** This survey of the space informed much of the [AI literacy class](https://ai.porg.dev) I taught last year.
+
+## The problem—and the opportunity
+
+Research shows AI tools can increase worker productivity by 14-40%, with particularly strong benefits for novice workers. But these gains are not equally distributed. Without intervention, AI literacy threatens to become a new digital divide, where those without the skills to effectively use and critically evaluate AI systems fall further behind.
+
+**This is where civic-minded service professions come in.** The chapter argues that libraries, educators, and public-facing institutions have both the responsibility and the capacity to democratize AI literacy—to make these skills universal rather than the privilege of those with corporate training or technical backgrounds. Current AI education is largely led by private companies, focused on tool proficiency ("here's how to write better prompts") while rarely engaging with broader questions about bias, equity, policy, or appropriate use.
+
+We need frameworks that go beyond corporate skill-building. With regulations emerging (EU AI Act, California education requirements) that recognize AI literacy as essential, service professions are positioned to ensure equitable access to the critical competencies people need—not just to be productive, but to participate meaningfully in an AI-mediated world.
+
+## Five core competencies
+
+The chapter proposes AI literacy as a distinct framework with five core areas:
+
+### 1. Critical Evaluation
+Knowing when AI should (and shouldn't) be deployed. Understanding technical capabilities and limitations, but also proportionality—balancing benefits against ethical and environmental costs.
+
+### 2. Quality Assessment Fluency
+Recognizing hallucinations, fabricated citations, and other failure modes. Building on data literacy to critically evaluate AI outputs, not just accept them because they sound confident.
+
+### 3. Applied Use
+Practical skills for working with AI systems—prompting, iteration, human-AI collaboration. But also adaptability: the ability to evolve alongside rapidly changing technology.
+
+### 4. Foundational Understanding  
+Not deep technical expertise, but enough working knowledge to form accurate mental models. Understanding how training data shapes outputs, what models can and can't do, where human judgment remains essential.
+
+### 5. Ethical & Societal Implications
+We introduce a framework for thinking about AI's societal dimensions: concerns **in** models (bias, training data), **out** of models (ethical deployment, appropriate use cases), and **about** models (policy, regulation, governance).
+
+## Why information professionals matter
+
+The chapter argues that **libraries and information professionals have a critical role** in democratizing AI literacy. Not because we're AI experts, but because:
+
+- We have experience teaching critical evaluation and information assessment
+- We serve diverse populations and understand equity issues
+- We're positioned as trusted, non-commercial sources of education
+- We've navigated technological shifts before (Wikipedia, Google, misinformation)
+
+Without intervention, AI risks becoming another tool that rewards those with existing advantages while leaving others behind. Information professionals can help ensure AI literacy becomes a universal competency, not a privilege.
+
+## The stakes
+
+AI's integration into hiring, healthcare, education, and other high-stakes domains means literacy isn't just about productivity—it's about agency, equity, and informed participation. Those lacking AI literacy face:
+
+- **Workplace disadvantage** as AI-assisted workers outpace them
+- **Vulnerability to misinformation** and manipulative AI content  
+- **Exclusion from decisions** about how AI systems affect their lives
+- **Limited ability to advocate** for responsible AI deployment
+
+This is why the chapter grounds AI literacy in information science rather than computer science—it's fundamentally about equitable access to knowledge and critical engagement with information systems.
+
+## Read the chapter
+
+The author accepted manuscript is available as a preprint under a CC BY-NC 4.0 licence:
+
+- **Toward a New AI Literacy (preprint PDF):** [zenodo.org/records/18867770](https://zenodo.org/records/18867770)
+
+The published version is available from the [Emerald Bookstore](https://bookstore.emerald.com/a-critical-look-at-information-science-and-librarianship-in-a-new-age-hb-9781836086574.html).
+
+## Citation
+
+Organisciak, P., & Gillette, E. (2025). Toward a New AI Literacy. In W. Bishop, J. Sanchez, & R. L. Chancellor (Eds.), *A Critical Look at Information Science and Librarianship in a New Age: Constellation of Insanity* (Advances in Librarianship, Vol. 60, pp. 187-207). Emerald Publishing Limited. ISBN 978-1-83608-657-4. [Emerald Bookstore](https://bookstore.emerald.com/a-critical-look-at-information-science-and-librarianship-in-a-new-age-hb-9781836086574.html)

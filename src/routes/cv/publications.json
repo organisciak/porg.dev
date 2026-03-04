@@ -24,7 +24,13 @@
       }
     ],
     "issued": {
-      "date-parts": [[2025, 11, 30]]
+      "date-parts": [
+        [
+          2025,
+          11,
+          30
+        ]
+      ]
     }
   },
   {
@@ -35,7 +41,7 @@
     "publisher-place": "Bingley, UK",
     "collection-title": "Advances in Librarianship",
     "ISBN": "9781836086574",
-    "URL": "https://indiepubs.com/products/a-critical-look-at-information-science-and-librarianship-in-a-new-age",
+    "URL": "https://bookstore.emerald.com/a-critical-look-at-information-science-and-librarianship-in-a-new-age-hb-9781836086574.html",
     "author": [
       {
         "family": "Organisciak",
@@ -56,26 +62,48 @@
         "given": "R. L."
       },
       {
-        "family": "Sánchez",
+        "family": "S\u00e1nchez",
         "given": "J."
       }
     ],
     "issued": {
-      "date-parts": [[2026, 4]]
+      "date-parts": [
+        [
+          2026,
+          4
+        ]
+      ]
     },
-    "status": "forthcoming"
+    "collection-number": "60"
   },
   {
     "type": "speech",
     "genre": "Conference Presentation",
     "author": [
-      { "family": "Kim", "given": "Y." },
-      { "family": "Dumas", "given": "D." },
-      { "family": "Acar", "given": "S." },
-      { "family": "Organisciak", "given": "P." }
+      {
+        "family": "Kim",
+        "given": "Y."
+      },
+      {
+        "family": "Dumas",
+        "given": "D."
+      },
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
     ],
     "issued": {
-      "date-parts": [["2026", "4"]]
+      "date-parts": [
+        [
+          "2026",
+          "4"
+        ]
+      ]
     },
     "title": "Innovative-Adaptive Model of TTCT Figural: Invariance Across Ethnicity, Not Gender",
     "container-title": "NCME Annual Meeting",
@@ -117,7 +145,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2025, 12]]
+      "date-parts": [
+        [
+          2025,
+          12
+        ]
+      ]
     }
   },
   {
@@ -164,7 +197,13 @@
       }
     ],
     "issued": {
-      "date-parts": [[2025, 5, 8]]
+      "date-parts": [
+        [
+          2025,
+          5,
+          8
+        ]
+      ]
     },
     "status": "preprint"
   },
@@ -195,7 +234,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2025]]
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
     }
   },
   {
@@ -225,7 +268,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2025]]
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
     },
     "genre": "Guest Editorial"
   },
@@ -256,7 +303,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2025]]
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
     },
     "status": "in-press"
   },
@@ -332,7 +383,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2025]]
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
     },
     "custom": [
       {
@@ -366,7 +421,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2024]]
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
     }
   },
   {
@@ -397,19 +456,38 @@
     "DOI": "http://dx.doi.org/10.1002/jocb.646",
     "type": "article-journal",
     "issued": {
-      "date-parts": [[2024, 5, 6]]
+      "date-parts": [
+        [
+          2024,
+          5,
+          6
+        ]
+      ]
     }
   },
   {
     "type": "speech",
     "genre": "Conference Presentation",
     "author": [
-      { "family": "Acar", "given": "S." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Dumas", "given": "D." }
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Dumas",
+        "given": "D."
+      }
     ],
     "issued": {
-      "date-parts": [["2024"]]
+      "date-parts": [
+        [
+          "2024"
+        ]
+      ]
     },
     "title": "Extending Automated Scoring to the Figural Form of the Torrance Tests of Creative Thinking",
     "container-title": "AERA Annual Meeting",
@@ -420,19 +498,47 @@
     "type": "speech",
     "genre": "Conference Presentation",
     "author": [
-      { "family": "Primi", "given": "R." },
-      { "family": "Beaty", "given": "R. E." },
-      { "family": "Patterson", "given": "J. D." },
-      { "family": "Benedek", "given": "M." },
-      { "family": "Paraboni", "given": "I." },
-      { "family": "Dumas", "given": "D." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Caliço", "given": "T. A." }
+      {
+        "family": "Primi",
+        "given": "R."
+      },
+      {
+        "family": "Beaty",
+        "given": "R. E."
+      },
+      {
+        "family": "Patterson",
+        "given": "J. D."
+      },
+      {
+        "family": "Benedek",
+        "given": "M."
+      },
+      {
+        "family": "Paraboni",
+        "given": "I."
+      },
+      {
+        "family": "Dumas",
+        "given": "D."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Cali\u00e7o",
+        "given": "T. A."
+      }
     ],
     "issued": {
-      "date-parts": [["2024"]]
+      "date-parts": [
+        [
+          "2024"
+        ]
+      ]
     },
-    "title": "Beyond Human Raters: Using AI and NLP in PISA’s Creative Thinking Tests",
+    "title": "Beyond Human Raters: Using AI and NLP in PISA\u2019s Creative Thinking Tests",
     "container-title": "NCME Annual Meeting",
     "publisher": "National Council on Measurement in Education",
     "event-place": "Philadelphia"
@@ -441,23 +547,69 @@
     "type": "speech",
     "genre": "Panel",
     "author": [
-      { "family": "Spitsberg", "given": "T." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Acar", "given": "S." },
-      { "family": "Aldemir", "given": "T." },
-      { "family": "Urban", "given": "M." },
-      { "family": "Urban", "given": "K." }
+      {
+        "family": "Spitsberg",
+        "given": "T."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Aldemir",
+        "given": "T."
+      },
+      {
+        "family": "Urban",
+        "given": "M."
+      },
+      {
+        "family": "Urban",
+        "given": "K."
+      }
     ],
     "contributor": [
-      { "family": "Spitsberg", "given": "T.", "role": "moderator" },
-      { "family": "Organisciak", "given": "P.", "role": "panelist" },
-      { "family": "Acar", "given": "S.", "role": "panelist" },
-      { "family": "Aldemir", "given": "T.", "role": "panelist" },
-      { "family": "Urban", "given": "M.", "role": "panelist" },
-      { "family": "Urban", "given": "K.", "role": "panelist" }
+      {
+        "family": "Spitsberg",
+        "given": "T.",
+        "role": "moderator"
+      },
+      {
+        "family": "Organisciak",
+        "given": "P.",
+        "role": "panelist"
+      },
+      {
+        "family": "Acar",
+        "given": "S.",
+        "role": "panelist"
+      },
+      {
+        "family": "Aldemir",
+        "given": "T.",
+        "role": "panelist"
+      },
+      {
+        "family": "Urban",
+        "given": "M.",
+        "role": "panelist"
+      },
+      {
+        "family": "Urban",
+        "given": "K.",
+        "role": "panelist"
+      }
     ],
     "issued": {
-      "date-parts": [["2024"]]
+      "date-parts": [
+        [
+          "2024"
+        ]
+      ]
     },
     "title": "AI Today and Tomorrow in Gifted, Creativity, and Talent Research",
     "container-title": "AERA Annual Meeting",
@@ -473,7 +625,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     },
     "title": "Talking with Machines: The Do's and Don'ts of Effective Chatbot Use",
     "event": "Executive Energy Leadership Academy Alumni Event",
@@ -513,7 +669,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2024]]
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
     }
   },
   {
@@ -551,7 +711,7 @@
     ],
     "editor": [
       {
-        "family": "Šeļa",
+        "family": "\u0160e\u013ca",
         "given": "Artjoms"
       },
       {
@@ -563,7 +723,7 @@
         "given": "Iza"
       }
     ],
-    "title": "“The Library is Open!”: Open Data and an Open API for the HathiTrust Digital Library",
+    "title": "\u201cThe Library is Open!\u201d: Open Data and an Open API for the HathiTrust Digital Library",
     "container-title": "Proceedings of the Computational Humanities Research Conference 2023",
     "event": "Computational Humanities Research 2023",
     "event-place": "Paris, France",
@@ -573,12 +733,17 @@
     "page": "73",
     "genre": "Proceedings Long Article",
     "issued": {
-      "date-parts": [[2023, 12, 6]]
+      "date-parts": [
+        [
+          2023,
+          12,
+          6
+        ]
+      ]
     },
     "URL": "https://ceur-ws.org/Vol-3558/paper7875.pdf",
     "abstract": "This paper describes the history, policy, semantics, and uses of the HathiTrust Research Center Extracted Features dataset, an open-access representation of the 17+ million volume HathiTrust Digital Library, including a major current effort to extend computational access in a variety of more flexible and easily implemented ways, including a modern API supporting customizable visualizations and analyses."
   },
-
   {
     "id": "Acar2023a",
     "type": "article-journal",
@@ -599,9 +764,13 @@
     ],
     "DOI": "http://doi.org/10.1002/jocb.677",
     "title": "Automated Scoring of Figural Tests of Creativity with Computer Vision",
-    "abstract": "In this three-study investigation, we applied various approaches to score drawings created in response to both Form A and Form B of the Torrance Tests of Creative Thinking-Figural (broadly TTCT-F) as well as the Multi-Trial Creative Ideation task (MTCI). We focused on TTCT-F in Study 1, and utilizing a random forest classifier, we achieved 79% and 81% accuracy for drawings only (r = .57; .54), 80% and 85% for drawings and titles (r = .59; .65), and 78% and 85% for titles alone (r = .54; .65), across Form A and Form B, respectively. We trained a combined model for both TTCT-F forms concurrently with fine-tuned vision transformer models (i.e., BEiT) observing accuracy on images of 83% (r = .64). Study 2 extended these analyses to 11,075 drawings produced for MTCI. With the feature-based regressors, we found a Pearson correlation with human labels (rs = .80, 78, and .76 for AdaBoost, and XGBoost, respectively). Finally, the vision transformer method demonstrated a correlation of r = .85. In Study 3, we re-analyzed the TTCT-F and MTCI data with unsupervised learning methods, which worked better for MTCI than TTCT-F but still underperformed compared to supervised learning methods. Findings are discussed in terms of research and practical implications featuring Ocsai-D, a new in-browser scoring interface.",
+    "abstract": "In this three-study investigation, we applied various approaches to score drawings created in response to both Form A and Form B of the Torrance Tests of Creative Thinking-Figural (broadly TTCT-F) as well as the Multi-Trial Creative Ideation task (MTCI). We focused on TTCT-F in Study 1, and utilizing a random forest classifier, we achieved 79% and 81% accuracy for drawings only (r\u2009=\u2009.57; .54), 80% and 85% for drawings and titles (r\u2009=\u2009.59; .65), and 78% and 85% for titles alone (r\u2009=\u2009.54; .65), across Form A and Form B, respectively. We trained a combined model for both TTCT-F forms concurrently with fine-tuned vision transformer models (i.e., BEiT) observing accuracy on images of 83% (r\u2009=\u2009.64). Study 2 extended these analyses to 11,075 drawings produced for MTCI. With the feature-based regressors, we found a Pearson correlation with human labels (rs\u2009=\u2009.80, 78, and .76 for AdaBoost, and XGBoost, respectively). Finally, the vision transformer method demonstrated a correlation of r\u2009=\u2009.85. In Study 3, we re-analyzed the TTCT-F and MTCI data with unsupervised learning methods, which worked better for MTCI than TTCT-F but still underperformed compared to supervised learning methods. Findings are discussed in terms of research and practical implications featuring Ocsai-D, a new in-browser scoring interface.",
     "issued": {
-      "date-parts": [[2024]]
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
     },
     "custom": [
       {
@@ -634,13 +803,17 @@
     "issue": "1",
     "page": "121-132",
     "issued": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     }
   },
   {
     "id": "Zielinska2023",
     "type": "article-journal",
-    "abstract": "Divergent thinking (DT) has been at the heart of creativity measurement for over seven decades. At the same time, large-scale usage of DT tests is limited due to the tedious procedure of scoring the responses, which often requires several judges to assess thousands of participants’ ideas. Across two studies (N = 195 and N = 404), we examined the quality of artificial intelligence-based scoring models (Ocsai, Organisciak et al., 2023) to score Alternate Uses Tasks (Study 1: brick, Study 2: brick, can, rope). Based on more than 6000 ideas provided by participants in Polish and automatically translated to English, we fit a series of idea (response)- and prompt (object)-level structural equation models. When artificial intelligence-based and semantic distance scores were modeled together, latent correlations with human ratings ranged from r = 0.56 to r = 0.95 at the response (idea) level and from r = 0.61 to r = 0.99 at the object (prompt) level. A hierarchical (i.e., person-level) model with three DT tasks modeled together (Study 2) demonstrated a latent correlation between automatized and human ratings of r = 0.96 (Babbage) and r = 0.98 (DaVinci). Notably, the same results were obtained based on untranslated responses provided in Polish. Automated and human scores provided the same serial-order effect pattern and the same profile of differences under “be fluent” vs. “be creative” instructions. This investigation offers an initial yet compelling argument that the new algorithms provide a close-to-perfect score of DT tasks when benchmarked against human ratings, even when the responses are created in a different language and automatically translated to English or used in an untranslated form.",
+    "abstract": "Divergent thinking (DT) has been at the heart of creativity measurement for over seven decades. At the same time, large-scale usage of DT tests is limited due to the tedious procedure of scoring the responses, which often requires several judges to assess thousands of participants\u2019 ideas. Across two studies (N = 195 and N = 404), we examined the quality of artificial intelligence-based scoring models (Ocsai, Organisciak et al., 2023) to score Alternate Uses Tasks (Study 1: brick, Study 2: brick, can, rope). Based on more than 6000 ideas provided by participants in Polish and automatically translated to English, we fit a series of idea (response)- and prompt (object)-level structural equation models. When artificial intelligence-based and semantic distance scores were modeled together, latent correlations with human ratings ranged from r = 0.56 to r = 0.95 at the response (idea) level and from r = 0.61 to r = 0.99 at the object (prompt) level. A hierarchical (i.e., person-level) model with three DT tasks modeled together (Study 2) demonstrated a latent correlation between automatized and human ratings of r = 0.96 (Babbage) and r = 0.98 (DaVinci). Notably, the same results were obtained based on untranslated responses provided in Polish. Automated and human scores provided the same serial-order effect pattern and the same profile of differences under \u201cbe fluent\u201d vs. \u201cbe creative\u201d instructions. This investigation offers an initial yet compelling argument that the new algorithms provide a close-to-perfect score of DT tasks when benchmarked against human ratings, even when the responses are created in a different language and automatically translated to English or used in an untranslated form.",
     "container-title": "Thinking Skills and Creativity",
     "DOI": "https://doi.org/10.1016/j.tsc.2023.101414",
     "ISSN": "1871-1871",
@@ -650,7 +823,7 @@
     "volume": "50",
     "author": [
       {
-        "family": "Zielińska",
+        "family": "Zieli\u0144ska",
         "given": "Aleksandra"
       },
       {
@@ -667,7 +840,11 @@
       }
     ],
     "issued": {
-      "date-parts": [["2023"]]
+      "date-parts": [
+        [
+          "2023"
+        ]
+      ]
     }
   },
   {
@@ -700,7 +877,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2021]]
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
     }
   },
   {
@@ -720,7 +901,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     }
   },
   {
@@ -749,7 +934,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     },
     "custom": [
       {
@@ -787,7 +976,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     },
     "custom": [
       {
@@ -799,7 +992,7 @@
   {
     "id": "Dumas2023",
     "type": "article-journal",
-    "title": "What makes children’s responses to creativity assessments difficult to judge reliably?",
+    "title": "What makes children\u2019s responses to creativity assessments difficult to judge reliably?",
     "container-title": "Journal of Creative Behavior",
     "DOI": "https://doi.org/10.1002/jocb.588",
     "author": [
@@ -841,7 +1034,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     }
   },
   {
@@ -860,7 +1057,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     },
     "DOI": "https://doi.org/10.5860/crl.84.5.751",
     "abstract": "This study seeks to understand the relationship between research data management (RDM) services framed in the data curation life cycle and the production of open data. An electronic questionnaire was distributed to US researchers and RDM specialists, and the results were analyzed using Chi-Square tests for association. The data curation life cycle does associate with the production of open data and shareable research, but tasks like data management plans have stronger associations with the production of open data. The findings analyze the intersection of these concepts and provide insight into RDM services that facilitate the production of open data and shareable research"
@@ -887,7 +1088,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     }
   },
   {
@@ -919,7 +1124,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     }
   },
   {
@@ -947,7 +1156,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2022]]
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
     }
   },
   {
@@ -979,7 +1192,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2022]]
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
     }
   },
   {
@@ -999,7 +1216,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2022]]
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
     }
   },
   {
@@ -1035,7 +1256,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2021]]
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
     }
   },
   {
@@ -1059,7 +1284,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2021]]
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
     }
   },
   {
@@ -1090,7 +1319,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2021]]
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
     }
   },
   {
@@ -1117,7 +1350,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2020]]
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
     }
   },
   {
@@ -1145,7 +1382,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2020]]
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
     }
   },
   {
@@ -1169,7 +1410,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2020]]
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
     }
   },
   {
@@ -1201,7 +1446,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2020]]
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
     }
   },
   {
@@ -1240,7 +1489,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2017]]
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
     }
   },
   {
@@ -1261,7 +1514,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2016]]
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
     }
   },
   {
@@ -1288,7 +1545,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2015]]
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
     }
   },
   {
@@ -1326,7 +1587,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2012]]
+      "date-parts": [
+        [
+          2012
+        ]
+      ]
     },
     "custom": [
       {
@@ -1361,7 +1626,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2010]]
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
     }
   },
   {
@@ -1391,7 +1660,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2019]]
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
     },
     "custom": [
       {
@@ -1428,7 +1701,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2017]]
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
     }
   },
   {
@@ -1471,7 +1748,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2015]]
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
     },
     "genre": "Proceedings Long Article",
     "custom": [
@@ -1497,7 +1778,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2015, 3]]
+      "date-parts": [
+        [
+          2015,
+          3
+        ]
+      ]
     },
     "genre": "Proceedings Long Article"
   },
@@ -1533,7 +1819,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2014, 11]]
+      "date-parts": [
+        [
+          2014,
+          11
+        ]
+      ]
     },
     "genre": "Proceedings Long Article",
     "custom": [
@@ -1563,7 +1854,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2014]]
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
     },
     "genre": "Proceedings Long Article",
     "custom": [
@@ -1600,7 +1895,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2012]]
+      "date-parts": [
+        [
+          2012
+        ]
+      ]
     },
     "genre": "Proceedings Long Article"
   },
@@ -1626,7 +1925,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2012]]
+      "date-parts": [
+        [
+          2012
+        ]
+      ]
     },
     "genre": "Proceedings Long Article"
   },
@@ -1654,7 +1957,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2011]]
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
     },
     "genre": "Proceedings Long Article",
     "custom": [
@@ -1689,7 +1996,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2011, 10]]
+      "date-parts": [
+        [
+          2011,
+          10
+        ]
+      ]
     }
   },
   {
@@ -1713,7 +2025,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2021]]
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
     }
   },
   {
@@ -1740,7 +2056,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2020]]
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
     }
   },
   {
@@ -1755,7 +2075,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2017]]
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
     }
   },
   {
@@ -1779,7 +2103,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2022]]
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
     }
   },
   {
@@ -1811,7 +2139,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2020]]
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
     }
   },
   {
@@ -1840,7 +2172,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2019]]
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
     }
   },
   {
@@ -1881,7 +2217,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2018, 6]]
+      "date-parts": [
+        [
+          2018,
+          6
+        ]
+      ]
     }
   },
   {
@@ -1902,7 +2243,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2017]]
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
     }
   },
   {
@@ -1932,7 +2277,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2017]]
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
     }
   },
   {
@@ -1953,7 +2302,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2016, 5]]
+      "date-parts": [
+        [
+          2016,
+          5
+        ]
+      ]
     }
   },
   {
@@ -1975,7 +2329,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2015]]
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
     }
   },
   {
@@ -2007,7 +2365,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2014, 11]]
+      "date-parts": [
+        [
+          2014,
+          11
+        ]
+      ]
     }
   },
   {
@@ -2035,7 +2398,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2014, 7]]
+      "date-parts": [
+        [
+          2014,
+          7
+        ]
+      ]
     }
   },
   {
@@ -2084,7 +2452,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2014, 3]]
+      "date-parts": [
+        [
+          2014,
+          3
+        ]
+      ]
     }
   },
   {
@@ -2101,7 +2474,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2013]]
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
     },
     "genre": "Long Paper Talk"
   },
@@ -2118,7 +2495,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2013]]
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
     },
     "genre": "Long Paper Talk"
   },
@@ -2145,7 +2526,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2012]]
+      "date-parts": [
+        [
+          2012
+        ]
+      ]
     },
     "genre": "Poster"
   },
@@ -2166,7 +2551,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2011, 7]]
+      "date-parts": [
+        [
+          2011,
+          7
+        ]
+      ]
     },
     "genre": "Long Paper Talk"
   },
@@ -2198,7 +2588,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2011, 6]]
+      "date-parts": [
+        [
+          2011,
+          6
+        ]
+      ]
     },
     "genre": "Long Paper Talk"
   },
@@ -2214,7 +2609,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2011, 6]]
+      "date-parts": [
+        [
+          2011,
+          6
+        ]
+      ]
     },
     "genre": "Long Paper Talk"
   },
@@ -2251,7 +2651,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2010]]
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
     }
   },
   {
@@ -2283,7 +2687,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2009, 6]]
+      "date-parts": [
+        [
+          2009,
+          6
+        ]
+      ]
     }
   },
   {
@@ -2311,7 +2720,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2009, 6]]
+      "date-parts": [
+        [
+          2009,
+          6
+        ]
+      ]
     }
   },
   {
@@ -2336,7 +2750,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2021]]
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
     }
   },
   {
@@ -2361,7 +2779,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2020]]
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
     }
   },
   {
@@ -2386,7 +2808,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2020]]
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
     }
   },
   {
@@ -2411,7 +2837,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2020]]
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
     }
   },
   {
@@ -2432,7 +2862,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2019]]
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
     }
   },
   {
@@ -2449,7 +2883,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2012]]
+      "date-parts": [
+        [
+          2012
+        ]
+      ]
     }
   },
   {
@@ -2478,7 +2916,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2011]]
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
     },
     "custom": [
       {
@@ -2501,7 +2943,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2010]]
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
     }
   },
   {
@@ -2538,7 +2984,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2010]]
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
     }
   },
   {
@@ -2563,7 +3013,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2010]]
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
     }
   },
   {
@@ -2596,7 +3050,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2010]]
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
     }
   },
   {
@@ -2629,7 +3087,12 @@
       }
     ],
     "issued": {
-      "date-parts": [[2009, 5]]
+      "date-parts": [
+        [
+          2009,
+          5
+        ]
+      ]
     }
   },
   {
@@ -2654,7 +3117,11 @@
       }
     ],
     "issued": {
-      "date-parts": [[2009]]
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
     }
   },
   {
@@ -2674,10 +3141,14 @@
       }
     ],
     "issued": {
-      "date-parts": [[2023]]
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
     },
     "title": "Applications of artificial intelligence to verbal and figural tests of creativity",
-    "container-title": "Let’s Go Beyond the Brick: Innovative Assessments of Creativity",
+    "container-title": "Let\u2019s Go Beyond the Brick: Innovative Assessments of Creativity",
     "event": "International Society for the Science of Creativity and Innovation",
     "event-place": "presented remotely via video link",
     "chair": [
@@ -2695,15 +3166,36 @@
     "event": "ASIS&T Webinars",
     "genre": "Invited Talk",
     "author": [
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Ryan", "given": "M." },
-      { "family": "Gypin", "given": "L." }
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Ryan",
+        "given": "M."
+      },
+      {
+        "family": "Gypin",
+        "given": "L."
+      }
     ],
     "custom": [
-      { "key": "location", "value": "Online" },
-      { "key": "sponsors", "value": "ASIS&T SIG-DM" }
+      {
+        "key": "location",
+        "value": "Online"
+      },
+      {
+        "key": "sponsors",
+        "value": "ASIS&T SIG-DM"
+      }
     ],
-    "issued": { "date-parts": [[2020]] }
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    }
   },
   {
     "id": "Organisciak2019a",
@@ -2711,11 +3203,25 @@
     "title": "Strategies for the utilisation of copyright-protected texts for third-party research",
     "event": "Non-consumptive Access to In-copyright Digital Works - the US Perspective",
     "sponsors": "Institute for Digital Law Trier and the Trier Center for Digital Humanities, University of Trier",
-    "author": [{ "family": "Organisciak", "given": "P." }],
+    "author": [
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
+    ],
     "genre": "Invited Talk",
-    "issued": { "date-parts": [[2019]] },
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
     "custom": [
-      { "key": "location", "value": "Trier, Germany" },
+      {
+        "key": "location",
+        "value": "Trier, Germany"
+      },
       {
         "key": "sponsors",
         "value": "Institute for Digital Law Trier and the Trier Center for Digital Humanities, University of Trier"
@@ -2727,10 +3233,26 @@
     "type": "speech",
     "title": "Tooling the future of massive-scale text research data",
     "event": "DataLab, University of Washington Information School",
-    "author": [{ "family": "Organisciak", "given": "P." }],
-    "issued": { "date-parts": [[2019]] },
+    "author": [
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
     "genre": "Invited Talk",
-    "custom": [{ "key": "location", "value": "Seattle, Washington" }]
+    "custom": [
+      {
+        "key": "location",
+        "value": "Seattle, Washington"
+      }
+    ]
   },
   {
     "id": "Downie2018",
@@ -2738,32 +3260,81 @@
     "title": "HathiTrust Research Center",
     "event": "Nanjing University",
     "author": [
-      { "family": "Downie", "given": "J.S." },
-      { "family": "Organisciak", "given": "P." }
+      {
+        "family": "Downie",
+        "given": "J.S."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
     ],
-    "issued": { "date-parts": [[2018]] },
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
     "genre": "Invited Talk",
-    "custom": [{ "key": "location", "value": "Nanjing, China" }]
+    "custom": [
+      {
+        "key": "location",
+        "value": "Nanjing, China"
+      }
+    ]
   },
   {
     "id": "Organisciak2017c",
     "type": "speech",
     "title": "Data Capsule in 7 minutes",
     "event": "Access Workshop 2017,Text Mining the Novel",
-    "author": [{ "family": "Organisciak", "given": "P." }],
-    "issued": { "date-parts": [[2017]] },
+    "author": [
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
     "genre": "Invited Talk",
-    "custom": [{ "key": "location", "value": "Montreal" }]
+    "custom": [
+      {
+        "key": "location",
+        "value": "Montreal"
+      }
+    ]
   },
   {
     "id": "Organisciak_NonRef",
     "type": "speech",
     "title": "Characterizing Duplication and Similarity in Massive Digital Libraries",
     "event": "First Digital Front Range Symposium",
-    "author": [{ "family": "Organisciak", "given": "P." }],
-    "issued": { "date-parts": [[2017]] },
+    "author": [
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
     "genre": "Talk (Other)",
-    "custom": [{ "key": "location", "value": "University of Denver" }]
+    "custom": [
+      {
+        "key": "location",
+        "value": "University of Denver"
+      }
+    ]
   },
   {
     "id": "Weber2021",
@@ -2772,12 +3343,30 @@
     "event": "Association for Information Science and Technology",
     "publisher-place": "Salt Lake City",
     "author": [
-      { "family": "Weber", "given": "N." },
-      { "family": "Thomer", "given": "A." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Fenlon", "given": "K." }
+      {
+        "family": "Weber",
+        "given": "N."
+      },
+      {
+        "family": "Thomer",
+        "given": "A."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Fenlon",
+        "given": "K."
+      }
     ],
-    "issued": { "date-parts": [[2021]] },
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
     "genre": "Refereed Workshop",
     "references": "Cancelled."
   },
@@ -2786,14 +3375,36 @@
     "type": "event",
     "title": "Workshop on conceptual models in digital libraries, archives, and museums",
     "event": "2020 ACM/IEEE Joint Conference on Digital Libraries",
-    "issued": { "date-parts": [[2020, 8]] },
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          8
+        ]
+      ]
+    },
     "genre": "Refereed Workshop",
     "author": [
-      { "family": "Weber", "given": "N." },
-      { "family": "Fenlon", "given": "K." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Thomer", "given": "A." },
-      { "family": "Wickett", "given": "K." }
+      {
+        "family": "Weber",
+        "given": "N."
+      },
+      {
+        "family": "Fenlon",
+        "given": "K."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Thomer",
+        "given": "A."
+      },
+      {
+        "family": "Wickett",
+        "given": "K."
+      }
     ]
   },
   {
@@ -2805,27 +3416,68 @@
     "page": "457--458",
     "URL": "https://doi.org/10.1109/JCDL.2019.00117",
     "author": [
-      { "family": "Weber", "given": "N." },
-      { "family": "Fenlon", "given": "K." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Thomer", "given": "A. K." }
+      {
+        "family": "Weber",
+        "given": "N."
+      },
+      {
+        "family": "Fenlon",
+        "given": "K."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Thomer",
+        "given": "A. K."
+      }
     ],
-    "issued": { "date-parts": [[2019]] }
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    }
   },
   {
     "id": "Oxford2019",
     "type": "event",
     "genre": "Invited Teaching Workshop",
     "title": "Data Scholarship for the Humanities with the HathiTrust Digital Library",
-    "issued": { "date-parts": [[2019, 7, 5]] },
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          7,
+          5
+        ]
+      ]
+    },
     "author": [
-      { "family": "Downie", "given": "J. S." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Wickes", "given": "E." }
+      {
+        "family": "Downie",
+        "given": "J. S."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Wickes",
+        "given": "E."
+      }
     ],
     "custom": [
-      { "key": "participants", "value": "30 participants" },
-      { "key": "sponsors", "value": "Oxford e-Research Centre" }
+      {
+        "key": "participants",
+        "value": "30 participants"
+      },
+      {
+        "key": "sponsors",
+        "value": "Oxford e-Research Centre"
+      }
     ]
   },
   {
@@ -2834,20 +3486,46 @@
     "title": "HathiTrust Digital Library",
     "genre": "Invited Teaching Workshop",
     "author": [
-      { "family": "Downie", "given": "J. S." },
-      { "family": "Dickson Koehl", "given": "E." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Weber", "given": "N." }
+      {
+        "family": "Downie",
+        "given": "J. S."
+      },
+      {
+        "family": "Dickson Koehl",
+        "given": "E."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Weber",
+        "given": "N."
+      }
     ],
     "issued": {
       "date-parts": [
-        [2018, 6, 14],
-        [2018, 6, 16]
+        [
+          2018,
+          6,
+          14
+        ],
+        [
+          2018,
+          6,
+          16
+        ]
       ]
     },
     "custom": [
-      { "key": "participants", "value": "40 participants" },
-      { "key": "sponsors", "value": "Beijing Institute of Technology" }
+      {
+        "key": "participants",
+        "value": "40 participants"
+      },
+      {
+        "key": "sponsors",
+        "value": "Beijing Institute of Technology"
+      }
     ]
   },
   {
@@ -2857,216 +3535,515 @@
     "genre": "Invited Workshop",
     "event": "AAAI Conference on Human Computation and Crowdsourcing",
     "author": [
-      { "family": "Vaish", "given": "R." },
-      { "family": "Krause", "given": "M." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Agapie", "given": "E." }
+      {
+        "family": "Vaish",
+        "given": "R."
+      },
+      {
+        "family": "Krause",
+        "given": "M."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Agapie",
+        "given": "E."
+      }
     ],
-    "issued": { "date-parts": [[2017]] }
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    }
   },
   {
     "author": [
-      { "family": "Acar", "given": "S." },
-      { "family": "Lee", "given": "L. E." },
-      { "family": "Rinn-McCann", "given": "A." },
-      { "family": "Mun", "given": "R." },
-      { "family": "Rambo-Hernandez", "given": "K." },
-      { "family": "Berthiaume", "given": "K." },
-      { "family": "Dumas", "given": "D." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Flemister", "given": "T." },
-      { "family": "Grajzel", "given": "K." },
-      { "family": "Newman", "given": "M." },
-      { "family": "Eby", "given": "D." },
-      { "family": "Deshayes", "given": "C." },
-      { "family": "Puryear", "given": "J." }
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Lee",
+        "given": "L. E."
+      },
+      {
+        "family": "Rinn-McCann",
+        "given": "A."
+      },
+      {
+        "family": "Mun",
+        "given": "R."
+      },
+      {
+        "family": "Rambo-Hernandez",
+        "given": "K."
+      },
+      {
+        "family": "Berthiaume",
+        "given": "K."
+      },
+      {
+        "family": "Dumas",
+        "given": "D."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Flemister",
+        "given": "T."
+      },
+      {
+        "family": "Grajzel",
+        "given": "K."
+      },
+      {
+        "family": "Newman",
+        "given": "M."
+      },
+      {
+        "family": "Eby",
+        "given": "D."
+      },
+      {
+        "family": "Deshayes",
+        "given": "C."
+      },
+      {
+        "family": "Puryear",
+        "given": "J."
+      }
     ],
     "title": "Classic and Novel Approaches in Creativity Assessment and Programming: Implications for Gifted Education",
     "event": "Annual Meeting",
     "event-place": "Chicago, IL",
     "publisher": "AERA",
-    "issued": { "date-parts": [[2023]] },
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
     "type": "speech",
     "genre": "Panel"
   },
   {
     "author": [
-      { "family": "Boughida", "given": "K." },
-      { "family": "Zhang", "given": "B." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "D’Agostino", "given": "S." }
+      {
+        "family": "Boughida",
+        "given": "K."
+      },
+      {
+        "family": "Zhang",
+        "given": "B."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "D\u2019Agostino",
+        "given": "S."
+      }
     ],
     "title": "ChatGPT: The Future of Higher Ed and Libraries, Brought to You by AI",
     "event": "CNI Spring 2023 Membership Meeting",
     "event-place": "Denver, CO, USA",
     "publisher": "Coalition for Networked Information",
-    "issued": { "date-parts": [[2023]] },
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
     "type": "speech",
     "genre": "Panel"
   },
   {
     "author": [
-      { "family": "Booth", "given": "K." },
-      { "family": "Sanchez", "given": "J." },
-      { "family": "Bishop", "given": "B. W." },
-      { "family": "Organisciak", "given": "P." }
+      {
+        "family": "Booth",
+        "given": "K."
+      },
+      {
+        "family": "Sanchez",
+        "given": "J."
+      },
+      {
+        "family": "Bishop",
+        "given": "B. W."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
     ],
     "title": "Resilience in iSchools cohort education during a turbulent time: Improved normalcy through systemic inclusivity and other lessons learned to optimize virtual and physical spaces",
     "event": "iConference 2023",
     "event-place": "Barcelona, Spain",
     "publisher": "iSchools Consortium",
-    "issued": { "date-parts": [[2023]] },
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
     "type": "speech",
     "genre": "Panel"
   },
   {
     "author": [
-      { "family": "Bishop", "given": "B. W." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Mayernik", "given": "M." },
-      { "family": "Cowan", "given": "M." }
+      {
+        "family": "Bishop",
+        "given": "B. W."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Mayernik",
+        "given": "M."
+      },
+      {
+        "family": "Cowan",
+        "given": "M."
+      }
     ],
     "title": "Assessing the Research Data Management Landscape Through Practice and Education",
     "event": "Federation of Earth Science Information Partners",
     "event-place": "Online",
-    "issued": { "date-parts": [[2021]] },
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
     "type": "speech",
     "genre": "Panel"
   },
   {
     "author": [
-      { "family": "Ruecker", "given": "S." },
-      { "family": "Rockwell", "given": "G." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Meunier", "given": "J.-G." },
-      { "family": "Eberle-Sinatra", "given": "M." },
-      { "family": "Galey", "given": "A." },
-      { "family": "Morrison", "given": "A." },
-      { "family": "Siemens", "given": "R." }
+      {
+        "family": "Ruecker",
+        "given": "S."
+      },
+      {
+        "family": "Rockwell",
+        "given": "G."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Meunier",
+        "given": "J.-G."
+      },
+      {
+        "family": "Eberle-Sinatra",
+        "given": "M."
+      },
+      {
+        "family": "Galey",
+        "given": "A."
+      },
+      {
+        "family": "Morrison",
+        "given": "A."
+      },
+      {
+        "family": "Siemens",
+        "given": "R."
+      }
     ],
     "title": "Graduate Education in the Digital Humanities",
     "event": "Annual Meeting of the Society for Digital Humanities",
     "event-place": "Ottawa, Canada",
     "publisher": "Carleton University",
-    "issued": { "date-parts": [[2009]] },
+    "issued": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    },
     "type": "speech",
     "genre": "Panel"
   },
   {
     "author": [
-      { "family": "Durward", "given": "M." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Matusiak", "given": "K." }
+      {
+        "family": "Durward",
+        "given": "M."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Matusiak",
+        "given": "K."
+      }
     ],
     "title": "Advancing Technologies for Traditional Library Services: Utilizing Content Based Recommendation to Assist in Readers' Advisory",
     "event": "World Library and Information Congress (WLIC)",
     "publisher": "International Federation of Library Associations and Institutions",
     "event-place": "Dublin, Ireland",
-    "issued": { "date-parts": [[2020]] },
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "type": "paper-conference",
     "extra": "Poster"
   },
   {
     "author": [
-      { "family": "Ryan", "given": "M." },
-      { "family": "Gypin", "given": "L." },
-      { "family": "Matusiak", "given": "K." },
-      { "family": "Schmidt", "given": "B. M." },
-      { "family": "Organisciak", "given": "P." }
+      {
+        "family": "Ryan",
+        "given": "M."
+      },
+      {
+        "family": "Gypin",
+        "given": "L."
+      },
+      {
+        "family": "Matusiak",
+        "given": "K."
+      },
+      {
+        "family": "Schmidt",
+        "given": "B. M."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
     ],
     "title": "Conceptual Modeling of Similarities and Duplication in Large-Scale Digital Libraries",
     "event": "Digital Humanities 2020",
     "publisher": "Alliance for Digital Humanities Organization",
     "event-place": "Ottawa",
-    "issued": { "date-parts": [[2020]] },
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "type": "paper-conference",
     "extra": "Poster"
   },
   {
     "author": [
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Pares", "given": "N." }
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Pares",
+        "given": "N."
+      }
     ],
     "title": "MOODs: Identifying Outlier Passages and Texts in the Legislative Process",
     "event": "6th International Conference on Computational Social Science",
     "event-place": "Cambridge, MA/Online",
-    "issued": { "date-parts": [[2020]] },
-    "type": "paper-conference",
-    "extra": "Poster"
-  },
-  {
-    "author": [{ "family": "Organisciak", "given": "P." }],
-    "title": "Including Phrases in Bags of Words",
-    "event": "Uncamp 2018",
-    "publisher": "HathiTrust Research Center",
-    "event-place": "Berkeley",
-    "issued": { "date-parts": [[2018]] },
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "type": "paper-conference",
     "extra": "Poster"
   },
   {
     "author": [
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Teevan", "given": "J." },
-      { "family": "Twidale", "given": "M. B." }
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
+    ],
+    "title": "Including Phrases in Bags of Words",
+    "event": "Uncamp 2018",
+    "publisher": "HathiTrust Research Center",
+    "event-place": "Berkeley",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "type": "paper-conference",
+    "extra": "Poster"
+  },
+  {
+    "author": [
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Teevan",
+        "given": "J."
+      },
+      {
+        "family": "Twidale",
+        "given": "M. B."
+      }
     ],
     "title": "Asking the Right Way: Design Interventions for Microtasks",
     "event": "The sixth AAAI Conference on Human Computation and Crowdsourcing",
     "publisher": "Association for Advancement of Artificial Intelligence",
     "event-place": "Quebec City, Canada",
-    "issued": { "date-parts": [[2018]] },
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
     "type": "paper-conference",
     "extra": "Poster"
   },
   {
     "author": [
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Teevan", "given": "J." },
-      { "family": "Dumais", "given": "S." },
-      { "family": "Miller", "given": "R. C." },
-      { "family": "Kalai", "given": "A." }
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Teevan",
+        "given": "J."
+      },
+      {
+        "family": "Dumais",
+        "given": "S."
+      },
+      {
+        "family": "Miller",
+        "given": "R. C."
+      },
+      {
+        "family": "Kalai",
+        "given": "A."
+      }
     ],
     "title": "Personalized Human Computation",
     "event": "Conference on Human Computation and Crowdsourcing (HCOMP 2013)",
     "publisher": "AAAI",
     "event-place": "Palm Springs, CA",
-    "issued": { "date-parts": [[2013]] },
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
     "type": "paper-conference",
     "extra": "Poster"
   },
   {
     "author": [
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Rockwell", "given": "G." },
-      { "family": "Sinclair", "given": "S." },
-      { "family": "Ruecker", "given": "S." }
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Rockwell",
+        "given": "G."
+      },
+      {
+        "family": "Sinclair",
+        "given": "S."
+      },
+      {
+        "family": "Ruecker",
+        "given": "S."
+      }
     ],
     "title": "Text Analysis for me Too: An embeddable text analysis widget",
     "event": "Annual Meeting of the Society for Digital Humanities",
     "publisher": "SDH/SEMI",
     "event-place": "",
-    "issued": { "date-parts": [[2009]] },
+    "issued": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    },
     "type": "paper-conference",
     "extra": "Poster"
   },
   {
     "author": [
-      { "family": "Sinclair", "given": "S." },
-      { "family": "Beacon", "given": "D." },
-      { "family": "Brown", "given": "S." },
-      { "family": "Downie", "given": "J. S." },
-      { "family": "Fiorentino", "given": "C." },
-      { "family": "Juola", "given": "P." },
-      { "family": "Organisciak", "given": "P." },
-      { "family": "Rockwell", "given": "G." },
-      { "family": "Schreibman", "given": "S." },
-      { "family": "Uszkalo", "given": "K." }
+      {
+        "family": "Sinclair",
+        "given": "S."
+      },
+      {
+        "family": "Beacon",
+        "given": "D."
+      },
+      {
+        "family": "Brown",
+        "given": "S."
+      },
+      {
+        "family": "Downie",
+        "given": "J. S."
+      },
+      {
+        "family": "Fiorentino",
+        "given": "C."
+      },
+      {
+        "family": "Juola",
+        "given": "P."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Rockwell",
+        "given": "G."
+      },
+      {
+        "family": "Schreibman",
+        "given": "S."
+      },
+      {
+        "family": "Uszkalo",
+        "given": "K."
+      }
     ],
     "title": "TADA Research Evaluation Exchange: Winning 2008 Submissions",
     "event": "Digital Humanities 2009",
     "publisher": "University of Maryland",
     "event-place": "USA",
-    "issued": { "date-parts": [[2009]] },
+    "issued": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    },
     "type": "paper-conference",
     "extra": "Poster"
   }

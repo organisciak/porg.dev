@@ -25,7 +25,7 @@
   let metaUrl: string | undefined = canonicalUrl;
   let metaImage: string | undefined;
   let twitterCard = "summary";
-  const defaultOgImagePath = "/opengraph/IMG_20230926_120405.png";
+  const defaultOgImagePath = "/opengraph/default-og.png";
 
   const resolveAbsoluteUrl = (value?: string, baseUrl?: string) => {
     if (!value) return undefined;

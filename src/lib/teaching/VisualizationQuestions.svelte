@@ -138,14 +138,6 @@
     Before reporting, you need defensible chart choices. This module focuses on selecting a visual
     by analytical task, then defending that choice with audience and validity in mind.
   </p>
-  <div
-    class="rounded-lg border border-blue-200 bg-blue-50/50 p-4 dark:border-blue-800 dark:bg-blue-900/20"
-  >
-    <p class="text-sm text-gray-700 dark:text-gray-300">
-      <strong>Hyflex delivery:</strong> pair each in-room group with one Zoom partner and require each
-      team to defend one selected chart and one rejected chart.
-    </p>
-  </div>
 </div>
 
 <div

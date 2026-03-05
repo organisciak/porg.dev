@@ -1,6 +1,40 @@
 [
   {
     "type": "article-journal",
+    "title": "Psycholinguistics of divergent thinking prompts predict the originality of elementary students' responses",
+    "container-title": "Applied Psycholinguistics",
+    "author": [
+      {
+        "family": "Vlaamster",
+        "given": "T."
+      },
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Dumas",
+        "given": "D."
+      },
+      {
+        "family": "Berthiaume",
+        "given": "K."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "type": "article-journal",
     "title": "The Innovative-Adaptive Model of the TTCT Figural Is Invariant Across Ethnicity but Not Gender",
     "container-title": "Gifted Child Quarterly",
     "DOI": "10.1177/00169862251388487",

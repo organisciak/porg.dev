@@ -5,7 +5,16 @@
   import { MetaTags } from "svelte-meta-tags";
   import Fa from "svelte-fa";
   import { faGithub, faLinkedinIn, faBluesky } from "@fortawesome/free-brands-svg-icons";
-  import { Target, CircleHelp, Settings, User, ChartColumn, Share } from "lucide-svelte";
+  import {
+    Target,
+    CircleHelp,
+    Settings,
+    User,
+    ChartColumn,
+    Share,
+    Copy,
+    Check,
+  } from "lucide-svelte";
 
   /* Color tools */
   import {
@@ -37,7 +46,19 @@
   /* Data */
   import colors from "../../colors/colors.json";
   import { calculateBoundScore, moonScale, rawScoreThreshold } from "$lib/huehunter/colorGuesser";
+  import { generateShareText } from "$lib/huehunter/shareResult";
   // import { darkModeSetting } from '$lib/stores/darkModeStore.js';
+
+  function handleKeydown(e: KeyboardEvent) {
+    if (e.key === "Enter" && !finished && !startMenu && !practiceLock) {
+      e.preventDefault();
+      if (playMode === "PRACTICE") {
+        getNextColor();
+      } else {
+        submitGuess();
+      }
+    }
+  }
 
   /* Variable Defaults */
   type PlayMode = "INFINITE" | "DAILY" | "PRACTICE";
@@ -205,64 +226,28 @@
         });*/
   });
 
-  async function share(rawScore: number) {
-    const beHelpful: boolean = true;
-    const normalizedScore: number = Math.min(
-      5,
-      calculateBoundScore(rawScore, rawScoreThreshold, 20) / 4 + (beHelpful ? 0.2 : 0),
-    );
-    const moonScore: string = moonScale(normalizedScore, 5);
-    const date = new Date();
-    const msg: string = `${date.getMonth() + 1}/${date.getDate()} ${colorMode}\n${moonScore}\n`;
-
-    if (shareable) {
-      navigator
-        .share({
-          title: meta.title,
-          text: msg,
-          url: "https://hues.red",
-        })
-        .then(() => console.log("Successful share"))
-        .catch((error) => console.log("Error sharing", error));
-    } else {
-      alert("Web Share API not supported.");
-    }
-  }
-
-  function generateShareText(): string {
-    const date = new Date();
-    const monthNames = [
-      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-    ];
-    const dateStr = `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  function getShareText(): string {
     const dailyGuesses = $guessHistoryStore.filter((g) => guessFilter(g, colorMode, "DAILY"));
-
-    function scoreToEmoji(difference: number, isLast: boolean): string {
-      const score = calculateBoundScore(difference, rawScoreThreshold, 100);
-      if (isLast && score >= 90) return "✅";
-      if (score >= 90) return "🟢";
-      if (score >= 70) return "🟡";
-      if (score >= 40) return "🟠";
-      return "🔴";
-    }
-
-    const emojiRow = dailyGuesses
-      .map((g, i) => scoreToEmoji(g.difference, i === dailyGuesses.length - 1))
-      .join("");
-
-    return `Hue Hunter 🎨 — ${dateStr}\n${colorMode} · ${dailyGuesses.length}/${maxAttempts}\n\n${emojiRow}\n\nporg.dev/huehunter`;
+    return generateShareText(dailyGuesses, colorMode, maxAttempts);
   }
 
   async function copyShareText(): Promise<void> {
     try {
-      await navigator.clipboard.writeText(generateShareText());
+      await navigator.clipboard.writeText(getShareText());
       copied = true;
       setTimeout(() => {
         copied = false;
       }, 2000);
     } catch (e) {
       console.error("Failed to copy share text", e);
+    }
+  }
+
+  async function nativeShare(): Promise<void> {
+    try {
+      await navigator.share({ title: meta.title, text: getShareText() });
+    } catch (e) {
+      // user cancelled or error — ignore
     }
   }
 
@@ -355,6 +340,8 @@
     return cssString;
   }
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -810,14 +797,20 @@
               <HueHunterScore score={dayScore / attempts} />
             </div>
             {#if finished && playMode === "DAILY"}
-              <button
-                class="guesser-button-sm"
-                type="button"
-                on:click={copyShareText}
-              >
-                <Share class="button-icon" />
-                {copied ? "Copied!" : "Share score"}
-              </button>
+              <div class="share-actions">
+                <button class="guesser-button-sm" type="button" on:click={copyShareText}>
+                  {#if copied}
+                    <Check class="button-icon" /> Copied!
+                  {:else}
+                    <Copy class="button-icon" /> Copy result
+                  {/if}
+                </button>
+                {#if shareable}
+                  <button class="guesser-button-sm secondary" type="button" on:click={nativeShare}>
+                    <Share class="button-icon" /> Share
+                  </button>
+                {/if}
+              </div>
             {/if}
 
             {#if calculateBoundScore(dayScore / attempts, rawScoreThreshold, 10) < 4.5}
@@ -906,6 +899,11 @@
                   type="range"
                   min="0"
                   max={colorMode === "RGB" ? 255 : 100}
+                  aria-label="{color[0].toUpperCase() + color.slice(1)} channel"
+                  aria-valuemin={0}
+                  aria-valuemax={colorMode === "RGB" ? 255 : 100}
+                  aria-valuenow={value}
+                  aria-valuetext="{color[0].toUpperCase() + color.slice(1)}: {value} of {colorMode === 'RGB' ? 255 : 100}"
                   {value}
                   on:input={(e) => sliderChange(e, color)}
                 />
@@ -1387,6 +1385,12 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
+  }
+
+  .share-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
   }
 
   .score-label {

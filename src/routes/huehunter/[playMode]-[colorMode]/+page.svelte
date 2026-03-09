@@ -903,7 +903,8 @@
                   aria-valuemin={0}
                   aria-valuemax={colorMode === "RGB" ? 255 : 100}
                   aria-valuenow={value}
-                  aria-valuetext="{color[0].toUpperCase() + color.slice(1)}: {value} of {colorMode === 'RGB' ? 255 : 100}"
+                  aria-valuetext="{color[0].toUpperCase() +
+                    color.slice(1)}: {value} of {colorMode === 'RGB' ? 255 : 100}"
                   {value}
                   on:input={(e) => sliderChange(e, color)}
                 />

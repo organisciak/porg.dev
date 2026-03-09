@@ -6,16 +6,24 @@
   $: remaining = attempts < maxAttempts ? maxAttempts - attempts : 0;
 </script>
 
-<div class="crumbs">
+<div
+  class="crumbs"
+  role="meter"
+  aria-label="Attempts used"
+  aria-valuemin={0}
+  aria-valuemax={maxAttempts}
+  aria-valuenow={attempts}
+  aria-valuetext="{attempts} of {maxAttempts} attempts used"
+>
   {#each Array(attempts) as _, i}
-    <div class="crumb filled"></div>
+    <div class="crumb filled" aria-hidden="true"></div>
   {/each}
   {#if remaining > 0}
-    <div class="crumb active"></div>
+    <div class="crumb active" aria-hidden="true"></div>
   {/if}
   {#if remaining > 1}
     {#each Array(remaining - 1) as _, i}
-      <div class="crumb"></div>
+      <div class="crumb" aria-hidden="true"></div>
     {/each}
   {/if}
 </div>

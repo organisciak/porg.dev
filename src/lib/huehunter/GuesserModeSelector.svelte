@@ -6,14 +6,18 @@
   export let practiceLock: boolean = false;
 </script>
 
-<div class="mode-selector">
-  <div class="mode-row">
-    <span class="mode-label">Play mode</span>
+<div class="mode-selector" role="navigation" aria-label="Game mode selector">
+  <div class="mode-row" role="group" aria-label="Play mode">
+    <span class="mode-label" id="play-mode-label">Play mode</span>
     {#each ["Daily", "Infinite", "Practice"] as mode}
       {#if mode.toUpperCase() == playMode}
-        <span class="mode-option active">{mode}</span>
+        <span class="mode-option active" aria-current="true">{mode}</span>
       {:else if mode === "Practice" && practiceLock}
-        <span class="mode-option disabled">{mode}</span>
+        <span
+          class="mode-option disabled"
+          aria-disabled="true"
+          title="Practice unavailable during a daily game">{mode}</span
+        >
       {:else}
         <a
           class="mode-option"
@@ -24,11 +28,11 @@
     {/each}
   </div>
 
-  <div class="mode-row">
-    <span class="mode-label">Color mode</span>
+  <div class="mode-row" role="group" aria-label="Color mode">
+    <span class="mode-label" id="color-mode-label">Color mode</span>
     {#each ["RGB", "CMYK"] as mode}
       {#if mode.toUpperCase() == colorMode}
-        <span class="mode-option active">{mode}</span>
+        <span class="mode-option active" aria-current="true">{mode}</span>
       {:else}
         <a
           class="mode-option"

@@ -14,6 +14,7 @@
     location: string;
     salary?: string;
     url: string;
+    originalUrl: string;
     snippet: string;
   };
 
@@ -29,6 +30,7 @@
           location: "Wilmington, NC",
           salary: "$60,000–64,000",
           url: "https://jobs.code4lib.org/jobs/65958-research-data-librarian",
+          originalUrl: "https://jobs.uncw.edu/postings/38622",
           snippet:
             "Serve as a campus expert in accessing, using, analyzing, visualizing, managing, and sharing data… assist researchers in meeting funders' or publishers' requirements for research data sharing.",
         },
@@ -37,6 +39,7 @@
           org: "Carnegie Mellon University",
           location: "Pittsburgh, PA",
           url: "https://jobs.code4lib.org/jobs/65942-computational-research-librarian-social-sciences-and-humanities",
+          originalUrl: "https://apply.interfolio.com/181421",
           snippet:
             "Serve as a collaborative research partner to faculty, students, and staff… supporting computational and data-intensive scholarship in the social sciences and humanities.",
         },
@@ -53,6 +56,7 @@
           location: "Atlanta, GA",
           salary: "$61,000–72,600",
           url: "https://jobs.code4lib.org/jobs/65955-digital-preservation-archivist",
+          originalUrl: "https://facultycareers.gsu.edu/postings/6601",
           snippet:
             "Provide leadership and expertise in digital preservation… manage the long-term preservation of digital materials for all collecting areas and handling materials in all formats.",
         },
@@ -62,6 +66,7 @@
           location: "Richmond, VA",
           salary: "$78,000–88,000",
           url: "https://jobs.code4lib.org/jobs/65980-born-digital-collections-coordinator",
+          originalUrl: "https://www.jobs.virginia.gov/jobs/born-digital-collections-coordinator-00220-richmond-virginia-united-states",
           snippet:
             "Lead agency-wide planning and technical management of born-digital government and manuscript records… develop policies, procedures, and technologies that support sustainability and public access.",
         },
@@ -78,6 +83,7 @@
           location: "Washington, DC",
           salary: "GS-14 ($143,913)",
           url: "https://jobs.code4lib.org/jobs/65950-head-of-digital-collections",
+          originalUrl: "https://www.si.edu/ohr/jobs",
           snippet:
             "Lead strategies for digitizing and documenting 1.8 million objects and 3 shelf-miles of archival materials… knowledge of the legal, ethical, and community rights involved in providing access to historical materials.",
         },
@@ -87,6 +93,7 @@
           location: "Berkeley, CA",
           salary: "$102,121–119,820",
           url: "https://jobs.code4lib.org/jobs/65972-metadata-strategies-librarian",
+          originalUrl: "https://aprecruit.berkeley.edu/JPF04956",
           snippet:
             "Improve and transform discovery of library resources by evaluating and implementing new workflows, standards, and technologies… implement linked data and AI-assisted metadata workflows.",
         },
@@ -102,6 +109,7 @@
           org: "Vanguard",
           location: "Malvern, PA",
           url: "https://jobs.code4lib.org/jobs/65947-knowledge-management-strategist",
+          originalUrl: "https://www.vanguardjobs.com/job/23042488/knowledge-management-strategist-malvern-pa/",
           snippet:
             "Lead complex, cross-functional initiatives that connect archives, data, and storytelling… provide governance and direction for knowledge and information management practices.",
         },
@@ -111,6 +119,7 @@
           location: "Madison, NJ",
           salary: "$70,000–75,000",
           url: "https://jobs.code4lib.org/jobs/65981-head-librarian-for-ai-digital-initiatives-scholarship",
+          originalUrl: "https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=1a7897cc-04a2-40ac-93ee-a63f004602a5&ccId=19000101_000001&jobId=529224&lang=en_US",
           snippet:
             "Lead computational cultural initiatives including text analysis, digital exhibits, spatial humanities, and digital archives… responsible integration of AI across the research and teaching lifecycle.",
         },
@@ -250,14 +259,24 @@
             <h3 class="text-base font-bold text-gray-900 dark:text-gray-100">{job.title}</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400">{job.org} — {job.location}</p>
           </div>
-          <a
-            href={job.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="shrink-0 rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 no-underline transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-          >
-            View posting ↗
-          </a>
+          <div class="flex shrink-0 flex-col gap-1.5">
+            <a
+              href={job.originalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-center text-sm font-medium text-gray-700 no-underline transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+            >
+              Original posting ↗
+            </a>
+            <a
+              href={job.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-center text-xs text-gray-400 no-underline hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-400"
+            >
+              via code4lib
+            </a>
+          </div>
         </div>
 
         <blockquote class="mb-4 border-l-2 border-gray-300 pl-3 text-sm italic text-gray-600 dark:border-gray-600 dark:text-gray-400">

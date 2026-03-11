@@ -78,14 +78,14 @@
       theme: "purple",
       jobs: [
         {
-          title: "Head of Digital Collections",
-          org: "Smithsonian National Museum of American History",
-          location: "Washington, DC",
-          salary: "GS-14 ($143,913)",
-          url: "https://jobs.code4lib.org/jobs/65950-head-of-digital-collections",
-          originalUrl: "https://www.si.edu/ohr/jobs",
+          title: "Authorities & Entity Management Metadata Specialist",
+          org: "Getty Research Institute",
+          location: "Los Angeles, CA",
+          salary: "$83,743–110,972",
+          url: "https://jobs.code4lib.org/jobs/65927-authorities-entity-management-metadata-specialist",
+          originalUrl: "https://jobs-getty.icims.com/jobs/4723/authorities-%26-entity-mgmt-metadata-specialist-for-dismo/job",
           snippet:
-            "Lead strategies for digitizing and documenting 1.8 million objects and 3 shelf-miles of archival materials… knowledge of the legal, ethical, and community rights involved in providing access to historical materials.",
+            "Shape metadata governance, identity management, and data cleanup projects spanning archival and bibliographic data… enhance bibliographic linked data, improve data quality in Alma to better align with BIBFRAME, and apply linked data principles to strengthen interoperability.",
         },
         {
           title: "Metadata Strategies Librarian",

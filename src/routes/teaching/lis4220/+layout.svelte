@@ -16,7 +16,7 @@
       LIS 4220: Data Curation
     </h1>
     <p class="text-base text-gray-600 dark:text-gray-400">
-      Module 2: Use and Analysis
+      Interactive Modules
     </p>
   </div>
 

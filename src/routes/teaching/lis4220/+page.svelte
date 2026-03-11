@@ -1,8 +1,8 @@
 <svelte:head>
-  <title>LIS 4220: Data Curation | Use and Analysis</title>
+  <title>LIS 4220: Data Curation | Interactive Modules</title>
   <meta
     name="description"
-    content="Interactive activities for schema, formats, data management, markdown, licensing, visualization, and data reporting."
+    content="Interactive activities for schema, formats, data management, markdown, licensing, visualization, data reporting, and job postings."
   />
 </svelte:head>
 
@@ -199,6 +199,28 @@
     <p class="text-sm text-gray-600 dark:text-gray-400">
       Build a reporting plan from real datasets: user stories, summary stats, visualization choices,
       and validity/risk framing.
+    </p>
+  </a>
+
+  <a
+    href="/teaching/lis4220/job-postings"
+    class="group rounded-xl border border-gray-200 bg-white p-6 no-underline transition-all hover:border-rose-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-rose-600"
+  >
+    <div class="mb-3 flex items-center gap-2">
+      <span
+        class="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-100 text-sm font-bold text-rose-700 dark:bg-rose-900/30 dark:text-rose-400"
+        >10</span
+      >
+      <span class="text-xs text-gray-400 dark:text-gray-500">~25 min</span>
+    </div>
+    <h2
+      class="mb-2 text-lg font-bold text-gray-900 group-hover:text-rose-600 dark:text-gray-100 dark:group-hover:text-rose-400"
+    >
+      Job Postings
+    </h2>
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      Analyze real data curation job postings to identify in-demand skills, tools, and
+      qualifications — and connect them to what you've learned.
     </p>
   </a>
 </div>

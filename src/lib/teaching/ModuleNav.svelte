@@ -11,6 +11,7 @@
     { href: "/teaching/lis4220/git", label: "Git", time: "~20 min" },
     { href: "/teaching/lis4220/visualization", label: "Visualization", time: "~15 min" },
     { href: "/teaching/lis4220/data-reporting", label: "Data Reporting", time: "~15 min" },
+    { href: "/teaching/lis4220/job-postings", label: "Job Postings", time: "~25 min" },
   ];
 </script>
 

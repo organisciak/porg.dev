@@ -1,5 +1,195 @@
 [
   {
+    "type": "paper-conference",
+    "genre": "Proceedings Long Article",
+    "title": "Can LLMs Simulate Expert Panels? Evaluating CAT-Inspired Persona Prompting for Automated Creativity Scoring",
+    "container-title": "Proceedings of the 26th ACM/IEEE Joint Conference on Digital Libraries",
+    "event": "JCDL '26: The 2026 ACM/IEEE Joint Conference on Digital Libraries",
+    "event-place": "Frisco, TX, USA",
+    "publisher": "ACM",
+    "page": "1-8",
+    "DOI": "10.1145/3805696.3846028",
+    "author": [
+      {
+        "family": "Organisciak",
+        "given": "Peter"
+      },
+      {
+        "family": "Ryan",
+        "given": "Maggie"
+      },
+      {
+        "family": "Ghobadi",
+        "given": "Mina"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          10,
+          13
+        ]
+      ]
+    }
+  },
+  {
+    "type": "article-journal",
+    "title": "Know when to trust: Making AI scoring more reliable for educational assessment",
+    "container-title": "Behavior Research Methods",
+    "volume": "58",
+    "issue": "7",
+    "page": "178",
+    "DOI": "10.3758/s13428-026-03058-1",
+    "author": [
+      {
+        "family": "Organisciak",
+        "given": "Peter"
+      },
+      {
+        "family": "Acar",
+        "given": "Selcuk"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          28
+        ]
+      ]
+    }
+  },
+  {
+    "type": "speech",
+    "genre": "Invited Talk",
+    "title": "The Value of Creativity: Measuring and Supporting Original Thinking in Your Students",
+    "event": "NIHF Inventor Summit",
+    "publisher": "National Inventors Hall of Fame",
+    "author": [
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Acar",
+        "given": "S."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          3,
+          16
+        ]
+      ]
+    },
+    "custom": [
+      {
+        "key": "Note",
+        "value": "Keynote address"
+      }
+    ]
+  },
+  {
+    "type": "article-journal",
+    "title": "AI-Powered Scoring for Creative Thinking: Methods and Challenges in PISA Assessment",
+    "container-title": "The Journal of Creative Behavior",
+    "volume": "60",
+    "issue": "1",
+    "page": "e70082",
+    "DOI": "10.1002/jocb.70082",
+    "author": [
+      {
+        "family": "Primi",
+        "given": "Ricardo"
+      },
+      {
+        "family": "Beaty",
+        "given": "Roger E."
+      },
+      {
+        "family": "Benedek",
+        "given": "Mathias"
+      },
+      {
+        "family": "Dumas",
+        "given": "Denis"
+      },
+      {
+        "family": "Organisciak",
+        "given": "Peter"
+      },
+      {
+        "family": "Patterson",
+        "given": "John D."
+      },
+      {
+        "family": "Calico",
+        "given": "Tiago"
+      },
+      {
+        "family": "Piacentini",
+        "given": "Mario"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          12,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "type": "article-journal",
+    "title": "Understanding elementary students' creativity as a trade-off between originality and task appropriateness: A Pareto optimization study",
+    "container-title": "Journal of Educational Psychology",
+    "volume": "118",
+    "issue": "4",
+    "page": "537-555",
+    "DOI": "10.1037/edu0000982",
+    "author": [
+      {
+        "family": "Dumas",
+        "given": "Denis"
+      },
+      {
+        "family": "Kim",
+        "given": "Yoojoong"
+      },
+      {
+        "family": "Carrera-Flores",
+        "given": "Melanie"
+      },
+      {
+        "family": "Kagan",
+        "given": "Sofiia"
+      },
+      {
+        "family": "Acar",
+        "given": "Selcuk"
+      },
+      {
+        "family": "Organisciak",
+        "given": "Peter"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          10,
+          2
+        ]
+      ]
+    }
+  },
+  {
     "type": "article-journal",
     "title": "Psycholinguistics of divergent thinking prompts predict the originality of elementary students' responses",
     "container-title": "Applied Psycholinguistics",
@@ -31,7 +221,10 @@
           2026
         ]
       ]
-    }
+    },
+    "volume": "47",
+    "page": "e24",
+    "DOI": "10.1017/S0142716426100587"
   },
   {
     "type": "article-journal",
@@ -65,7 +258,10 @@
           30
         ]
       ]
-    }
+    },
+    "volume": "70",
+    "issue": "3",
+    "page": "388-405"
   },
   {
     "type": "chapter",
@@ -96,7 +292,7 @@
         "given": "R. L."
       },
       {
-        "family": "S\u00e1nchez",
+        "family": "Sánchez",
         "given": "J."
       }
     ],
@@ -104,11 +300,13 @@
       "date-parts": [
         [
           2026,
-          4
+          3
         ]
       ]
     },
-    "collection-number": "60"
+    "collection-number": "60",
+    "page": "185-205",
+    "DOI": "10.1108/S0065-283020260000060012"
   },
   {
     "type": "speech",
@@ -142,16 +340,15 @@
     "title": "Innovative-Adaptive Model of TTCT Figural: Invariance Across Ethnicity, Not Gender",
     "container-title": "NCME Annual Meeting",
     "publisher": "National Council on Measurement in Education",
-    "event-place": "Los Angeles, California",
-    "status": "forthcoming"
+    "event-place": "Los Angeles, California"
   },
   {
     "type": "article-journal",
     "title": "Reversing the alternate uses task",
     "container-title": "Thinking Skills and Creativity",
-    "volume": "55",
+    "volume": "58",
     "page": "101915",
-    "DOI": "https://doi.org/10.1016/j.tsc.2025.101915",
+    "DOI": "10.1016/j.tsc.2025.101915",
     "author": [
       {
         "family": "Scherbakova",
@@ -190,7 +387,6 @@
   {
     "type": "article-journal",
     "title": "Artificial Intelligence Enhances Human Creativity Through Real-Time Evaluative Feedback",
-    "DOI": "https://doi.org/10.31219/osf.io/qrgbn_v1",
     "author": [
       {
         "family": "de Chantal",
@@ -239,7 +435,13 @@
         ]
       ]
     },
-    "status": "preprint"
+    "status": "Under review",
+    "custom": [
+      {
+        "key": "preprint",
+        "value": "https://doi.org/10.31219/osf.io/qrgbn_v1"
+      }
+    ]
   },
   {
     "type": "article-journal",
@@ -339,11 +541,16 @@
     "issued": {
       "date-parts": [
         [
-          2025
+          2025,
+          2,
+          21
         ]
       ]
     },
-    "status": "in-press"
+    "volume": "94",
+    "issue": "4",
+    "page": "822-844",
+    "DOI": "10.1080/00220973.2025.2466161"
   },
   {
     "type": "chapter",
@@ -561,7 +768,7 @@
         "given": "P."
       },
       {
-        "family": "Cali\u00e7o",
+        "family": "Caliço",
         "given": "T. A."
       }
     ],
@@ -572,7 +779,7 @@
         ]
       ]
     },
-    "title": "Beyond Human Raters: Using AI and NLP in PISA\u2019s Creative Thinking Tests",
+    "title": "Beyond Human Raters: Using AI and NLP in PISA’s Creative Thinking Tests",
     "container-title": "NCME Annual Meeting",
     "publisher": "National Council on Measurement in Education",
     "event-place": "Philadelphia"
@@ -745,7 +952,7 @@
     ],
     "editor": [
       {
-        "family": "\u0160e\u013ca",
+        "family": "Šeļa",
         "given": "Artjoms"
       },
       {
@@ -757,7 +964,7 @@
         "given": "Iza"
       }
     ],
-    "title": "\u201cThe Library is Open!\u201d: Open Data and an Open API for the HathiTrust Digital Library",
+    "title": "“The Library is Open!”: Open Data and an Open API for the HathiTrust Digital Library",
     "container-title": "Proceedings of the Computational Humanities Research Conference 2023",
     "event": "Computational Humanities Research 2023",
     "event-place": "Paris, France",
@@ -798,7 +1005,7 @@
     ],
     "DOI": "http://doi.org/10.1002/jocb.677",
     "title": "Automated Scoring of Figural Tests of Creativity with Computer Vision",
-    "abstract": "In this three-study investigation, we applied various approaches to score drawings created in response to both Form A and Form B of the Torrance Tests of Creative Thinking-Figural (broadly TTCT-F) as well as the Multi-Trial Creative Ideation task (MTCI). We focused on TTCT-F in Study 1, and utilizing a random forest classifier, we achieved 79% and 81% accuracy for drawings only (r\u2009=\u2009.57; .54), 80% and 85% for drawings and titles (r\u2009=\u2009.59; .65), and 78% and 85% for titles alone (r\u2009=\u2009.54; .65), across Form A and Form B, respectively. We trained a combined model for both TTCT-F forms concurrently with fine-tuned vision transformer models (i.e., BEiT) observing accuracy on images of 83% (r\u2009=\u2009.64). Study 2 extended these analyses to 11,075 drawings produced for MTCI. With the feature-based regressors, we found a Pearson correlation with human labels (rs\u2009=\u2009.80, 78, and .76 for AdaBoost, and XGBoost, respectively). Finally, the vision transformer method demonstrated a correlation of r\u2009=\u2009.85. In Study 3, we re-analyzed the TTCT-F and MTCI data with unsupervised learning methods, which worked better for MTCI than TTCT-F but still underperformed compared to supervised learning methods. Findings are discussed in terms of research and practical implications featuring Ocsai-D, a new in-browser scoring interface.",
+    "abstract": "In this three-study investigation, we applied various approaches to score drawings created in response to both Form A and Form B of the Torrance Tests of Creative Thinking-Figural (broadly TTCT-F) as well as the Multi-Trial Creative Ideation task (MTCI). We focused on TTCT-F in Study 1, and utilizing a random forest classifier, we achieved 79% and 81% accuracy for drawings only (r = .57; .54), 80% and 85% for drawings and titles (r = .59; .65), and 78% and 85% for titles alone (r = .54; .65), across Form A and Form B, respectively. We trained a combined model for both TTCT-F forms concurrently with fine-tuned vision transformer models (i.e., BEiT) observing accuracy on images of 83% (r = .64). Study 2 extended these analyses to 11,075 drawings produced for MTCI. With the feature-based regressors, we found a Pearson correlation with human labels (rs = .80, 78, and .76 for AdaBoost, and XGBoost, respectively). Finally, the vision transformer method demonstrated a correlation of r = .85. In Study 3, we re-analyzed the TTCT-F and MTCI data with unsupervised learning methods, which worked better for MTCI than TTCT-F but still underperformed compared to supervised learning methods. Findings are discussed in terms of research and practical implications featuring Ocsai-D, a new in-browser scoring interface.",
     "issued": {
       "date-parts": [
         [
@@ -847,7 +1054,7 @@
   {
     "id": "Zielinska2023",
     "type": "article-journal",
-    "abstract": "Divergent thinking (DT) has been at the heart of creativity measurement for over seven decades. At the same time, large-scale usage of DT tests is limited due to the tedious procedure of scoring the responses, which often requires several judges to assess thousands of participants\u2019 ideas. Across two studies (N = 195 and N = 404), we examined the quality of artificial intelligence-based scoring models (Ocsai, Organisciak et al., 2023) to score Alternate Uses Tasks (Study 1: brick, Study 2: brick, can, rope). Based on more than 6000 ideas provided by participants in Polish and automatically translated to English, we fit a series of idea (response)- and prompt (object)-level structural equation models. When artificial intelligence-based and semantic distance scores were modeled together, latent correlations with human ratings ranged from r = 0.56 to r = 0.95 at the response (idea) level and from r = 0.61 to r = 0.99 at the object (prompt) level. A hierarchical (i.e., person-level) model with three DT tasks modeled together (Study 2) demonstrated a latent correlation between automatized and human ratings of r = 0.96 (Babbage) and r = 0.98 (DaVinci). Notably, the same results were obtained based on untranslated responses provided in Polish. Automated and human scores provided the same serial-order effect pattern and the same profile of differences under \u201cbe fluent\u201d vs. \u201cbe creative\u201d instructions. This investigation offers an initial yet compelling argument that the new algorithms provide a close-to-perfect score of DT tasks when benchmarked against human ratings, even when the responses are created in a different language and automatically translated to English or used in an untranslated form.",
+    "abstract": "Divergent thinking (DT) has been at the heart of creativity measurement for over seven decades. At the same time, large-scale usage of DT tests is limited due to the tedious procedure of scoring the responses, which often requires several judges to assess thousands of participants’ ideas. Across two studies (N = 195 and N = 404), we examined the quality of artificial intelligence-based scoring models (Ocsai, Organisciak et al., 2023) to score Alternate Uses Tasks (Study 1: brick, Study 2: brick, can, rope). Based on more than 6000 ideas provided by participants in Polish and automatically translated to English, we fit a series of idea (response)- and prompt (object)-level structural equation models. When artificial intelligence-based and semantic distance scores were modeled together, latent correlations with human ratings ranged from r = 0.56 to r = 0.95 at the response (idea) level and from r = 0.61 to r = 0.99 at the object (prompt) level. A hierarchical (i.e., person-level) model with three DT tasks modeled together (Study 2) demonstrated a latent correlation between automatized and human ratings of r = 0.96 (Babbage) and r = 0.98 (DaVinci). Notably, the same results were obtained based on untranslated responses provided in Polish. Automated and human scores provided the same serial-order effect pattern and the same profile of differences under “be fluent” vs. “be creative” instructions. This investigation offers an initial yet compelling argument that the new algorithms provide a close-to-perfect score of DT tasks when benchmarked against human ratings, even when the responses are created in a different language and automatically translated to English or used in an untranslated form.",
     "container-title": "Thinking Skills and Creativity",
     "DOI": "https://doi.org/10.1016/j.tsc.2023.101414",
     "ISSN": "1871-1871",
@@ -857,7 +1064,7 @@
     "volume": "50",
     "author": [
       {
-        "family": "Zieli\u0144ska",
+        "family": "Zielińska",
         "given": "Aleksandra"
       },
       {
@@ -1026,7 +1233,7 @@
   {
     "id": "Dumas2023",
     "type": "article-journal",
-    "title": "What makes children\u2019s responses to creativity assessments difficult to judge reliably?",
+    "title": "What makes children’s responses to creativity assessments difficult to judge reliably?",
     "container-title": "Journal of Creative Behavior",
     "DOI": "https://doi.org/10.1002/jocb.588",
     "author": [
@@ -3182,7 +3389,7 @@
       ]
     },
     "title": "Applications of artificial intelligence to verbal and figural tests of creativity",
-    "container-title": "Let\u2019s Go Beyond the Brick: Innovative Assessments of Creativity",
+    "container-title": "Let’s Go Beyond the Brick: Innovative Assessments of Creativity",
     "event": "International Society for the Science of Creativity and Innovation",
     "event-place": "presented remotely via video link",
     "chair": [
@@ -3682,7 +3889,7 @@
         "given": "P."
       },
       {
-        "family": "D\u2019Agostino",
+        "family": "D’Agostino",
         "given": "S."
       }
     ],

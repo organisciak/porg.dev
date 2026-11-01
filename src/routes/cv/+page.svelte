@@ -16,6 +16,49 @@
     return id.replace(/^PR\/?Award\s*#?\s*/i, "").trim();
   }
 
+  // Section navigation (shared by keyboard shortcuts and the floating prev/next buttons)
+  function getSectionTops() {
+    const tops = Array.from(document.querySelectorAll<HTMLElement>(".cv-section"))
+      .filter((section) => section.offsetParent !== null)
+      .map((section) => ({ section, top: section.getBoundingClientRect().top + window.scrollY }))
+      .sort((a, b) => a.top - b.top);
+    // Collapse sections that start at (nearly) the same position into one stop
+    return tops.filter((entry, i) => i === 0 || entry.top - tops[i - 1].top > 4);
+  }
+
+  function scrollToSection(section: HTMLElement) {
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function jumpSection(direction: 1 | -1) {
+    const tops = getSectionTops();
+    if (!tops.length) return;
+    // Must exceed the .cv-section scroll-margin-top so the current section isn't re-selected
+    const threshold = 20;
+    const y = window.scrollY;
+    const target =
+      direction === 1
+        ? tops.find((entry) => entry.top > y + threshold)
+        : [...tops].reverse().find((entry) => entry.top < y - threshold);
+    if (target) {
+      scrollToSection(target.section);
+    } else if (direction === -1) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
+  // Render fixed-position UI on <body> so a transformed layout ancestor can't trap it
+  function portal(node: HTMLElement) {
+    document.body.appendChild(node);
+    return { destroy: () => node.remove() };
+  }
+
+  function jumpToEdge(edge: "first" | "last") {
+    const tops = getSectionTops();
+    if (!tops.length) return;
+    scrollToSection((edge === "first" ? tops[0] : tops[tops.length - 1]).section);
+  }
+
   let stars: { x: number; y: number; size: number; twinkleDelay: number; brightness: number }[] =
     [];
   let mounted = false;
@@ -45,34 +88,19 @@
         return;
       }
 
-      const sections = Array.from(
-        document.querySelectorAll<HTMLElement>(".cv-section")
-      ).filter((section) => section.offsetParent !== null);
-      if (!sections.length) return;
-
-      const currentY = window.scrollY + window.innerHeight * 0.25;
-      const offsets = sections.map((section) => section.getBoundingClientRect().top + window.scrollY);
-      const currentIndex = offsets.findIndex((offset) => offset >= currentY);
-      const activeIndex = currentIndex === -1 ? sections.length - 1 : Math.max(0, currentIndex - 1);
-
-      const goToIndex = (index: number) => {
-        const clamped = Math.max(0, Math.min(sections.length - 1, index));
-        sections[clamped]?.scrollIntoView({ behavior: "smooth", block: "start" });
-      };
-
       const key = event.key.toLowerCase();
       if (key === "arrowdown" || key === "pagedown" || key === "j") {
         event.preventDefault();
-        goToIndex(activeIndex + 1);
+        jumpSection(1);
       } else if (key === "arrowup" || key === "pageup" || key === "k") {
         event.preventDefault();
-        goToIndex(activeIndex - 1);
+        jumpSection(-1);
       } else if (key === "home" || (key === "g" && !event.shiftKey)) {
         event.preventDefault();
-        goToIndex(0);
+        jumpToEdge("first");
       } else if (key === "end" || (key === "g" && event.shiftKey)) {
         event.preventDefault();
-        goToIndex(sections.length - 1);
+        jumpToEdge("last");
       }
     };
 
@@ -481,27 +509,27 @@ use in other tools and websites, such as Qualtrics.
     {
       position: "Department Chair, Research Methods and Information Science",
       organization: "University of Denver",
-      timeframe: "January 2025-present",
+      timeframe: "2025–present",
     },
     {
       position: "Associate Professor",
       organization: "University of Denver",
-      timeframe: "September 2023-present",
+      timeframe: "2023–present",
     },
     {
       position: "Assistant Professor",
       organization: "University of Denver",
-      timeframe: "September 2017-August 2023",
+      timeframe: "2017–2023",
     },
     {
       position: "Postdoctoral Research Associate",
       organization: "HathiTrust Research Center",
-      timeframe: "2015-2017",
+      timeframe: "2015–2017",
     },
     {
       position: "Research Intern",
       organization: "Microsoft Research",
-      timeframe: "April 2013 - August 2013",
+      timeframe: "2013",
     },
   ];
 
@@ -537,6 +565,9 @@ use in other tools and websites, such as Qualtrics.
       },
     },
   ];
+
+  // On small screens, education details (major, thesis, committee) fold behind a toggle
+  let eduDetailsOpen: boolean[] = degrees.map(() => false);
 
   const bioData = {
     awards: [
@@ -685,6 +716,13 @@ use in other tools and websites, such as Qualtrics.
     Posters: 6,
   };
   pubSections.forEach((s) => (pubShowMore[s.heading] = false));
+  const collapsiblePubSections = pubSections.filter(
+    (s) => s.entries.length > (pubLimits[s.heading] ?? 6),
+  );
+  $: allPubsExpanded = collapsiblePubSections.every((s) => pubShowMore[s.heading]);
+  function setAllPubs(expanded: boolean) {
+    collapsiblePubSections.forEach((s) => (pubShowMore[s.heading] = expanded));
+  }
 
   const meta = {
     title: "Curriculum Vitae",
@@ -840,85 +878,115 @@ use in other tools and websites, such as Qualtrics.
     </div>
 
     <section class="cv-section">
-      <h2 class="section-title">Professional Positions</h2>
-      <div class="panel">
-        <ul class="stack-list">
-          {#each professionalPositions as position}
-            <li
-              class="stack-item"
-              itemprop="workExperience"
-              itemscope
-              itemtype="http://schema.org/OrganizationRole"
-            >
-              <div class="stack-row">
-                <div>
-                  <span class="stack-title" itemprop="roleName">{position.position}</span> at
-                  <span itemprop="memberOf" itemscope itemtype="http://schema.org/Organization">
+      <div class="split-sections">
+        <div class="split-column">
+          <h2 class="section-title">Professional Positions</h2>
+          <div class="panel">
+            <ul class="stack-list compact">
+              {#each professionalPositions as position}
+                <li
+                  class="stack-item"
+                  itemprop="workExperience"
+                  itemscope
+                  itemtype="http://schema.org/OrganizationRole"
+                >
+                  <div class="stack-row">
+                    <span class="stack-title" itemprop="roleName">{position.position}</span>
+                    <span class="chip">{position.timeframe}</span>
+                  </div>
+                  <div
+                    class="stack-sub"
+                    itemprop="memberOf"
+                    itemscope
+                    itemtype="http://schema.org/Organization"
+                  >
                     <span itemprop="name">{position.organization}</span>
-                  </span>
-                </div>
-                <div class="stack-meta">
-                  <span class="chip">
-                    {position.timeframe}
-                  </span>
-                </div>
-              </div>
-            </li>
-          {/each}
-        </ul>
+                  </div>
+                </li>
+              {/each}
+            </ul>
+          </div>
+        </div>
+
+        <div class="split-column">
+          <h2 class="section-title">Education</h2>
+          <div class="panel">
+            <ul class="stack-list compact">
+              {#each degrees as edu, i}
+                <li
+                  class="stack-item"
+                  itemprop="alumniOf"
+                  itemscope
+                  itemtype="http://schema.org/EducationalOrganization"
+                >
+                  <div class="stack-row">
+                    <span class="stack-title" itemprop="degreeType">{edu.degree}</span>
+                    <span class="chip" itemprop="graduationYear">{edu.year}</span>
+                  </div>
+                  <div class="stack-sub">
+                    <span itemprop="name">{edu.university}</span>
+                    <button
+                      type="button"
+                      class="link-button details-toggle"
+                      aria-expanded={eduDetailsOpen[i]}
+                      aria-controls={`edu-details-${i}`}
+                      on:click={() => (eduDetailsOpen[i] = !eduDetailsOpen[i])}
+                      >{eduDetailsOpen[i] ? "− less" : "+ details"}</button
+                    >
+                  </div>
+                  <div
+                    id={`edu-details-${i}`}
+                    class="stack-details edu-details"
+                    class:open={eduDetailsOpen[i]}
+                  >
+                    {#if edu.additionalDetails.major}
+                      <span class="detail-item"
+                        ><span class="detail-label">Major:</span>
+                        <span itemprop="educationalProgram">{edu.additionalDetails.major}</span
+                        ></span
+                      >
+                    {/if}
+                    {#if edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}
+                      <span class="detail-item"
+                        ><span class="detail-label"
+                          >{edu.additionalDetails.dissertationTitle
+                            ? "Dissertation"
+                            : "Thesis"}:</span
+                        >
+                        <span itemprop="dissertationTitle"
+                          >{edu.additionalDetails.dissertationTitle ||
+                            edu.additionalDetails.thesisTitle}</span
+                        ></span
+                      >
+                    {/if}
+                    {#if edu.additionalDetails.committee}
+                      <span class="detail-item"
+                        ><span class="detail-label">Committee:</span>
+                        {edu.additionalDetails.committee.join(", ")}</span
+                      >
+                    {/if}
+                  </div>
+                </li>
+              {/each}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="cv-section">
-      <h2 class="section-title">Education</h2>
-      <div class="panel">
-        <ul class="stack-list">
-          {#each degrees as edu}
-            <li
-              class="stack-item"
-              itemprop="alumniOf"
-              itemscope
-              itemtype="http://schema.org/EducationalOrganization"
-            >
-              <div class="stack-row">
-                <div>
-                  <span class="stack-title" itemprop="degreeType">{edu.degree}</span> at
-                  <span itemprop="name">{edu.university}</span>
-                </div>
-                <div class="stack-meta">
-                  <span class="chip" itemprop="graduationYear">{edu.year}</span>
-                </div>
-              </div>
-              <div class="stack-details">
-                {#if edu.additionalDetails.major}
-                  <span class="detail-item"
-                    >Major: <span itemprop="educationalProgram">{edu.additionalDetails.major}</span
-                    ></span
-                  >
-                {/if}
-                {#if edu.additionalDetails.dissertationTitle || edu.additionalDetails.thesisTitle}
-                  <span class="detail-item"
-                    >{edu.additionalDetails.dissertationTitle ? "Dissertation" : "Thesis"}:
-                    <span itemprop="dissertationTitle"
-                      >{edu.additionalDetails.dissertationTitle ||
-                        edu.additionalDetails.thesisTitle}</span
-                    ></span
-                  >
-                {/if}
-                {#if edu.additionalDetails.committee}
-                  <span class="detail-item"
-                    >Committee: {edu.additionalDetails.committee.join(", ")}</span
-                  >
-                {/if}
-              </div>
-            </li>
-          {/each}
-        </ul>
+      <div class="section-head centered">
+        <h2 class="section-title">Awarded Grants</h2>
+        {#if extraAwards.length > 0}
+          <button
+            type="button"
+            class="section-toggle"
+            aria-expanded={showMoreAwards}
+            on:click={() => (showMoreAwards = !showMoreAwards)}
+            >{showMoreAwards ? "Show newer" : `Show all (${awards.length})`}</button
+          >
+        {/if}
       </div>
-    </section>
-
-    <section class="cv-section">
-      <h2 class="section-title">Awarded Grants</h2>
       <div class="panel">
         {#if awards && awards.length}
           <ul class="stack-list compact">
@@ -1017,12 +1085,36 @@ use in other tools and websites, such as Qualtrics.
     </section>
 
     <section class="cv-section">
-      <h2 class="section-title">Publications</h2>
+      <div class="section-head centered">
+        <h2 class="section-title">Publications</h2>
+        {#if collapsiblePubSections.length > 0}
+          <button
+            type="button"
+            class="section-toggle"
+            aria-expanded={allPubsExpanded}
+            on:click={() => setAllPubs(!allPubsExpanded)}
+            >{allPubsExpanded ? "Show newer" : "Show all"}</button
+          >
+        {/if}
+      </div>
     </section>
 
     {#each pubSections as pubSection}
       <section class="cv-section">
-        <h3 class="section-subtitle">{pubSection.heading}</h3>
+        <div class="section-head">
+          <h3 class="section-subtitle">{pubSection.heading}</h3>
+          {#if pubSection.entries.length > (pubLimits[pubSection.heading] ?? 6)}
+            <button
+              type="button"
+              class="section-toggle"
+              aria-expanded={pubShowMore[pubSection.heading]}
+              on:click={() => (pubShowMore[pubSection.heading] = !pubShowMore[pubSection.heading])}
+              >{pubShowMore[pubSection.heading]
+                ? "Show newer"
+                : `Show all (${pubSection.entries.length})`}</button
+            >
+          {/if}
+        </div>
         {#if pubSection.comment}
           <p class="section-comment">{pubSection.comment}</p>
         {/if}
@@ -1141,6 +1233,30 @@ use in other tools and websites, such as Qualtrics.
       </div>
     </section>
   </div>
+
+  {#if mounted}
+    <nav
+      use:portal
+      class="section-jump"
+      class:light-theme={mode.current === "light"}
+      aria-label="Jump between sections"
+    >
+      <button
+        type="button"
+        class="jump-button"
+        title="Previous section (k)"
+        aria-label="Previous section"
+        on:click={() => jumpSection(-1)}>▲</button
+      >
+      <button
+        type="button"
+        class="jump-button"
+        title="Next section (j)"
+        aria-label="Next section"
+        on:click={() => jumpSection(1)}>▼</button
+      >
+    </nav>
+  {/if}
 </div>
 
 <style>
@@ -1348,6 +1464,97 @@ use in other tools and websites, such as Qualtrics.
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    scroll-margin-top: 12px;
+  }
+
+  .split-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .split-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Centered title with the toggle pinned to the right */
+  .section-head.centered {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: baseline;
+  }
+
+  .section-head.centered .section-title {
+    grid-column: 2;
+  }
+
+  .section-head.centered .section-toggle {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  .section-toggle {
+    background: none;
+    border: 1px solid #3a3a6a;
+    color: #ffcc00;
+    font-family: inherit;
+    font-size: 0.45rem;
+    padding: 0.25rem 0.45rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .section-toggle:hover {
+    background: #22224a;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+  }
+
+  .section-jump {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .jump-button {
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(18, 18, 40, 0.92);
+    border: 2px solid #3a3a6a;
+    color: #ffcc00;
+    font-family: inherit;
+    font-size: 0.7rem;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .jump-button:hover {
+    background: #22224a;
+    border-color: #ffcc00;
+  }
+
+  .jump-button:focus-visible,
+  .section-toggle:focus-visible {
+    outline: 2px solid #00ccff;
+    outline-offset: 2px;
   }
 
   .section-title {
@@ -1435,6 +1642,35 @@ use in other tools and websites, such as Qualtrics.
 
   .stack-title {
     color: #fff;
+  }
+
+  .split-column .stack-row {
+    flex-wrap: nowrap;
+  }
+
+  .split-column .chip {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .stack-sub {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 0.3rem;
+    font-size: 0.5rem;
+    color: #9fb7ff;
+  }
+
+  .details-toggle {
+    display: none;
+    white-space: nowrap;
+  }
+
+  .edu-details {
+    flex-direction: column;
+    gap: 0.3rem;
   }
 
   .stack-meta {
@@ -1587,6 +1823,36 @@ use in other tools and websites, such as Qualtrics.
       justify-content: center;
     }
 
+    .split-sections {
+      grid-template-columns: 1fr;
+    }
+
+    .details-toggle {
+      display: inline;
+    }
+
+    .edu-details:not(.open) {
+      display: none;
+    }
+
+    .section-head.centered {
+      grid-template-columns: 1fr auto;
+    }
+
+    .section-head.centered .section-title {
+      grid-column: 1;
+      text-align: left;
+    }
+
+    .section-head.centered .section-toggle {
+      grid-column: 2;
+    }
+
+    .section-jump {
+      right: 0.6rem;
+      bottom: 0.6rem;
+    }
+
     .card-grid,
     .card-grid.compact,
     .card-grid.wide {
@@ -1709,6 +1975,42 @@ use in other tools and websites, such as Qualtrics.
 
   .light-theme .detail-label {
     color: var(--ink);
+  }
+
+  .light-theme .stack-sub {
+    color: var(--muted-ink);
+    font-size: 0.85rem;
+  }
+
+  .light-theme .section-toggle {
+    border-color: var(--paper-edge);
+    border-radius: 999px;
+    color: var(--accent-ink);
+    font-size: 0.8rem;
+    padding: 0.2rem 0.65rem;
+    background: #fffdf8;
+  }
+
+  .light-theme .section-toggle:hover {
+    background: rgba(124, 58, 237, 0.08);
+    text-shadow: none;
+  }
+
+  .section-jump.light-theme {
+    background: none;
+  }
+
+  .light-theme .jump-button {
+    background: #fffdf8;
+    border-color: var(--paper-edge);
+    border-radius: 10px;
+    color: var(--accent-ink);
+    font-size: 0.85rem;
+    box-shadow: 3px 3px 0 var(--paper-shadow);
+  }
+
+  .light-theme .jump-button:hover {
+    border-color: var(--accent-ink);
   }
 
   .light-theme .card {

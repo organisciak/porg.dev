@@ -332,15 +332,15 @@
     "issued": {
       "date-parts": [
         [
-          "2026",
-          "4"
+          2025,
+          3
         ]
       ]
     },
-    "title": "Innovative-Adaptive Model of TTCT Figural: Invariance Across Ethnicity, Not Gender",
-    "container-title": "NCME Annual Meeting",
-    "publisher": "National Council on Measurement in Education",
-    "event-place": "Los Angeles, California"
+    "title": "The Innovative-Adaptive Model of the TTCT Figural Is Invariant Across Ethnicity but Not Gender",
+    "container-title": "Annual Meeting of the Society for the Psychology of Aesthetics, Creativity, and the Arts",
+    "publisher": "APA Division 10",
+    "event-place": "New Haven, CT"
   },
   {
     "type": "article-journal",
@@ -2319,6 +2319,43 @@
       "date-parts": [
         [
           2017
+        ]
+      ]
+    }
+  },
+  {
+    "type": "speech",
+    "title": "Mapping the Margins: The Creation of a Dataset for Automated Peritext Detection in Digital Collections",
+    "event": "Digital Humanities 2025",
+    "event-place": "Lisbon, Portugal",
+    "genre": "Long Paper Talk",
+    "author": [
+      {
+        "family": "Lucic",
+        "given": "A."
+      },
+      {
+        "family": "Shanahan",
+        "given": "J."
+      },
+      {
+        "family": "Debnath",
+        "given": "T."
+      },
+      {
+        "family": "Kirchhoff",
+        "given": "A."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          7
         ]
       ]
     }

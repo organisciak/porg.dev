@@ -14,13 +14,6 @@ pnpm run format           # Auto-format with Prettier
 pnpm run check            # Svelte type checking
 pnpm test                 # Playwright tests
 
-# Issue tracking (beads)
-bd ready                  # Find available work
-bd show <id>              # View issue details
-bd update <id> --status in_progress  # Claim work
-bd close <id>             # Complete work
-bd sync                   # Sync issues with git
-
 # Media (R2)
 npx wrangler r2 bucket list
 npx wrangler r2 object put porg-media/<key> --file <local-path> --remote
@@ -94,17 +87,23 @@ Operational rules:
    - `scripts/backfill-yma-covers.mjs` for fallback recovery of missing covers
 4. After adding/updating covers, verify R2 URLs return `200` before finalizing edits.
 
+## Tasks
+
+Tasks live in Obsidian, not in the repo: `~/workspace/Obsidian Vault/Projects/porg.dev/Tasks/`, one note
+per task (view: `porg.dev Tasks.base`). Conventions and the closed beads history are in `Beads history.md`
+in the same folder. Beads was retired on 2026-11-23. Don't run `bd` here.
+
 ## Session Completion
 
 Before ending a session, always:
 
-1. Run `bd sync` to commit beads changes
+1. Update the task note in Obsidian (status, `closed:` date, a dated log line)
 2. Commit code changes
 3. `git push` - work is not complete until pushed
 
 ## Grabbing a task
 
-When grabbing a task from bd ready, do your work in a worktree if it's a more significant task. Small tasks don't need it. If you see a series of small tasks, do all of them.
+When grabbing an open task from Obsidian, do your work in a worktree if it's a more significant task. Small tasks don't need it. If you see a series of small tasks, do all of them.
 
 ### Worktrees
 

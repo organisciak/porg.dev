@@ -1,5 +1,133 @@
 [
   {
+    "type": "speech",
+    "genre": "Conference Presentation",
+    "title": "AI's confidence in scoring creativity is equivalent across different populations",
+    "author": [
+      {
+        "family": "Wang",
+        "given": "H."
+      },
+      {
+        "family": "Shen",
+        "given": "Y."
+      },
+      {
+        "family": "Dong",
+        "given": "Y."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Ghobadi",
+        "given": "M."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2027,
+          4
+        ]
+      ]
+    },
+    "event": "National Council on Measurement in Education (NCME) Annual Meeting",
+    "event-place": "Toronto, ON, Canada",
+    "status": "forthcoming",
+    "custom": [
+      {
+        "key": "Note",
+        "value": "eBoard paper accepted for presentation"
+      }
+    ]
+  },
+  {
+    "type": "speech",
+    "genre": "Conference Presentation",
+    "title": "AI's confidence in scoring creativity is equivalent across different populations",
+    "author": [
+      {
+        "family": "Wang",
+        "given": "H."
+      },
+      {
+        "family": "Shen",
+        "given": "Y."
+      },
+      {
+        "family": "Dong",
+        "given": "Y."
+      },
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Acar",
+        "given": "S."
+      },
+      {
+        "family": "Ghobadi",
+        "given": "M."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2027,
+          4
+        ]
+      ]
+    },
+    "event": "American Educational Research Association (AERA) Annual Meeting",
+    "event-place": "Toronto, ON, Canada",
+    "status": "forthcoming",
+    "custom": [
+      {
+        "key": "Note",
+        "value": "Paper accepted for presentation"
+      }
+    ]
+  },
+  {
+    "type": "speech",
+    "genre": "Conference Presentation",
+    "title": "Measuring the trustworthiness of AI originality scoring, from adults to elementary students",
+    "author": [
+      {
+        "family": "Organisciak",
+        "given": "P."
+      },
+      {
+        "family": "Acar",
+        "given": "S."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2027,
+          3
+        ]
+      ]
+    },
+    "event": "Society for the Psychology of Aesthetics, Creativity, and the Arts (APA Division 10) Annual Conference",
+    "event-place": "Salt Lake City, UT",
+    "status": "forthcoming",
+    "custom": [
+      {
+        "key": "Note",
+        "value": "Individual talk accepted for presentation; conference March 18–20, 2027"
+      }
+    ]
+  },
+  {
     "type": "paper-conference",
     "genre": "Proceedings Long Article",
     "title": "Can LLMs Simulate Expert Panels? Evaluating CAT-Inspired Persona Prompting for Automated Creativity Scoring",
